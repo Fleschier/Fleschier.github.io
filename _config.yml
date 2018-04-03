@@ -3,10 +3,10 @@ title: 神的九十亿个名字
 SEOTitle: 渐寒^ 的 博客 | Fleschier Blog
 header-img: img/home-bg.jpg
 email: huxpro@gmail.com
-description: ""
+description: "关于技术，关于生活 | 梦想与艺术的狂热者 | 与你一起发现更深层次的世界。"
 keyword: ""
-url: "http://huangxuan.me"              # your host, for absolute URL
-baseurl: "/huxblog-boilerplate"         # for example, '/blog' if your blog hosted on 'host/blog'
+url: "http://fleschier.github.io"              # your host, for absolute URL
+#baseurl: "/huxblog-boilerplate"         # for example, '/blog' if your blog hosted on 'host/blog'
 
 
 
