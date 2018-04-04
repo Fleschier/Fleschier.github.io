@@ -49,9 +49,9 @@ kramdown:
 # Disqus settings
 #disqus_username: _your_disqus_short_name_
 
--# Featured Tags
--# featured-tags: true                     # whether or not using Feature-Tags
--# featured-condition-size: 1              # A tag will be featured if the size of it is more than this condition value
+Featured Tags
+featured-tags: true                     # whether or not using Feature-Tags
+featured-condition-size: 1              # A tag will be featured if the size of it is more than this condition value
 
 
 # Analytics settings
