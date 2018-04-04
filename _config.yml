@@ -1,9 +1,9 @@
 # Site settings
 title: 神的九十亿个名字
-SEOTitle: 渐寒^ 的 博客 | Fleschier Blog
+SEOTitle: 渐寒 的 博客 | Fleschier Blog
 header-img: img/home-bg.jpg
 email: fleschierchan@gmail.com
-description: "关于技术，关于生活 | 梦想与艺术的狂热者 | 与你一起发现更深层次的世界。"
+description: "关于技术，关于生活 | 梦想与艺术的狂热者 | 与你一起发现更深层的世界 @渐寒"
 keyword: ""
 url: "http://fleschier.github.io"              # your host, for absolute URL
 #baseurl: "/huxblog-boilerplate"         # for example, '/blog' if your blog hosted on 'host/blog'
@@ -49,13 +49,6 @@ kramdown:
 # Disqus settings
 #disqus_username: _your_disqus_short_name_
 
-# Duoshuo settings
-duoshuo_username: huxblog
-# Share component is depend on Comment so we can NOT use share only.
-duoshuo_share: true                     # set to false if you want to use Comment without Sharing
-
-
-
 
 # Analytics settings
 # Baidu Analytics
@@ -68,14 +61,9 @@ ga_domain: fleschier.github.io
 
 # Sidebar settings
 sidebar: true                           # whether or not using Sidebar.
-sidebar-about-description: "写一写代码，看一看人生。"
+sidebar-about-description: "写一写代码，看一看人生"
 sidebar-avatar: /img/Fleschier_head.jpg      # use absolute URL, seeing it's used in both `/` and `/about/`
 
-
-
-# Featured Tags
-# featured-tags: true                     # whether or not using Feature-Tags
-# featured-condition-size: 1              # A tag will be featured if the size of it is more than this condition value
 
 # Progressive Web Apps
 chrome-tab-theme-color: "#000000"
