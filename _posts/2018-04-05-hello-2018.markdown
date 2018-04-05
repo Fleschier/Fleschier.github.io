@@ -24,10 +24,11 @@ tags:
 
 - 第一次自己写博客还是很有新鲜感的。
 
-- 搭建自己在github上的博客需要创建一个名为*yourusername.github.io*的repository，然后你需要选择一款Jekyll主题来使你的博客更加个性化。*（当然像我一样的小白就先借用别人写好的框架来吧）*。在创建好repository之后最好先clone到本地，这样便于后面的更改直接在本地进行然后通过git来提交就好了。在github上选择一个别人写好的，你比较中意的主题，然后clone下来，将其中你需要的文件加到你自己的库当中。*（其中可能会包含别人写的文章啊，一些图片什么的，这些都可以删掉或者替换掉）*。最后附上一个相对比较详细的教程——[如何快速搭建自己的github.io博客](https://blog.csdn.net/walkerhau/article/details/77394659?utm_source=debugrun&utm_medium=referral)。
+- 搭建自己在github上的博客需要创建一个名为*yourusername.github.io*的repository，然后你需要选择一款Jekyll主题来使你的博客更加个性化。*（当然像我一样的小白就先借用别人写好的框架来吧）*。在创建好repository之后最好先clone到本地，这样便于后面的更改直接在本地进行然后通过git来提交就好了。在github上选择一个别人写好的，你比较中意的主题，然后clone下来，将其中你需要的文件加到你自己的库当中。*（其中可能会包含别人写的文章啊，一些图片什么的，这些都可以删掉或者替换掉）*。这里附上一个相对比较详细的教程——[如何快速搭建自己的github.io博客](https://blog.csdn.net/walkerhau/article/details/77394659?utm_source=debugrun&utm_medium=referral)。
 当然这里不可能把所有的细节都写清楚，有很多有趣的东西会在你尝试的过程中不断涌现出来，大胆的去尝试吧。
 
-- 博文都是需要通过markdown编辑器来编写的。当然这也很简单，推荐使用的软件是[MarkdownPad2](http://markdownpad.com/)。如果需要激活秘钥什么的直接百度吧（滑稽）。这里需要补充一下的是，MarkdownPad2 这款软件在win8以上的系统使用时会产生bug，官方的说法是从 Win 8 开始就有这个问题了，解决办法就是安装 [Awesomium 1.6.6 SDK](http://markdownpad.com/download/awesomium_v1.6.6_sdk_win.exe)。如果还是不行就再安装 [Microsoft's DirectX End-User Runtimes (June 2010)](http://www.microsoft.com/en-us/download/details.aspx?id=8109)。下面是官方的原文：
+
+- 博文都是需要通过markdown编辑器来编写的。当然这也很简单，推荐使用的软件是[MarkdownPad2](http://markdownpad.com/)。如果需要激活秘钥什么的直接百度吧（滑稽）。这里需要补充一下的是，MarkdownPad2 这款软件使用时会产生bug，官方的说法是从 Win 8 开始就有这个问题了(我用的是win10)，解决办法就是安装 [Awesomium 1.6.6 SDK](http://markdownpad.com/download/awesomium_v1.6.6_sdk_win.exe)。如果还是不行就再安装 [Microsoft's DirectX End-User Runtimes (June 2010)](http://www.microsoft.com/en-us/download/details.aspx?id=8109)。下面是官方的原文：
 >
 LivePreview is not working - it displays an error message stating This view has crashed!
 >  
