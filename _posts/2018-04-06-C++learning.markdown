@@ -2,7 +2,7 @@
 layout:     post
 title:      "C++学习笔记（不定期更新）"
 subtitle:   "同样的错，不能犯第二次"
-date:       2018-04-6 22:47:00
+date:       2018-04-6 16:47:00
 author:     "Fleschier"
 header-img: "img/C++/C++-bg.jpg"
 
@@ -16,7 +16,6 @@ header-img: "img/C++/C++-bg.jpg"
 #### 模板类
 
 - 示例：
-
 ```
 template <class T> //声明一个模板，虚拟类型名为T。注意：这里没有分号。  
 class T_Class //类模板名为Compare  
@@ -37,7 +36,6 @@ private :
 ```
 
 - 模板类所有的函数，如果在类外面实现的话，需要写成如下形式：
-
 ```
 template <class T> 
 T_Class<T>::max( ){  
