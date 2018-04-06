@@ -1,13 +1,13 @@
 ---
 layout:     post
 title:      "UEFI双系统的那些坑"
-subtitle:   "走过的路多了，自然踩了更多的坑..."
+subtitle:   "更聪明的人，总是踩了更多的坑的..."
 date:       2018-04-06
 author:     "Fleschier"
 header-img: "img/linux-and-windows/post-2018-04-06.jpg"
 
 ---
-> 不适合人类阅读的学习笔记
+> 不适合人类阅读的自我备忘笔记
 
 ## 关于ubuntu 和 windows 双系统
 
