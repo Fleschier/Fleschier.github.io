@@ -5,11 +5,10 @@ subtitle:   " \"Hello World, Hello Blog\""
 date:       2018-04-5 22:47:00
 author:     "Fleschier"
 header-img: "img/post-bg-2018.jpg"
-tags:
-     生活
+
 ---
 
-> “It's just a begining. ”
+> “It's just a begining.”
 
 
 ## 前言
