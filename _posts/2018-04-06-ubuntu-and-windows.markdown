@@ -9,9 +9,8 @@ header-img: "img/linux-and-windows/post-2018-04-06.jpg"
 ---
 > 不适合人类阅读的学习笔记
 
-##关于ubuntu 和 windows 双系统
+## 关于ubuntu 和 windows 双系统
 
----
 
 - 在长时间使用Windows时候，难免会想要尝试新系统，而专业又是如此，于是我选择了linux中图形界面最为友好的ubuntu系统作为自己双系统的入门系统。
 
@@ -21,18 +20,18 @@ header-img: "img/linux-and-windows/post-2018-04-06.jpg"
 
 - 但是，UEFI作为最新的计算机启动模式，肯定要比原来的更加快速，或者如果你也像我一样，电脑不支持legacy启动，那么下面将要介绍一个非常好用的第三方启动引导程序。
 
-##第三方启动引导程序——refind
+## 第三方启动引导程序——refind
 
-- refind是一款功能非常强大的开机启动引导程序，它能够自定义开机界面。你可以吧系统图标，背景什么的换成你自己喜欢的风格。这里附上一张我自己的开机界面![](/img/linux-and-windows/opening-bg.jpg)
+- refind是一款功能非常强大的开机启动引导程序，它能够自定义开机界面。你可以吧系统图标，背景什么的换成你自己喜欢的风格。这里附上一张我采用的主题开机界面![](/img/linux-and-windows/opening-bg.jpg)如果你也喜欢这一风格，[这里是链接地址](https://github.com/EvanPurkhiser/rEFInd-minimal)。
 
 - refind是一款免费的软件([官方下载地址](http://www.rodsbooks.com/refind/getting.html))，如果你高兴也可以给作者赞助。
 
 - 如果使用UEFI引导方式启动系统的话，**在安装Ubuntu时要预留一个efi分区用来存放开机引导文件**，预留大概200MB-500MB即可。
 
-####Ubuntu下安装
+#### Ubuntu下安装
 - 推荐在ubuntu下安装refind，简单到让人不敢相信。你只需要把软件下载下来，在终端运行里面的.shell文件，就会自动安装，无需任何额外的操作，重启系统，进入bios在启动顺序里将rEFInd调为第一个即可。
 
-####Windows下安装
+#### Windows下安装
 - 如果你非要不信邪，在Windows下尝试安装的话，我也不反对。首先你需要一个能够进入系统隐藏分区的软件——[DiskGenius](http://www.diskgenius.cn/)。推荐去官网下载正版而不要用盗版（然后去百度激活码...咳咳），毕竟牵涉到系统文件万一崩了别怪我没提醒。
 
 - 第一步，找到你系统的esp分区![](/img/linux-and-windows/ubuntu-boot.jpg)
