@@ -48,18 +48,17 @@ public class HelloWorld {
 
 #### Java枚举
 
-- 枚举限制变量只能是预先设定好的值。使用枚举可以减少代码中的bug
+- 枚举限制变量只能是预先设定好的值,使用枚举可以减少代码中的bug
 ```
-class FreshJuice {
-   enum FreshJuiceSize{ SMALL, MEDIUM , LARGE }
-   FreshJuiceSize size;
+class ENUM_class{
+	enum Test{Small, Medium, Large}
+   Test size;
 }
- 
-public class FreshJuiceTest {
-   public static void main(String []args){
-      FreshJuice juice = new FreshJuice();
-      juice.size = FreshJuice.FreshJuiceSize.MEDIUM  ;
-   }
+public class ENUM_class_Test{
+	public static void main(String[] args){
+		ENUM_class tst = new ENUM_class();
+		tst.size = ENUM_class.Test.Small;
+	}
 }
 ```
 #### Java注释
