@@ -41,3 +41,7 @@ If you continue to experience issues, please install Microsoft's DirectX End-Use
 并且title也必须用-来连接而*不要用下划线，不要用下划线，不要用下划线...*
 
 - 最后附上markdown的简单教程，很简单，一个小时之内上手完全没问题。[献给写作者的 Markdown 新手指南](https://www.jianshu.com/p/q81RER)。
+
+<br>
+
+>最后更新于2018.4.6

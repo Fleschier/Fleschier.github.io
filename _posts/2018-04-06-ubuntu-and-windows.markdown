@@ -46,3 +46,8 @@ header-img: "img/linux-and-windows/post-2018-04-06.jpg"
 - 第四步，下载[bootice](https://bootice.en.softonic.com/?ex=REG-60.2)，打开DIskGenius给你放refind文件的那个分区取个卷标（随便什么都可以，下面有用）。打开bootice——UEFI——修改启动序列![](/img/linux-and-windows/bootice01.jpg)*(也可以顺手吧下面那个下次启动直接进入bios勾上，省的下次进bios要手动)*。点击添加，找到你之前分配盘符的那个盘（也就是esp分区），找到里面的refind文件夹，选择对应你系统的.efi文件，点击确定。![](/img/linux-and-windows/bootice02.jpg)重启系统，进入bios，将rEFInd启动项调整为第一个即可。*（没有对比就没有伤害，Windows下简直烦死，还不一定成功...）*
 
 - 最后希望各位都能成功在UEFI模式下完成双系统的安装和引导。
+
+
+<br>
+
+>最后更新于2018.4.7
