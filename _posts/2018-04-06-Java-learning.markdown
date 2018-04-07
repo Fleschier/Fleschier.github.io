@@ -1,7 +1,7 @@
 ---
 layout:     post
-title:      "Java学习笔记（不定期更新）"
-subtitle:   "同样的错，不能犯第二次"
+title:      "Java学习笔记"
+subtitle:   "Keep foolish, Keep hungry"
 date:       2018-04-6 16:47:00
 author:     "Fleschier"
 header-img: "img/Java/Java-bg.jpg"

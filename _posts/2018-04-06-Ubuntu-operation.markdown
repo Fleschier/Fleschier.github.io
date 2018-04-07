@@ -1,6 +1,6 @@
 ---
 layout:     post
-title:      "Ubuntu常用操作命令及注意点（不定期更新）"
+title:      "Ubuntu常用操作命令及注意点"
 subtitle:   "点滴成海"
 date:       2018-04-6 16:47:00
 author:     "Fleschier"
