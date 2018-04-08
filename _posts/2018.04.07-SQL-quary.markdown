@@ -145,7 +145,7 @@ alter table Course add constraint cs_4 check(Cno != Cpno)
 
 - `select [列名（逗号间隔）或者*] from 表名`
 
-###### 进阶
+###### 进阶(单表)
 
 - `select Sno,Sname,Sage from student where Sage >= 19 and Sage <= 21 and Ssex = '女' order by Sage desc
 -- desc表示降序，asc表示升序`
@@ -156,7 +156,18 @@ alter table Course add constraint cs_4 check(Cno != Cpno)
 - `select Sno,Cno from SC where Grade is null 
 -- 如果用'= null'则查询结果为空` 
 
+- `select Sno,Cno,cast((Grade/10) as int)from SC
+-- cast(a as int)转换数据类型`
 
+- `select distinct Sdept from student
+-- distinct写在最前面`
+
+###### 进阶（统计）
+
+- `select count(*) as number from student where Sname like '%明%' -- 统计名字有‘明’的人数`
+
+- `select Cno,sum(Grade) as total_grade,avg(Grade) as avg_grade,max(Grade) as max_grade,min(Grade) as min_grade from SC  group by Cno order by avg_grade desc
+-- sum()求和`
 
 ## 删除
 ---
