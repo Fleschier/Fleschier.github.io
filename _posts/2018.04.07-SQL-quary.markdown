@@ -147,27 +147,42 @@ alter table Course add constraint cs_4 check(Cno != Cpno)
 
 ###### 进阶(单表)
 
-- `select Sno,Sname,Sage from student where Sage >= 19 and Sage <= 21 and Ssex = '女' order by Sage desc
--- desc表示降序，asc表示升序`
+```
+select Sno,Sname,Sage from student where Sage >= 19 and Sage <= 21 and Ssex = '女' order by Sage desc
+-- desc表示降序，asc表示升序
+```
 
-- `select Sno,Ssex from student where Sname like '_明%'
--- _表示一个字符，%表示任意多个字符,这里筛选出名字第二个字为‘明’的人`
+```select Sno,Ssex from student where Sname like '_明%'
+-- _表示一个字符，%表示任意多个字符,这里筛选出名字第二个字为‘明’的人
+```
 
-- `select Sno,Cno from SC where Grade is null 
--- 如果用'= null'则查询结果为空` 
+```select Sno,Cno from SC where Grade is null 
+-- 如果用'= null'则查询结果为空
+``` 
 
-- `select Sno,Cno,cast((Grade/10) as int)from SC
--- cast(a as int)转换数据类型`
+```select Sno,Cno,cast((Grade/10) as int)from SC
+-- cast(a as int)转换数据类型
+```
 
-- `select distinct Sdept from student
--- distinct写在最前面`
+```select distinct Sdept from student
+-- distinct写在最前面
+```
 
 ###### 进阶（统计）
 
-- `select count(*) as number from student where Sname like '%明%' -- 统计名字有‘明’的人数`
+```select count(*) as number from student where Sname like '%明%' -- 统计名字有‘明’的人数
+```
 
-- `select Cno,sum(Grade) as total_grade,avg(Grade) as avg_grade,max(Grade) as max_grade,min(Grade) as min_grade from SC  group by Cno order by avg_grade desc
--- sum()求和`
+```select Cno,sum(Grade) as total_grade,avg(Grade) as avg_grade,max(Grade) as max_grade,min(Grade) as min_grade from SC  group by Cno order by avg_grade desc
+-- sum()求和
+```
+
+```select Cno from SC where Grade >= 85 group by Cno having count(Sno)>10
+-- where 筛选必须在group 之前，group之后可以用having筛选，两者可以并用
+```
+
+```select Sno from SC where Grade <60  group by Sno having count(Cno) > 2
+```
 
 ## 删除
 ---
