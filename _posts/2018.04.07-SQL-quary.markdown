@@ -183,6 +183,43 @@ select Sno,Sname,Sage from student where Sage >= 19 and Sage <= 21 and Ssex = '�
 
 ```select Sno from SC where Grade <60  group by Sno having count(Cno) > 2
 ```
+###### 进阶（连接）
+
+```
+select distinct Cno from student,SC where student.Sno = SC.Sno and Sdept = 'JSJ'
+-- 连接要写出连接条件
+```
+
+```
+--- 三种写法
+select Sname from student,SC where student.Sno = SC.Sno and Cno = 1002
+select Sname from student join SC on student.Sno = Sc.Sno where Cno = 1002 -- JOIN..ON..语句
+select Sname from student where Sno in( --嵌套执行
+	select Sno from SC where Cno = 1002
+)
+```
+```
+select student.Sno, Grade from student,course,SC where student.Sno = SC.Sno and course.Cno = SC.Cno and Cname = '数据库原理' and Grade <60
+--用表名.列名来获取具有相同列名的几个表中某个表的某一列
+```
+
+```
+-- 两种写法
+select student.Sname from student,SC where student.Sno = SC.Sno and Grade >= 80 and Cno = 1004
+select Sname from student where Sno in( --嵌套写法
+	select Sno from SC where Grade > 80 and Cno in(
+		select Cno from course where Cname = '数据库原理'
+	)
+)
+```
+
+##### 进阶（嵌套）
+
+```
+-- 找出平均成绩最大的一个（两种写法）
+select  top 1 Sno,avg(Grade) as avg_grade from SC group by Sno order by avg(Grade) desc
+select Sno,avg(Grade) as avg_grade from SC group by Sno having avg(Grade) >= all(select avg(Grade) from SC group by Sno)
+```
 
 ## 删除
 ---
