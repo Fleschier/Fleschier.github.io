@@ -156,6 +156,10 @@ int randomNUM2 = rand.nextInt(100); //表示获取[0,100)范围的随机数
 ...
 ```
 
+#### String类
+
+- String是常量，对一个String的任何修改都会使java创建一个新的String，而原来的会被当做垃圾回收掉
+
 ## Java的类，继承与接口
 
 ---
@@ -354,5 +358,5 @@ class TESt implements Computable{
 
 <br>
 
->最后更新于2018.4.7
+>最后更新于2018.4.9
 
