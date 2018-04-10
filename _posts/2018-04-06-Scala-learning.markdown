@@ -89,6 +89,33 @@ val a: Array[String] = new Array[String](3)
 - 可以使用foreach()方法实现遍历。
 ![](/img/Scala/Scala-test.jpg)
 
+###### 二维数组
+
+- `var myMatrix = ofDim[Int](3,3)`
+
+- 示例：
+```
+import Array._
+object Test {
+   def main(args: Array[String]) {
+      var myMatrix = ofDim[Int](3,3)
+      // 创建矩阵
+      for (i <- 0 to 2) {
+         for ( j <- 0 to 2) {
+            myMatrix(i)(j) = j;
+         }
+      } 
+      // 打印二维阵列
+      for (i <- 0 to 2) {
+         for ( j <- 0 to 2) {
+            print(" " + myMatrix(i)(j));
+         }
+         println();
+      } 
+   }
+}
+```
+
 ## 流程控制结构
 ---
 ###### 判断语句
