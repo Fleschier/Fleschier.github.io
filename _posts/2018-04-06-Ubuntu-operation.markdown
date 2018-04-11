@@ -35,6 +35,23 @@ header-img: "img/Ubuntu/Ubuntu-bg.jpg"
 
 - `chown [-R] username filename/directoryname`  //更改文件或者文件夹所属用户
 
+###### grep语句
+- 语法： `scp [可选参数] file_source file_target `
+
+- 例：`scp /home/fleshier/My_Programes/Programes/AssociationRuleDiscovery/target/AR.jar   root@192.168.1.201:/root`
+此句就是吧一个本地的文件拷贝到远端的服务器上，用户是root，服务器地址是192.168.1.201，存放目录是 /root
+
+- 如果指定了用户名（如上例），则需要输入密码，如果没有指定用户名，则回车后需要输入用户名和密码。
+
+- 额外说明：如果远程服务器防火墙有为scp命令设置了指定的端口，我们需要使用 -P 参数来设置命令的端口号，命令格式如下：
+```
+#scp 命令使用端口号 4588
+scp -P 4588 remote@www.runoob.com:/usr/local/sin.sh /home/administrator
+```
+
+<br>
+- 参考资料：[linux命令大全-菜鸟教程](http://www.runoob.com/linux/linux-command-manual.html)
+
 <br>
 
 >最后更新于2018.4.11
