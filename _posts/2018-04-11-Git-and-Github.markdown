@@ -1,6 +1,6 @@
 ---
 layout:     post
-title:      "一些关于git 和 github 的随笔"
+title:      "git 与 github 随笔"
 subtitle:   "点滴成海"
 date:       2018-04-11 22:04:00
 author:     "Fleschier"
