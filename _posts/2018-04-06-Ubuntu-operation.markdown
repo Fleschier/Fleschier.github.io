@@ -35,6 +35,8 @@ header-img: "img/Ubuntu/Ubuntu-bg.jpg"
 
 - `chown [-R] username filename/directoryname`  //更改文件或者文件夹所属用户
 
+- `touch 文件名`命令用来创建一个空的文件
+
 ###### scp语句
 - 语法： `scp [可选参数] file_source file_target `
 
