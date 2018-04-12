@@ -13,7 +13,7 @@ header-img: "img/Git/Git-bg.jpg"
 ---
 
 #### windows
-- windows下有一个非常好用的git管理工具，与github有很好的连接——[github destop](https://desktop.github.com/)。界面美观，方便好用。
+- windows下有一个非常好用的git管理工具，与github有很好的连接——[github desktop](https://desktop.github.com/)。界面美观，方便好用。
 
 - 同时要搭配Windows下的[git](https://git-scm.com/download/win)来使用。
 

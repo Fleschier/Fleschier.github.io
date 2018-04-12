@@ -25,7 +25,7 @@ header-img: "img/Spark/Spark-bg.jpg"
 
 - 今天试验了FP-Growth算法，打包到集群运行时报错:
 ```
-Items in a transaction must be unique but got WrappedArrayMaven 项目使用maven自带的打jar包的即可，不推荐在build当中打jar包
+Items in a transaction must be unique but got WrappedArrayMaven 
 ```
 出现此问题的主要原因是fpg算法要求输入的数据是RDD(Array[String])类型，但是Array类型中是不允许出现重复的内容的，所以才会出现这个错误，只需要对输入的数据做个distinct即可
 
