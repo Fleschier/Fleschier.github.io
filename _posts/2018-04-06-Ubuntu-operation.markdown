@@ -28,6 +28,9 @@ header-img: "img/Ubuntu/Ubuntu-bg.jpg"
 
 ## 一些注意点
 ---
+
+- 触摸板双击之后再移动就相当于长按鼠标左键的效果了
+
 - ls -l 的简略写法就是 ll，但是这个与ls -a又不同，后者用来显示隐藏文件和文件夹。
 
 - 在Ubuntu终端窗口中，复制粘贴的快捷键需要加上 shift，即粘贴是 ctrl+shift+v。
