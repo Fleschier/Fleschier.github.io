@@ -150,9 +150,20 @@ export PATH="$PATH: 软件的启动脚本文件所在的**绝对路径**"
 
 - 这两种方法最后的source语句就是让系统重新读取文件使之生效，没有写最后一句source的话，会在下次启动系统后生效
 
+###### 分布式文件系统(HDFS)
+- **注意，分布式文件系统中没有切换到某个目录下的概念，因为其文件全是分散在各个节点上的**
+
+- 分布式文件系统的文件路径完整格式为 hdfs://namenode|master:编号/root/...
+- 例如：`hdfs://master:8020/dataset/evaluation/bots_10m_10.csv`
+> 其实很多时候可以省略前面的`hdfs://master:8020:`
+
+- `hdfs dfs -ls  /...`显示分布式文件系统中某个目录（实际并不存在，只是逻辑上的）下的文件
+
+- `hdfs dfs -rm -r file|directory` 删除某个文件
+
 <br>
 - 参考资料：[linux命令大全-菜鸟教程](http://www.runoob.com/linux/linux-command-manual.html)以及各大博客网站大佬们的博文。
 
 <br>
 
->最后更新于2018.4.12
+>最后更新于2018.4.14

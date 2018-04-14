@@ -32,6 +32,10 @@ object HelloWorld {
 
 > scala的语句分号规则与C++相类似(一般都不用加，加了一般也不会错)
 
+> scala中的通配符为'_'，而C++中为'*'
+
+> scala与spark很契合，所以写spark程序推荐使用scala语言
+
 ###### 变量
 
 - Scala中变量分为可变变量和不可变变量。可变变量用关键字`var`修饰，不可变变量用`val`修饰。
@@ -91,33 +95,6 @@ val a: Array[String] = new Array[String](3)
 - 可以使用foreach()方法实现遍历。
 ![](/img/Scala/Scala-test.jpg)
 
-###### 二维数组
-
-- `var myMatrix = ofDim[Int](3,3)`
-
-- 示例：
-```
-import Array._
-object Test {
-   def main(args: Array[String]) {
-      var myMatrix = ofDim[Int](3,3)
-      // 创建矩阵
-      for (i <- 0 to 2) {
-         for ( j <- 0 to 2) {
-            myMatrix(i)(j) = j;
-         }
-      } 
-      // 打印二维阵列
-      for (i <- 0 to 2) {
-         for ( j <- 0 to 2) {
-            print(" " + myMatrix(i)(j));
-         }
-         println();
-      } 
-   }
-}
-```
-
 ## 流程控制结构
 ---
 ###### 判断语句
@@ -173,6 +150,24 @@ for(i <- 1 until (10，2))
 
 - 例如：使用 `标识符.foreach()`方法来实现对元素的遍历
 
+## case class与模式匹配
+- case class一般被翻译为样例类，它是一种特殊的类，能够被优化以用于模式匹配。
+
+- 
+
+## scala性能测试
+---
+- 测试程序的运行时间的函数：`System.currentTimeMillis()`
+
+- 用法：
+```
+...
+val time = System.currentTimeMillis()
+[要测试运行时间的代码段]
+println(" 耗时: " + (System.currentTimeMillis() - time))  //以时间差来看运行时间
+...
+```
+
 <br>
 
->最后更新于2018.4.10
+>最后更新于2018.4.14

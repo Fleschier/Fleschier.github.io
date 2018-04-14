@@ -11,7 +11,7 @@ header-img: "img/Spark/Spark-bg.jpg"
 
 ## 环境
 ---
-- spark支持多种语言的编写，包括Python，Java，scala以及R语言，本篇中均采用scala作为编程语言。
+- spark支持多种语言的编写，包括Python，Java，scala以及R语言，**本篇中均采用scala作为编程语言**。
 - 使用的编译器为intellij IDEA，工程为maven项目
 
 ###### 编译器的一些使用技巧
@@ -33,10 +33,10 @@ counts.saveAsTextFile("hdfs://...")
 ```
 - 精简版：  (足见scala的优美与强大)
 ```
-val counts = sc.textFile(hdfs://...)
-counts.flatMap(_.split(" ")).map(x => (x,1)).reduceByKey(_ + _).foreach(println) //打印结果
+val counts = sc.textFile(“hdfs://...”)
+counts.flatMap(_.split(" ")).map(x => (x,1)).reduceByKey(_ + _).collect().foreach(println) //打印结果
 ```
-
+- 注意：上面的.collect()不能少，因为这是一个action操作，一个语句如果没有action操作则spark什么也不会做。同时，**读取文件的路径一定要用引号括起来！**
 ## 关于jar包以及提交集群运行
 ---
 #### `spark-submit`命令
@@ -163,10 +163,10 @@ export HADOOP_CONF_DIR=XXX
 ```
 import org.apache.spark.sql.SparkSession
 val spark = SparkSession
-  .builder()
-  .appName("Spark SQL basic example")
-  .config("spark.some.config.option", "some-value")
-  .getOrCreate()
+  .builder()	//必须有
+  .appName("Spark SQL basic example") //可选项
+  .config("spark.some.config.option", "some-value")  //可选项
+  .getOrCreate() //必须有
 // For implicit conversions like converting RDDs to DataFrames
 import spark.implicits._
 ```
@@ -202,4 +202,4 @@ Items in a transaction must be unique but got WrappedArrayMaven
 - scala中的`.sortBy()`方法如果在括号里最前面加上一个减号表示按逆序排序。
 
 <br>
-> 最后更新于2018.4.11
+> 最后更新于2018.4.14
