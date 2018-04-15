@@ -45,6 +45,8 @@ header-img: "img/Ubuntu/Ubuntu-bg.jpg"
 
 - `cp filename filepath` //拷贝文件
 
+- `cp -r 源目录  指定目录` //拷贝一个文件夹到另一个目录
+
 - 从hdfs上取文件到本地需要链接集群，然后 `hdfs dfs -get /.../filename  storepath`
 
 - 查看路径：例如用`which python`查看python安装的路径
@@ -58,6 +60,8 @@ header-img: "img/Ubuntu/Ubuntu-bg.jpg"
 - `touch 文件名`命令用来创建一个空的文件
 
 - 查看系统的所有PATH环境变量： `echo $PATH`
+
+- `rm -rf` 强制 递归地删除某个文件或者文件夹的所有文件
 
 ###### 关于桌面快捷方式的创建
 
@@ -136,9 +140,7 @@ grep test *file
 
 - sudo apt-get -f install 修复安装"-f = ——fix-missing"
 
-- sudo apt-get remove package 删除包
-
-- sudo apt-get remove package - - purge 删除包，包括删除配置文件等
+- **sudo apt autoremove 卸载某个软件并且删除与之相关的多余依赖**
 
 - sudo apt-get update 更新源
 
