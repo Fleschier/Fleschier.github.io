@@ -125,7 +125,7 @@ scp -P 4588 remote@www.runoob.com:/usr/local/sin.sh /home/administrator
 grep test *file 
 ```
 
-###### Linux中添加环境变量的方法
+#### Linux中添加环境变量的方法
 
 > $PATH：决定了shell将到哪些目录中寻找命令或程序，PATH的值是一系列目录，当您运行一个程序时，Linux在这些目录下进行搜寻编译链接。
 
@@ -150,7 +150,7 @@ export PATH="$PATH: 软件的启动脚本文件所在的**绝对路径**"
 
 - 这两种方法最后的source语句就是让系统重新读取文件使之生效，没有写最后一句source的话，会在下次启动系统后生效
 
-###### 分布式文件系统(HDFS)
+#### 分布式文件系统(HDFS)
 - **注意，分布式文件系统中没有切换到某个目录下的概念，因为其文件全是分散在各个节点上的**
 
 - 分布式文件系统的文件路径完整格式为 hdfs://namenode|master:编号/root/...
