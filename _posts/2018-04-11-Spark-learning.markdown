@@ -45,6 +45,7 @@ counts.flatMap(_.split(" ")).map(x => (x,1)).reduceByKey(_ + _).collect().foreac
 ###### 命令行提交
 
 - 命令行下切换到spark的安装目录，执行
+
 ```
 ./bin/spark-submit \  
  --class <main-class> \
