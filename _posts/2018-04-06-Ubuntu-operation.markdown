@@ -18,7 +18,7 @@ header-img: "img/Ubuntu/Ubuntu-bg.jpg"
 
 - vim和gedit：这个不用我多说大家都知道，Linux非常好用的编辑软件
 
-- [SpaceVim](https://zhuanlan.zhihu.com/p/24802058)模块化Vim-IDE
+- [SpaceVim](https://zhuanlan.zhihu.com/p/24802058)模块化Vim-IDE。[使用手册](https://spacevim.org/cn/documentation/)
 
 - gnome 桌面： 装了gnome桌面和它的一系列插件之后我才真正感受到了Ubuntu的魅力！（教程以及主题百度很多）
 
