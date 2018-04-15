@@ -43,6 +43,7 @@ counts.flatMap(_.split(" ")).map(x => (x,1)).reduceByKey(_ + _).collect().foreac
 - spark-submit脚本用于在集群上启动应用程序,它位于Spark的bin目录中。
 
 ###### 命令行提交
+
 - 命令行下切换到spark的安装目录，执行
 ```
 ./bin/spark-submit \  
@@ -56,6 +57,7 @@ counts.flatMap(_.split(" ")).map(x => (x,1)).reduceByKey(_ + _).collect().foreac
 ```
 
 ###### 脚本方式：(创建并编辑.sh脚本文件，赋予执行权限即可)
+
 ```
 input=/data/
 output=/AR_res/
@@ -77,7 +79,9 @@ output=/AR_res/
     cat /root$output/part* > /root/res
     #sort /root$output/part* > /root/res
 ```
+
 ###### 常用的参数讲解
+
 - --class：应用程序的入口点,main函数所在的类（例如org.apache.spark.examples.SparkPi）
 
 - --master：群集的主网址（例如spark：//23.195.26.187：7077）
