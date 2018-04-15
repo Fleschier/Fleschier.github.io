@@ -37,6 +37,8 @@ val counts = sc.textFile(“hdfs://...”)
 counts.flatMap(_.split(" ")).map(x => (x,1)).reduceByKey(_ + _).collect().foreach(println) //打印结果
 ```
 - 注意：上面的.collect()不能少，因为这是一个action操作，一个语句如果没有action操作则spark什么也不会做。同时，**读取文件的路径一定要用引号括起来！**
+
+
 ## 关于jar包以及提交集群运行
 ---
 #### `spark-submit`命令
