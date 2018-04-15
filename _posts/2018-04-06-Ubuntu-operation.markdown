@@ -18,7 +18,11 @@ header-img: "img/Ubuntu/Ubuntu-bg.jpg"
 
 - vim和gedit：这个不用我多说大家都知道，Linux非常好用的编辑软件
 
+- [SpaceVim](https://zhuanlan.zhihu.com/p/24802058)模块化Vim-IDE
+
 - gnome 桌面： 装了gnome桌面和它的一系列插件之后我才真正感受到了Ubuntu的魅力！（教程以及主题百度很多）
+
+- 与gnome桌面对应的是tweak-tool(sudo apt install unity-tweak-tool)
 
 - yakuake : 可以从上方一键滑出和滑入的终端（滑出时强制窗口在最前端）（gnome中也有类似功能的插件，两个选一个即可）
 
@@ -204,6 +208,8 @@ export PATH=$PATH: 软件的启动脚本文件所在的**绝对路径**"
 
 <br>
 - 参考资料：[linux命令大全-菜鸟教程](http://www.runoob.com/linux/linux-command-manual.html)以及各大博客网站大佬们的博文。
+
+- 附[vim教程](https://github.com/wsdjeg/vim-galore-zh_cn)
 
 <br>
 
