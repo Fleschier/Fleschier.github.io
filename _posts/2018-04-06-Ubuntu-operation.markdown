@@ -129,7 +129,7 @@ scp -P 4588 remote@www.runoob.com:/usr/local/sin.sh /home/administrator
 grep test *file 
 ```
 
-###### apt命令详解
+###### apt常用命令
 - apt-cache search package 搜索包
 
 - apt-cache show package 获取包的相关信息，如说明、大小、版本等
@@ -144,19 +144,13 @@ grep test *file
 
 - sudo apt-get update 更新源
 
-- sudo apt-get upgrade 更新已安装的包
-
-- sudo apt-get dist-upgrade 升级系统
-
-- sudo apt-get dselect-upgrade 使用 dselect 升级
+- **sudo apt-get upgrade 更新已安装的包**
 
 - apt-cache depends package 了解使用依赖
 
 - apt-cache rdepends package 是查看该包被哪些包依赖
 
 - sudo apt-get build-dep package 安装相关的编译环境
-
-- apt-get source package 下载该包的源代码
 
 - sudo apt-get clean && sudo apt-get autoclean 清理无用的包
 
