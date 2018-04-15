@@ -131,20 +131,30 @@ grep test *file
 
 - 为什么要添加环境变量呢？如果你在Linux下载了一个免安装的软件，你要启动它的话，要么创建一个桌面快捷方式（方法见上文），要么就是每次进入它的目录点开。这时候如果我们把它添加进了PATH环境变量，那么我们只需要在终端中输入这个软件的名字，回车，就可以启动它了。
 
-- 方法一：修改profile文件（**注意：一定要切换到root用户，一定要切换到root用户，一定要切换到root用户(sudo su)! ! ! !** 否则最后保存文件会一直被拒绝又退不出去只能强退终端...可能还会有其他一些麻烦事...总之有的爽呢...）
-```
+- 方法一：修改profile文件（**注意：一定要切换到root用户，一定要切换到root用户，一定要切换到root用户(sudo su)! ! ! !** 否则最后保存文件会一直被拒绝又退不出去只能强退终端...可能还会有其他一些麻烦事...总之有的爽呢...） //对所有用户永久生效
+
+```  
 (root模式下执行) vim /etc/profile 
 在文档最后加入一行:
-export PATH="$PATH: 软件的启动脚本文件所在的**绝对路径**"
+export PATH=$PATH: 软件的启动脚本文件所在的**绝对路径**"
 (一般都是 /.../bin目录)
 退出修改后在root模式下执行： source /etc/profile
+或者重启
 ```
 
-- 方法二：修改.bashrc文件（注意点同上）
+- spark-shell的路径写法例子：
+```
+export SPARK_HOME=/usr/lib/spark/spark-2.2.0-bin-hadoop2.7
+export PATH=${SPARK_HOME}/bin:$PATH
+```
+
+> 使用source命令时要关闭fish，否则会报错
+
+- 方法二：修改.bashrc文件（注意点同上）//仅对当前用户永久生效
 ```
 (root模式下执行)vi /root/.bashrc
 在文档最后加入一行：
-export PATH="$PATH: 软件的启动脚本文件所在的**绝对路径**"
+export PATH=$PATH: 软件的启动脚本文件所在的**绝对路径**"
 退出修改后在root模式下执行： source /root/.bashrc
 ```
 
