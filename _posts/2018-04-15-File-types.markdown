@@ -25,6 +25,7 @@ header-img: "img/File/File-bg.jpg"
 
 - **不支持数字，不支持特殊字符**
 
+> 实际上csv文件就类似于一个没有线的表格
 
 
 <br>
