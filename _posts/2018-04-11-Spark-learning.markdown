@@ -9,7 +9,21 @@ header-img: "img/Spark/Spark-bg.jpg"
 ---
 > 不适合人类阅读的学习笔记
 
-## 环境
+> 有问题经常去**[stackoverflow.com](https://stackoverflow.com/)**上找找
+
+## 环境搭建
+---
+- 首先确保电脑安装了JAVA Development Kit JDK(使用java -version查看版本)
+
+- 安装hadoop（比如我在安装了hadoop-2.7.5），后面下载spark的版本时也要选择与hadoop版本一致的spark版本。然后添加hadoop路径到PATH（修改/etc/profile文件）
+
+- 下载spark，解压，设置路径。 ———[详细设置](https://www.cnblogs.com/earendil/p/5564492.html)
+
+- 调整日志级别控制输出的信息量：在spark了文件目录的conf目录下将log4j.properties.template 复制为  log4j.properties, 然后找到 log4j.rootCategory = INFO, console。将其中的INFO改为WARN即可。
+
+- [sbt安装网址](https://www.scala-sbt.org/download.html)
+
+## 编程环境
 ---
 - spark支持多种语言的编写，包括Python，Java，scala以及R语言，**本篇中均采用scala作为编程语言**。
 - 使用的编译器为intellij IDEA，工程为maven项目
@@ -192,11 +206,44 @@ import org.apache.spark.{SparkConf, SparkContext}
 ## DataSet 与 DataFrame
 ---
 
-#### case class与模式匹配
+- Dataset是特定域对象中的强类型集合，它可以使用函数或者相关操作并行地进行转换等操作。每个Dataset都有一个称为DataFrame的非类型化的视图，这个视图是行的数据集。
 
-- 讲到dataframe和dataset，首先要讲到case。
+- DataSet和RDD主要的区别是：DataSet是特定域的对象集合；然而RDD是任何对象的集合。DataSet的API总是强类型的；而且可以利用这些模式进行优化，然而RDD却不行。
 
-- 
+- Dataset的定义中还提到了DataFrame，DataFrame是特殊的Dataset，它在编译时不会对模式进行检测。在未来版本的Spark，Dataset将会替代RDD成为我们开发编程使用的API。
+
+###### 创建DataFrame
+```
+import org.apache.spark.sql.SparkSession
+...
+val sparkses = SparkSession
+				.builder()
+                .getOrCreate() //这两个为必须有的
+val df = sparkses.read.csv("...filename.csv")
+//这里read后面的方法名称与具体要读的文件类型有关
+df.show()  //打印内容
+```
+
+###### 创建DataSet
+
+-  方法一：创建case class （对于复杂的数据没有成功）
+- 例如
+```
+case class KeyValue(key: Int, value: String)
+val df = Seq((1,"asdf"),(2,"34234")).toDF("key", "value")
+val ds = df.as[KeyValue]
+// org.apache.spark.sql.Dataset[KeyValue] = [key: int, value: string]
+```
+
+- case class的参数上限为22
+
+- 方法二：以元组隐式转化
+- 例：
+```
+val tupDs = df.as[(Int,String)]
+// org.apache.spark.sql.Dataset[(Int, String)] = [_1: int, _2: string]
+```
+
 
 ## 一些注意点
 ---
