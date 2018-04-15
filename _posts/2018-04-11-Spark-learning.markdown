@@ -169,14 +169,17 @@ export HADOOP_CONF_DIR=XXX
 - Spark SQL中所有功能的入口点是 SparkSession 类. 要创建一个 SparkSession, 仅使用 SparkSession.builder()就可以了：
 ```
 import org.apache.spark.sql.SparkSession
-val spark = SparkSession
+val sparkses = SparkSession
   .builder()	//必须有
-  .appName("Spark SQL basic example") //可选项
-  .config("spark.some.config.option", "some-value")  //可选项
+  [.appName("Spark SQL basic example") ]
+  [.config("spark.some.config.option", "some-value")] 
+  [.master("local")]
   .getOrCreate() //必须有
-// For implicit conversions like converting RDDs to DataFrames
-import spark.implicits._
+// For implicit conversions like converting RDDs to DataFrames    //即需要用到类型转换时，要引入这个以你的变量名字开头的隐式转换包
+import sparkses.implicits._
 ```
+
+> 未来Dataset可能会取代RDD作为主要使用的API，而RDD会成为最底层的供用户使用的API
 
 - spark一般的入口是 sparkcontext类：
 ```
@@ -185,6 +188,15 @@ import org.apache.spark.{SparkConf, SparkContext}
  val conf = new SparkConf()[.set(...)...]
  val sc = new SparkContext(conf)
 ```
+
+## DataSet 与 DataFrame
+---
+
+#### case class与模式匹配
+
+- 讲到dataframe和dataset，首先要讲到case。
+
+- 
 
 ## 一些注意点
 ---
@@ -209,4 +221,4 @@ Items in a transaction must be unique but got WrappedArrayMaven
 - scala中的`.sortBy()`方法如果在括号里最前面加上一个减号表示按逆序排序。
 
 <br>
-> 最后更新于2018.4.14
+> 最后更新于2018.4.15
