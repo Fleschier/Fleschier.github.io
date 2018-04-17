@@ -76,6 +76,17 @@ val myboolean = scan.readBoolean()
 //这些方法均可以读取下一个输入并且自动转换类型
 ```
 
+#### 排序
+- 例如：
+```
+val a = new Array[Int](3)
+a(0)  =1 
+a(1) = 2
+a(2) = 0
+a.foreach(print)  //结果: 120
+val sorted_a = a.sortWith((x,y) => x > y)  //从大到小排序
+a.foreach(print) //结果： 210
+```
 
 #### 一些注意点
 
