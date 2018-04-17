@@ -229,7 +229,11 @@ df.show()  //打印内容
 -  方法一：创建case class （对于复杂的数据没有成功）
 - 例如
 ```
+val sparkses = SparkSession
+				.builder()
+                .getOrCreate()
 case class KeyValue(key: Int, value: String)
+import sparkses.implicit._   //引入隐式转换库
 val df = Seq((1,"asdf"),(2,"34234")).toDF("key", "value")
 val ds = df.as[KeyValue]
 // org.apache.spark.sql.Dataset[KeyValue] = [key: int, value: string]

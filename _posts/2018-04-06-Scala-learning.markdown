@@ -52,10 +52,34 @@ object HelloWorld {
 - 如果用lazy关键字修饰变量，则他只有在真正被使用时才会被赋值。
 > 注意lazy关键字只能修饰val类型变量，不能修饰var类型
 
+#### 输入输出
+###### 输出：`print("...")` 或者 `println("...")`
 
-###### 一些注意点
+###### 输入：
+> 注意，控制台的输入均为string类型，需要在后面加上.toInt  .toFloat等转换操作
 
-- scala中没有 `++` 操作，可以用 `+= 1` 代替 `++`（long类型好像没有 += 的运算，只能写成 x = 想=）
+- 控制台输入：
+```
+ val scan = scala.io.StdIn  //设置scan
+ val n = scan.readLine.trim.toInt  //输入一个int
+ val arr = scan.readLine.split(" ").map(_.trim.toInt)  //输入一串数字，之间以空格间隔
+ // .trim方法是去掉输入字符串两旁的空格
+```
+
+- scala还有一系列专门的用来读下**一个**输入并且可以自动转换的方法，例如：
+```
+val scan = scala.io.StdIn
+val myint = scan.readInt()
+val myfloat = scan.readFloat()
+val myboolean = scan.readBoolean()
+...
+//这些方法均可以读取下一个输入并且自动转换类型
+```
+
+
+#### 一些注意点
+
+- scala中没有 `++` 操作，可以用 `+= 1` 代替 `++`（x += y ，y可以是一个数字，也可以是一个数字变量，但不能是数组或是其他一些类似结构的某个元素）
 
 - Scala所有数据类型首字母都要大写，因为Scala中所有值类型都是对象，**其中布尔类型应写为“Boolean”**
 
