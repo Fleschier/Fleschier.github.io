@@ -84,7 +84,7 @@ a(0)  =1
 a(1) = 2
 a(2) = 0
 a.foreach(print)  //结果: 120
-val sorted_a = a.sortWith((x,y) => x > y)  //从大到小排序
+val sorted_a = a.sortWith((x,y) => x > y)  //从大到小排序（sortWith的参数为一个lambda函数，返回一个布尔值用于比较）
 a.foreach(print) //结果： 210
 ```
 
@@ -112,6 +112,18 @@ a.foreach(print) //结果： 210
 - 也就是符号类型
 
 - 符号字面量被写成： '<标识符> ，这里 <标识符> 可以是任何字母或数字的标识（注意：不能以数字开头）。这种字面量被映射成预定义类scala.Symbol的实例。
+
+###### string类
+- 一个Array[String]类型的数据使用 .toString方法后得到的是一个java.lang.string类型的数据，这个数据直接print是这个Array的地址（一堆符号）
+
+- 通常，toString 方法会返回一个“以文本方式表示”此对象的字符串。结果应是一个简明但易于读懂的信息表达式。建议所有子类都重写此方法。
+- Object 类的 toString 方法返回一个字符串，该字符串由类名（对象是该类的一个实例）、at 标记符“@”和此对象哈希码的无符号十六进制表示组成。换句话说，该方法返回一个字符串，它的值等于：
+```
+getClass().getName() + '@' + Integer.toHexString(hashCode())
+```
+
+- 将java.lang.string以可读的形式打印出来的方法：
+
 
 
 ###### 元组类型（类似于Python中的元组）
