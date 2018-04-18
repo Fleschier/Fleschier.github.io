@@ -216,13 +216,13 @@ for(i <- 1 until (10，2))
 
 - 用法：
 ```
-...
+[...]
 val time = System.currentTimeMillis()
 [要测试运行时间的代码段]
 println(" 耗时: " + (System.currentTimeMillis() - time))  //以时间差来看运行时间
-...
+[...]
 ```
 
 <br>
 
->最后更新于2018.4.14
+>最后更新于2018.4.18
