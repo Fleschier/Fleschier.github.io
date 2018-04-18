@@ -18,6 +18,8 @@ header-img: "img/Ubuntu/Ubuntu-bg.jpg"
 
 - vim和gedit：这个不用我多说大家都知道，Linux非常好用的编辑软件
 
+- [atom](https://atom.io/)  //集成许多功能于一体的编辑器
+
 - [SpaceVim](https://zhuanlan.zhihu.com/p/24802058)模块化Vim-IDE。[使用手册](https://spacevim.org/cn/documentation/)
 
 - gnome 桌面： 装了gnome桌面和它的一系列插件之后我才真正感受到了Ubuntu的魅力！（教程以及主题百度很多）
@@ -126,7 +128,7 @@ echo 'Hello World!'  #本句会在终端中打印 "Hello World!"
 ```
 对于脚本文件，有两个常见的权限设置：权限为755的脚本，则每个人都能执行，权限为700的 脚本，只有文件所有者能够执行。注意为了能够执行脚本，脚本必须是可读的。
 
-- 最后是运行脚本，终端进入脚本所在文件夹，输入： `./filename.sh` 
+- 最后是运行脚本，终端进入脚本所在文件夹，输入： `./filename.sh`
 
 ###### scp语句
 - 语法： `scp [可选参数] file_source file_target `
@@ -149,12 +151,12 @@ scp -P 4588 remote@www.runoob.com:/usr/local/sin.sh /home/administrator
 - 简单命令格式： `grep [option] pattern file`
 - 完整格式： `grep [-abcEFGhHilLnqrsvVwxy][-A<显示列数>][-B<显示列数>][-C<显示列数>][-d<进行动作>][-e<范本样式>][-f<范本文件>][--help][范本样式][文件或目录...]`
 
-- **例（最常用）**：`cat AR_log | grep "====" 
+- **例（最常用）**：`cat AR_log | grep "===="
 `此句就是打印日志AR_log当中所有包含了"===="的行
 
 - 在当前目录中，查找后缀有 file 字样的文件中包含 test 字符串的文件，并打印出该字符串的行。此时，可以使用如下命令：
 ```
-grep test *file 
+grep test *file
 ```
 
 ###### apt常用命令
@@ -193,7 +195,7 @@ grep test *file
 - 方法一：修改profile文件（**注意：一定要切换到root用户，一定要切换到root用户，一定要切换到root用户(sudo su)! ! ! !** 否则最后保存文件会一直被拒绝又退不出去只能强退终端...可能还会有其他一些麻烦事...总之有的爽呢...） //对所有用户永久生效
 
 ```  
-(root模式下执行) vim /etc/profile 
+(root模式下执行) vim /etc/profile
 在文档最后加入一行:
 export PATH=$PATH: 软件的启动脚本文件所在的**绝对路径**"
 (一般都是 /.../bin目录)
