@@ -226,7 +226,6 @@ export PATH=$PATH: 软件的启动脚本文件所在的**绝对路径**"
 
 - 分布式文件系统的文件路径完整格式为 hdfs://namenode|master:编号/root/...
 - 例如：`hdfs://master:8020/dataset/evaluation/bots_10m_10.csv`
-> 其实很多时候可以省略前面的`hdfs://master:8020:`
 
 - `hdfs dfs -ls  /...`显示分布式文件系统中某个目录（实际并不存在，只是逻辑上的）下的文件
 
