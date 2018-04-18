@@ -19,6 +19,8 @@ header-img: "img/Java/Java-bg.jpg"
 ## 基本语法
 ---
 
+> java与C++一样，需要用分号来分割句子
+
 #### 第一个JAVA程序：Helloworld
 
 - 示例
@@ -72,7 +74,7 @@ public class ENUM_class_Test{
 ```
 int x =1,y =2;
 x<y ? System.out.println("x<y"):System.out.println("x>y");
-``` 
+```
 - 注意，此三目运算符不是一个完整的式子，一般是用作赋值。
 
 #### Java注释
@@ -150,7 +152,7 @@ score = Float.parseFloat(str);
 - 例：
 ```
 import Java.util.Random;
-Random rand = new Random([数值]); 
+Random rand = new Random([数值]);
 int randomNum = rand.nextInt() //Random支持的随机值类型包括：boolean, byte, int, long, float, double
 int randomNUM2 = rand.nextInt(100); //表示获取[0,100)范围的随机数
 ...
@@ -213,11 +215,11 @@ public class test{
 		StringBuffer s1 = s; //此句会使得s1和s指向同一个对象
 		s1.append("BBBB");
 		Syetem.out.println("s = " + s.toString());
-		Syetem.out.println("s1 = " + s1.toString());	
+		Syetem.out.println("s1 = " + s1.toString());
 	}
 }
 ```
-- 输出结果为： 
+- 输出结果为：
 ```
 s = AAAAABBBB
 s1 = AAAAABBBB
@@ -240,7 +242,7 @@ class Printer{
 		int age = 20;
 		p.printinfo("Mike",age);
 		System.out.println("Now the initial age = " + age);
-	}	
+	}
 }
 ```
 
@@ -288,7 +290,7 @@ class 子类 extends 父类{
 ```
 - 抽象方法的定义：抽象方法是指只有声明而没有实现方法，用abstract修饰，一般格式如下：
 ```
-[访问修饰符] <abstract> 返回类型 方法名(参数列表); 
+[访问修饰符] <abstract> 返回类型 方法名(参数列表);
 ```
 >注意抽象类不能定义为final类，因为抽象类不能实例化。抽象方法也不能声明为final方法，因为要在子类中实现该抽象方法。
 
@@ -335,7 +337,7 @@ interface Computable{
 class TESt implements Computable{
 	private int y;
 	public TEST(int y){
-		this.y = y;	
+		this.y = y;
 	}
 	public int add(){ //实现抽象方法时添加public 和 return 语句
 		return x + y;
@@ -359,4 +361,3 @@ class TESt implements Computable{
 <br>
 
 >最后更新于2018.4.9
-
