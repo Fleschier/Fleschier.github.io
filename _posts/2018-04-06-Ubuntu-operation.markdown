@@ -22,7 +22,7 @@ header-img: "img/Ubuntu/Ubuntu-bg.jpg"
 
 - gnome 桌面： 装了gnome桌面和它的一系列插件之后我才真正感受到了Ubuntu的魅力！（教程以及主题百度很多）
 
-- docky(一款mac风格的dock)(sudo apt-get install docky)
+- docky(一款mac风格的dock,删除图标直接拉出去)(sudo apt-get install docky)
 
 - 与gnome桌面对应的是tweak-tool(sudo apt install unity-tweak-tool)
 
@@ -75,7 +75,29 @@ header-img: "img/Ubuntu/Ubuntu-bg.jpg"
 
 - 方法二： 有点蠢但是很简单的一个方法。对于那些没有安装直接可以使用的软件，我们在上个方法中提到的文件夹里是找不到 .desktop文件的。怎么办呢？我们只需要进入我们那个软件的目录，找到启动文件，创建一个它的链接文件（右键还是终端随意），然后将这个链接文件复制到桌面，改下名字即可。虽然和简单，但是缺点是没有图标....身为一个外观党还是有点难以接受的...
 
-- 方法三（未验证）：就是自己写一个.desktop文件，网上有很多教程，虽然我尝试过但是不知道为什么没能成功....所以等什么时候成功了再更吧.....
+- 方法三：就是自己写一个.desktop文件，这里举例我写的Moeditor的桌面文件：
+```
+//首先终端切到桌面
+vim Moeditor.desktop
+//然后输入如下内容
+[Desktop Entry]
+Version=1.0
+Type=Application
+Name=Moeditor
+GenericName=Moeditor
+Comment=editor for markdown
+Exec=/home/fleshier/Programe\ Files/Moeditor-linux-x64/Moeditor %F  //文件启动器的路径
+Terminal=false
+Icon=/home/fleshier/Programe\ Files/Images/icons/g10.png  //图标的路径
+StartupNotify=true
+Actions=Window;
+//空行
+[Desktop Action Window]
+Name=New Window
+Exec=/home/fleshier/Programe\ Files/Moeditor-linux-x64/Moeditor -n
+OnlyShowIn=Unity;
+
+```
 
 ###### 关于shell脚本的创建
 
