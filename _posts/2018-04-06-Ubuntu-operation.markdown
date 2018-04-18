@@ -22,6 +22,8 @@ header-img: "img/Ubuntu/Ubuntu-bg.jpg"
 
 - gnome 桌面： 装了gnome桌面和它的一系列插件之后我才真正感受到了Ubuntu的魅力！（教程以及主题百度很多）
 
+- docky(一款mac风格的dock)(sudo apt-get install docky)
+
 - 与gnome桌面对应的是tweak-tool(sudo apt install unity-tweak-tool)
 
 - yakuake : 可以从上方一键滑出和滑入的终端（滑出时强制窗口在最前端）（gnome中也有类似功能的插件，两个选一个即可）
