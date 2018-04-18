@@ -114,7 +114,24 @@ System.out.println("Please enter a num:");
 score = sn.nextFloat();
 System.out.println();
 ```
-- *为了简单起见，在每次要输入数据时都新建一个Scanner类*
+- *scan在读取多行数据时会遇到的问题：*
+```
+Scanner scan = new Scanner(System.in)
+int num  = scan.nextInt();  //这句会正确执行
+Double d = scan.nextDouble(); //这句也会正确执行，即使输入在不同的行上
+String s = scan.nextline();  //这句这样写便会读到一个空串×××××××
+```
+原因分析：首先，Scanner是一个扫描器，它扫描数据都是去内存中一块缓冲区中进行扫描并读入数据的，而我们在控制台中输入的数据也都是被先存入缓冲区中等待扫描器的扫描读取。这个扫描器在扫描过程中判断停止的依据就是“空白符”，空格啊，回车啊什么的都算做是空白符。
+nextInt()方法在扫描到空白符的时候会将前面的数据读取走，但会丢下空白符“\r”在缓冲区中，但是，nextLine()方法在扫描的时候会将扫描到的空白符一同清理掉。
+了解了这两个方法特性和区别，就知道了上边的代码究竟是怎么回事，以及知道了解决的方法。像是上边的代码nextInt()方法之后在缓冲区中留下了“\r”，然后nextLine()方法再去缓冲区找数据的时候首先看到了“\r”，然后就把这个“\r”扫描接收进来，并在缓冲区内清除掉。其实，nextLine()方法是执行过的，并没有不执行。
+
+- 解决方案：
+
+1. 在调用nextline()之前先调用一次nextline()将那个换行符读取掉
+
+2. 在读取Int的时候就调用nextline()方法，再用parseInt()转化为Int
+
+
 
 #### 图形界面输入方式
 
@@ -128,6 +145,28 @@ score = Float.parseFloat(str);
 ...
 ```
 
+## 输出
+---
+- 标准输出：`System.out.println();`
+
+- 格式化输出：`System.out.printf();` //格式化输出允许对输出进行规改
+```
+//"%"表示进行格式化输出，"%"之后的内容为格式的定义。
+System.out.printf("%f",d);//"f"表示格式化输出浮点数。
+System.out.printf("%9.2f",d);//"9.2"中的9表示输出的长度，2表示小数点后的位数。
+System.out.printf("%+9.2f",d);//"+"表示输出的数带正负号。
+System.out.printf("%-9.4f",d);//"-"表示输出的数左对齐（默认为右对齐）。
+System.out.printf("%+-9.3f",d);//"+-"表示输出的数带正负号且左对齐。
+System.out.printf("%d",i);//"d"表示输出十进制整数。
+System.out.printf("%o",i);//"o"表示输出八进制整数。
+System.out.printf("%x",i);//"d"表示输出十六进制整数。
+System.out.printf("%#x",i);//"d"表示输出带有十六进制标志的整数。
+System.out.printf("%s",s);//"d"表示输出字符串。
+System.out.printf("输出一个浮点数：%f，一个整数：%d，一个字符串：%s",d,i,s);
+//可以输出多个变量，注意顺序。
+System.out.printf("字符串：%2$s，%1$d的十六进制数：%1$#x",i,s);
+//"X$"表示第几个变量。
+```
 ## 一些注意点
 ---
 #### 数组
