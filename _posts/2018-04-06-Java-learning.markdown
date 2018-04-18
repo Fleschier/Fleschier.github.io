@@ -161,6 +161,11 @@ int randomNUM2 = rand.nextInt(100); //表示获取[0,100)范围的随机数
 #### String类
 
 - String是常量，对一个String的任何修改都会使java创建一个新的String，而原来的会被当做垃圾回收掉
+- 例如：
+```
+String a = "avc";
+a = "bfd";    //则会创建一个新的string，然后将a链向这个string，原先的string会被抛弃掉
+```
 
 ## Java的类，继承与接口
 
