@@ -80,7 +80,7 @@ val myboolean = scan.readBoolean()
 - 例如：
 ```
 val a = new Array[Int](3)
-a(0)  =1 
+a(0)  =1
 a(1) = 2
 a(2) = 0
 a.foreach(print)  //结果: 120
@@ -115,6 +115,8 @@ a.foreach(print) //结果： 210
 
 ###### string类
 - 一个Array[String]类型的数据使用 .toString方法后得到的是一个java.lang.string类型的数据，这个数据直接print是这个Array的地址（一堆符号）
+
+- string类的substring方法，有两个参数，第一个参数为起始位置，第二个参数为结束位置，可以不写，默认为末尾
 
 - 通常，toString 方法会返回一个“以文本方式表示”此对象的字符串。结果应是一个简明但易于读懂的信息表达式。建议所有子类都重写此方法。
 - Object 类的 toString 方法返回一个字符串，该字符串由类名（对象是该类的一个实例）、at 标记符“@”和此对象哈希码的无符号十六进制表示组成。换句话说，该方法返回一个字符串，它的值等于：
@@ -194,7 +196,7 @@ for(i <- 1 to 3){
 
 - 还可以设置for 循环的步长。例：
 ```
-for(i <- 1 until (10，2)) 
+for(i <- 1 until (10，2))
 	println("i = " + i);
 结果： i =1 i = 3 .... i = 9
 ```
@@ -206,7 +208,7 @@ for(i <- 1 until (10，2))
 ## case class与模式匹配
 - case class一般被翻译为样例类，它是一种特殊的类，能够被优化以用于模式匹配。
 
-- 
+-
 
 ## scala性能测试
 ---
