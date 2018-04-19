@@ -71,6 +71,15 @@ header-img: "img/Ubuntu/Ubuntu-bg.jpg"
 
 - `rm -rf` 强制 递归地删除某个文件或者文件夹的所有文件
 
+###### 关于添加Ubuntu的本地ssh-key与github相关联
+
+- 首先检测本地有没有安装ssh  `终端输入ssh`
+
+- 然后终端执行`ssh-kengen -t rsa`，连续三次默认回车就行。接着 ~/.ssh目录下就会多出来两个文件：`id_rsa`和`id_rsa.pub`
+
+- 接着只要在github上添加`id_rsa.pub`这个key就行了。在github的setting中，找到sshkey一栏，选择new key，将`id_rsa.pub`的文件内容复制到里面，随便起个title即可。
+
+
 ###### 关于桌面快捷方式的创建
 
 - 方法一：进入 /usr/share/applications/ 目录，里面会有**绝大多数**你安装的软件的 .desktop文件，只需要把你需要的软件的 .desktop文件复制到home目录下的 桌面文件夹里即可。
