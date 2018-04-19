@@ -11,6 +11,17 @@ header-img: "img/SS/SS.jpg"
 
 ## 安装Shadowsocks-Qt5
 ---
+```
+sudo add-apt-repository ppa:hzwhuang/ss-qt5
+sudo apt-get update
+sudo apt-get install shadowsocks-qt5
+```
+## 配置 shadowsocks-qt5
+---
+- 找好代理服务器，下载配置文件，选择从.json文件导入配置
+
+## 全局代理配置
+---
 
 
 
