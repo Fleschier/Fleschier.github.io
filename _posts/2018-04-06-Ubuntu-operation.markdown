@@ -80,6 +80,12 @@ header-img: "img/Ubuntu/Ubuntu-bg.jpg"
 - 接着只要在github上添加`id_rsa.pub`这个key就行了。在github的setting中，找到sshkey一栏，选择new key，将`id_rsa.pub`的文件内容复制到里面，随便起个title即可。
 
 
+###### 关于挂载本地的卷到Ubuntu
+
+- 使用`mount /dev/卷名  /挂载点`   //将某个卷挂载到某个文件目录下，该卷就可以在这个文件目录下访问了。
+
+- Ubuntu中，所有的硬件设备都是作为文件存储的，这一点与Windows不同。
+
 ###### 关于桌面快捷方式的创建
 
 - 方法一：进入 /usr/share/applications/ 目录，里面会有**绝大多数**你安装的软件的 .desktop文件，只需要把你需要的软件的 .desktop文件复制到home目录下的 桌面文件夹里即可。
@@ -247,4 +253,4 @@ export PATH=$PATH: 软件的启动脚本文件所在的**绝对路径**"
 
 <br>
 
->最后更新于2018.4.18
+>最后更新于2018.4.19
