@@ -6,7 +6,7 @@ email: fleschierchan@gmail.com
 description: "关于技术，关于生活 | 梦想中的艺术家 | 发掘更深层的世界 "
 keyword: "个人 | 技术 | 艺术"
 url: "https://fleschier.github.io"              # your host, for absolute URL
-baseurl: ""         # for example, '/blog' if your blog hosted on 'host/blog'
+#baseurl: ""         # for example, '/blog' if your blog hosted on 'host/blog'
 
 
 
