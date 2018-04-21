@@ -84,6 +84,11 @@ layout: default
                 <!-- Short About -->
                 <section class="visible-md visible-lg">
 
+                  <div class="short-about">
+                      {% if site.sidebar-avatar %}
+                          <img src="{{site.sidebar-avatar}}" />
+                      {% endif %}
+
                         <!-- SNS Link -->
                         <ul class="list-inline">
 
