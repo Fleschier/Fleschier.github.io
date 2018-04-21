@@ -1,6 +1,6 @@
 ---
 layout:     post
-title:      "Python学习笔记"
+title:      "Python学习笔记——基础"
 subtitle:   "Keep foolish, Keep hungry"
 date:       2018-04-6 16:47:00
 author:     "Fleschier"
