@@ -5,7 +5,7 @@ subtitle:   "Keep foolish, Keep hungry"
 date:       2018-04-6 16:47:00
 author:     "Fleschier"
 header-img: "img/Python/Python-bg.jpg"
-
+tags: Python
 ---
 
 >不适合人类阅读的学习笔记
@@ -117,7 +117,7 @@ elif <条件判断3>:
 else:
     <执行4>
 ```
-- 例： 
+- 例：
 ```
 age = 20
 if age >= 6:
@@ -141,7 +141,7 @@ else:
 
 #### 循环
 
-- 例（求和）： 
+- 例（求和）：
 ```
 for x in [1,2,3,4,5,6]:
 	sum = sum + x

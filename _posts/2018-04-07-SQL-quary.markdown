@@ -5,6 +5,7 @@ subtitle:   "Keep foolish, Keep hungry"
 date:       2018-04-7 20:55:00
 author:     "Fleschier"
 header-img: "img/SQL/SQL-bg.jpg"
+tags: SQL
 ---
 
 >不适合人类阅读的学习笔记
@@ -18,7 +19,7 @@ header-img: "img/SQL/SQL-bg.jpg"
 
 - 创建数据库 ：`create database XXX`
 
-- 带详细参数的数据库创建： 
+- 带详细参数的数据库创建：
 ```
 create database School on(
 	name = 'School_data',
@@ -46,7 +47,7 @@ create table student(
 	Sno char(6) primary key,  --主键
 	Sname varchar(8) not null constraint ck_1 unique, --创建时加入约束条件
 	Ssex char(2) not null constraint ck_2 check(Ssex in('男','女')),
-	Sage smallint constraint ck_3 check(sage>16), 
+	Sage smallint constraint ck_3 check(sage>16),
 	Sdept varchar(15) default 'JSJ'  --默认值
 )
 create table course(
@@ -148,7 +149,7 @@ alter table Course add constraint cs_4 check(Cno != Cpno)
 ###### 进阶(单表)
 
 ```
-select Sno,Sname,Sage from student 
+select Sno,Sname,Sage from student
 where Sage >= 19 and Sage <= 21 and Ssex = '女' order by Sage desc
 -- desc表示降序，asc表示升序
 ```
@@ -157,9 +158,9 @@ where Sage >= 19 and Sage <= 21 and Ssex = '女' order by Sage desc
 -- _表示一个字符，%表示任意多个字符,这里筛选出名字第二个字为‘明’的人
 ```
 
-```select Sno,Cno from SC where Grade is null 
+```select Sno,Cno from SC where Grade is null
 -- 如果用'= null'则查询结果为空
-``` 
+```
 
 ```select Sno,Cno,cast((Grade/10) as int)from SC
 -- cast(a as int)转换数据类型
@@ -172,66 +173,66 @@ where Sage >= 19 and Sage <= 21 and Ssex = '女' order by Sage desc
 ###### 进阶（统计）
 
 ```
-select count(*) as number from student 
-where Sname like '%明%' 
+select count(*) as number from student
+where Sname like '%明%'
 -- 统计名字有‘明’的人数
 ```
 
 ```
 select Cno,sum(Grade) as total_grade,avg(Grade) as avg_grade,max(Grade) as max_grade,min(Grade) as min_grade from SC  
-group by Cno 
+group by Cno
 order by avg_grade desc
 -- sum()求和
 ```
 
 ```
-select Cno from SC 
-where Grade >= 85 
-group by Cno 
+select Cno from SC
+where Grade >= 85
+group by Cno
 having count(Sno)>10
 -- where 筛选必须在group 之前，group之后可以用having筛选，两者可以并用
 ```
 
 ```
-select Sno from SC 
+select Sno from SC
 where Grade <60  
-group by Sno 
+group by Sno
 having count(Cno) > 2
 ```
 ###### 进阶（连接）
 
 ```
-select distinct Cno from student,SC 
+select distinct Cno from student,SC
 where student.Sno = SC.Sno and Sdept = 'JSJ'
 -- 连接要写出连接条件
 ```
 
 ```
 -- 三种写法
-select Sname from student,SC 
+select Sname from student,SC
 where student.Sno = SC.Sno and Cno = 1002
 XXXXXX
-select Sname from student 
-join SC on student.Sno = Sc.Sno 
+select Sname from student
+join SC on student.Sno = Sc.Sno
 where Cno = 1002             -- JOIN..ON..语句
 XXXXXX
-select Sname from student 
+select Sname from student
 where Sno in(                --嵌套执行
 	select Sno from SC where Cno = 1002
 )
 ```
 ```
-select student.Sno, Grade from student,course,SC 
+select student.Sno, Grade from student,course,SC
 where student.Sno = SC.Sno and course.Cno = SC.Cno and Cname = '数据库原理' and Grade <60
 --用表名.列名来获取具有相同列名的几个表中某个表的某一列
 ```
 
 ```
 -- 两种写法
-select student.Sname from student,SC 
+select student.Sname from student,SC
 where student.Sno = SC.Sno and Grade >= 80 and Cno = 1004
 XXXXXX
-select Sname from student 
+select Sname from student
 where Sno in(                --嵌套写法
 	select Sno from SC where Grade > 80 and Cno in(
 		select Cno from course where Cname = '数据库原理'
@@ -243,12 +244,12 @@ where Sno in(                --嵌套写法
 
 ```
 -- 找出平均成绩最大的一个（两种写法）
-select  top 1 Sno,avg(Grade) as avg_grade from SC 
-group by Sno 
+select  top 1 Sno,avg(Grade) as avg_grade from SC
+group by Sno
 order by avg(Grade) desc
 XXXXXX
-select Sno,avg(Grade) as avg_grade from SC 
-group by Sno 
+select Sno,avg(Grade) as avg_grade from SC
+group by Sno
 having avg(Grade) >= all(select avg(Grade) from SC group by Sno)
 ```
 
@@ -269,11 +270,11 @@ having avg(Grade) >= all(select avg(Grade) from SC group by Sno)
 ###### 循环生成数据
 ```
 --生成大量数据
-create procedure usp_makedata as 
+create procedure usp_makedata as
 declare @nCnt int, @sNo char(6), @sname varchar(8)
 set @nCnt = 12000 --counter
 while @nCnt <999999
-begin 
+begin
 	set @nCnt = @nCnt +1
 	set @sNo = convert(varchar(6),@nCnt)
 	set @sName = '张' +@sno
@@ -290,7 +291,7 @@ declare @nCount int ,@data int
 set @nCount=0
 while @nCount <100
 begin
-	select @data = count(*) from student 
+	select @data = count(*) from student
 	where sname <'张3800' or sname >'张8800'
 	set @nCount =@nCount + 1
 end

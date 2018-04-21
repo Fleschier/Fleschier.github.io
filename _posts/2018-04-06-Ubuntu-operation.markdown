@@ -5,7 +5,7 @@ subtitle:   "点滴成海"
 date:       2018-04-6 16:47:00
 author:     "Fleschier"
 header-img: "img/Ubuntu/Ubuntu-bg.jpg"
-
+tags: Ubuntu
 ---
 
 >不适合人类阅读的备忘笔记
@@ -70,6 +70,8 @@ header-img: "img/Ubuntu/Ubuntu-bg.jpg"
 - 查看系统的所有PATH环境变量： `echo $PATH`
 
 - `rm -rf` 强制 递归地删除某个文件或者文件夹的所有文件
+
+- `dpkg -i filename.deb`  //安装 .deb 文件
 
 ###### 关于添加Ubuntu的本地ssh-key与github相关联
 

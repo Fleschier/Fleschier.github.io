@@ -5,7 +5,7 @@ subtitle:   "Keep foolish  Keep hungry"
 date:       2018-04-15 16:47:00
 author:     "Fleschier"
 header-img: "img/File/File-bg.jpg"
-
+tags: FileTypes
 ---
 > 不适合人类阅读的学习笔记
 

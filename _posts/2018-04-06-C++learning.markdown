@@ -5,7 +5,7 @@ subtitle:   "Keep foolish, Keep hungry"
 date:       2018-04-6 16:47:00
 author:     "Fleschier"
 header-img: "img/C++/C++-bg.jpg"
-
+tags: C++
 ---
 
 >不适合人类阅读的学习笔记
@@ -37,7 +37,7 @@ private :
 
 - 模板类所有的函数，如果在类外面实现的话，需要写成如下形式：
 ```
-template <class T> 
+template <class T>
 T_Class<T>::max( ){  
      return (x > y)? x : y;  
 }  

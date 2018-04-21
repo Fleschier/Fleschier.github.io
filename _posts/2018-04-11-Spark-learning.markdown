@@ -5,7 +5,7 @@ subtitle:   "Keep foolish  Keep hungry"
 date:       2018-04-11 16:47:00
 author:     "Fleschier"
 header-img: "img/Spark/Spark-bg.jpg"
-
+tags: Spark
 ---
 > 不适合人类阅读的学习笔记
 
@@ -65,8 +65,8 @@ counts.flatMap(_.split(" ")).map(x => (x,1)).reduceByKey(_ + _).collect().foreac
 ```
 ./bin/spark-submit \  
  --class <main-class> \
- --master <master-url> \ 
- --deploy-mode <deploy-mode> \ 
+ --master <master-url> \
+ --deploy-mode <deploy-mode> \
  --conf <key>=<value> \  
      ... # other options  
  <application-jar> \  
@@ -92,7 +92,7 @@ output=/AR_res/
         $output \
         2>&1 | tee log/AR_log
     rm -rf AR_res/
-    hdfs dfs -get $output 
+    hdfs dfs -get $output
     cat /root$output/part* > /root/res
     #sort /root$output/part* > /root/res
 ```
@@ -186,7 +186,7 @@ import org.apache.spark.sql.SparkSession
 val sparkses = SparkSession
   .builder()	//必须有
   [.appName("Spark SQL basic example") ]
-  [.config("spark.some.config.option", "some-value")] 
+  [.config("spark.some.config.option", "some-value")]
   [.master("local")]
   .getOrCreate() //必须有
 // For implicit conversions like converting RDDs to DataFrames    //即需要用到类型转换时，要引入这个以你的变量名字开头的隐式转换包
@@ -257,7 +257,7 @@ val tupDs = df.as[(Int,String)]
 
 - 今天试验了FP-Growth算法，打包到集群运行时报错:
 ```
-Items in a transaction must be unique but got WrappedArrayMaven 
+Items in a transaction must be unique but got WrappedArrayMaven
 ```
 出现此问题的主要原因是fpg算法要求输入的数据是RDD(Array[String])类型，但是Array类型中是不允许出现重复的内容的，所以才会出现这个错误，只需要对输入的数据做个distinct即可
 
