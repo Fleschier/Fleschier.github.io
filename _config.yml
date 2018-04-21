@@ -3,7 +3,7 @@ title: 时间海
 SEOTitle: 渐寒^ | Fleschier
 header-img: img/home-bg.jpg
 email: fleschierchan@gmail.com
-description: "关于技术，关于生活 | 梦想中的艺术家 | 与你一起发现更深层的世界 "
+description: "关于技术，关于生活 | 梦想中的艺术家 | 发掘更深层的世界 "
 keyword: "个人 | 技术 | 艺术"
 url: "https://fleschier.github.io"              # your host, for absolute URL
 baseurl: ""         # for example, '/blog' if your blog hosted on 'host/blog'
@@ -12,11 +12,11 @@ baseurl: ""         # for example, '/blog' if your blog hosted on 'host/blog'
 
 # SNS settings
 RSS: true
-#weibo_username:    
+#weibo_username:
 #zhihu_username:     Fleschier
 github_username:    Fleschier
-#twitter_username:  
-#facebook_username: 
+#twitter_username:
+#facebook_username:
 
 
 
