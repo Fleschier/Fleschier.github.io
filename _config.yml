@@ -5,10 +5,6 @@ header-img: img/home-bg.jpg
 email: fleschierchan@gmail.com
 description: " Welcome~ "
 keyword: "个人 | 技术 | 艺术"
-# 头像里面的标题
-avatarTitle: Fleschier
-# 头像里面的描述
-avatarDesc: There is nothing normal here......
 url: "https://fleschier.github.io"              # your host, for absolute URL
 #baseurl: ""         # for example, '/blog' if your blog hosted on 'host/blog'
 
@@ -56,19 +52,6 @@ kramdown:
 # Google Analytics
 ##ga_track_id: 'UA-49627206-1'            # Format: UA-xxxxxx-xx
 ga_domain: fleschier.github.io
-
-permalink: /:year/:month/:title/
-# Format
-highlighter: rouge
-
-textColor: #FF0000
-
-# supported colors: blue, green, purple, red, orange or slate. If you need clear, leave it empty.
-cover_color: clear
-
-# The blog button should not be removed.
-blog_button:
-    title: 博客主页
 
 
 # Sidebar settings
