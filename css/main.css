@@ -668,7 +668,7 @@ img::-moz-selection {
   .panel-subtitle {
     font-family: "ff-tisa-web-pro-1", "ff-tisa-web-pro-2", "Lucida Grande", "Hiragino Sans GB", "Hiragino Sans GB W3", "Microsoft YaHei", "WenQuanYi Micro Hei", sans-serif;
     font-size: 0.6em;
-    font-weight: lighter;
+    font-weight: bold;
     letter-spacing: 3px;
     color: #CCCCCC;
     -webkit-font-smoothing: antialiased; }
@@ -736,7 +736,7 @@ img::-moz-selection {
     /* Safari */ }
 
   .panel-inverted {
-    font-weight: 100;
+    font-weight: 200;
     text-align: center;
     color: #FFF;
     text-shadow: 0 1px 1px rgba(0, 0, 0, 0.4); }
