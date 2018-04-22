@@ -1,7 +1,6 @@
 ---
 layout:     post
 title:      "一些文件类型记录"
-subtitle:   "Keep foolish  Keep hungry"
 date:       2018-04-15 16:47:00
 tags: FileTypes
 ---

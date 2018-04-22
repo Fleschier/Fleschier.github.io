@@ -1,7 +1,6 @@
 ---
 layout:     post
 title:      "区块链初涉"
-subtitle:   "Keep foolish  Keep hungry"
 date:       2018-04-15 17:01:00
 tags: BlockChain
 ---

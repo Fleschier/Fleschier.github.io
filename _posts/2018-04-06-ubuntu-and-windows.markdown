@@ -1,7 +1,6 @@
 ---
 layout:     post
 title:      "UEFI双系统的那些坑"
-subtitle:   "更聪明的人，总是踩了更多的坑的..."
 date:       2018-04-06 09:40:00
 tags: 双系统
 ---

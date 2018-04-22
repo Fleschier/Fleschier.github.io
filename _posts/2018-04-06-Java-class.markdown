@@ -1,7 +1,6 @@
 ---
 layout:     post
 title:      "Java学习笔记——类与继承"
-subtitle:   "Keep foolish, Keep hungry"
 date:       2018-04-18 16:47:00
 tags: Java
 ---

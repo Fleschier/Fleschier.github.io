@@ -1,7 +1,6 @@
 ---
 layout:     post
 title:      "C++学习笔记——类"
-subtitle:   "Keep foolish, Keep hungry"
 date:       2018-04-6 16:47:00
 tags: C++
 ---

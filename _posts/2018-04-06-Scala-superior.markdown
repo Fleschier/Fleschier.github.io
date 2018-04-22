@@ -1,7 +1,6 @@
 ---
 layout:     post
 title:      "Scala学习笔记——进阶"
-subtitle:   "Keep foolish, Keep hungry"
 date:       2018-04-6 16:47:00
 tags: Scala
 ---

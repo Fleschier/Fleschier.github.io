@@ -28,7 +28,7 @@ permalink: /:year/:month/:title/
 # Format
 highlighter: rouge
 
-textColor: #FF0000
+textColor: #0000
 
 # supported colors: blue, green, purple, red, orange or slate. If you need clear, leave it empty.
 cover_color: clear
@@ -43,6 +43,9 @@ nav:
     - {title: 归档, description: tags, url: '/tags'}
     - {title: 关于, description: about, url: '/about'}
 
+# Featured Tags
+featured-tags: true                   # whether or not using Feature-Tags
+featured-condition-size: 0            # A tag will be featured if the size of it is more than this condition value
 
 # Pagination
 gems: [jekyll-paginate,jekyll-sitemap]

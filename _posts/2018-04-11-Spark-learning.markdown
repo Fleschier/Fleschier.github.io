@@ -1,7 +1,6 @@
 ---
 layout:     post
 title:      "Spark学习笔记——基础"
-subtitle:   "Keep foolish  Keep hungry"
 date:       2018-04-11 16:47:00
 tags: Spark
 ---

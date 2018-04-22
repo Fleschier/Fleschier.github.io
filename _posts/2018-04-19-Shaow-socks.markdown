@@ -1,7 +1,6 @@
 ---
 layout:     post
 title:      "Shadowsocks"
-subtitle:   "科学上网"
 date:       2018-04-19 22:04:00
 tags: ssr
 ---
