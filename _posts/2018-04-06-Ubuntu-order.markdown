@@ -3,8 +3,6 @@ layout:     post
 title:      "Ubuntu终端常用命令"
 subtitle:   "点滴成海"
 date:       2018-04-6 16:47:00
-author:     "Fleschier"
-header-img: "img/Ubuntu/Ubuntu-bg.jpg"
 tags: Ubuntu
 ---
 

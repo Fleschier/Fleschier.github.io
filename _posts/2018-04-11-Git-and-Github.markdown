@@ -3,8 +3,6 @@ layout:     post
 title:      "git 与 github 随笔"
 subtitle:   "点滴成海"
 date:       2018-04-11 22:04:00
-author:     "Fleschier"
-header-img: "img/Git/Git-bg.jpg"
 tags: Git
 ---
 > 不适合人类阅读的随笔~

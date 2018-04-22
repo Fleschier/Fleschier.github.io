@@ -3,8 +3,6 @@ layout:     post
 title:      "UEFI双系统的那些坑"
 subtitle:   "更聪明的人，总是踩了更多的坑的..."
 date:       2018-04-06 09:40:00
-author:     "Fleschier"
-header-img: "img/linux-and-windows/post-2018-04-06.jpg"
 tags: 双系统
 ---
 > 不适合人类阅读的自我备忘笔记

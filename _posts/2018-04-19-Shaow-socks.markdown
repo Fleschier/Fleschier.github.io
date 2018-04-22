@@ -3,8 +3,6 @@ layout:     post
 title:      "Shadowsocks"
 subtitle:   "科学上网"
 date:       2018-04-19 22:04:00
-author:     "Fleschier"
-header-img: "img/SS/SS-bg.jpg"
 tags: ssr
 ---
 > 科学上网从我做起

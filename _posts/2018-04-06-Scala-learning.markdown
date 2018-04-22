@@ -3,8 +3,6 @@ layout:     post
 title:      "Scala学习笔记——基础"
 subtitle:   "Keep foolish, Keep hungry"
 date:       2018-04-6 16:47:00
-author:     "Fleschier"
-header-img: "img/Scala/Scala-bg.jpg"
 tags: Scala
 ---
 

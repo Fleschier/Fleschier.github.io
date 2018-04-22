@@ -3,8 +3,6 @@ layout:     post
 title:      "Spark学习笔记——基础"
 subtitle:   "Keep foolish  Keep hungry"
 date:       2018-04-11 16:47:00
-author:     "Fleschier"
-header-img: "img/Spark/Spark-bg.jpg"
 tags: Spark
 ---
 > 不适合人类阅读的学习笔记

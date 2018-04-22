@@ -3,8 +3,6 @@ layout:     post
 title:      "数据库常用quary语句"
 subtitle:   "Keep foolish, Keep hungry"
 date:       2018-04-7 20:55:00
-author:     "Fleschier"
-header-img: "img/SQL/SQL-bg.jpg"
 tags: SQL
 ---
 
