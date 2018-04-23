@@ -18,11 +18,12 @@ tags: Scala
 - 测试程序的运行时间的函数：`System.currentTimeMillis()`
 
 - 用法：
+
 ```
 [...]
-val time = System.currentTimeMillis()
-[要测试运行时间的代码段]
-println(" 耗时: " + (System.currentTimeMillis() - time))  //以时间差来看运行时间
+  val time = System.currentTimeMillis()
+  [要测试运行时间的代码段]
+  println(" 耗时: " + (System.currentTimeMillis() - time))  //以时间差来看运行时间
 [...]
 ```
 
