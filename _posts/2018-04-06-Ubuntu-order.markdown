@@ -12,7 +12,7 @@ tags: Ubuntu
 
 ###### 常用基本命令
 
-- ls -l 的简略写法就是 ll，但是这个与ls -a又不同，后者用来显示隐藏文件和文件夹。
+- `ls -l` 的简略写法就是 `ll`，但是这个与`ls -a`又不同，后者用来显示隐藏文件和文件夹。
 
 - ubuntu改文件名用 `mv name1 name2`即可
 
@@ -55,38 +55,38 @@ grep test *file
 
 ###### apt常用命令
 
-- apt-cache search package 搜索包
+- `apt-cache search package` 搜索包
 
-- apt-cache show package 获取包的相关信息，如说明、大小、版本等
+- `apt-cache show package` 获取包的相关信息，如说明、大小、版本等
 
-- sudo apt-get install package 安装包
+- `sudo apt-get install package` 安装包
 
-- sudo apt-get install package - - reinstall 重新安装包
+- `sudo apt-get install package - - reinstall` 重新安装包
 
-- sudo apt-get -f install 修复安装"-f = ——fix-missing"
+- `sudo apt-get -f install` 修复安装 "-f = ——fix-missing"
 
-- **sudo apt autoremove 卸载某个软件并且删除与之相关的多余依赖**
+- `sudo apt autoremove` **卸载某个软件并且删除与之相关的多余依赖**
 
-- sudo apt-get update 更新源
+- `sudo apt-get update` 更新源
 
-- **sudo apt-get upgrade 更新已安装的包**
+- `sudo apt-get upgrade` **更新已安装的包**
 
-- apt-cache depends package 了解使用依赖
+- `apt-cache depends package` 了解使用依赖
 
-- apt-cache rdepends package 是查看该包被哪些包依赖
+- `apt-cache rdepends package` 是查看该包被哪些包依赖
 
-- sudo apt-get build-dep package 安装相关的编译环境
+- `sudo apt-get build-dep package` 安装相关的编译环境
 
-- sudo apt-get clean && sudo apt-get autoclean 清理无用的包
+- `sudo apt-get clean && sudo apt-get autoclean` 清理无用的包
 
-- sudo apt-get check 检查是否有损坏的依赖
+- `sudo apt-get check` 检查是否有损坏的依赖
 
 ###### scp语句
 
 - 语法： `scp [可选参数] file_source file_target `
 
 - 例：`scp /home/fleshier/My_Programes/Programes/AssociationRuleDiscovery/target/AR.jar   root@192.168.1.201:/root`
-此句就是吧一个本地的文件拷贝到远端的服务器上，用户是root，服务器地址是192.168.1.201，存放目录是 /root
+此句就是吧一个本地的文件拷贝到远端的服务器上，用户是root，服务器地址是192.168.1.201，存放目录是 `/root`
 
 - 如果指定了用户名（如上例），则需要输入密码，如果没有指定用户名，则回车后需要输入用户名和密码。
 

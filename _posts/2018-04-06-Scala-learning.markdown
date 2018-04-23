@@ -144,7 +144,7 @@ getClass().getName() + '@' + Integer.toHexString(hashCode())
 val a: Array[String] = new Array[String](3)
 或者： val a = new Array[String](3)
 ```
-- 赋值： `a(0) = "abc"`  //注意即时是声明为val变量，数组a的元素的值也是可以改变的。 **同时，使用索引时数组名后面跟的是圆括号而不是方括号，这点与C++不同，切记**
+- 赋值： `a(0) = "abc"`  //注意即使是声明为val变量，数组a的元素的值也是可以改变的。 **同时，使用索引时数组名后面跟的是圆括号而不是方括号，这点与C++不同，切记**
 
 - 可以使用foreach()方法实现遍历。
 ![](/images/Scala/Scala-test.jpg)

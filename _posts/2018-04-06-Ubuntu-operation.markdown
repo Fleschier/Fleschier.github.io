@@ -21,9 +21,9 @@ tags: Ubuntu
 
 - gnome 桌面： 装了gnome桌面和它的一系列插件之后我才真正感受到了Ubuntu的魅力！（教程以及主题百度很多）
 
-- docky(一款mac风格的dock,删除图标直接拉出去)(sudo apt-get install docky)
+- docky: 一款mac风格的dock,删除图标直接拉出去(sudo apt-get install docky)
 
-- 与gnome桌面对应的是tweak-tool(sudo apt install unity-tweak-tool)
+- tweak-tool: 与gnome桌面对应的是tweak-tool(sudo apt install unity-tweak-tool)
 
 - yakuake : 可以从上方一键滑出和滑入的终端（滑出时强制窗口在最前端）（gnome中也有类似功能的插件，两个选一个即可）
 
@@ -158,7 +158,7 @@ export PATH=$PATH: 软件的启动脚本文件所在的**绝对路径**"
 #### 分布式文件系统(HDFS)
 - **注意，分布式文件系统中没有切换到某个目录下的概念，因为其文件全是分散在各个节点上的**
 
-- 分布式文件系统的文件路径完整格式为 hdfs://namenode|master:编号/root/...
+- 分布式文件系统的文件路径完整格式为 `hdfs://namenode|master:编号/root/...`
 - 例如：`hdfs://master:8020/dataset/evaluation/bots_10m_10.csv`
 
 - `hdfs dfs -ls  /...`显示分布式文件系统中某个目录（实际并不存在，只是逻辑上的）下的文件

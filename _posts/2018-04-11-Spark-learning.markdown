@@ -34,7 +34,9 @@ tags: Spark
 - 新建的Maven项目很可能缺失很多spark的库，需要修改pom文件来使得编译器引入这些库
 
 ## spark下的 wordcount
+---
 > 摘自官方文档
+
 ```
 text_file = sc.textFile("hdfs://...") //文件需要放在hdfs上
 counts = text_file.flatMap(lambda line: line.split(" ")) \
@@ -212,15 +214,15 @@ import org.apache.spark.{SparkConf, SparkContext}
 ```
 Items in a transaction must be unique but got WrappedArrayMaven
 ```
-出现此问题的主要原因是fpg算法要求输入的数据是RDD(Array[String])类型，但是Array类型中是不允许出现重复的内容的，所以才会出现这个错误，只需要对输入的数据做个distinct即可
+出现此问题的主要原因是fpg算法要求输入的数据是`RDD(Array[String])`类型，但是Array类型中是不允许出现重复的内容的，所以才会出现这个错误，只需要对输入的数据做个distinct即可
 
 - spark中出现一长细条的信息才是报错
 
-- List 的distinct 方法会对列表去重
+- List 的 `distinct` 方法会对列表去重
 
 - item::list 将新生成一个列表，item会成为新列表的有元素
 
-- Array 不能被flatMap.必须为list.(?)
+- Array 不能被`flatMap`,必须为`list.(?)`
 
 - scala中的`.sortBy()`方法如果在括号里最前面加上一个减号表示按逆序排序。
 
