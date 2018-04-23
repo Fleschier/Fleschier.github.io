@@ -93,7 +93,7 @@ a.foreach(print) //结果： 210
 
 - Scala所有数据类型首字母都要大写，因为Scala中所有值类型都是对象，**其中布尔类型应写为“Boolean”**
 
-- Scala中有<= 和 >= 以及逻辑与 && 和逻辑或 || 运算符，与C++相同。
+- Scala中有 `<=` 和 `>=` 以及逻辑与 `&&` 和逻辑或 `||` 运算符，与C++相同。
 
 - Scala中String类型就是Java中的String.lang.String类型，因此可以调用Java中String的所有方法（例：`str.reverse`表示字符逆序）
 
@@ -147,7 +147,7 @@ val a: Array[String] = new Array[String](3)
 - 赋值： `a(0) = "abc"`  //注意即时是声明为val变量，数组a的元素的值也是可以改变的。 **同时，使用索引时数组名后面跟的是圆括号而不是方括号，这点与C++不同，切记**
 
 - 可以使用foreach()方法实现遍历。
-![](/img/Scala/Scala-test.jpg)
+![](/images/Scala/Scala-test.jpg)
 
 ## 流程控制结构
 ---

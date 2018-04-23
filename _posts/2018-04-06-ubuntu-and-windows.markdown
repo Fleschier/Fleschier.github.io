@@ -20,7 +20,7 @@ tags: 双系统
 ## 第三方启动引导程序——refind
 ---
 
-- refind是一款功能非常强大的开机启动引导程序，它能够自定义开机界面。你可以吧系统图标，背景什么的换成你自己喜欢的风格。这里附上一张我采用的主题开机界面![](/img/linux-and-windows/opening-bg.jpg)如果你也喜欢这一风格，[这里是链接地址](https://github.com/EvanPurkhiser/rEFInd-minimal)。
+- refind是一款功能非常强大的开机启动引导程序，它能够自定义开机界面。你可以吧系统图标，背景什么的换成你自己喜欢的风格。这里附上一张我采用的主题开机界面![](/images/linux-and-windows/opening-bg.jpg)如果你也喜欢这一风格，[这里是链接地址](https://github.com/EvanPurkhiser/rEFInd-minimal)。
 
 - refind是一款免费的软件([官方下载地址](http://www.rodsbooks.com/refind/getting.html))，如果你高兴也可以给作者赞助。
 
