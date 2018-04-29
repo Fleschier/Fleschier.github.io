@@ -44,9 +44,6 @@ tags: Python
 - 使用方法：
 ```
 import 模块名  #引入整个模块
-```
-
-```
 from 模块名 import 函数名  //引入某个函数
 from 模块名 import *   //引入所有函数
 ```
