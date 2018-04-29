@@ -26,16 +26,20 @@ tags: Python
 
 - **Python中不需要声明变量类型，编译器会根据赋值自动判别，但是作为程序的编写者，我们需要清楚某个变量究竟是什么类型的**
 
+- Python中单独的下划线是特殊的变量，表示上一次运算的结果。
 
 ###### 输出
 
-- `print("Hellowrold! \n","This is my first Python program!")`
+- 标准输出格式： `print([输出1，输出2,....,输出n][,sep = 分隔符][,end = 结束符])`
+> 默认以空格分割，换行符结尾
 
 - 各个输出之间以逗号间隔
 
 - `print()`函数不写参数即默认输出一个空行。在一批数据输出结束后，好的编程习惯是在末尾加上一个`print()`，使得输出美观。
 
 - Python的输出可以有运算在里面，例如：`print(5 * '*')` 则会打印出 `*****`
+
+- 在输出字符串时，可以在字符串的引号前加一个 `r` 使得转义字符 `\` 失效。
 
 ###### 输入
 
@@ -104,7 +108,7 @@ a = complex(2,3)
 b = 1 + 2j
 c = 3 - 5j
 #a,b,c都是复数
-要获取复数的实部和虚部，可使用例如：a.real(a的实部), a.imag(a的虚部)
+#要获取复数的实部和虚部，可使用例如：a.real(a的实部), a.imag(a的虚部)，结果都是浮点型
 ```
 - `45e15`表示45*10^15，这是科学计数法的写法
 
@@ -193,9 +197,9 @@ else:
 - 例：
 ```
 age = 20
-if age >= 6:
+if age >= 6 and age <= 30:  #多条件判断用 and 链接
     print('teenager')
-elif age >= 18:
+elif not (age >= 18):     #not相当于 非，后面的内容用括号括起来
     print('adult')
 else:
     print('kid')
@@ -234,7 +238,23 @@ for x in range(101):
 print(sum)
 ```
 
-- while和for语句使用拖尾的else子句：
+- while循环示例：(素数的判断)
+```
+import math
+m = int(input("Please enter a num: "))  #待判断的数 m
+i,j = 2, int(math.sqrt(m))       #只需要计算 2 到 根号m 范围内是否有m的因数即可，后面的计算均为重复计算
+flag = 1                        #素数标志
+while i < j and flag == 1:
+  if m % 1 == 0
+    flag = 0                    #不是素数的标志
+  i += 1
+if flag and m > 1:              #素数必须大于1
+  print(m, "是素数")
+else:
+  print(m, "不是素数")
+```
+
+- **while和for语句使用拖尾的else子句**：
 ```
 for ... :
   ...
@@ -244,6 +264,36 @@ else ...   #注意这个else是与for对齐的
 这种写法的else子句块会在循环 **正常终止时执行**。意思就是，如果循环中的break语句生效而导致的循环终止，是不会触发这个else子句的执行的。因此这种写法可以 **优雅地判断一个循环是正常结束还是break掉了**。
 
 - 在循环中使用print()输出时，注意Print之后是否正确地结束循环或者进入下一个输出，否则可能出现重复输出大量重复数据的可能。
+
+- 求两个数的最大公约数(辗转相除法):
+```
+a,b = eval(input("请输入两个整数: "))
+if a > b : a,b = b,a   #Python中可以简便地交换两个变量的值
+r = a % b
+while r != 0
+  a,b = b,r
+  r = a % b
+print("最大公约数是：",b)
+print()
+```
+
+- 输出[100,1000]以内的所有素数
+```
+import math
+n = 0
+for m in range(101,1000,2)    #直接去掉100和1000，这两个肯定不是素数
+  i,j = 2, int(math.sqrt(m))
+  while i <= j:
+    if not(m % j):      #如果 m % j == 0 就是找到因数了，直接退出这一次循环，进入下一个循环
+      break
+    else:
+      i = i + 1
+  else:
+    print(m, end = " ")
+    n += 1
+    if n % 10 == 0: print("\n")    #每输出10个数就换行
+print()
+```
 
 ## 函数
 ---
