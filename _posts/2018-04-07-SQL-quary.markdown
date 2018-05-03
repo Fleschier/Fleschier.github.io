@@ -327,7 +327,7 @@ drop procedure usp_test
 ![](/images/SQL/E-R graphe.png)
 
 - 示例：
-~[](/images/SQL/TIM图片20180503210911.jpg)
+![](/images/SQL/TIM图片20180503210911.jpg)
 画图时先画实体型和联系，最后添加属性即可。对于那些有公共属性的两个实体型，属性应当连到联系上(菱形上的属性)
 
 - [简明教学](https://blog.csdn.net/sunzhenhua0608/article/details/8822871)
