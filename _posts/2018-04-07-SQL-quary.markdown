@@ -64,6 +64,7 @@ create table SC(
 )
 alter table SC add constraint PK_SC primary key(Sno,Cno)
 ```
+check语句是一种约束条件写法，与constraint功能类似
 
 - 在创建时设置foreign key：
 
@@ -336,4 +337,4 @@ drop procedure usp_test
 
 <br>
 
->最后更新于2018.4.8
+>最后更新于2018.5.3
