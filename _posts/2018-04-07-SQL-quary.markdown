@@ -162,7 +162,8 @@ where Sage >= 19 and Sage <= 21 and Ssex = '女' order by Sage desc
 ```
 
 ```
-select Sno,Ssex from student where Sname like '_明%'  --'_'表示一个字符，%表示任意多个字符,这里筛选出名字第二个字为‘明’的人
+select Sno,Ssex from student where Sname like '_明%'  
+--'_'表示一个字符，%表示任意多个字符,这里筛选出名字第二个字为‘明’的人
 ```
 
 ```
