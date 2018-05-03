@@ -119,7 +119,7 @@ create table student(
 	Sage smallint,
 	Sdept varchar(15)
 )
-alter table student add adress varchar(60) --添加列
+alter table student add address varchar(60) --添加列
 alter table student add inDate datetime --添加列，数据类型为datetime
 alter table student alter column adress varchar(50)
 alter table student drop column inDate
