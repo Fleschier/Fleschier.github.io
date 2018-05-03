@@ -323,6 +323,9 @@ drop procedure usp_test
 
 - 联系(Relationship)：用菱形表示，菱形框内写明联系名，并用无向边分别与有关实体连接起来，同时在无向边旁标上联系的类型(1 : 1，1 : n或m : n)。 (一对一，一对多还是多对多)
 
+- 图例：
+![](/images/SQL/E-R graphe.png)
+
 - [简明教学](https://blog.csdn.net/sunzhenhua0608/article/details/8822871)
 
 - [详细教学](https://blog.csdn.net/zxq1138634642/article/details/9121363)
