@@ -17,6 +17,7 @@ tags: SQL
 - 创建数据库 ：`create database XXX`
 
 - 带详细参数的数据库创建：
+
 ```
 create database School on(
 	name = 'School_data',
@@ -29,6 +30,7 @@ create database School on(
 - 创建表： `create table XXX`
 
 - 带属性的创建：
+
 ```
 create table student(
 	Sno char(6) primary key,
@@ -39,6 +41,7 @@ create table student(
 )
 ```
 - 更加复杂的创建：
+
 ```
 create table student(
 	Sno char(6) primary key,  --主键
@@ -63,6 +66,7 @@ alter table SC add constraint PK_SC primary key(Sno,Cno)
 ```
 
 - 在创建时设置foreign key：
+
 ```
 create table sc(
 	Sno char(6),
@@ -75,6 +79,7 @@ create table sc(
 ```
 
 ###### 创建索引
+
 ```
 create index Ix_student_sname on student(Sname)
 create index Ix_student_sdept on student(Sdept)
@@ -86,12 +91,14 @@ drop index student.ix_student_sname    --删除索引
 
 ###### 插入数据：
 >数据顺序和类型要与创建时的定义一致
+
 ```
 insert into student values('5001','赵强','男','20','SX')
 insert into student values('5002','李丽华','女','21','JSJ')
 insert into student values('5001','李静','女','20','SX')
 ```
 ###### 将数据从一个表插入另一个表
+
 ```
 --批量插入数据(从student 到 sc_name)
 insert into sc_name (Sno,Sname,Ssex)
@@ -119,6 +126,7 @@ alter table student drop column inDate
 ```
 
 ###### 用户自定义完整性约束
+
 ```
 alter table student add constraint cs_1 check(Ssex in ('男','女'))
 alter table student add constraint cs_2 check(Sage >16)
@@ -129,17 +137,19 @@ alter table Course add constraint cs_4 check(Cno != Cpno)
 - 删除约束： `alter table student drop constraint cs_1`
 
 ###### 更新表数据
+
 - 使用update和查找条件： `update student set Sno = 4018 where Sno = 4003`
 
 ## 获取详细信息
 ---
+
 - `sp_help 表名`
 
 - `sp_helpdb 数据库名`
 
-## 选择
+## 查询语句
 ---
-###### 基本选择操作
+###### 基本查询操作
 
 - `select [列名（逗号间隔）或者*] from 表名`
 
@@ -151,19 +161,22 @@ where Sage >= 19 and Sage <= 21 and Ssex = '女' order by Sage desc
 -- desc表示降序，asc表示升序
 ```
 
-```select Sno,Ssex from student where Sname like '_明%'
--- _表示一个字符，%表示任意多个字符,这里筛选出名字第二个字为‘明’的人
+```
+select Sno,Ssex from student where Sname like '_明%'  --'_'表示一个字符，%表示任意多个字符,这里筛选出名字第二个字为‘明’的人
 ```
 
-```select Sno,Cno from SC where Grade is null
+```
+select Sno,Cno from SC where Grade is null
 -- 如果用'= null'则查询结果为空
 ```
 
-```select Sno,Cno,cast((Grade/10) as int)from SC
+```
+select Sno,Cno,cast((Grade/10) as int)from SC
 -- cast(a as int)转换数据类型
 ```
 
-```select distinct Sdept from student
+```
+select distinct Sdept from student
 -- distinct写在最前面
 ```
 
@@ -218,6 +231,7 @@ where Sno in(                --嵌套执行
 	select Sno from SC where Cno = 1002
 )
 ```
+
 ```
 select student.Sno, Grade from student,course,SC
 where student.Sno = SC.Sno and course.Cno = SC.Cno and Cname = '数据库原理' and Grade <60
