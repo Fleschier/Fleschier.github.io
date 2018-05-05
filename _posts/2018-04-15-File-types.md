@@ -24,6 +24,12 @@ tags: FileTypes
 
 > 实际上csv文件就类似于一个没有线的表格
 
+## Markdown文件
+---
+- Markdown 的目标是实现「易读易写」。可读性，无论如何，都是最重要的。一份使用 Markdown 格式撰写的文件应该可以直接以纯文本发布，并且看起来不会像是由许多标签或是格式指令所构成。Markdown 语法的目标是：成为一种适用于网络的书写语言。Markdown 不是想要取代 HTML，甚至也没有要和它相近，它的语法种类很少，只对应 HTML 标记的一小部分。Markdown 的构想不是要使得 HTML 文档更容易书写。在我看来， HTML 已经很容易写了。Markdown 的理念是，能让文档更容易读、写和随意改。HTML 是一种发布的格式，Markdown 是一种书写的格式。就这样，Markdown 的格式语法只涵盖纯文本可以涵盖的范围
 
-<br>
-> 最后修改于2018.4.15
+- markdown可以直接在Atom中编辑和预览(ctrl + shift + m)
+
+- markdown可以转换为pdf文件。你可以选择下载一些markdown编辑器来完成这个转化，但是，我在这里要推荐一个大佬的web应用，知乎上看到的。[在线markdown转化为PDF](www.mdtr2pdf.com)
+
+> 最后修改于2018.5.5
