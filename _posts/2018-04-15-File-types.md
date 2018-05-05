@@ -30,6 +30,6 @@ tags: FileTypes
 
 - markdown可以直接在Atom中编辑和预览(ctrl + shift + m)
 
-- markdown可以转换为pdf文件。你可以选择下载一些markdown编辑器来完成这个转化，但是，我在这里要推荐一个大佬的web应用，知乎上看到的。[在线markdown转化为PDF](www.mdtr2pdf.com)
+- markdown可以转换为pdf文件。你可以选择下载一些markdown编辑器来完成这个转化，但是，我在这里要推荐一个大佬的web应用(完美支持UTF-8中文编码，不会像其他的一些外国的网站转化时中文全部变成乱码的问题)，知乎上看到的。[在线markdown转化为PDF](http://www.mdtr2pdf.com/index_en.html)
 
 > 最后修改于2018.5.5
