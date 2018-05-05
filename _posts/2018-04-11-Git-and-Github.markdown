@@ -40,6 +40,8 @@ git push   //将本地的修改同步到github上
 ---
 - 讲道理第一次使用atom时我还是很震惊的，在Linux下居然有这么好用的软件。atom是一款编辑器，但是这个小小的编辑器梦想却很大，他整合了许多功能于一身，诸如代码编辑，github仓库文件的编辑以及直接add-commit-push一条线操作等等，支持markdown，还有许许多多的插件等待你去发现。
 
+- Atom自带支持markdown文件的编辑和预览，组合键 `ctrl + shift + m` 弹出预览。 
+
 - atom的[下载地址](https://atom.io/)
 
 <br>
