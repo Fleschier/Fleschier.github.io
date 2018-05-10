@@ -22,7 +22,14 @@ sudo apt-get install shadowsocks-qt5
 ---
 
 - 自己租好服务器之后，获得了服务器的相关信息之后，借用别人的一个脚本来简单实现ssr终端使用
+
 - [链接](https://showzeng.itscoder.com/shadowsocksr/2017/12/02/use-ssr-under-linux)
+
+- 这个里面的github网址没法clone，所以我fork了一份备份到我自己的guithub下. `git clone git@github.com:Fleschier/shadowsocksr.git`
+
+- runssr 和 stopssr 两个脚本文件在 /usr/local/bin 目录下
+
+- 目录 shadowsocksr/ 在 /opt/ 目录下
 
 - 启动ssr:终端输入 `runssr`
 
