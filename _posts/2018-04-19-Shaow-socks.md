@@ -36,4 +36,11 @@ sudo apt-get install shadowsocks-qt5
 - 停止ssr：终端输入 `stopssr`
 
 
+## 图形界面的ssr
+---
+
+- [链接](https://github.com/erguotou520/electron-ssr/releases)
+
+- 配置方法与windows几乎一致
+
 > [参考文档](https://www.litcc.com/2016/12/29/Ubuntu16-shadowsocks-pac/)
