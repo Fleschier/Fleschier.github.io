@@ -15,6 +15,10 @@ tags: Scala
 
 - Scala注释与C++类似
 
+#### 让intellij默认不打开上个项目的方法
+
+- settings>Apperance&Behavior>System Settings 将Reopen last project on startup 勾去掉即可.
+
 #### 示例程序
 ```
 object HelloWorld {
