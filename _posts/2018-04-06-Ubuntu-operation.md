@@ -34,6 +34,8 @@ tags: Ubuntu
 ## 一些注意点
 ---
 
+- **F11键可以进入全屏模式**
+
 - 触摸板双击之后再移动就相当于长按鼠标左键的效果了
 
 - 在Ubuntu终端窗口中，复制粘贴的快捷键需要加上 shift，即粘贴是 ctrl+shift+v。
@@ -87,8 +89,10 @@ Actions=Window;
 Name=New Window
 Exec=/home/fleshier/Programe\ Files/Moeditor-linux-x64/Moeditor -n
 OnlyShowIn=Unity;
-
 ```
+- 保存之后执行 `chmod a+x filename` 改变执行权限即可运行
+
+- 实际写的时候要把注释删除掉，不然会出错。
 
 ###### 关于shell脚本的创建
 
