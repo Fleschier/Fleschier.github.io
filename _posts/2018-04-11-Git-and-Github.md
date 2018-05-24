@@ -6,6 +6,11 @@ tags: Git
 ---
 > 不适合人类阅读的随笔~
 
+## 关于 多用fetch，merge少用pull
+---
+
+- 有一篇[文章](https://www.oschina.net/translate/git-fetch-and-merge)提到了pull的一些弊端，主要是数据会被直接覆盖掉，这样回溯会比较麻烦。
+
 ## 关于windows和Ubuntu下的可视化git管理工具
 ---
 
@@ -40,7 +45,7 @@ git push   //将本地的修改同步到github上
 ---
 - 讲道理第一次使用atom时我还是很震惊的，居然有这么好用的软件。atom是一款编辑器，Linux和Windows平台都有，但是这个小小的编辑器整合了许多功能于一身，诸如代码编辑，github仓库文件的编辑以及直接add-commit-push一条线操作等等，还有许许多多的插件等待你去发现。
 
-- Atom自带支持markdown文件的编辑和预览，组合键 `ctrl + shift + m` 弹出预览。 
+- Atom自带支持markdown文件的编辑和预览，组合键 `ctrl + shift + m` 弹出预览。
 
 - atom的[下载地址](https://atom.io/)
 
