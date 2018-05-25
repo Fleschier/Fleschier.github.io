@@ -13,6 +13,14 @@ tags: Java
 
 编译环境首选JetBrian的[Intellij IDEA](https://www.jetbrains.com/idea/)，虽然几乎所有的教材都清一色的使用eclipse，但是jetBrian的社区版Intellij IDEA已经满足了我们的需求，其无与伦比的代码补全功能，清爽的界面会让人眼前一亮。专业版只有公司里才可能会用到其中的一些功能，所以我们也不用担心。
 
+- Ultimate版本免费获取详见——[node.js学习笔记](https://fleschier.github.io/2018/05/NodeJS/)
+
+- 使用intellij IDEA 之前需要配置一系列设置。
+  1. 在打开项目之前的那个主界面，在设置里，systemsettings里把reopen previous project勾掉
+  2. 在project structure里把lib里的东西添加一下(添加需要用到的编程语言的library)，以及设置默认的sdk/jdk。(在打开的项目里设置的仅仅对本项目有效)
+
+  - ctrl + alt + s 快速打开设置界面。
+
 ## 基本语法
 ---
 
