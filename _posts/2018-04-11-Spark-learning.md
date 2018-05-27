@@ -33,6 +33,12 @@ tags: ๑Spark
 
 - 新建的Maven项目很可能缺失很多spark的库，需要修改pom文件来使得编译器引入这些库
 
+## 以maven项目创建scala工程
+
+- 详见 [spark开发环境搭建](https://blog.csdn.net/u012373815/article/details/53266301)
+
+- 其中包括修改pom配置文件。
+
 ## spark下的 wordcount
 ---
 > 摘自官方文档
