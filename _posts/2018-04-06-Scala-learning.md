@@ -19,6 +19,35 @@ tags: ๑Scala
 
 - settings>Apperance&Behavior>System Settings 将Reopen last project on startup 勾去掉即可.
 
+## 在intellij IDEA下创建scala项目的步骤
+---
+
+- 首先，要确保已经安装了scala的插件(这个有很大概率会安装失败，如果失败次数太多可以选择离线安装，或者跳过scala sdk的选择，在进入一个scala项目之后选择补全)
+
+-  然后，在欢迎页面的右下角点击Configure，然后在Project Defaults的下拉菜单中选择Project Structure，在打开的页面左侧选择Global Libraries，然后在中间一栏中有一个绿色的加号标志 +，点击后在下拉菜单中选择 Scala SDK
+
+- 然后在打开的对话框中选择系统本身所安装的Scala（即System对应的版本），点击OK确定，这时候会在中间一栏位置处出现Scala的SDK，在其上右键点击后选择Copy to Project Libraries…，这个操作是为了将Scala SDK添加到项目的默认Library中去。
+
+
+- 在欢迎界面点击Create New Project，在打开的页面左侧边栏中，选择Maven，然后在右侧的Project SDK一项中，查看是否是正确的JDK配置项正常来说这一栏会自动填充的，因为我们之前在1.3中已经配置过了全局的Project JDK了，如果这里没有正常显示JDK的话，可以点击右侧的New…按钮，然后指定JDK安装路径的根目录即可）。**注意不要选择create from archetype**
+
+![](/images/create_1.png)
+
+- 然后点击Next，来到Maven项目最重要三个参数的设置页面，这三个参数分别为：GroupId, ArtifactId和Version.
+
+![](/images/create_2.png)
+
+#### 创建Hello world
+![](/images/first_program.png)
+
+- 为了让体验Scala更清爽一些，将一些暂时无关的文件和文件夹都删除掉吧，主要有 main/java, main/resources 和 test 这三个文件夹
+
+- 将Scala的框架添加到这个项目中，方法是在左侧栏中的项目名称上右键菜单中点击Add Framework Support…，然后在打开的对话框左侧边栏中，勾选Scala前面的复选框，然后点击确定即可（前提是上文中所述步骤都已正确走通，否则你很有可能看不到Scala这个选项的）；
+
+在main文件夹中建立一个名为 scala 的文件夹，并右键点击 scala 文件夹，选择 Make Directory as，然后选择Sources Root ，这里主要意思是将 scala 文件夹标记为一个源文件的根目录，然后在其内的所有代码中的 package ，其路径就从这个根目录下开始算起。
+
+在已经标记好为源文件根目录的 scala 文件夹 上，右键选择 New，然后选择 Scala Class，随后设置好程序的名称，并且记得将其设置为一个 Object(类似于Java中含有静态成员的静态类)，正常的话，将会打开这个 Object 代码界面，并且可以看到IntelliJ IDEA自动添加了一些最基本的信息；
+
 #### 示例程序
 ```
 object HelloWorld {
@@ -133,11 +162,11 @@ getClass().getName() + '@' + Integer.toHexString(hashCode())
 
 ###### 元组类型（类似于Python中的元组）
 
-- 如果想要访问元组的内容，可以通过 变量名._N的方式进行。其中N表示元组中元素的索引号。 例：tuple._1 表示tuple中的第一个元素。
+- 如果想要访问元组的内容，可以通过 `变量名._N`的方式进行。其中N表示元组中元素的索引号。 例：`tuple._1` 表示tuple中的第一个元素。
 
 - **注意：元组的访问元素的索引是从1开始，而且是不可改变的。**
 
-- 元组用 '==' 进行比较时，是进行内容的比较，这与String类型一致。
+- 元组用 `==` 进行比较时，是进行内容的比较，这与String类型一致。
 
 ###### 数组
 
@@ -152,6 +181,14 @@ val a: Array[String] = new Array[String](3)
 
 - 可以使用foreach()方法实现遍历。
 ![](/images/Scala/Scala-test.jpg)
+
+###### List
+
+- 创建List:
+```
+val a = List.apply("1","2","3")
+val a: List[String] = List("1","2","3")
+```
 
 ## 流程控制结构
 ---
