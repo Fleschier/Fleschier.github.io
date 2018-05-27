@@ -2,7 +2,7 @@
 layout:     post
 title:      "一些文件类型记录"
 date:       2018-04-15 16:47:00
-tags: FileTypes
+tags: <FileTypes>
 ---
 > 不适合人类阅读的学习笔记  
 

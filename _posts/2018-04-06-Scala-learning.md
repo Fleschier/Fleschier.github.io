@@ -2,7 +2,7 @@
 layout:     post
 title:      "Scala学习笔记——基础"
 date:       2018-04-6 16:47:00
-tags: Scala
+tags: <Scala>
 ---
 
 > 不适合人类阅读的学习笔记  

@@ -2,7 +2,7 @@
 layout:     post
 title:      "Java学习笔记——类与继承"
 date:       2018-04-18 16:47:00
-tags: Java
+tags: <Java>
 ---
 
 > 不适合人类阅读的学习笔记
