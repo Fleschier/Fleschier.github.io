@@ -68,7 +68,7 @@ object HelloWorld {
 
 > scala的语句分号规则与C++相类似(一般都不用加，加了一般也不会错)
 
-> scala中的通配符为'_'，而C++中为'*'
+> scala中的通配符为`_`，而C++中为`*``
 
 > scala与spark很契合，所以写spark程序推荐使用scala语言
 
@@ -79,7 +79,7 @@ object HelloWorld {
 
 - scala大多数数据结构中的变量默认为val类型
 
-- 特例：若用占位符'_'作为值进行初始化，则String类会被初始化为null,Float,Int,Double等被初始化为0,Char类型会被初始化为"?".
+- 特例：若用占位符`_`作为值进行初始化，则String类会被初始化为null,Float,Int,Double等被初始化为0,Char类型会被初始化为"?".
 
 - 如果用lazy关键字修饰变量，则他只有在真正被使用时才会被赋值。
 > 注意lazy关键字只能修饰val类型变量，不能修饰var类型
