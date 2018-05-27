@@ -2,7 +2,7 @@
 layout:     post
 title:      "UEFI双系统的那些坑"
 date:       2018-04-06 09:40:00
-tags: ◢双系统  ◢Ubuntu
+tags: ◢ 双系统  ◢ Ubuntu
 ---
 > 不适合人类阅读的自我备忘笔记  
 

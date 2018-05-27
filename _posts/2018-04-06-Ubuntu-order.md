@@ -2,7 +2,7 @@
 layout:     post
 title:      "Ubuntu终端常用命令"
 date:       2018-04-6 16:47:00
-tags: ◢Ubuntu
+tags: ◢ Ubuntu
 ---
 
 > 不适合人类阅读的备忘笔记  

@@ -2,7 +2,7 @@
 layout:     post
 title:      "Intellij IDEA Ultimate版本使用"
 date:       2018-05-25 09:46:00
-tags:   ◢JetBrains ◢JS
+tags:   ◢ JetBrains ◢ JS
 ---
 
 ## 免费获取Ultimate版本
