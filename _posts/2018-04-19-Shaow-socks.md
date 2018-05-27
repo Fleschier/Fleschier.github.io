@@ -2,7 +2,7 @@
 layout:     post
 title:      "Shadowsocks"
 date:       2018-04-19 22:04:00
-tags:   ◢ 科学上网 ◢ Ubuntu
+tags:   ๑科学上网 ๑Ubuntu
 ---
 > 科学上网从我做起  
 

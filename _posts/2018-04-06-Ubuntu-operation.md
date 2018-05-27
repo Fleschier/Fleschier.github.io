@@ -2,7 +2,7 @@
 layout:     post
 title:      "Ubuntu随笔"
 date:       2018-04-6 16:47:00
-tags: ◢ Ubuntu
+tags: ๑Ubuntu
 ---
 
 > 不适合人类阅读的备忘笔记
