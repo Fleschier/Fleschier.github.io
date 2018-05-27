@@ -49,8 +49,22 @@ a.foreach{x =>      //与map遍历方式不同，foreach不会对里面的内容
 }
 ```
 
+## 一些数据结构的使用
+---
+
+###### ListBuffer:
+
+- 首先需要引入包 `import scala.collection.mutable.ListBuffer`
+
+- 在使用之前，先声明一个ListBuffer变量，通过一下代码：
+`val buf = new ListBuffer[Int]() //类型自定义，这里采用的是Int`
+
+- 接着在需要的时候，进行追加，fn为字符串：
+`buf.append(fn)`
+
+
 
 
 <br>
 
->最后更新于2018.4.21
+>最后更新于2018.5.27
