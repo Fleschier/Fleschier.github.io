@@ -62,7 +62,8 @@ a.foreach{x =>      //与map遍历方式不同，foreach不会对里面的内容
 - 在末尾进行追加，使用append()方法：
 `buf.append(x)`
 
-
+- 将ListBuffer转化为List:
+`val lst = buf.toList`
 
 
 <br>
