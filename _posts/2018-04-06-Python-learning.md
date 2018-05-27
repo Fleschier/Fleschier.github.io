@@ -2,7 +2,7 @@
 layout:     post
 title:      "Python学习笔记——基础"
 date:       2018-04-06 16:47:00
-tags: <Python>
+tags: ◢Python
 ---
 
 > 不适合人类阅读的学习笔记  
