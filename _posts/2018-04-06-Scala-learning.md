@@ -31,14 +31,14 @@ tags: ๑Scala
 
 - 在欢迎界面点击Create New Project，在打开的页面左侧边栏中，选择Maven，然后在右侧的Project SDK一项中，查看是否是正确的JDK配置项正常来说这一栏会自动填充的，因为我们之前在1.3中已经配置过了全局的Project JDK了，如果这里没有正常显示JDK的话，可以点击右侧的New…按钮，然后指定JDK安装路径的根目录即可）。**注意不要选择create from archetype**
 
-![](/images/create_1.png)
+![](/images/Scala/create_1.png)
 
 - 然后点击Next，来到Maven项目最重要三个参数的设置页面，这三个参数分别为：GroupId, ArtifactId和Version.
 
-![](/images/create_2.png)
+![](/images/Scala/create_2.png)
 
 #### 创建Hello world
-![](/images/first_program.png)
+![](/images/Scala/first_program.png)
 
 - 为了让体验Scala更清爽一些，将一些暂时无关的文件和文件夹都删除掉吧，主要有 main/java, main/resources 和 test 这三个文件夹
 
