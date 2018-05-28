@@ -11,7 +11,7 @@ tags: ๑Scala
 ---
 - scala在终端中就可以调用解释器，与python类似，可以逐语句执行。使用命令`scala`即可进入终端解释器，使用命令`:q`或者`:quit`退出解释器。
 
-- 编译首选jetbrain的intellij IDEA，下载一个Scala plugin，然后选择创建maven工程，模板选择Scala对应的模板即可。main函数应当写在object文件中，object通过创建Scala class文件选项创建。
+- 编译首选jetbrain的intellij IDEA，下载一个Scala plugin，然后选择创建maven工程，main函数应当写在object文件中，object通过创建Scala class文件选项创建。
 
 - 如果要写分布式处理程序的话，需要自己重写配置文件
 
@@ -42,9 +42,9 @@ tags: ๑Scala
 #### 创建Hello world
 ![](/images/Scala/first_program.png)
 
-- 为了让体验Scala更清爽一些，将一些暂时无关的文件和文件夹都删除掉吧，主要有 main/java, main/resources 和 test 这三个文件夹
+- 为了让体验Scala更清爽一些，将一些暂时无关的文件和文件夹都删除掉，主要有 main/java, main/resources 和 test 这三个文件夹
 
-- 将Scala的框架添加到这个项目中，方法是在左侧栏中的项目名称上右键菜单中点击Add Framework Support…，然后在打开的对话框左侧边栏中，勾选Scala前面的复选框，然后点击确定即可（前提是上文中所述步骤都已正确走通，否则你很有可能看不到Scala这个选项的）；
+- 将Scala的框架添加到这个项目中，方法是在左侧栏中的 **项目名称** 上右键菜单中点击 Add Framework Support…，然后在打开的对话框左侧边栏中，勾选Scala前面的复选框，然后点击确定即可（前提是上文中所述步骤都已正确走通，否则你很有可能看不到Scala这个选项的）；
 
 - 在main文件夹中建立一个名为 scala 的文件夹，并右键点击 scala 文件夹，选择 Make Directory as，然后选择Sources Root ，**这里主要意思是将 scala 文件夹标记为一个源文件的根目录，然后在其内的所有代码中的 package ，其路径就从这个根目录下开始算起**。
 
