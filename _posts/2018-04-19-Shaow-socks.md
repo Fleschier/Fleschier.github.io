@@ -75,10 +75,10 @@ vim /usr/local/lib/python2.7/dist-packages/shadowsocks/crypto/openssl.py
 - 首先，想要实现全局模式请按如下方法设置：
 系统设置 >> 网络 >> 网络代理 >> 方法 >> 手动
 
-- 再将Socks主机的ip和端口填好，如图，然后点击应用到整个系统
+- 再将Socks主机的ip和端口填好，如图。
 ![](/images/ssr/systemset.png)
 
-- 然后，需要在google商店下载SwitchyOmega插件，但是需要翻墙～这里可以进入如下[网址](http://googlehelper.net/),先下载一个googlehelper插件，用邮箱注册一个免费的体验账号，先翻了墙再说。
+- 然后，需要在google商店下载SwitchyOmega插件，但是需要翻墙～这里可以进入如下[网址](http://googlehelper.net/),先下载一个googlehelper插件(打开chrome所有插件，把下载的插件直接拉进去即可添加完成)，用邮箱注册一个免费的体验账号，先翻了墙再说。
 
 - 然后去chrome网上应用商店下载SwitchyOmega，接下来便可以配置了。
 
@@ -92,8 +92,8 @@ vim /usr/local/lib/python2.7/dist-packages/shadowsocks/crypto/openssl.py
 
 - 接下来点击情景模式中的自动切换，输入参数如下：
 ```
-raw.githubusercontent.com  
-https://raw.githubusercontent.com/gfwlist/gfwlist/master/gfwlist.txt  
+条件设置：raw.githubusercontent.com  
+规则列表网址：https://raw.githubusercontent.com/gfwlist/gfwlist/master/gfwlist.txt  
 点击立即更新情景模式  
 结束,在SwitchyOmega插件(chorme浏览器右上角处)那换成自动切换,大功告成.
 ```
