@@ -14,6 +14,8 @@ tags: ๑Ubuntu
 
 - `ls -l` 的简略写法就是 `ll`，但是这个与`ls -a`又不同，后者用来显示隐藏文件和文件夹。
 
+- 使用 `vim`修改文件时，如果想要不保存退出，使用`:q!`命令。
+
 - ubuntu改文件名用 `mv name1 name2`即可
 
 - `cp filename filepath` //拷贝文件
