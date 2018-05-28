@@ -103,6 +103,8 @@ vim /usr/local/lib/python2.7/dist-packages/shadowsocks/crypto/openssl.py
 
 ![](/images/ssr/example.png)
 
+- 最后把多余的情景模式删除,看起来清爽一点。
+
 - 这样就相当于在chorme中启用的是pcd模式,在能穿墙的同时,既保证了访问国内网站速度不慢,又节省了ssr的流量。
 
 - 接下来就可以优雅地体验翻墙上网了～
