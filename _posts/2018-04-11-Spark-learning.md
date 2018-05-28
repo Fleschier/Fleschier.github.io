@@ -6,7 +6,7 @@ tags: ๑Spark
 ---
 > 不适合人类阅读的学习笔记  
 
-> 有问题经常去**[stackoverflow.com](https://stackoverflow.com/)**上找找
+> 有问题经常去 **[stackoverflow.com](https://stackoverflow.com/)** 上找找
 
 ## 环境搭建
 ---
@@ -16,7 +16,9 @@ tags: ๑Spark
 
 - 下载spark，解压，设置路径。 ———[详细设置](https://www.cnblogs.com/earendil/p/5564492.html)
 
-- 调整日志级别控制输出的信息量：在spark了文件目录的conf目录下将log4j.properties.template 复制为  log4j.properties, 然后找到 log4j.rootCategory = INFO, console。将其中的INFO改为WARN即可。
+- 调整日志级别控制输出的信息量：在spark安装文件目录的conf目录下将log4j.properties.template 复制为  log4j.properties, 然后找到 log4j.rootCategory = INFO, console。将其中的INFO改为WARN即可。
+
+- 我的spark的安装目录是`/usr/local/Apache/`，可以使用命令`echo $SPARK_HOME`来查看spark的安装路径。
 
 - [sbt安装网址](https://www.scala-sbt.org/download.html)
 
@@ -235,4 +237,4 @@ Items in a transaction must be unique but got WrappedArrayMaven
 
 
 <br>
-> 最后更新于2018.4.15
+> 最后更新于2018.5.27
