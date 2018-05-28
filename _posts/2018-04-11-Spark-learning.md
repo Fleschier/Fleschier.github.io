@@ -20,6 +20,9 @@ tags: ๑Spark
 
 - 我的spark的安装目录是`/usr/local/Apache/`，可以使用命令`echo $SPARK_HOME`来查看spark的安装路径。
 
+- 将spark的安装路径加到系统PATH当中(修改`/etc/profile文件`)，然后重启生效之后可在终端通过`spark-shell`命令进入scala的解释器环境，如图：
+![](/images/spark/spark-shell.png)
+
 - [sbt安装网址](https://www.scala-sbt.org/download.html)
 
 ## 编程环境
