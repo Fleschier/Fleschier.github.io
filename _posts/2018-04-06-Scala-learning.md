@@ -9,6 +9,8 @@ tags: ๑Scala
 
 ## 编译环境
 ---
+- scala在终端中就可以调用解释器，与python类似，可以逐语句执行。使用命令`scala`即可进入终端解释器，使用命令`:q`或者`:quit`退出解释器。
+
 - 编译首选jetbrain的intellij IDEA，下载一个Scala plugin，然后选择创建maven工程，模板选择Scala对应的模板即可。main函数应当写在object文件中，object通过创建Scala class文件选项创建。
 
 - 如果要写分布式处理程序的话，需要自己重写配置文件
@@ -98,7 +100,7 @@ object HelloWorld {
  // .trim方法是去掉输入字符串两旁的空格
 ```
 
-- scala还有一系列专门的用来读下**一个**输入并且可以自动转换的方法，例如：
+- scala还有一系列专门的用来读下 **一个** 输入并且可以自动转换的方法，例如：
 ```
 val scan = scala.io.StdIn
 val myint = scan.readInt()
