@@ -28,9 +28,9 @@ sudo addgroup hadoop
 sudo adduser --ingroup hadoop hadoop
 ```
 
-- 再赋予hadoop用户 sudo的权限：`sudo usermod -aG lpadmin hadoop
+- 再赋予hadoop用户 sudo的权限：`sudo usermod -aG sudo hadoop
 `
-- 这里`lpadmin`是我的电脑上有sudo权限的用户组的名称，你可以`cat /etc/group`看看有哪些用户组以及这些用户组下的用户。
+- 这里`sudo`是我的电脑上有sudo权限的用户组的名称，你可以`cat /etc/group`看看有哪些用户组以及这些用户组下的用户。
 
 - 实在不行就吧你原来用户在的组都加一个hadoop用户
 
@@ -61,9 +61,17 @@ sudo adduser --ingroup hadoop hadoop
 
 - 现在登录就不需要密码了：`ssh localhost `
 
+- `exit`命令退出登录localhost
+
 - 确保下面的操作在hadoop用户下完成：`sudo chown -R  hadoop:hadoop/usr/local/Apache/hadoop... (自己hadoop的安装路径)`
 
 - 最后输入 `hadoop version` 确认安装
+
+- 至此单机模式配置完成(在hadoop用户下的单机模式)
+
+#### 伪分布式环境搭建
+
+-
 
 <br>
 最后更新于2018.5.30
