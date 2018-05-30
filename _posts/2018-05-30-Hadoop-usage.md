@@ -1,7 +1,7 @@
 ---
 layout:     post
 title:      "Intellij IDEA Ultimate版本使用"
-date:       2018-05-25 09:46:00
+date:       2018-05-30 09:46:00
 tags:   ๑Hadoop ๑BigData
 ---
 ## Hadoop 单机伪分布式环境搭建
