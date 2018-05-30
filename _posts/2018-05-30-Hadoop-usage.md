@@ -41,6 +41,8 @@ sudo adduser --ingroup hadoop hadoop
 
 #### 生成公钥和私钥
 
+- 这个也要在hadoop用户下完成(因为这会在你这个用户的文件夹下的.ssh文件夹生成key)
+
 - 我们要设置成免密码登录，生成私钥和公钥：`ssh-keygen -t rsa -P ""`
 
 ![](/images/Hadoop/ssh_key.png)
