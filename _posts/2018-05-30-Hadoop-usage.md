@@ -71,7 +71,74 @@ sudo adduser --ingroup hadoop hadoop
 
 #### 伪分布式环境搭建
 
--
+-设定*-site.xml:这里需要设定三个文件。我的三个文件的路径是`/usr/local/Apache/hadoop-2.7.6/etc/hadoop/`
+
+- core-site.xml:  Hadoop Core的配置项，例如HDFS和MapReduce常用的I/O设置等。
+- hdfs-site.xml:  Hadoop 守护进程的配置项，包括namenode，辅助namenode和datanode等。
+- mapred-site.xml： MapReduce 守护进程的配置项，包括jobtracker和tasktracker。
+
+###### 首先在hadoop根目录下新建几个文件夹：
+```
+mkdir hdfs
+mkdir hdfs/name
+mkdir hdfs/data
+mkdir tmp
+```
+
+- 接下来编辑这三个文件：<br>
+core-site.xml:
+```
+<configuration>  
+    <property>  
+        <name>fs.default.name</name>  
+        <value>hdfs://localhost:9000</value>  
+    </property>  
+    <property>  
+        <name>hadoop.tmp.dir</name>  
+        <value>/usr/local/Apache/hadoop-2.7.1/tmp</value>  
+    </property>  
+</configuration>  
+```
+hdfs-site.xml:
+```
+<configuration>  
+    <property>  
+        <name>dfs.replication</name>  
+        <value>1</value>  
+    </property>  
+    <property>  
+        <name>dfs.name.dir</name>  
+        <value>/usr/local/Apache/hadoop-2.7.1/hdfs/name</value>  
+    </property>  
+    <property>  
+        <name>dfs.data.dir</name>  
+        <value>/usr/local/Apache/hadoop-2.7.1/hdfs/data</value>  
+    </property>  
+</configuration>  
+```
+mapred-site.xml:
+```
+<configuration>  
+    <property>  
+        <name>mapred.job.tracker</name>  
+        <value>localhost:9001</value>  
+    </property>  
+</configuration>  
+```
+###### 格式化hdfs
+
+- 启动Hadoop到相关服务，格式化namenode,secondarynamenode,tasktracker:
+```
+source /usr/local/Apache/hadoop-2.7.1/etc/hadoop/hadoop-env.sh
+hadoop namenode -format
+```
+
+###### 启动hadoop
+
+- 这一步暂时还有点问题，我没有`start-all.sh`这个脚本...回头再说
+
+
+- 参考博客——[hadoop伪分布式搭建](https://blog.csdn.net/hitwengqi/article/details/8008203)
 
 <br>
 最后更新于2018.5.30
