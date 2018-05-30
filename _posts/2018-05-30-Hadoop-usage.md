@@ -4,6 +4,7 @@ title:      "Hadoop单机伪分布式环境搭建"
 date:       2018-05-30 09:46:00
 tags:   ๑Hadoop ๑BigData
 ---
+
 ## Hadoop 单机伪分布式环境搭建
 ---
 
@@ -26,6 +27,12 @@ tags:   ๑Hadoop ๑BigData
 sudo addgroup hadoop
 sudo adduser --ingroup hadoop hadoop
 ```
+
+- 再赋予hadoop用户 sudo的权限：`sudo usermod -aG lpadmin hadoop
+`
+- 这里`lpadmin`是我的电脑上有sudo权限的用户组的名称，你可以`cat /etc/group`看看有哪些用户组以及这些用户组下的用户。
+
+- 实在不行就吧你原来用户在的组都加一个hadoop用户
 
 - [创建新用户并增加管理员详解](https://blog.csdn.net/lymemoryzz/article/details/50627767)
 
