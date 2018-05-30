@@ -1,6 +1,6 @@
 ---
 layout:     post
-title:      "Intellij IDEA Ultimate版本使用"
+title:      "Hadoop单机伪分布式环境搭建"
 date:       2018-05-30 09:46:00
 tags:   ๑Hadoop ๑BigData
 ---
@@ -8,6 +8,8 @@ tags:   ๑Hadoop ๑BigData
 ---
 
 #### 前言
+
+- 这是对之前spark环境搭建的一点补充。
 
 - 首先要了解一下Hadoop的运行模式：
 

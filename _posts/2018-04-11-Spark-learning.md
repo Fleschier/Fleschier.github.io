@@ -2,7 +2,7 @@
 layout:     post
 title:      "Spark学习笔记——基础"
 date:       2018-04-11 16:47:00
-tags: ๑Spark
+tags: ๑Spark ๑BigData
 ---
 > 不适合人类阅读的学习笔记  
 
@@ -13,6 +13,8 @@ tags: ๑Spark
 - 首先确保电脑安装了JAVA Development Kit JDK(使用java -version查看版本)
 
 - 安装hadoop（比如我在安装了hadoop-2.7.5），后面下载spark的版本时也要选择与hadoop版本一致的spark版本。然后添加hadoop路径到PATH（修改/etc/profile文件）
+
+- hadoop单机伪分布式环境搭建详细见我的另一篇博客——[hadoop单机伪分布式搭建](https://fleschier.github.io/2018/05/Hadoop-usage/)
 
 - 下载spark，解压，设置路径。 ———[详细设置](https://www.cnblogs.com/earendil/p/5564492.html)
 
