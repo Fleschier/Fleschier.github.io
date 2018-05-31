@@ -181,6 +181,7 @@ cd sbin
 
 
 - 停止服务：`./stop-all.sh`
+![](/images/Hadoop/stop_all.png)
 
 - 参考博客——[hadoop伪分布式搭建](https://blog.csdn.net/hitwengqi/article/details/8008203)，[很详细的搭建步骤(Hadoop-2.7.2版本)](https://blog.csdn.net/Dr_Guo/article/details/50886667)
 
