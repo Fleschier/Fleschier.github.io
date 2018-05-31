@@ -48,7 +48,7 @@ sudo adduser --ingroup hadoop hadoop
 
 ![](/images/Hadoop/ssh_log.png)
 
-#### 生成公钥和私钥
+###### 配置ssh无密码登录
 
 - 这个也要在hadoop用户下完成(因为这会在你这个用户的文件夹下的.ssh文件夹生成key)
 
@@ -59,9 +59,26 @@ sudo adduser --ingroup hadoop hadoop
 - 第一次操作时会提示输入密码，按Enter直接过，这时会在～/home/{username}/.ssh下生成两个文件：id_rsa和id_rsa.pub，前者为私钥，后者为公钥，现在我们将公钥追加到到authorized_keys中（authorized_keys用于保存所有允许以当前用户身份登录到ssh客户端用户的公钥内容）：
 - `cat ~/.ssh/id_rsa.pub >> ~/.ssh/authorized_keys  `
 
+- 多台实体机进行通信（发送或者读取数据，namenode和datanode之间）就是借助ssh，在通信过程中如果需要操作人员频繁输入密码是不切实际的，所以需要ssh的无密码登录。
+
 - 现在登录就不需要密码了：`ssh localhost `
 
 - `exit`命令退出登录localhost
+
+###### 安装hadoop
+
+- 我下载的是hadoop-2.7.6版本
+
+- 存放的路径是`/uer/local/Apache/hadoop-2.7.1`
+
+- 然后修改path环境变量，路径对应自己的实际存放路径：
+![](/images/Hadoop/path.png)
+
+- 修改hadoop-env.sh: **(这个不能用默认的，否则会报错)**
+```
+export JAVA_HOME=${JAVA_HOME} #将这个改成JDK路径，如下  
+export JAVA_HOME=/opt/jdk1.8.0_172
+```
 
 - 确保下面的操作在hadoop用户下完成：`sudo chown -R  hadoop:hadoop/usr/local/Apache/hadoop... (自己hadoop的安装路径)`
 
@@ -102,7 +119,7 @@ core-site.xml:
 hdfs-site.xml:
 ```
 <configuration>  
-    <property>  
+    <property>  <!--设置副本数1，不写默认是3份-->
         <name>dfs.replication</name>  
         <value>1</value>  
     </property>  
@@ -135,10 +152,16 @@ hadoop namenode -format
 
 ###### 启动hadoop
 
-- 这一步暂时还有点问题，我没有`start-all.sh`这个脚本...回头再说
+- 我的`start-all.sh`脚本在sbin目录下，各个版本可能不太一样，如果这个文件夹没有就去别的文件夹找找。
+
+- 执行start-all.sh来启动所有服务:
+```
+cd sbin
+start-all.sh
+```
 
 
-- 参考博客——[hadoop伪分布式搭建](https://blog.csdn.net/hitwengqi/article/details/8008203)
+- 参考博客——[hadoop伪分布式搭建](https://blog.csdn.net/hitwengqi/article/details/8008203)，[很详细的搭建步骤(Hadoop-2.7.2版本)](https://blog.csdn.net/Dr_Guo/article/details/50886667)
 
 <br>
 最后更新于2018.5.30
