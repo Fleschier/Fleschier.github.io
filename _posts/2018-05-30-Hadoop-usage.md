@@ -177,6 +177,7 @@ cd sbin
 `http://localhost:50070/     - Hadoop DFS 状态`
 
 - 目前我只有50070是正常访问的，其余的还不能访问，原因有待进一步探究
+![](/images/Hadoop/datanode_info.png)
 
 
 - 停止服务：`./stop-all.sh`
