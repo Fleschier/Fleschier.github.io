@@ -144,7 +144,7 @@ mapred-site.xml:
 ```
 ###### 格式化hdfs
 
-- 启动Hadoop到相关服务，格式化namenode,secondarynamenode,tasktracker:
+- 启动Hadoop到相关服务，格式化namenode,secondarynamenode,tasktracker的文件系统目录:
 ```
 source /usr/local/Apache/hadoop-2.7.1/etc/hadoop/hadoop-env.sh
 hadoop namenode -format
@@ -152,16 +152,36 @@ hadoop namenode -format
 
 ###### 启动hadoop
 
+- **首先要先连接到localhost!!**(否则无法在网页上查看节点)。
+`ssh localhost`
+
 - 我的`start-all.sh`脚本在sbin目录下，各个版本可能不太一样，如果这个文件夹没有就去别的文件夹找找。
 
 - 执行start-all.sh来启动所有服务:
 ```
 cd sbin
-start-all.sh
+./start-all.sh
 ```
 
+- 使用命令`jps`查看是否启动成功：
+![](/images/Hadoop/launch_info.png)
+如果出现NodeManager DataNode Jps SecondaryNameNode ResourceManager NameNode则表示启动成功(缺一不可)
+
+- 检查运行状态:
+所有的设置已完成，Hadoop也启动了，现在可以通过下面的操作来查看服务是否正常，在Hadoop中用于监控集群健康状态的Web界面：
+
+`http://localhost:50030/     - Hadoop 管理介面`
+
+`http://localhost:50060/     - Hadoop Task Tracker 状态`
+
+`http://localhost:50070/     - Hadoop DFS 状态`
+
+- 目前我只有50070是正常访问的，其余的还不能访问，原因有待进一步探究
+
+
+- 停止服务：`./stop-all.sh`
 
 - 参考博客——[hadoop伪分布式搭建](https://blog.csdn.net/hitwengqi/article/details/8008203)，[很详细的搭建步骤(Hadoop-2.7.2版本)](https://blog.csdn.net/Dr_Guo/article/details/50886667)
 
 <br>
-最后更新于2018.5.30
+最后更新于2018.5.31
