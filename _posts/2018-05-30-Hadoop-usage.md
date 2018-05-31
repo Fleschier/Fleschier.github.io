@@ -180,9 +180,10 @@ cd sbin
 ![](/images/Hadoop/datanode_info.png)
 
 
-- 停止服务：`./stop-all.sh`
+- 停止服务：
+`./stop-all.sh`
 
-![](/images/Hadoop/stop_all.png)
+ ![](/images/Hadoop/stop_all.png)
 
 - 由于之前已经将hadoop的`bin`和`sbin`两个目录添加到系统环境路径里去了，这样下次启动直接就可以是
 
