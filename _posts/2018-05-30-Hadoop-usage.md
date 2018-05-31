@@ -102,7 +102,8 @@ mkdir hdfs/data
 mkdir tmp
 ```
 
-- 接下来编辑这三个文件：<br>
+- 接下来编辑这三个文件：
+
 core-site.xml:
 ```
 <configuration>  
@@ -116,6 +117,7 @@ core-site.xml:
     </property>  
 </configuration>  
 ```
+
 hdfs-site.xml:
 ```
 <configuration>  
@@ -133,6 +135,7 @@ hdfs-site.xml:
     </property>  
 </configuration>  
 ```
+
 mapred-site.xml:
 ```
 <configuration>  
