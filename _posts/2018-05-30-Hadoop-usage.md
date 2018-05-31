@@ -69,7 +69,7 @@ sudo adduser --ingroup hadoop hadoop
 
 - 我下载的是hadoop-2.7.6版本
 
-- 存放的路径是`/uer/local/Apache/hadoop-2.7.1`
+- 存放的路径是`/uer/local/Apache/hadoop-2.7.6`
 
 - 然后修改path环境变量，路径对应自己的实际存放路径：
 ![](/images/Hadoop/path.png)
