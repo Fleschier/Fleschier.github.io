@@ -80,7 +80,7 @@ export JAVA_HOME=${JAVA_HOME} #将这个改成JDK路径，如下
 export JAVA_HOME=/opt/jdk1.8.0_172
 ```
 
-- 确保下面的操作在hadoop用户下完成：`sudo chown -R  hadoop:hadoop/usr/local/Apache/hadoop... (自己hadoop的安装路径)`
+- 确保下面的操作在hadoop用户下完成：`sudo chown -R  hadoop:hadoop /usr/local/Apache/hadoop-2.7.6 (自己hadoop的安装路径)`
 
 - 最后输入 `hadoop version` 确认安装
 
