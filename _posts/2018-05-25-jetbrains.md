@@ -5,6 +5,13 @@ date:       2018-05-25 09:46:00
 tags:   ๑JetBrains ๑JS
 ---
 
+## JetBrains Toolbox
+---
+
+- 如果你决定使用jetbrains的开发环境的话，那么去官网上获取一个jetbrains toolbox会是个不错的主意～
+
+- 这个工具可以很方便地管理你的所有jetbrains的产品，避免了太多快捷方式的麻烦。
+
 ## 免费获取Ultimate版本
 ---
 
@@ -62,4 +69,4 @@ tags:   ๑JetBrains ๑JS
 
 
 <br>
-最后更新于2018.5.25
+最后更新于2018.6.4
