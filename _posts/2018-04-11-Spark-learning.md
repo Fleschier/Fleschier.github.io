@@ -216,17 +216,30 @@ import org.apache.spark.{SparkConf, SparkContext}
 
 
 
-## 一些注意点
+## 一些问题以及解决方法
 ---
 > 如要学习spark请看官方文档以及源码
 
+> 有问题经常去 **[stackoverflow.com](https://stackoverflow.com/)** 上找找
+
 - **这里推荐一个[官方文档的中文版](http://spark.apachecn.org/)供英语薄弱的朋友阅读。**
 
-- 今天试验了FP-Growth算法，打包到集群运行时报错:
+###### 试验了FP-Growth算法，打包到集群运行时报错:
 ```
 Items in a transaction must be unique but got WrappedArrayMaven
 ```
 出现此问题的主要原因是fpg算法要求输入的数据是`RDD(Array[String])`类型，但是Array类型中是不允许出现重复的内容的，所以才会出现这个错误，只需要对输入的数据做个distinct即可
+
+###### spark-shell进不去，提示Insufficient space for shared memory file
+
+- 出现这个问题的原因可能是某个文件分区的空间满了，一般可能是日志文件太多。
+
+- 使用`df`命令查看文件系统：
+![](/images/spark/集群文件系统的问题.png)
+可以看到挂载点 `/` 的使用率已经是100%了，所以spark-shell会打不开，删掉一些文件即可。
+
+## 一些小细节
+---
 
 - spark中出现一长细条的信息才是报错
 
