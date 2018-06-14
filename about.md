@@ -5,7 +5,7 @@ title: 关于我
 
 <div>
     <blockquote>
-      世界那么大<br>多想去看看
+      我有一碗酒，可以慰风尘...
   </blockquote>
 
   <blockquote>
