@@ -6,6 +6,18 @@ tags: ๑Git ๑Ubuntu
 ---
 > 不适合人类阅读的随笔~
 
+## 本地初始化仓库并添加远程仓库
+---
+
+- 示例：
+```
+git init //初始化本地仓库
+git add .  //将本地所有文件加到仓库里
+git commit -m "..." //设置提交信息
+git remote add origin git@github.com: ...  //添加远程仓库
+git push -u origin master 
+```
+
 ## 关于 多用fetch，merge少用pull
 ---
 

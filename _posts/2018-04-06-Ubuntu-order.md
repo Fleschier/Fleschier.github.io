@@ -98,7 +98,26 @@ grep test *file
 scp -P 4588 remote@www.runoob.com:/usr/local/sin.sh /home/administrator
 ```
 
+###### curl命令
 
+- curl命令是个功能强大的网络工具，支持通过http、ftp等方式下载文件、上传文件。还可以用来抓取网页、网络监控等方面的开发，解决开发过程中遇到的问题。
+
+- curl安装：`sudo apt-get install curl`
+
+- get请求：`curl http://www.baidu.com` 回车之后，HTML内容打印在屏幕上；如果这里的URL指向的是一个文件或者一幅图都可以直接下载到本地。
+
+- 更多详细参数——[curl命令详解](http://www.cnblogs.com/linjiqin/p/5484910.html)
+
+
+###### gem命令
+
+- 安装命令 `gem install appname`
+
+- Gem 是一个管理 Ruby 库和程序的标准包
+
+- 所有的 gem 包，会被安装到 `/[Ruby root]/lib/ruby/gems/[ver]/` 目录下，这其中包括了 `Cache、doc、gems、specifications` 4个目录，`cache` 下放置下载的原生 gem 包，`gems` 下则放置的是解压过的 gem 包。
+
+- 当安装过程中遇到问题时，可以进入这些目录，手动删除有问题的 gem 包，然后重新运行 `gem install [gemname]` 命令即可。
 
 <br>
 - 参考资料：[linux命令大全-菜鸟教程](http://www.runoob.com/linux/linux-command-manual.html)以及各大博客网站大佬们的博文。
