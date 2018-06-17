@@ -37,15 +37,54 @@ p{
 
 - 格式：`/*注释语句*/`
 
+## 三种CSS样式
+---
+
+- 从CSS 样式代码插入的形式来看基本可以分为以下3种：内联式、嵌入式和外部式三种。
+
+#### 内联式css样式，直接写在现有的HTML标签中
+
+- 内联式css样式表就是把css代码直接写在现有的HTML标签中，如下面代码：
+
+```
+<p style="color:red">这里文字是红色</p>
+```
+> 注意要写在元素的开始标签里
+
+- 并且css样式代码要写在`style=""`双引号中，如果有多条css样式代码设置可以写在一起，中间用分号隔开。如下代码：
+
+```
+<p style="color:red;font-size:12px">这里文字是红色</p>
+```
+
+#### 嵌入式css样式，写在当前的文件中
+
+- 嵌入式css样式，就是可以把css样式代码写在`<style type="text/css"> </style>`标签之间。如下面代码实现把三个`<span>`标签中的文字设置为红色：
+
+```
+<style type="text/css">
+span{
+color:red;
+}
+</style>
+```
+
+- 嵌入式css样式必须写在`<style> </style>`之间，并且一般情况下嵌入式css样式写在`<head> </head>`之间
 
 
+#### 外部式css样式，写在单独的一个文件中
 
+- 外部式css样式(也可称为外联式)就是把css代码写一个单独的外部文件中，这个css样式文件以`.css`为扩展名，在`<head>`内（不是在`<style>`标签内）使用`<link>`标签将css样式文件链接到HTML文件内，如下面代码：
 
+```
+<link href="base.css" rel="stylesheet" type="text/css" />
+```
 
+- css样式文件名称以有意义的英文字母命名，如 main.css。
 
+- `rel="stylesheet" type="text/css"` 是 **固定写法** 不可修改。
 
-
-
+- `<link>`标签位置一般写在`<head>`标签之内。
 
 
 
