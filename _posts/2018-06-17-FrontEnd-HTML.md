@@ -306,7 +306,7 @@ xhtml1.0版本 <hr />
 
 - 注意这两个属性可用css样式的width和height来代替：col用width、row用height来代替。
 
-- 在<textarea></textarea>标签之间可以输入默认值。
+- 在`<textarea></textarea>`标签之间可以输入默认值。
 
 
 
