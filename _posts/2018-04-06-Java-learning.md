@@ -52,6 +52,21 @@ public class HelloWorld {
 
 - **Java与C++不同的地方是：Java中的整数，浮点数不能与布尔值相互转换，当然也不能用0或非0的的整数代替true或者false。**
 
+#### Java数据默认值
+
+- 八大基本数据类型的默认值：
+
+| 数据类型   | 默认值          |
+| --------  |:---------       |
+| boolean   |     false       |
+| char      | '/uoooo'(null)  |
+| byte      |         (byte)0 |
+| short     |       (short)0  |
+| int       |           0     |
+| long      |         0L      |
+| float     |          0.0f   |
+| double    |       0.0d      |
+
 #### Java修饰符
 
 - 像其他语言一样，Java可以使用修饰符来修饰类中方法和属性。主要有两类修饰符：
