@@ -37,5 +37,17 @@ title: 关于我
 
   </blockquote>
 
+</div>
 
+<div>
+<blockquote>
+多年的生活教会了我们一件事<br>
+那就是<br>
+永远不要有太多奢望<br>
+在大多数时候<br>
+或者说是绝大多数时候<br>
+我们的到的回报是远远比不上<br>
+我们所付出的辛酸和汗水的<br>
+
+</blockquote>
 </div>
