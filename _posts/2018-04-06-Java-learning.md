@@ -156,7 +156,34 @@ nextInt()方法在扫描到空白符的时候会将前面的数据读取走，�
 
  在读取Int的时候就调用nextline()方法，再用parseInt()转化为Int
 
+#### 方法三
 
+- 这里需要import java.io.IOException; //否则会报错
+
+###### 读取下一个字符：
+
+```
+import java.io.IOException
+class test{
+    public static void main(String[] args) throws IOException{
+      char c = (char) System.in.read();
+  }
+}
+```
+**注意这里需要类型转换，默认为int类型，即读到的是字符的ASCII码。**
+
+###### 将一串字符读入byte数组
+
+```
+import java.io.IOException;
+class test {
+     public static void main(String[] args) throws IOException{
+         byte[] input = new byte[5];  //创建一个byte数组来读取一串输入
+         System.in.read(input);  //将输入存入byte数组中
+         System.out.println(input[1]); //这里输出的仍然是int类型，即ASCII码
+     }
+ }
+```
 
 #### 图形界面输入方式
 
