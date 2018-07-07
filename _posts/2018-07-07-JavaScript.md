@@ -93,7 +93,14 @@ function 函数名()
 
 - 输出内容可以是双引号括起来的，也可以是变量，多个输出项之间以`+`连接
 
-- 
+- 例子：
+
+```
+<script type="text/javascript">
+  var mystr="hello";
+  document.write(mystr+"I love JavaScript"); //多项内容之间用+号连接
+</script>
+```
 
 
 <br>
