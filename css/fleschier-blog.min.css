@@ -938,9 +938,9 @@ body {
 }
 
 #ds-smilies-tooltip ul.ds-smilies-tabs li a {
-  /* background: #fff !important */
-  border-color: #999999;
-  color: #999999;
+  background: #000 !important
+  /* border-color: #999999;
+  color: #999999; */
 }
 
 .page-fullscreen .intro-header {
