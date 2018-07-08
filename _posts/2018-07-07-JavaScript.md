@@ -393,17 +393,78 @@ URL：可选参数，在窗口中要显示网页的网址或路径。如果省�
 |prompt()|显示可提示用户输入的对话框|
 |confirm()|显示带有一段消息以及确认按钮和取消按钮的对话框|
 |open()|打开一个新的浏览器窗口或者查找一个已经命名的窗口|
-|close()||
-|print()||
-|focus()||
-|blur()||
-|moveBy()||
-|moveTo()||
-|resizeBy()||
-|resizeTo()||
-|scrollBy()||
-|scrollTo()||
-|||
+|close()|关闭浏览器窗口|
+|print()|打印当前窗口的内容|
+|focus()|把键盘焦点给予一个窗口|
+|blur()|把键盘焦点从顶层窗口移开|
+|moveBy()|可相对窗口的当前坐标把它移动指定的像素|
+|moveTo()|把窗口的左上角移动到一个指定的坐标|
+|resizeBy()|按照|
+|resizeTo()|把窗口的大小调整到指定的宽度和高度|
+|scrollBy()|按照指定的像素值来滚动内容|
+|scrollTo()|把内容滚动到指定的坐标|
+|setInterval()|每隔指定的时间执行代码|
+|setTimeout()|在指定的延迟时间后来执行代码|
+|clearInterval()|取消setInterval()的设置|
+|clearTimeout()|取消setTimeout()的设置|
+
+- 调用这些方法格式：`window.方法名(参数名);`
+
+例子：
+
+```
+function myFunction()
+{
+    alert("欢迎")
+    window.open('http://www.imooc.com','_blank','width=600 height=400')
+    //第一个参数表示要打开的网页，'_blank'参数表示打开一个新网页，后面的参数设置新窗口的初始大小
+}
+```
+
+###### JavaScript计时器
+
+- 在JavaScript中，我们可以在设定的时间间隔之后来执行代码，而不是在函数被调用后立即执行。
+
+- 计时器类型：
+
+  1. 一次性计时器：仅在指定的延迟时间之后触发一次。(setTimeout())
+
+  2. 间隔性触发计时器：每隔一定的时间间隔就触发一次。(setInterval())
+
+- setInterval()方法格式：`setInterval(代码，交互时间)`
+>参数中，代码就是要执行的函数挥着代码串，交互时间就是执行的时间间隔，以毫秒为单位
+
+- setInterval的返回值可以传递给clearInterval从而取消对代码的周期性执行。
+
+- 假设有一个clock()函数，则调用格式为：
+
+```
+setInterval("clock()",1000)
+或者
+setInterval(clock,1000)
+```
+
+## DOM对象
+---
+
+#### getElementsByName方法
+
+- 返回带有指定名称的节点对象的集合
+
+- 语法：`document.getElementsByName(name)`
+>其中name参数是标签上设置的name属性，和设置id属性格式一样，但是不同的标签可以设置同一个name属性，而id属性必须唯一
+
+- 与getElementById()不同的是，通过元素的name属性查询元素而不是通过id属性
+
+- 注意：因为文档中的name属性可能不唯一，所有的getElementByName()方法的返回值是元素的数组，而不是一个元素
+
+- 和数组类似的也有length属性，可以和访问数组一样的方法来访问，从0开始
+
+
+
+
+
+
 
 
 <br>
