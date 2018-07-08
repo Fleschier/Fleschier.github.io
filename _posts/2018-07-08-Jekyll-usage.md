@@ -2,7 +2,7 @@
 layout:     post
 title:      "使用jekyll预览博客"
 date:       2018-07-08 22:40:00
-tags:   ๑FrontEnd ๑JavaScrpt
+tags:   ๑Blog
 ---
 
 
