@@ -482,5 +482,9 @@ p span.warning{color:purple;} /*权值为1+1+10=12*/
 
  2. inherit: 应该从父元素继承 opacity 属性的值。
 
+###### data-toggle属性
+
+- data-toggle一般是a元素(即链接)的属性。data-toggle指以什么事件触发。[详细的介绍](https://blog.csdn.net/d295968572/article/details/56667863)
+
 <br>
 > 最后更新与2018.7.9
