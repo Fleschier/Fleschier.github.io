@@ -18,8 +18,8 @@
 .pager li > a:hover,
 .pager li > a:focus {
   color: white;
-  background-color: #0085a1;
-  border: 1px solid #0085a1;
+  background-color: #0000FF;
+  border: 1px solid #0000FF;
 }
 .pager .disabled > a,
 .pager .disabled > a:hover,
@@ -32,12 +32,12 @@
 ::-moz-selection {
   color: white;
   text-shadow: none;
-  background: #0085a1;
+  background: #0000FF;
 }
 ::selection {
   color: white;
   text-shadow: none;
-  background: #0085a1;
+  background: #0000FF;
 }
 img::selection {
   color: white;
@@ -48,7 +48,7 @@ img::-moz-selection {
   background: transparent;
 }
 body {
-  webkit-tap-highlight-color: #0085a1;
+  webkit-tap-highlight-color: #33FFFF;
 }
 /* Hux add tags support */
 .tags {

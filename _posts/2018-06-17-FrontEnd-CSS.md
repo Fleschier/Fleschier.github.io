@@ -486,5 +486,9 @@ p span.warning{color:purple;} /*权值为1+1+10=12*/
 
 - data-toggle一般是a元素(即链接)的属性。data-toggle指以什么事件触发。[详细的介绍](https://blog.csdn.net/d295968572/article/details/56667863)
 
+###### -webkit-tap-highlight-color属性
+
+- webkit-tap-highlight-color 是一个没有标准化的属性，能够设置点击链接的时候出现的高亮颜色。显示给用户的高光是他们成功点击的标识，以及暗示了他们点击的元素。
+
 <br>
 > 最后更新与2018.7.9
