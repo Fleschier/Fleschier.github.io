@@ -1537,7 +1537,8 @@ nav a {
 .nav-menu-item a {
   padding: 0px;
   color: #999;
-  font-weight: 700;
+  /* font-weight: 700; */
+  font-weight: bold;
   font-size: .8em;
   text-shadow: none;
   -webkit-transition: color 0.3s;
