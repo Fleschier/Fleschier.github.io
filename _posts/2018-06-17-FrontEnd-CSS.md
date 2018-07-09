@@ -468,5 +468,19 @@ p span.warning{color:purple;} /*权值为1+1+10=12*/
 
 - `p{font-size:12px;line-height:130%}` 设置行高（行间距）为字体的130%（12 * 1.3 = 15.6px）。
 
+## 一些补充
+---
+
+###### opacity属性
+
+- 设置div元素的不透明级别
+
+- 语法：`opacity: value|inherit;`
+
+- 值：
+ 1. value: 规定不透明度。从 0.0 （完全透明）到 1.0（完全不透明）。
+
+ 2. inherit: 应该从父元素继承 opacity 属性的值。
+
 <br>
-> 最后更新与2018.6.17
+> 最后更新与2018.7.9
