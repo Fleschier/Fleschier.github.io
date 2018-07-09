@@ -736,7 +736,7 @@ img::-moz-selection {
 }
 
 body {
-  webkit-tap-highlight-color: #33FFFF
+  -webkit-tap-highlight-color: #33FFFF
 }
 
 .tags {

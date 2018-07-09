@@ -48,7 +48,7 @@ img::-moz-selection {
   background: transparent;
 }
 body {
-  webkit-tap-highlight-color: #33FFFF;
+  -webkit-tap-highlight-color: #33FFFF;
 }
 /* Hux add tags support */
 .tags {
