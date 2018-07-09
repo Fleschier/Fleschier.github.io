@@ -5,7 +5,7 @@ description: 世界很大，多去看看
 # 头像里面的标题
 avatarTitle: Fleschier
 # 头像里面的描述
-avatarDesc: 
+avatarDesc:
 url: "https://Fleschier.github.io"
 
 
@@ -30,6 +30,7 @@ highlighter: rouge
 
 textColor: #0000
 
+#this is the color for the home page background
 # supported colors: blue, green, purple, red, orange or slate. If you need clear, leave it empty.
 cover_color: clear
 

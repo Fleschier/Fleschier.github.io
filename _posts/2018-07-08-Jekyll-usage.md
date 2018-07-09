@@ -1,6 +1,6 @@
 ---
 layout:     post
-title:      "使用jekyll预览博客"
+title:      "Ubuntu下使用jekyll预览博客"
 date:       2018-07-08 22:40:00
 tags:   ๑Blog
 ---
@@ -22,6 +22,8 @@ gem install jekyll-paginate
 //
 gem install jekyll-gist
 ```
+
+- 如果执行命令的过程中有提示什么什么未安装，按照提示的命令来安装即可。
 
 - 然后将终端切换到你博客所在的根目录，执行：`jekyll serve`即可
 
