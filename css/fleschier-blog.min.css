@@ -32,7 +32,7 @@
 }
 
 .sidebar-container a:hover, .sidebar-container a:active {
-  color: #000033 !important
+  color: #E2E2E2 !important  /*侧变栏名字激活颜色*/ /*E2E2E2为浅灰色*/
 }
 
 .sidebar-container .tags a {
@@ -40,7 +40,7 @@
 }
 
 .sidebar-container .tags a:hover, .sidebar-container .tags a:active {
-  border-color: #000033
+  border-color: #E2E2E2   /*侧边栏以及连接鼠标滑过激活的颜色*/
 }
 
 .sidebar-container .short-about img {
@@ -87,7 +87,7 @@ a {
 }
 
 a:hover, a:focus {
-  color: #000033
+  color: #000033      /*链接鼠标滑过颜色*/
 }
 
 a img:hover, a img:focus {

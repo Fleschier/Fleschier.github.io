@@ -100,13 +100,13 @@ body {
   line-height: 28px;
   margin: 0 2px;
   margin-bottom: 8px;
-  background: #0000CC;
+  background: #0000CC;    /*标签激活颜色*/
 }
 #tag_cloud a:hover,
 #tag_cloud .tag:hover,
 #tag_cloud a:active,
 #tag_cloud .tag:active {
-  background-color: #33FFFF !important;
+  background-color: #33FFFF !important;  /*本处颜色已被别处覆盖*/
 }
 @media only screen and (min-width: 768px) {
   #tag_cloud {
