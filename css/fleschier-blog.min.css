@@ -32,7 +32,7 @@
 }
 
 .sidebar-container a:hover, .sidebar-container a:active {
-  color: #E2E2E2 !important  /*侧变栏名字激活颜色*/ /*E2E2E2为浅灰色*/
+  color: #E2E2E2 !important   /*E2E2E2为浅灰色*/
 }
 
 .sidebar-container .tags a {
@@ -161,7 +161,7 @@ pre code {
 }
 
 .post-container a:hover, .post-container a:focus {
-  color: #000033
+  color: #e2e2e2      /*链接鼠标focus和滑过的颜色*/ /*#000033*/
 }
 
 .post-container h1, .post-container h2, .post-container h3, .post-container h4, .post-container h5, .post-container h6 {
