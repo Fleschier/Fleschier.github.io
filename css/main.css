@@ -50,6 +50,12 @@ img::-moz-selection {
 body {
   -webkit-tap-highlight-color: #CCCCCC;
 }
+
+/*fleschier add a:hover effects*/
+a:hover{
+  color: #CCCCCC;
+}
+
 /* Hux add tags support */
 .tags {
   margin-bottom: -5px;
