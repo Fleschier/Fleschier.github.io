@@ -51,11 +51,6 @@ body {
   -webkit-tap-highlight-color: #CCCCCC;
 }
 
-/*fleschier add a:hover effects*/
-a:hover{
-  color: #fff !important;
-}
-
 /* Hux add tags support */
 .tags {
   margin-bottom: -5px;
