@@ -53,7 +53,7 @@ body {
 
 /*fleschier add a:hover effects*/
 a:hover{
-  color: #CCCCCC;
+  color: #CCCCCC !important;
 }
 
 /* Hux add tags support */
