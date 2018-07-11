@@ -477,10 +477,7 @@ p span.warning{color:purple;} /*权值为1+1+10=12*/
 
 - 语法：`opacity: value|inherit;`
 
-- 值：
- 1. value: 规定不透明度。从 0.0 （完全透明）到 1.0（完全不透明）。
-
- 2. inherit: 应该从父元素继承 opacity 属性的值。
+- 值： value: 规定不透明度。从 0.0 （完全透明）到 1.0（完全不透明）; inherit: 应该从父元素继承 opacity 属性的值。
 
 ###### data-toggle属性
 
