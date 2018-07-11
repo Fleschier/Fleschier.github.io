@@ -1161,7 +1161,7 @@ input[type="text"]:-ms-input-placeholder, input[type="password"]:-ms-input-place
 
 /*头像效果-start*/
 
-/* html {
+html {
   font-family: sans-serif;
   -ms-text-size-adjust: 100%;
   -webkit-text-size-adjust: 100%
@@ -1227,13 +1227,13 @@ body {
   transform-origin: 50% 0;
 }
 
-.ih-item.circle.effect.bottom_to_top a:hover .img {
+/* .ih-item.circle.effect.bottom_to_top a:hover .img {
   -webkit-transform: rotate3d(1, 0, 0, 180deg);
   -moz-transform: rotate3d(1, 0, 0, 180deg);
   -ms-transform: rotate3d(1, 0, 0, 180deg);
   -o-transform: rotate3d(1, 0, 0, 180deg);
   transform: rotate3d(1, 0, 0, 180deg);
-}
+} */
 
 .ih-item.circle.effect.top_to_bottom .img {
   -webkit-transform-origin: 50% 100%;
@@ -1243,13 +1243,13 @@ body {
   transform-origin: 50% 100%;
 }
 
-.ih-item.circle.effect.top_to_bottom a:hover .img {
+/* .ih-item.circle.effect.top_to_bottom a:hover .img {
   -webkit-transform: rotate3d(1, 0, 0, -180deg);
   -moz-transform: rotate3d(1, 0, 0, -180deg);
   -ms-transform: rotate3d(1, 0, 0, -180deg);
   -o-transform: rotate3d(1, 0, 0, -180deg);
   transform: rotate3d(1, 0, 0, -180deg);
-}
+} */
 
 .ih-item.circle.effect.left_to_right .img {
   -webkit-transform-origin: 100% 50%;
@@ -1259,13 +1259,13 @@ body {
   transform-origin: 100% 50%;
 }
 
-.ih-item.circle.effect.left_to_right a:hover .img {
+/* .ih-item.circle.effect.left_to_right a:hover .img {
   -webkit-transform: rotate3d(0, 1, 0, 180deg);
   -moz-transform: rotate3d(0, 1, 0, 180deg);
   -ms-transform: rotate3d(0, 1, 0, 180deg);
   -o-transform: rotate3d(0, 1, 0, 180deg);
   transform: rotate3d(0, 1, 0, 180deg);
-}
+} */
 
 .ih-item.circle.effect.right_to_left .img {
   -webkit-transform-origin: 0% 50%;
@@ -1275,13 +1275,13 @@ body {
   transform-origin: 0% 50%;
 }
 
-.ih-item.circle.effect.right_to_left a:hover .img {
+/* .ih-item.circle.effect.right_to_left a:hover .img {
   -webkit-transform: rotate3d(0, 1, 0, -180deg);
   -moz-transform: rotate3d(0, 1, 0, -180deg);
   -ms-transform: rotate3d(0, 1, 0, -180deg);
   -o-transform: rotate3d(0, 1, 0, -180deg);
   transform: rotate3d(0, 1, 0, -180deg);
-}
+} */
 
 .ih-item a {
   color: #333;
@@ -1343,7 +1343,7 @@ body {
     position: relative;
     width: 100px;
     height: 100px;
-
+    /*margin-top: 20px;*/
     border-radius: 50%;
   }
   .ih-item.circle {
@@ -1397,11 +1397,7 @@ body {
     position: relative;
     width: 100px;
     height: 100px;
-    */
-
-/*margin-top: 20px;*/
-
-/*
+    /*margin-top: 20px;*/
     border-radius: 50%;
   }
   .ih-item.circle {
@@ -1414,7 +1410,6 @@ body {
     font-size: 0.9em;
   }
 }
-*/
 
 /*头像效果-end*/
 
