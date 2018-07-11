@@ -308,7 +308,10 @@ xhtml1.0版本 <hr />
 
 - 在`<textarea></textarea>`标签之间可以输入默认值。
 
+## Html5新元素一览
+---
 
+- [Html5新元素](http://www.runoob.com/html/html5-new-element.html)
 
 
 <br>
