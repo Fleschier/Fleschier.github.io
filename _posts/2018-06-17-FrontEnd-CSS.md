@@ -490,5 +490,23 @@ p span.warning{color:purple;} /*权值为1+1+10=12*/
 
 - `-webkit-tap-highlight-color` 是一个没有标准化的属性，能够设置点击链接的时候出现的高亮颜色。显示给用户的高光是他们成功点击的标识，以及暗示了他们点击的元素。
 
+#### `@media` 用法
+
+- `@media`可以让你根据不同的屏幕大小而使用不同的样式，这可以使得不需要js代码就能实现响应式布局。
+
+- 语法：
+```
+@media mediatype and|not|only (media feature) {
+    CSS-Code;
+}
+```
+- 其中mediatype就是媒体类型，可以包括好多种，最常用的就是screen，其他多数已经作废。
+
+- media feature就定义了这个media设备的一些特征，简单的说就是媒体满足什么条件，常用的就是max-width，min-width。
+
+
+
+
+
 <br>
 > 最后更新与2018.7.9
