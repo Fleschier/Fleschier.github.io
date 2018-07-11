@@ -1,14 +1,14 @@
 @media (min-width:1200px) {
   .post-container, .sidebar-container {
-    /* padding-right: 5% */
-    padding-right: 0
+    padding-right: 5%
+    /* padding-right: 0 */
   }
 }
 
 @media (min-width:768px) {
   .post-container {
-    /* padding-right: 5% */
-    padding-right: 0
+    padding-right: 5%
+    /* padding-right: 0 */
   }
 }
 
@@ -32,7 +32,8 @@
 }
 
 .sidebar-container a:hover, .sidebar-container a:active {
-  color: #E2E2E2 !important   /*E2E2E2为浅灰色*/
+  color: #E2E2E2 !important/*E2E2E2为浅灰色*/
+  font-weight:bold;
 }
 
 .sidebar-container .tags a {
@@ -40,7 +41,8 @@
 }
 
 .sidebar-container .tags a:hover, .sidebar-container .tags a:active {
-  border-color: #E2E2E2   /*侧边栏以及连接鼠标滑过激活的颜色*/
+  border-color: #E2E2E2/*侧边栏以及连接鼠标滑过激活的颜色*/
+  font-weight:bold;
 }
 
 .sidebar-container .short-about img {
@@ -87,7 +89,7 @@ a {
 }
 
 a:hover, a:focus {
-  color: #000033      /*链接鼠标滑过颜色*/
+  color: #000033/*链接鼠标滑过颜色*/
 }
 
 a img:hover, a img:focus {
@@ -161,7 +163,8 @@ pre code {
 }
 
 .post-container a:hover, .post-container a:focus {
-  color: #e2e2e2      /*链接鼠标focus和滑过的颜色*/ /*#000033*/
+  color: #e2e2e2/*链接鼠标focus和滑过的颜色*/
+  /*#000033*/
 }
 
 .post-container h1, .post-container h2, .post-container h3, .post-container h4, .post-container h5, .post-container h6 {
@@ -668,7 +671,8 @@ form .row:first-child .floating-label-form-group {
 }
 
 .btn-default:hover, .btn-default:focus {
-  background-color: #CCCCCC;    /*000033*/
+  background-color: #CCCCCC;
+  /*000033*/
   border: 1px solid #000033;
   color: #fff
 }
@@ -716,13 +720,13 @@ form .row:first-child .floating-label-form-group {
 ::-moz-selection {
   color: #fff;
   text-shadow: none;
-  background: #CCCCCC  /*000033*/
+  background: #CCCCCC/*000033*/
 }
 
 ::selection {
   color: #fff;
   text-shadow: none;
-  background: #CCCCCC /*000033*/
+  background: #CCCCCC/*000033*/
 }
 
 img::selection {
