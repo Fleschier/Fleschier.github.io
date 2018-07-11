@@ -11,6 +11,11 @@ tags:   ๑FrontEnd ๑JavaScrpt
 ## 基础
 ---
 
+>建议把javascript脚本放在 `<body> `部分的底部。
+>这会提高网页加载速度，因为 HTML 加载不受制于脚本加载。
+
+- [Js是放在head还是body解析](https://blog.csdn.net/w405722907/article/details/78517757)
+
 ###### 嵌入html的javascript写法
 
 - JavaScript代码写在`<script>`和`</script>`标签之前。
