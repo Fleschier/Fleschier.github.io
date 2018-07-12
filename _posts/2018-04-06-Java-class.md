@@ -76,7 +76,6 @@ s1 = AAAAABBBB
 ###### 按值传递(一般的函数参数)
 
 - 传入方法中的参数是一份拷贝，对其的修改不会影响其本身
-
 ```
 class Printer{
 	public void printinfo(String name, int age){

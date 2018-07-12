@@ -1,6 +1,6 @@
 ---
 layout:     post
-title:      "Java学习笔记——函数"
+title:      "Java学习笔记——方法"
 date:       2018-04-18 16:47:00
 tags: ๑Java
 ---

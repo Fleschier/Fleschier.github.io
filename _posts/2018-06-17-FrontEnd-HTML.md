@@ -72,7 +72,6 @@ tags:   ๑FrontEnd ๑Html
 - 文档的头部描述了文档的各种属性和信息，包括文档的标题等。绝大多数文档头部包含的数据都不会真正作为内容显示给读者。
 
 - 下面这些标签可以用在`<head>部分`：
-
 ```
 <head>
     <title>...</title>
@@ -100,7 +99,6 @@ tags:   ๑FrontEnd ๑Html
 - `<span>`标签是没有语义的，它的作用就是为了设置单独的样式用的。
 
 - 例子：
-
 ```
 <!DOCTYPE HTML>
 <html>
@@ -140,7 +138,6 @@ span{
 - 在 html 中是**忽略回车和空格**的，你输入的再多回车和空格也是显示不出来的
 
 - 换行标签语法：
-
 ```
 xhtml1.0写法： <br />
 html4.01写法： <br>
@@ -157,7 +154,6 @@ html4.01写法： <br>
 <hr>
 
 - 语法：
-
 ```
 html4.01版本 <hr>
 xhtml1.0版本 <hr />
@@ -185,7 +181,6 @@ xhtml1.0版本 <hr />
 ###### `ul-li`标签
 
 - 实例：
-
 ```
 <ul>
   <li>精彩少年</li>
@@ -264,7 +259,6 @@ xhtml1.0版本 <hr />
 - method ： 数据传送的方式（get/post）。
 
 - 例：
-
 ```
 <form    method="post"   action="save.php">
         <label for="username">用户名:</label>
@@ -283,7 +277,6 @@ xhtml1.0版本 <hr />
 - 文本输入框可以转化为密码输入框。
 
 - 语法：
-
 ```
 <form>
    <input type="text/password" name="名称" value="文本" />

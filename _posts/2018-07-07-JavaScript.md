@@ -60,7 +60,6 @@ tags:   ๑FrontEnd ๑JavaScrpt
 ###### 判断语句
 
 - 语法：
-
 ```
 if(条件)
 { 条件成立时执行的代码 }
@@ -69,7 +68,6 @@ else
 ```
 
 - 例子：
-
 ```
 <script type="text/javascript">
    var myage = 18;
@@ -83,7 +81,6 @@ else
 ###### 判断函数
 
 - 语法：
-
 ```
 function 函数名()
 {
@@ -99,7 +96,6 @@ function 函数名()
 - 输出内容可以是双引号括起来的，也可以是变量，多个输出项之间以`+`连接
 
 - 例子：
-
 ```
 <script type="text/javascript">
   var mystr="hello";
@@ -129,7 +125,6 @@ function 函数名()
 - 语法：`window.open([URL], [窗口名称], [参数字符串])`
 
 - 参数说明：
-
 ```
 URL：可选参数，在窗口中要显示网页的网址或路径。如果省略这个参数，或者它的值是空字符串，那么窗口就不显示任何文档。
 窗口名称：可选参数，被打开窗口的名称。
@@ -150,9 +145,9 @@ URL：可选参数，在窗口中要显示网页的网址或路径。如果省�
 
 - 关闭窗口：
 
-`window.close();`:关闭本窗口
+1. `window.close();`:关闭本窗口
 
-`<窗口对象>.close();`:关闭指定窗口
+2. `<窗口对象>.close();`:关闭指定窗口
 
 ## 控制权(DOM操作)
 ---
@@ -180,7 +175,6 @@ URL：可选参数，在窗口中要显示网页的网址或路径。如果省�
 - 语法：`document.getElementById(“id”) `
 
 - 例子：
-
 ```
 <!DOCTYPE HTML>
 <html>
@@ -192,7 +186,6 @@ URL：可选参数，在窗口中要显示网页的网址或路径。如果省�
     document.write(mye);                    //输出变量
   </script>
 </head>
-
 <body>
     <h3>Hello</h3>
     <p id="con">I love JavaScript</p>
@@ -206,7 +199,6 @@ URL：可选参数，在窗口中要显示网页的网址或路径。如果省�
 - 语法：`Object.innerHTML`
 
 - 例子：
-
 ```
 <!DOCTYPE HTML>
 <html>
@@ -250,7 +242,6 @@ URL：可选参数，在窗口中要显示网页的网址或路径。如果省�
 - CSS的其他的一些样式也可以通过该方法修改
 
 - 例子：改变`<p>`元素的样式，将颜色改为红色，字号改为20,背景颜色改为蓝：
-
 ```
 <p id="pcon">Hello World!</p>
 <script>
@@ -288,7 +279,6 @@ URL：可选参数，在窗口中要显示网页的网址或路径。如果省�
 2. 为网页内某个元素指定一个CSS样式来更改该元素的外观
 
 - 例子：
-
 ```
 <!DOCTYPE HTML>
 <html>
@@ -324,7 +314,7 @@ URL：可选参数，在窗口中要显示网页的网址或路径。如果省�
 </body>
 </html>
 ```
-结果：
+- 结果：
 
 ![](/images/JavaScript/007.png)
 
@@ -354,7 +344,6 @@ URL：可选参数，在窗口中要显示网页的网址或路径。如果省�
 - onclick是鼠标单击事件，当在网页上单击鼠标时，就会发生该事件。同时onclick事件调用的程序块就会被执行，通常与按钮一起使用。
 
 - 例如：单击按钮时出发onclick事件，调用add2()函数
-
 ```
 <form>
      <input name="button" type="button" value="点击提交" onclick="add2()" />  //注意最后的斜杠
@@ -416,7 +405,6 @@ URL：可选参数，在窗口中要显示网页的网址或路径。如果省�
 - 调用这些方法格式：`window.方法名(参数名);`
 
 例子：
-
 ```
 function myFunction()
 {
@@ -442,7 +430,6 @@ function myFunction()
 - setInterval的返回值可以传递给clearInterval从而取消对代码的周期性执行。
 
 - 假设有一个clock()函数，则调用格式为：
-
 ```
 setInterval("clock()",1000)
 或者

@@ -10,7 +10,6 @@ tags:   ๑Blog
 ---
 
 确保下面环境的齐全：
-
 ```
 brew install ruby
 //

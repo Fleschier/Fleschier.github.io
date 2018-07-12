@@ -1,6 +1,6 @@
 ---
 layout:     post
-title:      "《Scala编程》阅读记录——入门部分"
+title:      "《Scala编程(by Martin Odersky)》阅读记录——入门部分"
 date:       2018-07-12 21:40:00
 tags:   ๑Scala
 ---

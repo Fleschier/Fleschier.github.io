@@ -72,7 +72,6 @@ val counts = sc.textFile(“hdfs://...(文件路径，单机或者hdfs文件都�
 ###### 命令行提交
 
 - 命令行下切换到spark的安装目录，执行
-
 ```
 ./bin/spark-submit \  
  --class <main-class> \
@@ -135,6 +134,7 @@ output=/AR_res/
   /path/to/examples.jar \
   100
 ```
+
 ```
 # Run on a Spark standalone cluster in client deploy mode
 ./bin/spark-submit \
@@ -145,6 +145,7 @@ output=/AR_res/
   /path/to/examples.jar \
   1000
 ```
+
 ```
 # Run on a Spark standalone cluster in cluster deploy mode with supervise
 ./bin/spark-submit \
@@ -157,6 +158,7 @@ output=/AR_res/
   /path/to/examples.jar \
   1000
 ```
+
 ```
 # Run on a YARN cluster
 export HADOOP_CONF_DIR=XXX
@@ -169,6 +171,7 @@ export HADOOP_CONF_DIR=XXX
   /path/to/examples.jar \
   1000
 ```
+
 ```
 # Run a Python application on a Spark standalone cluster
 ./bin/spark-submit \
@@ -176,6 +179,7 @@ export HADOOP_CONF_DIR=XXX
   examples/src/main/python/pi.py \
   1000
 ```
+
 ```
 # Run on a Mesos cluster in cluster deploy mode with supervise
 ./bin/spark-submit \

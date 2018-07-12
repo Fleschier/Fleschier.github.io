@@ -18,7 +18,6 @@ tags: ๑Scala
 - 测试程序的运行时间的函数：`System.currentTimeMillis()`
 
 - 用法：
-
 ```
 [...]
   val time = System.currentTimeMillis()
