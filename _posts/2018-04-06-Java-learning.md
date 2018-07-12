@@ -57,7 +57,7 @@ public class HelloWorld {
 - 八大基本数据类型的默认值：
 
 | 数据类型   | 默认值          |
-| --------  |:---------       |
+| --------  |---------       |
 | boolean   |     false       |
 | char      | '/uoooo'(null)  |
 | byte      |         (byte)0 |
