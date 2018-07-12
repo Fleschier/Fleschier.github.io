@@ -160,4 +160,77 @@ val c = a ::: b   //c: List(1,2,3)
 
 ###### 使用元祖
 
-- 
+- 元祖也是不可变的，但是元祖可以容纳不同类型的元素。
+
+- 当需要从方法返回多个对象时，元祖就非常有用
+
+- 实例化一个元祖非常简单，只要将对象放在圆括号当中，用逗号隔开即可
+
+- 一旦实例化好一个元祖，就可以用英文句点、下划线和 **从1开始** 的序号来访问每一个元素。
+
+- 例如：
+```
+val pair = (99,"test")
+pritln(pair._1)		//访问第一个元素
+println(pair._2)	//访问第二个元素
+```
+
+- 元祖的实际类型取决于它的元素。例如：`(99,"test")`的类型为`Tuple2[Int,String]`,而元祖`('u','r',"the",1,4,"me")`的类型是`Tuple6[Char,Char,String,Int,Int,String]`
+
+- 元祖为什么不能像数组一样用圆括号来访问元素(原文)：
+> 你也许正好奇问什么不能像访问列表元素，也就是“pair(0)”那样访问元祖元素。背后的原因是列表的apply方法永远**只返回同一种类型**，但元祖里的元素可以是不同类型的：`_1`可能是一种类型，`_2`可能是另一种
+
+###### 使用集和映射
+
+- scala的API包含了一个基础的特质(trait)来表示集，这里的特质跟Java的接口定义类似
+
+- scala提供了两个子特质：一个表示可变集，一个表示不可变集。(可变集与不可变集位于不同的包)
+
+- 创建一个集合的例子：
+```
+var jetSet = Set("Boeing","Airbus")
+jetSet += "Lear"
+println(jetSet.contains("Cessna"))
+```
+- 第一行代码表示，可以像创建列表和数组那样创建集：通过调用Set伴生对象的apply工厂方法。
+
+- 在这个例子中，实际上调用了scala.collection.immutable.Set的伴生对象的apply方法，返回一个默认的、**不可变** 的Set对象，类型为`Set[String]`
+
+- 向集添加元素需要调用`+`方法。无论是可变集还是不可变集，`+`方法都会创建并返回一个新的集
+
+- 而本例中的`+=`方法，实际上不可变集并不提供这个方法，其本质上是`jetSet = jetSet + ”Lear"`的简写。因此，**其本质上是将jetSet这个var重新赋值成了一个包含三个元素的新的集**
+
+- 最后一行是打印集中是否包含"Cessna"这个元素，结果应当是`false`
+
+###### 可变集
+
+- 使用可变集需要一次引入，例：
+```
+import scala.collection.mutable
+val movieSet = mutable.Set("Hitch","Peter")
+movieSet += "Shrek"
+println(movieSet)
+```
+- 通过import语句，可以使用简短的`mutable.Set()`而不是`scala.colection.mutable.Set()`这样完整的句子
+
+- 这里的`+=`方法在可变集里是有定义的，因此这个可变集声明时用的是 `val`而不是 `var`(上面也提到了不可变集实际上是被重新赋值了，如果使用`val`会编译报错)
+
+- `HashSet`的用法与`Set`一致，只是`HashSet`的存储方式不同，因此一般在需要考虑性能的地方会用到`HashSet`
+
+###### 映射(Map)
+
+- 与Set类似，Map也有可变与不可变的版本。
+
+- 例子：
+```
+import scala.collection.mutable
+val treasureMap = mutable.Map[Int,String]()
+treasureMap += (1 -> "Go to island")
+treasureMap += (2 -> "Find big X on ground")
+treasureMap += (3 -> "Dig")
+println(treasureMap(2))
+```
+
+
+<br>
+最后更新于2018.7.12
