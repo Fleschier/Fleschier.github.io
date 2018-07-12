@@ -68,6 +68,7 @@ else
 ```
 
 - 例子：
+
 ```
 <script type="text/javascript">
    var myage = 18;
@@ -96,6 +97,7 @@ function 函数名()
 - 输出内容可以是双引号括起来的，也可以是变量，多个输出项之间以`+`连接
 
 - 例子：
+
 ```
 <script type="text/javascript">
   var mystr="hello";
@@ -175,6 +177,7 @@ URL：可选参数，在窗口中要显示网页的网址或路径。如果省�
 - 语法：`document.getElementById(“id”) `
 
 - 例子：
+
 ```
 <!DOCTYPE HTML>
 <html>
@@ -199,6 +202,7 @@ URL：可选参数，在窗口中要显示网页的网址或路径。如果省�
 - 语法：`Object.innerHTML`
 
 - 例子：
+
 ```
 <!DOCTYPE HTML>
 <html>
@@ -242,6 +246,7 @@ URL：可选参数，在窗口中要显示网页的网址或路径。如果省�
 - CSS的其他的一些样式也可以通过该方法修改
 
 - 例子：改变`<p>`元素的样式，将颜色改为红色，字号改为20,背景颜色改为蓝：
+
 ```
 <p id="pcon">Hello World!</p>
 <script>
@@ -279,6 +284,7 @@ URL：可选参数，在窗口中要显示网页的网址或路径。如果省�
 2. 为网页内某个元素指定一个CSS样式来更改该元素的外观
 
 - 例子：
+
 ```
 <!DOCTYPE HTML>
 <html>
@@ -344,6 +350,7 @@ URL：可选参数，在窗口中要显示网页的网址或路径。如果省�
 - onclick是鼠标单击事件，当在网页上单击鼠标时，就会发生该事件。同时onclick事件调用的程序块就会被执行，通常与按钮一起使用。
 
 - 例如：单击按钮时出发onclick事件，调用add2()函数
+
 ```
 <form>
      <input name="button" type="button" value="点击提交" onclick="add2()" />  //注意最后的斜杠
@@ -405,6 +412,7 @@ URL：可选参数，在窗口中要显示网页的网址或路径。如果省�
 - 调用这些方法格式：`window.方法名(参数名);`
 
 例子：
+
 ```
 function myFunction()
 {
@@ -430,6 +438,7 @@ function myFunction()
 - setInterval的返回值可以传递给clearInterval从而取消对代码的周期性执行。
 
 - 假设有一个clock()函数，则调用格式为：
+
 ```
 setInterval("clock()",1000)
 或者
