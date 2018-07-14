@@ -97,12 +97,37 @@ p a {
   text-decoration: underline;
 }
 
-a:hover {
+/* a:hover {
   color: #0000CD;
   -o-transition: .5s;
   -ms-transition: .5s;
   -moz-transition: .5s;
   -webkit-transition: .5s;
+} */
+
+/* 未访问的链接 */
+
+#index a:link {
+  color: #12C
+}
+
+/* 已访问的链接 */
+
+#index a:visited {
+  color: #609 !important
+}
+
+/* 鼠标移动到链接上 */
+
+#index a:hover {
+  color: #336 !important;
+  text-decoration: underline !important;
+}
+
+/* 选定的链接 */
+
+#index a:active {
+  color: #dd4b39 !important
 }
 
 h1, h2, h3, h4, h5, h5 {
@@ -269,31 +294,6 @@ tbody td {
 td:last-child {
   padding-right: 10px;
   border: 1px solid #363636;
-}
-
-/* 未访问的链接 */
-
-#index a:link {
-  color: #12C
-}
-
-/* 已访问的链接 */
-
-#index a:visited {
-  color: #609 !important
-}
-
-/* 鼠标移动到链接上 */
-
-#index a:hover {
-  color: #336 !important;
-  text-decoration: underline !important;
-}
-
-/* 选定的链接 */
-
-#index a:active {
-  color: #dd4b39 !important
 }
 
 /*pager start----------------*/

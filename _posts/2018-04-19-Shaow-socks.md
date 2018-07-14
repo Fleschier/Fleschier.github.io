@@ -110,4 +110,4 @@ vim /usr/local/lib/python2.7/dist-packages/shadowsocks/crypto/openssl.py
 - 接下来就可以优雅地体验翻墙上网了～
 
 <br>
-最后更新于2018.5.28
+> 最后更新于2018.5.28

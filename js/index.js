@@ -119,9 +119,9 @@ function backToTop() {
     });
 
     //初始化tip
-//   $(function () { $("[data-toggle='tooltip']").tooltip(); });
-// }
-
+  // $(function () {
+  //   $("[data-toggle='tooltip']").tooltip('show'); });
+}
 
 /**
  * 侧边目录
@@ -141,5 +141,5 @@ function generateContent() {
             'data-offset': '50'
         });*/
     }
-    console.log("myAffix!!!");
+     console.log("this is a test info of success! _Fleschier");
 }
