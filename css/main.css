@@ -555,6 +555,8 @@ hr {
   vertical-align: middle;
 }
 
+/* 主标题 */
+
 .panel-title {
   font-family: "STKaiti" !important;
   margin: 0 0 5px 0;
@@ -563,6 +565,8 @@ hr {
   letter-spacing: 4px;
   color: #FFF;
 }
+
+/* 副标题 */
 
 .panel-subtitle {
   font-family: "STKaiti" !important;
@@ -573,6 +577,8 @@ hr {
   color: #CCCCCC;
   -webkit-font-smoothing: antialiased;
 }
+
+/* 背景 */
 
 .panel-cover {
   display: block;
