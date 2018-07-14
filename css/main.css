@@ -836,7 +836,8 @@ nav {
 
 .pagination {
   display: block;
-  margin: 0 0 4em 0;
+  margin: 0 0 4em 16em;
+  /*四个元素的顺序：上，右，下，左，这里左边距取16em是为了使其居中显示 _Flechier*/
 }
 
 .pagination__page-number {
