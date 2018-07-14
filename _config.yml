@@ -1,7 +1,7 @@
 # Basic
-title: 渐寒
-subtitle: Welcome~
-description: 世界很大，多去看看
+title: FLESCHIER
+subtitle:
+description: Welcome~
 # 头像里面的标题
 # avatarTitle: Fleschier
 # 头像里面的描述
@@ -36,13 +36,13 @@ cover_color: clear
 
 # The blog button should not be removed.
 blog_button:
-    title: 主页
+    title: HOME
 
 # Navigation buttons in the front page.s
 nav:
-    - {title: 归档, description: archive, url: '/archive'}
-    - {title: 标签, description: tags, url: '/tags'}
-    - {title: 关于, description: about, url: '/about'}
+    - {title: ARCHIVE, description: archive, url: '/archive'}
+    - {title: TAGS, description: tags, url: '/tags'}
+    - {title: ABOUT, description: about, url: '/about'}
 
 # Featured Tags
 featured-tags: true                   # whether or not using Feature-Tags
