@@ -2,7 +2,6 @@
  * 页面ready方法
  */
 $(document).ready(function() {
-
     categoryDisplay();
     generateContent();
     backToTop();
@@ -38,8 +37,8 @@ function fixFooterInit() {
         fixFooter(footerHeight, footerMarginTop);
     });*/
 
-
 }
+
 
 /**
  * 固定底栏
