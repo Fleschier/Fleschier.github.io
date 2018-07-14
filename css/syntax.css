@@ -2,6 +2,8 @@
 
 /* from http://stackoverflow.com/a/23393920 */
 
+/*This a file for the highlight of the codes _Fleschier*/
+
 .highlight pre code * {
   white-space: nowrap; // this sets all children inside to nowrap
 }
