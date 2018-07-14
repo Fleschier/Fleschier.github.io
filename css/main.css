@@ -836,8 +836,8 @@ nav {
 
 .pagination {
   display: block;
-  margin: 0 0 4em 16em;
-  /*四个元素的顺序：上，右，下，左，这里左边距取16em是为了使其居中显示 _Flechier*/
+  margin: 0 0 4em 0;
+  /*四个元素的顺序：上，右，下，左 此块状元素宽为864px,因此右边距取一个值来使其居中显示，但是移动端显示就会有问题 _Flechier*/
 }
 
 .pagination__page-number {
@@ -847,11 +847,11 @@ nav {
 }
 
 .pagination__newer {
-  margin-right: 1em;
+  margin-right: 2em;
 }
 
 .pagination__older {
-  margin-left: 1em;
+  margin-left: 2em;
 }
 
 i {
