@@ -12,6 +12,7 @@
   }
 }
 
+/* the following are useless codes
 .sidebar-container {
   color: #bfbfbf;
   font-size: 14px
@@ -32,7 +33,7 @@
 }
 
 .sidebar-container a:hover, .sidebar-container a:active {
-  color: #E2E2E2 !important/*E2E2E2为浅灰色*/
+  color: #E2E2E2 !important
   font-weight:bold;
 }
 
@@ -41,7 +42,7 @@
 }
 
 .sidebar-container .tags a:hover, .sidebar-container .tags a:active {
-  border-color: #E2E2E2/*侧边栏以及连接鼠标滑过激活的颜色*/
+  border-color: #E2E2E2
   font-weight:bold;
 }
 
@@ -60,6 +61,7 @@
 .sidebar-container .short-about .list-inline>li {
   padding-left: 0
 }
+*/
 
 body {
   font-family: -apple-system, "Helvetica Neue", Arial, "PingFang SC", "Hiragino Sans GB", STHeiti, "Microsoft YaHei", "Microsoft JhengHei", "Source Han Sans SC", "Noto Sans CJK SC", "Source Han Sans CN", "Noto Sans SC", "Source Han Sans TC", "Noto Sans CJK TC", "WenQuanYi Micro Hei", SimSun, sans-serif;
@@ -673,7 +675,7 @@ form .row:first-child .floating-label-form-group {
 .btn-default:hover, .btn-default:focus {
   background-color: #CCCCCC;
   /*000033*/
-  border: 1px solid #000033;
+  /* border: 1px solid #000033; */
   color: #fff
 }
 

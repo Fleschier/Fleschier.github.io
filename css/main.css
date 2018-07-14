@@ -996,11 +996,14 @@ i {
   color: #4F4F4F;
 }
 
+/*pagination.html 第一行分割线样式*/
+
+/*
 .post-list__divider {
-  width: 30%;
-  margin: 2.2em 0 2.1em 0;
-  border-top: 1px solid #DDDDDD;
-}
+  width: 50%;
+  margin: 2.2em 0 2.1em 1.0em;
+  border-top: 3px solid #DDDDDD;
+} */
 
 *:focus {
   outline: none;
