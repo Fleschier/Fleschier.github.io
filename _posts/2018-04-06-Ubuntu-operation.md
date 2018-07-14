@@ -122,7 +122,7 @@ OnlyShowIn=Unity;
 
 ###### 关于shell脚本的创建
 
-- 首先可以touch一个文件再进行内容的修改。或者直接`vim filename'新建一个文件并进行内容的编辑
+- 首先可以touch一个文件再进行内容的修改。或者直接`vim filename`新建一个文件并进行内容的编辑
 
 - 所有shell脚本本质上都是文本文件，命名格式为`filename.sh`,内容必须以`#!/bin/bash`为第一行，当中没有空格。
 
@@ -157,7 +157,6 @@ echo 'Hello World!'  #本句会在终端中打印 "Hello World!"
 - 为什么要添加环境变量呢？如果你在Linux下载了一个免安装的软件，你要启动它的话，要么创建一个桌面快捷方式（方法见上文），要么就是每次进入它的目录点开。这时候如果我们把它添加进了PATH环境变量，那么我们只需要在终端中输入这个软件的名字，回车，就可以启动它了。
 
 - 方法一：修改profile文件（**注意：一定要切换到root用户，一定要切换到root用户，一定要切换到root用户(sudo su)! ! ! !** 否则最后保存文件会一直被拒绝又退不出去只能强退终端...可能还会有其他一些麻烦事...总之有的爽呢...） //对所有用户永久生效
-
 ```  
 (root模式下执行) vim /etc/profile
 在文档最后加入一行:
@@ -173,7 +172,7 @@ export SPARK_HOME=/usr/lib/spark/spark-2.2.0-bin-hadoop2.7
 export PATH=${SPARK_HOME}/bin:$PATH
 ```
 
-> 使用source命令时要关闭fish，否则会报错
+- *使用source命令时要关闭fish，否则会报错*
 
 - 方法二：修改.bashrc文件（注意点同上）//仅对当前用户永久生效
 ```

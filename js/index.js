@@ -119,10 +119,8 @@ function backToTop() {
     });
 
     //初始化tip
-    // $(function() {
-    //     $('[data-toggle="tooltip"]').tooltip();
-    // });
-}
+//   $(function () { $("[data-toggle='tooltip']").tooltip(); });
+// }
 
 
 /**

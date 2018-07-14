@@ -14,7 +14,7 @@ tags:   ๑ScientificSurfing ๑Ubuntu
 ###### 命令行方式的ss
 ---
 
-```
+- ```
 sudo apt-get install python-pip
 sudo pip install shadowsocks
 ```

@@ -200,4 +200,4 @@ stop-all.sh
 - 参考博客——[hadoop伪分布式搭建](https://blog.csdn.net/hitwengqi/article/details/8008203)，[很详细的搭建步骤(Hadoop-2.7.2版本)](https://blog.csdn.net/Dr_Guo/article/details/50886667)
 
 <br>
-最后更新于2018.5.31
+> 最后更新于2018.5.31

@@ -130,6 +130,7 @@ System.out.println();
 #### 方法二：
 ###### 通过Scannner类
 
+- 例子：
 ```
 import java.util.*
 ...

@@ -50,6 +50,7 @@ tags: ๑Spark ๑BigData
 ---
 > 摘自官方文档
 
+- 完整版：
 ```
 text_file = sc.textFile("hdfs://...") //文件需要放在hdfs上
 counts = text_file.flatMap(lambda line: line.split(" ")) \
@@ -59,7 +60,7 @@ counts.saveAsTextFile("hdfs://...")
 ```
 - 精简版(在spark-shell中执行就这一条语句即可)：  (足见scala的优美与强大)
 ```
-val counts = sc.textFile(“hdfs://...(文件路径，单机或者hdfs文件都可以)”).flatMap(_.split(" ")).map(x => (x,1)).reduceByKey(_ + _).collect().foreach(println) //打印结果
+val counts = sc.textFile("hdfs://...(文件路径，单机或者hdfs文件都可以)").flatMap(_.split(" ")).map(x => (x,1)).reduceByKey(_ + _).collect().foreach(println) //打印结果
 ```
 - 注意：上面的.collect()不能少，因为这是一个action操作，一个语句如果没有action操作则spark什么也不会做。同时，**读取文件的路径一定要用引号括起来！**
 
@@ -72,6 +73,7 @@ val counts = sc.textFile(“hdfs://...(文件路径，单机或者hdfs文件都�
 ###### 命令行提交
 
 - 命令行下切换到spark的安装目录，执行
+
 ```
 ./bin/spark-submit \  
  --class <main-class> \

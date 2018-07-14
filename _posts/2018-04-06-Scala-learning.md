@@ -19,7 +19,7 @@ tags: ๑Scala
 
 #### 让intellij默认不打开上个项目的方法
 
-- settings>Apperance&Behavior>System Settings 将Reopen last project on startup 勾去掉即可.
+- settings`>`Apperance&Behavior`>`System Settings 将`Reopen last project on startup` 勾去掉即可.
 
 ## 在intellij IDEA下创建scala项目的步骤
 ---

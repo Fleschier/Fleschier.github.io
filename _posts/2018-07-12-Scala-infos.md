@@ -34,3 +34,7 @@ tags:   ๑Scala
 |thrill.reverse|返回包含列表thrill的逆序列表|
 |thrill.sort( (s,t) => s.charAt(0).toLower < t.charAt(0).toLower)|返回包含thrill的所有元素，按照首字母小写顺序排序的列表|
 |thrill.tail|返回列表thrill除首个元素之外其他元素组成的列表|
+
+
+<br>
+> 最后更新于2018.7.14
