@@ -950,9 +950,11 @@ i {
   padding-left: 10px;
 }
 
+/*主页文章题目背景颜色*/
+
 .post-list__post-title a:hover {
   color: #000000;
-  background-color: #FAFAFA;
+  background-color: #f8f8f8;
 }
 
 }
@@ -1321,3 +1323,45 @@ nav a {
 }
 
 /*shadow ends*/
+
+/*add dynamic underline for links begin _Flechier*/
+
+.super-link {
+  position: relative;
+  text-decoration: none !important;
+  color: #000;
+}
+
+/*伪元素是两个冒号*/
+
+.super-link::after {
+  content: '';
+  width: 100%;
+  /*设置伪元素的高度，这里是下划线的粗细*/
+  height: 2px;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  /*当前标签继承的文字颜色，这里让伪元素的背景色与父元素的文字颜色相同*/
+  background-color: currentColor;
+  transform: scale(0);
+  transition: all .35s;
+}
+
+.super-link:hover::after {
+  transform: scale(1);
+}
+
+.left::after {
+  transform-origin: left;
+}
+
+.right::after {
+  transform-origin: right;
+}
+
+.center::after {
+  transform-origin: center;
+}
+
+/*dynamic underlie end*/

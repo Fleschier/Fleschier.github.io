@@ -7,10 +7,10 @@
 	</script> -->
 
     {% if paginator.previous_page %}
-        <a class="newer-posts pagination__newer btn btn-small btn-tertiary" href="{{ paginator.previous_page_path }}#blog">&larr; Newer Posts</a>
+        <a class="newer-posts pagination__newer btn btn-small btn-tertiary super-link center" href="{{ paginator.previous_page_path }}#blog">&larr; Newer Posts</a>
     {% endif %}
     <span class="pagination__page-number">{{ paginator.page }} / {{ paginator.total_pages }}</span>
     {% if paginator.next_page %}
-        <a class="older-posts pagination__older btn btn-small btn-tertiary" href="{{ paginator.next_page_path }}#blog">Older Posts &rarr;</a>
+        <a class="older-posts pagination__older btn btn-small btn-tertiary super-link center" href="{{ paginator.next_page_path }}#blog">Older Posts &rarr;</a>
     {% endif %}
 </nav>
