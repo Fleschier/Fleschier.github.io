@@ -627,7 +627,7 @@ form .row:first-child .floating-label-form-group {
   color: #fff
 }
 
-/*pager start----------------*/
+/*--------------------------pager start------------------------------*/
 
 .post-container .pager li {
   margin-top: 20px;
@@ -747,7 +747,7 @@ img::-moz-selection {
   cursor: not-allowed
 }
 
-/*pager end----------------*/
+/*----------------------------pager end----------------------------*/
 
 ::-moz-selection {
   color: #fff;
