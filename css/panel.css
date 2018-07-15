@@ -22,6 +22,10 @@
   color: #FFF;
 }
 
+.blog-button, .blog-button a, .blog-button a:hover, .blog-button a:focus {
+  color: #fff !important;
+}
+
 /* 副标题 */
 
 .panel-subtitle {
