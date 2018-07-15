@@ -1,78 +1,27 @@
 /*tag theme*/
 
-@media only screen and (min-width: 768px) {
-  .pager li>a, .pager li>span {
-    font-size: 14px;
-    padding: 15px 25px;
-  }
-}
-
-.pager li>a {
-  color: #404040;
-}
-
-.pager li>a:hover, .pager li>a:focus {
-  color: white;
-  background-color: #0000FF;
-  border: 1px solid #0000FF;
-}
-
-.pager .disabled>a, .pager .disabled>a:hover, .pager .disabled>a:focus, .pager .disabled>span {
-  color: #808080;
-  background-color: #404040;
-  cursor: not-allowed;
-}
-
-::-moz-selection {
-  color: white;
-  text-shadow: none;
-  background: #0000FF;
-}
-
-::selection {
-  color: white;
-  text-shadow: none;
-  background: #0000FF;
-}
-
-img::selection {
-  color: white;
-  background: transparent;
-}
-
-img::-moz-selection {
-  color: white;
-  background: transparent;
-}
-
-body {
-  -webkit-tap-highlight-color: #CCCCCC;
-}
-
-/* Hux add tags support */
-
 .tags {
   margin-bottom: -5px;
 }
 
 .tags a, .tags .tag {
   display: inline-block;
-  border: 1px solid rgba(255, 255, 255, 0.8);
+  border: 1px solid rgba(255, 255, 255, .8);
   border-radius: 999em;
   padding: 0 10px;
-  color: #ffffff;
+  color: #fff !important;
   line-height: 24px;
   font-size: 12px;
   text-decoration: none;
   margin: 0 1px;
-  margin-bottom: 6px;
+  margin-bottom: 6px
 }
 
 .tags a:hover, .tags .tag:hover, .tags a:active, .tags .tag:active {
-  color: white;
-  border-color: white;
-  background-color: rgba(255, 255, 255, 0.4);
-  text-decoration: none;
+  color: #fff;
+  border-color: #fff;
+  background-color: rgba(255, 255, 255, .4);
+  text-decoration: none
 }
 
 @media only screen and (min-width: 768px) {
@@ -101,13 +50,12 @@ body {
   line-height: 28px;
   margin: 0 2px;
   margin-bottom: 8px;
-  background: #0000CC;
-  /*标签激活颜色*/
+  background: #5e9eff;
+  /*标签背景颜色*/
 }
 
 #tag_cloud a:hover, #tag_cloud .tag:hover, #tag_cloud a:active, #tag_cloud .tag:active {
-  background-color: #33FFFF;
-  /*本处颜色已被别处覆盖*/
+  background-color: #0000cc;
 }
 
 @media only screen and (min-width: 768px) {
@@ -148,10 +96,6 @@ body {
 
 .one-tag-list .tag-text {
   font-weight: 200;
-  /* Hux learn from
-     *     TypeIsBeautiful,
-     *     [This Post](http://zhuanlan.zhihu.com/ibuick/20186806) etc.
-     */
   font-family: -apple-system, "Helvetica Neue", "Arial", "PingFang SC", "Hiragino Sans GB", "STHeiti", "Microsoft YaHei", "Microsoft JhengHei", "Source Han Sans SC", "Noto Sans CJK SC", "Source Han Sans CN", "Noto Sans SC", "Source Han Sans TC", "Noto Sans CJK TC", "WenQuanYi Micro Hei", SimSun, sans-serif;
   line-height: 1.7;
 }

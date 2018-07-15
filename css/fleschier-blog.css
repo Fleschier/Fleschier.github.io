@@ -666,10 +666,6 @@ form .row:first-child .floating-label-form-group {
   border-radius: 3px;
 }
 
-.pager li>a {
-  color: #404040
-}
-
 /*可选部分开始 */
 
 /*这一部分可以实现阅读文章时 按钮 上一篇 下一篇 的鼠标滑过 颜色翻转 效果*/
@@ -777,79 +773,6 @@ img::-moz-selection {
 
 body {
   -webkit-tap-highlight-color: #CCCCCC
-}
-
-.tags {
-  margin-bottom: -5px
-}
-
-.tags a, .tags .tag {
-  display: inline-block;
-  border: 1px solid rgba(255, 255, 255, .8);
-  border-radius: 999em;
-  padding: 0 10px;
-  color: #fff;
-  line-height: 24px;
-  font-size: 12px;
-  text-decoration: none;
-  margin: 0 1px;
-  margin-bottom: 6px
-}
-
-.tags a:hover, .tags .tag:hover, .tags a:active, .tags .tag:active {
-  color: #fff;
-  border-color: #fff;
-  background-color: rgba(255, 255, 255, .4);
-  text-decoration: none
-}
-
-@media only screen and (min-width:768px) {
-  .tags a, .tags .tag {
-    margin-right: 5px
-  }
-}
-
-#tag-heading {
-  padding: 70px 0 60px
-}
-
-@media only screen and (min-width:768px) {
-  #tag-heading {
-    padding: 55px 0
-  }
-}
-
-#tag_cloud {
-  margin: 20px 0 15px 0
-}
-
-#tag_cloud a, #tag_cloud .tag {
-  font-size: 14px;
-  border: none;
-  line-height: 28px;
-  margin: 0 2px;
-  margin-bottom: 8px;
-  background: #CCCCFF
-}
-
-#tag_cloud a:hover, #tag_cloud .tag:hover, #tag_cloud a:active, #tag_cloud .tag:active {
-  background-color: #3333FF !important
-}
-
-@media only screen and (min-width:768px) {
-  #tag_cloud {
-    margin-bottom: 25px
-  }
-}
-
-.tag-comments {
-  font-size: 12px
-}
-
-@media only screen and (min-width:768px) {
-  .tag-comments {
-    font-size: 14px
-  }
 }
 
 .t:first-child {
