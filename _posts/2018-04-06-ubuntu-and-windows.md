@@ -36,7 +36,7 @@ tags: ๑DualSystem  ๑Ubuntu
 
 - 第一步，找到你系统的esp分区![](/img/linux-and-windows/ubuntu-boot.jpg)
 
-- 第二步，将下载的refind文件夹及其里面所有的东西全部复制进去。*（注意：虽然DiskGenius支持同时复制多个文件，但是文件夹没法复制，只能自己先手动创建）* **同时必须要自己创建一个refind.conf文件，可以什么都不写但是不能没有。**然后原来的refind.conf-sample文件就可以删除了。![](/img/linux-and-windows/refind-info.jpg)
+- 第二步，将下载的refind文件夹及其里面所有的东西全部复制进去。*（注意：虽然DiskGenius支持同时复制多个文件，但是文件夹没法复制，只能自己先手动创建）* **同时必须要自己创建一个refind.conf文件，可以什么都不写但是不能没有。** 然后原来的refind.conf-sample文件就可以删除了。![](/img/linux-and-windows/refind-info.jpg)
 
 - 第三步，将一些不需要的文件删除，如果你在网上下载了一些主题的话，也一并把文件复制进去。
 
@@ -47,4 +47,4 @@ tags: ๑DualSystem  ๑Ubuntu
 
 <br>
 
->最后更新于2018.4.7
+> 最后更新于2018.4.7

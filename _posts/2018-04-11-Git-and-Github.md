@@ -15,7 +15,7 @@ git init //初始化本地仓库
 git add .  //将本地所有文件加到仓库里
 git commit -m "..." //设置提交信息
 git remote add origin git@github.com: ...  //添加远程仓库
-git push -u origin master 
+git push -u origin master
 ```
 
 ## 关于 多用fetch，merge少用pull
@@ -62,4 +62,4 @@ git push   //将本地的修改同步到github上
 - atom的[下载地址](https://atom.io/)
 
 <br>
-最后修改于2018.4.19
+> 最后更新于2018.4.19

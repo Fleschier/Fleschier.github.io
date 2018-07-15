@@ -67,4 +67,4 @@ tags:   ๑BlockChain
 [区块链3.0：拥抱EOS](https://www.cnblogs.com/Evsward/p/eos-intro.html)
 
 <br>
-> 最后修改于2018.5.17
+> 最后更新于2018.5.17

@@ -106,7 +106,7 @@ body {
 }
 
 #tag_cloud a:hover, #tag_cloud .tag:hover, #tag_cloud a:active, #tag_cloud .tag:active {
-  background-color: #33FFFF !important;
+  background-color: #33FFFF;
   /*本处颜色已被别处覆盖*/
 }
 

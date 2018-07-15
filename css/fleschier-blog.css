@@ -692,8 +692,8 @@ form .row:first-child .floating-label-form-group {
   font-weight: 800;
   letter-spacing: 1px;
   padding: 10px;
-  background-color: #fff;
-  border-radius: 0
+  /* background-color: #fff;
+  border-radius: 0 */
 }
 
 @media only screen and (min-width:768px) {
@@ -704,13 +704,15 @@ form .row:first-child .floating-label-form-group {
 }
 
 .pager li>a {
-  color: #404040
+  color: #404040;
+  border: none !important
 }
 
 .pager li>a:hover, .pager li>a:focus {
   color: #fff;
-  background-color: #CCCCCC;
-  border: 1px solid #CCCCCC
+  /*上一篇下一篇按钮背景色*/
+  background-color: #384B91 !important;
+  /*border: 2px solid #CCCCCC !important */
 }
 
 .pager .disabled>a, .pager .disabled>a:hover, .pager .disabled>a:focus, .pager .disabled>span {

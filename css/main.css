@@ -591,8 +591,10 @@ hr {
   background-size: cover;
 }
 
+/*控制面板大小*/
+
 .panel-cover--collapsed {
-  width: 22%;
+  width: 20%;
   max-width: 320px;
 }
 
