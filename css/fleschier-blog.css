@@ -39,10 +39,6 @@ a {
   color: #404040
 }
 
-/* a:hover, a:focus {
-  color: #fff
-} */
-
 a img:hover, a img:focus {
   cursor: zoom-in
 }
