@@ -14,6 +14,6 @@
 ## 感谢
 ---
 
-- 我的个人博客的模板来自huxpro,EZLippi以及leopardpan等，这里感谢以上的作者。
+- 我的个人博客的模板来自huxpro,leopardpan等，这里感谢以上的作者。
 
 - 如果喜欢我现在风格的博客，欢迎fork，欢迎star。

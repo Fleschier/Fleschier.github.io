@@ -1,13 +1,6 @@
-/* http://meyerweb.com/eric/tools/css/reset/
-   v2.0 | 20110126
-   License: none (public domain)
+/* v2.0 | 2018/7/15
+   author: Fleschier (public domain)
 */
-
-/* 默认使用华文楷体 */
-
-* {
-  font-family: 'STKaiti'
-}
 
 @import url(tag.css);
 @import url(animate.css);
@@ -83,6 +76,12 @@ html {
   max-height: 100%;
 }
 
+/* 默认使用华文楷体 */
+
+* {
+  font-family: 'STKaiti'
+}
+
 ::selection {
   background: #27408B;
   color: #ffffff
@@ -103,14 +102,6 @@ p a {
   text-decoration: underline;
 }
 
-/* a:hover {
-  color: #0000CD;
-  -o-transition: .5s;
-  -ms-transition: .5s;
-  -moz-transition: .5s;
-  -webkit-transition: .5s;
-} */
-
 /* 未访问的链接 */
 
 a:link {
@@ -128,6 +119,10 @@ a:visited {
 a:hover {
   color: #336;
   text-decoration: underline
+}
+
+a:focus {
+  clolr: #fff;
 }
 
 /* 选定的链接 */
@@ -302,91 +297,6 @@ td:last-child {
   border: 1px solid #363636;
 }
 
-/*pager start----------------*/
-
-.post-container .pager li {
-  margin-top: 20px;
-  width: 48%
-}
-
-.next {
-  margin-top: 20px;
-  float: right
-}
-
-.previous {
-  margin-top: 20px;
-  float: left
-}
-
-.pager li>a {
-  width: 100%;
-  padding: 10px 10px;
-}
-
-.pager li>a>span {
-  padding-right: 10px;
-  color: gray;
-  padding: 10px 10px;
-}
-
-.pager li>span {
-  margin-top: 40px;
-  line-height: 1.7;
-  text-transform: uppercase;
-  font-size: 13px;
-  font-weight: 800;
-  padding: 10px;
-  background-color: #fff;
-  border-radius: 0;
-}
-
-.pager li>a {
-  color: #404040
-}
-
-.pager li>a:hover, .pager li>a:focus {
-  color: #fff;
-  background-color: #B9D3EE;
-}
-
-.pager li>a:hover>span, .pager li>a:focus>span {
-  color: #fff;
-}
-
-::-moz-selection {
-  color: #fff;
-  text-shadow: none;
-  background: #a0b3d6;
-}
-
-::selection {
-  color: #fff;
-  text-shadow: none;
-  background: #666666;
-}
-
-img::selection {
-  color: #fff;
-  background: 0 0
-}
-
-img::-moz-selection {
-  color: #fff;
-  background: 0 0
-}
-
-@media all and (max-width: 600px) {
-  .next {
-    float: left;
-  }
-  .previous {
-    float: left;
-  }
-}
-
-/*pager end----------------*/
-
 .date, .time, .author {
   color: #c7c7c7;
 }
@@ -438,7 +348,7 @@ img::-moz-selection {
   position: relative;
   display: inline-block;
   padding: 8px 18px 9px 18px;
-  background: #BF1827;
+  /* background: #BF1827; */
   border-radius: 3px;
   text-align: center;
   color: #FFF;
@@ -542,176 +452,6 @@ hr {
   border-top: 1px solid #DDDDDD;
 }
 
-/*面板部分开始*/
-
-.panel {
-  display: table;
-  width: 100%;
-  height: 100%;
-}
-
-.panel__vertical {
-  display: table-cell;
-  vertical-align: middle;
-}
-
-/* 主标题 */
-
-.panel-title {
-  font-family: "STKaiti" !important;
-  margin: 0 0 5px 0;
-  margin-top: 20px;
-  font-size: 2.0em !important;
-  letter-spacing: 4px;
-  color: #FFF;
-}
-
-/* 副标题 */
-
-.panel-subtitle {
-  font-family: "STKaiti" !important;
-  font-family: , "ff-tisa-web-pro-1", "ff-tisa-web-pro-2", "Lucida Grande", "Hiragino Sans GB", "Hiragino Sans GB W3", "Microsoft YaHei", "WenQuanYi Micro Hei", sans-serif;
-  font-size: 0.9em !important;
-  font-weight: normal;
-  letter-spacing: 3px;
-  color: #CCCCCC;
-  -webkit-font-smoothing: antialiased;
-}
-
-/* 背景 */
-
-.panel-cover {
-  display: block;
-  position: fixed;
-  z-index: 900;
-  width: 100%;
-  max-width: none;
-  height: 100%;
-  background: url(/images/background-cover.jpg) top left no-repeat #666666;
-  background-size: cover;
-}
-
-/*控制面板大小*/
-
-.panel-cover--collapsed {
-  width: 20%;
-  max-width: 320px;
-}
-
-.panel-cover--overlay {
-  display: block;
-  position: absolute;
-  z-index: 0;
-  top: 0;
-  right: 0;
-  bottom: 0;
-  left: 0;
-  background-color: rgba(68, 68, 68, 0.6);
-  background-image: -webkit-linear-gradient(-410deg, rgba(68, 68, 68, 0.6) 20%, rgba(0, 0, 0, 0.9));
-  background-image: linear-gradient(140deg, rgba(68, 68, 68, 0.6) 20%, rgba(0, 0, 0, 0.9));
-}
-
-/* .panel-cover__logo {
-  margin-bottom: .2em;
-} */
-
-.panel-cover__description {
-  margin: 0 30px;
-  padding: 0;
-}
-
-.panel-cover__divider {
-  width: 50%;
-  margin: 20px auto;
-  border-top: 1px solid rgba(255, 255, 255, 0.14);
-}
-
-.panel-cover__divider--secondary {
-  width: 15%;
-}
-
-.panel-main {
-  display: table;
-  width: 100%;
-  height: 100%;
-}
-
-.panel-main__inner {
-  display: table-cell;
-  vertical-align: middle;
-  position: relative;
-  z-index: 800;
-  padding: 0 0px;
-}
-
-.panel-main__content {
-  max-width: 620px;
-  margin: 0 auto;
-}
-
-.panel-main__content--fixed {
-  width: 480px;
-  transition: width 1s;
-  -webkit-transition: width 1s;
-  /* Safari */
-}
-
-.panel-inverted {
-  font-weight: 200;
-  text-align: center;
-  color: #FFF;
-  text-shadow: 0 1px 1px rgba(0, 0, 0, 0.4);
-}
-
-.panel-inverted a {
-  color: #FFF;
-}
-
-.cover-navigation {
-  margin-top: 0px;
-  width: 100%;
-}
-
-/* .cover-blue {
-  background-color: rgba(37, 104, 163, 0.6);
-  background-image: -webkit-linear-gradient(-410deg, rgba(37, 104, 163, 0.6) 20%, rgba(18, 51, 80, 0.8));
-  background-image: linear-gradient(140deg, rgba(37, 104, 163, 0.6) 20%, rgba(18, 51, 80, 0.8));
-}
-
-.cover-green {
-  background-color: rgba(21, 111, 120, 0.6);
-  background-image: -webkit-linear-gradient(-410deg, rgba(21, 111, 120, 0.6) 20%, rgba(6, 31, 33, 0.8));
-  background-image: linear-gradient(140deg, rgba(21, 111, 120, 0.6) 20%, rgba(6, 31, 33, 0.8));
-}
-
-.cover-purple {
-  background-color: rgba(73, 50, 82, 0.6);
-  background-image: -webkit-linear-gradient(-410deg, rgba(73, 50, 82, 0.6) 20%, rgba(17, 11, 19, 0.8));
-  background-image: linear-gradient(140deg, rgba(73, 50, 82, 0.6) 20%, rgba(17, 11, 19, 0.8));
-}
-
-.cover-red {
-  background-color: rgba(119, 31, 18, 0.6);
-  background-image: -webkit-linear-gradient(-410deg, rgba(119, 31, 18, 0.6) 20%, rgba(30, 8, 5, 0.8));
-  background-image: linear-gradient(140deg, rgba(119, 31, 18, 0.6) 20%, rgba(30, 8, 5, 0.8));
-}
-
-.cover-orange {
-  background-color: rgba(174, 80, 4, 0.6);
-  background-image: -webkit-linear-gradient(-410deg, rgba(174, 80, 4, 0.6) 20%, rgba(74, 34, 2, 0.8));
-  background-image: linear-gradient(140deg, rgba(174, 80, 4, 0.6) 20%, rgba(74, 34, 2, 0.8));
-} */
-
-.cover-slate {
-  background-color: rgba(61, 66, 96, 0.6);
-  background-image: -webkit-linear-gradient(-410deg, rgba(61, 66, 96, 0.6) 20%, rgba(21, 23, 34, 0.8));
-  background-image: linear-gradient(140deg, rgba(61, 66, 96, 0.6) 20%, rgba(21, 23, 34, 0.8));
-}
-
-.cover-disabled {
-  background: none;
-}
-
 .navigation__flink {
   color: #999;
   margin-top: 40px;
@@ -724,9 +464,10 @@ hr {
   text-align: left;
   margin-left: 10px;
   margin-right: 10px;
-  font-size: .4em;
+  font-size: 1.2em !important;
   color: #666;
-  border-bottom: 0.1px solid #666;
+  /* border-bottom: 0.1px solid #666; */
+  /*控制older/newer posts 下划线效果*/
   text-shadow: none;
 }
 
@@ -799,6 +540,36 @@ hr {
   color: #FFF;
 }
 
+/*翻页按钮*/
+
+.pagination {
+  display: block;
+  margin: 0 0 4em 0;
+  /*四个元素的顺序：上，右，下，左 此块状元素宽为864px,因此右边距取一个值来使其居中显示，但是移动端显示就会有问题 _Flechier*/
+}
+
+.pagination__page-number {
+  margin: 15px 20px 0px 20px;
+  font-size: .9em;
+  color: #999999;
+}
+
+/*Newer posts button*/
+
+.pagination__newer {
+  margin-top: 0px;
+  /* margin-right: 2em; */
+}
+
+/*older posts button*/
+
+.pagination__older {
+  margin-top: 0px;
+  /* margin-left: 2em; */
+}
+
+/*nav start*/
+
 nav {
   display: inline-block;
   position: relative;
@@ -821,7 +592,7 @@ nav {
   font-size: .8em;
   font-family: "STKaiti" !important;
   text-shadow: none;
-  color: #BF1827;
+  /* color: #BF1827; */
 }
 
 .navigation__item {
@@ -873,25 +644,7 @@ nav {
   font-size: 1.7em;
 }
 
-.pagination {
-  display: block;
-  margin: 0 0 4em 0;
-  /*四个元素的顺序：上，右，下，左 此块状元素宽为864px,因此右边距取一个值来使其居中显示，但是移动端显示就会有问题 _Flechier*/
-}
-
-.pagination__page-number {
-  margin: 0;
-  font-size: .8em;
-  color: #999999;
-}
-
-.pagination__newer {
-  margin-right: 2em;
-}
-
-.pagination__older {
-  margin-left: 2em;
-}
+/*nav end*/
 
 i {
   font-family: 'entypo';
@@ -1032,36 +785,6 @@ i {
 *:focus {
   outline: none;
 }
-
-/* input[type="text"], input[type="password"], input[type="datetime"], input[type="datetime-local"], input[type="date"], input[type="month"], input[type="time"], input[type="week"], input[type="number"], input[type="email"], input[type="url"], input[type="search"], input[type="tel"] {
-  width: 240px;
-  padding: 1em 1em;
-  background: #FFF;
-  border: 1px solid #DDDDDD;
-  border-radius: 3px;
-  font-size: .9em;
-  color: #666666;
-}
-
-input[type="text"]:focus, input[type="password"]:focus, input[type="datetime"]:focus, input[type="datetime-local"]:focus, input[type="date"]:focus, input[type="month"]:focus, input[type="time"]:focus, input[type="week"]:focus, input[type="number"]:focus, input[type="email"]:focus, input[type="url"]:focus, input[type="search"]:focus, input[type="tel"]:focus {
-  border-color: #5BA4E5;
-}
-
-input[type="text"]::-webkit-input-placeholder, input[type="password"]::-webkit-input-placeholder, input[type="datetime"]::-webkit-input-placeholder, input[type="datetime-local"]::-webkit-input-placeholder, input[type="date"]::-webkit-input-placeholder, input[type="month"]::-webkit-input-placeholder, input[type="time"]::-webkit-input-placeholder, input[type="week"]::-webkit-input-placeholder, input[type="number"]::-webkit-input-placeholder, input[type="email"]::-webkit-input-placeholder, input[type="url"]::-webkit-input-placeholder, input[type="search"]::-webkit-input-placeholder, input[type="tel"]::-webkit-input-placeholder {
-  color: #CCCCCC;
-}
-
-input[type="text"]::-moz-placeholder, input[type="password"]::-moz-placeholder, input[type="datetime"]::-moz-placeholder, input[type="datetime-local"]::-moz-placeholder, input[type="date"]::-moz-placeholder, input[type="month"]::-moz-placeholder, input[type="time"]::-moz-placeholder, input[type="week"]::-moz-placeholder, input[type="number"]::-moz-placeholder, input[type="email"]::-moz-placeholder, input[type="url"]::-moz-placeholder, input[type="search"]::-moz-placeholder, input[type="tel"]::-moz-placeholder {
-  color: #CCCCCC;
-}
-
-input[type="text"]:-moz-placeholder, input[type="password"]:-moz-placeholder, input[type="datetime"]:-moz-placeholder, input[type="datetime-local"]:-moz-placeholder, input[type="date"]:-moz-placeholder, input[type="month"]:-moz-placeholder, input[type="time"]:-moz-placeholder, input[type="week"]:-moz-placeholder, input[type="number"]:-moz-placeholder, input[type="email"]:-moz-placeholder, input[type="url"]:-moz-placeholder, input[type="search"]:-moz-placeholder, input[type="tel"]:-moz-placeholder {
-  color: #CCCCCC;
-}
-
-input[type="text"]:-ms-input-placeholder, input[type="password"]:-ms-input-placeholder, input[type="datetime"]:-ms-input-placeholder, input[type="datetime-local"]:-ms-input-placeholder, input[type="date"]:-ms-input-placeholder, input[type="month"]:-ms-input-placeholder, input[type="time"]:-ms-input-placeholder, input[type="week"]:-ms-input-placeholder, input[type="number"]:-ms-input-placeholder, input[type="email"]:-ms-input-placeholder, input[type="url"]:-ms-input-placeholder, input[type="search"]:-ms-input-placeholder, input[type="tel"]:-ms-input-placeholder {
-  color: #CCCCCC;
-} */
 
 .read-more {
   margin-top: 1em;
@@ -1216,11 +939,8 @@ nav a {
 .nav-menu-item a {
   padding: 0px;
   color: #CCCCCC;
-  /*origin : #999*/
-  /* font-weight: 700; */
   font-weight: bold;
   font-size: .7em;
-  /* font-size: 1.2em; */
   text-shadow: none;
   -webkit-transition: color 0.3s;
   -moz-transition: color 0.3s;
@@ -1260,73 +980,14 @@ nav a {
 
 .nav-menu-item a:hover::before, .nav-menu-item a:hover::after {
   opacity: 1;
-  -webkit-transform: translateY(-3px);
-  -moz-transform: translateY(-3px);
-  transform: translateY(-3px);
+  -webkit-transform: translateY(-5px);
+  -moz-transform: translateY(-5px);
+  transform: translateY(-5px);
 }
 
 /*导航按钮-end*/
 
-/* shadow */
-
-.shadow-corner-curl {
-  position: relative;
-  background-color: #f8f8fd;
-  -webkit-box-shadow: 0 1px 5px rgba(0, 0, 0, 0.4), 0 0 20px rgba(0, 0, 0, 0.1) inset;
-  -moz-box-shadow: 0 1px 5px rgba(0, 0, 0, 0.4), 0 0 20px rgba(0, 0, 0, 0.1) inset;
-  -o-box-shadow: 0 1px 5px rgba(0, 0, 0, 0.4), 0 0 20px rgba(0, 0, 0, 0.1) inset;
-  box-shadow: 0 1px 5px rgba(0, 0, 0, 0.4), 0 0 20px rgba(0, 0, 0, 0.1) inset;
-}
-
-.shadow-corner-curl h3 {
-  color: #16c
-}
-
-.shadow-corner-curl:before {
-  content: "";
-  position: absolute;
-  z-index: -5;
-  width: 70%;
-  height: 70%;
-  left: 9%;
-  bottom: 2%;
-  background: transparent;
-  -webkit-box-shadow: 0 8px 20px rgba(0, 0, 0, 0.6);
-  -moz-box-shadow: 0 8px 20px rgba(0, 0, 0, 0.6);
-  -o-box-shadow: 0 8px 20px rgba(0, 0, 0, 0.6);
-  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.6);
-  /* 向左倾斜12度，再旋转4度 */
-  -webkit-transform: skew(-11deg) rotate(-4deg);
-  -moz-transform: skew(-11deg) rotate(-4deg);
-  -o-transform: skew(-11deg) rotate(-4deg);
-  -ms-transform: skew(-11deg) rotate(-4deg);
-  transform: skew(-11deg) rotate(-4deg);
-}
-
-.shadow-corner-curl:after {
-  content: "";
-  position: absolute;
-  z-index: -5;
-  width: 70%;
-  height: 70%;
-  right: 9%;
-  bottom: 2%;
-  background: transparent;
-  -webkit-box-shadow: 0 8px 20px rgba(0, 0, 0, 0.6);
-  -moz-box-shadow: 0 8px 20px rgba(0, 0, 0, 0.6);
-  -o-box-shadow: 0 8px 20px rgba(0, 0, 0, 0.6);
-  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.6);
-  /* 向左倾斜12度，再旋转4度 */
-  -webkit-transform: skew(11deg) rotate(4deg);
-  -moz-transform: skew(11deg) rotate(4deg);
-  -o-transform: skew(11deg) rotate(4deg);
-  -ms-transform: skew(11deg) rotate(4deg);
-  transform: skew(11deg) rotate(4deg);
-}
-
-/*shadow ends*/
-
-/*add dynamic underline for links begin _Flechier*/
+/*add dynamic underline for links _Flechier*/
 
 .super-link {
   position: relative;
@@ -1347,7 +1008,7 @@ nav a {
   /*当前标签继承的文字颜色，这里让伪元素的背景色与父元素的文字颜色相同*/
   background-color: currentColor;
   transform: scale(0);
-  transition: all .35s;
+  transition: all .5s;
 }
 
 .super-link:hover::after {

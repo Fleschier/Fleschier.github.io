@@ -42,7 +42,7 @@ Usage:
         {{ post.date | date: "%Y-%m-%e" }}
       </span>
        &raquo;
-      <a class="super-link center" href="{{ BASE_PATH }}{{ post.url }}">{{ post.title }}</a>
+      <a class="super-link left" href="{{ BASE_PATH }}{{ post.url }}">{{ post.title }}</a>
     </li>
 
     {% if forloop.last %}
