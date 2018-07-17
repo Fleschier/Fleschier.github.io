@@ -465,6 +465,11 @@ p span.warning{color:purple;} /*权值为1+1+10=12*/
 
 ## 一些补充
 ---
+#### 元素宽度相关
+
+- `calc()`用法：[详解](https://www.w3cplus.com/css3/how-to-use-css3-calc-function.html)
+
+- 如果你的元素宽度是100%时，只要你在元素中添加了border,padding,margin任何一值，都将会把元素盒子撑破（标准模式下，除IE怪异模式）。
 
 ###### opacity属性
 

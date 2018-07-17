@@ -1,6 +1,6 @@
 ---
 layout: page
-title:
+title:	 FEATURED TAGS
 header: 根据快速导航到相应的文章
 group: navigation
 ---
@@ -20,7 +20,7 @@ group: navigation
             <!-- 标签列表 -->
 			{% for tag in site.tags %}
 			<div class="one-tag-list">
-			  	<span class="fa fa-tag listing-seperator" id="{{ tag[0] }}">
+			  	<span class="fa fa-tag listing-seperator" id="{{ tag[0] }}"><!--这里有一个以各个标签名字命名的id选择器-->
                     <span class="tag-text">{{ tag[0] }}</span>
                 </span>
 				{% for post in tag[1] %}
@@ -28,20 +28,21 @@ group: navigation
 				  <time datetime="{{ post.date | date:"%Y-%m-%d" }}">{{ post.date | date:"%Y-%m-%d" }}</time>
 				  <a href="{{ post.url }}" title="{{ post.title }}">{{ post.title }}</a>
 				  </li> -->
-				 <div class="post-preview super-link left">
+				 <div class="post-preview ">
+					 <!--因为此处a标签内部有多个东西，所有在a标签上的super-link会失效-->
 				    <a href="{{ post.url | prepend: site.baseurl }}">
-				        <h2 class="post-title ">
+				        <h2 class="post-title super-link left"><!--将super-link加在标题上可以生效-->
                             {{ post.title }}
 				        </h2>
-				        {% if post.subtitle %}
+				        <!-- {% if post.subtitle %}
 				        <h3 class="post-subtitle">
 				            {{ post.subtitle }}
 				        </h3>
-				        {% endif %}
+				        {% endif %} -->
 				    </a>
 				    <!-- <p class="post-meta">{{ post.date | date:"%Y-%m-%d" }}</p> -->
 				</div>
-				<hr>
+				<hr class="tag-seperator">
 				{% endfor %}
 			</div>
 			{% endfor %}
