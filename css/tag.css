@@ -42,7 +42,7 @@
 
 #tag_cloud {
   margin: 40px auto 15px auto;
-  width: 80% !important;
+  width: 80%;
 }
 
 #tag_cloud a, #tag_cloud .tag {
@@ -61,7 +61,7 @@
 
 @media only screen and (min-width: 768px) {
   #tag_cloud {
-    margin-bottom: 25px;
+    margin: 40px auto 25px auto;
   }
 }
 

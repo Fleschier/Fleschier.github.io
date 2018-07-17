@@ -530,5 +530,9 @@ p span.warning{color:purple;} /*权值为1+1+10=12*/
 - 例子 4:`margin:10px;`
 所有 4 个外边距都是 10px
 
+#### `@media`用法
+
+- [用法详解](http://www.runoob.com/cssref/css3-pr-mediaquery.html)
+
 <br>
 > 最后更新与2018.7.9
