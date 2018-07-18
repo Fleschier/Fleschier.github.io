@@ -2,7 +2,6 @@
 $(document).ready(function() {
 
 
-  // blog-button begin
   $('a.blog-button').click(function() {
     // If already in blog, return early without animate overlay panel again.
     if (location.hash && location.hash == "#blog") return;
@@ -17,7 +16,6 @@ $(document).ready(function() {
     }
 
   });
-  //blog-buttion end
 
   if (window.location.hash && window.location.hash == "#blog") {
     $('.panel-cover').addClass('panel-cover--collapsed');

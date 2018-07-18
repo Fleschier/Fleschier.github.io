@@ -39,10 +39,10 @@ blog_button:
     title: HOME
 
 # Navigation buttons in the front page.s
-nav:
-    - {title: ARCHIVE, description: archive, url: '/archive'}
-    - {title: TAGS, description: tags, url: '/tags'}
-    - {title: ABOUT, description: about, url: '/about'}
+# nav:
+#     - {title: ARCHIVE, description: archive, url: '/archive'}
+#     - {title: TAGS, description: tags, url: '/tags'}
+#     - {title: ABOUT, description: about, url: '/about'}
     # - {title: TEST, description: test, url: '/test'} #you could extend nav pages in this way
 
 # Featured Tags

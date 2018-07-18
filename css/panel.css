@@ -15,26 +15,24 @@
 
 .panel-title {
   font-family: "STKaiti" !important;
-  margin: 0 0 5px 0;
-  margin-top: 20px;
+  margin: 70px 0 5px 0 !important;
   font-size: 2.0em !important;
   letter-spacing: 4px;
-  color: #FFF;
+  color: #fff;
 }
 
 .blog-button, .blog-button a, .blog-button a:hover, .blog-button a:focus {
-  color: #fff !important;
+  color: #fff;
 }
 
 /* 副标题 */
 
 .panel-subtitle {
-  font-family: "STKaiti" !important;
   font-family: , "ff-tisa-web-pro-1", "ff-tisa-web-pro-2", "Lucida Grande", "Hiragino Sans GB", "Hiragino Sans GB W3", "Microsoft YaHei", "WenQuanYi Micro Hei", sans-serif;
   font-size: 0.9em !important;
   font-weight: normal;
   letter-spacing: 3px;
-  color: #CCCCCC;
+  color: #fff;
   -webkit-font-smoothing: antialiased;
 }
 
@@ -51,16 +49,21 @@
   background-size: cover;
 }
 
-/*控制面板大小*/
+/*控制收起后面板在侧边的大小*/
 
 .panel-cover--collapsed {
-  width: 21%;
+  display: inline-block;
+  width: 20%;
   max-width: 320px;
+  /* position: fixed; */
+  margin-top: auto;
+  margin-bottom: auto;
+  /* border-radius: 10px; */
 }
 
 /*本处控制覆盖在背景图片上的颜色*/
 
-.panel-cover--overlay {
+/* .panel-cover--overlay {
   display: block;
   position: absolute;
   z-index: 0;
@@ -68,10 +71,10 @@
   right: 0;
   bottom: 0;
   left: 0;
-  background-color: rgba(50, 50, 50, 0.6);
-  background-image: -webkit-linear-gradient(-410deg, rgba(68, 68, 68, 0.6) 20%, rgba(0, 0, 0, 0.9));
-  background-image: linear-gradient(140deg, rgba(68, 68, 68, 0.6) 20%, rgba(0, 0, 0, 0.9));
-}
+  background-color: rgba(255, 255, 255, 0.6);
+  background-image: -webkit-linear-gradient(-410deg, rgba(255, 255, 255, 0.4) 20%, rgba(0, 0, 0, 0.4));
+  background-image: linear-gradient(140deg, rgba(255, 255, 255, 0.4) 20%, rgba(0, 0, 0, 0.4));
+} */
 
 .panel-cover__logo {
   margin-bottom: .2em;
@@ -121,49 +124,19 @@
 .panel-inverted {
   font-weight: 200;
   text-align: center;
-  color: #FFF;
-  text-shadow: 0 1px 1px rgba(0, 0, 0, 0.4);
+  color: #fff;
+  text-shadow: 0 2px 2px rgba(0, 0, 0, 0.4);
 }
 
 .panel-inverted a {
-  color: #FFF;
-  /*控制面板标题链接的颜色*/
+  color: #fff;
+  /*控制面板nav标题链接的颜色*/
 }
 
 .cover-navigation {
   margin-top: 0px;
   width: 100%;
 }
-
-/* .cover-blue {
-  background-color: rgba(37, 104, 163, 0.6);
-  background-image: -webkit-linear-gradient(-410deg, rgba(37, 104, 163, 0.6) 20%, rgba(18, 51, 80, 0.8));
-  background-image: linear-gradient(140deg, rgba(37, 104, 163, 0.6) 20%, rgba(18, 51, 80, 0.8));
-}
-
-.cover-green {
-  background-color: rgba(21, 111, 120, 0.6);
-  background-image: -webkit-linear-gradient(-410deg, rgba(21, 111, 120, 0.6) 20%, rgba(6, 31, 33, 0.8));
-  background-image: linear-gradient(140deg, rgba(21, 111, 120, 0.6) 20%, rgba(6, 31, 33, 0.8));
-}
-
-.cover-purple {
-  background-color: rgba(73, 50, 82, 0.6);
-  background-image: -webkit-linear-gradient(-410deg, rgba(73, 50, 82, 0.6) 20%, rgba(17, 11, 19, 0.8));
-  background-image: linear-gradient(140deg, rgba(73, 50, 82, 0.6) 20%, rgba(17, 11, 19, 0.8));
-}
-
-.cover-red {
-  background-color: rgba(119, 31, 18, 0.6);
-  background-image: -webkit-linear-gradient(-410deg, rgba(119, 31, 18, 0.6) 20%, rgba(30, 8, 5, 0.8));
-  background-image: linear-gradient(140deg, rgba(119, 31, 18, 0.6) 20%, rgba(30, 8, 5, 0.8));
-}
-
-.cover-orange {
-  background-color: rgba(174, 80, 4, 0.6);
-  background-image: -webkit-linear-gradient(-410deg, rgba(174, 80, 4, 0.6) 20%, rgba(74, 34, 2, 0.8));
-  background-image: linear-gradient(140deg, rgba(174, 80, 4, 0.6) 20%, rgba(74, 34, 2, 0.8));
-} */
 
 .cover-slate {
   background-color: rgba(61, 66, 96, 0.6);
@@ -191,7 +164,9 @@
   }
 }
 
-@media all and (max-width: 1100px) {
+/*origin 1100px*/
+
+@media all and (max-width: 2000px) {
   .btn-mobile-menu {
     display: block;
   }
@@ -202,6 +177,7 @@
   .panel-cover--collapsed {
     width: 100%;
     max-width: none;
+    height: 40% !important;
   }
   .panel-main__inner {
     display: table-cell;
@@ -259,7 +235,7 @@
   .content-wrapper {
     width: 80%;
     max-width: none;
-    margin: 0 auto;
+    margin: auto;
   }
   .content-wrapper__inner {
     margin-right: 0;
@@ -289,3 +265,235 @@
     font-size: .6em;
   }
 }
+
+/*-------------------------------panel end-------------------------------------------*/
+
+/*------------------------------nav-bar begin----------------------------------------*/
+
+@media only screen and (max-width: 767px) {
+  /**
+	 * Layout
+	 * Since V1.6 we use absolute positioning to prevent to expand container-fluid
+	 * which would cover tags. A absolute positioning make a new layer.
+	 */
+  .navbar-default .navbar-collapse {
+    display: inline-block;
+    position: absolute;
+    right: 0;
+    border: none;
+    background: white;
+    box-shadow: 0px 5px 10px 2px rgba(0, 0, 0, 0.2);
+    box-shadow: rgba(0, 0, 0, 0.117647) 0px 1px 6px, rgba(0, 0, 0, 0.239216) 0px 1px 4px;
+    border-radius: 2px;
+    width: 170px;
+    height: 30px;
+  }
+  /**
+	 * Animation
+	 * HuxBlog-Navbar using genuine Material Design Animation
+	 */
+  #huxblog_navbar {
+    /**
+		 * Sharable code and 'out' function
+		 */
+    opacity: 0;
+    transform: scaleX(0);
+    transform-origin: top right;
+    transition: all 200ms cubic-bezier(0.47, 0, 0.4, 0.99) 0ms;
+    -webkit-transform: scaleX(0);
+    -webkit-transform-origin: top right;
+    -webkit-transition: all 200ms cubic-bezier(0.47, 0, 0.4, 0.99) 0ms;
+    /**
+		 *'In' Animation
+		 */
+  }
+  /*设置nav收起之后链接的颜色*/
+  #huxblog_navbar a {
+    font-size: 13px;
+    line-height: 28px;
+    color: #999;
+  }
+  #huxblog_navbar a:hover {
+    color: #000;
+  }
+  #huxblog_navbar .navbar-collapse {
+    height: 0px;
+    transform: scaleY(0);
+    transform-origin: top right;
+    transition: transform 400ms cubic-bezier(0.32, 1, 0.23, 1) 0ms;
+    -webkit-transform: scaleY(0);
+    -webkit-transform-origin: top right;
+    -webkit-transition: -webkit-transform 400ms cubic-bezier(0.32, 1, 0.23, 1) 0ms;
+  }
+  #huxblog_navbar li {
+    opacity: 0;
+    transition: opacity 100ms cubic-bezier(0.23, 1, 0.32, 1) 0ms;
+    -webkit-transition: opacity 100ms cubic-bezier(0.23, 1, 0.32, 1) 0ms;
+  }
+  #huxblog_navbar.in {
+    transform: scaleX(1);
+    -webkit-transform: scaleX(1);
+    opacity: 1;
+    transition: all 250ms cubic-bezier(0.23, 1, 0.32, 1) 0ms;
+    -webkit-transition: all 250ms cubic-bezier(0.23, 1, 0.32, 1) 0ms;
+  }
+  #huxblog_navbar.in .navbar-collapse {
+    transform: scaleY(1);
+    -webkit-transform: scaleY(1);
+    transition: transform 500ms cubic-bezier(0.23, 1, 0.32, 1);
+    -webkit-transition: -webkit-transform 500ms cubic-bezier(0.23, 1, 0.32, 1);
+  }
+  #huxblog_navbar.in li {
+    opacity: 1;
+    transition: opacity 450ms cubic-bezier(0.23, 1, 0.32, 1) 205ms;
+    -webkit-transition: opacity 450ms cubic-bezier(0.23, 1, 0.32, 1) 205ms;
+  }
+}
+
+.navbar-custom {
+  background: none;
+  border: none;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 3;
+  /* Hux learn from
+     *     TypeIsBeautiful,
+     *     [This Post](http://zhuanlan.zhihu.com/ibuick/20186806) etc.
+     */
+  font-family: -apple-system, BlinkMacSystemFont, "Helvetica Neue", "Arial", "PingFang SC", "Hiragino Sans GB", "STHeiti", "Microsoft YaHei", "Microsoft JhengHei", "Source Han Sans SC", "Noto Sans CJK SC", "Source Han Sans CN", "Noto Sans SC", "Source Han Sans TC", "Noto Sans CJK TC", "WenQuanYi Micro Hei", SimSun, sans-serif;
+  line-height: 1.7;
+}
+
+.navbar-custom .navbar-brand {
+  font-weight: 800;
+  color: white;
+  height: 56px;
+  line-height: 25px;
+}
+
+.navbar-custom .navbar-brand:hover {
+  color: rgba(255, 255, 255, 0.8);
+}
+
+.navbar-custom .nav li a {
+  text-transform: uppercase;
+  font-size: 12px;
+  line-height: 15px;
+  font-weight: 800;
+  letter-spacing: 1px;
+}
+
+.navbar-custom .nav li a:active {
+  background: rgba(0, 0, 0, 0.12);
+}
+
+@media only screen and (min-width: 768px) {
+  .navbar-custom {
+    background: transparent;
+    border-bottom: 1px solid transparent;
+  }
+  .navbar-custom body {
+    font-size: 20px;
+  }
+  .navbar-custom .navbar-brand {
+    color: white;
+    padding: 20px;
+    line-height: 20px;
+  }
+  .navbar-custom .navbar-brand:hover, .navbar-custom .navbar-brand:focus {
+    color: rgba(255, 255, 255, 0.8);
+  }
+  .navbar-custom .nav li a {
+    color: white;
+    padding: 20px;
+  }
+  .navbar-custom .nav li a:hover, .navbar-custom .nav li a:focus {
+    color: rgba(255, 255, 255, 0.8);
+  }
+  .navbar-custom .nav li a:active {
+    background: none;
+  }
+}
+
+/*设置上下滚动时的自动隐藏和显示navbar*/
+
+@media only screen and (min-width: 768px) {
+  .navbar-custom {
+    -webkit-transition: background-color 0.3s;
+    -moz-transition: background-color 0.3s;
+    transition: background-color 0.3s;
+    /* Force Hardware Acceleration in WebKit */
+    -webkit-transform: translate3d(0, 0, 0);
+    -moz-transform: translate3d(0, 0, 0);
+    -ms-transform: translate3d(0, 0, 0);
+    -o-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0);
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+  }
+  .navbar-custom.is-fixed {
+    /* when the user scrolls down, we hide the header right above the viewport */
+    position: fixed;
+    top: -61px;
+    background-color: rgba(255, 255, 255, 0.9);
+    border-bottom: 1px solid #f2f2f2;
+    -webkit-transition: -webkit-transform 0.3s;
+    -moz-transition: -moz-transform 0.3s;
+    transition: transform 0.3s;
+  }
+  .navbar-custom.is-fixed .navbar-brand {
+    color: #404040;
+  }
+  .navbar-custom.is-fixed .navbar-brand:hover, .navbar-custom.is-fixed .navbar-brand:focus {
+    color: #0085a1;
+  }
+  .navbar-custom.is-fixed .nav li a {
+    color: #404040;
+  }
+  .navbar-custom.is-fixed .nav li a:hover, .navbar-custom.is-fixed .nav li a:focus {
+    color: #0085a1;
+  }
+  .navbar-custom.is-visible {
+    /* if the user changes the scrolling direction, we show the header */
+    -webkit-transform: translate3d(0, 100%, 0);
+    -moz-transform: translate3d(0, 100%, 0);
+    -ms-transform: translate3d(0, 100%, 0);
+    -o-transform: translate3d(0, 100%, 0);
+    transform: translate3d(0, 100%, 0);
+  }
+}
+
+/* Hux Optimize UserExperience */
+
+.navbar-default .navbar-toggle:focus, .navbar-default .navbar-toggle:hover {
+  background-color: inherit;
+}
+
+.navbar-default .navbar-toggle:active {
+  background-color: rgba(255, 255, 255, 0.25);
+}
+
+/* Hux customize Style for navBar button */
+
+.navbar-default .navbar-toggle {
+  border-color: transparent;
+  padding: 19px 16px;
+  margin-top: 2px;
+  margin-right: 2px;
+  margin-bottom: 2px;
+  border-radius: 50%;
+}
+
+.navbar-default .navbar-toggle .icon-bar {
+  width: 18px;
+  border-radius: 0px;
+  background-color: white;
+}
+
+.navbar-default .navbar-toggle .icon-bar+.icon-bar {
+  margin-top: 3px;
+}
+
+/*nav-bar end*/

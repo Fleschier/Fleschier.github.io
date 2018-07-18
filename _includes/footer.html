@@ -73,41 +73,71 @@
     			<link rel="stylesheet" href="https://cdn.staticfile.org/font-awesome/4.2.0/css/font-awesome.min.css">
 
           <!-- 访问统计 -->
-          <span id="busuanzi_container_site_pv">
+          <!-- <span id="busuanzi_container_site_pv">
             本站总访问量
             <span id="busuanzi_value_site_pv"></span>次
-          </span>
+          </span> -->
 
         </div>
-        <div>
+        <p class="copyright text-muted">
+    Copyright &copy; {{ site.title }} {{ site.time | date: '%Y' }}
+    <br>
+    Theme by <a href="https://github.com/Fleschier">Fleschier</a> |
+    <iframe
+        style="margin-left: 2px; margin-bottom:-5px;"
+        frameborder="0" scrolling="0" width="100px" height="20px"
+        src="https://ghbtns.com/github-btn.html?user=Fleschier&repo=fleschier.github.io&type=star&count=true" >
+    </iframe>
+    </p>
+      </div>
     </footer>
+
+    <!-- import jQuery support -->
+    <script src="{{ "/js/jquery.min.js " | prepend: site.baseurl }}"></script>
+    <!-- Custom Theme JavaScript -->
+    <script src="{{ "/js/fleschier-blog.js " | prepend: site.baseurl }}"></script>
+    <!-- async load function -->
+    <script>
+        function async(u, c) {
+          var d = document, t = 'script',
+              o = d.createElement(t),
+              s = d.getElementsByTagName(t)[0];
+          o.src = u;
+          if (c) { o.addEventListener('load', function (e) { c(null, e); }, false); }
+          s.parentNode.insertBefore(o, s);
+        }
+    </script>
+
+    <!-- jquery.tagcloud.js -->
+    <script type="text/javascript">
+        // only load tagcloud.js in tag.html
+        if($('#tag_cloud').length !== 0){
+            async('{{ "/js/jquery.tagcloud.js" | prepend: site.baseurl }}',function(){
+                $.fn.tagcloud.defaults = {
+                    //size: {start: 1, end: 1, unit: 'em'},
+                    color: {start: '#bbbbee', end: '#0085a1'},
+                };
+                $('#tag_cloud a').tagcloud();
+            })
+        }
+    </script>
+
+    <!--nav-->
+    <script type="text/text/javascript">
+    async("{{ '/js/jquery.nav.js' | prepend: site.baseurl }}", function () {
+        $('.catalog-body').onePageNav({
+            currentClass: "active",
+            changeHash: !1,
+            easing: "swing",
+            filter: "",
+            scrollSpeed: 700,
+            scrollOffset: 0,
+            scrollThreshold: .2,
+            begin: null,
+            end: null,
+            scrollChange: null,
+            padding: 80
+        });
+    });
+    </script>
 </section>
-
-
-<!-- import jQuery support -->
-<script src="{{ "/js/jquery.min.js " | prepend: site.baseurl }}"></script>
-<!-- async load function -->
-<script>
-    function async(u, c) {
-      var d = document, t = 'script',
-          o = d.createElement(t),
-          s = d.getElementsByTagName(t)[0];
-      o.src = u;
-      if (c) { o.addEventListener('load', function (e) { c(null, e); }, false); }
-      s.parentNode.insertBefore(o, s);
-    }
-</script>
-
-<!-- jquery.tagcloud.js -->
-<script type="text/javascript">
-    // only load tagcloud.js in tag.html
-    if($('#tag_cloud').length !== 0){
-        async('{{ "/js/jquery.tagcloud.js" | prepend: site.baseurl }}',function(){
-            $.fn.tagcloud.defaults = {
-                //size: {start: 1, end: 1, unit: 'em'},
-                color: {start: '#bbbbee', end: '#0085a1'},
-            };
-            $('#tag_cloud a').tagcloud();
-        })
-    }
-</script>
