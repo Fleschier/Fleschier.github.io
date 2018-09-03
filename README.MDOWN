@@ -1,14 +1,7 @@
-这是一个我的个人博客，博客地址： [https://Fleschier.github.io/](https://Fleschier.github.io/)
+## Blog
 
-## Build Setup
+- 这是一个我的个人博客，博客地址： [https://Fleschier.github.io/](https://Fleschier.github.io/)
 
-``` bash
-# install dependencies
-npm install
+#### 主题
 
-# serve with hot reload at localhost:4000
-npm run dev
-
-# build with hot reload
-npm run dev-proxy
-```
+- nexT-Mist
