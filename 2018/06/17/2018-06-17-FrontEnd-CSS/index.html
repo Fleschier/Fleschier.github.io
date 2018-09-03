@@ -1,0 +1,1222 @@
+<!DOCTYPE html>
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+<html class="theme-next mist use-motion" lang="">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2"/>
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=6.4.1" rel="stylesheet" type="text/css" />
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=6.4.1">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=6.4.1">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=6.4.1">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=6.4.1" color="#222">
+
+
+
+
+
+
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Mist',
+    version: '6.4.1',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: false,
+    fastclick: false,
+    lazyload: false,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+  
+
+
+
+
+  <meta name="description" content="不适合人类阅读的学习笔记   CSS全称为“层叠样式表 (Cascading Style Sheets)”，它主要是用于定义HTML内容在浏览器内的显示样式，如文字大小、颜色、字体加粗等。  在CSS代码中不要随便加空格  CSS3动画效果   CSS代码语法 基础 注意各个语句之间以分号间隔   css 样式由选择符和声明组成，而声明又由属性和值组成，例如：p{color:blue}  其中，">
+<meta name="keywords" content="๑FrontEnd ๑CSS">
+<meta property="og:type" content="article">
+<meta property="og:title" content="前端学习——CSS">
+<meta property="og:url" content="http://yoursite.com/2018/06/17/2018-06-17-FrontEnd-CSS/index.html">
+<meta property="og:site_name" content="Fleschier_渐寒">
+<meta property="og:description" content="不适合人类阅读的学习笔记   CSS全称为“层叠样式表 (Cascading Style Sheets)”，它主要是用于定义HTML内容在浏览器内的显示样式，如文字大小、颜色、字体加粗等。  在CSS代码中不要随便加空格  CSS3动画效果   CSS代码语法 基础 注意各个语句之间以分号间隔   css 样式由选择符和声明组成，而声明又由属性和值组成，例如：p{color:blue}  其中，">
+<meta property="og:locale" content="default">
+<meta property="og:image" content="http://yoursite.com/images/CSS/color.jpg">
+<meta property="og:image" content="http://yoursite.com/images/CSS/color_list.jpg">
+<meta property="og:updated_time" content="2018-09-01T10:45:47.795Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="前端学习——CSS">
+<meta name="twitter:description" content="不适合人类阅读的学习笔记   CSS全称为“层叠样式表 (Cascading Style Sheets)”，它主要是用于定义HTML内容在浏览器内的显示样式，如文字大小、颜色、字体加粗等。  在CSS代码中不要随便加空格  CSS3动画效果   CSS代码语法 基础 注意各个语句之间以分号间隔   css 样式由选择符和声明组成，而声明又由属性和值组成，例如：p{color:blue}  其中，">
+<meta name="twitter:image" content="http://yoursite.com/images/CSS/color.jpg">
+
+
+
+
+
+
+  <link rel="canonical" href="http://yoursite.com/2018/06/17/2018-06-17-FrontEnd-CSS/"/>
+
+
+
+<script type="text/javascript" id="page.configurations">
+  CONFIG.page = {
+    sidebar: "",
+  };
+</script>
+
+  <title>前端学习——CSS | Fleschier_渐寒</title>
+  
+
+
+
+
+
+
+
+
+
+  <noscript>
+  <style type="text/css">
+    .use-motion .motion-element,
+    .use-motion .brand,
+    .use-motion .menu-item,
+    .sidebar-inner,
+    .use-motion .post-block,
+    .use-motion .pagination,
+    .use-motion .comments,
+    .use-motion .post-header,
+    .use-motion .post-body,
+    .use-motion .collection-title { opacity: initial; }
+
+    .use-motion .logo,
+    .use-motion .site-title,
+    .use-motion .site-subtitle {
+      opacity: initial;
+      top: initial;
+    }
+
+    .use-motion {
+      .logo-line-before i { left: initial; }
+      .logo-line-after i { right: initial; }
+    }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="default">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">Fleschier_渐寒</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+    
+      
+        <p class="site-subtitle">Welcome~</p>
+      
+    
+  </div>
+
+  <div class="site-nav-toggle">
+    <button aria-label="Toggle navigation bar">
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+  
+    <ul id="menu" class="menu">
+      
+        
+        
+        
+          
+          <li class="menu-item menu-item-home">
+    <a href="/" rel="section">
+      <i class="menu-item-icon fa fa-fw fa-home"></i> <br />Home</a>
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-about">
+    <a href="/about/" rel="section">
+      <i class="menu-item-icon fa fa-fw fa-user"></i> <br />About</a>
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-tags">
+    <a href="/tags/" rel="section">
+      <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />Tags</a>
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-categories">
+    <a href="/categories/" rel="section">
+      <i class="menu-item-icon fa fa-fw fa-th"></i> <br />Categories</a>
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-archives">
+    <a href="/archives/" rel="section">
+      <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />Archives</a>
+  </li>
+
+      
+      
+    </ul>
+  
+
+  
+    
+
+  
+
+  
+</nav>
+
+
+
+  
+
+
+
+</div>
+    </header>
+
+    
+
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/06/17/2018-06-17-FrontEnd-CSS/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Fleschier">
+      <meta itemprop="description" content="This is a blog based on hexo">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Fleschier_渐寒">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">前端学习——CSS
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+
+            
+            
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+
+              
+                
+              
+
+              <time title="Created: 2018-06-17 16:46:00" itemprop="dateCreated datePublished" datetime="2018-06-17T16:46:00+08:00">2018-06-17</time>
+            
+
+            
+              
+
+              
+                
+                <span class="post-meta-divider">|</span>
+                
+
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">Edited on</span>
+                
+                <time title="Modified: 2018-09-01 18:45:47" itemprop="dateModified" datetime="2018-09-01T18:45:47+08:00">2018-09-01</time>
+              
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <blockquote>
+<p>不适合人类阅读的学习笔记</p>
+</blockquote>
+<ul>
+<li><p>CSS全称为“层叠样式表 (Cascading Style Sheets)”，它主要是用于定义HTML内容在浏览器内的显示样式，如文字大小、颜色、字体加粗等。</p>
+</li>
+<li><p><strong>在CSS代码中不要随便加空格</strong></p>
+</li>
+<li><p><a href="https://www.jianshu.com/p/57ba5da7f9f6" target="_blank" rel="noopener">CSS3动画效果</a></p>
+</li>
+</ul>
+<h2 id="CSS代码语法"><a href="#CSS代码语法" class="headerlink" title="CSS代码语法"></a>CSS代码语法</h2><hr>
+<h4 id="基础"><a href="#基础" class="headerlink" title="基础"></a>基础</h4><blockquote>
+<p>注意各个语句之间以分号间隔</p>
+</blockquote>
+<ul>
+<li><p>css 样式由选择符和声明组成，而声明又由属性和值组成，例如：<code>p{color:blue}</code></p>
+</li>
+<li><p>其中，<code>p</code>为 <strong>选择符</strong>，<code>{..}</code>为 <strong>声明</strong>，<code>color</code>为 <strong>属性</strong>，<code>blue</code>为 <strong>值</strong>。</p>
+</li>
+<li><p>选择符：又称选择器，<strong>指明网页中要应用样式规则的元素</strong>，如本例中是网页中所有的段（p）的文字将变成蓝色，而其他的元素（如ol）不会受到影响。</p>
+</li>
+<li><p>声明：在英文大括号<code>｛ ｝</code>中的的就是声明，属性和值之间用英文冒号<code>：</code>分隔。当有多条声明时，中间可以英文分号<code>；</code>分隔，如：<code>p{font-size:12px;color:red;}</code></p>
+</li>
+<li><p>最后一条声明可以没有分号，但是为了以后修改方便，一般也加上分号</p>
+</li>
+<li><p>为了使用样式更加容易阅读，可以将每条代码写在一个新行内，所以上面的应该写为：</p>
+</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">p&#123;</span><br><span class="line">  font-size:12px;</span><br><span class="line">  color:red;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h4 id="CSS中的注释"><a href="#CSS中的注释" class="headerlink" title="CSS中的注释"></a>CSS中的注释</h4><ul>
+<li>格式：<code>/*注释语句*/</code></li>
+</ul>
+<h2 id="三种CSS样式"><a href="#三种CSS样式" class="headerlink" title="三种CSS样式"></a>三种CSS样式</h2><hr>
+<ul>
+<li>从CSS 样式代码插入的形式来看基本可以分为以下3种：内联式、嵌入式和外部式三种。</li>
+</ul>
+<h4 id="内联式css样式，直接写在现有的HTML标签中"><a href="#内联式css样式，直接写在现有的HTML标签中" class="headerlink" title="内联式css样式，直接写在现有的HTML标签中"></a>内联式css样式，直接写在现有的HTML标签中</h4><ul>
+<li>内联式css样式表就是把css代码直接写在现有的HTML标签中，如下面代码：</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;p style=&quot;color:red&quot;&gt;这里文字是红色&lt;/p&gt;</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>注意要写在元素的开始标签里</p>
+</blockquote>
+<ul>
+<li>并且css样式代码要写在<code>style=&quot;&quot;</code>双引号中，如果有多条css样式代码设置可以写在一起，中间用分号隔开。如下代码：</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;p style=&quot;color:red;font-size:12px&quot;&gt;这里文字是红色&lt;/p&gt;</span><br></pre></td></tr></table></figure>
+<h4 id="嵌入式css样式，写在当前的文件中"><a href="#嵌入式css样式，写在当前的文件中" class="headerlink" title="嵌入式css样式，写在当前的文件中"></a>嵌入式css样式，写在当前的文件中</h4><ul>
+<li>嵌入式css样式，就是可以把css样式代码写在<code>&lt;style type=&quot;text/css&quot;&gt; &lt;/style&gt;</code>标签之间。如下面代码实现把三个<code>&lt;span&gt;</code>标签中的文字设置为红色：</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">&lt;style type=&quot;text/css&quot;&gt;</span><br><span class="line">span&#123;</span><br><span class="line">color:red;</span><br><span class="line">&#125;</span><br><span class="line">&lt;/style&gt;</span><br></pre></td></tr></table></figure>
+<ul>
+<li>嵌入式css样式必须写在<code>&lt;style&gt; &lt;/style&gt;</code>之间，并且一般情况下嵌入式css样式写在<code>&lt;head&gt; &lt;/head&gt;</code>之间</li>
+</ul>
+<h4 id="外部式css样式，写在单独的一个文件中"><a href="#外部式css样式，写在单独的一个文件中" class="headerlink" title="外部式css样式，写在单独的一个文件中"></a>外部式css样式，写在单独的一个文件中</h4><ul>
+<li>外部式css样式(也可称为外联式)就是把css代码写一个单独的外部文件中，这个css样式文件以<code>.css</code>为扩展名，在<code>&lt;head&gt;</code>内（不是在<code>&lt;style&gt;</code>标签内）使用<code>&lt;link&gt;</code>标签将css样式文件链接到HTML文件内，如下面代码：</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;link href=&quot;base.css&quot; rel=&quot;stylesheet&quot; type=&quot;text/css&quot; /&gt;</span><br></pre></td></tr></table></figure>
+<ul>
+<li><p>css样式文件名称以有意义的英文字母命名，如 main.css。</p>
+</li>
+<li><p><code>rel=&quot;stylesheet&quot; type=&quot;text/css&quot;</code> 是 <strong>固定写法</strong> 不可修改。</p>
+</li>
+<li><p><code>&lt;link&gt;</code>标签位置一般写在<code>&lt;head&gt;</code>标签之内。</p>
+</li>
+</ul>
+<h4 id="三种方法的优先级"><a href="#三种方法的优先级" class="headerlink" title="三种方法的优先级"></a>三种方法的优先级</h4><ul>
+<li><p>前提：在相同的权值的情况下。</p>
+</li>
+<li><p>优先级：<code>内联式 &gt; 嵌入式 &gt; 外部式</code></p>
+</li>
+<li><p>总而言之，就是就近原则（离被设置元素越近优先级别越高）。</p>
+</li>
+</ul>
+<h2 id="选择器"><a href="#选择器" class="headerlink" title="选择器"></a>选择器</h2><hr>
+<ul>
+<li>每一条css样式声明（定义）由两部分组成，形式如下：</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">选择器&#123;</span><br><span class="line">    样式;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>在<code>{}</code>之前的部分就是“选择器”，“选择器”指明了<code>{}</code>中的“样式”的作用对象，也就是“样式”作用于网页中的哪些元素。</p>
+<ul>
+<li>例：</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">&lt;!DOCTYPE HTML&gt;</span><br><span class="line">&lt;html&gt;</span><br><span class="line">&lt;head&gt;</span><br><span class="line">&lt;meta http-equiv=&quot;Content-Type&quot; content=&quot;text/html; charset=utf-8&quot;&gt;</span><br><span class="line">&lt;title&gt;选择器&lt;/title&gt;</span><br><span class="line">&lt;style type=&quot;text/css&quot;&gt;</span><br><span class="line">body&#123;</span><br><span class="line">    font-size:12px;</span><br><span class="line">    color:red;</span><br><span class="line">&#125;</span><br><span class="line">&lt;/style&gt;</span><br><span class="line">&lt;/head&gt;</span><br><span class="line">&lt;body&gt;</span><br><span class="line">&lt;p&gt;</span><br><span class="line">XXXXXXXX</span><br><span class="line">&lt;/p&gt;</span><br><span class="line">&lt;/body&gt;</span><br><span class="line">&lt;/html&gt;</span><br></pre></td></tr></table></figure>
+<p>其中<code>body{..}</code>就是一个选择器（标签选择器），他作用于<code>&lt;body&gt;</code>部分</p>
+<h4 id="标签选择器"><a href="#标签选择器" class="headerlink" title="标签选择器"></a>标签选择器</h4><ul>
+<li><p>标签选择器其实就是html代码中的标签。</p>
+</li>
+<li><p>例：<code>p{font-size:12px;line-height:1.6em;}</code>这个就为p标签（<code>&lt;p&gt;</code>标签是段落部分）设置12px字号，行间距设置1.6em的样式。</p>
+</li>
+</ul>
+<h4 id="类选择器"><a href="#类选择器" class="headerlink" title="类选择器"></a><strong>类选择器</strong></h4><ul>
+<li><p>语法：<code>.类选器名称{css样式代码;}</code></p>
+</li>
+<li><p>注意：以英文圆点开头。类选择器可以任意起名字。</p>
+</li>
+<li><p>用法：</p>
+</li>
+</ul>
+<ol>
+<li><p>使用合适的标签把要修饰的内容标记起来，如：<code>&lt;span&gt;胆小如鼠&lt;/span&gt;</code></p>
+</li>
+<li><p>使用<code>class=&quot;类选择器名称&quot;</code>为标签设置一个类，如：<code>&lt;span class=&quot;stress&quot;&gt;胆小如鼠&lt;/span&gt;</code></p>
+</li>
+<li><p>设置类选器css样式，如：<code>.stress{color:red;} /*类前面要加入一个英文圆点*/</code></p>
+</li>
+</ol>
+<ul>
+<li>类选择器使得我们可以灵活地自定义不同的部分的格式。</li>
+</ul>
+<h4 id="ID选择器"><a href="#ID选择器" class="headerlink" title="ID选择器"></a><strong>ID选择器</strong></h4><ul>
+<li>在很多方面，ID选择器都类似于类选择符，但也有一些重要的区别：</li>
+</ul>
+<ol>
+<li><p><strong>为标签设置<code>id=&quot;ID名称&quot;</code>，而不是<code>class=&quot;类名称&quot;</code>。</strong></p>
+</li>
+<li><p>ID选择符的前面是井号（#），而不是英文圆点（.）</p>
+</li>
+</ol>
+<ul>
+<li>例如：</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">#test&#123;</span><br><span class="line">  color:blue;</span><br><span class="line">&#125;</span><br><span class="line">...</span><br><span class="line">XXX&lt;span id=&quot;test&quot;&gt;...&lt;/span&gt;</span><br></pre></td></tr></table></figure>
+<h4 id="id选择器和类选择器的区别与联系"><a href="#id选择器和类选择器的区别与联系" class="headerlink" title="id选择器和类选择器的区别与联系"></a>id选择器和类选择器的区别与联系</h4><h6 id="相同点"><a href="#相同点" class="headerlink" title="相同点"></a>相同点</h6><ul>
+<li>可以应用于任何元素</li>
+</ul>
+<h6 id="不同点"><a href="#不同点" class="headerlink" title="不同点"></a>不同点</h6><ul>
+<li><p><strong>ID选择器只能在文档中使用一次</strong>。与类选择器不同，在一个HTML文档中，ID选择器只能使用一次，而且仅一次。而<strong>类选择器可以使用多次</strong>。</p>
+</li>
+<li><p><strong>这里只能使用一次是指同一个id选择器只能修饰一个地方，而类选择器可以同时修饰多个地方。当然我们可以定义多个id选择器来修饰不同的地方</strong></p>
+</li>
+<li><p>可以使用类选择器词列表方法为一个元素<strong>同时设置多个样式</strong>。我们可以为一个元素同时设多个样式，但只可以用类选择器的方法实现，ID选择器是不可以的（不能使用 ID 词列表）。</p>
+</li>
+<li><p><strong>正确示例</strong>：</p>
+</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">.stress&#123;</span><br><span class="line">    color:red;</span><br><span class="line">&#125;</span><br><span class="line">.bigsize&#123;</span><br><span class="line">    font-size:25px;</span><br><span class="line">&#125;</span><br><span class="line">&lt;p&gt;</span><br><span class="line">到了&lt;span class=&quot;stress bigsize&quot;&gt;三年级&lt;/span&gt;下学期时，我们班上了一节公开课...</span><br><span class="line">&lt;/p&gt;</span><br></pre></td></tr></table></figure>
+<p>以上代码在<code>&lt;span&gt;</code>里定义两个类来修饰，这样的语法是可以的。上面代码的作用是为“三年级”三个文字设置文本颜色为红色并且字号为25px。</p>
+<ul>
+<li>错误的例子：</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">#stressid&#123;</span><br><span class="line">    color:red;</span><br><span class="line">&#125;</span><br><span class="line">#bigsizeid&#123;</span><br><span class="line">    font-size:25px;</span><br><span class="line">&#125;</span><br><span class="line">&lt;p&gt;</span><br><span class="line">到了&lt;span id=&quot;stressid bigsizeid&quot;&gt;三年级&lt;/span&gt;下学期时，我们班上了一节公开课...</span><br><span class="line">&lt;/p&gt;</span><br></pre></td></tr></table></figure>
+<p>以上代码是错误的，一个地方只能用一个id选择器来修饰。以上代码不能起到修饰的作用。</p>
+<h4 id="子选择器"><a href="#子选择器" class="headerlink" title="子选择器"></a>子选择器</h4><ul>
+<li><p>还有一个比较有用的选择器子选择器，即大于符号(&gt;),用于选择指定标签元素的<strong>第一代子元素</strong>。</p>
+</li>
+<li><p>例如：(以下代码会使class名为food下的子元素 li 加入红色实线边框。)</p>
+</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line">...</span><br><span class="line">.food&gt;li&#123;border:1px solid red;&#125;</span><br><span class="line">...</span><br><span class="line">&lt;h1&gt;食物&lt;/h1&gt;</span><br><span class="line">&lt;ul class=&quot;food&quot;&gt;</span><br><span class="line">    &lt;li&gt;水果</span><br><span class="line">        &lt;ul&gt;</span><br><span class="line">        	&lt;li&gt;香蕉&lt;/li&gt;</span><br><span class="line">            &lt;li&gt;苹果&lt;/li&gt;</span><br><span class="line">            &lt;li&gt;梨&lt;/li&gt;</span><br><span class="line">        &lt;/ul&gt;</span><br><span class="line">    &lt;/li&gt;</span><br><span class="line">    &lt;li&gt;蔬菜</span><br><span class="line">    	&lt;ul&gt;</span><br><span class="line">        	&lt;li&gt;白菜&lt;/li&gt;</span><br><span class="line">            &lt;li&gt;油菜&lt;/li&gt;</span><br><span class="line">            &lt;li&gt;卷心菜&lt;/li&gt;</span><br><span class="line">        &lt;/ul&gt;</span><br><span class="line">    &lt;/li&gt;</span><br><span class="line">&lt;/ul&gt;</span><br><span class="line">...</span><br></pre></td></tr></table></figure>
+<h4 id="包含-后代-选择器"><a href="#包含-后代-选择器" class="headerlink" title="包含(后代)选择器"></a>包含(后代)选择器</h4><ul>
+<li><p>包含选择器，即加入空格,用于选择指定标签元素下的后辈元素。如：<code>.first  span{color:red;}</code></p>
+</li>
+<li><p>请注意这个选择器与子选择器的区别，子选择器（child selector）仅是指它的<strong>直接后代</strong>，或者你可以理解为作用于子元素的<strong>第一代后代</strong>。而后代选择器是作用于<strong>所有子后代元素</strong>。后代选择器通过<strong>空格</strong>来进行选择，而子选择器是通过<code>&gt;</code>进行选择。</p>
+</li>
+<li><p>总而言之就是，空格选择所有后代元素，<code>&gt;</code>只选择第一代后代。</p>
+</li>
+</ul>
+<h4 id="通用选择器"><a href="#通用选择器" class="headerlink" title="通用选择器"></a><strong>通用选择器</strong></h4><ul>
+<li>通用选择器是功能最强大的选择器，它使用一个<code>*</code>号指定，它的作用是匹配html中所有标签元素，如下使用下面代码使用html中任意标签元素字体颜色全部设置为红色：<code>* {color:red;}</code></li>
+</ul>
+<h4 id="伪类选择符"><a href="#伪类选择符" class="headerlink" title="伪类选择符"></a>伪类选择符</h4><ul>
+<li><p>它允许给html不存在的标签（标签的某种状态）设置样式，比如说我们给html中一个标签元素的鼠标滑过的状态来设置字体颜色：<code>a:hover{color:red;}</code><br>这句代码就实现了<code>&lt;a&gt;</code>(超链接)鼠标划过的特效，当鼠标划过超链接时，超链接的字体颜色会变成红色。</p>
+</li>
+<li><p>一般<code>:hover</code>都是用来控制鼠标滑过的效果</p>
+</li>
+<li><p>其实 <code>:hover</code> 可以放在任意的标签上，比如说 <code>p:hover</code>，但是它们的兼容性也是很不好的，所以一般用在<code>a:hover</code>的组合。(<strong>现在也可以用在其他的地方</strong>)</p>
+</li>
+</ul>
+<h4 id="分组选择符"><a href="#分组选择符" class="headerlink" title="分组选择符"></a><strong>分组选择符</strong></h4><ul>
+<li><p>当你想为html中多个标签元素设置同一个样式时，可以使用分组选择符（，），如下代码将<code>&lt;h1&gt;</code>、<code>&lt;span&gt;</code>标签同时设置字体颜色为红色：<code>h1,span{color:red;}</code></p>
+</li>
+<li><p>以上代码相当于下面两行代码：</p>
+</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">h1&#123;color:red;&#125;</span><br><span class="line">span&#123;color:red;&#125;</span><br></pre></td></tr></table></figure>
+<h4 id="继承"><a href="#继承" class="headerlink" title="继承"></a>继承</h4><ul>
+<li>CSS的某些样式是具有继承性的，那么什么是继承呢？继承是一种规则，它允许样式不仅应用于某个特定html标签元素，而且应用于其后代。就是对某一些标签的样式的修改会对其子代也产生影响。</li>
+</ul>
+<p>####　权值</p>
+<ul>
+<li><p>如果对同一个标签设置了不同的样式，浏览器是根据权值来判断使用哪种css样式的，权值高的就使用哪种css样式。</p>
+</li>
+<li><p>权值的规则：<strong>标签的权值为1，类选择符的权值为10，ID选择符的权值最高为100。</strong></p>
+</li>
+<li><p>例如：</p>
+</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">p&#123;color:red;&#125; /*权值为1*/</span><br><span class="line">p span&#123;color:green;&#125; /*权值为1+1=2*/</span><br><span class="line">.warning&#123;color:white;&#125; /*权值为10*/</span><br><span class="line">p span.warning&#123;color:purple;&#125; /*权值为1+1+10=12*/</span><br><span class="line">#footer .note p&#123;color:yellow;&#125; /*权值为100+10+1=111*/</span><br></pre></td></tr></table></figure>
+<p>注意：还有一个权值比较特殊–继承也有权值但很低，有的文献提出它只有0.1，所以可以理解为继承的权值最低。</p>
+<ul>
+<li>使用<code>!important</code>来使样式获得最高权值：<code>p{color:red!important;}</code><blockquote>
+<p>注意：!important要写在分号的前面,中间不需要空格。</p>
+</blockquote>
+</li>
+</ul>
+<h4 id="层叠"><a href="#层叠" class="headerlink" title="层叠"></a>层叠</h4><ul>
+<li><p>如果在html文件中对于同一个元素可以有多个css样式存在并且这多个css样式具有相同权重值怎么办？这时候我们就会用到层叠。</p>
+</li>
+<li><p>层叠就是在html文件中对于同一个元素可以有多个css样式存在，当有相同权重的样式存在时，会根据这些css样式的前后顺序来决定，处于<strong>最后面的css样式</strong>会被应用。</p>
+</li>
+<li><p>简单来说，就是，就是后面的样式会覆盖前面的样式。</p>
+</li>
+<li><p>所以之前的内外优先级关系：<code>内联样式表（标签内部）&gt; 嵌入样式表（当前文件中）&gt; 外部样式表（外部文件中）。</code> 也就很好理解了。</p>
+</li>
+</ul>
+<h2 id="文字排版"><a href="#文字排版" class="headerlink" title="文字排版"></a>文字排版</h2><hr>
+<h4 id="字体"><a href="#字体" class="headerlink" title="字体"></a>字体</h4><ul>
+<li><p>例：为网页设置字体 <code>body{font-family:&quot;Microsoft Yahei&quot;;}</code> //字体为微软雅黑</p>
+</li>
+<li><p>注意：这里设置的字体能否显示，取决于用户本地有没有安装这个字体。</p>
+</li>
+</ul>
+<h4 id="字号颜色"><a href="#字号颜色" class="headerlink" title="字号颜色"></a>字号颜色</h4><ul>
+<li><p>设置网页中文字的字号为12像素，并把字体颜色设置为#666(灰色)：<code>body{font-size:12px;color:#666}</code></p>
+</li>
+<li><p><code>font-size</code>:字体大小</p>
+</li>
+<li><p><code>color</code>：颜色(一般以<code>#</code>加数字来表示颜色，以增加颜色的多样化)</p>
+</li>
+</ul>
+<h4 id="一些字体样式：粗体、斜体等"><a href="#一些字体样式：粗体、斜体等" class="headerlink" title="一些字体样式：粗体、斜体等"></a>一些字体样式：粗体、斜体等</h4><ul>
+<li><p><code>font-weight</code>:字体粗细</p>
+</li>
+<li><p>例：<code>span{font-weight:bold;}</code>  //粗体</p>
+</li>
+<li><p><code>font-style</code>:字体特点</p>
+</li>
+<li><p>例：<code>span{font-style:italic;}</code>  //斜体(意大利体)</p>
+</li>
+<li><p><code>text-decoration</code>:文字修饰</p>
+</li>
+<li><p>例：<code>a{text-decoration:underline;}</code>  //下划线</p>
+</li>
+<li><p>例：<code>.oldPrice{text-decoration:line-through;}</code>    //删除线(将文字划去)</p>
+</li>
+</ul>
+<h4 id="段落排版"><a href="#段落排版" class="headerlink" title="段落排版"></a>段落排版</h4><h6 id="首行缩进"><a href="#首行缩进" class="headerlink" title="首行缩进"></a>首行缩进</h6><ul>
+<li><p>设置段落缩进两个字宽：<code>p{text-indent:2em;}</code></p>
+</li>
+<li><p><code>2em</code>的意思就是文字的2倍大小。</p>
+</li>
+</ul>
+<h6 id="行间距"><a href="#行间距" class="headerlink" title="行间距"></a>行间距</h6><ul>
+<li>例：<code>p{line-height:1.5em;}</code></li>
+</ul>
+<h6 id="中文字间距、字母间距"><a href="#中文字间距、字母间距" class="headerlink" title="中文字间距、字母间距"></a>中文字间距、字母间距</h6><ul>
+<li><p>如果想在网页排版中设置<strong>文字间隔</strong>或者<strong>字母间隔</strong>就可以使用<code>letter-spacing</code>来实现。</p>
+</li>
+<li><p>例：<code>h1{letter-spacing:10px;}</code></p>
+</li>
+<li><p>注意：这个样式使用在英文单词时，是设置<strong>字母与字母之间</strong>的间距。</p>
+</li>
+<li><p>如果我想设置英文单词之间的间距，可以使用 <code>word-spacing</code> 来实现。</p>
+</li>
+<li><p>例：<code>h1{word-spacing:20px;}</code></p>
+</li>
+</ul>
+<h6 id="对齐"><a href="#对齐" class="headerlink" title="对齐"></a>对齐</h6><ul>
+<li><p>为块状元素中的文本、图片设置居中样式，可以使用<code>text-align</code>样式代码。</p>
+</li>
+<li><p>例：<code>h1{text-align:center/left/right;}</code>  //居中/左对齐/右对齐</p>
+</li>
+</ul>
+<h2 id="元素分类"><a href="#元素分类" class="headerlink" title="元素分类"></a>元素分类</h2><hr>
+<ul>
+<li><p>在CSS中，html中的标签元素大体被分为三种不同的类型：块状元素、内联元素(又叫行内元素)和内联块状元素。</p>
+</li>
+<li><p>常用的块状元素有：<code>&lt;div&gt;、&lt;p&gt;、&lt;h1&gt;...&lt;h6&gt;、&lt;ol&gt;、&lt;ul&gt;、&lt;dl&gt;、&lt;table&gt;、&lt;address&gt;、&lt;blockquote&gt; 、&lt;form&gt;</code></p>
+</li>
+<li><p>常用的内联元素有：<code>&lt;a&gt;、&lt;span&gt;、&lt;br&gt;、&lt;i&gt;、&lt;em&gt;、&lt;strong&gt;、&lt;label&gt;、&lt;q&gt;、&lt;var&gt;、&lt;cite&gt;、&lt;code&gt;</code></p>
+</li>
+<li><p>常用的内联块状元素有：<code>&lt;img&gt;、&lt;input&gt;</code></p>
+</li>
+</ul>
+<h4 id="块级元素"><a href="#块级元素" class="headerlink" title="块级元素"></a>块级元素</h4><ul>
+<li><p>设置<code>display:block</code>就是将元素显示为块级元素。如下代码就是将内联元素a转换为块状元素，从而使a元素具有块状元素特点：<code>a{display:block;}</code></p>
+</li>
+<li><p>块级元素特点：</p>
+</li>
+</ul>
+<ol>
+<li><p>每个块级元素都从新的一行开始，并且其后的元素也另起一行。</p>
+</li>
+<li><p>元素的高度、宽度、行高以及顶和底边距都可设置。</p>
+</li>
+<li><p>元素宽度在不设置的情况下，是它本身父容器的100%（和父元素的宽度一致），除非设定一个宽度。</p>
+</li>
+</ol>
+<h4 id="内联元素"><a href="#内联元素" class="headerlink" title="内联元素"></a>内联元素</h4><ul>
+<li><p>块状元素也可以通过代码<code>display:inline</code>将元素设置为内联元素。</p>
+</li>
+<li><p>如下代码就是将块状元素div转换为内联元素，从而使 div 元素具有内联元素特点：<code>div{display:inline;}</code></p>
+</li>
+<li><p>内联元素特点：</p>
+</li>
+</ul>
+<ol>
+<li><p>和其他元素都在一行上</p>
+</li>
+<li><p>元素的高度、宽度及顶部和底部边距不可设置</p>
+</li>
+<li><p>元素的宽度就是它包含的文字或图片的宽度，不可改变</p>
+</li>
+</ol>
+<h4 id="内联块状元素"><a href="#内联块状元素" class="headerlink" title="内联块状元素"></a>内联块状元素</h4><ul>
+<li><p>内联块状元素（inline-block）就是同时具备内联元素、块状元素的特点，代码<code>display:inline-block</code>就是将元素设置为内联块状元素。</p>
+</li>
+<li><p>inline-block 元素特点：</p>
+</li>
+</ul>
+<ol>
+<li><p>和其他元素都在一行上</p>
+</li>
+<li><p>元素的高度、宽度、行高以及顶和底边距都可设置</p>
+</li>
+</ol>
+<h2 id="颜色值"><a href="#颜色值" class="headerlink" title="颜色值"></a>颜色值</h2><hr>
+<ul>
+<li><p>英文命令颜色：<code>p{color:red;}</code></p>
+</li>
+<li><p>RGB颜色：这个与 photoshop 中的 RGB 颜色是一致的，由 R(red)、G(green)、B(blue) 三种颜色的比例来配色。</p>
+</li>
+<li><p>例：<code>p{color:rgb(133,45,200);}</code> 每一项的值可以是 0~255 之间的整数，也可以是 0%~100% 的百分数，例如：<code>p{color:rgb(20%,33%,25%);}</code></p>
+</li>
+<li><p><strong>十六进制颜色</strong>：这种颜色设置方法是现在比较普遍使用的方法，其原理其实也是 RGB 设置，但是其每一项的值由 0-255 变成了十六进制 00-ff。</p>
+</li>
+<li><p>例：<code>p{color:#00ffff;}</code>  //以<code>#</code>开头</p>
+</li>
+</ul>
+<p><img src="/images/CSS/color.jpg" alt=""></p>
+<p><img src="/images/CSS/color_list.jpg" alt=""></p>
+<h2 id="长度值"><a href="#长度值" class="headerlink" title="长度值"></a>长度值</h2><hr>
+<ul>
+<li>目前比较常用到px（像素）、em、% 百分比。(但是这三种单位都是相对值)</li>
+</ul>
+<h4 id="像素"><a href="#像素" class="headerlink" title="像素"></a>像素</h4><ul>
+<li>像素为什么是相对单位呢？因为像素指的是显示器上的小点（CSS规范中假设“90像素=1英寸”）。实际情况是浏览器会使用显示器的实际像素值有关，在目前大多数的设计者都倾向于使用像素（px）作为单位。</li>
+</ul>
+<h4 id="em"><a href="#em" class="headerlink" title="em"></a>em</h4><ul>
+<li>就是本元素给定字体的 font-size 值，如果元素的 font-size 为 14px ，那么 1em = 14px；如果 font-size 为 18px，那么 1em = 18px。如下代码：<code>p{font-size:12px;text-indent:2em;}</code>就是可以实现段落首行缩进 24px（也就是两个字体大小的距离）。</li>
+</ul>
+<h4 id="百分比"><a href="#百分比" class="headerlink" title="百分比"></a>百分比</h4><ul>
+<li><code>p{font-size:12px;line-height:130%}</code> 设置行高（行间距）为字体的130%（12 * 1.3 = 15.6px）。</li>
+</ul>
+<h2 id="一些补充"><a href="#一些补充" class="headerlink" title="一些补充"></a>一些补充</h2><hr>
+<h4 id="元素宽度相关"><a href="#元素宽度相关" class="headerlink" title="元素宽度相关"></a>元素宽度相关</h4><ul>
+<li><p><code>calc()</code>用法：<a href="https://www.w3cplus.com/css3/how-to-use-css3-calc-function.html" target="_blank" rel="noopener">详解</a></p>
+</li>
+<li><p>如果你的元素宽度是100%时，只要你在元素中添加了border,padding,margin任何一值，都将会把元素盒子撑破（标准模式下，除IE怪异模式）。</p>
+</li>
+</ul>
+<h6 id="opacity属性"><a href="#opacity属性" class="headerlink" title="opacity属性"></a>opacity属性</h6><ul>
+<li><p>设置div元素的不透明级别</p>
+</li>
+<li><p>语法：<code>opacity: value|inherit;</code></p>
+</li>
+<li><p>值： value: 规定不透明度。从 0.0 （完全透明）到 1.0（完全不透明）; inherit: 应该从父元素继承 opacity 属性的值。</p>
+</li>
+</ul>
+<h6 id="data-toggle属性"><a href="#data-toggle属性" class="headerlink" title="data-toggle属性"></a>data-toggle属性</h6><ul>
+<li>data-toggle一般是a元素(即链接)的属性。data-toggle指以什么事件触发。<a href="https://blog.csdn.net/d295968572/article/details/56667863" target="_blank" rel="noopener">详细的介绍</a></li>
+</ul>
+<h6 id="webkit-tap-highlight-color属性"><a href="#webkit-tap-highlight-color属性" class="headerlink" title="-webkit-tap-highlight-color属性"></a>-webkit-tap-highlight-color属性</h6><ul>
+<li><code>-webkit-tap-highlight-color</code> 是一个没有标准化的属性，能够设置点击链接的时候出现的高亮颜色。显示给用户的高光是他们成功点击的标识，以及暗示了他们点击的元素。</li>
+</ul>
+<h4 id="media-用法"><a href="#media-用法" class="headerlink" title="@media 用法"></a><code>@media</code> 用法</h4><ul>
+<li><p><code>@media</code>可以让你根据不同的屏幕大小而使用不同的样式，这可以使得不需要js代码就能实现响应式布局。(即根据不同大小的页面重新排版)</p>
+</li>
+<li><p>语法：</p>
+</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">@media mediatype and|not|only (media feature) &#123;</span><br><span class="line">    CSS-Code;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<ul>
+<li><p>其中mediatype就是媒体类型，可以包括好多种，最常用的就是screen，其他多数已经作废。</p>
+</li>
+<li><p>media feature就定义了这个media设备的一些特征，简单的说就是媒体满足什么条件，常用的就是max-width，min-width。</p>
+</li>
+<li><p><a href="http://blog.51cto.com/cnn237111/1602797" target="_blank" rel="noopener">具体的例子</a></p>
+</li>
+</ul>
+<h4 id="margin属性"><a href="#margin属性" class="headerlink" title="margin属性"></a>margin属性</h4><ul>
+<li><p>定义和用法：margin 简写属性在一个声明中设置所有外边距属性。该属性可以有 1 到 4 个值。</p>
+</li>
+<li><p>块级元素的垂直相邻外边距会合并，而行内元素实际上不占上下外边距。行内元素的的左右外边距不会合并。同样地，浮动元素的外边距也不会合并。允许指定负的外边距值，不过使用时要小心。</p>
+</li>
+</ul>
+<blockquote>
+<p>注释：允许使用负值。</p>
+</blockquote>
+<ul>
+<li><p>例子 1：<code>margin:10px 5px 15px 20px;</code><br>上外边距是 10px;<br>右外边距是 5px;<br>下外边距是 15px;<br>左外边距是 20px;</p>
+</li>
+<li><p>例子 2: <code>margin:10px 5px 15px;</code><br>上外边距是 10px;<br>右外边距和左外边距是 5px;<br>下外边距是 15px;</p>
+</li>
+<li><p>例子 3:<code>margin:10px 5px;</code><br>上外边距和下外边距是 10px;<br>右外边距和左外边距是 5px;</p>
+</li>
+<li><p>例子 4:<code>margin:10px;</code><br>所有 4 个外边距都是 10px</p>
+</li>
+</ul>
+<h4 id="media用法"><a href="#media用法" class="headerlink" title="@media用法"></a><code>@media</code>用法</h4><ul>
+<li><a href="http://www.runoob.com/cssref/css3-pr-mediaquery.html" target="_blank" rel="noopener">用法详解</a></li>
+</ul>
+<p><br></p>
+<blockquote>
+<p>最后更新与2018.7.9</p>
+</blockquote>
+
+      
+    </div>
+
+    
+
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/๑FrontEnd-๑CSS/" rel="tag"># ๑FrontEnd ๑CSS</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2018/06/17/2018-06-17-FrontEnd-HTML/" rel="next" title="前端学习——HTML">
+                <i class="fa fa-chevron-left"></i> 前端学习——HTML
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2018/07/07/2018-07-07-JavaScript/" rel="prev" title="前端学习——JavaScript">
+                前端学习——JavaScript <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+  </div>
+
+
+          </div>
+          
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            Table of Contents
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            Overview
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image"
+                src="/images/avatar.gif"
+                alt="Fleschier" />
+            
+              <p class="site-author-name" itemprop="name">Fleschier</p>
+              <p class="site-description motion-element" itemprop="description">This is a blog based on hexo</p>
+          </div>
+
+          
+            <nav class="site-state motion-element">
+              
+                <div class="site-state-item site-state-posts">
+                
+                  <a href="/archives/">
+                
+                    <span class="site-state-item-count">39</span>
+                    <span class="site-state-item-name">posts</span>
+                  </a>
+                </div>
+              
+
+              
+
+              
+                
+                
+                <div class="site-state-item site-state-tags">
+                  
+                    
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">23</span>
+                    <span class="site-state-item-name">tags</span>
+                  
+                </div>
+              
+            </nav>
+          
+
+          
+
+          
+
+          
+          
+
+          
+          
+
+          
+            
+          
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#CSS代码语法"><span class="nav-number">1.</span> <span class="nav-text">CSS代码语法</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#基础"><span class="nav-number">1.0.1.</span> <span class="nav-text">基础</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#CSS中的注释"><span class="nav-number">1.0.2.</span> <span class="nav-text">CSS中的注释</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#三种CSS样式"><span class="nav-number">2.</span> <span class="nav-text">三种CSS样式</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#内联式css样式，直接写在现有的HTML标签中"><span class="nav-number">2.0.1.</span> <span class="nav-text">内联式css样式，直接写在现有的HTML标签中</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#嵌入式css样式，写在当前的文件中"><span class="nav-number">2.0.2.</span> <span class="nav-text">嵌入式css样式，写在当前的文件中</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#外部式css样式，写在单独的一个文件中"><span class="nav-number">2.0.3.</span> <span class="nav-text">外部式css样式，写在单独的一个文件中</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#三种方法的优先级"><span class="nav-number">2.0.4.</span> <span class="nav-text">三种方法的优先级</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#选择器"><span class="nav-number">3.</span> <span class="nav-text">选择器</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#标签选择器"><span class="nav-number">3.0.1.</span> <span class="nav-text">标签选择器</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#类选择器"><span class="nav-number">3.0.2.</span> <span class="nav-text">类选择器</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#ID选择器"><span class="nav-number">3.0.3.</span> <span class="nav-text">ID选择器</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#id选择器和类选择器的区别与联系"><span class="nav-number">3.0.4.</span> <span class="nav-text">id选择器和类选择器的区别与联系</span></a><ol class="nav-child"><li class="nav-item nav-level-6"><a class="nav-link" href="#相同点"><span class="nav-number">3.0.4.0.1.</span> <span class="nav-text">相同点</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#不同点"><span class="nav-number">3.0.4.0.2.</span> <span class="nav-text">不同点</span></a></li></ol></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#子选择器"><span class="nav-number">3.0.5.</span> <span class="nav-text">子选择器</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#包含-后代-选择器"><span class="nav-number">3.0.6.</span> <span class="nav-text">包含(后代)选择器</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#通用选择器"><span class="nav-number">3.0.7.</span> <span class="nav-text">通用选择器</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#伪类选择符"><span class="nav-number">3.0.8.</span> <span class="nav-text">伪类选择符</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#分组选择符"><span class="nav-number">3.0.9.</span> <span class="nav-text">分组选择符</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#继承"><span class="nav-number">3.0.10.</span> <span class="nav-text">继承</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#层叠"><span class="nav-number">3.0.11.</span> <span class="nav-text">层叠</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#文字排版"><span class="nav-number">4.</span> <span class="nav-text">文字排版</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#字体"><span class="nav-number">4.0.1.</span> <span class="nav-text">字体</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#字号颜色"><span class="nav-number">4.0.2.</span> <span class="nav-text">字号颜色</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#一些字体样式：粗体、斜体等"><span class="nav-number">4.0.3.</span> <span class="nav-text">一些字体样式：粗体、斜体等</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#段落排版"><span class="nav-number">4.0.4.</span> <span class="nav-text">段落排版</span></a><ol class="nav-child"><li class="nav-item nav-level-6"><a class="nav-link" href="#首行缩进"><span class="nav-number">4.0.4.0.1.</span> <span class="nav-text">首行缩进</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#行间距"><span class="nav-number">4.0.4.0.2.</span> <span class="nav-text">行间距</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#中文字间距、字母间距"><span class="nav-number">4.0.4.0.3.</span> <span class="nav-text">中文字间距、字母间距</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#对齐"><span class="nav-number">4.0.4.0.4.</span> <span class="nav-text">对齐</span></a></li></ol></li></ol></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#元素分类"><span class="nav-number">5.</span> <span class="nav-text">元素分类</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#块级元素"><span class="nav-number">5.0.1.</span> <span class="nav-text">块级元素</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#内联元素"><span class="nav-number">5.0.2.</span> <span class="nav-text">内联元素</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#内联块状元素"><span class="nav-number">5.0.3.</span> <span class="nav-text">内联块状元素</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#颜色值"><span class="nav-number">6.</span> <span class="nav-text">颜色值</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#长度值"><span class="nav-number">7.</span> <span class="nav-text">长度值</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#像素"><span class="nav-number">7.0.1.</span> <span class="nav-text">像素</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#em"><span class="nav-number">7.0.2.</span> <span class="nav-text">em</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#百分比"><span class="nav-number">7.0.3.</span> <span class="nav-text">百分比</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#一些补充"><span class="nav-number">8.</span> <span class="nav-text">一些补充</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#元素宽度相关"><span class="nav-number">8.0.1.</span> <span class="nav-text">元素宽度相关</span></a><ol class="nav-child"><li class="nav-item nav-level-6"><a class="nav-link" href="#opacity属性"><span class="nav-number">8.0.1.0.1.</span> <span class="nav-text">opacity属性</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#data-toggle属性"><span class="nav-number">8.0.1.0.2.</span> <span class="nav-text">data-toggle属性</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#webkit-tap-highlight-color属性"><span class="nav-number">8.0.1.0.3.</span> <span class="nav-text">-webkit-tap-highlight-color属性</span></a></li></ol></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#media-用法"><span class="nav-number">8.0.2.</span> <span class="nav-text">@media 用法</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#margin属性"><span class="nav-number">8.0.3.</span> <span class="nav-text">margin属性</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#media用法"><span class="nav-number">8.0.4.</span> <span class="nav-text">@media用法</span></a></li></ol></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2018</span>
+  <span class="with-love" id="animate">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Fleschier</span>
+
+  
+
+  
+</div>
+
+
+
+
+  <div class="powered-by">Powered by <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a> v3.7.1</div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">Theme – <a class="theme-link" target="_blank" href="https://theme-next.org">NexT.Mist</a> v6.4.1</div>
+
+
+
+
+        
+
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+	
+    
+
+    
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=6.4.1"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=6.4.1"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=6.4.1"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=6.4.1"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=6.4.1"></script>
+
+
+
+  
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>

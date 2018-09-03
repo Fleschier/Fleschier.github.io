@@ -1,0 +1,1291 @@
+<!DOCTYPE html>
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+<html class="theme-next mist use-motion" lang="">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2"/>
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=6.4.1" rel="stylesheet" type="text/css" />
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=6.4.1">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=6.4.1">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=6.4.1">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=6.4.1" color="#222">
+
+
+
+
+
+
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Mist',
+    version: '6.4.1',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: false,
+    fastclick: false,
+    lazyload: false,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+  
+
+
+
+
+  <meta name="description" content="不适合人类阅读的学习笔记  基础  建议把javascript脚本放在 &amp;lt;body&amp;gt;部分的底部。这会提高网页加载速度，因为 HTML 加载不受制于脚本加载。   Js是放在head还是body解析  嵌入html的javascript写法 JavaScript代码写在&amp;lt;script&amp;gt;和&amp;lt;/script&amp;gt;标签之前。 其中&amp;lt;script type =&amp;quo">
+<meta name="keywords" content="๑FrontEnd ๑JavaScrpt">
+<meta property="og:type" content="article">
+<meta property="og:title" content="前端学习——JavaScript">
+<meta property="og:url" content="http://yoursite.com/2018/07/07/2018-07-07-JavaScript/index.html">
+<meta property="og:site_name" content="Fleschier_渐寒">
+<meta property="og:description" content="不适合人类阅读的学习笔记  基础  建议把javascript脚本放在 &amp;lt;body&amp;gt;部分的底部。这会提高网页加载速度，因为 HTML 加载不受制于脚本加载。   Js是放在head还是body解析  嵌入html的javascript写法 JavaScript代码写在&amp;lt;script&amp;gt;和&amp;lt;/script&amp;gt;标签之前。 其中&amp;lt;script type =&amp;quo">
+<meta property="og:locale" content="default">
+<meta property="og:image" content="http://yoursite.com/images/JavaScript/001.png">
+<meta property="og:image" content="http://yoursite.com/images/JavaScript/002.png">
+<meta property="og:image" content="http://yoursite.com/images/JavaScript/003.png">
+<meta property="og:image" content="http://yoursite.com/images/JavaScript/004.png">
+<meta property="og:image" content="http://yoursite.com/images/JavaScript/005.png">
+<meta property="og:image" content="http://yoursite.com/images/JavaScript/006.png">
+<meta property="og:image" content="http://yoursite.com/images/JavaScript/007.png">
+<meta property="og:updated_time" content="2018-09-01T10:45:47.811Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="前端学习——JavaScript">
+<meta name="twitter:description" content="不适合人类阅读的学习笔记  基础  建议把javascript脚本放在 &amp;lt;body&amp;gt;部分的底部。这会提高网页加载速度，因为 HTML 加载不受制于脚本加载。   Js是放在head还是body解析  嵌入html的javascript写法 JavaScript代码写在&amp;lt;script&amp;gt;和&amp;lt;/script&amp;gt;标签之前。 其中&amp;lt;script type =&amp;quo">
+<meta name="twitter:image" content="http://yoursite.com/images/JavaScript/001.png">
+
+
+
+
+
+
+  <link rel="canonical" href="http://yoursite.com/2018/07/07/2018-07-07-JavaScript/"/>
+
+
+
+<script type="text/javascript" id="page.configurations">
+  CONFIG.page = {
+    sidebar: "",
+  };
+</script>
+
+  <title>前端学习——JavaScript | Fleschier_渐寒</title>
+  
+
+
+
+
+
+
+
+
+
+  <noscript>
+  <style type="text/css">
+    .use-motion .motion-element,
+    .use-motion .brand,
+    .use-motion .menu-item,
+    .sidebar-inner,
+    .use-motion .post-block,
+    .use-motion .pagination,
+    .use-motion .comments,
+    .use-motion .post-header,
+    .use-motion .post-body,
+    .use-motion .collection-title { opacity: initial; }
+
+    .use-motion .logo,
+    .use-motion .site-title,
+    .use-motion .site-subtitle {
+      opacity: initial;
+      top: initial;
+    }
+
+    .use-motion {
+      .logo-line-before i { left: initial; }
+      .logo-line-after i { right: initial; }
+    }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="default">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">Fleschier_渐寒</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+    
+      
+        <p class="site-subtitle">Welcome~</p>
+      
+    
+  </div>
+
+  <div class="site-nav-toggle">
+    <button aria-label="Toggle navigation bar">
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+  
+    <ul id="menu" class="menu">
+      
+        
+        
+        
+          
+          <li class="menu-item menu-item-home">
+    <a href="/" rel="section">
+      <i class="menu-item-icon fa fa-fw fa-home"></i> <br />Home</a>
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-about">
+    <a href="/about/" rel="section">
+      <i class="menu-item-icon fa fa-fw fa-user"></i> <br />About</a>
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-tags">
+    <a href="/tags/" rel="section">
+      <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />Tags</a>
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-categories">
+    <a href="/categories/" rel="section">
+      <i class="menu-item-icon fa fa-fw fa-th"></i> <br />Categories</a>
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-archives">
+    <a href="/archives/" rel="section">
+      <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />Archives</a>
+  </li>
+
+      
+      
+    </ul>
+  
+
+  
+    
+
+  
+
+  
+</nav>
+
+
+
+  
+
+
+
+</div>
+    </header>
+
+    
+
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/07/07/2018-07-07-JavaScript/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Fleschier">
+      <meta itemprop="description" content="This is a blog based on hexo">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Fleschier_渐寒">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">前端学习——JavaScript
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+
+            
+            
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+
+              
+                
+              
+
+              <time title="Created: 2018-07-07 11:26:00" itemprop="dateCreated datePublished" datetime="2018-07-07T11:26:00+08:00">2018-07-07</time>
+            
+
+            
+              
+
+              
+                
+                <span class="post-meta-divider">|</span>
+                
+
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">Edited on</span>
+                
+                <time title="Modified: 2018-09-01 18:45:47" itemprop="dateModified" datetime="2018-09-01T18:45:47+08:00">2018-09-01</time>
+              
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <blockquote>
+<p>不适合人类阅读的学习笔记</p>
+</blockquote>
+<h2 id="基础"><a href="#基础" class="headerlink" title="基础"></a>基础</h2><hr>
+<blockquote>
+<p>建议把javascript脚本放在 <code>&lt;body&gt;</code>部分的底部。<br>这会提高网页加载速度，因为 HTML 加载不受制于脚本加载。</p>
+</blockquote>
+<ul>
+<li><a href="https://blog.csdn.net/w405722907/article/details/78517757" target="_blank" rel="noopener">Js是放在head还是body解析</a></li>
+</ul>
+<h6 id="嵌入html的javascript写法"><a href="#嵌入html的javascript写法" class="headerlink" title="嵌入html的javascript写法"></a>嵌入html的javascript写法</h6><ul>
+<li>JavaScript代码写在<code>&lt;script&gt;</code>和<code>&lt;/script&gt;</code>标签之前。<br><img src="/images/JavaScript/001.png" alt=""></li>
+<li>其中<code>&lt;script type =&quot;text/javascript&quot;&gt;</code>表示在<code>&lt;script&gt;&lt;/script&gt;</code>之间的是文本类型<code>(text)</code>,javascript是为了告诉浏览器里面的文本是属于JavaScript语言。</li>
+</ul>
+<h6 id="单独写成文件"><a href="#单独写成文件" class="headerlink" title="单独写成文件"></a>单独写成文件</h6><ul>
+<li><p>JavaScript代码只能写在HTML文件中吗?当然不是，我们可以把HTML文件和JS代码分开,并单独创建一个JavaScript文件(简称JS文件),其文件后缀通常为.js，然后将JS代码直接写在JS文件中。</p>
+</li>
+<li><p><strong>注意:在JS文件中，不需要<code>&lt;script&gt;</code>标签,直接编写JavaScript代码就可以了。</strong></p>
+</li>
+<li><p>单独写成文件的javascript文件不能单独运行，比如一个叫“script.js”的文件，我们需在HTML中添加如下代码，就可将JS文件嵌入HTML文件中：<code>&lt;script src=&quot;script.js&quot;&gt;&lt;/script&gt;</code></p>
+</li>
+</ul>
+<h4 id="位置"><a href="#位置" class="headerlink" title="位置"></a>位置</h4><ul>
+<li>我们可以将JavaScript代码放在html文件中任何位置，但是我们一般放在网页的head或者body部分。</li>
+</ul>
+<h6 id="放在-lt-head-gt-部分"><a href="#放在-lt-head-gt-部分" class="headerlink" title="放在&lt;head&gt;部分"></a>放在<code>&lt;head&gt;</code>部分</h6><ul>
+<li>最常用的方式是在页面中head部分放置<code>&lt;script&gt;</code>元素，浏览器解析head部分就会执行这个代码，然后才解析页面的其余部分。</li>
+</ul>
+<h6 id="放在-lt-body-gt-部分"><a href="#放在-lt-body-gt-部分" class="headerlink" title="放在&lt;body&gt;部分"></a>放在<code>&lt;body&gt;</code>部分</h6><ul>
+<li><p>JavaScript代码在网页读取到该语句的时候就会执行。</p>
+</li>
+<li><p><strong>注意: javascript作为一种脚本语言可以放在html页面中任何位置，但是浏览器解释html时是按先后顺序的，所以前面的script就先被执行。比如进行页面显示初始化的js必须放在head里面，因为初始化都要求提前进行（如给页面body设置css等）；而如果是通过事件调用执行的function那么对位置没什么要求的。</strong></p>
+</li>
+</ul>
+<h2 id="语法"><a href="#语法" class="headerlink" title="语法"></a>语法</h2><hr>
+<ul>
+<li><p>一个JavaScript语句以<code>;</code>结尾（虽然也可以不写）</p>
+</li>
+<li><p>注释：单行注释：<code>//</code>，多行注释<code>/*...*/</code></p>
+</li>
+</ul>
+<h6 id="变量"><a href="#变量" class="headerlink" title="变量"></a>变量</h6><ul>
+<li><p>定义变量使用关键字<code>var 变量名</code></p>
+</li>
+<li><p>注意JS中变量无需声明类型</p>
+</li>
+</ul>
+<h6 id="判断语句"><a href="#判断语句" class="headerlink" title="判断语句"></a>判断语句</h6><ul>
+<li><p>语法：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">if(条件)</span><br><span class="line">&#123; 条件成立时执行的代码 &#125;</span><br><span class="line">else</span><br><span class="line">&#123; 条件不成立时执行的代码 &#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>例子：</p>
+</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">&lt;script type=&quot;text/javascript&quot;&gt;</span><br><span class="line">   var myage = 18;</span><br><span class="line">   if(myage&gt;=18)  //myage&gt;=18是判断条件</span><br><span class="line">   &#123; document.write(&quot;你是成年人。&quot;);&#125;</span><br><span class="line">   else  //否则年龄小于18</span><br><span class="line">   &#123; document.write(&quot;未满18岁，你不是成年人。&quot;);&#125;</span><br><span class="line">&lt;/script&gt;</span><br></pre></td></tr></table></figure>
+<h6 id="判断函数"><a href="#判断函数" class="headerlink" title="判断函数"></a>判断函数</h6><ul>
+<li><p>语法：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">function 函数名()</span><br><span class="line">&#123;</span><br><span class="line">     函数代码;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>例子：<br><img src="/images/JavaScript/002.png" alt=""></p>
+</li>
+</ul>
+<h4 id="输出内容-document-write"><a href="#输出内容-document-write" class="headerlink" title="输出内容(document.write)"></a>输出内容(document.write)</h4><ul>
+<li><p>输出内容可以是双引号括起来的，也可以是变量，多个输出项之间以<code>+</code>连接</p>
+</li>
+<li><p>例子：</p>
+</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">&lt;script type=&quot;text/javascript&quot;&gt;</span><br><span class="line">  var mystr=&quot;hello&quot;;</span><br><span class="line">  document.write(mystr+&quot;I love JavaScript&quot;); //多项内容之间用+号连接</span><br><span class="line">&lt;/script&gt;</span><br></pre></td></tr></table></figure>
+<h6 id="javascript警告-消息对话框"><a href="#javascript警告-消息对话框" class="headerlink" title="javascript警告(消息对话框)"></a>javascript警告(消息对话框)</h6><ul>
+<li>语法：<code>alert(字符串或变量)</code></li>
+</ul>
+<blockquote>
+<p>注意：alert弹出一个消息对话框，只有一个确定按钮，多个对话框之间按顺序弹出。</p>
+</blockquote>
+<h6 id="确认-confirm对话框"><a href="#确认-confirm对话框" class="headerlink" title="确认(confirm对话框)"></a>确认(confirm对话框)</h6><ul>
+<li><p>语法：<code>confirm(str);</code></p>
+</li>
+<li><p>参数说明：</p>
+</li>
+</ul>
+<ol>
+<li>str：在消息对话框中要显示的文本</li>
+<li>返回值: Boolean值</li>
+</ol>
+<ul>
+<li>返回值：<br>当用户点击”确定”按钮时，返回true ；当用户点击”取消”按钮时，返回false</li>
+</ul>
+<h6 id="打开新窗口-window-open"><a href="#打开新窗口-window-open" class="headerlink" title="打开新窗口(window.open)"></a>打开新窗口(window.open)</h6><ul>
+<li><p>语法：<code>window.open([URL], [窗口名称], [参数字符串])</code></p>
+</li>
+<li><p>参数说明：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">URL：可选参数，在窗口中要显示网页的网址或路径。如果省略这个参数，或者它的值是空字符串，那么窗口就不显示任何文档。</span><br><span class="line">窗口名称：可选参数，被打开窗口的名称。</span><br><span class="line">    1.该名称由字母、数字和下划线字符组成。</span><br><span class="line">    2.&quot;_top&quot;、&quot;_blank&quot;、&quot;_self&quot;具有特殊意义的名称。</span><br><span class="line">       _blank：在新窗口显示目标网页</span><br><span class="line">       _self：在当前窗口显示目标网页</span><br><span class="line">       _top：框架网页中在上部窗口中显示目标网页</span><br><span class="line">    3.相同 name 的窗口只能创建一个，要想创建多个窗口则 name 不能相同。</span><br><span class="line">   4.name 不能包含有空格。</span><br><span class="line">参数字符串：可选参数，设置窗口参数，各参数用逗号隔开。</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<p><img src="/images/JavaScript/003.png" alt=""></p>
+<blockquote>
+<p>注意：所有的参数都要写在一个参数字符串中，中间以逗号间隔，例如 ‘height=100.width=100’ 这样。</p>
+</blockquote>
+<ul>
+<li><p>可以将窗口对象存储在变量test中：<code>var test = window.open(...);</code></p>
+</li>
+<li><p>关闭窗口：</p>
+</li>
+</ul>
+<ol>
+<li><p><code>window.close();</code>:关闭本窗口</p>
+</li>
+<li><p><code>&lt;窗口对象&gt;.close();</code>:关闭指定窗口</p>
+</li>
+</ol>
+<h2 id="控制权-DOM操作"><a href="#控制权-DOM操作" class="headerlink" title="控制权(DOM操作)"></a>控制权(DOM操作)</h2><hr>
+<ul>
+<li><p>文档对象模型DOM（Document Object Model）定义访问和处理HTML文档的标准方法。DOM 将HTML文档呈现为带有元素、属性和文本的树结构（节点树）。</p>
+</li>
+<li><p>将HTML代码分解为DOM节点层次图:<br><img src="/images/JavaScript/004.png" alt=""></p>
+</li>
+</ul>
+<h6 id="HTML文档可以说由节点构成的集合，三种常见的DOM节点"><a href="#HTML文档可以说由节点构成的集合，三种常见的DOM节点" class="headerlink" title="HTML文档可以说由节点构成的集合，三种常见的DOM节点:"></a>HTML文档可以说由节点构成的集合，三种常见的DOM节点:</h6><ul>
+<li><p>元素节点：上图中<code>&lt;html&gt;</code>、<code>&lt;body&gt;</code>、<code>&lt;p&gt;</code>等都是元素节点，即标签。</p>
+</li>
+<li><p>文本节点:向用户展示的内容，如<code>&lt;li&gt;...&lt;/li&gt;</code>中的JavaScript、DOM、CSS等文本。</p>
+</li>
+<li><p>属性节点:元素属性，如<code>&lt;a&gt;</code>标签的链接属性<code>href=&quot;http://www.imooc.com&quot;</code>。</p>
+</li>
+<li><p>例子：<code>&lt;a href=&quot;http://www.imooc.com&quot;&gt;JavaScript DOM&lt;/a&gt;</code><br><img src="/images/JavaScript/005.png" alt=""></p>
+</li>
+</ul>
+<h4 id="通过ID获取元素"><a href="#通过ID获取元素" class="headerlink" title="通过ID获取元素"></a>通过ID获取元素</h4><ul>
+<li><p>网页由标签将信息组织起来，而标签的id属性值是唯一的，就像是每人有一个身份证号一样，只要通过身份证号就可以找到相对应的人。那么在网页中，我们通过id先找到标签，然后进行操作。</p>
+</li>
+<li><p>语法：<code>document.getElementById(“id”)</code></p>
+</li>
+<li><p>例子：</p>
+</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">&lt;!DOCTYPE HTML&gt;</span><br><span class="line">&lt;html&gt;</span><br><span class="line">&lt;head&gt;</span><br><span class="line">&lt;meta http-wquiv=&quot;Content-Type&quot; content=&quot;text/html; charest=gb2312&quot; /&gt;</span><br><span class="line">&lt;title&gt;获取元素&lt;/title&gt;</span><br><span class="line">  &lt;script type=&quot;text/javascript&quot;&gt;</span><br><span class="line">    var mye = document.getElementById(&quot;con&quot;);    //获取元素变量存储在变量mye中</span><br><span class="line">    document.write(mye);                    //输出变量</span><br><span class="line">  &lt;/script&gt;</span><br><span class="line">&lt;/head&gt;</span><br><span class="line">&lt;body&gt;</span><br><span class="line">    &lt;h3&gt;Hello&lt;/h3&gt;</span><br><span class="line">    &lt;p id=&quot;con&quot;&gt;I love JavaScript&lt;/p&gt;</span><br><span class="line">&lt;/body&gt;</span><br><span class="line">&lt;/html&gt;</span><br></pre></td></tr></table></figure>
+<h4 id="innerHTML属性"><a href="#innerHTML属性" class="headerlink" title="innerHTML属性"></a>innerHTML属性</h4><ul>
+<li><p>innerHTML 属性用于获取或替换 HTML 元素的内容。</p>
+</li>
+<li><p>语法：<code>Object.innerHTML</code></p>
+</li>
+<li><p>例子：</p>
+</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">&lt;!DOCTYPE HTML&gt;</span><br><span class="line">&lt;html&gt;</span><br><span class="line">&lt;head&gt;</span><br><span class="line">&lt;title&gt;innerHTML&lt;/title&gt;</span><br><span class="line">&lt;/head&gt;</span><br><span class="line">&lt;body&gt;</span><br><span class="line">  &lt;p id=&quot;con&quot;&gt;Hello World!&lt;/p&gt;</span><br><span class="line">  &lt;script&gt;</span><br><span class="line">    var mycon = document.getElementById(&quot;con&quot;);</span><br><span class="line">    document.write(&quot;P标签原始内容：&quot; + mycon.innerHTML + “&lt;br&gt;”);</span><br><span class="line">    //输入想要修改的元素内容</span><br><span class="line">    mycon.innerHTML = &quot;New test!&quot;;          //修改P元素内容</span><br><span class="line">    document.write(&quot;P标签修改后的内容：&quot; + mycon.innerHTML);</span><br><span class="line">  &lt;/script&gt;</span><br><span class="line">&lt;/body&gt;</span><br><span class="line">&lt;/html&gt;</span><br></pre></td></tr></table></figure>
+<h4 id="改变HTML样式"><a href="#改变HTML样式" class="headerlink" title="改变HTML样式"></a>改变HTML样式</h4><ul>
+<li><p>HTML DOM 允许 JavaScript 改变 HTML 元素的样式。</p>
+</li>
+<li><p>语法：<code>Object.style.property=new style;</code></p>
+</li>
+<li><p>注意:Object是获取的元素对象，如通过<code>document.getElementById(&quot;id&quot;)</code>获取的元素。</p>
+</li>
+<li><p>基本属性表：</p>
+</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>属性</th>
+<th>描述</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>backgroundColor</td>
+<td>设置元素背景颜色</td>
+</tr>
+<tr>
+<td>height</td>
+<td>设置元素高度</td>
+</tr>
+<tr>
+<td>width</td>
+<td>设置元素宽度</td>
+</tr>
+<tr>
+<td>color</td>
+<td>设置文本颜色</td>
+</tr>
+<tr>
+<td>font</td>
+<td>在一行设置所有的字体属性</td>
+</tr>
+<tr>
+<td>fontFamily</td>
+<td>设置元素的字体系列</td>
+</tr>
+<tr>
+<td>fontSize</td>
+<td>设置元素的字体大小</td>
+</tr>
+<tr>
+<td>…</td>
+<td>…</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li><p>CSS的其他的一些样式也可以通过该方法修改</p>
+</li>
+<li><p>例子：改变<code>&lt;p&gt;</code>元素的样式，将颜色改为红色，字号改为20,背景颜色改为蓝：</p>
+</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">&lt;p id=&quot;pcon&quot;&gt;Hello World!&lt;/p&gt;</span><br><span class="line">&lt;script&gt;</span><br><span class="line">   var mychar = document.getElementById(&quot;pcon&quot;);</span><br><span class="line">   mychar.style.color=&quot;red&quot;;</span><br><span class="line">   mychar.style.fontSize=&quot;20&quot;;</span><br><span class="line">   mychar.style.backgroundColor =&quot;blue&quot;;</span><br><span class="line">&lt;/script&gt;</span><br></pre></td></tr></table></figure>
+<h4 id="显示和隐藏"><a href="#显示和隐藏" class="headerlink" title="显示和隐藏"></a>显示和隐藏</h4><ul>
+<li><p>网页中经常会看到显示和隐藏的效果，可通过display属性来设置。</p>
+</li>
+<li><p>语法：<code>Object.style.display = value</code></p>
+</li>
+</ul>
+<blockquote>
+<p>注意这里的Object也是元素对象，可通过document.getElementById(“id”)来获取</p>
+</blockquote>
+<ul>
+<li>value取值：</li>
+</ul>
+<ol>
+<li>none：此元素讲不会被显示(即隐藏)</li>
+<li>block：此元素将显示为块级元素</li>
+</ol>
+<p>例子：<br><img src="/images/JavaScript/006.png" alt=""></p>
+<h4 id="控制类名"><a href="#控制类名" class="headerlink" title="控制类名"></a>控制类名</h4><ul>
+<li><p>className 属性设置或返回元素的class 属性。</p>
+</li>
+<li><p>语法：<code>object.className = classname</code></p>
+</li>
+<li><p>作用：</p>
+</li>
+</ul>
+<ol>
+<li>获取元素的class属性</li>
+<li>为网页内某个元素指定一个CSS样式来更改该元素的外观</li>
+</ol>
+<ul>
+<li>例子：</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br></pre></td><td class="code"><pre><span class="line">&lt;!DOCTYPE HTML&gt;</span><br><span class="line">&lt;html&gt;</span><br><span class="line">&lt;head&gt;</span><br><span class="line">&lt;meta http-equiv=&quot;Content-Type&quot; content=&quot;text/html;charset=gb2312&quot;&gt;</span><br><span class="line">&lt;title&gt;className属性&lt;/title&gt;</span><br><span class="line">&lt;style type=&quot;text/css&quot;&gt;</span><br><span class="line">  input&#123;</span><br><span class="line">    font-size:10px;</span><br><span class="line">  &#125;</span><br><span class="line">  .one&#123;</span><br><span class="line">    width:200px;</span><br><span class="line">    background-color:#CCC; //灰色</span><br><span class="line">  &#125;</span><br><span class="line">  .two&#123;</span><br><span class="line">    font-size:18px;</span><br><span class="line">    color:#F00</span><br><span class="line">  &#125;</span><br><span class="line">&lt;/style&gt;</span><br><span class="line">&lt;/head&gt;</span><br><span class="line">&lt;body&gt;</span><br><span class="line">  &lt;p id=&quot;con&quot; class=&quot;one&quot;&gt;JavaScript&lt;/p&gt;</span><br><span class="line">  &lt;form&gt;</span><br><span class="line">    &lt;input type=&quot;button&quot; value=&quot;点击更改&quot; onclick=&quot;modifyclass()&quot;/&gt;</span><br><span class="line">  &lt;/form&gt;</span><br><span class="line">  &lt;script type=&quot;text/javascript&quot;&gt;</span><br><span class="line">    var mychar=document.getElementById(&quot;con&quot;);</span><br><span class="line">    document.write(&quot;p元素的Class值为：&quot; + mychar.className + &quot;&lt;br&gt;&quot;); //输出P元素的class属性</span><br><span class="line">    function modifyclass()&#123;</span><br><span class="line">      mychar.className=&quot;two&quot;; //改变className,即更换用来修饰的class</span><br><span class="line">    &#125;</span><br><span class="line">    &lt;/script&gt;</span><br><span class="line">&lt;/body&gt;</span><br><span class="line">&lt;/html&gt;</span><br></pre></td></tr></table></figure>
+<ul>
+<li>结果：</li>
+</ul>
+<p><img src="/images/JavaScript/007.png" alt=""></p>
+<h2 id="进阶"><a href="#进阶" class="headerlink" title="进阶"></a>进阶</h2><hr>
+<ul>
+<li>循环、分支、判断等语法与C++一致</li>
+</ul>
+<h4 id="事件响应"><a href="#事件响应" class="headerlink" title="事件响应"></a>事件响应</h4><ul>
+<li>JavaScript 创建动态页面。事件是可以被 JavaScript 侦测到的行为。 网页中的每个元素都可以产生某些可以触发 JavaScript 函数或程序的事件。</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>事件</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>onclick</td>
+<td>鼠标单击事件</td>
+</tr>
+<tr>
+<td>onmouseover</td>
+<td>鼠标经过事件</td>
+</tr>
+<tr>
+<td>onmouseout</td>
+<td>鼠标移开事件</td>
+</tr>
+<tr>
+<td>onchange</td>
+<td>文本框内容改变事件</td>
+</tr>
+<tr>
+<td>onselect</td>
+<td>文本框内容被选中事件</td>
+</tr>
+<tr>
+<td>onfocus</td>
+<td>光标聚集</td>
+</tr>
+<tr>
+<td>onblur</td>
+<td>光标移开</td>
+</tr>
+<tr>
+<td>onload</td>
+<td>网页导入</td>
+</tr>
+<tr>
+<td>onunload</td>
+<td>关闭网页</td>
+</tr>
+</tbody>
+</table>
+<h6 id="鼠标单击事件"><a href="#鼠标单击事件" class="headerlink" title="鼠标单击事件"></a>鼠标单击事件</h6><ul>
+<li><p>onclick是鼠标单击事件，当在网页上单击鼠标时，就会发生该事件。同时onclick事件调用的程序块就会被执行，通常与按钮一起使用。</p>
+</li>
+<li><p>例如：单击按钮时出发onclick事件，调用add2()函数</p>
+</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&lt;form&gt;</span><br><span class="line">     &lt;input name=&quot;button&quot; type=&quot;button&quot; value=&quot;点击提交&quot; onclick=&quot;add2()&quot; /&gt;  //注意最后的斜杠</span><br><span class="line">  &lt;/form&gt;</span><br></pre></td></tr></table></figure>
+<h6 id="鼠标经过事件"><a href="#鼠标经过事件" class="headerlink" title="鼠标经过事件"></a>鼠标经过事件</h6><ul>
+<li>与鼠标单击事件调用方法一致</li>
+</ul>
+<h6 id="其他的事件"><a href="#其他的事件" class="headerlink" title="其他的事件"></a>其他的事件</h6><ul>
+<li>除了onload与onunload的使用有一点区别，别的都一致。</li>
+</ul>
+<h4 id="对象"><a href="#对象" class="headerlink" title="对象"></a>对象</h4><ul>
+<li><p>JavaScript 中的所有事物都是对象，如:字符串、数值、数组、函数等，每个对象带有属性和方法。</p>
+</li>
+<li><p>创建对象使用<code>new</code>关键字</p>
+</li>
+</ul>
+<h6 id="日期对象"><a href="#日期对象" class="headerlink" title="日期对象"></a>日期对象</h6><ul>
+<li><p>日期对象可以储存任意一个日期，并且可以精确到毫秒数（1/1000 秒）</p>
+</li>
+<li><p>定义一个时间对象：<code>var Udate = new Date();</code></p>
+<blockquote>
+<p>这是默认定义，初始值为当前电脑时间</p>
+</blockquote>
+</li>
+<li><p>如果要自定义值，使用以下方法：<code>var DATE = new Date(2018,10,4); //2018年10月4日</code></p>
+</li>
+</ul>
+<h4 id="浏览器对象"><a href="#浏览器对象" class="headerlink" title="浏览器对象"></a>浏览器对象</h4><h6 id="window对象"><a href="#window对象" class="headerlink" title="window对象"></a>window对象</h6><ul>
+<li><p>window对象是BOM的核心，window对象指当前的浏览器窗口。</p>
+</li>
+<li><p>window对象方法：</p>
+</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>方法</th>
+<th>描述</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>alert()</td>
+<td>显示带有一段消息和一个确认按钮的警告框</td>
+</tr>
+<tr>
+<td>prompt()</td>
+<td>显示可提示用户输入的对话框</td>
+</tr>
+<tr>
+<td>confirm()</td>
+<td>显示带有一段消息以及确认按钮和取消按钮的对话框</td>
+</tr>
+<tr>
+<td>open()</td>
+<td>打开一个新的浏览器窗口或者查找一个已经命名的窗口</td>
+</tr>
+<tr>
+<td>close()</td>
+<td>关闭浏览器窗口</td>
+</tr>
+<tr>
+<td>print()</td>
+<td>打印当前窗口的内容</td>
+</tr>
+<tr>
+<td>focus()</td>
+<td>把键盘焦点给予一个窗口</td>
+</tr>
+<tr>
+<td>blur()</td>
+<td>把键盘焦点从顶层窗口移开</td>
+</tr>
+<tr>
+<td>moveBy()</td>
+<td>可相对窗口的当前坐标把它移动指定的像素</td>
+</tr>
+<tr>
+<td>moveTo()</td>
+<td>把窗口的左上角移动到一个指定的坐标</td>
+</tr>
+<tr>
+<td>resizeBy()</td>
+<td>按照</td>
+</tr>
+<tr>
+<td>resizeTo()</td>
+<td>把窗口的大小调整到指定的宽度和高度</td>
+</tr>
+<tr>
+<td>scrollBy()</td>
+<td>按照指定的像素值来滚动内容</td>
+</tr>
+<tr>
+<td>scrollTo()</td>
+<td>把内容滚动到指定的坐标</td>
+</tr>
+<tr>
+<td>setInterval()</td>
+<td>每隔指定的时间执行代码</td>
+</tr>
+<tr>
+<td>setTimeout()</td>
+<td>在指定的延迟时间后来执行代码</td>
+</tr>
+<tr>
+<td>clearInterval()</td>
+<td>取消setInterval()的设置</td>
+</tr>
+<tr>
+<td>clearTimeout()</td>
+<td>取消setTimeout()的设置</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li>调用这些方法格式：<code>window.方法名(参数名);</code></li>
+</ul>
+<p>例子：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">function myFunction()</span><br><span class="line">&#123;</span><br><span class="line">    alert(&quot;欢迎&quot;)</span><br><span class="line">    window.open(&apos;http://www.imooc.com&apos;,&apos;_blank&apos;,&apos;width=600 height=400&apos;)</span><br><span class="line">    //第一个参数表示要打开的网页，&apos;_blank&apos;参数表示打开一个新网页，后面的参数设置新窗口的初始大小</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h6 id="JavaScript计时器"><a href="#JavaScript计时器" class="headerlink" title="JavaScript计时器"></a>JavaScript计时器</h6><ul>
+<li><p>在JavaScript中，我们可以在设定的时间间隔之后来执行代码，而不是在函数被调用后立即执行。</p>
+</li>
+<li><p>计时器类型：</p>
+<ol>
+<li><p>一次性计时器：仅在指定的延迟时间之后触发一次。(setTimeout())</p>
+</li>
+<li><p>间隔性触发计时器：每隔一定的时间间隔就触发一次。(setInterval())</p>
+</li>
+</ol>
+</li>
+<li><p>setInterval()方法格式：<code>setInterval(代码，交互时间)</code></p>
+<blockquote>
+<p>参数中，代码就是要执行的函数挥着代码串，交互时间就是执行的时间间隔，以毫秒为单位</p>
+</blockquote>
+</li>
+<li><p>setInterval的返回值可以传递给clearInterval从而取消对代码的周期性执行。</p>
+</li>
+<li><p>假设有一个clock()函数，则调用格式为：</p>
+</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">setInterval(&quot;clock()&quot;,1000)</span><br><span class="line">或者</span><br><span class="line">setInterval(clock,1000)</span><br></pre></td></tr></table></figure>
+<h2 id="DOM对象"><a href="#DOM对象" class="headerlink" title="DOM对象"></a>DOM对象</h2><hr>
+<h4 id="getElementsByName方法"><a href="#getElementsByName方法" class="headerlink" title="getElementsByName方法"></a>getElementsByName方法</h4><ul>
+<li><p>返回带有指定名称的节点对象的集合</p>
+</li>
+<li><p>语法：<code>document.getElementsByName(name)</code></p>
+<blockquote>
+<p>其中name参数是标签上设置的name属性，和设置id属性格式一样，但是不同的标签可以设置同一个name属性，而id属性必须唯一</p>
+</blockquote>
+</li>
+<li><p>与getElementById()不同的是，通过元素的name属性查询元素而不是通过id属性</p>
+</li>
+<li><p>注意：因为文档中的name属性可能不唯一，所有的getElementByName()方法的返回值是元素的数组，而不是一个元素</p>
+</li>
+<li><p>和数组类似的也有length属性，可以和访问数组一样的方法来访问，从0开始</p>
+</li>
+</ul>
+<h2 id="一些报错以及解决"><a href="#一些报错以及解决" class="headerlink" title="一些报错以及解决"></a>一些报错以及解决</h2><hr>
+<h4 id="jQuery报错：Uncaught-ReferenceError-is-not-defined"><a href="#jQuery报错：Uncaught-ReferenceError-is-not-defined" class="headerlink" title="jQuery报错：Uncaught ReferenceError: $ is not defined"></a>jQuery报错：Uncaught ReferenceError: $ is not defined</h4><ul>
+<li>出现这个报错的原因：</li>
+</ul>
+<ol>
+<li><p>jQuery库文件的路径不对，检查文件路径是否正确一般就能解决该错误。</p>
+</li>
+<li><p>如果库文件的路径是正确的，那么可能在html中加载jQuery库文件顺序有误，如果将jQuery库文件加载放到最开始位置，即可以解决该错误</p>
+</li>
+<li><p>检查传值错误，或者某些值不存在。</p>
+</li>
+</ol>
+<p><br></p>
+<blockquote>
+<p>最后更新于2018.7.18</p>
+</blockquote>
+
+      
+    </div>
+
+    
+
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/๑FrontEnd-๑JavaScrpt/" rel="tag"># ๑FrontEnd ๑JavaScrpt</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2018/06/17/2018-06-17-FrontEnd-CSS/" rel="next" title="前端学习——CSS">
+                <i class="fa fa-chevron-left"></i> 前端学习——CSS
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2018/07/08/2018-07-08-Jekyll-usage/" rel="prev" title="Ubuntu下使用jekyll预览博客">
+                Ubuntu下使用jekyll预览博客 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+  </div>
+
+
+          </div>
+          
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            Table of Contents
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            Overview
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image"
+                src="/images/avatar.gif"
+                alt="Fleschier" />
+            
+              <p class="site-author-name" itemprop="name">Fleschier</p>
+              <p class="site-description motion-element" itemprop="description">This is a blog based on hexo</p>
+          </div>
+
+          
+            <nav class="site-state motion-element">
+              
+                <div class="site-state-item site-state-posts">
+                
+                  <a href="/archives/">
+                
+                    <span class="site-state-item-count">39</span>
+                    <span class="site-state-item-name">posts</span>
+                  </a>
+                </div>
+              
+
+              
+
+              
+                
+                
+                <div class="site-state-item site-state-tags">
+                  
+                    
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">23</span>
+                    <span class="site-state-item-name">tags</span>
+                  
+                </div>
+              
+            </nav>
+          
+
+          
+
+          
+
+          
+          
+
+          
+          
+
+          
+            
+          
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#基础"><span class="nav-number">1.</span> <span class="nav-text">基础</span></a><ol class="nav-child"><li class="nav-item nav-level-6"><a class="nav-link" href="#嵌入html的javascript写法"><span class="nav-number">1.0.0.0.1.</span> <span class="nav-text">嵌入html的javascript写法</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#单独写成文件"><span class="nav-number">1.0.0.0.2.</span> <span class="nav-text">单独写成文件</span></a></li></ol></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#位置"><span class="nav-number">1.0.1.</span> <span class="nav-text">位置</span></a><ol class="nav-child"><li class="nav-item nav-level-6"><a class="nav-link" href="#放在-lt-head-gt-部分"><span class="nav-number">1.0.1.0.1.</span> <span class="nav-text">放在&lt;head&gt;部分</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#放在-lt-body-gt-部分"><span class="nav-number">1.0.1.0.2.</span> <span class="nav-text">放在&lt;body&gt;部分</span></a></li></ol></li></ol></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#语法"><span class="nav-number">2.</span> <span class="nav-text">语法</span></a><ol class="nav-child"><li class="nav-item nav-level-6"><a class="nav-link" href="#变量"><span class="nav-number">2.0.0.0.1.</span> <span class="nav-text">变量</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#判断语句"><span class="nav-number">2.0.0.0.2.</span> <span class="nav-text">判断语句</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#判断函数"><span class="nav-number">2.0.0.0.3.</span> <span class="nav-text">判断函数</span></a></li></ol></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#输出内容-document-write"><span class="nav-number">2.0.1.</span> <span class="nav-text">输出内容(document.write)</span></a><ol class="nav-child"><li class="nav-item nav-level-6"><a class="nav-link" href="#javascript警告-消息对话框"><span class="nav-number">2.0.1.0.1.</span> <span class="nav-text">javascript警告(消息对话框)</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#确认-confirm对话框"><span class="nav-number">2.0.1.0.2.</span> <span class="nav-text">确认(confirm对话框)</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#打开新窗口-window-open"><span class="nav-number">2.0.1.0.3.</span> <span class="nav-text">打开新窗口(window.open)</span></a></li></ol></li></ol></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#控制权-DOM操作"><span class="nav-number">3.</span> <span class="nav-text">控制权(DOM操作)</span></a><ol class="nav-child"><li class="nav-item nav-level-6"><a class="nav-link" href="#HTML文档可以说由节点构成的集合，三种常见的DOM节点"><span class="nav-number">3.0.0.0.1.</span> <span class="nav-text">HTML文档可以说由节点构成的集合，三种常见的DOM节点:</span></a></li></ol></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#通过ID获取元素"><span class="nav-number">3.0.1.</span> <span class="nav-text">通过ID获取元素</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#innerHTML属性"><span class="nav-number">3.0.2.</span> <span class="nav-text">innerHTML属性</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#改变HTML样式"><span class="nav-number">3.0.3.</span> <span class="nav-text">改变HTML样式</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#显示和隐藏"><span class="nav-number">3.0.4.</span> <span class="nav-text">显示和隐藏</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#控制类名"><span class="nav-number">3.0.5.</span> <span class="nav-text">控制类名</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#进阶"><span class="nav-number">4.</span> <span class="nav-text">进阶</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#事件响应"><span class="nav-number">4.0.1.</span> <span class="nav-text">事件响应</span></a><ol class="nav-child"><li class="nav-item nav-level-6"><a class="nav-link" href="#鼠标单击事件"><span class="nav-number">4.0.1.0.1.</span> <span class="nav-text">鼠标单击事件</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#鼠标经过事件"><span class="nav-number">4.0.1.0.2.</span> <span class="nav-text">鼠标经过事件</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#其他的事件"><span class="nav-number">4.0.1.0.3.</span> <span class="nav-text">其他的事件</span></a></li></ol></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#对象"><span class="nav-number">4.0.2.</span> <span class="nav-text">对象</span></a><ol class="nav-child"><li class="nav-item nav-level-6"><a class="nav-link" href="#日期对象"><span class="nav-number">4.0.2.0.1.</span> <span class="nav-text">日期对象</span></a></li></ol></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#浏览器对象"><span class="nav-number">4.0.3.</span> <span class="nav-text">浏览器对象</span></a><ol class="nav-child"><li class="nav-item nav-level-6"><a class="nav-link" href="#window对象"><span class="nav-number">4.0.3.0.1.</span> <span class="nav-text">window对象</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#JavaScript计时器"><span class="nav-number">4.0.3.0.2.</span> <span class="nav-text">JavaScript计时器</span></a></li></ol></li></ol></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#DOM对象"><span class="nav-number">5.</span> <span class="nav-text">DOM对象</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#getElementsByName方法"><span class="nav-number">5.0.1.</span> <span class="nav-text">getElementsByName方法</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#一些报错以及解决"><span class="nav-number">6.</span> <span class="nav-text">一些报错以及解决</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#jQuery报错：Uncaught-ReferenceError-is-not-defined"><span class="nav-number">6.0.1.</span> <span class="nav-text">jQuery报错：Uncaught ReferenceError: $ is not defined</span></a></li></ol></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2018</span>
+  <span class="with-love" id="animate">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Fleschier</span>
+
+  
+
+  
+</div>
+
+
+
+
+  <div class="powered-by">Powered by <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a> v3.7.1</div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">Theme – <a class="theme-link" target="_blank" href="https://theme-next.org">NexT.Mist</a> v6.4.1</div>
+
+
+
+
+        
+
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+	
+    
+
+    
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=6.4.1"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=6.4.1"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=6.4.1"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=6.4.1"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=6.4.1"></script>
+
+
+
+  
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>

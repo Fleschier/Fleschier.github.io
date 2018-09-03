@@ -1,0 +1,951 @@
+<!DOCTYPE html>
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+<html class="theme-next mist use-motion" lang="">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2"/>
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=6.4.1" rel="stylesheet" type="text/css" />
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=6.4.1">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=6.4.1">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=6.4.1">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=6.4.1" color="#222">
+
+
+
+
+
+
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Mist',
+    version: '6.4.1',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: false,
+    fastclick: false,
+    lazyload: false,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+  
+
+
+
+
+  <meta name="description" content="不适合人类阅读的学习笔记     有问题经常去 stackoverflow.com 上找找  环境搭建  首先确保电脑安装了JAVA Development Kit JDK(使用java -version查看版本)  安装hadoop（比如我在安装了hadoop-2.7.5），后面下载spark的版本时也要选择与hadoop版本一致的spark版本。然后添加hadoop路径到PATH（修改/et">
+<meta name="keywords" content="๑Spark ๑BigData">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Spark学习笔记——基础">
+<meta property="og:url" content="http://yoursite.com/2018/04/11/2018-04-11-Spark-learning/index.html">
+<meta property="og:site_name" content="Fleschier_渐寒">
+<meta property="og:description" content="不适合人类阅读的学习笔记     有问题经常去 stackoverflow.com 上找找  环境搭建  首先确保电脑安装了JAVA Development Kit JDK(使用java -version查看版本)  安装hadoop（比如我在安装了hadoop-2.7.5），后面下载spark的版本时也要选择与hadoop版本一致的spark版本。然后添加hadoop路径到PATH（修改/et">
+<meta property="og:locale" content="default">
+<meta property="og:image" content="http://yoursite.com/images/spark/spark-shell.png">
+<meta property="og:image" content="http://yoursite.com/images/spark/集群文件系统的问题.png">
+<meta property="og:updated_time" content="2018-09-01T10:45:47.663Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Spark学习笔记——基础">
+<meta name="twitter:description" content="不适合人类阅读的学习笔记     有问题经常去 stackoverflow.com 上找找  环境搭建  首先确保电脑安装了JAVA Development Kit JDK(使用java -version查看版本)  安装hadoop（比如我在安装了hadoop-2.7.5），后面下载spark的版本时也要选择与hadoop版本一致的spark版本。然后添加hadoop路径到PATH（修改/et">
+<meta name="twitter:image" content="http://yoursite.com/images/spark/spark-shell.png">
+
+
+
+
+
+
+  <link rel="canonical" href="http://yoursite.com/2018/04/11/2018-04-11-Spark-learning/"/>
+
+
+
+<script type="text/javascript" id="page.configurations">
+  CONFIG.page = {
+    sidebar: "",
+  };
+</script>
+
+  <title>Spark学习笔记——基础 | Fleschier_渐寒</title>
+  
+
+
+
+
+
+
+
+
+
+  <noscript>
+  <style type="text/css">
+    .use-motion .motion-element,
+    .use-motion .brand,
+    .use-motion .menu-item,
+    .sidebar-inner,
+    .use-motion .post-block,
+    .use-motion .pagination,
+    .use-motion .comments,
+    .use-motion .post-header,
+    .use-motion .post-body,
+    .use-motion .collection-title { opacity: initial; }
+
+    .use-motion .logo,
+    .use-motion .site-title,
+    .use-motion .site-subtitle {
+      opacity: initial;
+      top: initial;
+    }
+
+    .use-motion {
+      .logo-line-before i { left: initial; }
+      .logo-line-after i { right: initial; }
+    }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="default">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">Fleschier_渐寒</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+    
+      
+        <p class="site-subtitle">Welcome~</p>
+      
+    
+  </div>
+
+  <div class="site-nav-toggle">
+    <button aria-label="Toggle navigation bar">
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+  
+    <ul id="menu" class="menu">
+      
+        
+        
+        
+          
+          <li class="menu-item menu-item-home">
+    <a href="/" rel="section">
+      <i class="menu-item-icon fa fa-fw fa-home"></i> <br />Home</a>
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-about">
+    <a href="/about/" rel="section">
+      <i class="menu-item-icon fa fa-fw fa-user"></i> <br />About</a>
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-tags">
+    <a href="/tags/" rel="section">
+      <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />Tags</a>
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-categories">
+    <a href="/categories/" rel="section">
+      <i class="menu-item-icon fa fa-fw fa-th"></i> <br />Categories</a>
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-archives">
+    <a href="/archives/" rel="section">
+      <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />Archives</a>
+  </li>
+
+      
+      
+    </ul>
+  
+
+  
+    
+
+  
+
+  
+</nav>
+
+
+
+  
+
+
+
+</div>
+    </header>
+
+    
+
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/04/11/2018-04-11-Spark-learning/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Fleschier">
+      <meta itemprop="description" content="This is a blog based on hexo">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Fleschier_渐寒">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">Spark学习笔记——基础
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+
+            
+            
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+
+              
+                
+              
+
+              <time title="Created: 2018-04-11 16:47:00" itemprop="dateCreated datePublished" datetime="2018-04-11T16:47:00+08:00">2018-04-11</time>
+            
+
+            
+              
+
+              
+                
+                <span class="post-meta-divider">|</span>
+                
+
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">Edited on</span>
+                
+                <time title="Modified: 2018-09-01 18:45:47" itemprop="dateModified" datetime="2018-09-01T18:45:47+08:00">2018-09-01</time>
+              
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <blockquote>
+<p>不适合人类阅读的学习笔记  </p>
+</blockquote>
+<blockquote>
+<p>有问题经常去 <strong><a href="https://stackoverflow.com/" target="_blank" rel="noopener">stackoverflow.com</a></strong> 上找找</p>
+</blockquote>
+<h2 id="环境搭建"><a href="#环境搭建" class="headerlink" title="环境搭建"></a>环境搭建</h2><hr>
+<ul>
+<li><p>首先确保电脑安装了JAVA Development Kit JDK(使用java -version查看版本)</p>
+</li>
+<li><p>安装hadoop（比如我在安装了hadoop-2.7.5），后面下载spark的版本时也要选择与hadoop版本一致的spark版本。然后添加hadoop路径到PATH（修改/etc/profile文件）</p>
+</li>
+<li><p>hadoop单机伪分布式环境搭建详细见我的另一篇博客——<a href="https://fleschier.github.io/2018/05/Hadoop-usage/" target="_blank" rel="noopener">hadoop单机伪分布式搭建</a></p>
+</li>
+<li><p>下载spark，解压，设置路径。 ———<a href="https://www.cnblogs.com/earendil/p/5564492.html" target="_blank" rel="noopener">详细设置</a></p>
+</li>
+<li><p>调整日志级别控制输出的信息量：在spark安装文件目录的conf目录下将log4j.properties.template 复制为  log4j.properties, 然后找到 log4j.rootCategory = INFO, console。将其中的INFO改为WARN即可。</p>
+</li>
+<li><p>我的spark的安装目录是<code>/usr/local/Apache/</code>，可以使用命令<code>echo $SPARK_HOME</code>来查看spark的安装路径。</p>
+</li>
+<li><p>将spark的安装路径加到系统PATH当中(修改<code>/etc/profile文件</code>)，然后重启生效之后可在终端通过<code>spark-shell</code>命令进入scala的解释器环境，如图：<br><img src="/images/spark/spark-shell.png" alt=""></p>
+</li>
+<li><p><a href="https://www.scala-sbt.org/download.html" target="_blank" rel="noopener">sbt安装网址</a></p>
+</li>
+</ul>
+<h2 id="编程环境"><a href="#编程环境" class="headerlink" title="编程环境"></a>编程环境</h2><hr>
+<ul>
+<li>spark支持多种语言的编写，包括Python，Java，scala以及R语言，<strong>本篇中均采用scala作为编程语言</strong>。</li>
+<li>使用的编译器为intellij IDEA，工程为maven项目</li>
+</ul>
+<h6 id="编译器的一些使用技巧"><a href="#编译器的一些使用技巧" class="headerlink" title="编译器的一些使用技巧"></a>编译器的一些使用技巧</h6><ul>
+<li><p>ctrl + Q 在intellij中可以快速地查看变量的类型</p>
+</li>
+<li><p>Maven 项目使用maven自带的打jar包的即可，不推荐在build当中打jar包</p>
+</li>
+<li><p>新建的Maven项目很可能缺失很多spark的库，需要修改pom文件来使得编译器引入这些库</p>
+</li>
+</ul>
+<h2 id="以maven项目创建scala工程"><a href="#以maven项目创建scala工程" class="headerlink" title="以maven项目创建scala工程"></a>以maven项目创建scala工程</h2><ul>
+<li><p>详见 <a href="https://blog.csdn.net/u012373815/article/details/53266301" target="_blank" rel="noopener">spark开发环境搭建</a></p>
+</li>
+<li><p>其中包括修改pom配置文件。</p>
+</li>
+</ul>
+<h2 id="spark下的-wordcount"><a href="#spark下的-wordcount" class="headerlink" title="spark下的 wordcount"></a>spark下的 wordcount</h2><hr>
+<blockquote>
+<p>摘自官方文档</p>
+</blockquote>
+<ul>
+<li><p>完整版：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">text_file = sc.textFile(&quot;hdfs://...&quot;) //文件需要放在hdfs上</span><br><span class="line">counts = text_file.flatMap(lambda line: line.split(&quot; &quot;)) \</span><br><span class="line">             .map(lambda word: (word, 1)) \</span><br><span class="line">             .reduceByKey(lambda a, b: a + b)</span><br><span class="line">counts.saveAsTextFile(&quot;hdfs://...&quot;)</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>精简版(在spark-shell中执行就这一条语句即可)：  (足见scala的优美与强大)</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">val counts = sc.textFile(&quot;hdfs://...(文件路径，单机或者hdfs文件都可以)&quot;).flatMap(_.split(&quot; &quot;)).map(x =&gt; (x,1)).reduceByKey(_ + _).collect().foreach(println) //打印结果</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>注意：上面的.collect()不能少，因为这是一个action操作，一个语句如果没有action操作则spark什么也不会做。同时，<strong>读取文件的路径一定要用引号括起来！</strong></p>
+</li>
+</ul>
+<h2 id="关于jar包以及提交集群运行"><a href="#关于jar包以及提交集群运行" class="headerlink" title="关于jar包以及提交集群运行"></a>关于jar包以及提交集群运行</h2><hr>
+<h4 id="spark-submit命令"><a href="#spark-submit命令" class="headerlink" title="spark-submit命令"></a><code>spark-submit</code>命令</h4><ul>
+<li>spark-submit脚本用于在集群上启动应用程序,它位于Spark的bin目录中。</li>
+</ul>
+<h6 id="命令行提交"><a href="#命令行提交" class="headerlink" title="命令行提交"></a>命令行提交</h6><ul>
+<li>命令行下切换到spark的安装目录，执行</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">./bin/spark-submit \  </span><br><span class="line"> --class &lt;main-class&gt; \</span><br><span class="line"> --master &lt;master-url&gt; \</span><br><span class="line"> --deploy-mode &lt;deploy-mode&gt; \</span><br><span class="line"> --conf &lt;key&gt;=&lt;value&gt; \  </span><br><span class="line">     ... # other options  </span><br><span class="line"> &lt;application-jar&gt; \  </span><br><span class="line"> [application-arguments]</span><br></pre></td></tr></table></figure>
+<h6 id="脚本方式：-创建并编辑-sh脚本文件，赋予执行权限即可"><a href="#脚本方式：-创建并编辑-sh脚本文件，赋予执行权限即可" class="headerlink" title="脚本方式：(创建并编辑.sh脚本文件，赋予执行权限即可)"></a>脚本方式：(创建并编辑.sh脚本文件，赋予执行权限即可)</h6><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">input=/data/</span><br><span class="line">output=/AR_res/</span><br><span class="line">    hdfs dfs -rm -r $output</span><br><span class="line">    hdfs dfs -rm -r /user_res</span><br><span class="line">    spark-submit \</span><br><span class="line">        -v \</span><br><span class="line">        --name &quot;ARsMiner&quot; \</span><br><span class="line">        --class &quot;com.hazzacheng.AR.Main&quot; \</span><br><span class="line">        --executor-cores 4 \</span><br><span class="line">        --executor-memory 10G \</span><br><span class="line">        --driver-memory 20G \</span><br><span class="line">        AR.jar \</span><br><span class="line">        $input \</span><br><span class="line">        $output \</span><br><span class="line">        2&gt;&amp;1 | tee log/AR_log</span><br><span class="line">    rm -rf AR_res/</span><br><span class="line">    hdfs dfs -get $output</span><br><span class="line">    cat /root$output/part* &gt; /root/res</span><br><span class="line">    #sort /root$output/part* &gt; /root/res</span><br></pre></td></tr></table></figure>
+<h6 id="常用的参数讲解"><a href="#常用的参数讲解" class="headerlink" title="常用的参数讲解"></a>常用的参数讲解</h6><ul>
+<li><p>–class：应用程序的入口点,main函数所在的类（例如org.apache.spark.examples.SparkPi）</p>
+</li>
+<li><p>–master：群集的主网址（例如spark：//23.195.26.187：7077）</p>
+</li>
+<li><p>–deploy-mode：是否将驱动程序部署在工作节点（cluster）上，或作为外部客户机（client）本地部署（默认值：client）</p>
+</li>
+<li><p>–conf：Key = value格式的任意Spark配置属性。对于包含空格的值，用引号括起“key = value”（参见示例）。</p>
+</li>
+<li><p>application-jar：包含应用程序和所有依赖关系的捆绑jar的路径。该URL必须在集群内全局可见，例如hdfs：//路径或所有节点上存在的file：//路径。</p>
+</li>
+<li><p>application-arguments：参数传递给主类的main方法（如果有的话）</p>
+</li>
+<li><p>常见的部署策略是从与您的工作机器物理上位于的网关机器提交应用程序（例如，独立的EC2集群中的主节点）。在此设置中，client模式是适当的。在client模式下，驱动程序直接在spark-submit过程中启动，该过程充当集群的客户端。应用程序的输入和输出连接到控制台。因此，该模式特别适用于涉及REPL（例如Spark shell）的应用。</p>
+</li>
+<li><p>或者，如果您的应用程序从远离工作机器（例如本地在笔记本电脑上）的机器提交，通常使用cluster模式来最大限度地减少驱动程序和执行程序之间的网络延迟。</p>
+</li>
+</ul>
+<h6 id="其他的一些示例"><a href="#其他的一些示例" class="headerlink" title="其他的一些示例"></a>其他的一些示例</h6><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"># Run application locally on 8 cores</span><br><span class="line">./bin/spark-submit \</span><br><span class="line">  --class org.apache.spark.examples.SparkPi \</span><br><span class="line">  --master local[8] \</span><br><span class="line">  /path/to/examples.jar \</span><br><span class="line">  100</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"># Run on a Spark standalone cluster in client deploy mode</span><br><span class="line">./bin/spark-submit \</span><br><span class="line">  --class org.apache.spark.examples.SparkPi \</span><br><span class="line">  --master spark://207.184.161.138:7077 \</span><br><span class="line">  --executor-memory 20G \</span><br><span class="line">  --total-executor-cores 100 \</span><br><span class="line">  /path/to/examples.jar \</span><br><span class="line">  1000</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"># Run on a Spark standalone cluster in cluster deploy mode with supervise</span><br><span class="line">./bin/spark-submit \</span><br><span class="line">  --class org.apache.spark.examples.SparkPi \</span><br><span class="line">  --master spark://207.184.161.138:7077 \</span><br><span class="line">  --deploy-mode cluster \</span><br><span class="line">  --supervise \</span><br><span class="line">  --executor-memory 20G \</span><br><span class="line">  --total-executor-cores 100 \</span><br><span class="line">  /path/to/examples.jar \</span><br><span class="line">  1000</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"># Run on a YARN cluster</span><br><span class="line">export HADOOP_CONF_DIR=XXX</span><br><span class="line">./bin/spark-submit \</span><br><span class="line">  --class org.apache.spark.examples.SparkPi \</span><br><span class="line">  --master yarn \</span><br><span class="line">  --deploy-mode cluster \  # can be client for client mode</span><br><span class="line">  --executor-memory 20G \</span><br><span class="line">  --num-executors 50 \</span><br><span class="line">  /path/to/examples.jar \</span><br><span class="line">  1000</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"># Run a Python application on a Spark standalone cluster</span><br><span class="line">./bin/spark-submit \</span><br><span class="line">  --master spark://207.184.161.138:7077 \</span><br><span class="line">  examples/src/main/python/pi.py \</span><br><span class="line">  1000</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"># Run on a Mesos cluster in cluster deploy mode with supervise</span><br><span class="line">./bin/spark-submit \</span><br><span class="line">  --class org.apache.spark.examples.SparkPi \</span><br><span class="line">  --master mesos://207.184.161.138:7077 \</span><br><span class="line">  --deploy-mode cluster \</span><br><span class="line">  --supervise \</span><br><span class="line">  --executor-memory 20G \</span><br><span class="line">  --total-executor-cores 100 \</span><br><span class="line">  http://path/to/examples.jar \</span><br><span class="line">  1000</span><br></pre></td></tr></table></figure>
+<h2 id="spark程序入口"><a href="#spark程序入口" class="headerlink" title="spark程序入口"></a>spark程序入口</h2><ul>
+<li>Spark SQL中所有功能的入口点是 SparkSession 类. 要创建一个 SparkSession, 仅使用 SparkSession.builder()就可以了：<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">import org.apache.spark.sql.SparkSession</span><br><span class="line">val sparkses = SparkSession</span><br><span class="line">  .builder()	//必须有</span><br><span class="line">  [.appName(&quot;Spark SQL basic example&quot;) ]</span><br><span class="line">  [.config(&quot;spark.some.config.option&quot;, &quot;some-value&quot;)]</span><br><span class="line">  [.master(&quot;local&quot;)]</span><br><span class="line">  .getOrCreate() //必须有</span><br><span class="line">// For implicit conversions like converting RDDs to DataFrames    //即需要用到类型转换时，要引入这个以你的变量名字开头的隐式转换包</span><br><span class="line">import sparkses.implicits._</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<blockquote>
+<p>未来Dataset可能会取代RDD作为主要使用的API，而RDD会成为最底层的供用户使用的API</p>
+</blockquote>
+<ul>
+<li>spark一般的入口是 sparkcontext类：<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">import org.apache.spark.&#123;SparkConf, SparkContext&#125;</span><br><span class="line">...</span><br><span class="line"> val conf = new SparkConf()[.set(...)...]</span><br><span class="line"> val sc = new SparkContext(conf)</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<h2 id="一些问题以及解决方法"><a href="#一些问题以及解决方法" class="headerlink" title="一些问题以及解决方法"></a>一些问题以及解决方法</h2><hr>
+<blockquote>
+<p>如要学习spark请看官方文档以及源码</p>
+</blockquote>
+<blockquote>
+<p>有问题经常去 <strong><a href="https://stackoverflow.com/" target="_blank" rel="noopener">stackoverflow.com</a></strong> 上找找</p>
+</blockquote>
+<ul>
+<li><strong>这里推荐一个<a href="http://spark.apachecn.org/" target="_blank" rel="noopener">官方文档的中文版</a>供英语薄弱的朋友阅读。</strong></li>
+</ul>
+<h6 id="试验了FP-Growth算法，打包到集群运行时报错"><a href="#试验了FP-Growth算法，打包到集群运行时报错" class="headerlink" title="试验了FP-Growth算法，打包到集群运行时报错:"></a>试验了FP-Growth算法，打包到集群运行时报错:</h6><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Items in a transaction must be unique but got WrappedArrayMaven</span><br></pre></td></tr></table></figure>
+<p>出现此问题的主要原因是fpg算法要求输入的数据是<code>RDD(Array[String])</code>类型，但是Array类型中是不允许出现重复的内容的，所以才会出现这个错误，只需要对输入的数据做个distinct即可</p>
+<h6 id="spark-shell进不去，提示Insufficient-space-for-shared-memory-file"><a href="#spark-shell进不去，提示Insufficient-space-for-shared-memory-file" class="headerlink" title="spark-shell进不去，提示Insufficient space for shared memory file"></a>spark-shell进不去，提示Insufficient space for shared memory file</h6><ul>
+<li><p>出现这个问题的原因可能是某个文件分区的空间满了，一般可能是日志文件太多。</p>
+</li>
+<li><p>使用<code>df</code>命令查看文件系统：<br><img src="/images/spark/集群文件系统的问题.png" alt=""><br>可以看到挂载点 <code>/</code> 的使用率已经是100%了，所以spark-shell会打不开，删掉一些文件即可。</p>
+</li>
+</ul>
+<h2 id="一些小细节"><a href="#一些小细节" class="headerlink" title="一些小细节"></a>一些小细节</h2><hr>
+<ul>
+<li><p>spark中出现一长细条的信息才是报错</p>
+</li>
+<li><p>List 的 <code>distinct</code> 方法会对列表去重</p>
+</li>
+<li><p>item::list 将新生成一个列表，item会成为新列表的有元素</p>
+</li>
+<li><p>Array 不能被<code>flatMap</code>,必须为<code>list.(?)</code></p>
+</li>
+<li><p>scala中的<code>.sortBy()</code>方法如果在括号里最前面加上一个减号表示按逆序排序。</p>
+</li>
+</ul>
+<p><br></p>
+<blockquote>
+<p>最后更新于2018.5.27</p>
+</blockquote>
+
+      
+    </div>
+
+    
+
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/๑Spark-๑BigData/" rel="tag"># ๑Spark ๑BigData</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2018/04/11/2018-04-11-Spark-superior/" rel="next" title="Spark学习笔记——进阶">
+                <i class="fa fa-chevron-left"></i> Spark学习笔记——进阶
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2018/04/11/2018-04-11-Git-and-Github/" rel="prev" title="git 与 github 随笔">
+                git 与 github 随笔 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+  </div>
+
+
+          </div>
+          
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            Table of Contents
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            Overview
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image"
+                src="/images/avatar.gif"
+                alt="Fleschier" />
+            
+              <p class="site-author-name" itemprop="name">Fleschier</p>
+              <p class="site-description motion-element" itemprop="description">This is a blog based on hexo</p>
+          </div>
+
+          
+            <nav class="site-state motion-element">
+              
+                <div class="site-state-item site-state-posts">
+                
+                  <a href="/archives/">
+                
+                    <span class="site-state-item-count">39</span>
+                    <span class="site-state-item-name">posts</span>
+                  </a>
+                </div>
+              
+
+              
+
+              
+                
+                
+                <div class="site-state-item site-state-tags">
+                  
+                    
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">23</span>
+                    <span class="site-state-item-name">tags</span>
+                  
+                </div>
+              
+            </nav>
+          
+
+          
+
+          
+
+          
+          
+
+          
+          
+
+          
+            
+          
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#环境搭建"><span class="nav-number">1.</span> <span class="nav-text">环境搭建</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#编程环境"><span class="nav-number">2.</span> <span class="nav-text">编程环境</span></a><ol class="nav-child"><li class="nav-item nav-level-6"><a class="nav-link" href="#编译器的一些使用技巧"><span class="nav-number">2.0.0.0.1.</span> <span class="nav-text">编译器的一些使用技巧</span></a></li></ol></li></ol></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#以maven项目创建scala工程"><span class="nav-number">3.</span> <span class="nav-text">以maven项目创建scala工程</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#spark下的-wordcount"><span class="nav-number">4.</span> <span class="nav-text">spark下的 wordcount</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#关于jar包以及提交集群运行"><span class="nav-number">5.</span> <span class="nav-text">关于jar包以及提交集群运行</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#spark-submit命令"><span class="nav-number">5.0.1.</span> <span class="nav-text">spark-submit命令</span></a><ol class="nav-child"><li class="nav-item nav-level-6"><a class="nav-link" href="#命令行提交"><span class="nav-number">5.0.1.0.1.</span> <span class="nav-text">命令行提交</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#脚本方式：-创建并编辑-sh脚本文件，赋予执行权限即可"><span class="nav-number">5.0.1.0.2.</span> <span class="nav-text">脚本方式：(创建并编辑.sh脚本文件，赋予执行权限即可)</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#常用的参数讲解"><span class="nav-number">5.0.1.0.3.</span> <span class="nav-text">常用的参数讲解</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#其他的一些示例"><span class="nav-number">5.0.1.0.4.</span> <span class="nav-text">其他的一些示例</span></a></li></ol></li></ol></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#spark程序入口"><span class="nav-number">6.</span> <span class="nav-text">spark程序入口</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#一些问题以及解决方法"><span class="nav-number">7.</span> <span class="nav-text">一些问题以及解决方法</span></a><ol class="nav-child"><li class="nav-item nav-level-6"><a class="nav-link" href="#试验了FP-Growth算法，打包到集群运行时报错"><span class="nav-number">7.0.0.0.1.</span> <span class="nav-text">试验了FP-Growth算法，打包到集群运行时报错:</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#spark-shell进不去，提示Insufficient-space-for-shared-memory-file"><span class="nav-number">7.0.0.0.2.</span> <span class="nav-text">spark-shell进不去，提示Insufficient space for shared memory file</span></a></li></ol></li></ol></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#一些小细节"><span class="nav-number">8.</span> <span class="nav-text">一些小细节</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2018</span>
+  <span class="with-love" id="animate">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Fleschier</span>
+
+  
+
+  
+</div>
+
+
+
+
+  <div class="powered-by">Powered by <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a> v3.7.1</div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">Theme – <a class="theme-link" target="_blank" href="https://theme-next.org">NexT.Mist</a> v6.4.1</div>
+
+
+
+
+        
+
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+	
+    
+
+    
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=6.4.1"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=6.4.1"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=6.4.1"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=6.4.1"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=6.4.1"></script>
+
+
+
+  
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>

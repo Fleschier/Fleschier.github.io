@@ -1,0 +1,1015 @@
+<!DOCTYPE html>
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+<html class="theme-next mist use-motion" lang="">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2"/>
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=6.4.1" rel="stylesheet" type="text/css" />
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=6.4.1">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=6.4.1">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=6.4.1">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=6.4.1" color="#222">
+
+
+
+
+
+
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Mist',
+    version: '6.4.1',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: false,
+    fastclick: false,
+    lazyload: false,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+  
+
+
+
+
+  <meta name="description" content="不适合人类阅读的学习笔记     Python语句不需要分号分割，但是Python各语句严格按照缩进对其方式运行  与C++一样，可以将一些非空，非零的值作为bool值的真，其余的为假  Python中以 #作为注释的开始，多行注释可以用三引号对。   环境  Python推荐使用jetbrain公司的pycharm  Python可以直接使用自带的IDE逐句执行，方便测试   基础  Pyth">
+<meta name="keywords" content="๑Python">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Python学习笔记——基础">
+<meta property="og:url" content="http://yoursite.com/2018/04/06/2018-04-06-Python-learning/index.html">
+<meta property="og:site_name" content="Fleschier_渐寒">
+<meta property="og:description" content="不适合人类阅读的学习笔记     Python语句不需要分号分割，但是Python各语句严格按照缩进对其方式运行  与C++一样，可以将一些非空，非零的值作为bool值的真，其余的为假  Python中以 #作为注释的开始，多行注释可以用三引号对。   环境  Python推荐使用jetbrain公司的pycharm  Python可以直接使用自带的IDE逐句执行，方便测试   基础  Pyth">
+<meta property="og:locale" content="default">
+<meta property="og:updated_time" content="2018-09-01T10:45:47.527Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Python学习笔记——基础">
+<meta name="twitter:description" content="不适合人类阅读的学习笔记     Python语句不需要分号分割，但是Python各语句严格按照缩进对其方式运行  与C++一样，可以将一些非空，非零的值作为bool值的真，其余的为假  Python中以 #作为注释的开始，多行注释可以用三引号对。   环境  Python推荐使用jetbrain公司的pycharm  Python可以直接使用自带的IDE逐句执行，方便测试   基础  Pyth">
+
+
+
+
+
+
+  <link rel="canonical" href="http://yoursite.com/2018/04/06/2018-04-06-Python-learning/"/>
+
+
+
+<script type="text/javascript" id="page.configurations">
+  CONFIG.page = {
+    sidebar: "",
+  };
+</script>
+
+  <title>Python学习笔记——基础 | Fleschier_渐寒</title>
+  
+
+
+
+
+
+
+
+
+
+  <noscript>
+  <style type="text/css">
+    .use-motion .motion-element,
+    .use-motion .brand,
+    .use-motion .menu-item,
+    .sidebar-inner,
+    .use-motion .post-block,
+    .use-motion .pagination,
+    .use-motion .comments,
+    .use-motion .post-header,
+    .use-motion .post-body,
+    .use-motion .collection-title { opacity: initial; }
+
+    .use-motion .logo,
+    .use-motion .site-title,
+    .use-motion .site-subtitle {
+      opacity: initial;
+      top: initial;
+    }
+
+    .use-motion {
+      .logo-line-before i { left: initial; }
+      .logo-line-after i { right: initial; }
+    }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="default">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">Fleschier_渐寒</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+    
+      
+        <p class="site-subtitle">Welcome~</p>
+      
+    
+  </div>
+
+  <div class="site-nav-toggle">
+    <button aria-label="Toggle navigation bar">
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+  
+    <ul id="menu" class="menu">
+      
+        
+        
+        
+          
+          <li class="menu-item menu-item-home">
+    <a href="/" rel="section">
+      <i class="menu-item-icon fa fa-fw fa-home"></i> <br />Home</a>
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-about">
+    <a href="/about/" rel="section">
+      <i class="menu-item-icon fa fa-fw fa-user"></i> <br />About</a>
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-tags">
+    <a href="/tags/" rel="section">
+      <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />Tags</a>
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-categories">
+    <a href="/categories/" rel="section">
+      <i class="menu-item-icon fa fa-fw fa-th"></i> <br />Categories</a>
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-archives">
+    <a href="/archives/" rel="section">
+      <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />Archives</a>
+  </li>
+
+      
+      
+    </ul>
+  
+
+  
+    
+
+  
+
+  
+</nav>
+
+
+
+  
+
+
+
+</div>
+    </header>
+
+    
+
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/04/06/2018-04-06-Python-learning/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Fleschier">
+      <meta itemprop="description" content="This is a blog based on hexo">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Fleschier_渐寒">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">Python学习笔记——基础
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+
+            
+            
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+
+              
+                
+              
+
+              <time title="Created: 2018-04-06 16:47:00" itemprop="dateCreated datePublished" datetime="2018-04-06T16:47:00+08:00">2018-04-06</time>
+            
+
+            
+              
+
+              
+                
+                <span class="post-meta-divider">|</span>
+                
+
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">Edited on</span>
+                
+                <time title="Modified: 2018-09-01 18:45:47" itemprop="dateModified" datetime="2018-09-01T18:45:47+08:00">2018-09-01</time>
+              
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <blockquote>
+<p>不适合人类阅读的学习笔记  </p>
+</blockquote>
+<ul>
+<li><p><strong>Python语句不需要分号分割，但是Python各语句严格按照缩进对其方式运行</strong></p>
+</li>
+<li><p>与C++一样，可以将一些非空，非零的值作为bool值的真，其余的为假</p>
+</li>
+<li><p>Python中以 <code>#</code>作为注释的开始，多行注释可以用三引号对。</p>
+</li>
+</ul>
+<h2 id="环境"><a href="#环境" class="headerlink" title="环境"></a>环境</h2><hr>
+<ul>
+<li><p>Python推荐使用jetbrain公司的pycharm</p>
+</li>
+<li><p>Python可以直接使用自带的IDE逐句执行，方便测试</p>
+</li>
+</ul>
+<h2 id="基础"><a href="#基础" class="headerlink" title="基础"></a>基础</h2><hr>
+<ul>
+<li><p><strong>Python中不需要声明变量类型，编译器会根据赋值自动判别，但是作为程序的编写者，我们需要清楚某个变量究竟是什么类型的</strong></p>
+</li>
+<li><p>Python中单独的下划线是特殊的变量，表示上一次运算的结果。</p>
+</li>
+</ul>
+<h6 id="输出"><a href="#输出" class="headerlink" title="输出"></a>输出</h6><ul>
+<li><p>标准输出格式： <code>print([输出1，输出2,....,输出n][,sep = 分隔符][,end = 结束符])</code></p>
+<blockquote>
+<p>默认以空格分割，换行符结尾</p>
+</blockquote>
+</li>
+<li><p>各个输出之间以逗号间隔</p>
+</li>
+<li><p><code>print()</code>函数不写参数即默认输出一个空行。在一批数据输出结束后，好的编程习惯是在末尾加上一个<code>print()</code>，使得输出美观。</p>
+</li>
+<li><p>Python的输出可以有运算在里面，例如：<code>print(5 * &#39;*&#39;)</code> 则会打印出 <code>*****</code></p>
+</li>
+<li><p>在输出字符串时，可以在字符串的引号前加一个 <code>r</code> 使得转义字符 <code>\</code> 失效。</p>
+</li>
+</ul>
+<h6 id="输入"><a href="#输入" class="headerlink" title="输入"></a>输入</h6><ul>
+<li><p>相比较于java，Python的输入可以说是非常灵活而且简便了</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">a = input()   #若调用此函数，就算输入的是数字，a的数据类型仍然为str，Python默认将命令行读入的数据作为str类型，因为str是万能的~</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>但是，对于如下的情况：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">a =eval(input())    #eval() 函数用来执行一个字符串表达式，并返回表达式的值.例如 eval(&apos;2 * 3&apos;)返回 6</span><br><span class="line">#此时只能输入数字，且a是整型还是浮点型由输入数据的特征决定</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>如果想要同时为多个变量赋值，则只能使用<code>eval()</code>函数了</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">x,y = eval(input())  #输入时以逗号间隔</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>对于eval()函数的使用，一定要确保参数去掉引号之后的值是有意义的</p>
+</li>
+</ul>
+<h4 id="一些数据类型"><a href="#一些数据类型" class="headerlink" title="一些数据类型"></a>一些数据类型</h4><h6 id="综述一些注意点"><a href="#综述一些注意点" class="headerlink" title="综述一些注意点"></a>综述一些注意点</h6><ul>
+<li><p>序列的概念：序列是一个排序的项目 <strong>容器</strong>，按 <strong>非负整数索引</strong>。Python提供的内置序列包包括字符串，元组和列表。(序列就是可以通过索引或者切片访问的容器)</p>
+</li>
+<li><p>所有的序列都是可以迭代的，即可以作为循环的迭代器。</p>
+</li>
+<li><p>内置函数<code>len()</code>可以将任意一个容器作为参数，并返回该容器中元素的数量</p>
+</li>
+<li><p>内置函数<code>min()</code>和<code>max()</code>以一个可以比较的非空容器作为参数，返回其最小最大值。(如果给的参数不止一个，则返回最大或最小的 <strong>参数</strong>)</p>
+</li>
+<li><p>对于字典使用<code>min()</code>和<code>max()</code>则会返回字典最大或最小的 <strong>键</strong>。</p>
+</li>
+<li><p>关键字 <code>in</code> 可以检查某个元素是否在一个容器中。例如<code>k in D</code>(D是一个字典)则检查k是不是D当中的一个关键字。</p>
+</li>
+<li><p><code>reversed(seq)</code>函数： seq代表一个可迭代对象，比如列表</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">&gt;&gt;&gt; a = [1,2,3,4,5]</span><br><span class="line">&gt;&gt;&gt; b = reversed(a)  #此时b为一个迭代器</span><br><span class="line">&gt;&gt;&gt; b1 = list(b)    #将这个迭代器转化为列表</span><br><span class="line">&gt;&gt;&gt; b1</span><br><span class="line">&gt;&gt;&gt; [5,4,3,2,1]</span><br></pre></td></tr></table></figure>
+</li>
+<li><p><code>sum()</code>函数：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">sum(seq, start = m)   #sum()有两个参数，第二个为可选参数</span><br><span class="line"># 返回可迭代对象中的所有项目的和再加上start的值</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<h6 id="一些基础数据类型的注意点"><a href="#一些基础数据类型的注意点" class="headerlink" title="一些基础数据类型的注意点"></a>一些基础数据类型的注意点</h6><ul>
+<li><p>输入一个数，获取其各个位的数值的方法：<strong>注意Python的整除符号与别的编程语言不同</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">假设 x = 123</span><br><span class="line">个位  = x % 10</span><br><span class="line">十位  = x // 10 % 10   (注意，Python与其他编程语言的整除符号不同，比如C++就是 &apos;/&apos; 即表示整除，而Python为 &apos;//&apos;)</span><br><span class="line">百位 = x //100 % 10</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>复数：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">a = complex(2,3)</span><br><span class="line">b = 1 + 2j</span><br><span class="line">c = 3 - 5j</span><br><span class="line">#a,b,c都是复数</span><br><span class="line">#要获取复数的实部和虚部，可使用例如：a.real(a的实部), a.imag(a的虚部)，结果都是浮点型</span><br></pre></td></tr></table></figure>
+</li>
+<li><p><code>45e15</code>表示45*10^15，这是科学计数法的写法</p>
+</li>
+<li><p>要判断两个浮点数是否相等，如果不确定精度的情况下，最好不要使用<code>==</code>来判断。因为可能存在看起来一样的数实际上因为精度不同而被判定为不等。解决的方法是<code>abs(x - y) &lt; 1.0e-15</code>，即是用两数之差的绝对值小于一个很小的数，即可判断两数近似相等。</p>
+</li>
+<li><p>关于Python中的bool类型，与C++类似，非零数或非空容器为真，0，None和空容器为假</p>
+</li>
+</ul>
+<h6 id="List"><a href="#List" class="headerlink" title="List"></a>List</h6><blockquote>
+<p>Python中list里的元素允许是不同的数据类型，这一点完全打破了C和C++体系的传统，所以平常编写程序不推荐这样做。list中也允许某个元素是list或者元组什么的。</p>
+</blockquote>
+<ul>
+<li><p>例： <code>classmates = [&quot;Mike&quot;,&quot;Davaid&quot;]</code></p>
+</li>
+<li><p><code>len()</code>函数可以获得list中的元素个数</p>
+</li>
+<li><p>与其他编程语言不同的是，Python的list下标允许负数的index，例如： <code>classmates[-1]</code>就表示这个list的最后一个元素，以此类推。</p>
+</li>
+<li><p><code>append()</code>方法：在list末尾末尾添加元素：<code>classmates.append(&quot;Alex&quot;)</code></p>
+</li>
+<li><p>把元素插入到指定的位置，比如索引号为1的位置：<code>classmates.insert(1, &#39;Jack&#39;)</code> 这样Jack的位置索引即为1，原来索引为1的元素及后面的元素依次后移。</p>
+</li>
+<li><p>删除list末尾的元素，使用<code>.pop()</code>方法，要删除指定位置的元素，使用<code>.pop(i)</code>的方法，i为元素的索引。</p>
+</li>
+</ul>
+<h6 id="tuple"><a href="#tuple" class="headerlink" title="tuple"></a>tuple</h6><ul>
+<li><p>元组与；list非常类似，但是tuple一经初始化其内容便不允许修改，不允许插入和删除等操作。</p>
+</li>
+<li><p>元组一般用来保存那些不允许修改的数据以保障安全。</p>
+</li>
+<li><p>但是如果tuple中某个元素是list时，这个list中的元素还是可以修改的。</p>
+</li>
+</ul>
+<h6 id="disk"><a href="#disk" class="headerlink" title="disk"></a>disk</h6><blockquote>
+<p>disk（字典）是一种键-值对类型的数据结构，在其他语言中会被称为map。dict的key必须为不可变的量</p>
+</blockquote>
+<blockquote>
+<p>注意，Python中的dick类型是以hash方式存储的，读取速度非常快。</p>
+</blockquote>
+<ul>
+<li><p>将数据添加进dick的方式，除了初始化时设定之外，还可以直接给一个键赋值的方式添加，例如：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">d = &#123;&apos;A&apos;: 95, &apos;B&apos;: 75, &apos;C&apos;: 85&#125; #初始化添加元素</span><br><span class="line">d[&apos;E&apos;] = 100   #直接赋值添加元素</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>判断一个key是否存在的方法：</p>
+</li>
+</ul>
+<ol>
+<li><code>&quot;Thomas&quot; in d</code>        #若不存在会返回false</li>
+<li><code>d.get(&quot;Thomas&quot;)</code>  #若不存在返回null</li>
+<li><code>d.get(&quot;Thomas&quot;,-1)</code>  #自己指定返回的值</li>
+</ol>
+<h6 id="set"><a href="#set" class="headerlink" title="set"></a>set</h6><blockquote>
+<p>set和dict类似，也是一组key的集合，但不存储value。由于key不能重复，所以，在set中，没有重复的key。</p>
+</blockquote>
+<ul>
+<li><p>通过<code>.add(key)</code>的方法添加元素。</p>
+</li>
+<li><p>通过<code>.remove(key)</code>的方法删除元素。</p>
+</li>
+<li><p>符号 <code>&amp;</code> 和 <code>|</code> 分别表示集合的交和并</p>
+</li>
+<li><p>list的简单的去重：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">&gt;&gt;&gt; a = [1,2,2,3,4,5,5,6,1]</span><br><span class="line">&gt;&gt;&gt; b= set(a)</span><br><span class="line">&gt;&gt;&gt; b</span><br><span class="line">&gt;&gt;&gt;&#123;1,2,3,4,5,6&#125;</span><br><span class="line">&gt;&gt;&gt;a =list(b)</span><br><span class="line">&gt;&gt;&gt;a</span><br><span class="line">&gt;&gt;&gt;[1,2,3,4,5,6]</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<h4 id="条件判断"><a href="#条件判断" class="headerlink" title="条件判断"></a>条件判断</h4><ul>
+<li><p>Python的if判断语句的判断条件部分不需要用括号括起来，这与其他的大多数语言均不同</p>
+</li>
+<li><p>格式：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">if &lt;条件判断1&gt;:</span><br><span class="line">    &lt;执行1&gt;</span><br><span class="line">elif &lt;条件判断2&gt;:</span><br><span class="line">    &lt;执行2&gt;</span><br><span class="line">elif &lt;条件判断3&gt;:</span><br><span class="line">    &lt;执行3&gt;</span><br><span class="line">else:</span><br><span class="line">    &lt;执行4&gt;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>例：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">age = 20</span><br><span class="line">if age &gt;= 6 and age &lt;= 30:  #多条件判断用 and 链接</span><br><span class="line">    print(&apos;teenager&apos;)</span><br><span class="line">elif not (age &gt;= 18):     #not相当于 非，后面的内容用括号括起来</span><br><span class="line">    print(&apos;adult&apos;)</span><br><span class="line">else:</span><br><span class="line">    print(&apos;kid&apos;)</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>与input结合（涉及数据类型转换）：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">s = input(&apos;birth: &apos;)</span><br><span class="line">birth = int(s) 		#如果没有这句转换会报错，因为input进来的是str，不能直接和int比较，因此要先转换为int再比较。</span><br><span class="line">#但是如果此处的输入不是一个数值类型，int函数无法强制转化便会报错。</span><br><span class="line">if birth &lt; 2000:</span><br><span class="line">    print(&apos;00前&apos;)</span><br><span class="line">else:</span><br><span class="line">    print(&apos;00后&apos;)</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>利用运算符优先级： z = x if x &gt; y else y</p>
+</li>
+</ul>
+<h4 id="循环"><a href="#循环" class="headerlink" title="循环"></a>循环</h4><ul>
+<li><p>例（求和）：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">for x in [1,2,3,4,5,6]:</span><br><span class="line">	sum = sum + x</span><br><span class="line">print(sum)</span><br></pre></td></tr></table></figure>
+</li>
+<li><p><code>range()</code>函数： 生成从0 - <strong>输入数值-1</strong> 的一个迭代器，可用作循环条件。例<code>list(range(5))</code>的结果为 <code>[0,1,2,3,4]</code></p>
+</li>
+</ul>
+<ul>
+<li><p>例求 1- 100 的和：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">sum = 0</span><br><span class="line">for x in range(101):</span><br><span class="line">    sum = sum + x</span><br><span class="line">print(sum)</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>while循环示例：(素数的判断)</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">import math</span><br><span class="line">m = int(input(&quot;Please enter a num: &quot;))  #待判断的数 m</span><br><span class="line">i,j = 2, int(math.sqrt(m))       #只需要计算 2 到 根号m 范围内是否有m的因数即可，后面的计算均为重复计算</span><br><span class="line">flag = 1                        #素数标志</span><br><span class="line">while i &lt; j and flag == 1:</span><br><span class="line">  if m % 1 == 0</span><br><span class="line">    flag = 0                    #不是素数的标志</span><br><span class="line">  i += 1</span><br><span class="line">if flag and m &gt; 1:              #素数必须大于1</span><br><span class="line">  print(m, &quot;是素数&quot;)</span><br><span class="line">else:</span><br><span class="line">  print(m, &quot;不是素数&quot;)</span><br></pre></td></tr></table></figure>
+</li>
+<li><p><strong>while和for语句使用拖尾的else子句</strong>：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">for ... :</span><br><span class="line">  ...</span><br><span class="line">  ...</span><br><span class="line">else ...   #注意这个else是与for对齐的</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<p>这种写法的else子句块会在循环 <strong>正常终止时执行</strong>。意思就是，如果循环中的break语句生效而导致的循环终止，是不会触发这个else子句的执行的。因此这种写法可以 <strong>优雅地判断一个循环是正常结束还是break掉了</strong>。</p>
+<ul>
+<li><p>在循环中使用print()输出时，注意Print之后是否正确地结束循环或者进入下一个输出，否则可能出现重复输出大量重复数据的可能。</p>
+</li>
+<li><p>求两个数的最大公约数(辗转相除法):</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">a,b = eval(input(&quot;请输入两个整数: &quot;))</span><br><span class="line">if a &gt; b : a,b = b,a   #Python中可以简便地交换两个变量的值</span><br><span class="line">r = a % b</span><br><span class="line">while r != 0</span><br><span class="line">  a,b = b,r</span><br><span class="line">  r = a % b</span><br><span class="line">print(&quot;最大公约数是：&quot;,b)</span><br><span class="line">print()</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>输出[100,1000]以内的所有素数</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">import math</span><br><span class="line">n = 0</span><br><span class="line">for m in range(101,1000,2)    #直接去掉100和1000，这两个肯定不是素数</span><br><span class="line">  i,j = 2, int(math.sqrt(m))</span><br><span class="line">  while i &lt;= j:</span><br><span class="line">    if not(m % j):      #如果 m % j == 0 就是找到因数了，直接退出这一次循环，进入下一个循环</span><br><span class="line">      break</span><br><span class="line">    else:</span><br><span class="line">      i = i + 1</span><br><span class="line">  else:</span><br><span class="line">    print(m, end = &quot; &quot;)</span><br><span class="line">    n += 1</span><br><span class="line">    if n % 10 == 0: print(&quot;\n&quot;)    #每输出10个数就换行</span><br><span class="line">print()</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<h2 id="函数"><a href="#函数" class="headerlink" title="函数"></a>函数</h2><hr>
+<h6 id="函数定义的格式"><a href="#函数定义的格式" class="headerlink" title="函数定义的格式"></a>函数定义的格式</h6><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">def 函数名([参数1,参数2,参数3...]):   #参数没有参数类型，如果要设置参数的默认值则要满足从右向左的原则</span><br><span class="line">	[函数体]</span><br><span class="line">	[return [返回值]] 		#没有写return或者直接写return都是返回None</span><br></pre></td></tr></table></figure>
+<ul>
+<li>Python中可以让函数返回一个有多个元素的tuple来实现返回多个值的要求。</li>
+</ul>
+<h2 id="一些注意点"><a href="#一些注意点" class="headerlink" title="一些注意点"></a>一些注意点</h2><hr>
+<ul>
+<li><p><code>abs()</code> 函数的返回值与参数一致，而<code>fabs()</code> 的返回值均为浮点型</p>
+</li>
+<li><p>Python支持连续的不等式，例如<code>a &gt; b &gt; c</code> 等价于 <code>a &gt; b &amp;&amp; b &gt; c</code></p>
+</li>
+</ul>
+<p><br></p>
+<blockquote>
+<p>最后更新于2018.4.28</p>
+</blockquote>
+
+      
+    </div>
+
+    
+
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/๑Python/" rel="tag"># ๑Python</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2018/04/06/2018-04-06-Scala-learning/" rel="next" title="Scala学习笔记——基础">
+                <i class="fa fa-chevron-left"></i> Scala学习笔记——基础
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2018/04/06/2018-04-06-Ubuntu-operation/" rel="prev" title="Ubuntu随笔">
+                Ubuntu随笔 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+  </div>
+
+
+          </div>
+          
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            Table of Contents
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            Overview
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image"
+                src="/images/avatar.gif"
+                alt="Fleschier" />
+            
+              <p class="site-author-name" itemprop="name">Fleschier</p>
+              <p class="site-description motion-element" itemprop="description">This is a blog based on hexo</p>
+          </div>
+
+          
+            <nav class="site-state motion-element">
+              
+                <div class="site-state-item site-state-posts">
+                
+                  <a href="/archives/">
+                
+                    <span class="site-state-item-count">39</span>
+                    <span class="site-state-item-name">posts</span>
+                  </a>
+                </div>
+              
+
+              
+
+              
+                
+                
+                <div class="site-state-item site-state-tags">
+                  
+                    
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">23</span>
+                    <span class="site-state-item-name">tags</span>
+                  
+                </div>
+              
+            </nav>
+          
+
+          
+
+          
+
+          
+          
+
+          
+          
+
+          
+            
+          
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#环境"><span class="nav-number">1.</span> <span class="nav-text">环境</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#基础"><span class="nav-number">2.</span> <span class="nav-text">基础</span></a><ol class="nav-child"><li class="nav-item nav-level-6"><a class="nav-link" href="#输出"><span class="nav-number">2.0.0.0.1.</span> <span class="nav-text">输出</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#输入"><span class="nav-number">2.0.0.0.2.</span> <span class="nav-text">输入</span></a></li></ol></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#一些数据类型"><span class="nav-number">2.0.1.</span> <span class="nav-text">一些数据类型</span></a><ol class="nav-child"><li class="nav-item nav-level-6"><a class="nav-link" href="#综述一些注意点"><span class="nav-number">2.0.1.0.1.</span> <span class="nav-text">综述一些注意点</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#一些基础数据类型的注意点"><span class="nav-number">2.0.1.0.2.</span> <span class="nav-text">一些基础数据类型的注意点</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#List"><span class="nav-number">2.0.1.0.3.</span> <span class="nav-text">List</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#tuple"><span class="nav-number">2.0.1.0.4.</span> <span class="nav-text">tuple</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#disk"><span class="nav-number">2.0.1.0.5.</span> <span class="nav-text">disk</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#set"><span class="nav-number">2.0.1.0.6.</span> <span class="nav-text">set</span></a></li></ol></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#条件判断"><span class="nav-number">2.0.2.</span> <span class="nav-text">条件判断</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#循环"><span class="nav-number">2.0.3.</span> <span class="nav-text">循环</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#函数"><span class="nav-number">3.</span> <span class="nav-text">函数</span></a><ol class="nav-child"><li class="nav-item nav-level-6"><a class="nav-link" href="#函数定义的格式"><span class="nav-number">3.0.0.0.1.</span> <span class="nav-text">函数定义的格式</span></a></li></ol></li></ol></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#一些注意点"><span class="nav-number">4.</span> <span class="nav-text">一些注意点</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2018</span>
+  <span class="with-love" id="animate">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Fleschier</span>
+
+  
+
+  
+</div>
+
+
+
+
+  <div class="powered-by">Powered by <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a> v3.7.1</div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">Theme – <a class="theme-link" target="_blank" href="https://theme-next.org">NexT.Mist</a> v6.4.1</div>
+
+
+
+
+        
+
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+	
+    
+
+    
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=6.4.1"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=6.4.1"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=6.4.1"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=6.4.1"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=6.4.1"></script>
+
+
+
+  
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>

@@ -1,0 +1,915 @@
+<!DOCTYPE html>
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+<html class="theme-next mist use-motion" lang="">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2"/>
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=6.4.1" rel="stylesheet" type="text/css" />
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=6.4.1">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=6.4.1">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=6.4.1">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=6.4.1" color="#222">
+
+
+
+
+
+
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Mist',
+    version: '6.4.1',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: false,
+    fastclick: false,
+    lazyload: false,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+  
+
+
+
+
+  <meta name="description" content="不适合人类阅读的学习笔记   javascript每个语句结尾不要忘了分号  Ubuntu 下的node.js环境搭建  首先去nodejs的官网下载最新的版本，解压缩。然后移动到 /opt/目录下 (纯粹个人习惯)  然后编辑路径： 12sudo suvim /etc/profile  然后在最后插入:(具体路径以实际为准) 12export NODEJS_HOME=/opt/node-v8.">
+<meta name="keywords" content="๑JS ๑FrontEnd">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Node.js学习笔记">
+<meta property="og:url" content="http://yoursite.com/2018/05/21/2018-05-21-NodeJS/index.html">
+<meta property="og:site_name" content="Fleschier_渐寒">
+<meta property="og:description" content="不适合人类阅读的学习笔记   javascript每个语句结尾不要忘了分号  Ubuntu 下的node.js环境搭建  首先去nodejs的官网下载最新的版本，解压缩。然后移动到 /opt/目录下 (纯粹个人习惯)  然后编辑路径： 12sudo suvim /etc/profile  然后在最后插入:(具体路径以实际为准) 12export NODEJS_HOME=/opt/node-v8.">
+<meta property="og:locale" content="default">
+<meta property="og:image" content="http://yoursite.com/images/node.js/info.png">
+<meta property="og:updated_time" content="2018-09-01T10:45:47.763Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Node.js学习笔记">
+<meta name="twitter:description" content="不适合人类阅读的学习笔记   javascript每个语句结尾不要忘了分号  Ubuntu 下的node.js环境搭建  首先去nodejs的官网下载最新的版本，解压缩。然后移动到 /opt/目录下 (纯粹个人习惯)  然后编辑路径： 12sudo suvim /etc/profile  然后在最后插入:(具体路径以实际为准) 12export NODEJS_HOME=/opt/node-v8.">
+<meta name="twitter:image" content="http://yoursite.com/images/node.js/info.png">
+
+
+
+
+
+
+  <link rel="canonical" href="http://yoursite.com/2018/05/21/2018-05-21-NodeJS/"/>
+
+
+
+<script type="text/javascript" id="page.configurations">
+  CONFIG.page = {
+    sidebar: "",
+  };
+</script>
+
+  <title>Node.js学习笔记 | Fleschier_渐寒</title>
+  
+
+
+
+
+
+
+
+
+
+  <noscript>
+  <style type="text/css">
+    .use-motion .motion-element,
+    .use-motion .brand,
+    .use-motion .menu-item,
+    .sidebar-inner,
+    .use-motion .post-block,
+    .use-motion .pagination,
+    .use-motion .comments,
+    .use-motion .post-header,
+    .use-motion .post-body,
+    .use-motion .collection-title { opacity: initial; }
+
+    .use-motion .logo,
+    .use-motion .site-title,
+    .use-motion .site-subtitle {
+      opacity: initial;
+      top: initial;
+    }
+
+    .use-motion {
+      .logo-line-before i { left: initial; }
+      .logo-line-after i { right: initial; }
+    }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="default">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">Fleschier_渐寒</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+    
+      
+        <p class="site-subtitle">Welcome~</p>
+      
+    
+  </div>
+
+  <div class="site-nav-toggle">
+    <button aria-label="Toggle navigation bar">
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+  
+    <ul id="menu" class="menu">
+      
+        
+        
+        
+          
+          <li class="menu-item menu-item-home">
+    <a href="/" rel="section">
+      <i class="menu-item-icon fa fa-fw fa-home"></i> <br />Home</a>
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-about">
+    <a href="/about/" rel="section">
+      <i class="menu-item-icon fa fa-fw fa-user"></i> <br />About</a>
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-tags">
+    <a href="/tags/" rel="section">
+      <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />Tags</a>
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-categories">
+    <a href="/categories/" rel="section">
+      <i class="menu-item-icon fa fa-fw fa-th"></i> <br />Categories</a>
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-archives">
+    <a href="/archives/" rel="section">
+      <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />Archives</a>
+  </li>
+
+      
+      
+    </ul>
+  
+
+  
+    
+
+  
+
+  
+</nav>
+
+
+
+  
+
+
+
+</div>
+    </header>
+
+    
+
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/05/21/2018-05-21-NodeJS/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Fleschier">
+      <meta itemprop="description" content="This is a blog based on hexo">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Fleschier_渐寒">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">Node.js学习笔记
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+
+            
+            
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+
+              
+                
+              
+
+              <time title="Created: 2018-05-21 10:47:00" itemprop="dateCreated datePublished" datetime="2018-05-21T10:47:00+08:00">2018-05-21</time>
+            
+
+            
+              
+
+              
+                
+                <span class="post-meta-divider">|</span>
+                
+
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">Edited on</span>
+                
+                <time title="Modified: 2018-09-01 18:45:47" itemprop="dateModified" datetime="2018-09-01T18:45:47+08:00">2018-09-01</time>
+              
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <blockquote>
+<p>不适合人类阅读的学习笔记</p>
+</blockquote>
+<ul>
+<li><strong>javascript每个语句结尾不要忘了分号</strong></li>
+</ul>
+<h2 id="Ubuntu-下的node-js环境搭建"><a href="#Ubuntu-下的node-js环境搭建" class="headerlink" title="Ubuntu 下的node.js环境搭建"></a>Ubuntu 下的node.js环境搭建</h2><hr>
+<ul>
+<li><p>首先去nodejs的官网下载最新的版本，解压缩。然后移动到 <code>/opt/</code>目录下 (纯粹个人习惯)</p>
+</li>
+<li><p>然后编辑路径：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">sudo su</span><br><span class="line">vim /etc/profile</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>然后在最后插入:(具体路径以实际为准)</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">export NODEJS_HOME=/opt/node-v8.11.2-linux-x64</span><br><span class="line">export PATH=$NODEJS_HOME/bin:$PATH</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>最后执行<code>source /etc/profile</code> 或者重启电脑即可使之生效。</p>
+</li>
+<li><p>终端输入：<code>node -v</code>查看，如果能正确现实版本号，则说明配置成功。</p>
+</li>
+</ul>
+<h2 id="Hello-world"><a href="#Hello-world" class="headerlink" title="Hello world"></a>Hello world</h2><hr>
+<ul>
+<li><p>在常用目录下新建一个<code>HelloWorld.js</code>纯文本文件，在其中写入：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">&apos;use strict&apos;;</span><br><span class="line">console.log(&apos;Hello, world.&apos;);</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>第一行总是写上 <code>&#39;use strict&#39;;</code> 是因为我们总是以严格模式运行JavaScript代码，避免各种潜在陷阱。</p>
+</li>
+<li><p>保存退出，执行 <code>node HellowWorld.js</code>即可得到结果。(终端输出“Hello,world.”)</p>
+</li>
+<li><p>在交互模式下，单行命令一般不用加分号(有时候加分号还会报错)</p>
+</li>
+</ul>
+<h2 id="交互模式"><a href="#交互模式" class="headerlink" title="交互模式"></a>交互模式</h2><hr>
+<ul>
+<li><p>在终端输入 <code>node</code> 即可进入 node.js的交互环境，我们可以直接输入javascript代码并直接执行。</p>
+</li>
+<li><p>进入交互模式实际上是进入了node的解释器，交互模式下node会直接打印每一个语句的结果，而写在js文件里的代码想要输出结果，必须自己用console.log()打印出来。(这与python，scala的命令行解释器特性一致)</p>
+</li>
+</ul>
+<h2 id="使用严格模式"><a href="#使用严格模式" class="headerlink" title="使用严格模式"></a>使用严格模式</h2><hr>
+<ul>
+<li>如果在JavaScript文件开头写上<code>&#39;use strict&#39;</code>;，那么Node在执行该JavaScript时将使用严格模式。但是，在服务器环境下，如果有很多JavaScript文件，每个文件都写上<code>&#39;use strict&#39;</code>;很麻烦。我们可以给Nodejs传递一个参数，让Node直接为所有js文件开启严格模式：<code>node --use_strict XXX.js</code></li>
+</ul>
+<h2 id="IDE开发环境"><a href="#IDE开发环境" class="headerlink" title="IDE开发环境"></a>IDE开发环境</h2><hr>
+<h4 id="在集成开发环境intellij-IDEA下使用nodejs"><a href="#在集成开发环境intellij-IDEA下使用nodejs" class="headerlink" title="在集成开发环境intellij IDEA下使用nodejs"></a>在集成开发环境intellij IDEA下使用nodejs</h4><ul>
+<li><p>我们可以尝试获取免费的注册码。</p>
+</li>
+<li><p>上述注册码的<a href="http://idea.lanyus.com/" target="_blank" rel="noopener">获取地址</a></p>
+</li>
+</ul>
+<h6 id="hosts-文件路径"><a href="#hosts-文件路径" class="headerlink" title="hosts 文件路径"></a>hosts 文件路径</h6><ul>
+<li><p>在 iOS 系统中中，hosts文件的位置为：<code>~/private/etc</code></p>
+</li>
+<li><p>在 Windows 系统中，hosts文件的位置为：<code>C:\Windows\System32\drivers\etc</code></p>
+</li>
+<li><p>在 Ubuntu 系统中，hosts文件的位置为：<code>/etc</code></p>
+</li>
+</ul>
+<h2 id="jetbrains学生免费账号申请"><a href="#jetbrains学生免费账号申请" class="headerlink" title="jetbrains学生免费账号申请"></a>jetbrains学生免费账号申请</h2><hr>
+<ul>
+<li><p><a href="https://sales.jetbrains.com/hc/zh-cn/articles/207154369-%E5%AD%A6%E7%94%9F%E6%8E%88%E6%9D%83%E7%94%B3%E8%AF%B7%E6%96%B9%E5%BC%8F" target="_blank" rel="noopener">Jetbrains学生免费账号申请</a></p>
+</li>
+<li><p>申请流程其实很简单，你需要一个你们学校的邮箱即可。然后验证通过之后会发送验证邮件，依次填写并且最终注册完账号即可激活。<strong>有效期至毕业。</strong></p>
+</li>
+<li><p>成功激活：</p>
+</li>
+</ul>
+<p><img src="/images/node.js/info.png" alt=""></p>
+<h2 id="模块"><a href="#模块" class="headerlink" title="模块"></a>模块</h2><hr>
+<ul>
+<li><p>在Node环境中，一个.js文件就称之为一个模块（module）。</p>
+</li>
+<li><p>分模块的好处是编写代码不必从零开始。当一个模块编写完毕，就可以被其他地方引用。我们在编写程序的时候，也经常引用其他模块，包括Node内置的模块和来自第三方的模块。</p>
+</li>
+<li><p>例如，我们在一个js文件(hello.js)中写一个函数：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">&apos;use strict&apos;;</span><br><span class="line">var s = &apos;Hello&apos;;</span><br><span class="line">function greet(name) &#123;</span><br><span class="line">    console.log(s + &apos;, &apos; + name + &apos;!&apos;);</span><br><span class="line">&#125;</span><br><span class="line">module.exports = greet;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>函数greet()是我们在hello模块中定义的，你可能注意到最后一行是一个奇怪的赋值语句，它的意思是，把函数greet作为模块的输出暴露出去，这样其他模块就可以使用greet函数了。</p>
+</li>
+<li><p>其他模块对本模块的调用,此处写一个main.js：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">&apos;use strict&apos;;</span><br><span class="line">// 引入hello模块:</span><br><span class="line">var greet = require(&apos;./hello&apos;);</span><br><span class="line">var s = &apos;Michael&apos;;</span><br><span class="line">greet(s); // Hello, Michael!</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>引入hello模块用Node提供的require函数,引入的模块作为变量保存在greet变量中。<code>./hello</code>表明hello.js和main.js是在同一个目录下，这里需要写 <strong>相对目录</strong>。</p>
+</li>
+</ul>
+<h6 id="CommonJS规范"><a href="#CommonJS规范" class="headerlink" title="CommonJS规范"></a>CommonJS规范</h6><ul>
+<li><p>这个规范保证了各个模块之间的同名变量和函数不会冲突</p>
+</li>
+<li><p>一个模块想要对外暴露变量（函数也是变量），可以用<code>module.exports = variable;</code>，一个模块要引用其他模块暴露的变量，用<code>var ref = require(&#39;module_name&#39;);</code>就拿到了引用模块的变量。</p>
+</li>
+<li><p>输出的变量可以是任意对象、函数、数组等等</p>
+</li>
+<li><p>引入的对象具体是什么，取决于引入模块输出的对象</p>
+</li>
+<li><p>javascript本身并不支持同名函数或者变量冲突的处理，而node.js实现这一功能的原理是，JavaScript是一个函数式编程语言，node.js将每个模块包装为一个函数，这样这个模块里的变量就都成为了局部变量，这样就避免了冲突。——<a href="https://www.liaoxuefeng.com/wiki/001434446689867b27157e896e74d51a89c25cc8b43bdb3000/001434502419592fd80bbb0613a42118ccab9435af408fd000" target="_blank" rel="noopener">详细教程</a></p>
+</li>
+</ul>
+<p><br></p>
+<blockquote>
+<p>最后更新于2018.5.24</p>
+</blockquote>
+
+      
+    </div>
+
+    
+
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/๑JS-๑FrontEnd/" rel="tag"># ๑JS ๑FrontEnd</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2018/05/17/2018-05-17-BlockChain-concepts/" rel="next" title="区块链一些相关概念的记录">
+                <i class="fa fa-chevron-left"></i> 区块链一些相关概念的记录
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2018/05/23/2018-05-23-Ethereum/" rel="prev" title="以太坊(ethereum)开发">
+                以太坊(ethereum)开发 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+  </div>
+
+
+          </div>
+          
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            Table of Contents
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            Overview
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image"
+                src="/images/avatar.gif"
+                alt="Fleschier" />
+            
+              <p class="site-author-name" itemprop="name">Fleschier</p>
+              <p class="site-description motion-element" itemprop="description">This is a blog based on hexo</p>
+          </div>
+
+          
+            <nav class="site-state motion-element">
+              
+                <div class="site-state-item site-state-posts">
+                
+                  <a href="/archives/">
+                
+                    <span class="site-state-item-count">39</span>
+                    <span class="site-state-item-name">posts</span>
+                  </a>
+                </div>
+              
+
+              
+
+              
+                
+                
+                <div class="site-state-item site-state-tags">
+                  
+                    
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">23</span>
+                    <span class="site-state-item-name">tags</span>
+                  
+                </div>
+              
+            </nav>
+          
+
+          
+
+          
+
+          
+          
+
+          
+          
+
+          
+            
+          
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Ubuntu-下的node-js环境搭建"><span class="nav-number">1.</span> <span class="nav-text">Ubuntu 下的node.js环境搭建</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Hello-world"><span class="nav-number">2.</span> <span class="nav-text">Hello world</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#交互模式"><span class="nav-number">3.</span> <span class="nav-text">交互模式</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#使用严格模式"><span class="nav-number">4.</span> <span class="nav-text">使用严格模式</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#IDE开发环境"><span class="nav-number">5.</span> <span class="nav-text">IDE开发环境</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#在集成开发环境intellij-IDEA下使用nodejs"><span class="nav-number">5.0.1.</span> <span class="nav-text">在集成开发环境intellij IDEA下使用nodejs</span></a><ol class="nav-child"><li class="nav-item nav-level-6"><a class="nav-link" href="#hosts-文件路径"><span class="nav-number">5.0.1.0.1.</span> <span class="nav-text">hosts 文件路径</span></a></li></ol></li></ol></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#jetbrains学生免费账号申请"><span class="nav-number">6.</span> <span class="nav-text">jetbrains学生免费账号申请</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#模块"><span class="nav-number">7.</span> <span class="nav-text">模块</span></a><ol class="nav-child"><li class="nav-item nav-level-6"><a class="nav-link" href="#CommonJS规范"><span class="nav-number">7.0.0.0.1.</span> <span class="nav-text">CommonJS规范</span></a></li></ol></li></ol></li></ol></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2018</span>
+  <span class="with-love" id="animate">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Fleschier</span>
+
+  
+
+  
+</div>
+
+
+
+
+  <div class="powered-by">Powered by <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a> v3.7.1</div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">Theme – <a class="theme-link" target="_blank" href="https://theme-next.org">NexT.Mist</a> v6.4.1</div>
+
+
+
+
+        
+
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+	
+    
+
+    
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=6.4.1"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=6.4.1"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=6.4.1"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=6.4.1"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=6.4.1"></script>
+
+
+
+  
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>
