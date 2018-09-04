@@ -1,0 +1,1781 @@
+<!DOCTYPE html>
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+<html class="theme-next mist use-motion" lang="">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2"/>
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=6.4.1" rel="stylesheet" type="text/css" />
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=6.4.1">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=6.4.1">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=6.4.1">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=6.4.1" color="#222">
+
+
+
+
+
+
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Mist',
+    version: '6.4.1',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: false,
+    fastclick: false,
+    lazyload: false,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+  
+
+
+
+
+  <meta name="description" content="仅供查询，禁止转载   一般的Int类型的都可以通过.max和.min获取最大最小元素  List的一些方法和用途   方法 用途     List()或者Nil 表示空列表   List(“Cool”,”Tools”) 创建一个新的List[String],包含两个值:”Cool”,”Tools”   val thrill = “Will”::”Fill”::Nil 创建一个新的List[St">
+<meta name="keywords" content="๑Scala">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Scala方法查询记录">
+<meta property="og:url" content="http://yoursite.com/2018/07/12/2018-07-12-Scala-infos/index.html">
+<meta property="og:site_name" content="Fleschier 渐寒^">
+<meta property="og:description" content="仅供查询，禁止转载   一般的Int类型的都可以通过.max和.min获取最大最小元素  List的一些方法和用途   方法 用途     List()或者Nil 表示空列表   List(“Cool”,”Tools”) 创建一个新的List[String],包含两个值:”Cool”,”Tools”   val thrill = “Will”::”Fill”::Nil 创建一个新的List[St">
+<meta property="og:locale" content="default">
+<meta property="og:updated_time" content="2018-09-03T13:11:49.120Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Scala方法查询记录">
+<meta name="twitter:description" content="仅供查询，禁止转载   一般的Int类型的都可以通过.max和.min获取最大最小元素  List的一些方法和用途   方法 用途     List()或者Nil 表示空列表   List(“Cool”,”Tools”) 创建一个新的List[String],包含两个值:”Cool”,”Tools”   val thrill = “Will”::”Fill”::Nil 创建一个新的List[St">
+
+
+
+
+
+
+  <link rel="canonical" href="http://yoursite.com/2018/07/12/2018-07-12-Scala-infos/"/>
+
+
+
+<script type="text/javascript" id="page.configurations">
+  CONFIG.page = {
+    sidebar: "",
+  };
+</script>
+
+  <title>Scala方法查询记录 | Fleschier 渐寒^</title>
+  
+
+
+
+
+
+
+
+
+
+  <noscript>
+  <style type="text/css">
+    .use-motion .motion-element,
+    .use-motion .brand,
+    .use-motion .menu-item,
+    .sidebar-inner,
+    .use-motion .post-block,
+    .use-motion .pagination,
+    .use-motion .comments,
+    .use-motion .post-header,
+    .use-motion .post-body,
+    .use-motion .collection-title { opacity: initial; }
+
+    .use-motion .logo,
+    .use-motion .site-title,
+    .use-motion .site-subtitle {
+      opacity: initial;
+      top: initial;
+    }
+
+    .use-motion {
+      .logo-line-before i { left: initial; }
+      .logo-line-after i { right: initial; }
+    }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="default">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">Fleschier 渐寒^</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+    
+      
+        <p class="site-subtitle">Welcome~</p>
+      
+    
+  </div>
+
+  <div class="site-nav-toggle">
+    <button aria-label="Toggle navigation bar">
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+  
+    <ul id="menu" class="menu">
+      
+        
+        
+        
+          
+          <li class="menu-item menu-item-home">
+    <a href="/" rel="section">
+      <i class="menu-item-icon fa fa-fw fa-home"></i> <br />Home</a>
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-about">
+    <a href="/about/" rel="section">
+      <i class="menu-item-icon fa fa-fw fa-user"></i> <br />About</a>
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-tags">
+    <a href="/tags/" rel="section">
+      <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />Tags</a>
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-categories">
+    <a href="/categories/" rel="section">
+      <i class="menu-item-icon fa fa-fw fa-th"></i> <br />Categories</a>
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-archives">
+    <a href="/archives/" rel="section">
+      <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />Archives</a>
+  </li>
+
+      
+      
+    </ul>
+  
+
+  
+    
+
+  
+
+  
+</nav>
+
+
+
+  
+
+
+
+</div>
+    </header>
+
+    
+
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/07/12/2018-07-12-Scala-infos/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Fleschier">
+      <meta itemprop="description" content="我有一碗酒，可以慰风尘...">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Fleschier 渐寒^">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">Scala方法查询记录
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+
+            
+            
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+
+              
+                
+              
+
+              <time title="Created: 2018-07-12 16:40:00" itemprop="dateCreated datePublished" datetime="2018-07-12T16:40:00+08:00">2018-07-12</time>
+            
+
+            
+              
+
+              
+                
+                <span class="post-meta-divider">|</span>
+                
+
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">Edited on</span>
+                
+                <time title="Modified: 2018-09-03 21:11:49" itemprop="dateModified" datetime="2018-09-03T21:11:49+08:00">2018-09-03</time>
+              
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">In</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/Computer-Programes/" itemprop="url" rel="index"><span itemprop="name">Computer Programes</span></a></span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <blockquote>
+<p>仅供查询，禁止转载</p>
+</blockquote>
+<ul>
+<li>一般的Int类型的都可以通过<code>.max</code>和<code>.min</code>获取最大最小元素</li>
+</ul>
+<h2 id="List的一些方法和用途"><a href="#List的一些方法和用途" class="headerlink" title="List的一些方法和用途"></a>List的一些方法和用途</h2><table>
+<thead>
+<tr>
+<th>方法</th>
+<th>用途</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>List()或者Nil</td>
+<td>表示空列表</td>
+</tr>
+<tr>
+<td>List(“Cool”,”Tools”)</td>
+<td>创建一个新的List[String],包含两个值:”Cool”,”Tools”</td>
+</tr>
+<tr>
+<td>val thrill = “Will”::”Fill”::Nil</td>
+<td>创建一个新的List[String]包含两个值：”Will”和”Fill”</td>
+</tr>
+<tr>
+<td>List(“a”,”b”):::List(“c”,”d”)</td>
+<td>将两个列表拼接起来(返回一个新的列表List(“a”,”b”,”c”,”d”))</td>
+</tr>
+<tr>
+<td>thrill(2)</td>
+<td>返回列表thrill下标为2(从0开始计数)</td>
+</tr>
+<tr>
+<td>thrill.count(s =&gt; s.length == 4)</td>
+<td>对thrill中长度为4的字符串进行计数</td>
+</tr>
+<tr>
+<td>thrill.drop(2)</td>
+<td>返回去掉了thrill的头两个元素的列表</td>
+</tr>
+<tr>
+<td>thrill.dropRight(2)</td>
+<td>返回去掉了thrill后两个元素的列表</td>
+</tr>
+<tr>
+<td>thrill.exists(s =&gt; s==”until”)</td>
+<td>判断thrill中是否有字符串元素的值为”until”，返回值为Boolean</td>
+</tr>
+<tr>
+<td>thrill.filter(s =&gt; s.length == 4)</td>
+<td>按顺序返回列表thrill中所有长度为4的元素列表</td>
+</tr>
+<tr>
+<td>thrill.forall(s =&gt; s.endsWith(“1”))</td>
+<td>表示列表中是否所有元素都以字母”1”结尾</td>
+</tr>
+<tr>
+<td>thrill.foreach(s =&gt; println(s)) / thrill.foreach(println)</td>
+<td>遍历列表执行打印</td>
+</tr>
+<tr>
+<td>thrill.head</td>
+<td>返回列表的首个元素</td>
+</tr>
+<tr>
+<td>thrill.init</td>
+<td>返回列表thrill除最后一个元素之外其他元素组成的列表</td>
+</tr>
+<tr>
+<td>thrill.isEmpty</td>
+<td>判断列表是否为空</td>
+</tr>
+<tr>
+<td>thrill.last</td>
+<td>返回thrill的最后一个元素</td>
+</tr>
+<tr>
+<td>thrill.length</td>
+<td>返回列表的元素个数</td>
+</tr>
+<tr>
+<td>thrill.map(s =&gt; s + “y”)</td>
+<td>返回一个对列表thrill所有字符串元素末尾添加”y”的新字符串列表</td>
+</tr>
+<tr>
+<td>thrill.makeString”, “</td>
+<td>返回用列表thrill的所有元素组合成的字符串，以”, “连接各个元素</td>
+</tr>
+<tr>
+<td>thrill.filterNot(s =&gt; s.length == 4)</td>
+<td>按顺序返回列表中所有长度不为4的元素列表</td>
+</tr>
+<tr>
+<td>thrill.reverse</td>
+<td>返回包含列表thrill的逆序列表</td>
+</tr>
+<tr>
+<td>thrill.sort( (s,t) =&gt; s.charAt(0).toLower &lt; t.charAt(0).toLower)</td>
+<td>返回包含thrill的所有元素，按照首字母小写顺序排序的列表</td>
+</tr>
+<tr>
+<td>thrill.tail</td>
+<td>返回列表thrill除首个元素之外其他元素组成的列表</td>
+</tr>
+</tbody>
+</table>
+<h2 id="常用的集操作"><a href="#常用的集操作" class="headerlink" title="常用的集操作"></a>常用的集操作</h2><table>
+<thead>
+<tr>
+<th>操作</th>
+<th>效果</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>val nums = Set(1,2,3)</td>
+<td>创建一个不可变集(nums.toString返回Set(1,2,3))</td>
+</tr>
+<tr>
+<td>nums + 5</td>
+<td>添加一个元素(返回Set(1,2,3,5))</td>
+</tr>
+<tr>
+<td>nums - 3</td>
+<td>移除一个元素(返回Set(1,2))</td>
+</tr>
+<tr>
+<td>nums ++ List(5,6)</td>
+<td>添加多个元素(返回Set(1,2,3,5,6))</td>
+</tr>
+<tr>
+<td>nums – List(1,2)</td>
+<td>移除多个元素(返回Set(3))</td>
+</tr>
+<tr>
+<td>nums &amp; Set(1,3,5,7)</td>
+<td>获取两个集的交集(返回Set(1,3))</td>
+</tr>
+<tr>
+<td>nums.size</td>
+<td>返回集的大小(返回3)</td>
+</tr>
+<tr>
+<td>nums.contains(3)</td>
+<td>检查是否包含(此处返回true)</td>
+</tr>
+<tr>
+<td>import scala.collection.mutable</td>
+<td>让可变集易于访问</td>
+</tr>
+<tr>
+<td>val words = mutable.Set.empty[String]</td>
+<td>创建一个空的可变集(words.toString将返回Set())</td>
+</tr>
+<tr>
+<td>words += “the”</td>
+<td>添加一个元素(words.toString将返回Set(the))</td>
+</tr>
+<tr>
+<td>words -= “the”</td>
+<td>移除一个元素，如果这个元素存在(words.toString将返回Set())</td>
+</tr>
+<tr>
+<td>words ++= List(“do”,”re”,”mi”)</td>
+<td>添加多个元素(words.toString将返回Set(do,re,mi))</td>
+</tr>
+<tr>
+<td>words –= List(“do”,”re”)</td>
+<td>移除多个元素(words.toString将返回Set(mi))</td>
+</tr>
+<tr>
+<td>words.clear</td>
+<td>移除所有元素(words.toString将返回Set())</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li><a href="https://docs.scala-lang.org/zh-cn/overviews/collections/sets.html" target="_blank" rel="noopener">更详细的链接</a></li>
+</ul>
+<h2 id="常用的映射操作"><a href="#常用的映射操作" class="headerlink" title="常用的映射操作"></a>常用的映射操作</h2><table>
+<thead>
+<tr>
+<th>操作</th>
+<th>效果</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>val nums = Map(“i” -&gt; 1, “ii” -&gt; 2)</td>
+<td>创建一个不可变映射(nums.toString返回Map(i -&gt; 1, ii -&gt; 2))</td>
+</tr>
+<tr>
+<td>nums + (“vi” -&gt; 6)</td>
+<td>添加一个条目(返回Map(i -&gt; 1, ii -&gt; 2, vi -&gt; 6))</td>
+</tr>
+<tr>
+<td>nums - “ii”</td>
+<td>移除一个条目(返回Map(i -&gt; 1))</td>
+</tr>
+<tr>
+<td>nums ++ List(“iii” -&gt; 3, “v” -&gt; 5)</td>
+<td>添加多个条目(返回Map(i -&gt; 1, ii -&gt; 2, iii -&gt; 3, v -&gt; 5))</td>
+</tr>
+<tr>
+<td>nums – List(“i”,”ii”)</td>
+<td>移除多个条目(返回Map())</td>
+</tr>
+<tr>
+<td>nums.size</td>
+<td>返回映射的大小(返回2)</td>
+</tr>
+<tr>
+<td>nums.contains(“ii”)</td>
+<td>检查是否包含(返回true)</td>
+</tr>
+<tr>
+<td>nums(“ii”)</td>
+<td>获取指定键的值(返回2)</td>
+</tr>
+<tr>
+<td>nums.keys</td>
+<td>返回所有键(返回字符串”i”和”ii”的Iterable)</td>
+</tr>
+<tr>
+<td>nums.keySet</td>
+<td>以集的形式返回所有的键(返回Set(i,ii))</td>
+</tr>
+<tr>
+<td>nums.values</td>
+<td>返回所有的值(返回整数1和2的Iterable)</td>
+</tr>
+<tr>
+<td>nums.isEmpty</td>
+<td>表示映射是否为空</td>
+</tr>
+<tr>
+<td>import scala.collection.mutable</td>
+<td>让可变集合易于访问</td>
+</tr>
+<tr>
+<td>val words = mutable.Map.empty[String,Int]</td>
+<td>创建一个空的可变映射</td>
+</tr>
+<tr>
+<td>words += (“one” -&gt; 1, “two” -&gt; 2, “three” -&gt; 3)</td>
+<td>添加一个从”one”到1的映射条目</td>
+</tr>
+<tr>
+<td>words -= “one”</td>
+<td>移除一个映射条目，如果存在</td>
+</tr>
+<tr>
+<td>words ++= List(“one” -&gt; 1, “two” -&gt; 2, “three” -&gt; 3)</td>
+<td>添加多个条目</td>
+</tr>
+<tr>
+<td>words –= List(“one”,”two”)</td>
+<td>移除多个条目</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li><a href="https://docs.scala-lang.org/zh-cn/overviews/collections/maps.html" target="_blank" rel="noopener">更详细的链接</a></li>
+</ul>
+<h2 id="序列"><a href="#序列" class="headerlink" title="序列"></a>序列</h2><table>
+<thead>
+<tr>
+<th>操作</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>索引和长度的操作 apply、isDefinedAt、length、indices，及lengthCompare</td>
+<td>序列的apply操作用于索引访问；因此，Seq[T]类型的序列也是一个以单个Int（索引下标）为参数、返回值类型为T的偏函数。换言之，Seq[T]继承自Partial Function[Int, T]。序列各元素的索引下标从0开始计数，最大索引下标为序列长度减一。序列的length方法是collection的size方法的别名。lengthCompare方法可以比较两个序列的长度，即便其中一个序列长度无限也可以处理。</td>
+</tr>
+<tr>
+<td>索引检索操作（indexOf、lastIndexOf、indexofSlice、lastIndexOfSlice、indexWhere、lastIndexWhere、segmentLength、prefixLength）</td>
+<td>用于返回等于给定值或满足某个谓词的元素的索引。</td>
+</tr>
+<tr>
+<td>加法运算（+:，:+，padTo）</td>
+<td>用于在序列的前面或者后面添加一个元素并作为新序列返回。</td>
+</tr>
+<tr>
+<td>更新操作（updated，patch）</td>
+<td>用于替换原序列的某些元素并作为一个新序列返回。</td>
+</tr>
+<tr>
+<td>排序操作（sorted, sortWith, sortBy）</td>
+<td>根据不同的条件对序列元素进行排序。</td>
+</tr>
+<tr>
+<td>反转操作（reverse, reverseIterator, reverseMap）</td>
+<td>用于将序列中的元素以相反的顺序排列。</td>
+</tr>
+<tr>
+<td>比较（startsWith, endsWith, contains, containsSlice, corresponds）</td>
+<td>用于对两个序列进行比较，或者在序列中查找某个元素。</td>
+</tr>
+<tr>
+<td>多集操作（intersect, diff, union, distinct）</td>
+<td>用于对两个序列中的元素进行类似集合的操作，或者删除重复元素。</td>
+</tr>
+</tbody>
+</table>
+<h2 id="Seq类的操作"><a href="#Seq类的操作" class="headerlink" title="Seq类的操作"></a>Seq类的操作</h2><table>
+<thead>
+<tr>
+<th>WHAT IT IS</th>
+<th>WHAT IT DOES</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>索引和长度</td>
+<td>———————————–</td>
+</tr>
+<tr>
+<td>xs(i)</td>
+<td>(或者写作xs apply i)。xs的第i个元素</td>
+</tr>
+<tr>
+<td>xs isDefinedAt i</td>
+<td>测试xs.indices中是否包含i。</td>
+</tr>
+<tr>
+<td>xs.length</td>
+<td>序列的长度（同size）。</td>
+</tr>
+<tr>
+<td>xs.lengthCompare ys</td>
+<td>如果xs的长度小于ys的长度，则返回-1。如果xs的长度大于ys的长度，则返回+1，如果它们长度相等，则返回0。即使其中一个序列是无限的，也可以使用此方法。</td>
+</tr>
+<tr>
+<td>xs.indices</td>
+<td>xs的索引范围，从0到xs.length - 1。</td>
+</tr>
+<tr>
+<td>索引搜索</td>
+<td>———————————–</td>
+</tr>
+<tr>
+<td>xs indexOf x</td>
+<td>返回序列xs中等于x的第一个元素的索引（存在多种变体）。</td>
+</tr>
+<tr>
+<td>xs lastIndexOf x</td>
+<td>返回序列xs中等于x的最后一个元素的索引（存在多种变体）。</td>
+</tr>
+<tr>
+<td>xs indexOfSlice ys</td>
+<td>查找子序列ys，返回xs中匹配的第一个索引。</td>
+</tr>
+<tr>
+<td>xs indexOfSlice ys</td>
+<td>查找子序列ys，返回xs中匹配的倒数一个索引。</td>
+</tr>
+<tr>
+<td>xs indexWhere p</td>
+<td>xs序列中满足p的第一个元素。（有多种形式）</td>
+</tr>
+<tr>
+<td>xs segmentLength (p, i)</td>
+<td>xs中，从xs(i)开始并满足条件p的元素的最长连续片段的长度。</td>
+</tr>
+<tr>
+<td>xs prefixLength p</td>
+<td>xs序列中满足p条件的先头元素的最大个数。</td>
+</tr>
+<tr>
+<td>加法</td>
+<td>———————————–</td>
+</tr>
+<tr>
+<td>x +: xs</td>
+<td>由序列xs的前方添加x所得的新序列。</td>
+</tr>
+<tr>
+<td>xs :+ x</td>
+<td>由序列xs的后方追加x所得的新序列。</td>
+</tr>
+<tr>
+<td>xs padTo (len, x)</td>
+<td>在xs后方追加x，直到长度达到len后得到的序列。</td>
+</tr>
+<tr>
+<td>更新</td>
+<td>———————————–</td>
+</tr>
+<tr>
+<td>xs patch (i, ys, r)</td>
+<td>将xs中第i个元素开始的r个元素，替换为ys所得的序列。</td>
+</tr>
+<tr>
+<td>xs updated (i, x)</td>
+<td>将xs中第i个元素替换为x后所得的xs的副本。</td>
+</tr>
+<tr>
+<td>xs(i) = x</td>
+<td>（或写作 xs.update(i, x)，仅适用于可变序列）将xs序列中第i个元素修改为x。</td>
+</tr>
+<tr>
+<td>排序</td>
+<td>———————————–</td>
+</tr>
+<tr>
+<td>xs.sorted</td>
+<td>通过使用xs中元素类型的标准顺序，将xs元素进行排序后得到的新序列。</td>
+</tr>
+<tr>
+<td>xs sortWith lt</td>
+<td>将lt作为比较操作，并以此将xs中的元素进行排序后得到的新序列。</td>
+</tr>
+<tr>
+<td>xs sortBy f</td>
+<td>将序列xs的元素进行排序后得到的新序列。参与比较的两个元素各自经f函数映射后得到一个结果，通过比较它们的结果来进行排序。</td>
+</tr>
+<tr>
+<td>反转</td>
+<td>———————————–</td>
+</tr>
+<tr>
+<td>xs.reverse</td>
+<td>与xs序列元素顺序相反的一个新序列。</td>
+</tr>
+<tr>
+<td>xs.reverseIterator</td>
+<td>产生序列xs中元素的反序迭代器。</td>
+</tr>
+<tr>
+<td>xs reverseMap f</td>
+<td>以xs的相反顺序，通过f映射xs序列中的元素得到的新序列。</td>
+</tr>
+<tr>
+<td>比较</td>
+<td>———————————–</td>
+</tr>
+<tr>
+<td>xs startsWith ys</td>
+<td>测试序列xs是否以序列ys开头（存在多种形式）。</td>
+</tr>
+<tr>
+<td>xs endsWith ys</td>
+<td>测试序列xs是否以序列ys结束（存在多种形式）。</td>
+</tr>
+<tr>
+<td>xs contains x</td>
+<td>测试xs序列中是否存在一个与x相等的元素。</td>
+</tr>
+<tr>
+<td>xs containsSlice ys</td>
+<td>测试xs序列中是否存在一个与ys相同的连续子序列。</td>
+</tr>
+<tr>
+<td>(xs corresponds ys)(p)</td>
+<td>测试序列xs与序列ys中对应的元素是否满足二元的判断式p。</td>
+</tr>
+<tr>
+<td>多集操作</td>
+<td>———————————–</td>
+</tr>
+<tr>
+<td>xs intersect ys</td>
+<td>序列xs和ys的交集，并保留序列xs中的顺序。</td>
+</tr>
+<tr>
+<td>xs diff ys</td>
+<td>序列xs和ys的差集，并保留序列xs中的顺序。</td>
+</tr>
+<tr>
+<td>xs union ys</td>
+<td>并集；同xs ++ ys。</td>
+</tr>
+<tr>
+<td>xs.distinct</td>
+<td>不含重复元素的xs的子序列。</td>
+</tr>
+</tbody>
+</table>
+<h2 id="Buffer类的操作"><a href="#Buffer类的操作" class="headerlink" title="Buffer类的操作"></a>Buffer类的操作</h2><table>
+<thead>
+<tr>
+<th>WHAT IT IS</th>
+<th>WHAT IT DOES</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>加法：</td>
+<td>———————————–</td>
+</tr>
+<tr>
+<td>buf += x</td>
+<td>将元素x追加到buffer，并将buf自身作为结果返回。</td>
+</tr>
+<tr>
+<td>buf += (x, y, z)</td>
+<td>将给定的元素追加到buffer。</td>
+</tr>
+<tr>
+<td>buf ++= xs</td>
+<td>将xs中的所有元素追加到buffer。</td>
+</tr>
+<tr>
+<td>x +=: buf</td>
+<td>将元素x添加到buffer的前方。</td>
+</tr>
+<tr>
+<td>xs ++=: buf</td>
+<td>将xs中的所有元素都添加到buffer的前方。</td>
+</tr>
+<tr>
+<td>buf insert (i, x)</td>
+<td>将元素x插入到buffer中索引为i的位置。</td>
+</tr>
+<tr>
+<td>buf insertAll (i, xs)</td>
+<td>将xs的所有元素都插入到buffer中索引为i的位置。</td>
+</tr>
+<tr>
+<td>移除：</td>
+<td>———————————–</td>
+</tr>
+<tr>
+<td>buf -= x</td>
+<td>将元素x从buffer中移除。</td>
+</tr>
+<tr>
+<td>buf remove i</td>
+<td>将buffer中索引为i的元素移除。</td>
+</tr>
+<tr>
+<td>buf remove (i, n)</td>
+<td>将buffer中从索引i开始的n个元素移除。</td>
+</tr>
+<tr>
+<td>buf trimStart n</td>
+<td>移除buffer中的前n个元素。</td>
+</tr>
+<tr>
+<td>buf trimEnd n</td>
+<td>移除buffer中的后n个元素。</td>
+</tr>
+<tr>
+<td>buf.clear()</td>
+<td>移除buffer中的所有元素。</td>
+</tr>
+<tr>
+<td>克隆：</td>
+<td>———————————–</td>
+</tr>
+<tr>
+<td>buf.clone</td>
+<td>与buf具有相同元素的新buffer。</td>
+</tr>
+</tbody>
+</table>
+<h2 id="Traversable对象的操作"><a href="#Traversable对象的操作" class="headerlink" title="Traversable对象的操作"></a>Traversable对象的操作</h2><table>
+<thead>
+<tr>
+<th>WHAT IT IS</th>
+<th>WHAT IT DOES</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>抽象方法：</td>
+<td></td>
+</tr>
+<tr>
+<td>xs foreach f</td>
+<td>对xs中的每一个元素执行函数f</td>
+</tr>
+<tr>
+<td>加运算（Addition）：</td>
+<td></td>
+</tr>
+<tr>
+<td>xs ++ ys</td>
+<td>生成一个由xs和ys中的元素组成容器。ys是一个TraversableOnce容器，即Taversable类型或迭代器。</td>
+</tr>
+<tr>
+<td>Maps:</td>
+<td></td>
+</tr>
+<tr>
+<td>xs map f</td>
+<td>通过函数xs中的每一个元素调用函数f来生成一个容器。</td>
+</tr>
+<tr>
+<td>xs flatMap f</td>
+<td>通过对容器xs中的每一个元素调用作为容器的值函数f，在把所得的结果连接起来作为一个新的容器。</td>
+</tr>
+<tr>
+<td>xs collect f</td>
+<td>通过对每个xs中的符合定义的元素调用偏函数f，并把结果收集起来生成一个集合。</td>
+</tr>
+<tr>
+<td>转换（Conversions）：</td>
+<td></td>
+</tr>
+<tr>
+<td>xs.toArray</td>
+<td>把容器转换为一个数组</td>
+</tr>
+<tr>
+<td>xs.toList</td>
+<td>把容器转换为一个list</td>
+</tr>
+<tr>
+<td>xs.toIterable</td>
+<td>把容器转换为一个迭代器。</td>
+</tr>
+<tr>
+<td>xs.toSeq</td>
+<td>把容器转换为一个序列</td>
+</tr>
+<tr>
+<td>xs.toIndexedSeq</td>
+<td>把容器转换为一个索引序列</td>
+</tr>
+<tr>
+<td>xs.toStream</td>
+<td>把容器转换为一个延迟计算的流。</td>
+</tr>
+<tr>
+<td>xs.toSet</td>
+<td>把容器转换为一个集合（Set）。</td>
+</tr>
+<tr>
+<td>xs.toMap</td>
+<td>把由键/值对组成的容器转换为一个映射表（map）。如果该容器并不是以键/值对作为元素的，那么调用这个操作将会导致一个静态类型的错误。</td>
+</tr>
+<tr>
+<td>拷贝（Copying）：</td>
+<td></td>
+</tr>
+<tr>
+<td>xs copyToBuffer buf</td>
+<td>把容器的所有元素拷贝到buf缓冲区。</td>
+</tr>
+<tr>
+<td>xs copyToArray(arr, s, n)</td>
+<td>拷贝最多n个元素到数组arr的坐标s处。参数s，n是可选项。</td>
+</tr>
+<tr>
+<td>大小判断（Size info）：</td>
+<td></td>
+</tr>
+<tr>
+<td>xs.isEmpty</td>
+<td>测试容器是否为空。</td>
+</tr>
+<tr>
+<td>xs.nonEmpty</td>
+<td>测试容器是否包含元素。</td>
+</tr>
+<tr>
+<td>xs.size</td>
+<td>计算容器内元素的个数。</td>
+</tr>
+<tr>
+<td>xs.hasDefiniteSize</td>
+<td>如果xs的大小是有限的，则为true。</td>
+</tr>
+<tr>
+<td>元素检索（Element Retrieval）：</td>
+<td></td>
+</tr>
+<tr>
+<td>xs.head</td>
+<td>返回容器内第一个元素（或其他元素，若当前的容器无序）。</td>
+</tr>
+<tr>
+<td>xs.headOption</td>
+<td>xs选项值中的第一个元素，若xs为空则为None。</td>
+</tr>
+<tr>
+<td>xs.last</td>
+<td>返回容器的最后一个元素（或某个元素，如果当前的容器无序的话）。</td>
+</tr>
+<tr>
+<td>xs.lastOption</td>
+<td>xs选项值中的最后一个元素，如果xs为空则为None。</td>
+</tr>
+<tr>
+<td>xs find p</td>
+<td>查找xs中满足p条件的元素，若存在则返回第一个元素；若不存在，则为空。</td>
+</tr>
+<tr>
+<td>子容器（Subcollection）：</td>
+<td></td>
+</tr>
+<tr>
+<td>xs.tail</td>
+<td>返回由除了xs.head外的其余部分。</td>
+</tr>
+<tr>
+<td>xs.init</td>
+<td>返回除xs.last外的其余部分。</td>
+</tr>
+<tr>
+<td>xs slice (from, to)</td>
+<td>返回由xs的一个片段索引中的元素组成的容器（从from到to，但不包括to）。</td>
+</tr>
+<tr>
+<td>xs take n</td>
+<td>由xs的第一个到第n个元素（或当xs无序时任意的n个元素）组成的容器。</td>
+</tr>
+<tr>
+<td>xs drop n</td>
+<td>由除了xs take n以外的元素组成的容器。</td>
+</tr>
+<tr>
+<td>xs takeWhile p</td>
+<td>容器xs中最长能够满足断言p的前缀。</td>
+</tr>
+<tr>
+<td>xs dropWhile p</td>
+<td>容器xs中除了xs takeWhile p以外的全部元素。</td>
+</tr>
+<tr>
+<td>xs filter p</td>
+<td>由xs中满足条件p的元素组成的容器。</td>
+</tr>
+<tr>
+<td>xs withFilter p</td>
+<td>这个容器是一个不太严格的过滤器。子容器调用map，flatMap，foreach和withFilter只适用于xs中那些的满足条件p的元素。</td>
+</tr>
+<tr>
+<td>xs filterNot p</td>
+<td>由xs中不满足条件p的元素组成的容器。</td>
+</tr>
+<tr>
+<td>拆分（Subdivision）：</td>
+<td></td>
+</tr>
+<tr>
+<td>xs splitAt n</td>
+<td>把xs从指定位置的拆分成两个容器（xs take n和xs drop n）。</td>
+</tr>
+<tr>
+<td>xs span p</td>
+<td>根据一个断言p将xs拆分为两个容器（xs takeWhile p, xs.dropWhile p）。</td>
+</tr>
+<tr>
+<td>xs partition p</td>
+<td>把xs分割为两个容器，符合断言p的元素赋给一个容器，其余的赋给另一个(xs filter p, xs.filterNot p)。</td>
+</tr>
+<tr>
+<td>xs groupBy f</td>
+<td>根据判别函数f把xs拆分一个到容器（collection）的map中。</td>
+</tr>
+<tr>
+<td>条件元素（Element Conditions）：</td>
+<td></td>
+</tr>
+<tr>
+<td>xs forall p</td>
+<td>返回一个布尔值表示用于表示断言p是否适用xs中的所有元素。</td>
+</tr>
+<tr>
+<td>xs exists p</td>
+<td>返回一个布尔值判断xs中是否有部分元素满足断言p。</td>
+</tr>
+<tr>
+<td>xs count p</td>
+<td>返回xs中符合断言p条件的元素个数。</td>
+</tr>
+<tr>
+<td>折叠（Fold）：</td>
+<td></td>
+</tr>
+<tr>
+<td>(z /: xs)(op)</td>
+<td>在xs中，对由z开始从左到右的连续元素应用二进制运算op。</td>
+</tr>
+<tr>
+<td>(xs :\ z)(op)</td>
+<td>在xs中，对由z开始从右到左的连续元素应用二进制运算op</td>
+</tr>
+<tr>
+<td>xs.foldLeft(z)(op)</td>
+<td>与(z /: xs)(op)相同。</td>
+</tr>
+<tr>
+<td>xs.foldRight(z)(op)</td>
+<td>与 (xs :\ z)(op)相同。</td>
+</tr>
+<tr>
+<td>xs reduceLeft op</td>
+<td>非空容器xs中的连续元素从左至右调用二进制运算op。</td>
+</tr>
+<tr>
+<td>xs reduceRight op</td>
+<td>非空容器xs中的连续元素从右至左调用二进制运算op。</td>
+</tr>
+<tr>
+<td>特殊折叠（Specific Fold）：</td>
+<td></td>
+</tr>
+<tr>
+<td>xs.sum</td>
+<td>返回容器xs中数字元素的和。</td>
+</tr>
+<tr>
+<td>xs.product</td>
+<td>xs返回容器xs中数字元素的积。</td>
+</tr>
+<tr>
+<td>xs.min</td>
+<td>容器xs中有序元素值中的最小值。</td>
+</tr>
+<tr>
+<td>xs.max</td>
+<td>容器xs中有序元素值中的最大值。</td>
+</tr>
+<tr>
+<td>字符串（String）：</td>
+<td></td>
+</tr>
+<tr>
+<td>xs addString (b, start, sep, end)</td>
+<td>把一个字符串加到StringBuilder对象b中，该字符串显示为将xs中所有元素用分隔符sep连接起来并封装在start和end之间。其中start，end和sep都是可选的。</td>
+</tr>
+<tr>
+<td>xs mkString (start, sep, end)</td>
+<td>把容器xs转换为一个字符串，该字符串显示为将xs中所有元素用分隔符sep连接起来并封装在start和end之间。其中start，end和sep都是可选的。</td>
+</tr>
+<tr>
+<td>xs.stringPrefix</td>
+<td>返回一个字符串，该字符串是以容器名开头的xs.toString。</td>
+</tr>
+<tr>
+<td>视图（View）：</td>
+<td></td>
+</tr>
+<tr>
+<td>xs.view</td>
+<td>通过容器xs生成一个视图。</td>
+</tr>
+<tr>
+<td>xs view (from, to)</td>
+<td>生成一个表示在指定索引范围内的xs元素的视图。</td>
+</tr>
+</tbody>
+</table>
+<h2 id="Trait-Iterable操作"><a href="#Trait-Iterable操作" class="headerlink" title="Trait Iterable操作"></a>Trait Iterable操作</h2><table>
+<thead>
+<tr>
+<th>WHAT IT IS</th>
+<th>WHAT IT DOES</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>抽象方法：</td>
+<td></td>
+</tr>
+<tr>
+<td>xs.iterator    xs</td>
+<td>迭代器生成的每一个元素，以相同的顺序就像foreach一样遍历元素。</td>
+</tr>
+<tr>
+<td>其他迭代器：</td>
+<td></td>
+</tr>
+<tr>
+<td>xs grouped size</td>
+<td>一个迭代器生成一个固定大小的容器（collection）块。</td>
+<td></td>
+</tr>
+<tr>
+<td>xs sliding size</td>
+<td>一个迭代器生成一个固定大小的滑动窗口作为容器（collection）的元素。</td>
+</tr>
+<tr>
+<td>子容器（Subcollection）：</td>
+<td></td>
+</tr>
+<tr>
+<td>xs takeRight n</td>
+<td>一个容器（collection）由xs的最后n个元素组成（或，若定义的元素是无序，则由任意的n个元素组成）。</td>
+</tr>
+<tr>
+<td>xs dropRight n</td>
+<td>一个容器（collection）由除了xs 被取走的（执行过takeRight （）方法）n个元素外的其余元素组成。</td>
+</tr>
+<tr>
+<td>拉链方法（Zippers）：</td>
+<td></td>
+</tr>
+<tr>
+<td>xs zip ys</td>
+<td>把一对容器 xs和ys的包含的元素合成到一个iterabale。</td>
+</tr>
+<tr>
+<td>xs zipAll (ys, x, y)</td>
+<td>一对容器 xs 和ys的相应的元素合并到一个iterable ，实现方式是通过附加的元素x或y，把短的序列被延展到相对更长的一个上。</td>
+</tr>
+<tr>
+<td>xs.zip WithIndex</td>
+<td>把一对容器xs和它的序列，所包含的元素组成一个iterable 。</td>
+</tr>
+<tr>
+<td>比对：</td>
+<td></td>
+</tr>
+<tr>
+<td>xs sameElements ys</td>
+<td>测试 xs 和 ys 是否以相同的顺序包含相同的元素。</td>
+</tr>
+</tbody>
+</table>
+<p><br></p>
+<blockquote>
+<p>最后更新于2018.7.26</p>
+</blockquote>
+
+      
+    </div>
+
+    
+
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/๑Scala/" rel="tag"># ๑Scala</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2018/07/08/2018-07-08-Jekyll-usage/" rel="next" title="Ubuntu下使用jekyll预览博客">
+                <i class="fa fa-chevron-left"></i> Ubuntu下使用jekyll预览博客
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2018/07/12/2018-07-12-Scala-learning-01/" rel="prev" title="《Scala编程》阅读记录——入门部分">
+                《Scala编程》阅读记录——入门部分 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+  </div>
+
+
+          </div>
+          
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            Table of Contents
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            Overview
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image"
+                src="/images/avatar.gif"
+                alt="Fleschier" />
+            
+              <p class="site-author-name" itemprop="name">Fleschier</p>
+              <p class="site-description motion-element" itemprop="description">我有一碗酒，可以慰风尘...</p>
+          </div>
+
+          
+            <nav class="site-state motion-element">
+              
+                <div class="site-state-item site-state-posts">
+                
+                  <a href="/archives/">
+                
+                    <span class="site-state-item-count">40</span>
+                    <span class="site-state-item-name">posts</span>
+                  </a>
+                </div>
+              
+
+              
+                
+                
+                <div class="site-state-item site-state-categories">
+                  <a href="/categories/index.html">
+                    
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">8</span>
+                    <span class="site-state-item-name">categories</span>
+                  </a>
+                </div>
+              
+
+              
+                
+                
+                <div class="site-state-item site-state-tags">
+                  <a href="/tags/index.html">
+                    
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">25</span>
+                    <span class="site-state-item-name">tags</span>
+                  </a>
+                </div>
+              
+            </nav>
+          
+
+          
+
+          
+
+          
+          
+
+          
+          
+
+          
+            
+          
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#List的一些方法和用途"><span class="nav-number">1.</span> <span class="nav-text">List的一些方法和用途</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#常用的集操作"><span class="nav-number">2.</span> <span class="nav-text">常用的集操作</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#常用的映射操作"><span class="nav-number">3.</span> <span class="nav-text">常用的映射操作</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#序列"><span class="nav-number">4.</span> <span class="nav-text">序列</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Seq类的操作"><span class="nav-number">5.</span> <span class="nav-text">Seq类的操作</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Buffer类的操作"><span class="nav-number">6.</span> <span class="nav-text">Buffer类的操作</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Traversable对象的操作"><span class="nav-number">7.</span> <span class="nav-text">Traversable对象的操作</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Trait-Iterable操作"><span class="nav-number">8.</span> <span class="nav-text">Trait Iterable操作</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2018</span>
+  <span class="with-love" id="animate">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Fleschier</span>
+
+  
+
+  
+</div>
+
+
+
+
+  <div class="powered-by">Powered by <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a> v3.7.1</div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">Theme – <a class="theme-link" target="_blank" href="https://theme-next.org">NexT.Mist</a> v6.4.1</div>
+
+
+
+
+        
+
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+	
+    
+
+    
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=6.4.1"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=6.4.1"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=6.4.1"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=6.4.1"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=6.4.1"></script>
+
+
+
+  
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>

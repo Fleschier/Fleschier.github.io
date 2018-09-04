@@ -1,0 +1,931 @@
+<!DOCTYPE html>
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+<html class="theme-next mist use-motion" lang="">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2"/>
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=6.4.1" rel="stylesheet" type="text/css" />
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=6.4.1">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=6.4.1">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=6.4.1">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=6.4.1" color="#222">
+
+
+
+
+
+
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Mist',
+    version: '6.4.1',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: false,
+    fastclick: false,
+    lazyload: false,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+  
+
+
+
+
+  <meta name="description" content="不适合人类阅读的学习笔记  前言 马上就六一了，赶在月底结束之前再记录一些东西吧～  以下HDFS的操作是基于Ubuntu18的   HDFS简介  Hadoop分布式文件系统(HDFS)官方中文文档  Namenode 和 Datanode HDFS采用master/slave架构。一个HDFS集群是由一个Namenode和一定数目的Datanodes组成。  HDFS采用Java语言开发，因">
+<meta name="keywords" content="๑Spark,๑BigData,๑Hadoop,๑HDFS">
+<meta property="og:type" content="article">
+<meta property="og:title" content="HDFS相关笔记">
+<meta property="og:url" content="http://yoursite.com/2018/05/30/2018-05-31-HDFS/index.html">
+<meta property="og:site_name" content="Fleschier 渐寒^">
+<meta property="og:description" content="不适合人类阅读的学习笔记  前言 马上就六一了，赶在月底结束之前再记录一些东西吧～  以下HDFS的操作是基于Ubuntu18的   HDFS简介  Hadoop分布式文件系统(HDFS)官方中文文档  Namenode 和 Datanode HDFS采用master/slave架构。一个HDFS集群是由一个Namenode和一定数目的Datanodes组成。  HDFS采用Java语言开发，因">
+<meta property="og:locale" content="default">
+<meta property="og:updated_time" content="2018-09-03T13:15:40.361Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="HDFS相关笔记">
+<meta name="twitter:description" content="不适合人类阅读的学习笔记  前言 马上就六一了，赶在月底结束之前再记录一些东西吧～  以下HDFS的操作是基于Ubuntu18的   HDFS简介  Hadoop分布式文件系统(HDFS)官方中文文档  Namenode 和 Datanode HDFS采用master/slave架构。一个HDFS集群是由一个Namenode和一定数目的Datanodes组成。  HDFS采用Java语言开发，因">
+
+
+
+
+
+
+  <link rel="canonical" href="http://yoursite.com/2018/05/30/2018-05-31-HDFS/"/>
+
+
+
+<script type="text/javascript" id="page.configurations">
+  CONFIG.page = {
+    sidebar: "",
+  };
+</script>
+
+  <title>HDFS相关笔记 | Fleschier 渐寒^</title>
+  
+
+
+
+
+
+
+
+
+
+  <noscript>
+  <style type="text/css">
+    .use-motion .motion-element,
+    .use-motion .brand,
+    .use-motion .menu-item,
+    .sidebar-inner,
+    .use-motion .post-block,
+    .use-motion .pagination,
+    .use-motion .comments,
+    .use-motion .post-header,
+    .use-motion .post-body,
+    .use-motion .collection-title { opacity: initial; }
+
+    .use-motion .logo,
+    .use-motion .site-title,
+    .use-motion .site-subtitle {
+      opacity: initial;
+      top: initial;
+    }
+
+    .use-motion {
+      .logo-line-before i { left: initial; }
+      .logo-line-after i { right: initial; }
+    }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="default">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">Fleschier 渐寒^</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+    
+      
+        <p class="site-subtitle">Welcome~</p>
+      
+    
+  </div>
+
+  <div class="site-nav-toggle">
+    <button aria-label="Toggle navigation bar">
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+  
+    <ul id="menu" class="menu">
+      
+        
+        
+        
+          
+          <li class="menu-item menu-item-home">
+    <a href="/" rel="section">
+      <i class="menu-item-icon fa fa-fw fa-home"></i> <br />Home</a>
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-about">
+    <a href="/about/" rel="section">
+      <i class="menu-item-icon fa fa-fw fa-user"></i> <br />About</a>
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-tags">
+    <a href="/tags/" rel="section">
+      <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />Tags</a>
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-categories">
+    <a href="/categories/" rel="section">
+      <i class="menu-item-icon fa fa-fw fa-th"></i> <br />Categories</a>
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-archives">
+    <a href="/archives/" rel="section">
+      <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />Archives</a>
+  </li>
+
+      
+      
+    </ul>
+  
+
+  
+    
+
+  
+
+  
+</nav>
+
+
+
+  
+
+
+
+</div>
+    </header>
+
+    
+
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/05/30/2018-05-31-HDFS/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Fleschier">
+      <meta itemprop="description" content="我有一碗酒，可以慰风尘...">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Fleschier 渐寒^">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">HDFS相关笔记
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+
+            
+            
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+
+              
+                
+              
+
+              <time title="Created: 2018-05-30 09:46:00" itemprop="dateCreated datePublished" datetime="2018-05-30T09:46:00+08:00">2018-05-30</time>
+            
+
+            
+              
+
+              
+                
+                <span class="post-meta-divider">|</span>
+                
+
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">Edited on</span>
+                
+                <time title="Modified: 2018-09-03 21:15:40" itemprop="dateModified" datetime="2018-09-03T21:15:40+08:00">2018-09-03</time>
+              
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">In</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/Computer-System/" itemprop="url" rel="index"><span itemprop="name">Computer System</span></a></span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <blockquote>
+<p>不适合人类阅读的学习笔记</p>
+</blockquote>
+<h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><ul>
+<li><p>马上就六一了，赶在月底结束之前再记录一些东西吧～</p>
+</li>
+<li><p>以下HDFS的操作是基于Ubuntu18的</p>
+</li>
+</ul>
+<h2 id="HDFS简介"><a href="#HDFS简介" class="headerlink" title="HDFS简介"></a>HDFS简介</h2><hr>
+<ul>
+<li><a href="https://hadoop.apache.org/docs/r1.0.4/cn/hdfs_design.html" target="_blank" rel="noopener">Hadoop分布式文件系统(HDFS)官方中文文档</a></li>
+</ul>
+<h3 id="Namenode-和-Datanode"><a href="#Namenode-和-Datanode" class="headerlink" title="Namenode 和 Datanode"></a>Namenode 和 Datanode</h3><ul>
+<li><p>HDFS采用master/slave架构。一个HDFS集群是由一个Namenode和一定数目的Datanodes组成。</p>
+</li>
+<li><p>HDFS采用Java语言开发，因此任何支持Java的机器都可以部署Namenode或Datanode。</p>
+</li>
+<li><p>Namenode是一个中心服务器，负责管理文件系统的名字空间(namespace)以及客户端对文件的访问。集群中的Datanode一般是一个节点一个，负责管理它所在节点上的存储。HDFS暴露了文件系统的名字空间，用户能够以文件的形式在上面存储数据。</p>
+</li>
+<li><p>从内部看，一个文件其实被分成一个或多个数据块，这些块存储在一组Datanode上。Namenode执行文件系统的名字空间操作，比如打开、关闭、重命名文件或目录。它也负责确定数据块到具体Datanode节点的映射。Datanode负责处理文件系统客户端的读写请求。在Namenode的统一调度下进行数据块的创建、删除和复制。</p>
+</li>
+<li><p>Namenode负责维护文件系统的名字空间，任何对文件系统名字空间或属性的修改都将被Namenode记录下来。应用程序可以设置HDFS保存的文件的副本数目。文件副本的数目称为文件的副本系数，这个信息也是由Namenode保存的。</p>
+</li>
+<li><p>Namenode全权管理数据块的复制，它周期性地从集群中的每个Datanode接收心跳信号和块状态报告(Blockreport)。接收到心跳信号意味着该Datanode节点工作正常。块状态报告包含了一个该Datanode上所有数据块的列表。</p>
+</li>
+<li><p>HDFS中的文件都是一次性写入的，并且 <strong>严格要求在任何时候只能有一个写入者</strong>。</p>
+</li>
+</ul>
+<h2 id="HDFS文件系统"><a href="#HDFS文件系统" class="headerlink" title="HDFS文件系统"></a>HDFS文件系统</h2><hr>
+<h3 id="DFSShell"><a href="#DFSShell" class="headerlink" title="DFSShell"></a>DFSShell</h3><ul>
+<li><p>HDFS以文件和目录的形式组织用户数据。它提供了一个命令行的接口(DFSShell)让用户与HDFS中的数据进行交互。命令的语法和用户熟悉的其他shell(例如 bash, csh)工具类似。下面是一些动作/命令的示例：</p>
+</li>
+<li><p>创建一个名为 <code>/foodir</code> 的目录:    <code>bin/hadoop dfs -mkdir /foodir</code></p>
+</li>
+<li><p>创建一个名为 <code>/foodir</code> 的目录:    <code>bin/hadoop dfs -mkdir /foodir</code></p>
+</li>
+<li><p>查看名为 <code>/foodir/myfile.txt</code> 的文件内容:    <code>bin/hadoop dfs -cat /foodir/myfile.txt</code></p>
+</li>
+</ul>
+<h4 id="常用"><a href="#常用" class="headerlink" title="常用"></a>常用</h4><ul>
+<li><p><strong>注意，分布式文件系统中没有切换到某个目录下的概念，因为其文件全是分散在各个节点上的</strong></p>
+</li>
+<li><p>分布式文件系统的文件路径完整格式为 <code>hdfs://namenode|master:编号/root/...</code></p>
+</li>
+<li><p>例如：<code>hdfs://master:8020/dataset/evaluation/bots_10m_10.csv</code></p>
+</li>
+<li><p><code>hdfs dfs -ls  /...</code>显示分布式文件系统中某个目录（实际并不存在，只是逻辑上的）下的文件</p>
+</li>
+<li><p><code>hdfs dfs -rm -r file_name|directory_name</code> 删除某个文件或者目录</p>
+</li>
+</ul>
+<h3 id="通讯协议"><a href="#通讯协议" class="headerlink" title="通讯协议"></a>通讯协议</h3><ul>
+<li><p>所有的HDFS通讯协议都是建立在TCP/IP协议之上。客户端通过一个可配置的TCP端口连接到Namenode，通过ClientProtocol协议与Namenode交互。而Datanode使用DatanodeProtocol协议与Namenode交互。</p>
+</li>
+<li><p>一个远程过程调用(RPC)模型被抽象出来封装ClientProtocol和Datanodeprotocol协议。在设计上，Namenode不会主动发起RPC，而是响应来自客户端或 Datanode 的RPC请求。</p>
+</li>
+</ul>
+<h3 id="数据块"><a href="#数据块" class="headerlink" title="数据块"></a>数据块</h3><ul>
+<li>HDFS被设计成支持大文件，适用HDFS的是那些需要处理大规模的数据集的应用。这些应用都是只写入数据一次，但却读取一次或多次，并且读取速度应能满足流式读取的需要。HDFS支持文件的“一次写入多次读取”语义。一个典型的数据块大小是64MB。因而，HDFS中的文件总是按照64M被切分成不同的块，每个块尽可能地存储于不同的Datanode中。</li>
+</ul>
+<p><br></p>
+<blockquote>
+<p>最后更新于2018.5.31</p>
+</blockquote>
+
+      
+    </div>
+
+    
+
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/๑Spark/" rel="tag"># ๑Spark</a>
+          
+            <a href="/tags/๑BigData/" rel="tag"># ๑BigData</a>
+          
+            <a href="/tags/๑Hadoop/" rel="tag"># ๑Hadoop</a>
+          
+            <a href="/tags/๑HDFS/" rel="tag"># ๑HDFS</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2018/05/30/2018-05-30-Hadoop-usage/" rel="next" title="Hadoop单机伪分布式环境搭建">
+                <i class="fa fa-chevron-left"></i> Hadoop单机伪分布式环境搭建
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2018/06/17/2018-06-17-FrontEnd-HTML/" rel="prev" title="前端学习——HTML">
+                前端学习——HTML <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+  </div>
+
+
+          </div>
+          
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            Table of Contents
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            Overview
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image"
+                src="/images/avatar.gif"
+                alt="Fleschier" />
+            
+              <p class="site-author-name" itemprop="name">Fleschier</p>
+              <p class="site-description motion-element" itemprop="description">我有一碗酒，可以慰风尘...</p>
+          </div>
+
+          
+            <nav class="site-state motion-element">
+              
+                <div class="site-state-item site-state-posts">
+                
+                  <a href="/archives/">
+                
+                    <span class="site-state-item-count">40</span>
+                    <span class="site-state-item-name">posts</span>
+                  </a>
+                </div>
+              
+
+              
+                
+                
+                <div class="site-state-item site-state-categories">
+                  <a href="/categories/index.html">
+                    
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">8</span>
+                    <span class="site-state-item-name">categories</span>
+                  </a>
+                </div>
+              
+
+              
+                
+                
+                <div class="site-state-item site-state-tags">
+                  <a href="/tags/index.html">
+                    
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">25</span>
+                    <span class="site-state-item-name">tags</span>
+                  </a>
+                </div>
+              
+            </nav>
+          
+
+          
+
+          
+
+          
+          
+
+          
+          
+
+          
+            
+          
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#前言"><span class="nav-number">1.</span> <span class="nav-text">前言</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#HDFS简介"><span class="nav-number">2.</span> <span class="nav-text">HDFS简介</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Namenode-和-Datanode"><span class="nav-number">2.1.</span> <span class="nav-text">Namenode 和 Datanode</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#HDFS文件系统"><span class="nav-number">3.</span> <span class="nav-text">HDFS文件系统</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#DFSShell"><span class="nav-number">3.1.</span> <span class="nav-text">DFSShell</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#常用"><span class="nav-number">3.1.1.</span> <span class="nav-text">常用</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#通讯协议"><span class="nav-number">3.2.</span> <span class="nav-text">通讯协议</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#数据块"><span class="nav-number">3.3.</span> <span class="nav-text">数据块</span></a></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2018</span>
+  <span class="with-love" id="animate">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Fleschier</span>
+
+  
+
+  
+</div>
+
+
+
+
+  <div class="powered-by">Powered by <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a> v3.7.1</div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">Theme – <a class="theme-link" target="_blank" href="https://theme-next.org">NexT.Mist</a> v6.4.1</div>
+
+
+
+
+        
+
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+	
+    
+
+    
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=6.4.1"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=6.4.1"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=6.4.1"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=6.4.1"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=6.4.1"></script>
+
+
+
+  
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>

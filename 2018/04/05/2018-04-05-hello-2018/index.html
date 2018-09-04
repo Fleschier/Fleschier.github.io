@@ -1,0 +1,909 @@
+<!DOCTYPE html>
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+<html class="theme-next mist use-motion" lang="">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2"/>
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=6.4.1" rel="stylesheet" type="text/css" />
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=6.4.1">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=6.4.1">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=6.4.1">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=6.4.1" color="#222">
+
+
+
+
+
+
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Mist',
+    version: '6.4.1',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: false,
+    fastclick: false,
+    lazyload: false,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+  
+
+
+
+
+  <meta name="description" content="“It’s just a begining.”  前言 渐寒 的 博客终于开通了。  几经辗转，在github上发现了自定义的博客这一功能，终于可以自己写一些东西了。然而对于我这样一个对前端没啥了解的人来说，只能借用别人造好的轮子来自定义博客的风格。这一点等以后啥时候有兴趣学前端了再自己DIY吧。    正文 第一次自己写博客还是很有新鲜感的。  搭建自己在github上的博客需要创建一个名为y">
+<meta name="keywords" content="๑Blog">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Welcome to Fleschier Blog">
+<meta property="og:url" content="http://yoursite.com/2018/04/05/2018-04-05-hello-2018/index.html">
+<meta property="og:site_name" content="Fleschier 渐寒^">
+<meta property="og:description" content="“It’s just a begining.”  前言 渐寒 的 博客终于开通了。  几经辗转，在github上发现了自定义的博客这一功能，终于可以自己写一些东西了。然而对于我这样一个对前端没啥了解的人来说，只能借用别人造好的轮子来自定义博客的风格。这一点等以后啥时候有兴趣学前端了再自己DIY吧。    正文 第一次自己写博客还是很有新鲜感的。  搭建自己在github上的博客需要创建一个名为y">
+<meta property="og:locale" content="default">
+<meta property="og:updated_time" content="2018-09-03T08:50:19.774Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Welcome to Fleschier Blog">
+<meta name="twitter:description" content="“It’s just a begining.”  前言 渐寒 的 博客终于开通了。  几经辗转，在github上发现了自定义的博客这一功能，终于可以自己写一些东西了。然而对于我这样一个对前端没啥了解的人来说，只能借用别人造好的轮子来自定义博客的风格。这一点等以后啥时候有兴趣学前端了再自己DIY吧。    正文 第一次自己写博客还是很有新鲜感的。  搭建自己在github上的博客需要创建一个名为y">
+
+
+
+
+
+
+  <link rel="canonical" href="http://yoursite.com/2018/04/05/2018-04-05-hello-2018/"/>
+
+
+
+<script type="text/javascript" id="page.configurations">
+  CONFIG.page = {
+    sidebar: "",
+  };
+</script>
+
+  <title>Welcome to Fleschier Blog | Fleschier 渐寒^</title>
+  
+
+
+
+
+
+
+
+
+
+  <noscript>
+  <style type="text/css">
+    .use-motion .motion-element,
+    .use-motion .brand,
+    .use-motion .menu-item,
+    .sidebar-inner,
+    .use-motion .post-block,
+    .use-motion .pagination,
+    .use-motion .comments,
+    .use-motion .post-header,
+    .use-motion .post-body,
+    .use-motion .collection-title { opacity: initial; }
+
+    .use-motion .logo,
+    .use-motion .site-title,
+    .use-motion .site-subtitle {
+      opacity: initial;
+      top: initial;
+    }
+
+    .use-motion {
+      .logo-line-before i { left: initial; }
+      .logo-line-after i { right: initial; }
+    }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="default">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">Fleschier 渐寒^</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+    
+      
+        <p class="site-subtitle">Welcome~</p>
+      
+    
+  </div>
+
+  <div class="site-nav-toggle">
+    <button aria-label="Toggle navigation bar">
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+  
+    <ul id="menu" class="menu">
+      
+        
+        
+        
+          
+          <li class="menu-item menu-item-home">
+    <a href="/" rel="section">
+      <i class="menu-item-icon fa fa-fw fa-home"></i> <br />Home</a>
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-about">
+    <a href="/about/" rel="section">
+      <i class="menu-item-icon fa fa-fw fa-user"></i> <br />About</a>
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-tags">
+    <a href="/tags/" rel="section">
+      <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />Tags</a>
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-categories">
+    <a href="/categories/" rel="section">
+      <i class="menu-item-icon fa fa-fw fa-th"></i> <br />Categories</a>
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-archives">
+    <a href="/archives/" rel="section">
+      <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />Archives</a>
+  </li>
+
+      
+      
+    </ul>
+  
+
+  
+    
+
+  
+
+  
+</nav>
+
+
+
+  
+
+
+
+</div>
+    </header>
+
+    
+
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/04/05/2018-04-05-hello-2018/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Fleschier">
+      <meta itemprop="description" content="我有一碗酒，可以慰风尘...">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Fleschier 渐寒^">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">Welcome to Fleschier Blog
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+
+            
+            
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+
+              
+                
+              
+
+              <time title="Created: 2018-04-05 22:47:00" itemprop="dateCreated datePublished" datetime="2018-04-05T22:47:00+08:00">2018-04-05</time>
+            
+
+            
+              
+
+              
+                
+                <span class="post-meta-divider">|</span>
+                
+
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">Edited on</span>
+                
+                <time title="Modified: 2018-09-03 16:50:19" itemprop="dateModified" datetime="2018-09-03T16:50:19+08:00">2018-09-03</time>
+              
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">In</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/Personal-Blog/" itemprop="url" rel="index"><span itemprop="name">Personal Blog</span></a></span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <blockquote>
+<p>“It’s just a begining.”</p>
+</blockquote>
+<h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><ul>
+<li><p>渐寒 的 博客终于开通了。</p>
+</li>
+<li><p>几经辗转，在github上发现了自定义的博客这一功能，终于可以自己写一些东西了。然而对于我这样一个对前端没啥了解的人来说，只能借用别人造好的轮子来自定义博客的风格。这一点等以后啥时候有兴趣学前端了再自己DIY吧。</p>
+</li>
+</ul>
+<hr>
+<h2 id="正文"><a href="#正文" class="headerlink" title="正文"></a>正文</h2><ul>
+<li><p>第一次自己写博客还是很有新鲜感的。</p>
+</li>
+<li><p>搭建自己在github上的博客需要创建一个名为<em>yourusername.github.io</em>的repository，然后你需要选择一款Jekyll主题来使你的博客更加个性化。<em>（当然像我一样的小白就先借用别人写好的框架来吧）</em>。在创建好repository之后最好先clone到本地，这样便于后面的更改直接在本地进行然后通过git来提交就好了。在github上选择一个别人写好的，你比较中意的主题，然后clone下来，将其中你需要的文件加到你自己的库当中。<em>（其中可能会包含别人写的文章啊，一些图片什么的，这些都可以删掉或者替换掉）</em>。这里附上一个相对比较详细的教程——<a href="https://blog.csdn.net/walkerhau/article/details/77394659?utm_source=debugrun&amp;utm_medium=referral" target="_blank" rel="noopener">如何快速搭建自己的github.io博客</a>。<br>当然这里不可能把所有的细节都写清楚，有很多有趣的东西会在你尝试的过程中不断涌现出来，大胆的去尝试吧。</p>
+</li>
+</ul>
+<ul>
+<li><p>博文都是需要通过markdown编辑器来编写的。当然这也很简单，推荐使用的软件是<a href="http://markdownpad.com/" target="_blank" rel="noopener">MarkdownPad2</a>。如果需要激活秘钥什么的直接百度吧（滑稽）。这里需要补充一下的是，MarkdownPad2 这款软件使用时会产生bug，官方的说法是从 Win 8 开始就有这个问题了(我用的是win10)，解决办法就是安装 <a href="http://markdownpad.com/download/awesomium_v1.6.6_sdk_win.exe" target="_blank" rel="noopener">Awesomium 1.6.6 SDK</a>。如果还是不行就再安装 <a href="http://www.microsoft.com/en-us/download/details.aspx?id=8109" target="_blank" rel="noopener">Microsoft’s DirectX End-User Runtimes (June 2010)</a>。下面是官方的原文：</p>
+<blockquote>
+</blockquote>
+<p>LivePreview is not working - it displays an error message stating This view has crashed!</p>
+<blockquote>
+<p>This issue has been specifically observed in Windows 8. You may see an error message as shown here, and no HTML will be rendered when you type in the Markdown Editor pane.</p>
+</blockquote>
+<p>To fix this issue, please try installing the Awesomium 1.6.6 SDK.</p>
+<blockquote>
+</blockquote>
+<p>If you continue to experience issues, please install Microsoft’s DirectX End-User Runtimes (June 2010).</p>
+</li>
+<li><p>对于提交的 XXX.markdown格式的文章，必须要放在<code>_posts</code>文件夹下，命名的格式必须为<code>YEAR-MONTH-DAY-title.markdown</code><br>并且title也必须用-来连接而<em>不要用下划线，不要用下划线，不要用下划线…</em></p>
+</li>
+<li><p>最后附上markdown的简单教程，很简单，一个小时之内上手完全没问题。<a href="https://www.jianshu.com/p/q81RER" target="_blank" rel="noopener">献给写作者的 Markdown 新手指南</a>。</p>
+</li>
+</ul>
+<h2 id="关于多个标签"><a href="#关于多个标签" class="headerlink" title="关于多个标签"></a>关于多个标签</h2><hr>
+<ul>
+<li>如果一篇博客归属于多个标签，则在tags一栏以 <strong>空格</strong> 分割各个标签。</li>
+</ul>
+<h2 id="使用jekyll本地预览网页"><a href="#使用jekyll本地预览网页" class="headerlink" title="使用jekyll本地预览网页"></a>使用jekyll本地预览网页</h2><hr>
+<ul>
+<li><p>参考<a href="https://fleschier.github.io/2018/07/Jekyll-usage/" target="_blank" rel="noopener">我的另一个博客——Ubuntu下使用jekyll本地预览博客效果</a></p>
+</li>
+<li><p><a href="https://github.com/uolcano/blog/issues/11" target="_blank" rel="noopener">更详细的一个博客</a></p>
+</li>
+</ul>
+<h2 id="关于表格对齐的问题"><a href="#关于表格对齐的问题" class="headerlink" title="关于表格对齐的问题"></a>关于表格对齐的问题</h2><hr>
+<ul>
+<li>在表格的第二行：<code>|---|---|...|</code>这样的格式里，如果某个单元格写成<code>|---|</code>，则表示居中。如果写成<code>|:---|</code>则表示左对齐。</li>
+</ul>
+<p><br></p>
+<blockquote>
+<p>最后更新于2018.7.12</p>
+</blockquote>
+
+      
+    </div>
+
+    
+
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/๑Blog/" rel="tag"># ๑Blog</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2018/04/06/2018-04-06-ubuntu-and-windows/" rel="prev" title="UEFI双系统的那些坑">
+                UEFI双系统的那些坑 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+  </div>
+
+
+          </div>
+          
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            Table of Contents
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            Overview
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image"
+                src="/images/avatar.gif"
+                alt="Fleschier" />
+            
+              <p class="site-author-name" itemprop="name">Fleschier</p>
+              <p class="site-description motion-element" itemprop="description">我有一碗酒，可以慰风尘...</p>
+          </div>
+
+          
+            <nav class="site-state motion-element">
+              
+                <div class="site-state-item site-state-posts">
+                
+                  <a href="/archives/">
+                
+                    <span class="site-state-item-count">40</span>
+                    <span class="site-state-item-name">posts</span>
+                  </a>
+                </div>
+              
+
+              
+                
+                
+                <div class="site-state-item site-state-categories">
+                  <a href="/categories/index.html">
+                    
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">8</span>
+                    <span class="site-state-item-name">categories</span>
+                  </a>
+                </div>
+              
+
+              
+                
+                
+                <div class="site-state-item site-state-tags">
+                  <a href="/tags/index.html">
+                    
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">25</span>
+                    <span class="site-state-item-name">tags</span>
+                  </a>
+                </div>
+              
+            </nav>
+          
+
+          
+
+          
+
+          
+          
+
+          
+          
+
+          
+            
+          
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#前言"><span class="nav-number">1.</span> <span class="nav-text">前言</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#正文"><span class="nav-number">2.</span> <span class="nav-text">正文</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#关于多个标签"><span class="nav-number">3.</span> <span class="nav-text">关于多个标签</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#使用jekyll本地预览网页"><span class="nav-number">4.</span> <span class="nav-text">使用jekyll本地预览网页</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#关于表格对齐的问题"><span class="nav-number">5.</span> <span class="nav-text">关于表格对齐的问题</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2018</span>
+  <span class="with-love" id="animate">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Fleschier</span>
+
+  
+
+  
+</div>
+
+
+
+
+  <div class="powered-by">Powered by <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a> v3.7.1</div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">Theme – <a class="theme-link" target="_blank" href="https://theme-next.org">NexT.Mist</a> v6.4.1</div>
+
+
+
+
+        
+
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+	
+    
+
+    
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=6.4.1"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=6.4.1"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=6.4.1"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=6.4.1"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=6.4.1"></script>
+
+
+
+  
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>

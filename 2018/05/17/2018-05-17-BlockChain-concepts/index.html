@@ -1,0 +1,941 @@
+<!DOCTYPE html>
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+<html class="theme-next mist use-motion" lang="">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2"/>
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=6.4.1" rel="stylesheet" type="text/css" />
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=6.4.1">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=6.4.1">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=6.4.1">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=6.4.1" color="#222">
+
+
+
+
+
+
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Mist',
+    version: '6.4.1',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: false,
+    fastclick: false,
+    lazyload: false,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+  
+
+
+
+
+  <meta name="description" content="不适合人类阅读的学习笔记  一些主要的平台  比特币  以太坊 (需要翻墙)  fabric  EOS   一些概念  智能合约：智能合约是1994年由密码学家尼克萨博（Nick Szabo）首次提出的理念，几乎与互联网同龄。智能合约是指能够自动执行合约条款的计算机程序，在比特币出现以前，因为不存在安全可靠的执行环境，智能合约一直不能够应用到现实中。区块链由于其去中心化、公开透明等特性，天生就可">
+<meta name="keywords" content="๑BlockChain">
+<meta property="og:type" content="article">
+<meta property="og:title" content="区块链一些相关概念的记录">
+<meta property="og:url" content="http://yoursite.com/2018/05/17/2018-05-17-BlockChain-concepts/index.html">
+<meta property="og:site_name" content="Fleschier 渐寒^">
+<meta property="og:description" content="不适合人类阅读的学习笔记  一些主要的平台  比特币  以太坊 (需要翻墙)  fabric  EOS   一些概念  智能合约：智能合约是1994年由密码学家尼克萨博（Nick Szabo）首次提出的理念，几乎与互联网同龄。智能合约是指能够自动执行合约条款的计算机程序，在比特币出现以前，因为不存在安全可靠的执行环境，智能合约一直不能够应用到现实中。区块链由于其去中心化、公开透明等特性，天生就可">
+<meta property="og:locale" content="default">
+<meta property="og:updated_time" content="2018-09-03T13:16:54.280Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="区块链一些相关概念的记录">
+<meta name="twitter:description" content="不适合人类阅读的学习笔记  一些主要的平台  比特币  以太坊 (需要翻墙)  fabric  EOS   一些概念  智能合约：智能合约是1994年由密码学家尼克萨博（Nick Szabo）首次提出的理念，几乎与互联网同龄。智能合约是指能够自动执行合约条款的计算机程序，在比特币出现以前，因为不存在安全可靠的执行环境，智能合约一直不能够应用到现实中。区块链由于其去中心化、公开透明等特性，天生就可">
+
+
+
+
+
+
+  <link rel="canonical" href="http://yoursite.com/2018/05/17/2018-05-17-BlockChain-concepts/"/>
+
+
+
+<script type="text/javascript" id="page.configurations">
+  CONFIG.page = {
+    sidebar: "",
+  };
+</script>
+
+  <title>区块链一些相关概念的记录 | Fleschier 渐寒^</title>
+  
+
+
+
+
+
+
+
+
+
+  <noscript>
+  <style type="text/css">
+    .use-motion .motion-element,
+    .use-motion .brand,
+    .use-motion .menu-item,
+    .sidebar-inner,
+    .use-motion .post-block,
+    .use-motion .pagination,
+    .use-motion .comments,
+    .use-motion .post-header,
+    .use-motion .post-body,
+    .use-motion .collection-title { opacity: initial; }
+
+    .use-motion .logo,
+    .use-motion .site-title,
+    .use-motion .site-subtitle {
+      opacity: initial;
+      top: initial;
+    }
+
+    .use-motion {
+      .logo-line-before i { left: initial; }
+      .logo-line-after i { right: initial; }
+    }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="default">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">Fleschier 渐寒^</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+    
+      
+        <p class="site-subtitle">Welcome~</p>
+      
+    
+  </div>
+
+  <div class="site-nav-toggle">
+    <button aria-label="Toggle navigation bar">
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+  
+    <ul id="menu" class="menu">
+      
+        
+        
+        
+          
+          <li class="menu-item menu-item-home">
+    <a href="/" rel="section">
+      <i class="menu-item-icon fa fa-fw fa-home"></i> <br />Home</a>
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-about">
+    <a href="/about/" rel="section">
+      <i class="menu-item-icon fa fa-fw fa-user"></i> <br />About</a>
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-tags">
+    <a href="/tags/" rel="section">
+      <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />Tags</a>
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-categories">
+    <a href="/categories/" rel="section">
+      <i class="menu-item-icon fa fa-fw fa-th"></i> <br />Categories</a>
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-archives">
+    <a href="/archives/" rel="section">
+      <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />Archives</a>
+  </li>
+
+      
+      
+    </ul>
+  
+
+  
+    
+
+  
+
+  
+</nav>
+
+
+
+  
+
+
+
+</div>
+    </header>
+
+    
+
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/05/17/2018-05-17-BlockChain-concepts/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Fleschier">
+      <meta itemprop="description" content="我有一碗酒，可以慰风尘...">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Fleschier 渐寒^">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">区块链一些相关概念的记录
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+
+            
+            
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+
+              
+                
+              
+
+              <time title="Created: 2018-05-17 10:47:00" itemprop="dateCreated datePublished" datetime="2018-05-17T10:47:00+08:00">2018-05-17</time>
+            
+
+            
+              
+
+              
+                
+                <span class="post-meta-divider">|</span>
+                
+
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">Edited on</span>
+                
+                <time title="Modified: 2018-09-03 21:16:54" itemprop="dateModified" datetime="2018-09-03T21:16:54+08:00">2018-09-03</time>
+              
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">In</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/Computer/" itemprop="url" rel="index"><span itemprop="name">Computer</span></a></span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <blockquote>
+<p>不适合人类阅读的学习笔记</p>
+</blockquote>
+<h2 id="一些主要的平台"><a href="#一些主要的平台" class="headerlink" title="一些主要的平台"></a>一些主要的平台</h2><hr>
+<ul>
+<li><p>比特币</p>
+</li>
+<li><p><a href="https://ethereum.org/" target="_blank" rel="noopener">以太坊</a> (<strong>需要翻墙</strong>)</p>
+</li>
+<li><p>fabric</p>
+</li>
+<li><p><a href="https://eos.io/" target="_blank" rel="noopener">EOS</a></p>
+</li>
+</ul>
+<h2 id="一些概念"><a href="#一些概念" class="headerlink" title="一些概念"></a>一些概念</h2><hr>
+<ul>
+<li><p>智能合约：智能合约是1994年由密码学家尼克萨博（Nick Szabo）首次提出的理念，几乎与互联网同龄。<strong>智能合约是指能够自动执行合约条款的计算机程序</strong>，在比特币出现以前，因为不存在安全可靠的执行环境，智能合约一直不能够应用到现实中。区块链由于其去中心化、公开透明等特性，天生就可以为智能合约提供可信的执行环境。所以，新型的区块链框架几乎都会内置智能合约的功能。</p>
+</li>
+<li><p>图灵完备：图灵完备性(Turing Compeleteness)是指针对一套数据操作规则而言的概念。数据操作规则可以是一门编程语言，也可以是计算机里具体实现了的指令集。当这套规则可以实现图灵机模型里的全部功能时，就称他具有图灵完备性。——<a href="https://www.zhihu.com/question/20115374" target="_blank" rel="noopener">参考</a></p>
+</li>
+</ul>
+<blockquote>
+<p>简单来说，对于任何一个可以由计算解决的问题都能解决的编程语言或者是虚拟机称为是图灵完备的</p>
+</blockquote>
+<h3 id="共识算法"><a href="#共识算法" class="headerlink" title="共识算法"></a>共识算法</h3><ul>
+<li><p>POW(proof-of-work)：</p>
+<blockquote>
+<p>工作量证明机制。工作量证明同时也是一种代币分发机制，它通过经济激励的方式来鼓励节点参与区块的构造过程，节点在构造区块的时候需要穷举一个随机数以使得区块符合规定的难度要求，一旦区块链出现分叉，诚实的节点将选择工作量较大的链条，而抛弃工作量较小的。由于假设所有节点都是逐利的，而选择工作量较小的链条就会使自己获得的激励无效，所以最终所有的节点都会是诚实的，从而使每个节点的区块链数据都保持一致。</p>
+</blockquote>
+</li>
+<li><p>BFT(Byzantine Fault Tolerance):</p>
+<blockquote>
+<p>拜占庭容错模型的共识机制。节点被分为普通节点和记账节点（Validating Peer），只有记账节点才会参与到区块的构造过程，这种角色的分离使得算法的设计者有机会将运行共识算法的节点数量限定在一个可控的规模内。</p>
+</blockquote>
+</li>
+<li><p>PBFT(Practical Byzantine Fault Tolerance)：</p>
+<blockquote>
+<p>实用拜占庭容错算法。PBFT是一种状态机副本复制算法，即服务作为状态机进行建模，状态机在分布式系统的不同节点进行副本复制。每个状态机的副本都保存了服务的状态，同时也实现了服务的操作。将所有的副本组成的集合使用大写字母R表示，使用0到<code>|R|-1</code>的整数表示每一个副本。为了描述方便，假设<code>|R|=3f+1</code>，这里f是有可能失效的副本的最大个数。尽管可以存在多于3f+1个副本，但是额外的副本除了降低性能之外不能提高可靠性。</p>
+</blockquote>
+</li>
+<li><p>POS(Proof of Stake)：</p>
+<blockquote>
+<p>股权证明。类似于财产储存在银行，这种模式会根据你持有数字货币的量和时间，分配给你相应的利息。 简单来说，就是一个根据你持有货币的量和时间，给你发利息的一个制度，在股权证明POS模式下，有一个名词叫币龄，每个币每天产生1币龄，比如你持有100个币，总共持有了30天，那么，此时你的币龄就为3000，这个时候，如果你发现了一个POS区块，你的币龄就会被清空为0。你每被清空365币龄，你将会从区块中获得0.05个币的利息(假定利息可理解为年利率5%)，那么在这个案例中，利息 = 3000 * 5% / 365 = 0.41个币，这下就很有意思了，持币有利息。</p>
+</blockquote>
+</li>
+<li><p>DPOS(Delegated Proof of Stake)：</p>
+<blockquote>
+<p>委任权益证明。股份授权证明机制（又称受托人机制），它的原理是让每一个持有比特股的人进行投票，由此产生101位代表 , 我们可以将其理解为101个超级节点或者矿池，而这101个超级节点彼此的权利是完全相等的。从某种角度来看，DPOS有点像是议会制度或人民代表大会制度。如果代表不能履行他们的职责（当轮到他们时，没能生成区块），他们会被除名，网络会选出新的超级节点来取代他们。DPOS的出现最主要还是因为矿机的产生，大量的算力在不了解也不关心比特币的人身上，类似演唱会的黄牛，大量囤票而丝毫不关心演唱会的内容。</p>
+</blockquote>
+</li>
+<li><p>石墨烯技术：</p>
+<blockquote>
+<p>石墨烯技术是新一代的区块链技术，基于DPOS共识算法。目前市场上流行的区块链阵营有三种，一种是第一代以比特币为主的生态体系，他们是基于POW共识，纯粹的去中心化，基于p2p的加密数字货币技术；第二种就是以以太坊构成的生态体系，主要以基于智能合约的ERC20的代币体系，他们是基于POW共识，目前以太坊正准备切换到POW+POS的多共识体系；第三种就是进化到目前最强劲的石墨烯技术生态体系，它是基于DPOS（股份授权证明共识），支持高并发，高性能等大规模工业级商业场景的基础设施，诞生了BTS（BitShare）开源商业系统，Steem去中心化社交网络平台以及EOS。特点：转账速度特别快，吞吐量tps极高，安全性很高，没有原生bug出现，功能强大，应用性极高。</p>
+</blockquote>
+</li>
+</ul>
+<h3 id="其他"><a href="#其他" class="headerlink" title="其他"></a>其他</h3><ul>
+<li><p>WebAssembly：</p>
+<blockquote>
+<p>WebAssembly(缩写Wasm)是一种基于堆栈的虚拟机的二进制指令格式。Wasm设计作为一个便携式的针对高级语言的编译器，例如C/C++/Rust，使各种客户端或服务端应用程序都能够在web中部署。</p>
+</blockquote>
+</li>
+<li><p>TPS(transaction per second)：</p>
+<blockquote>
+<p>服务器每秒处理的事务数。TPS包括一条消息入和一条消息出，加上一次用户数据库访问。（业务TPS = CAPS × 每个呼叫平均TPS）TPS是软件测试结果的测量单位。一个事务是指一个客户机向服务器发送请求然后服务器做出反应的过程。客户机在发送请求时开始计时，收到服务器响应后结束计时，以此来计算使用的时间和完成的事务个数。一般的，评价系统性能均以每秒钟完成的技术交易的数量来衡量。系统整体处理能力取决于处理能力最低模块的TPS值。</p>
+</blockquote>
+</li>
+<li><p>QPS(quary per second)：</p>
+<blockquote>
+<p>每秒查询率QPS是对一个特定的查询服务器在规定时间内所处理流量多少的衡量标准，在因特网上，作为域名系统服务器的机器的性能经常用每秒查询率来衡量。<br>对应fetches/sec，即每秒的响应请求数，也即是最大吞吐能力。</p>
+</blockquote>
+</li>
+</ul>
+<p><br></p>
+<ul>
+<li>一些参考文章：<a href="https://blog.csdn.net/Blockchain_lemon/article/details/79236199" target="_blank" rel="noopener">比特币、以太坊、Fabric…你知道它们的优缺点吗？</a>、<br><a href="https://www.cnblogs.com/Evsward/p/eos-intro.html" target="_blank" rel="noopener">区块链3.0：拥抱EOS</a></li>
+</ul>
+<p><br></p>
+<blockquote>
+<p>最后更新于2018.5.17</p>
+</blockquote>
+
+      
+    </div>
+
+    
+
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/๑BlockChain/" rel="tag"># ๑BlockChain</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2018/05/10/2018-05-10-Ubuntu-18/" rel="next" title="Ubuntu进阶记录 & Ubuntu-18">
+                <i class="fa fa-chevron-left"></i> Ubuntu进阶记录 & Ubuntu-18
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2018/05/21/2018-05-21-NodeJS/" rel="prev" title="Node.js学习笔记">
+                Node.js学习笔记 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+  </div>
+
+
+          </div>
+          
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            Table of Contents
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            Overview
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image"
+                src="/images/avatar.gif"
+                alt="Fleschier" />
+            
+              <p class="site-author-name" itemprop="name">Fleschier</p>
+              <p class="site-description motion-element" itemprop="description">我有一碗酒，可以慰风尘...</p>
+          </div>
+
+          
+            <nav class="site-state motion-element">
+              
+                <div class="site-state-item site-state-posts">
+                
+                  <a href="/archives/">
+                
+                    <span class="site-state-item-count">40</span>
+                    <span class="site-state-item-name">posts</span>
+                  </a>
+                </div>
+              
+
+              
+                
+                
+                <div class="site-state-item site-state-categories">
+                  <a href="/categories/index.html">
+                    
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">8</span>
+                    <span class="site-state-item-name">categories</span>
+                  </a>
+                </div>
+              
+
+              
+                
+                
+                <div class="site-state-item site-state-tags">
+                  <a href="/tags/index.html">
+                    
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">25</span>
+                    <span class="site-state-item-name">tags</span>
+                  </a>
+                </div>
+              
+            </nav>
+          
+
+          
+
+          
+
+          
+          
+
+          
+          
+
+          
+            
+          
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#一些主要的平台"><span class="nav-number">1.</span> <span class="nav-text">一些主要的平台</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#一些概念"><span class="nav-number">2.</span> <span class="nav-text">一些概念</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#共识算法"><span class="nav-number">2.1.</span> <span class="nav-text">共识算法</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#其他"><span class="nav-number">2.2.</span> <span class="nav-text">其他</span></a></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2018</span>
+  <span class="with-love" id="animate">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Fleschier</span>
+
+  
+
+  
+</div>
+
+
+
+
+  <div class="powered-by">Powered by <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a> v3.7.1</div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">Theme – <a class="theme-link" target="_blank" href="https://theme-next.org">NexT.Mist</a> v6.4.1</div>
+
+
+
+
+        
+
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+	
+    
+
+    
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=6.4.1"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=6.4.1"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=6.4.1"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=6.4.1"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=6.4.1"></script>
+
+
+
+  
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>

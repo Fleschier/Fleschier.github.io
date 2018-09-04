@@ -1,0 +1,1037 @@
+<!DOCTYPE html>
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+<html class="theme-next mist use-motion" lang="">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2"/>
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=6.4.1" rel="stylesheet" type="text/css" />
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=6.4.1">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=6.4.1">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=6.4.1">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=6.4.1" color="#222">
+
+
+
+
+
+
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Mist',
+    version: '6.4.1',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: false,
+    fastclick: false,
+    lazyload: false,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+  
+
+
+
+
+  <meta name="description" content="不适合人类阅读的学习笔记    Java编译环境 编译环境首选JetBrian的Intellij IDEA，虽然几乎所有的教材都清一色的使用eclipse，但是jetBrian的社区版Intellij IDEA已经满足了我们的需求，其无与伦比的代码补全功能，清爽的界面会让人眼前一亮。专业版只有公司里才可能会用到其中的一些功能，所以我们也不用担心。  Ultimate版本免费获取详见——Intel">
+<meta name="keywords" content="๑Java">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Java学习笔记——基础">
+<meta property="og:url" content="http://yoursite.com/2018/04/06/2018-04-06-Java-learning/index.html">
+<meta property="og:site_name" content="Fleschier 渐寒^">
+<meta property="og:description" content="不适合人类阅读的学习笔记    Java编译环境 编译环境首选JetBrian的Intellij IDEA，虽然几乎所有的教材都清一色的使用eclipse，但是jetBrian的社区版Intellij IDEA已经满足了我们的需求，其无与伦比的代码补全功能，清爽的界面会让人眼前一亮。专业版只有公司里才可能会用到其中的一些功能，所以我们也不用担心。  Ultimate版本免费获取详见——Intel">
+<meta property="og:locale" content="default">
+<meta property="og:updated_time" content="2018-09-03T13:25:53.625Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Java学习笔记——基础">
+<meta name="twitter:description" content="不适合人类阅读的学习笔记    Java编译环境 编译环境首选JetBrian的Intellij IDEA，虽然几乎所有的教材都清一色的使用eclipse，但是jetBrian的社区版Intellij IDEA已经满足了我们的需求，其无与伦比的代码补全功能，清爽的界面会让人眼前一亮。专业版只有公司里才可能会用到其中的一些功能，所以我们也不用担心。  Ultimate版本免费获取详见——Intel">
+
+
+
+
+
+
+  <link rel="canonical" href="http://yoursite.com/2018/04/06/2018-04-06-Java-learning/"/>
+
+
+
+<script type="text/javascript" id="page.configurations">
+  CONFIG.page = {
+    sidebar: "",
+  };
+</script>
+
+  <title>Java学习笔记——基础 | Fleschier 渐寒^</title>
+  
+
+
+
+
+
+
+
+
+
+  <noscript>
+  <style type="text/css">
+    .use-motion .motion-element,
+    .use-motion .brand,
+    .use-motion .menu-item,
+    .sidebar-inner,
+    .use-motion .post-block,
+    .use-motion .pagination,
+    .use-motion .comments,
+    .use-motion .post-header,
+    .use-motion .post-body,
+    .use-motion .collection-title { opacity: initial; }
+
+    .use-motion .logo,
+    .use-motion .site-title,
+    .use-motion .site-subtitle {
+      opacity: initial;
+      top: initial;
+    }
+
+    .use-motion {
+      .logo-line-before i { left: initial; }
+      .logo-line-after i { right: initial; }
+    }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="default">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">Fleschier 渐寒^</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+    
+      
+        <p class="site-subtitle">Welcome~</p>
+      
+    
+  </div>
+
+  <div class="site-nav-toggle">
+    <button aria-label="Toggle navigation bar">
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+  
+    <ul id="menu" class="menu">
+      
+        
+        
+        
+          
+          <li class="menu-item menu-item-home">
+    <a href="/" rel="section">
+      <i class="menu-item-icon fa fa-fw fa-home"></i> <br />Home</a>
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-about">
+    <a href="/about/" rel="section">
+      <i class="menu-item-icon fa fa-fw fa-user"></i> <br />About</a>
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-tags">
+    <a href="/tags/" rel="section">
+      <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />Tags</a>
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-categories">
+    <a href="/categories/" rel="section">
+      <i class="menu-item-icon fa fa-fw fa-th"></i> <br />Categories</a>
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-archives">
+    <a href="/archives/" rel="section">
+      <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />Archives</a>
+  </li>
+
+      
+      
+    </ul>
+  
+
+  
+    
+
+  
+
+  
+</nav>
+
+
+
+  
+
+
+
+</div>
+    </header>
+
+    
+
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/04/06/2018-04-06-Java-learning/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Fleschier">
+      <meta itemprop="description" content="我有一碗酒，可以慰风尘...">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Fleschier 渐寒^">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">Java学习笔记——基础
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+
+            
+            
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+
+              
+                
+              
+
+              <time title="Created: 2018-04-06 16:47:00" itemprop="dateCreated datePublished" datetime="2018-04-06T16:47:00+08:00">2018-04-06</time>
+            
+
+            
+              
+
+              
+                
+                <span class="post-meta-divider">|</span>
+                
+
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">Edited on</span>
+                
+                <time title="Modified: 2018-09-03 21:25:53" itemprop="dateModified" datetime="2018-09-03T21:25:53+08:00">2018-09-03</time>
+              
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">In</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/Computer-Programes/" itemprop="url" rel="index"><span itemprop="name">Computer Programes</span></a></span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <blockquote>
+<p>不适合人类阅读的学习笔记  </p>
+</blockquote>
+<h2 id="Java编译环境"><a href="#Java编译环境" class="headerlink" title="Java编译环境"></a>Java编译环境</h2><hr>
+<p>编译环境首选JetBrian的<a href="https://www.jetbrains.com/idea/" target="_blank" rel="noopener">Intellij IDEA</a>，虽然几乎所有的教材都清一色的使用eclipse，但是jetBrian的社区版Intellij IDEA已经满足了我们的需求，其无与伦比的代码补全功能，清爽的界面会让人眼前一亮。专业版只有公司里才可能会用到其中的一些功能，所以我们也不用担心。</p>
+<ul>
+<li><p>Ultimate版本免费获取详见——<a href="https://fleschier.github.io/2018/05/jetbrains/" target="_blank" rel="noopener">Intellij IDEA Ultimate版本使用</a></p>
+</li>
+<li><p>使用intellij IDEA 之前需要配置一系列设置。</p>
+<ol>
+<li>在打开项目之前的那个主界面，在设置里，systemsettings里把reopen previous project勾掉</li>
+<li>在project structure里把lib里的东西添加一下(添加需要用到的编程语言的library)，以及设置默认的sdk/jdk。(在打开的项目里设置的仅仅对本项目有效)</li>
+</ol>
+<ul>
+<li>ctrl + alt + s 快速打开设置界面。</li>
+</ul>
+</li>
+</ul>
+<h2 id="基本语法"><a href="#基本语法" class="headerlink" title="基本语法"></a>基本语法</h2><hr>
+<blockquote>
+<p>java与C++一样，需要用分号来分割句子</p>
+</blockquote>
+<h3 id="第一个JAVA程序：Helloworld"><a href="#第一个JAVA程序：Helloworld" class="headerlink" title="第一个JAVA程序：Helloworld"></a>第一个JAVA程序：Helloworld</h3><ul>
+<li>示例<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">public class HelloWorld &#123;</span><br><span class="line">    public static void main(String[] args) &#123;</span><br><span class="line">        System.out.println(&quot;Hello World&quot;); // 打印 Hello World</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<h3 id="编写Java程序时注意点："><a href="#编写Java程序时注意点：" class="headerlink" title="编写Java程序时注意点："></a>编写Java程序时注意点：</h3><ul>
+<li><p>大小写敏感：Java是大小写敏感的，这就意味着标识符Hello与hello是不同的。</p>
+</li>
+<li><p>类名：对于所有的类来说，类名的首字母应该大写。如果类名由若干单词组成，那么每个单词的首字母应该大写，例如 MyFirstJavaClass 。</p>
+</li>
+<li><p>方法名：所有的方法名都应该以小写字母开头。如果方法名含有若干单词，则后面的每个单词首字母大写。<br>源文件名：源文件名必须和类名相同。当保存文件的时候，你应该使用类名作为文件名保存（切记Java是大小写敏感的），文件名的后缀为.java。（如果文件名和类名不相同则会导致编译错误）。</p>
+</li>
+<li><p>主方法入口：所有的Java 程序由<code>public static void main(String[] args)</code>方法开始执行。</p>
+</li>
+<li><p>java的通配符与C++一样，都是<code>*</code></p>
+</li>
+<li><p><strong>Java与C++不同的地方是：Java中的整数，浮点数不能与布尔值相互转换，当然也不能用0或非0的的整数代替true或者false。</strong></p>
+</li>
+</ul>
+<h3 id="Java数据默认值"><a href="#Java数据默认值" class="headerlink" title="Java数据默认值"></a>Java数据默认值</h3><ul>
+<li>八大基本数据类型的默认值：</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>数据类型</th>
+<th>默认值</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>boolean</td>
+<td>false</td>
+</tr>
+<tr>
+<td>char</td>
+<td>‘/uoooo’(null)</td>
+</tr>
+<tr>
+<td>byte</td>
+<td>(byte)0</td>
+</tr>
+<tr>
+<td>short</td>
+<td>(short)0</td>
+</tr>
+<tr>
+<td>int</td>
+<td>0</td>
+</tr>
+<tr>
+<td>long</td>
+<td>0L</td>
+</tr>
+<tr>
+<td>float</td>
+<td>0.0f</td>
+</tr>
+<tr>
+<td>double</td>
+<td>0.0d</td>
+</tr>
+</tbody>
+</table>
+<h3 id="Java修饰符"><a href="#Java修饰符" class="headerlink" title="Java修饰符"></a>Java修饰符</h3><ul>
+<li><p>像其他语言一样，Java可以使用修饰符来修饰类中方法和属性。主要有两类修饰符：</p>
+</li>
+<li><p>访问控制修饰符 : default, public , protected, private</p>
+</li>
+<li><p>非访问控制修饰符 : final, abstract, strictfp</p>
+</li>
+</ul>
+<h3 id="Java枚举"><a href="#Java枚举" class="headerlink" title="Java枚举"></a>Java枚举</h3><ul>
+<li>枚举限制变量只能是预先设定好的值,使用枚举可以减少代码中的bug<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">class ENUM_class&#123;</span><br><span class="line">	enum Test&#123;Small, Medium, Large&#125;</span><br><span class="line">   Test size;</span><br><span class="line">&#125;</span><br><span class="line">public class ENUM_class_Test&#123;</span><br><span class="line">	public static void main(String[] args)&#123;</span><br><span class="line">		ENUM_class tst = new ENUM_class();</span><br><span class="line">		tst.size = ENUM_class.Test.Small;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<h3 id="Java的三目运算符"><a href="#Java的三目运算符" class="headerlink" title="Java的三目运算符"></a>Java的三目运算符</h3><ul>
+<li><p>格式：逻辑表达式 ? 值1 : 值2</p>
+</li>
+<li><p>执行过程：若逻辑值表达式为true，就取值1，否则取值2</p>
+</li>
+<li><p>例：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">int x =1,y =2;</span><br><span class="line">x&lt;y ? System.out.println(&quot;x&lt;y&quot;):System.out.println(&quot;x&gt;y&quot;);</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>注意，此三目运算符不是一个完整的式子，一般是用作赋值。</p>
+</li>
+</ul>
+<h3 id="Java注释"><a href="#Java注释" class="headerlink" title="Java注释"></a>Java注释</h3><ul>
+<li>Java注释与C++一致</li>
+</ul>
+<h2 id="Java的输入"><a href="#Java的输入" class="headerlink" title="Java的输入"></a>Java的输入</h2><blockquote>
+<p>Java的输入比起C++和Python要麻烦很多</p>
+</blockquote>
+<hr>
+<h3 id="方法一："><a href="#方法一：" class="headerlink" title="方法一："></a>方法一：</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">import java.io.*   //引入java.io包的类</span><br><span class="line">...</span><br><span class="line">...</span><br><span class="line">InputStreamReader in = new InputStreamReader(System.in);</span><br><span class="line">BufferedReader br = new BufferedReader(in);</span><br><span class="line">System.out.print(&quot;Please enter a num:&quot;);</span><br><span class="line">String s = br.readLine(); //从键盘读取一行字符到s中</span><br><span class="line">float num;</span><br><span class="line">num = Float.parseFloat(s); //将字符型转换成float型</span><br><span class="line">System.out.println();</span><br><span class="line">...</span><br></pre></td></tr></table></figure>
+<h3 id="方法二："><a href="#方法二：" class="headerlink" title="方法二："></a>方法二：</h3><h4 id="通过Scannner类"><a href="#通过Scannner类" class="headerlink" title="通过Scannner类"></a>通过Scannner类</h4><ul>
+<li><p>例子：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">import java.util.*</span><br><span class="line">...</span><br><span class="line">float score;</span><br><span class="line">Scanner sn = new Scanner(System.in);</span><br><span class="line">System.out.println(&quot;Please enter a num:&quot;);</span><br><span class="line">score = sn.nextFloat();</span><br><span class="line">System.out.println();</span><br></pre></td></tr></table></figure>
+</li>
+<li><p><em>scan在读取多行数据时会遇到的问题：</em></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">Scanner scan = new Scanner(System.in)</span><br><span class="line">int num  = scan.nextInt();  //这句会正确执行</span><br><span class="line">Double d = scan.nextDouble(); //这句也会正确执行，即使输入在不同的行上</span><br><span class="line">String s = scan.nextline();  //这句这样写便会读到一个空串×××××××</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>原因分析：首先，Scanner是一个扫描器，它扫描数据都是去内存中一块缓冲区中进行扫描并读入数据的，而我们在控制台中输入的数据也都是被先存入缓冲区中等待扫描器的扫描读取。这个扫描器在扫描过程中判断停止的依据就是“空白符”，空格啊，回车啊什么的都算做是空白符。</p>
+</li>
+<li>nextInt()方法在扫描到空白符的时候会将前面的数据读取走，但会丢下空白符“\r”在缓冲区中，但是，nextLine()方法在扫描的时候会将扫描到的空白符一同清理掉。</li>
+<li><p>了解了这两个方法特性和区别，就知道了上边的代码究竟是怎么回事，以及知道了解决的方法。像是上边的代码nextInt()方法之后在缓冲区中留下了“\r”，然后nextLine()方法再去缓冲区找数据的时候首先看到了“\r”，然后就把这个“\r”扫描接收进来，并在缓冲区内清除掉。其实，nextLine()方法是执行过的，并没有不执行。</p>
+</li>
+<li><p>解决方案：<br>在调用nextline()之前先调用一次nextline()将那个换行符读取掉</p>
+<p>在读取Int的时候就调用nextline()方法，再用parseInt()转化为Int</p>
+</li>
+</ul>
+<h3 id="方法三"><a href="#方法三" class="headerlink" title="方法三"></a>方法三</h3><ul>
+<li>这里需要import java.io.IOException; //否则会报错</li>
+</ul>
+<h4 id="读取下一个字符："><a href="#读取下一个字符：" class="headerlink" title="读取下一个字符："></a>读取下一个字符：</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">import java.io.IOException</span><br><span class="line">class test&#123;</span><br><span class="line">    public static void main(String[] args) throws IOException&#123;</span><br><span class="line">      char c = (char) System.in.read();</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p><strong>注意这里需要类型转换，默认为int类型，即读到的是字符的ASCII码。</strong></p>
+<h4 id="将一串字符读入byte数组"><a href="#将一串字符读入byte数组" class="headerlink" title="将一串字符读入byte数组"></a>将一串字符读入byte数组</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">import java.io.IOException;</span><br><span class="line">class test &#123;</span><br><span class="line">     public static void main(String[] args) throws IOException&#123;</span><br><span class="line">         byte[] input = new byte[5];  //创建一个byte数组来读取一串输入</span><br><span class="line">         System.in.read(input);  //将输入存入byte数组中</span><br><span class="line">         System.out.println(input[1]); //这里输出的仍然是int类型，即ASCII码</span><br><span class="line">     &#125;</span><br><span class="line"> &#125;</span><br></pre></td></tr></table></figure>
+<h3 id="图形界面输入方式"><a href="#图形界面输入方式" class="headerlink" title="图形界面输入方式"></a>图形界面输入方式</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">import javax.swing.* //导入javax,swing包中的类</span><br><span class="line">...</span><br><span class="line">String str;</span><br><span class="line">float score;</span><br><span class="line">str = JOptionPane.showInputDialog(&quot;please enter a num:&quot;);</span><br><span class="line">score = Float.parseFloat(str);</span><br><span class="line">...</span><br></pre></td></tr></table></figure>
+<h2 id="输出"><a href="#输出" class="headerlink" title="输出"></a>输出</h2><hr>
+<ul>
+<li><p>标准输出：<code>System.out.println();</code></p>
+</li>
+<li><p>格式化输出：<code>System.out.printf();</code> //格式化输出允许对输出进行规改</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">//&quot;%&quot;表示进行格式化输出，&quot;%&quot;之后的内容为格式的定义。</span><br><span class="line">System.out.printf(&quot;%f&quot;,d);//&quot;f&quot;表示格式化输出浮点数。</span><br><span class="line">System.out.printf(&quot;%9.2f&quot;,d);//&quot;9.2&quot;中的9表示输出的长度，2表示小数点后的位数。</span><br><span class="line">System.out.printf(&quot;%+9.2f&quot;,d);//&quot;+&quot;表示输出的数带正负号。</span><br><span class="line">System.out.printf(&quot;%-9.4f&quot;,d);//&quot;-&quot;表示输出的数左对齐（默认为右对齐）。</span><br><span class="line">System.out.printf(&quot;%+-9.3f&quot;,d);//&quot;+-&quot;表示输出的数带正负号且左对齐。</span><br><span class="line">System.out.printf(&quot;%d&quot;,i);//&quot;d&quot;表示输出十进制整数。</span><br><span class="line">System.out.printf(&quot;%o&quot;,i);//&quot;o&quot;表示输出八进制整数。</span><br><span class="line">System.out.printf(&quot;%x&quot;,i);//&quot;d&quot;表示输出十六进制整数。</span><br><span class="line">System.out.printf(&quot;%#x&quot;,i);//&quot;d&quot;表示输出带有十六进制标志的整数。</span><br><span class="line">System.out.printf(&quot;%s&quot;,s);//&quot;d&quot;表示输出字符串。</span><br><span class="line">System.out.printf(&quot;输出一个浮点数：%f，一个整数：%d，一个字符串：%s&quot;,d,i,s);</span><br><span class="line">//可以输出多个变量，注意顺序。</span><br><span class="line">System.out.printf(&quot;字符串：%2$s，%1$d的十六进制数：%1$#x&quot;,i,s);</span><br><span class="line">//&quot;X$&quot;表示第几个变量。</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<h3 id="图形界面输出"><a href="#图形界面输出" class="headerlink" title="图形界面输出"></a>图形界面输出</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">JOptionPane.showMessageDialog(....)  //具体参数见类库</span><br></pre></td></tr></table></figure>
+<h2 id="一些注意点"><a href="#一些注意点" class="headerlink" title="一些注意点"></a>一些注意点</h2><hr>
+<h3 id="数组"><a href="#数组" class="headerlink" title="数组"></a>数组</h3><ul>
+<li><p>数组的声明格式： 数据类型[] 数组名 或者 数据类型 数组名[]</p>
+</li>
+<li><p>Java的数组声明只是指明了一个对象引用，并没有为数组元素分配内存空间。<strong>因此声明不能指定数组元素个数</strong>。例如：<code>int a[10];</code>是错误的。<strong>如果要声明并创建数组应该采用如下格式 ： 数据类型 数组名[] = new 数据类型[数组长度]</strong>。</p>
+</li>
+<li><p>数组的初始化与C++相同。例：<code>int a[] = {1,6,8};</code>  这句相当于<code>int a = new int[3]; a[0]=1,a[1]=6,a[2]=8;</code></p>
+</li>
+<li><p>只进行了声明的数组，它的元素是不能被访问的，只有经过初始化后，才能访问数组的元素。</p>
+</li>
+<li><p>数组的长度的获取：<code>a.length</code> 就表示数组a的长度（即a的元素个数）<strong>注意这里的.length是数组的属性（相当于类的尘成员变量）而不是方法，所以a.length()的写法是错误的，他把length当做一个类的方法来调用了</strong></p>
+</li>
+</ul>
+<h3 id="随机数"><a href="#随机数" class="headerlink" title="随机数"></a>随机数</h3><h4 id="Math-random"><a href="#Math-random" class="headerlink" title="Math.random()"></a>Math.random()</h4><ul>
+<li><code>int num =(int)(Math.random() * 11);</code>  生成一个范围在[0,1)的随机数。</li>
+</ul>
+<h4 id="java-util-Random"><a href="#java-util-Random" class="headerlink" title="java.util.Random"></a>java.util.Random</h4><ul>
+<li>例：<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">import Java.util.Random;</span><br><span class="line">Random rand = new Random([数值]);</span><br><span class="line">int randomNum = rand.nextInt() //Random支持的随机值类型包括：boolean, byte, int, long, float, double</span><br><span class="line">int randomNUM2 = rand.nextInt(100); //表示获取[0,100)范围的随机数</span><br><span class="line">...</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<h3 id="String类"><a href="#String类" class="headerlink" title="String类"></a>String类</h3><ul>
+<li>String是常量，对一个String的任何修改都会使java创建一个新的String，而原来的会被当做垃圾回收掉</li>
+<li>例如：<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">String a = &quot;avc&quot;;</span><br><span class="line">a = &quot;bfd&quot;;    //则会创建一个新的string，然后将a链向这个string，原先的string会被抛弃掉</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<p><br></p>
+<blockquote>
+<p>最后更新于2018.4.9</p>
+</blockquote>
+
+      
+    </div>
+
+    
+
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/๑Java/" rel="tag"># ๑Java</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2018/04/06/2018-04-06-ubuntu-and-windows/" rel="next" title="UEFI双系统的那些坑">
+                <i class="fa fa-chevron-left"></i> UEFI双系统的那些坑
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2018/04/06/2018-04-06-Scala-learning/" rel="prev" title="Scala学习笔记——基础">
+                Scala学习笔记——基础 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+  </div>
+
+
+          </div>
+          
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            Table of Contents
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            Overview
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image"
+                src="/images/avatar.gif"
+                alt="Fleschier" />
+            
+              <p class="site-author-name" itemprop="name">Fleschier</p>
+              <p class="site-description motion-element" itemprop="description">我有一碗酒，可以慰风尘...</p>
+          </div>
+
+          
+            <nav class="site-state motion-element">
+              
+                <div class="site-state-item site-state-posts">
+                
+                  <a href="/archives/">
+                
+                    <span class="site-state-item-count">40</span>
+                    <span class="site-state-item-name">posts</span>
+                  </a>
+                </div>
+              
+
+              
+                
+                
+                <div class="site-state-item site-state-categories">
+                  <a href="/categories/index.html">
+                    
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">8</span>
+                    <span class="site-state-item-name">categories</span>
+                  </a>
+                </div>
+              
+
+              
+                
+                
+                <div class="site-state-item site-state-tags">
+                  <a href="/tags/index.html">
+                    
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">25</span>
+                    <span class="site-state-item-name">tags</span>
+                  </a>
+                </div>
+              
+            </nav>
+          
+
+          
+
+          
+
+          
+          
+
+          
+          
+
+          
+            
+          
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Java编译环境"><span class="nav-number">1.</span> <span class="nav-text">Java编译环境</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#基本语法"><span class="nav-number">2.</span> <span class="nav-text">基本语法</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#第一个JAVA程序：Helloworld"><span class="nav-number">2.1.</span> <span class="nav-text">第一个JAVA程序：Helloworld</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#编写Java程序时注意点："><span class="nav-number">2.2.</span> <span class="nav-text">编写Java程序时注意点：</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Java数据默认值"><span class="nav-number">2.3.</span> <span class="nav-text">Java数据默认值</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Java修饰符"><span class="nav-number">2.4.</span> <span class="nav-text">Java修饰符</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Java枚举"><span class="nav-number">2.5.</span> <span class="nav-text">Java枚举</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Java的三目运算符"><span class="nav-number">2.6.</span> <span class="nav-text">Java的三目运算符</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Java注释"><span class="nav-number">2.7.</span> <span class="nav-text">Java注释</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Java的输入"><span class="nav-number">3.</span> <span class="nav-text">Java的输入</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#方法一："><span class="nav-number">3.1.</span> <span class="nav-text">方法一：</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#方法二："><span class="nav-number">3.2.</span> <span class="nav-text">方法二：</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#通过Scannner类"><span class="nav-number">3.2.1.</span> <span class="nav-text">通过Scannner类</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#方法三"><span class="nav-number">3.3.</span> <span class="nav-text">方法三</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#读取下一个字符："><span class="nav-number">3.3.1.</span> <span class="nav-text">读取下一个字符：</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#将一串字符读入byte数组"><span class="nav-number">3.3.2.</span> <span class="nav-text">将一串字符读入byte数组</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#图形界面输入方式"><span class="nav-number">3.4.</span> <span class="nav-text">图形界面输入方式</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#输出"><span class="nav-number">4.</span> <span class="nav-text">输出</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#图形界面输出"><span class="nav-number">4.1.</span> <span class="nav-text">图形界面输出</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#一些注意点"><span class="nav-number">5.</span> <span class="nav-text">一些注意点</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#数组"><span class="nav-number">5.1.</span> <span class="nav-text">数组</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#随机数"><span class="nav-number">5.2.</span> <span class="nav-text">随机数</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#Math-random"><span class="nav-number">5.2.1.</span> <span class="nav-text">Math.random()</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#java-util-Random"><span class="nav-number">5.2.2.</span> <span class="nav-text">java.util.Random</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#String类"><span class="nav-number">5.3.</span> <span class="nav-text">String类</span></a></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2018</span>
+  <span class="with-love" id="animate">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Fleschier</span>
+
+  
+
+  
+</div>
+
+
+
+
+  <div class="powered-by">Powered by <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a> v3.7.1</div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">Theme – <a class="theme-link" target="_blank" href="https://theme-next.org">NexT.Mist</a> v6.4.1</div>
+
+
+
+
+        
+
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+	
+    
+
+    
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=6.4.1"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=6.4.1"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=6.4.1"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=6.4.1"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=6.4.1"></script>
+
+
+
+  
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>
