@@ -113,7 +113,7 @@
 <meta name="keywords" content="๑Scala">
 <meta property="og:type" content="article">
 <meta property="og:title" content="《Scala编程》阅读记录——集合类进阶">
-<meta property="og:url" content="http://yoursite.com/2018/07/24/2018-07-24-scala-learning-05/index.html">
+<meta property="og:url" content="https://fleschier.github.io/2018/07/24/2018-07-24-scala-learning-05/index.html">
 <meta property="og:site_name" content="Fleschier 渐寒^">
 <meta property="og:description" content="不适合人类阅读的学习笔记  第十七章 使用集合类 序列列表 List类是不可变 链表, 因此支持在头部快速添加和移除条目，但是不提供按下标快速访问的功能，因为实现这个功能需要线性地遍历列表。  列表缓冲(ListBuffer) List类提供对列表头部的快速访问，但是对尾部就不那么高效，因此在尾部添加元素时我们经常需要用到reverse方法，在头部添加元素最后再reverse来获得我们想要的顺序">
 <meta property="og:locale" content="default">
@@ -127,7 +127,7 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2018/07/24/2018-07-24-scala-learning-05/"/>
+  <link rel="canonical" href="https://fleschier.github.io/2018/07/24/2018-07-24-scala-learning-05/"/>
 
 
 
@@ -310,7 +310,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/07/24/2018-07-24-scala-learning-05/">
+    <link itemprop="mainEntityOfPage" href="https://fleschier.github.io/2018/07/24/2018-07-24-scala-learning-05/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Fleschier">
@@ -460,7 +460,7 @@
 <h4 id="使用集"><a href="#使用集" class="headerlink" title="使用集"></a>使用集</h4><ul>
 <li><p>集的关键特征是它们会确保在同一时刻，以<code>==</code>为标准，集里的每个对象都最多出现一次</p>
 </li>
-<li><p>集的方法见博客<a href="https://fleschier.github.io/2018/07/Scala-infos/" target="_blank" rel="noopener">方法查询</a></p>
+<li><p>集的方法见博客<a href="https://fleschier.github.io/2018/07/Scala-infos/">方法查询</a></p>
 </li>
 </ul>
 <h4 id="使用映射"><a href="#使用映射" class="headerlink" title="使用映射"></a>使用映射</h4><ul>
@@ -469,7 +469,7 @@
 <li><p>下面是一个统计每个单词在字符串中出现次数的方法：</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">def countWords(text: String) = &#123;</span><br><span class="line">  val counts = mutable.Map.empty[String,Int]</span><br><span class="line">  for (rawWord &lt;- text.split(&quot;[ ,!.]+&quot;))&#123;</span><br><span class="line">    val word = rawWord.toLowerCase // 统一变为小写字母</span><br><span class="line">    val oldCount =</span><br><span class="line">      if(counts.contains(word)) counts(word)</span><br><span class="line">      else 0</span><br><span class="line">    counts += (word -&gt; (oldCount + 1))</span><br><span class="line">  &#125;</span><br><span class="line">  counts</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 </li>
-<li><p>映射的方法见博客<a href="https://fleschier.github.io/2018/07/Scala-infos/" target="_blank" rel="noopener">方法查询</a></p>
+<li><p>映射的方法见博客<a href="https://fleschier.github.io/2018/07/Scala-infos/">方法查询</a></p>
 </li>
 <li><p>可变集合和可变映射的工厂方法都采用了hash的技术。例如<code>scala.collection.mutable.Set()</code>这个工厂方法返回一个<code>scala.collection.mutable.HashSet</code>。同理， <code>scala.collection.mutable.Map()</code>这个工厂方法返回一个<code>scala.collection.mutable.HashMap</code></p>
 </li>
