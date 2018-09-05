@@ -21,6 +21,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2"/>
 <meta name="theme-color" content="#222">
 
+<meta name="google-site-verification" content="RI_5ZmhALpyfpS6aXve0MY8gzrCYCj1_kQTQ4eX00eM" />
 
 
 
@@ -116,7 +117,7 @@
 <meta property="og:site_name" content="Fleschier 渐寒^">
 <meta property="og:description" content="环境搭建  在使用hexo搭建博客之前，需要搭建好环境。需要git、node.js和hexo  详细搭建见——链接   hexo  hexo有大量的主题可供选择，而且支持一键部署  但是hexo每次预览要重新生成页面，而jekyll是即时体现更改   安装 npm install -g hexo-cli  常用命令 初始化： hexo init  //在一个空文件夹下初始化  hexo一些命令：">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2018-09-05T08:17:41.677Z">
+<meta property="og:updated_time" content="2018-09-05T08:34:54.708Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="hexo重新构建博客">
 <meta name="twitter:description" content="环境搭建  在使用hexo搭建博客之前，需要搭建好环境。需要git、node.js和hexo  详细搭建见——链接   hexo  hexo有大量的主题可供选择，而且支持一键部署  但是hexo每次预览要重新生成页面，而jekyll是即时体现更改   安装 npm install -g hexo-cli  常用命令 初始化： hexo init  //在一个空文件夹下初始化  hexo一些命令：">
@@ -368,7 +369,7 @@
                 
                   <span class="post-meta-item-text">Edited on</span>
                 
-                <time title="Modified: 2018-09-05 16:17:41" itemprop="dateModified" datetime="2018-09-05T16:17:41+08:00">2018-09-05</time>
+                <time title="Modified: 2018-09-05 16:34:54" itemprop="dateModified" datetime="2018-09-05T16:34:54+08:00">2018-09-05</time>
               
             
           </span>
@@ -489,7 +490,11 @@
 <ul>
 <li><p>首先登录google的<a href="https://www.google.com/webmasters/tools/home?hl=zh-CN" target="_blank" rel="noopener">Search Console</a></p>
 </li>
-<li><p>然后添加一系列的内容，详见<a href="https://jactor-sue.github.io/how-githubio-blog-can-be-searched-by-google/" target="_blank" rel="noopener">博客</a></p>
+<li><p>因为hexo每次clean都会将验证的html删除，所以我们采用其他的验证方法。将Search Console给的meta标签的信息添加到主题的目录下<code>head.swig</code>文件中，这里使用的是Next主题,其他主题也是类似的，在<code>Hexo/themes/next/layout/_partials/head/head.swig</code>文件中原有meta标签后面添加刚才复制的meta标签。</p>
+</li>
+<li><p>重新deploy博客之后可以验证通过</p>
+</li>
+<li><p>更详细的见<a href="https://jactor-sue.github.io/how-githubio-blog-can-be-searched-by-google/" target="_blank" rel="noopener">博客</a></p>
 </li>
 </ul>
 <h3 id="安装插件"><a href="#安装插件" class="headerlink" title="安装插件"></a>安装插件</h3><ul>
