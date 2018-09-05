@@ -2,6 +2,13 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://yoursite.com/2018/09/03/2018-09-03-Hexo-rebuild/</loc>
+    
+    <lastmod>2018-09-05T08:17:41.677Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>http://yoursite.com/categories/index.html</loc>
     
     <lastmod>2018-09-05T07:45:17.122Z</lastmod>
@@ -19,13 +26,6 @@
     <loc>http://yoursite.com/offline.html</loc>
     
     <lastmod>2018-09-05T07:44:42.328Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://yoursite.com/2018/09/03/2018-09-03-Hexo-rebuild/</loc>
-    
-    <lastmod>2018-09-05T07:41:17.419Z</lastmod>
     
   </url>
   

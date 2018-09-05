@@ -116,7 +116,7 @@
 <meta property="og:site_name" content="Fleschier 渐寒^">
 <meta property="og:description" content="环境搭建  在使用hexo搭建博客之前，需要搭建好环境。需要git、node.js和hexo  详细搭建见——链接   hexo  hexo有大量的主题可供选择，而且支持一键部署  但是hexo每次预览要重新生成页面，而jekyll是即时体现更改   安装 npm install -g hexo-cli  常用命令 初始化： hexo init  //在一个空文件夹下初始化  hexo一些命令：">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2018-09-05T07:41:17.419Z">
+<meta property="og:updated_time" content="2018-09-05T08:17:41.677Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="hexo重新构建博客">
 <meta name="twitter:description" content="环境搭建  在使用hexo搭建博客之前，需要搭建好环境。需要git、node.js和hexo  详细搭建见——链接   hexo  hexo有大量的主题可供选择，而且支持一键部署  但是hexo每次预览要重新生成页面，而jekyll是即时体现更改   安装 npm install -g hexo-cli  常用命令 初始化： hexo init  //在一个空文件夹下初始化  hexo一些命令：">
@@ -368,7 +368,7 @@
                 
                   <span class="post-meta-item-text">Edited on</span>
                 
-                <time title="Modified: 2018-09-05 15:41:17" itemprop="dateModified" datetime="2018-09-05T15:41:17+08:00">2018-09-05</time>
+                <time title="Modified: 2018-09-05 16:17:41" itemprop="dateModified" datetime="2018-09-05T16:17:41+08:00">2018-09-05</time>
               
             
           </span>
@@ -485,6 +485,31 @@
 </li>
 <li>重新建站即可看到效果</li>
 </ol>
+<h2 id="添加搜索引擎支持"><a href="#添加搜索引擎支持" class="headerlink" title="添加搜索引擎支持"></a>添加搜索引擎支持</h2><hr>
+<ul>
+<li><p>首先登录google的<a href="https://www.google.com/webmasters/tools/home?hl=zh-CN" target="_blank" rel="noopener">Search Console</a></p>
+</li>
+<li><p>然后添加一系列的内容，详见<a href="https://jactor-sue.github.io/how-githubio-blog-can-be-searched-by-google/" target="_blank" rel="noopener">博客</a></p>
+</li>
+</ul>
+<h3 id="安装插件"><a href="#安装插件" class="headerlink" title="安装插件"></a>安装插件</h3><ul>
+<li>为Hexo安装<code>hexo-generator-sitemap</code>和<code>hexo-generator-baidu-sitemap</code>插件，在Hexo博客目录下运行：<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">npm install hexo-generator-sitemap --save</span><br><span class="line">npm install hexo-generator-baidu-sitemap --save</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<h3 id="重新建站"><a href="#重新建站" class="headerlink" title="重新建站"></a>重新建站</h3><ul>
+<li><p>配置Hexo的<code>_config.yml</code>文件，添加如下字段:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">sitemap:</span><br><span class="line">    path: sitemap.xml</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>重新生成博客页面即可看到sitemap.xml文件和baidusitemap.xml文件</p>
+</li>
+</ul>
+<h3 id="添加robots文件"><a href="#添加robots文件" class="headerlink" title="添加robots文件"></a>添加robots文件</h3><ul>
+<li><p>可以在source文件夹下添加<code>robots.txt</code>文件来限制爬虫抓取网页的内容范围</p>
+</li>
+<li><p>robots例子：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"># hexo robots.txt</span><br><span class="line">User-agent: *</span><br><span class="line">Allow: /</span><br><span class="line">Allow: /archives/</span><br><span class="line">Allow: /tags/</span><br><span class="line"></span><br><span class="line">Disallow: /vendors/</span><br><span class="line">Disallow: /js/</span><br><span class="line">Disallow: /css/</span><br><span class="line">Disallow: /fonts/</span><br><span class="line">Disallow: /vendors/</span><br><span class="line">Disallow: /fancybox/</span><br><span class="line"></span><br><span class="line">Sitemap: https://Fleschier.github.io/sitemap.xml</span><br><span class="line">Sitemap: https://Fleschier.github.io/baidusitemap.xml</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
 
       
     </div>
@@ -728,7 +753,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#环境搭建"><span class="nav-number">1.</span> <span class="nav-text">环境搭建</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#hexo"><span class="nav-number">2.</span> <span class="nav-text">hexo</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#安装"><span class="nav-number">2.1.</span> <span class="nav-text">安装</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#常用命令"><span class="nav-number">2.2.</span> <span class="nav-text">常用命令</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#一些问题记录"><span class="nav-number">3.</span> <span class="nav-text">一些问题记录</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#无法’hexo-d’-缺少插件"><span class="nav-number">3.1.</span> <span class="nav-text">无法’hexo d’:缺少插件</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#侧边栏文章索引错乱"><span class="nav-number">3.2.</span> <span class="nav-text">侧边栏文章索引错乱</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#部署到git"><span class="nav-number">3.2.1.</span> <span class="nav-text">部署到git</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#三部曲"><span class="nav-number">4.</span> <span class="nav-text">三部曲</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#添加页面"><span class="nav-number">5.</span> <span class="nav-text">添加页面</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#环境搭建"><span class="nav-number">1.</span> <span class="nav-text">环境搭建</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#hexo"><span class="nav-number">2.</span> <span class="nav-text">hexo</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#安装"><span class="nav-number">2.1.</span> <span class="nav-text">安装</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#常用命令"><span class="nav-number">2.2.</span> <span class="nav-text">常用命令</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#一些问题记录"><span class="nav-number">3.</span> <span class="nav-text">一些问题记录</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#无法’hexo-d’-缺少插件"><span class="nav-number">3.1.</span> <span class="nav-text">无法’hexo d’:缺少插件</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#侧边栏文章索引错乱"><span class="nav-number">3.2.</span> <span class="nav-text">侧边栏文章索引错乱</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#部署到git"><span class="nav-number">3.2.1.</span> <span class="nav-text">部署到git</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#三部曲"><span class="nav-number">4.</span> <span class="nav-text">三部曲</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#添加页面"><span class="nav-number">5.</span> <span class="nav-text">添加页面</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#添加搜索引擎支持"><span class="nav-number">6.</span> <span class="nav-text">添加搜索引擎支持</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#安装插件"><span class="nav-number">6.1.</span> <span class="nav-text">安装插件</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#重新建站"><span class="nav-number">6.2.</span> <span class="nav-text">重新建站</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#添加robots文件"><span class="nav-number">6.3.</span> <span class="nav-text">添加robots文件</span></a></li></ol></li></ol></div>
             
 
           </div>
