@@ -2,6 +2,13 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://fleschier.github.io/2018/07/23/2018-07-23-windows-realated/</loc>
+    
+    <lastmod>2018-09-07T08:19:05.824Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>https://fleschier.github.io/2018/09/06/2018-09-06-scala-io/</loc>
     
     <lastmod>2018-09-06T09:05:31.160Z</lastmod>
@@ -278,13 +285,6 @@
     <loc>https://fleschier.github.io/about/index.html</loc>
     
     <lastmod>2018-09-03T08:54:36.905Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://fleschier.github.io/2018/07/23/2018-07-23-windows-realated/</loc>
-    
-    <lastmod>2018-09-03T08:51:43.173Z</lastmod>
     
   </url>
   

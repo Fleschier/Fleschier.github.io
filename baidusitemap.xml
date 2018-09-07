@@ -4,6 +4,26 @@
 
     
   <url>
+    <loc>https://fleschier.github.io/2018/07/23/2018-07-23-windows-realated/</loc>
+    <lastmod>2018-09-07T08:19:05.824Z</lastmod>
+    <data>
+        <display>
+        <title>Windows10使用过程中遇到的一些坑</title>
+        <pubTime>2018-07-23T12:40:00.000Z</pubTime>
+        
+        <tag>๑Windows</tag>
+         
+         
+           
+             
+              <breadCrumb title="Computer System" url="https://fleschier.github.io/categories/Computer-System/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
     <loc>https://fleschier.github.io/2018/09/06/2018-09-06-scala-io/</loc>
     <lastmod>2018-09-06T09:05:31.160Z</lastmod>
     <data>
@@ -751,26 +771,6 @@
     
     
   <url>
-    <loc>https://fleschier.github.io/2018/07/23/2018-07-23-windows-realated/</loc>
-    <lastmod>2018-09-03T08:51:43.173Z</lastmod>
-    <data>
-        <display>
-        <title>Windows10使用过程中遇到的一些坑</title>
-        <pubTime>2018-07-23T12:40:00.000Z</pubTime>
-        
-        <tag>๑Windows</tag>
-         
-         
-           
-             
-              <breadCrumb title="Computer System" url="https://fleschier.github.io/categories/Computer-System/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
     <loc>https://fleschier.github.io/2018/04/05/2018-04-05-hello-2018/</loc>
     <lastmod>2018-09-03T08:50:19.774Z</lastmod>
     <data>
@@ -818,9 +818,9 @@
         <title>Intellij IDEA Ultimate版本使用</title>
         <pubTime>2018-05-25T01:46:00.000Z</pubTime>
         
-        <tag>๑JS</tag>
-         
         <tag>๑JetBrains</tag>
+         
+        <tag>๑JS</tag>
          
          
            
