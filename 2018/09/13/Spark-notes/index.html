@@ -110,23 +110,25 @@
 
 
 
-  <meta name="description" content="Seek the Light, Through Darkness...">
-<meta property="og:type" content="website">
-<meta property="og:title" content="Fleschier 渐寒^">
-<meta property="og:url" content="https://fleschier.github.io/categories/FrontEnd/index.html">
+  <meta name="description" content="Spark调优的一些参数设置 SparkConf的一些参数设置 见博客Spark性能优化：资源调优篇  较为全面的一个Spark性能参数讲解 Spark性能相关参数配置">
+<meta name="keywords" content="๑BigData,๑Spark">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Spark实际操作过程中的一些调优笔记">
+<meta property="og:url" content="https://fleschier.github.io/2018/09/13/Spark-notes/index.html">
 <meta property="og:site_name" content="Fleschier 渐寒^">
-<meta property="og:description" content="Seek the Light, Through Darkness...">
+<meta property="og:description" content="Spark调优的一些参数设置 SparkConf的一些参数设置 见博客Spark性能优化：资源调优篇  较为全面的一个Spark性能参数讲解 Spark性能相关参数配置">
 <meta property="og:locale" content="default">
+<meta property="og:updated_time" content="2018-09-13T13:31:05.721Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Fleschier 渐寒^">
-<meta name="twitter:description" content="Seek the Light, Through Darkness...">
+<meta name="twitter:title" content="Spark实际操作过程中的一些调优笔记">
+<meta name="twitter:description" content="Spark调优的一些参数设置 SparkConf的一些参数设置 见博客Spark性能优化：资源调优篇  较为全面的一个Spark性能参数讲解 Spark性能相关参数配置">
 
 
 
 
 
 
-  <link rel="canonical" href="https://fleschier.github.io/categories/FrontEnd/"/>
+  <link rel="canonical" href="https://fleschier.github.io/2018/09/13/Spark-notes/"/>
 
 
 
@@ -136,7 +138,7 @@
   };
 </script>
 
-  <title>Category: FrontEnd | Fleschier 渐寒^</title>
+  <title>Spark实际操作过程中的一些调优笔记 | Fleschier 渐寒^</title>
   
 
 
@@ -183,7 +185,7 @@
     
   
 
-  <div class="container sidebar-position-left ">
+  <div class="container sidebar-position-left page-post-detail">
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
@@ -248,7 +250,7 @@
         
         
           
-          <li class="menu-item menu-item-categories menu-item-active">
+          <li class="menu-item menu-item-categories">
     <a href="/categories/" rel="section">
       <i class="menu-item-icon fa fa-fw fa-th"></i> <br />Categories</a>
   </li>
@@ -268,28 +270,6 @@
 
   
     
-
-    
-    
-      
-      
-    
-      
-      
-    
-      
-      
-    
-      
-      
-    
-      
-      
-    
-    
-
-  
-
 
   
 
@@ -315,143 +295,195 @@
           <div id="content" class="content">
             
 
+  <div id="posts" class="posts-expand">
+    
+
+  
+
   
   
   
-  <div class="post-block category">
 
-    <div id="posts" class="posts-collapse">
-      <div class="collection-title">
-        <h2>FrontEnd<small>Category</small>
-        </h2>
-      </div>
-
-      
-        
+  
 
   <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://fleschier.github.io/2018/09/13/Spark-notes/">
 
-      <h3 class="post-title">
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Fleschier">
+      <meta itemprop="description" content="Seek the Light, Through Darkness...">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Fleschier 渐寒^">
+    </span>
+
+    
+      <header class="post-header">
+
         
-            <a class="post-title-link" href="/2018/07/07/JavaScript/" itemprop="url">
-              
-                <span itemprop="name">前端学习——JavaScript</span>
-              
-            </a>
         
-      </h3>
+          <h2 class="post-title" itemprop="name headline">Spark实际操作过程中的一些调优笔记
+              
+            
+          </h2>
+        
 
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2018-07-07T11:26:00+08:00"
-              content="2018-07-07" >
-          07-07
-        </time>
-      </div>
+        <div class="post-meta">
+          <span class="post-time">
 
-    </header>
-  </article>
+            
+            
+            
 
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+
+              
+                
+              
+
+              <time title="Created: 2018-09-13 21:47:00 / Modified: 21:31:05" itemprop="dateCreated datePublished" datetime="2018-09-13T21:47:00+08:00">2018-09-13</time>
+            
+
+            
+              
+
+              
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">In</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/Computer-Programes/" itemprop="url" rel="index"><span itemprop="name">Computer Programes</span></a></span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
 
       
-        
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h3 class="post-title">
-        
-            <a class="post-title-link" href="/2018/06/17/FrontEnd-CSS/" itemprop="url">
-              
-                <span itemprop="name">前端学习——CSS</span>
-              
-            </a>
-        
-      </h3>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2018-06-17T16:46:00+08:00"
-              content="2018-06-17" >
-          06-17
-        </time>
-      </div>
-
-    </header>
-  </article>
-
+      
 
       
-        
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h3 class="post-title">
-        
-            <a class="post-title-link" href="/2018/06/17/FrontEnd-HTML/" itemprop="url">
-              
-                <span itemprop="name">前端学习——HTML</span>
-              
-            </a>
-        
-      </h3>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2018-06-17T11:46:00+08:00"
-              content="2018-06-17" >
-          06-17
-        </time>
-      </div>
-
-    </header>
-  </article>
-
-
-      
-        
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <h3 class="post-title">
-        
-            <a class="post-title-link" href="/2018/05/21/NodeJS/" itemprop="url">
-              
-                <span itemprop="name">Node.js学习笔记</span>
-              
-            </a>
-        
-      </h3>
-
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2018-05-21T10:47:00+08:00"
-              content="2018-05-21" >
-          05-21
-        </time>
-      </div>
-
-    </header>
-  </article>
-
+        <h2 id="Spark调优的一些参数设置"><a href="#Spark调优的一些参数设置" class="headerlink" title="Spark调优的一些参数设置"></a>Spark调优的一些参数设置</h2><hr>
+<h3 id="SparkConf的一些参数设置"><a href="#SparkConf的一些参数设置" class="headerlink" title="SparkConf的一些参数设置"></a>SparkConf的一些参数设置</h3><ul>
+<li>见博客<a href="https://www.iteblog.com/archives/1659.html" target="_blank" rel="noopener">Spark性能优化：资源调优篇</a></li>
+</ul>
+<h3 id="较为全面的一个Spark性能参数讲解"><a href="#较为全面的一个Spark性能参数讲解" class="headerlink" title="较为全面的一个Spark性能参数讲解"></a>较为全面的一个Spark性能参数讲解</h3><ul>
+<li><a href="https://spark-config.readthedocs.io/en/latest/index.html" target="_blank" rel="noopener">Spark性能相关参数配置</a></li>
+</ul>
 
       
     </div>
 
+    
+
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/๑BigData/" rel="tag"># ๑BigData</a>
+          
+            <a href="/tags/๑Spark/" rel="tag"># ๑Spark</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2018/09/06/scala-io/" rel="next" title="Scala IO 记录">
+                <i class="fa fa-chevron-left"></i> Scala IO 记录
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
   </div>
   
   
   
+  </article>
 
-  
 
+  </div>
 
 
           </div>
           
+
+  
+
+
 
         </div>
         
@@ -472,8 +504,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            Table of Contents
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            Overview
+          </li>
+        </ul>
+      
 
-      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <section class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -611,6 +652,22 @@
       </section>
 
       
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Spark调优的一些参数设置"><span class="nav-number">1.</span> <span class="nav-text">Spark调优的一些参数设置</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#SparkConf的一些参数设置"><span class="nav-number">1.1.</span> <span class="nav-text">SparkConf的一些参数设置</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#较为全面的一个Spark性能参数讲解"><span class="nav-number">1.2.</span> <span class="nav-text">较为全面的一个Spark性能参数讲解</span></a></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
 
       
 
@@ -742,6 +799,10 @@
   
 
   
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=6.4.1"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=6.4.1"></script>
+
+
 
   
 

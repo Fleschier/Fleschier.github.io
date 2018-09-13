@@ -2,6 +2,20 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://fleschier.github.io/2018/04/05/hello-2018/</loc>
+    
+    <lastmod>2018-09-13T13:32:48.654Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://fleschier.github.io/2018/09/13/Spark-notes/</loc>
+    
+    <lastmod>2018-09-13T13:31:05.721Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>https://fleschier.github.io/2018/09/03/Hexo-rebuild/</loc>
     
     <lastmod>2018-09-13T08:59:52.339Z</lastmod>
@@ -10,13 +24,6 @@
   
   <url>
     <loc>https://fleschier.github.io/2018/04/06/Scala-superior/</loc>
-    
-    <lastmod>2018-09-13T08:44:56.086Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://fleschier.github.io/2018/04/05/hello-2018/</loc>
     
     <lastmod>2018-09-13T08:44:56.086Z</lastmod>
     
