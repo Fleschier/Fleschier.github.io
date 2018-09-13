@@ -1,0 +1,995 @@
+<!DOCTYPE html>
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+<html class="theme-next mist use-motion" lang="">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2"/>
+<meta name="theme-color" content="#222">
+
+<meta name="google-site-verification" content="RI_5ZmhALpyfpS6aXve0MY8gzrCYCj1_kQTQ4eX00eM" />
+<meta name="baidu-site-verification" content="V62ScxFPRH" />
+
+
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=6.4.1" rel="stylesheet" type="text/css" />
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=6.4.1">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=6.4.1">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=6.4.1">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=6.4.1" color="#222">
+
+
+
+
+
+
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Mist',
+    version: '6.4.1',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: false,
+    fastclick: false,
+    lazyload: false,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+  
+
+
+
+
+  <meta name="description" content="不适合人类阅读的学习笔记  第十章 组合和继承  面向对象进阶抽象类 例子：123abstract class Element&amp;#123;	def contents: Array[String]&amp;#125;   注意，Element类中content方法没有标上abstract修饰符。一个方法只要是没有实现的(即没有等号或方法体)，那么它就是抽象的。跟Java不同，我们不能对方法加上abstra">
+<meta name="keywords" content="๑Scala">
+<meta property="og:type" content="article">
+<meta property="og:title" content="《Scala编程》阅读记录——类进阶">
+<meta property="og:url" content="https://fleschier.github.io/2018/07/23/scala-learning-03/index.html">
+<meta property="og:site_name" content="Fleschier 渐寒^">
+<meta property="og:description" content="不适合人类阅读的学习笔记  第十章 组合和继承  面向对象进阶抽象类 例子：123abstract class Element&amp;#123;	def contents: Array[String]&amp;#125;   注意，Element类中content方法没有标上abstract修饰符。一个方法只要是没有实现的(即没有等号或方法体)，那么它就是抽象的。跟Java不同，我们不能对方法加上abstra">
+<meta property="og:locale" content="default">
+<meta property="og:image" content="https://fleschier.github.io/images/Scala/relation.jpg">
+<meta property="og:updated_time" content="2018-09-03T13:37:06.158Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="《Scala编程》阅读记录——类进阶">
+<meta name="twitter:description" content="不适合人类阅读的学习笔记  第十章 组合和继承  面向对象进阶抽象类 例子：123abstract class Element&amp;#123;	def contents: Array[String]&amp;#125;   注意，Element类中content方法没有标上abstract修饰符。一个方法只要是没有实现的(即没有等号或方法体)，那么它就是抽象的。跟Java不同，我们不能对方法加上abstra">
+<meta name="twitter:image" content="https://fleschier.github.io/images/Scala/relation.jpg">
+
+
+
+
+
+
+  <link rel="canonical" href="https://fleschier.github.io/2018/07/23/scala-learning-03/"/>
+
+
+
+<script type="text/javascript" id="page.configurations">
+  CONFIG.page = {
+    sidebar: "",
+  };
+</script>
+
+  <title>《Scala编程》阅读记录——类进阶 | Fleschier 渐寒^</title>
+  
+
+
+
+
+
+
+
+
+
+  <noscript>
+  <style type="text/css">
+    .use-motion .motion-element,
+    .use-motion .brand,
+    .use-motion .menu-item,
+    .sidebar-inner,
+    .use-motion .post-block,
+    .use-motion .pagination,
+    .use-motion .comments,
+    .use-motion .post-header,
+    .use-motion .post-body,
+    .use-motion .collection-title { opacity: initial; }
+
+    .use-motion .logo,
+    .use-motion .site-title,
+    .use-motion .site-subtitle {
+      opacity: initial;
+      top: initial;
+    }
+
+    .use-motion {
+      .logo-line-before i { left: initial; }
+      .logo-line-after i { right: initial; }
+    }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="default">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">Fleschier 渐寒^</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+    
+      
+        <h1 class="site-subtitle" itemprop="description">Welcome~</h1>
+      
+    
+  </div>
+
+  <div class="site-nav-toggle">
+    <button aria-label="Toggle navigation bar">
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+  
+    <ul id="menu" class="menu">
+      
+        
+        
+        
+          
+          <li class="menu-item menu-item-home">
+    <a href="/" rel="section">
+      <i class="menu-item-icon fa fa-fw fa-home"></i> <br />Home</a>
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-about">
+    <a href="/about/" rel="section">
+      <i class="menu-item-icon fa fa-fw fa-user"></i> <br />About</a>
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-tags">
+    <a href="/tags/" rel="section">
+      <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />Tags</a>
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-categories">
+    <a href="/categories/" rel="section">
+      <i class="menu-item-icon fa fa-fw fa-th"></i> <br />Categories</a>
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-archives">
+    <a href="/archives/" rel="section">
+      <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />Archives</a>
+  </li>
+
+      
+      
+    </ul>
+  
+
+  
+    
+
+  
+
+  
+</nav>
+
+
+
+  
+
+
+
+</div>
+    </header>
+
+    
+
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://fleschier.github.io/2018/07/23/scala-learning-03/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Fleschier">
+      <meta itemprop="description" content="Seek the Light, Through Darkness...">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Fleschier 渐寒^">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h2 class="post-title" itemprop="name headline">《Scala编程》阅读记录——类进阶
+              
+            
+          </h2>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+
+            
+            
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+
+              
+                
+              
+
+              <time title="Created: 2018-07-23 17:40:00" itemprop="dateCreated datePublished" datetime="2018-07-23T17:40:00+08:00">2018-07-23</time>
+            
+
+            
+              
+
+              
+                
+                <span class="post-meta-divider">|</span>
+                
+
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">Edited on</span>
+                
+                <time title="Modified: 2018-09-03 21:37:06" itemprop="dateModified" datetime="2018-09-03T21:37:06+08:00">2018-09-03</time>
+              
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">In</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/Computer-Programes/" itemprop="url" rel="index"><span itemprop="name">Computer Programes</span></a></span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <blockquote>
+<p>不适合人类阅读的学习笔记</p>
+</blockquote>
+<h2 id="第十章-组合和继承-面向对象进阶"><a href="#第十章-组合和继承-面向对象进阶" class="headerlink" title="第十章 组合和继承  面向对象进阶"></a>第十章 组合和继承  面向对象进阶</h2><h3 id="抽象类"><a href="#抽象类" class="headerlink" title="抽象类"></a>抽象类</h3><ul>
+<li>例子：<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">abstract class Element&#123;</span><br><span class="line">	def contents: Array[String]</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<p>注意，Element类中content方法没有标上abstract修饰符。一个方法只要是没有实现的(即没有等号或方法体)，那么它就是抽象的。跟Java不同，我们不能对方法加上abstract修饰符</p>
+<h3 id="定义无参方法"><a href="#定义无参方法" class="headerlink" title="定义无参方法"></a>定义无参方法</h3><ul>
+<li><p>例子：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">abstract class Element &#123;</span><br><span class="line">	def contents: Array[String]</span><br><span class="line">	def height: Int = contents.length</span><br><span class="line">	def width: Int = if(height == 0) 0 else contents(0).length</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>这个无参方法的特点是，如果将<code>def</code>换成<code>val</code>，那么他就成了一个字段而不会有编译错误</p>
+</li>
+<li><p>在这里无参方法和字段的区别是：字段的调用会更加快，但是每次实例化对象都要分配内存空间。具体取舍要看具体的用法。</p>
+</li>
+<li><p>总结下来就是，scala推荐我们将那些没有参数也没有副作用的方法定义为无参方法，而对于无参数而有副作用的方法不应当省略空括号，例如：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">&quot;hello&quot;.length  //没有()，因为没有副作用</span><br><span class="line">println()	//有()，因为有副作用</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<h3 id="扩展类"><a href="#扩展类" class="headerlink" title="扩展类"></a>扩展类</h3><ul>
+<li><p>使用<code>extends</code>关键字，相当于继承</p>
+</li>
+<li><p>scala中所有类的默认父类是AnyRef</p>
+</li>
+<li><p>继承的意思是超类的所有成员也是子类的成员，但是有两个例外：<br>一个是超类的私有成员不会被子类继承；<br>二是如果子类实现了相同名称和参数的成员，那么该成员不会被继承(重写，override)</p>
+</li>
+<li><p>scala只有两个命名空间用于定义：</p>
+</li>
+</ul>
+<ol>
+<li>值(字段，方法，包和单例对象)</li>
+<li>类型(类和特质名)</li>
+</ol>
+<ul>
+<li><p>因此scala可以用val来重写一个无参方法(即将一个无参方法重写为一个字段)</p>
+</li>
+<li><p>如果我们要在子类中重写父类的方法，则要在方法前加上override修饰符：<code>override def funcName(...){...}</code></p>
+</li>
+<li><p>使用final修饰符来确保某个成员不能被子类继承</p>
+</li>
+<li><p>scala的继承关系图<br><img src="/images/Scala/relation.jpg" alt=""></p>
+</li>
+</ul>
+<h2 id="第十二章-特质"><a href="#第十二章-特质" class="headerlink" title="第十二章 特质"></a>第十二章 特质</h2><hr>
+<ul>
+<li><p>特质的定义跟类定义很像，除了关键字trait</p>
+</li>
+<li><p>scala可以使用<code>extends</code>或者<code>with</code>关键字来 <em>混入</em> 特质，而不是继承。</p>
+</li>
+<li><p>例子：<code>class Frog extends Animal with Philosophical with HasLegs{..}</code><br>混入多个特质用<code>with</code>连接</p>
+</li>
+</ul>
+<h3 id="要点如下"><a href="#要点如下" class="headerlink" title="要点如下:"></a>要点如下:</h3><ul>
+<li><p><strong>Scala中类只能继承一个超类, 可以扩展任意数量的特质</strong></p>
+</li>
+<li><p>特质可以要求实现它们的类具备特定的字段, 方法和超类</p>
+</li>
+<li><p>与Java接口不同, Scala特质可以提供方法和字段的实现</p>
+</li>
+<li><p>当将多个特质叠加使用的时候, 顺序很重要</p>
+</li>
+<li><p><a href="https://www.cnblogs.com/nowgood/p/scalatrait.html" target="_blank" rel="noopener">scala特质详细解析</a></p>
+</li>
+<li><p>重写特质的抽象方法时, 不需要<code>override</code>关键字</p>
+</li>
+<li><p>可以为类和对象添加多个相互调用的特质时, 从最后一个开始调用. 这对于需要分阶段加工处理某个值的场景很有用.</p>
+</li>
+</ul>
+<h2 id="第十三章-包和引入"><a href="#第十三章-包和引入" class="headerlink" title="第十三章 包和引入"></a>第十三章 包和引入</h2><hr>
+<ul>
+<li><p>scala的引入可以出现在任何地方，不仅仅是某个编译单元的开始</p>
+</li>
+<li><p>例如，假设一个Fruit类，其中有有name和color字段。有如下的一个函数：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">def showFruit(fruit: Fruit) = &#123;</span><br><span class="line">	import Fruit._</span><br><span class="line">	println(name + &quot;s are&quot; + color)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<p>showFruit引入了其参数fruit(Fruit类)的所有成员。下面的name和color就相当于fruit.name和fruit.color</p>
+<h2 id="第十四章-断言和测试"><a href="#第十四章-断言和测试" class="headerlink" title="第十四章 断言和测试"></a>第十四章 断言和测试</h2><hr>
+<ul>
+<li><p>在scala中，断言的写法是对预定义方法assert的调用。</p>
+</li>
+<li><p>表达式：<code>assert(condition)</code>。如果condition不满足则抛出AssertionError</p>
+</li>
+<li><p>另一种：<code>assert(condition,explanation)</code>如果condition不满足则抛出指定的explanation的AssertionError</p>
+</li>
+</ul>
+<h2 id="第十五章-样例类和模式匹配"><a href="#第十五章-样例类和模式匹配" class="headerlink" title="第十五章 样例类和模式匹配"></a>第十五章 样例类和模式匹配</h2><hr>
+<ul>
+<li><p>样例类使用case关键字修饰，scala编译器会自动创建工厂方法，即可以直接用<code>className(parameter1,parameter2,...)</code>而不用<code>new</code>关键字即可创建对象</p>
+</li>
+<li><p>模式匹配，例子：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">expr match&#123;</span><br><span class="line">	case BinOp(...) =&gt; println(...)</span><br><span class="line">	case _ =&gt;  //处理器默认case,这一行是必须的，否则所有非满足第一个条件的case都会返回MatchError</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<p>通配模式(<code>_</code>)会匹配任何对象</p>
+<h2 id="第二十章-抽象成员"><a href="#第二十章-抽象成员" class="headerlink" title="第二十章 抽象成员"></a>第二十章 抽象成员</h2><hr>
+<ul>
+<li><p>所有四种抽象成员：<code>val</code>，<code>var</code>，方法和类型</p>
+</li>
+<li><p>例子：下面这个特质声明了四种抽象成员：一个抽象类型(T)，一个抽象方法(transform)，一个val(initial)和一个var(current)</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">trait Anstract&#123;</span><br><span class="line">	type T</span><br><span class="line">	def transform(x: T): T</span><br><span class="line">	val initial: T</span><br><span class="line">	var current: T</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>scala的抽象类型指的是用type关键字声明为某个类或者特质的成员(但并不给出定义)的类型。类或者特质都不能够叫抽象类型，抽象类型永远是某个类或者特质的成员，比如Abstract特质中的T</p>
+</li>
+<li><p><code>lazy</code>关键字：如果在<code>val</code>关键字前面加上<code>lazy</code>关键字，则该变量会在第一次被使用时被赋值。</p>
+</li>
+<li><p>T是指一个在声明时还未知的类型。不同的子类可以提供不同的T的实现</p>
+</li>
+</ul>
+<p><br></p>
+<blockquote>
+<p>最后更新于2018.7.24</p>
+</blockquote>
+
+      
+    </div>
+
+    
+
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/๑Scala/" rel="tag"># ๑Scala</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2018/07/20/cluster-usage/" rel="next" title="hadoop集群使用中的一些问题记录">
+                <i class="fa fa-chevron-left"></i> hadoop集群使用中的一些问题记录
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2018/07/23/windows-realated/" rel="prev" title="Windows10使用过程中遇到的一些坑">
+                Windows10使用过程中遇到的一些坑 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+  </div>
+
+
+          </div>
+          
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            Table of Contents
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            Overview
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image"
+                src="/images/avatar.gif"
+                alt="Fleschier" />
+            
+              <p class="site-author-name" itemprop="name">Fleschier</p>
+              <p class="site-description motion-element" itemprop="description">Seek the Light, Through Darkness...</p>
+          </div>
+
+          
+            <nav class="site-state motion-element">
+              
+                <div class="site-state-item site-state-posts">
+                
+                  <a href="/archives/">
+                
+                    <span class="site-state-item-count">41</span>
+                    <span class="site-state-item-name">posts</span>
+                  </a>
+                </div>
+              
+
+              
+                
+                
+                <div class="site-state-item site-state-categories">
+                  <a href="/categories/index.html">
+                    
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">8</span>
+                    <span class="site-state-item-name">categories</span>
+                  </a>
+                </div>
+              
+
+              
+                
+                
+                <div class="site-state-item site-state-tags">
+                  <a href="/tags/index.html">
+                    
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">25</span>
+                    <span class="site-state-item-name">tags</span>
+                  </a>
+                </div>
+              
+            </nav>
+          
+
+          
+
+          
+
+          
+          
+
+          
+          
+
+          
+            
+          
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#第十章-组合和继承-面向对象进阶"><span class="nav-number">1.</span> <span class="nav-text">第十章 组合和继承  面向对象进阶</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#抽象类"><span class="nav-number">1.1.</span> <span class="nav-text">抽象类</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#定义无参方法"><span class="nav-number">1.2.</span> <span class="nav-text">定义无参方法</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#扩展类"><span class="nav-number">1.3.</span> <span class="nav-text">扩展类</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#第十二章-特质"><span class="nav-number">2.</span> <span class="nav-text">第十二章 特质</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#要点如下"><span class="nav-number">2.1.</span> <span class="nav-text">要点如下:</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#第十三章-包和引入"><span class="nav-number">3.</span> <span class="nav-text">第十三章 包和引入</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#第十四章-断言和测试"><span class="nav-number">4.</span> <span class="nav-text">第十四章 断言和测试</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#第十五章-样例类和模式匹配"><span class="nav-number">5.</span> <span class="nav-text">第十五章 样例类和模式匹配</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#第二十章-抽象成员"><span class="nav-number">6.</span> <span class="nav-text">第二十章 抽象成员</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2018</span>
+  <span class="with-love" id="animate">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Fleschier</span>
+
+  
+
+  
+</div>
+
+
+  
+
+
+
+  <div class="powered-by">Powered by <a class="theme-link" target="_blank" rel="external nofollow" href="https://hexo.io">Hexo</a> v3.7.1</div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">Theme – <a class="theme-link" target="_blank" rel="external nofollow" href="https://theme-next.org">NexT.Mist</a> v6.4.1</div>
+
+
+
+
+        
+
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+	
+    
+
+    
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=6.4.1"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=6.4.1"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=6.4.1"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=6.4.1"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=6.4.1"></script>
+
+
+
+  
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+<script>
+(function(){
+    var bp = document.createElement('script');
+    var curProtocol = window.location.protocol.split(':')[0];
+    if (curProtocol === 'https') {
+        bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';        
+    }
+    else {
+        bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+    }
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(bp, s);
+})();
+</script>
+
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>

@@ -1,0 +1,1116 @@
+<!DOCTYPE html>
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+<html class="theme-next mist use-motion" lang="">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2"/>
+<meta name="theme-color" content="#222">
+
+<meta name="google-site-verification" content="RI_5ZmhALpyfpS6aXve0MY8gzrCYCj1_kQTQ4eX00eM" />
+<meta name="baidu-site-verification" content="V62ScxFPRH" />
+
+
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=6.4.1" rel="stylesheet" type="text/css" />
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=6.4.1">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=6.4.1">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=6.4.1">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=6.4.1" color="#222">
+
+
+
+
+
+
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Mist',
+    version: '6.4.1',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: false,
+    fastclick: false,
+    lazyload: false,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+  
+
+
+
+
+  <meta name="description" content="不适合人类阅读的学习笔记  入门  scala是一门函数式编程语言,同时也是面向对象的  函数值就是对象  scala对面向对象的实现是纯的：每个值都是对象，每个操作都是方法调用  例如，两个Int类型的相加（注意scala里所有的数据类型首字母都是大写，这说明了他们都是类），+实际上是调用了一个名为+的方法   函数式编程以两大核心概念为指导： (1)函数是一等的值：函数值可以作为参数传递给其">
+<meta name="keywords" content="๑Scala">
+<meta property="og:type" content="article">
+<meta property="og:title" content="《Scala编程》阅读记录——入门部分">
+<meta property="og:url" content="https://fleschier.github.io/2018/07/12/Scala-learning-01/index.html">
+<meta property="og:site_name" content="Fleschier 渐寒^">
+<meta property="og:description" content="不适合人类阅读的学习笔记  入门  scala是一门函数式编程语言,同时也是面向对象的  函数值就是对象  scala对面向对象的实现是纯的：每个值都是对象，每个操作都是方法调用  例如，两个Int类型的相加（注意scala里所有的数据类型首字母都是大写，这说明了他们都是类），+实际上是调用了一个名为+的方法   函数式编程以两大核心概念为指导： (1)函数是一等的值：函数值可以作为参数传递给其">
+<meta property="og:locale" content="default">
+<meta property="og:updated_time" content="2018-09-03T13:11:18.654Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="《Scala编程》阅读记录——入门部分">
+<meta name="twitter:description" content="不适合人类阅读的学习笔记  入门  scala是一门函数式编程语言,同时也是面向对象的  函数值就是对象  scala对面向对象的实现是纯的：每个值都是对象，每个操作都是方法调用  例如，两个Int类型的相加（注意scala里所有的数据类型首字母都是大写，这说明了他们都是类），+实际上是调用了一个名为+的方法   函数式编程以两大核心概念为指导： (1)函数是一等的值：函数值可以作为参数传递给其">
+
+
+
+
+
+
+  <link rel="canonical" href="https://fleschier.github.io/2018/07/12/Scala-learning-01/"/>
+
+
+
+<script type="text/javascript" id="page.configurations">
+  CONFIG.page = {
+    sidebar: "",
+  };
+</script>
+
+  <title>《Scala编程》阅读记录——入门部分 | Fleschier 渐寒^</title>
+  
+
+
+
+
+
+
+
+
+
+  <noscript>
+  <style type="text/css">
+    .use-motion .motion-element,
+    .use-motion .brand,
+    .use-motion .menu-item,
+    .sidebar-inner,
+    .use-motion .post-block,
+    .use-motion .pagination,
+    .use-motion .comments,
+    .use-motion .post-header,
+    .use-motion .post-body,
+    .use-motion .collection-title { opacity: initial; }
+
+    .use-motion .logo,
+    .use-motion .site-title,
+    .use-motion .site-subtitle {
+      opacity: initial;
+      top: initial;
+    }
+
+    .use-motion {
+      .logo-line-before i { left: initial; }
+      .logo-line-after i { right: initial; }
+    }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="default">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">Fleschier 渐寒^</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+    
+      
+        <h1 class="site-subtitle" itemprop="description">Welcome~</h1>
+      
+    
+  </div>
+
+  <div class="site-nav-toggle">
+    <button aria-label="Toggle navigation bar">
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+  
+    <ul id="menu" class="menu">
+      
+        
+        
+        
+          
+          <li class="menu-item menu-item-home">
+    <a href="/" rel="section">
+      <i class="menu-item-icon fa fa-fw fa-home"></i> <br />Home</a>
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-about">
+    <a href="/about/" rel="section">
+      <i class="menu-item-icon fa fa-fw fa-user"></i> <br />About</a>
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-tags">
+    <a href="/tags/" rel="section">
+      <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />Tags</a>
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-categories">
+    <a href="/categories/" rel="section">
+      <i class="menu-item-icon fa fa-fw fa-th"></i> <br />Categories</a>
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-archives">
+    <a href="/archives/" rel="section">
+      <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />Archives</a>
+  </li>
+
+      
+      
+    </ul>
+  
+
+  
+    
+
+  
+
+  
+</nav>
+
+
+
+  
+
+
+
+</div>
+    </header>
+
+    
+
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://fleschier.github.io/2018/07/12/Scala-learning-01/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Fleschier">
+      <meta itemprop="description" content="Seek the Light, Through Darkness...">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Fleschier 渐寒^">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h2 class="post-title" itemprop="name headline">《Scala编程》阅读记录——入门部分
+              
+            
+          </h2>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+
+            
+            
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+
+              
+                
+              
+
+              <time title="Created: 2018-07-12 21:40:00" itemprop="dateCreated datePublished" datetime="2018-07-12T21:40:00+08:00">2018-07-12</time>
+            
+
+            
+              
+
+              
+                
+                <span class="post-meta-divider">|</span>
+                
+
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">Edited on</span>
+                
+                <time title="Modified: 2018-09-03 21:11:18" itemprop="dateModified" datetime="2018-09-03T21:11:18+08:00">2018-09-03</time>
+              
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">In</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/Computer-Programes/" itemprop="url" rel="index"><span itemprop="name">Computer Programes</span></a></span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <blockquote>
+<p>不适合人类阅读的学习笔记</p>
+</blockquote>
+<h2 id="入门"><a href="#入门" class="headerlink" title="入门"></a>入门</h2><hr>
+<ul>
+<li><p>scala是一门函数式编程语言,同时也是面向对象的</p>
+</li>
+<li><p>函数值就是对象</p>
+</li>
+<li><p>scala对面向对象的实现是纯的：每个值都是对象，每个操作都是方法调用</p>
+</li>
+<li><p>例如，两个Int类型的相加（注意scala里所有的数据类型首字母都是大写，这说明了他们都是类），+实际上是调用了一个名为+的方法</p>
+</li>
+</ul>
+<h3 id="函数式编程以两大核心概念为指导："><a href="#函数式编程以两大核心概念为指导：" class="headerlink" title="函数式编程以两大核心概念为指导："></a>函数式编程以两大核心概念为指导：</h3><ul>
+<li><p>(1)函数是一等的值：函数值可以作为参数传递给其他函数，可以作为返回值，可以保存在一个变量里。还可以在一个函数里定义另一个函数，就像在函数里定义一个整数一样。也可以在定义函数时不指定名字。</p>
+</li>
+<li><p>(2)程序中的操作应该将输入值映射成输出值，而不是当场修改数据。例如Java对String的修改就是生成了一个新的String对象而原先的String不变。这个理念的另一种表述就是函数不应该有副作用(sideeffect)。方法只能通过接受入参数和返回结果这两种方式与外部通信，即参数本身不会被修改，这样的方法被称为是“指称透明的”。<br>函数式编程鼓励不可变的数据结构和指称透明的方法。</p>
+</li>
+<li><p>Scala可以选择使用指令式编程的方法，即使用可变数据和副作用编程。但是推荐使用函数式编程。</p>
+</li>
+<li><p>scala定义类的简便的写法： <code>class MyClass(index: Int, name:String)</code>这样scala编译器就会产生带有两个 <strong>私有</strong> 实例变量和一个接受这两个变量初始值的参数的构造方法类</p>
+</li>
+<li><p>假设name是一个String 类型的变量<br><code>val IfHasUpperCase = name.exists(_.isUpper)</code></p>
+</li>
+<li><p>这段代码实现了判断name中是否存在大写字母，并赋值给IfHasUpperCase这个Boolean类型的变量(scala赋值时如果不明确写出变量类型，则编译器会自动判断)</p>
+</li>
+<li><p>scala代码将字符串当做更高级的字符序列(sequence) 来处理，用 前提(predicate) 来处理</p>
+</li>
+<li><p>这里的 前提 <code>_.isUpper</code> 是scala的函数字面量(当函数字面量的结果类型是Boolean时，可以被称作前提)。它描述了一个接受 <strong>字符</strong> 作为 <strong>入参(以下划线表示)</strong>，判断该字符是否为大写字母的函数。</p>
+</li>
+<li><p>布尔值不能和整数相加</p>
+</li>
+<li><p>scala几乎所有语法结构都支持嵌套</p>
+</li>
+<li><p>scala输出： <code>println(&quot;....&quot;)</code></p>
+</li>
+<li><p>注意编译器不会推断函数参数的类型，因此函数中参数的数据类型要显式地写出</p>
+</li>
+<li><p>scala函数形式：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">def FuncName(x:Int, y:Int): Int = &#123;</span><br><span class="line">	if(...)&#123;..&#125;</span><br><span class="line">	else&#123;..&#125;</span><br><span class="line">	x</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>注意函数结果类型前面的冒号不能省（这里函数的格式实际山是与变量保持一致的，即类型跟在冒号后面）</p>
+</li>
+<li><p>scala的函数会将函数体里的最后一条语句的值作为函数的返回值（例子里的函数将x的值返回）</p>
+</li>
+<li><p>大多数时候函数的结果类型不需要显式地给出。但是递归函数必须显式地给出结果类型</p>
+</li>
+</ul>
+<ul>
+<li><p>scala表达式<code>if(x&gt;y) x else y</code>的行为，与Java里的<code>(x&gt;y)? x:y</code>的含义一致</p>
+</li>
+<li><p>编译scala脚本：<code>scala hello.scala</code></p>
+</li>
+<li><p>命令行参数可以通过名为args的scala数组来获取：<code>println(&quot;Hello &quot; + args(0) + &quot;!&quot;)</code></p>
+</li>
+<li><p>然后执行： <code>$ scala hello.scala planet  //其中planet被当做参数传入</code></p>
+</li>
+<li><p>结果： <code>Hello planet!</code></p>
+</li>
+<li><p>尽量少用for 和 while 循环</p>
+</li>
+</ul>
+<h3 id="foreach遍历"><a href="#foreach遍历" class="headerlink" title="foreach遍历"></a>foreach遍历</h3><ul>
+<li><p>打印每一个命令行参数的方式：args.foreach(arg =&gt; println(arg))<br>这段代码中，对args执行foreach方法，传入一个函数。本例中传入的是一个函数字面量(function literal)</p>
+</li>
+<li><p>这个(匿名)函数接受一个名为arg的参数(arg仅仅是参数名没有别的特殊含义)<br>上面也可以指明类型名(这样需要将参数的部分包在圆括号里，这是函数字面量的常规语法)：<code>args.foreach((arg:String) =&gt; println(arg))</code></p>
+</li>
+<li><p>scala函数字面量语法： <code>(x:Int, y: Int) =&gt; x + y</code><br>其中从左到右，括号中的是参数部分，然后是右箭头，最右边是函数体</p>
+</li>
+<li><p>scala对函数字面量还有一个特殊的简写规则：如果函数字面量只是一个接收单个参数的语句，可以不必给出参数名和参数本身。<br>因此上例可以写为：<code>args.foreach(println)</code></p>
+</li>
+</ul>
+<ul>
+<li>scala只支持指令式的for语句的函数式亲戚。<em>for表达式</em></li>
+<li><p>for表达式一个简单的例子：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">for(arg &lt;- args)</span><br><span class="line">    println(arg)</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>其中，位于 <code>&lt;-</code> 符号右边的，是args数组，在 <code>&lt;-</code> 左边的是一个 val变量的名字，为arg。<br>注意左边的这个变量一定是 val类型 的(即它不能在for表达式循环体里被重新赋值)，并且只能写为 <code>arg</code> 而不能写成 <code>val arg</code></p>
+</li>
+</ul>
+<h3 id="用类型参数化数组"><a href="#用类型参数化数组" class="headerlink" title="用类型参数化数组"></a>用类型参数化数组</h3><ul>
+<li><p>在scala中，可以用new来实例化对象或类的实例，当实例化对象时，可以用值和类型来对其进行参数化(parameterize)</p>
+</li>
+<li><p>参数化的意思是：在创建实例的时候对实例做”配置”，可以用值来参数化一个实例，做法是在构造方法的括号中传入对象参数。</p>
+</li>
+<li><p>参数化创建数组：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">val myArr = new Array[String](3)</span><br><span class="line">myArr(0) = ...</span><br><span class="line">myArr(1) = ...</span><br><span class="line">myArr(2) = ...</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>另一种创建方法： <code>val numArr = Array(&quot;zero&quot;,&quot;one&quot;,&quot;two&quot;)</code></p>
+</li>
+<li><p>这实际上是调用了一个名为apply的工厂方法，这个方法创建并返回了新的数组。这个apply方法接受一个变长的参数列表。</p>
+</li>
+</ul>
+<ul>
+<li><p>scala数组使用 <strong>圆括号</strong> 来访问元素而不是方括号，原因(原文)：</p>
+<blockquote>
+<p>数组不过是类的实例，这一点跟其他scala的实例没有本质区别。当你用一组圆括号讲一个或多个值包起来，并将其应用(apply)到某个对象时，scala会将这段代码转换成对这个对象的一个名为apply的方法调用。因此myArray(i)实际上就是myArray.apply(i)。因此，在scala中访问一个数组的元素就是一个简单的方法调用。</p>
+</blockquote>
+</li>
+<li><p>scala将从数组到表达式的一切都当做带有方法的对象来处理，由此来实现概念是的简单化。不需要记住各种特例。同时，这种统一并不会带来显著的性能开销。因为scala在编译代码时，会尽可能使用Java数组、基本类型和原生的算术指令。</p>
+</li>
+</ul>
+<h3 id="使用列表"><a href="#使用列表" class="headerlink" title="使用列表"></a>使用列表</h3><ul>
+<li><p>scala的列表(list)是不可变的(数组虽然不能更改长度，但是元素是可以改变的，因此是可变的)<br>因此list的修改有点像Java的字符串，每次对其中元素的修改都会返回一个新的list对象。</p>
+</li>
+<li><p>不需要写 <code>new List</code>，因为scala.List的伴生对象上定义了一个工厂方法<code>List.apply()</code></p>
+</li>
+<li><p>列表上用的最多的操作是 <code>::</code>，读作”cons”。它是在一个已有的列表最前面添加一个新元素，并返回这个新的列表。<br>例：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">val twoThree = List(2,3)</span><br><span class="line">val oneTwoThree = 1 :: twoThree</span><br><span class="line">println(onTwoThree)</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<p>结果： <code>List(1,2,3)</code></p>
+<ul>
+<li><p>注意：在表达式<code>1::twoThree</code>中，<code>::</code>是它右操作元的方法。（一般用在操作符表示法的方法都是左结合的，例如 <code>a * b</code>相当于 <code>a.*(b)</code> ) 除非方法名是以 <code>:</code> 结尾的，那么这个方法的调用就会发生在他的右操作元上。 因此上例相当于： <code>twoThree.::(1)</code>，1是作为参数传入的。</p>
+</li>
+<li><p>表示空列表的快捷方式是<code>Nil</code>，初始化一个新的列表的另一种方式是用<code>::</code>将元素串接起来，并将Nil作为最后一个元素。例如：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">val oneTwoThree = 1 :: 2 :: 3 :: Nil</span><br><span class="line">println(oneTwoThree)</span><br></pre></td></tr></table></figure>
+</li>
+<li><p><code>:::</code>连接两个List：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">val a = List(1)</span><br><span class="line">val b = List(2,3)</span><br><span class="line">val c = a ::: b   //c: List(1,2,3)</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>列表也有从末尾增加元素的方法，但是应当尽力避免这种写法，因为末尾追加元素的操作所需时间随列表的大小线性增加，而使用<code>::</code>只需要常量级的时间。</p>
+</li>
+<li><p>可以通过在头部添加元素的方法，最后调用reverse方法来实现末尾添加的效果</p>
+</li>
+<li><p>也可以使用ListBuffer，这是个可变列表，支持追加操作，最后使用toList方法即可转换为List</p>
+</li>
+</ul>
+<h3 id="使用元祖"><a href="#使用元祖" class="headerlink" title="使用元祖"></a>使用元祖</h3><ul>
+<li><p>元祖也是不可变的，但是元祖可以容纳不同类型的元素。</p>
+</li>
+<li><p>当需要从方法返回多个对象时，元祖就非常有用</p>
+</li>
+<li><p>实例化一个元祖非常简单，只要将对象放在圆括号当中，用逗号隔开即可</p>
+</li>
+<li><p>一旦实例化好一个元祖，就可以用英文句点、下划线和 <strong>从1开始</strong> 的序号来访问每一个元素。</p>
+</li>
+<li><p>例如：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">val pair = (99,&quot;test&quot;)</span><br><span class="line">pritln(pair._1)		//访问第一个元素</span><br><span class="line">println(pair._2)	//访问第二个元素</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>元祖的实际类型取决于它的元素。例如：<code>(99,&quot;test&quot;)</code>的类型为<code>Tuple2[Int,String]</code>,而元祖<code>(&#39;u&#39;,&#39;r&#39;,&quot;the&quot;,1,4,&quot;me&quot;)</code>的类型是<code>Tuple6[Char,Char,String,Int,Int,String]</code></p>
+</li>
+<li><p>元祖为什么不能像数组一样用圆括号来访问元素(原文)：</p>
+<blockquote>
+<p>你也许正好奇问什么不能像访问列表元素，也就是“pair(0)”那样访问元祖元素。背后的原因是列表的apply方法永远<strong>只返回同一种类型</strong>，但元祖里的元素可以是不同类型的：<code>_1</code>可能是一种类型，<code>_2</code>可能是另一种</p>
+</blockquote>
+</li>
+</ul>
+<h3 id="使用集和映射"><a href="#使用集和映射" class="headerlink" title="使用集和映射"></a>使用集和映射</h3><ul>
+<li><p>scala的API包含了一个基础的特质(trait)来表示集，这里的特质跟Java的接口定义类似</p>
+</li>
+<li><p>scala提供了两个子特质：一个表示可变集，一个表示不可变集。(可变集与不可变集位于不同的包)</p>
+</li>
+<li><p>创建一个集合的例子：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">var jetSet = Set(&quot;Boeing&quot;,&quot;Airbus&quot;)</span><br><span class="line">jetSet += &quot;Lear&quot;</span><br><span class="line">println(jetSet.contains(&quot;Cessna&quot;))</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>第一行代码表示，可以像创建列表和数组那样创建集：通过调用Set伴生对象的apply工厂方法。</p>
+</li>
+<li><p>在这个例子中，实际上调用了scala.collection.immutable.Set的伴生对象的apply方法，返回一个默认的、<strong>不可变</strong> 的Set对象，类型为<code>Set[String]</code></p>
+</li>
+<li><p>向集添加元素需要调用<code>+</code>方法。无论是可变集还是不可变集，<code>+</code>方法都会创建并返回一个新的集</p>
+</li>
+<li><p>而本例中的<code>+=</code>方法，实际上不可变集并不提供这个方法，其本质上是<code>jetSet = jetSet + ”Lear&quot;</code>的简写。因此，<strong>其本质上是将jetSet这个var重新赋值成了一个包含三个元素的新的集</strong></p>
+</li>
+<li><p>最后一行是打印集中是否包含”Cessna”这个元素，结果应当是<code>false</code></p>
+</li>
+</ul>
+<h3 id="可变集"><a href="#可变集" class="headerlink" title="可变集"></a>可变集</h3><ul>
+<li><p>使用可变集需要一次引入，例：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">import scala.collection.mutable</span><br><span class="line">val movieSet = mutable.Set(&quot;Hitch&quot;,&quot;Peter&quot;)</span><br><span class="line">movieSet += &quot;Shrek&quot;</span><br><span class="line">println(movieSet)</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>通过import语句，可以使用简短的<code>mutable.Set()</code>而不是<code>scala.colection.mutable.Set()</code>这样完整的句子</p>
+</li>
+<li><p>这里的<code>+=</code>方法在可变集里是有定义的，因此这个可变集声明时用的是 <code>val</code>而不是 <code>var</code>(上面也提到了不可变集实际上是被重新赋值了，如果使用<code>val</code>会编译报错)</p>
+</li>
+<li><p><code>HashSet</code>的用法与<code>Set</code>一致，只是<code>HashSet</code>的存储方式不同，因此一般在需要考虑性能的地方会用到<code>HashSet</code></p>
+</li>
+</ul>
+<h3 id="映射-Map"><a href="#映射-Map" class="headerlink" title="映射(Map)"></a>映射(Map)</h3><ul>
+<li><p>与Set类似，Map也有可变与不可变的版本。</p>
+</li>
+<li><p>例子：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">import scala.collection.mutable</span><br><span class="line">val treasureMap = mutable.Map[Int,String]()</span><br><span class="line">treasureMap += (1 -&gt; &quot;Go to island&quot;)</span><br><span class="line">treasureMap += (2 -&gt; &quot;Find big X on ground&quot;)</span><br><span class="line">treasureMap += (3 -&gt; &quot;Dig&quot;)</span><br><span class="line">println(treasureMap(2))</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>上面的例子引入了可变Map(默认为不可变映射)，这里与上面可变集一样，定义为val类型。接下来，使用<code>-&gt;</code>来定义键值对。这里scala会将二元操作，比如<code>1 -&gt; &quot;Go to island&quot;</code>转换为标准的方法调用，即<code>(1).-&gt;(&quot;Go to island&quot;)</code>，这里<code>&quot;Go to island&quot;</code>是方法<code>-&gt;</code>的参数。</p>
+</li>
+<li><p>可以对任何对象调用<code>-&gt;</code>方法，它将返回包含键和值两个元素的元组。</p>
+</li>
+<li><p>若要获取Map里的某个键的值，如上面代码的最后一行<code>treasureMap(2)</code>将返回<code>2</code>这个键对应的值。</p>
+</li>
+</ul>
+<h3 id="函数式编程风格"><a href="#函数式编程风格" class="headerlink" title="函数式编程风格"></a>函数式编程风格</h3><ul>
+<li><p>如果一段代码避免了使用<code>var</code>(也就是全是<code>val</code>类型的变量)，那么它很可能是函数式的。因此，向函数式风格的转化应该尽可能地避免使用<code>var</code>类型的变量。</p>
+</li>
+<li><p>指令式编程的例子：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">def printArgs(args: Array[String]): Unit = &#123;</span><br><span class="line">	var i = 0</span><br><span class="line">	while (i &lt; args.length)&#123;</span><br><span class="line">		println(args(i))</span><br><span class="line">		i += 1</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>可以将这段代码转化为函数式的：</p>
+</li>
+</ul>
+<ol>
+<li><p>第一种：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">def printArgs(args: Array[String]): Unit = &#123;</span><br><span class="line">	for (arg &lt;- args)  //for表达式形式</span><br><span class="line">		println(arg)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>第二种：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">def printArgs(args: Array[String]): Unit = &#123;</span><br><span class="line">	args.foreach(println)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+<ul>
+<li><p>另一方面，尽量避免使用带有副作用的函数。就比如上面修改之后的函数，它依旧不是“纯”的函数式代码，因为他有副作用(<em>本处的副作用是向标准输出流打印</em>)。带有副作用的函数的标志特征就是结果类型为<code>Unit</code>。(因为一个一个结果类型为<code>Unit</code>的函数，存在世上的唯一意义就是产生副作用)</p>
+</li>
+<li><p>对于这一问题，函数式编程的做法就是定义一个将传入的<code>args</code>作为格式化(用于打印)的方法，但是只返回这个格式化的字符串。例如上例可以改成：<code>def formatArgs(args: Array[String]) = args.mkString(&quot;\n&quot;)</code><br>这个函数就满足了既没有<code>var</code>变量也没有副作用。</p>
+</li>
+<li><p>这时我们就可以使用<code>println(formatArgs(args))</code>来实现与上面相同的打印的效果。</p>
+</li>
+</ul>
+<h3 id="从文件读取文本行"><a href="#从文件读取文本行" class="headerlink" title="从文件读取文本行"></a>从文件读取文本行</h3><ul>
+<li><p>例子：从文本读取文本行，并将它们打印出来，在每一行前面带上当前的字符数。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">import scala.io.Source</span><br><span class="line">if(args.length &gt;0)&#123;</span><br><span class="line">	for (line &lt;- Source.fromFile(args(0)).getLines())</span><br><span class="line">		println(line.length + &quot; &quot; + filename)</span><br><span class="line">	else</span><br><span class="line">		Console.err.println(&quot;Please enter filename&quot;)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>这段脚本首先引入了scala.io名为Srouce的类，然后检查命令行是不是至少给出了一个参数。表达式<code>Source.fromFile(args(0))</code>尝试打开指定的文件并且返回一个Source对象。在这个对象上，继续调用<code>getLines</code>方法。</p>
+</li>
+<li><p><code>getLines</code>方法返回一个<code>Iterator[String]</code>，每次迭代都给出一行内容，去掉了最后的换行符。for表达式遍历这些文本行。</p>
+</li>
+<li><p>可以将文本行赋值给一个变量：<code>val lines = Source.fromFile(args(0)).getLines().toList</code></p>
+</li>
+<li><p>其中，最后的<code>toList</code>是必须的。因为<code>getLines</code>方法返回的是一个迭代器，一旦完成遍历，迭代器就会被消耗掉，通过<code>toList</code>方法将它转化为列表，就可以随便遍历这些文本行，多少次都可以(迭代器只能遍历一次)。但是代价就是要在内存中同时存储所有的行。因此<code>lines</code>指向了一个字符串列表。</p>
+</li>
+<li><p><strong>scala也可以使用<code>*</code>来重复一个字符串</strong>，例：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">scala&gt; var s = &quot;a&quot; * 5</span><br><span class="line">s: String = aaaaa</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<p><br></p>
+<blockquote>
+<p>最后更新于2018.7.16</p>
+</blockquote>
+
+      
+    </div>
+
+    
+
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/๑Scala/" rel="tag"># ๑Scala</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2018/07/12/Scala-infos/" rel="next" title="Scala方法查询记录">
+                <i class="fa fa-chevron-left"></i> Scala方法查询记录
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2018/07/19/scala-learning-02/" rel="prev" title="《Scala编程》阅读记录——进阶部分">
+                《Scala编程》阅读记录——进阶部分 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+  </div>
+
+
+          </div>
+          
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            Table of Contents
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            Overview
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image"
+                src="/images/avatar.gif"
+                alt="Fleschier" />
+            
+              <p class="site-author-name" itemprop="name">Fleschier</p>
+              <p class="site-description motion-element" itemprop="description">Seek the Light, Through Darkness...</p>
+          </div>
+
+          
+            <nav class="site-state motion-element">
+              
+                <div class="site-state-item site-state-posts">
+                
+                  <a href="/archives/">
+                
+                    <span class="site-state-item-count">41</span>
+                    <span class="site-state-item-name">posts</span>
+                  </a>
+                </div>
+              
+
+              
+                
+                
+                <div class="site-state-item site-state-categories">
+                  <a href="/categories/index.html">
+                    
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">8</span>
+                    <span class="site-state-item-name">categories</span>
+                  </a>
+                </div>
+              
+
+              
+                
+                
+                <div class="site-state-item site-state-tags">
+                  <a href="/tags/index.html">
+                    
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">25</span>
+                    <span class="site-state-item-name">tags</span>
+                  </a>
+                </div>
+              
+            </nav>
+          
+
+          
+
+          
+
+          
+          
+
+          
+          
+
+          
+            
+          
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#入门"><span class="nav-number">1.</span> <span class="nav-text">入门</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#函数式编程以两大核心概念为指导："><span class="nav-number">1.1.</span> <span class="nav-text">函数式编程以两大核心概念为指导：</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#foreach遍历"><span class="nav-number">1.2.</span> <span class="nav-text">foreach遍历</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#用类型参数化数组"><span class="nav-number">1.3.</span> <span class="nav-text">用类型参数化数组</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#使用列表"><span class="nav-number">1.4.</span> <span class="nav-text">使用列表</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#使用元祖"><span class="nav-number">1.5.</span> <span class="nav-text">使用元祖</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#使用集和映射"><span class="nav-number">1.6.</span> <span class="nav-text">使用集和映射</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#可变集"><span class="nav-number">1.7.</span> <span class="nav-text">可变集</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#映射-Map"><span class="nav-number">1.8.</span> <span class="nav-text">映射(Map)</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#函数式编程风格"><span class="nav-number">1.9.</span> <span class="nav-text">函数式编程风格</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#从文件读取文本行"><span class="nav-number">1.10.</span> <span class="nav-text">从文件读取文本行</span></a></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2018</span>
+  <span class="with-love" id="animate">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Fleschier</span>
+
+  
+
+  
+</div>
+
+
+  
+
+
+
+  <div class="powered-by">Powered by <a class="theme-link" target="_blank" rel="external nofollow" href="https://hexo.io">Hexo</a> v3.7.1</div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">Theme – <a class="theme-link" target="_blank" rel="external nofollow" href="https://theme-next.org">NexT.Mist</a> v6.4.1</div>
+
+
+
+
+        
+
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+	
+    
+
+    
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=6.4.1"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=6.4.1"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=6.4.1"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=6.4.1"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=6.4.1"></script>
+
+
+
+  
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+<script>
+(function(){
+    var bp = document.createElement('script');
+    var curProtocol = window.location.protocol.split(':')[0];
+    if (curProtocol === 'https') {
+        bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';        
+    }
+    else {
+        bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+    }
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(bp, s);
+})();
+</script>
+
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>

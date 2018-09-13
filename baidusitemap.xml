@@ -4,19 +4,19 @@
 
     
   <url>
-    <loc>https://fleschier.github.io/2018/04/06/2018-04-06-Scala-superior/</loc>
-    <lastmod>2018-09-13T08:44:56.086Z</lastmod>
+    <loc>https://fleschier.github.io/2018/09/03/Hexo-rebuild/</loc>
+    <lastmod>2018-09-13T08:52:10.338Z</lastmod>
     <data>
         <display>
-        <title>Scala学习笔记——进阶</title>
-        <pubTime>2018-04-06T08:47:00.000Z</pubTime>
+        <title>hexo重新构建博客</title>
+        <pubTime>2018-09-03T09:25:00.000Z</pubTime>
         
-        <tag>๑Scala</tag>
+        <tag>๑Blog</tag>
          
          
            
              
-              <breadCrumb title="Computer Programes" url="https://fleschier.github.io/categories/Computer-Programes/"/>
+              <breadCrumb title="Personal Blog" url="https://fleschier.github.io/categories/Personal-Blog/"/>
           
         </display>
     </data>
@@ -44,7 +44,27 @@
 
     
   <url>
-    <loc>https://fleschier.github.io/2018/07/23/2018-07-23-windows-realated/</loc>
+    <loc>https://fleschier.github.io/2018/04/06/Scala-superior/</loc>
+    <lastmod>2018-09-13T08:44:56.086Z</lastmod>
+    <data>
+        <display>
+        <title>Scala学习笔记——进阶</title>
+        <pubTime>2018-04-06T08:47:00.000Z</pubTime>
+        
+        <tag>๑Scala</tag>
+         
+         
+           
+             
+              <breadCrumb title="Computer Programes" url="https://fleschier.github.io/categories/Computer-Programes/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>https://fleschier.github.io/2018/07/23/windows-realated/</loc>
     <lastmod>2018-09-07T08:19:05.824Z</lastmod>
     <data>
         <display>
@@ -64,7 +84,7 @@
 
     
   <url>
-    <loc>https://fleschier.github.io/2018/09/06/2018-09-06-scala-io/</loc>
+    <loc>https://fleschier.github.io/2018/09/06/scala-io/</loc>
     <lastmod>2018-09-06T09:05:31.160Z</lastmod>
     <data>
         <display>
@@ -83,31 +103,11 @@
     </url>
 
     
-  <url>
-    <loc>https://fleschier.github.io/2018/09/03/2018-09-03-Hexo-rebuild/</loc>
-    <lastmod>2018-09-05T09:25:39.967Z</lastmod>
-    <data>
-        <display>
-        <title>hexo重新构建博客</title>
-        <pubTime>2018-09-03T09:25:00.000Z</pubTime>
-        
-        <tag>๑Blog</tag>
-         
-         
-           
-             
-              <breadCrumb title="Personal Blog" url="https://fleschier.github.io/categories/Personal-Blog/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
     
     
     
   <url>
-    <loc>https://fleschier.github.io/2018/07/20/2018-07-20-cluster-usage/</loc>
+    <loc>https://fleschier.github.io/2018/07/20/cluster-usage/</loc>
     <lastmod>2018-09-05T06:53:26.445Z</lastmod>
     <data>
         <display>
@@ -132,7 +132,7 @@
     
     
   <url>
-    <loc>https://fleschier.github.io/2018/04/18/2018-04-06-Java-class/</loc>
+    <loc>https://fleschier.github.io/2018/04/18/Java-class/</loc>
     <lastmod>2018-09-03T14:01:52.914Z</lastmod>
     <data>
         <display>
@@ -152,16 +152,16 @@
 
     
   <url>
-    <loc>https://fleschier.github.io/2018/05/21/2018-05-21-NodeJS/</loc>
+    <loc>https://fleschier.github.io/2018/05/21/NodeJS/</loc>
     <lastmod>2018-09-03T13:41:55.721Z</lastmod>
     <data>
         <display>
         <title>Node.js学习笔记</title>
         <pubTime>2018-05-21T02:47:00.000Z</pubTime>
         
-        <tag>๑JS</tag>
-         
         <tag>๑FrontEnd</tag>
+         
+        <tag>๑JS</tag>
          
          
            
@@ -174,7 +174,7 @@
 
     
   <url>
-    <loc>https://fleschier.github.io/2018/07/23/2018-07-23-scala-learning-03/</loc>
+    <loc>https://fleschier.github.io/2018/07/23/scala-learning-03/</loc>
     <lastmod>2018-09-03T13:37:06.158Z</lastmod>
     <data>
         <display>
@@ -194,7 +194,7 @@
 
     
   <url>
-    <loc>https://fleschier.github.io/2018/04/06/2018-04-06-C++learning/</loc>
+    <loc>https://fleschier.github.io/2018/04/06/C++learning/</loc>
     <lastmod>2018-09-03T13:26:39.126Z</lastmod>
     <data>
         <display>
@@ -214,7 +214,7 @@
 
     
   <url>
-    <loc>https://fleschier.github.io/2018/04/18/2018-04-06-Java-function/</loc>
+    <loc>https://fleschier.github.io/2018/04/18/Java-function/</loc>
     <lastmod>2018-09-03T13:26:00.221Z</lastmod>
     <data>
         <display>
@@ -234,7 +234,7 @@
 
     
   <url>
-    <loc>https://fleschier.github.io/2018/04/06/2018-04-06-Java-learning/</loc>
+    <loc>https://fleschier.github.io/2018/04/06/Java-learning/</loc>
     <lastmod>2018-09-03T13:25:53.625Z</lastmod>
     <data>
         <display>
@@ -254,7 +254,7 @@
 
     
   <url>
-    <loc>https://fleschier.github.io/2018/04/06/2018-04-06-Python-learning/</loc>
+    <loc>https://fleschier.github.io/2018/04/06/Python-learning/</loc>
     <lastmod>2018-09-03T13:25:10.821Z</lastmod>
     <data>
         <display>
@@ -274,7 +274,7 @@
 
     
   <url>
-    <loc>https://fleschier.github.io/2018/04/06/2018-04-06-Scala-learning/</loc>
+    <loc>https://fleschier.github.io/2018/04/06/Scala-learning/</loc>
     <lastmod>2018-09-03T13:24:23.616Z</lastmod>
     <data>
         <display>
@@ -294,7 +294,7 @@
 
     
   <url>
-    <loc>https://fleschier.github.io/2018/04/06/2018-04-06-ubuntu-and-windows/</loc>
+    <loc>https://fleschier.github.io/2018/04/06/ubuntu-and-windows/</loc>
     <lastmod>2018-09-03T13:23:23.907Z</lastmod>
     <data>
         <display>
@@ -318,7 +318,7 @@
 
     
   <url>
-    <loc>https://fleschier.github.io/2018/04/06/2018-04-06-Ubuntu-operation/</loc>
+    <loc>https://fleschier.github.io/2018/04/06/Ubuntu-operation/</loc>
     <lastmod>2018-09-03T13:23:13.035Z</lastmod>
     <data>
         <display>
@@ -340,7 +340,7 @@
 
     
   <url>
-    <loc>https://fleschier.github.io/2018/04/06/2018-04-06-Ubuntu-order/</loc>
+    <loc>https://fleschier.github.io/2018/04/06/Ubuntu-order/</loc>
     <lastmod>2018-09-03T13:22:38.768Z</lastmod>
     <data>
         <display>
@@ -362,7 +362,7 @@
 
     
   <url>
-    <loc>https://fleschier.github.io/2018/04/07/2018-04-07-SQL-quary/</loc>
+    <loc>https://fleschier.github.io/2018/04/07/SQL-quary/</loc>
     <lastmod>2018-09-03T13:19:13.490Z</lastmod>
     <data>
         <display>
@@ -382,18 +382,18 @@
 
     
   <url>
-    <loc>https://fleschier.github.io/2018/04/11/2018-04-11-Git-and-Github/</loc>
+    <loc>https://fleschier.github.io/2018/04/11/Git-and-Github/</loc>
     <lastmod>2018-09-03T13:18:31.941Z</lastmod>
     <data>
         <display>
         <title>git 与 github 随笔</title>
         <pubTime>2018-04-11T14:04:00.000Z</pubTime>
         
+        <tag>๑Git</tag>
+         
         <tag>๑Ubuntu</tag>
          
         <tag>๑Linux</tag>
-         
-        <tag>๑Git</tag>
          
          
            
@@ -406,16 +406,16 @@
 
     
   <url>
-    <loc>https://fleschier.github.io/2018/04/11/2018-04-11-Spark-learning/</loc>
+    <loc>https://fleschier.github.io/2018/04/11/Spark-learning/</loc>
     <lastmod>2018-09-03T13:18:22.362Z</lastmod>
     <data>
         <display>
         <title>Spark学习笔记——基础</title>
         <pubTime>2018-04-11T08:47:00.000Z</pubTime>
         
-        <tag>๑Spark</tag>
-         
         <tag>๑BigData</tag>
+         
+        <tag>๑Spark</tag>
          
          
            
@@ -428,16 +428,16 @@
 
     
   <url>
-    <loc>https://fleschier.github.io/2018/04/11/2018-04-11-Spark-superior/</loc>
+    <loc>https://fleschier.github.io/2018/04/11/Spark-superior/</loc>
     <lastmod>2018-09-03T13:17:58.256Z</lastmod>
     <data>
         <display>
         <title>Spark学习笔记——进阶</title>
         <pubTime>2018-04-11T08:47:00.000Z</pubTime>
         
-        <tag>๑Spark</tag>
-         
         <tag>๑BigData</tag>
+         
+        <tag>๑Spark</tag>
          
          
            
@@ -450,7 +450,7 @@
 
     
   <url>
-    <loc>https://fleschier.github.io/2018/04/15/2018-04-15-File-types/</loc>
+    <loc>https://fleschier.github.io/2018/04/15/File-types/</loc>
     <lastmod>2018-09-03T13:17:45.430Z</lastmod>
     <data>
         <display>
@@ -470,7 +470,7 @@
 
     
   <url>
-    <loc>https://fleschier.github.io/2018/05/28/2018-04-19-Shaow-socks/</loc>
+    <loc>https://fleschier.github.io/2018/05/28/Shaow-socks/</loc>
     <lastmod>2018-09-03T13:17:33.983Z</lastmod>
     <data>
         <display>
@@ -494,7 +494,7 @@
 
     
   <url>
-    <loc>https://fleschier.github.io/2018/04/29/2018-04-29-Python-superior/</loc>
+    <loc>https://fleschier.github.io/2018/04/29/Python-superior/</loc>
     <lastmod>2018-09-03T13:17:25.524Z</lastmod>
     <data>
         <display>
@@ -514,7 +514,7 @@
 
     
   <url>
-    <loc>https://fleschier.github.io/2018/05/10/2018-05-10-Ubuntu-18/</loc>
+    <loc>https://fleschier.github.io/2018/05/10/Ubuntu-18/</loc>
     <lastmod>2018-09-03T13:17:09.062Z</lastmod>
     <data>
         <display>
@@ -536,7 +536,7 @@
 
     
   <url>
-    <loc>https://fleschier.github.io/2018/05/17/2018-05-17-BlockChain-concepts/</loc>
+    <loc>https://fleschier.github.io/2018/05/17/BlockChain-concepts/</loc>
     <lastmod>2018-09-03T13:16:54.280Z</lastmod>
     <data>
         <display>
@@ -556,7 +556,7 @@
 
     
   <url>
-    <loc>https://fleschier.github.io/2018/05/23/2018-05-23-Ethereum/</loc>
+    <loc>https://fleschier.github.io/2018/05/23/Ethereum/</loc>
     <lastmod>2018-09-03T13:16:24.393Z</lastmod>
     <data>
         <display>
@@ -576,16 +576,16 @@
 
     
   <url>
-    <loc>https://fleschier.github.io/2018/05/30/2018-05-30-Hadoop-usage/</loc>
+    <loc>https://fleschier.github.io/2018/05/30/Hadoop-usage/</loc>
     <lastmod>2018-09-03T13:16:00.761Z</lastmod>
     <data>
         <display>
         <title>Hadoop单机伪分布式环境搭建</title>
         <pubTime>2018-05-30T01:46:00.000Z</pubTime>
         
-        <tag>๑BigData</tag>
-         
         <tag>๑Hadoop</tag>
+         
+        <tag>๑BigData</tag>
          
          
            
@@ -598,20 +598,20 @@
 
     
   <url>
-    <loc>https://fleschier.github.io/2018/05/30/2018-05-31-HDFS/</loc>
+    <loc>https://fleschier.github.io/2018/05/30/HDFS/</loc>
     <lastmod>2018-09-03T13:15:40.361Z</lastmod>
     <data>
         <display>
         <title>HDFS相关笔记</title>
         <pubTime>2018-05-30T01:46:00.000Z</pubTime>
         
-        <tag>๑Spark</tag>
+        <tag>๑Hadoop</tag>
          
         <tag>๑BigData</tag>
          
-        <tag>๑Hadoop</tag>
-         
         <tag>๑HDFS</tag>
+         
+        <tag>๑Spark</tag>
          
          
            
@@ -624,7 +624,7 @@
 
     
   <url>
-    <loc>https://fleschier.github.io/2018/06/17/2018-06-17-FrontEnd-CSS/</loc>
+    <loc>https://fleschier.github.io/2018/06/17/FrontEnd-CSS/</loc>
     <lastmod>2018-09-03T13:15:21.621Z</lastmod>
     <data>
         <display>
@@ -646,7 +646,7 @@
 
     
   <url>
-    <loc>https://fleschier.github.io/2018/06/17/2018-06-17-FrontEnd-HTML/</loc>
+    <loc>https://fleschier.github.io/2018/06/17/FrontEnd-HTML/</loc>
     <lastmod>2018-09-03T13:14:06.827Z</lastmod>
     <data>
         <display>
@@ -668,7 +668,7 @@
 
     
   <url>
-    <loc>https://fleschier.github.io/2018/07/07/2018-07-07-JavaScript/</loc>
+    <loc>https://fleschier.github.io/2018/07/07/JavaScript/</loc>
     <lastmod>2018-09-03T13:13:08.670Z</lastmod>
     <data>
         <display>
@@ -690,7 +690,7 @@
 
     
   <url>
-    <loc>https://fleschier.github.io/2018/07/12/2018-07-12-Scala-infos/</loc>
+    <loc>https://fleschier.github.io/2018/07/12/Scala-infos/</loc>
     <lastmod>2018-09-03T13:11:49.120Z</lastmod>
     <data>
         <display>
@@ -710,7 +710,7 @@
 
     
   <url>
-    <loc>https://fleschier.github.io/2018/07/12/2018-07-12-Scala-learning-01/</loc>
+    <loc>https://fleschier.github.io/2018/07/12/Scala-learning-01/</loc>
     <lastmod>2018-09-03T13:11:18.654Z</lastmod>
     <data>
         <display>
@@ -730,7 +730,7 @@
 
     
   <url>
-    <loc>https://fleschier.github.io/2018/07/19/2018-07-19-scala-learning-02/</loc>
+    <loc>https://fleschier.github.io/2018/07/19/scala-learning-02/</loc>
     <lastmod>2018-09-03T13:10:44.611Z</lastmod>
     <data>
         <display>
@@ -750,7 +750,7 @@
 
     
   <url>
-    <loc>https://fleschier.github.io/2018/07/24/2018-07-24-scala-learning-04/</loc>
+    <loc>https://fleschier.github.io/2018/07/24/scala-learning-04/</loc>
     <lastmod>2018-09-03T13:09:04.291Z</lastmod>
     <data>
         <display>
@@ -770,7 +770,7 @@
 
     
   <url>
-    <loc>https://fleschier.github.io/2018/07/24/2018-07-24-scala-learning-05/</loc>
+    <loc>https://fleschier.github.io/2018/07/24/scala-learning-05/</loc>
     <lastmod>2018-09-03T13:08:32.348Z</lastmod>
     <data>
         <display>
@@ -791,7 +791,7 @@
     
     
   <url>
-    <loc>https://fleschier.github.io/2018/07/08/2018-07-08-Jekyll-usage/</loc>
+    <loc>https://fleschier.github.io/2018/07/08/Jekyll-usage/</loc>
     <lastmod>2018-09-03T08:50:12.010Z</lastmod>
     <data>
         <display>
@@ -811,16 +811,16 @@
 
     
   <url>
-    <loc>https://fleschier.github.io/2018/05/25/2018-05-25-jetbrains/</loc>
+    <loc>https://fleschier.github.io/2018/05/25/jetbrains/</loc>
     <lastmod>2018-09-03T08:47:10.999Z</lastmod>
     <data>
         <display>
         <title>Intellij IDEA Ultimate版本使用</title>
         <pubTime>2018-05-25T01:46:00.000Z</pubTime>
         
-        <tag>๑JetBrains</tag>
-         
         <tag>๑JS</tag>
+         
+        <tag>๑JetBrains</tag>
          
          
            
@@ -833,7 +833,7 @@
 
     
   <url>
-    <loc>https://fleschier.github.io/2018/05/03/2018-05-03-Google-play-Android/</loc>
+    <loc>https://fleschier.github.io/2018/05/03/Google-play-Android/</loc>
     <lastmod>2018-09-03T08:45:49.019Z</lastmod>
     <data>
         <display>
@@ -853,7 +853,7 @@
 
     
   <url>
-    <loc>https://fleschier.github.io/2018/04/15/2018-04-15-Block-Chain/</loc>
+    <loc>https://fleschier.github.io/2018/04/15/Block-Chain/</loc>
     <lastmod>2018-09-03T08:41:18.601Z</lastmod>
     <data>
         <display>

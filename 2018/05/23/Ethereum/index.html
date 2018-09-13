@@ -1,0 +1,977 @@
+<!DOCTYPE html>
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+<html class="theme-next mist use-motion" lang="">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2"/>
+<meta name="theme-color" content="#222">
+
+<meta name="google-site-verification" content="RI_5ZmhALpyfpS6aXve0MY8gzrCYCj1_kQTQ4eX00eM" />
+<meta name="baidu-site-verification" content="V62ScxFPRH" />
+
+
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=6.4.1" rel="stylesheet" type="text/css" />
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=6.4.1">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=6.4.1">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=6.4.1">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=6.4.1" color="#222">
+
+
+
+
+
+
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Mist',
+    version: '6.4.1',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: false,
+    fastclick: false,
+    lazyload: false,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+  
+
+
+
+
+  <meta name="description" content="不适合人类阅读的学习笔记   以太坊社区  安装Truffle Node.js安装 先要进行node.js环境的安装，见上一篇博客。  命令行安装truffle 执行命令 npm install -g truffle  创建工程  执行命令 truffle init  truffle init会默认创建一个构建在以太坊内的代币demo应用。我们可以使用这个工程来进行快速的学习。  init 之后">
+<meta name="keywords" content="๑BlockChain">
+<meta property="og:type" content="article">
+<meta property="og:title" content="以太坊(ethereum)开发">
+<meta property="og:url" content="https://fleschier.github.io/2018/05/23/Ethereum/index.html">
+<meta property="og:site_name" content="Fleschier 渐寒^">
+<meta property="og:description" content="不适合人类阅读的学习笔记   以太坊社区  安装Truffle Node.js安装 先要进行node.js环境的安装，见上一篇博客。  命令行安装truffle 执行命令 npm install -g truffle  创建工程  执行命令 truffle init  truffle init会默认创建一个构建在以太坊内的代币demo应用。我们可以使用这个工程来进行快速的学习。  init 之后">
+<meta property="og:locale" content="default">
+<meta property="og:image" content="https://fleschier.github.io/2018/05/23/Ethereum/images/block_chain/structure.png">
+<meta property="og:image" content="https://fleschier.github.io/images/block_chain/metacion_test_result.png">
+<meta property="og:updated_time" content="2018-09-03T13:16:24.393Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="以太坊(ethereum)开发">
+<meta name="twitter:description" content="不适合人类阅读的学习笔记   以太坊社区  安装Truffle Node.js安装 先要进行node.js环境的安装，见上一篇博客。  命令行安装truffle 执行命令 npm install -g truffle  创建工程  执行命令 truffle init  truffle init会默认创建一个构建在以太坊内的代币demo应用。我们可以使用这个工程来进行快速的学习。  init 之后">
+<meta name="twitter:image" content="https://fleschier.github.io/2018/05/23/Ethereum/images/block_chain/structure.png">
+
+
+
+
+
+
+  <link rel="canonical" href="https://fleschier.github.io/2018/05/23/Ethereum/"/>
+
+
+
+<script type="text/javascript" id="page.configurations">
+  CONFIG.page = {
+    sidebar: "",
+  };
+</script>
+
+  <title>以太坊(ethereum)开发 | Fleschier 渐寒^</title>
+  
+
+
+
+
+
+
+
+
+
+  <noscript>
+  <style type="text/css">
+    .use-motion .motion-element,
+    .use-motion .brand,
+    .use-motion .menu-item,
+    .sidebar-inner,
+    .use-motion .post-block,
+    .use-motion .pagination,
+    .use-motion .comments,
+    .use-motion .post-header,
+    .use-motion .post-body,
+    .use-motion .collection-title { opacity: initial; }
+
+    .use-motion .logo,
+    .use-motion .site-title,
+    .use-motion .site-subtitle {
+      opacity: initial;
+      top: initial;
+    }
+
+    .use-motion {
+      .logo-line-before i { left: initial; }
+      .logo-line-after i { right: initial; }
+    }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="default">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">Fleschier 渐寒^</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+    
+      
+        <h1 class="site-subtitle" itemprop="description">Welcome~</h1>
+      
+    
+  </div>
+
+  <div class="site-nav-toggle">
+    <button aria-label="Toggle navigation bar">
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+  
+    <ul id="menu" class="menu">
+      
+        
+        
+        
+          
+          <li class="menu-item menu-item-home">
+    <a href="/" rel="section">
+      <i class="menu-item-icon fa fa-fw fa-home"></i> <br />Home</a>
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-about">
+    <a href="/about/" rel="section">
+      <i class="menu-item-icon fa fa-fw fa-user"></i> <br />About</a>
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-tags">
+    <a href="/tags/" rel="section">
+      <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />Tags</a>
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-categories">
+    <a href="/categories/" rel="section">
+      <i class="menu-item-icon fa fa-fw fa-th"></i> <br />Categories</a>
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-archives">
+    <a href="/archives/" rel="section">
+      <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />Archives</a>
+  </li>
+
+      
+      
+    </ul>
+  
+
+  
+    
+
+  
+
+  
+</nav>
+
+
+
+  
+
+
+
+</div>
+    </header>
+
+    
+
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://fleschier.github.io/2018/05/23/Ethereum/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Fleschier">
+      <meta itemprop="description" content="Seek the Light, Through Darkness...">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Fleschier 渐寒^">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h2 class="post-title" itemprop="name headline">以太坊(ethereum)开发
+              
+            
+          </h2>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+
+            
+            
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+
+              
+                
+              
+
+              <time title="Created: 2018-05-23 05:59:00" itemprop="dateCreated datePublished" datetime="2018-05-23T05:59:00+08:00">2018-05-23</time>
+            
+
+            
+              
+
+              
+                
+                <span class="post-meta-divider">|</span>
+                
+
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">Edited on</span>
+                
+                <time title="Modified: 2018-09-03 21:16:24" itemprop="dateModified" datetime="2018-09-03T21:16:24+08:00">2018-09-03</time>
+              
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">In</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/Computer/" itemprop="url" rel="index"><span itemprop="name">Computer</span></a></span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <blockquote>
+<p>不适合人类阅读的学习笔记</p>
+</blockquote>
+<ul>
+<li><strong><a href="https://ethfans.org/" target="_blank" rel="noopener">以太坊社区</a></strong></li>
+</ul>
+<h2 id="安装Truffle"><a href="#安装Truffle" class="headerlink" title="安装Truffle"></a>安装Truffle</h2><hr>
+<h3 id="Node-js安装"><a href="#Node-js安装" class="headerlink" title="Node.js安装"></a>Node.js安装</h3><ul>
+<li>先要进行node.js环境的安装，见上一篇博客。</li>
+</ul>
+<h3 id="命令行安装truffle"><a href="#命令行安装truffle" class="headerlink" title="命令行安装truffle"></a>命令行安装truffle</h3><ul>
+<li>执行命令 <code>npm install -g truffle</code></li>
+</ul>
+<h2 id="创建工程"><a href="#创建工程" class="headerlink" title="创建工程"></a>创建工程</h2><hr>
+<ul>
+<li><p>执行命令 <code>truffle init</code></p>
+</li>
+<li><p>truffle init会默认创建一个构建在以太坊内的代币demo应用。我们可以使用这个工程来进行快速的学习。</p>
+</li>
+<li><p><code>init</code> 之后目录下就会有若干文件和文件夹。结构如下：<br><img src="images/block_chain/structure.png" alt=""></p>
+</li>
+<li><p>contracts目录中包含Solidity合约代码，其中Migrations.sol是必须有的，其他就是你自己写的合约代码了。</p>
+</li>
+<li><p>migrations目录中包含合约部署脚本，其中1_initial_migration.js就是用来部署Migrations.sol的，其他的脚本会按照顺序依次执行。</p>
+</li>
+<li><p>test目录保存用来测试应用和合约的测试文件</p>
+</li>
+<li><p>truffle.js - Truffle的配置文件</p>
+</li>
+<li><p>官方文档(命令行指令，前面要加truffle)：</p>
+</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line">Commands:</span><br><span class="line">  init      //Initialize new and empty Ethereum project</span><br><span class="line">  compile   //Compile contract source files</span><br><span class="line">  migrate   //Run migrations to deploy contracts</span><br><span class="line">  deploy    //(alias for migrate)</span><br><span class="line">  build     //Execute build pipeline (if configuration present)</span><br><span class="line">  test      //Run JavaScript and Solidity tests</span><br><span class="line">  debug     //Interactively debug any transaction on the blockchain (experimental)</span><br><span class="line">  opcode    //Print the compiled opcodes for a given contract</span><br><span class="line">  console   //Run a console with contract abstractions and commands available</span><br><span class="line">  develop   //Open a console with a local development blockchain</span><br><span class="line">  create    //Helper to create new contracts, migrations and tests</span><br><span class="line">  install   //Install a package from the Ethereum Package Registry</span><br><span class="line">  publish   //Publish a package to the Ethereum Package Registry</span><br><span class="line">  networks  //Show addresses for deployed contracts on each network</span><br><span class="line">  watch     //Watch filesystem for changes and rebuild the project automatically</span><br><span class="line">  serve     //Serve the build directory on localhost and watch for changes</span><br><span class="line">  exec      //Execute a JS module within this Truffle environment</span><br><span class="line">  unbox     //Download a Truffle Box, a pre-built Truffle project</span><br><span class="line">  version   //Show version number and exit</span><br></pre></td></tr></table></figure>
+<p>终端输入<code>truffle</code>即可查看上述命令</p>
+<h2 id="安装以太坊客户端"><a href="#安装以太坊客户端" class="headerlink" title="安装以太坊客户端"></a>安装以太坊客户端</h2><hr>
+<ul>
+<li><p>这里我们选择了Ganache——<a href="https://github.com/trufflesuite/ganache-cli" target="_blank" rel="noopener">github项目</a></p>
+</li>
+<li><p><a href="https://github.com/trufflesuite/ganache/releases" target="_blank" rel="noopener">图形版本下载地址</a>(linux下载 XX.AppImage文件格式的)</p>
+</li>
+<li><p>命令行版本（ganache-cli）下载 <code>npm install -g ganache-cli</code></p>
+</li>
+<li><p>Ganache的前身是testRPC</p>
+</li>
+</ul>
+<h2 id="编译和部署合约"><a href="#编译和部署合约" class="headerlink" title="编译和部署合约"></a>编译和部署合约</h2><hr>
+<ul>
+<li><p>Ganache默认运行在7545端口，可以在界面右上方的“设置”里进行更改。运行后默认创建10个账号，每个账号里有100ETH的余额。<br>要部署到链上，需要把IP、端口、网络ID告诉truffle。</p>
+</li>
+<li><p>若要修改，则修改truffle.js：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">module.exports = &#123;  </span><br><span class="line">    networks: &#123;  </span><br><span class="line">        development: &#123;  </span><br><span class="line">            host: &apos;localhost&apos;,  </span><br><span class="line">            port: &apos;7545&apos;,  </span><br><span class="line">            network_id: &apos;*&apos; // Match any network id  </span><br><span class="line">        &#125;  </span><br><span class="line">    &#125;  </span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<h3 id="编译合约"><a href="#编译合约" class="headerlink" title="编译合约"></a>编译合约</h3><h4 id="合约位置"><a href="#合约位置" class="headerlink" title="合约位置"></a>合约位置</h4><ul>
+<li><p>所有你的合约应该位于<code>./contracts</code>目录。默认我们提供了一个合约文件，一个库文件，均以.sol结尾作为示例。尽管库文件有一定的特殊性，但为简单起见，当前均称之为合约。</p>
+</li>
+<li><p><code>truffle cmpile</code> 仅默认编译自上次编译后被修改过的文件，来减少不必要的编译。如果你想编译全部文件，可以使用–compile-all选项。</p>
+</li>
+</ul>
+<h4 id="约定"><a href="#约定" class="headerlink" title="约定"></a>约定</h4><ul>
+<li><p>Truffle需要定义的合约名称和文件名准确匹配。例如，如果文件名为 <code>MyContract.sol</code>，那么合约文件须为如下两者之一(并且匹配 <strong>区分大小写</strong>)：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">contract MyContract &#123;</span><br><span class="line">  ...</span><br><span class="line">&#125;</span><br><span class="line">// or</span><br><span class="line">library MyContract &#123;</span><br><span class="line">  ...</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>编译目录:编译的输出位于<code>./build/contracts</code> 目录。如果目录不存在会自动创建。这些编译文件对于Truffle框架能否正常工作至关重要。你不应该在正常的编译或发布以外手动修改这些文件。</p>
+</li>
+</ul>
+<h3 id="移植"><a href="#移植" class="headerlink" title="移植"></a>移植</h3><ul>
+<li><p>命令 <code>truffle migrate</code></p>
+</li>
+<li><p>这个命令会执行所有的位于 <code>migrations</code> 目录内的移植脚本。如果你之前的移植是成功执行的。<code>truffle migrate</code> 仅会执行新创建的移植。如果没有新的移植脚本，这个命令不同执行任何操作。可以使用选项 <code>--reset</code>来从头执行移植脚本。</p>
+</li>
+</ul>
+<h3 id="修改配置"><a href="#修改配置" class="headerlink" title="修改配置"></a>修改配置</h3><ul>
+<li><p>Ganache默认运行在7545端口，可以在界面右上方的“设置”里进行更改。运行后默认创建10个账号，每个账号里有100ETH的余额。<br>要部署到链上，需要把IP、端口、网络ID告诉truffle。修改truffle.js：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">module.exports = &#123;</span><br><span class="line">  networks: &#123;</span><br><span class="line">    development: &#123;</span><br><span class="line">      host: &quot;127.0.0.1&quot;,</span><br><span class="line">      port: 8545,</span><br><span class="line">      network_id: &quot;*&quot; // Match any network id</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>详见<a href="http://truffleframework.com/docs/advanced/configuration" target="_blank" rel="noopener">官方文档</a></p>
+</li>
+</ul>
+<h2 id="测试合约"><a href="#测试合约" class="headerlink" title="测试合约"></a>测试合约</h2><hr>
+<ul>
+<li><p>直接执行命令：<code>truffle unbox metacoin</code>,创建这个项目。</p>
+</li>
+<li><p>由于metacoin的示例代码里已经把测试代码写好了，按照上面的修改完truffle.js之后，<strong>我们就可以编译部署测试我们的代码了：</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">truffle compile</span><br><span class="line">truffle migrate</span><br><span class="line">truffle test</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>结果如下:<br><img src="/images/block_chain/metacion_test_result.png" alt=""></p>
+</li>
+<li><p>然后打开 ganache查看区块链的变化。 Accounts标签：第一个账户里ETH略有减少，因为交易消耗了gas；Blocks标签：Ganache是自动挖矿，生成了6个新区块，每个区块里有一个交易；Transactions标签：有6笔新交易，可以点开看交易详情；Logs标签：显示交易和挖矿日志</p>
+</li>
+</ul>
+<p><br></p>
+<blockquote>
+<p>最后更新于2018.5.23</p>
+</blockquote>
+
+      
+    </div>
+
+    
+
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/๑BlockChain/" rel="tag"># ๑BlockChain</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2018/05/21/NodeJS/" rel="next" title="Node.js学习笔记">
+                <i class="fa fa-chevron-left"></i> Node.js学习笔记
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2018/05/25/jetbrains/" rel="prev" title="Intellij IDEA Ultimate版本使用">
+                Intellij IDEA Ultimate版本使用 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+  </div>
+
+
+          </div>
+          
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            Table of Contents
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            Overview
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image"
+                src="/images/avatar.gif"
+                alt="Fleschier" />
+            
+              <p class="site-author-name" itemprop="name">Fleschier</p>
+              <p class="site-description motion-element" itemprop="description">Seek the Light, Through Darkness...</p>
+          </div>
+
+          
+            <nav class="site-state motion-element">
+              
+                <div class="site-state-item site-state-posts">
+                
+                  <a href="/archives/">
+                
+                    <span class="site-state-item-count">41</span>
+                    <span class="site-state-item-name">posts</span>
+                  </a>
+                </div>
+              
+
+              
+                
+                
+                <div class="site-state-item site-state-categories">
+                  <a href="/categories/index.html">
+                    
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">8</span>
+                    <span class="site-state-item-name">categories</span>
+                  </a>
+                </div>
+              
+
+              
+                
+                
+                <div class="site-state-item site-state-tags">
+                  <a href="/tags/index.html">
+                    
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">25</span>
+                    <span class="site-state-item-name">tags</span>
+                  </a>
+                </div>
+              
+            </nav>
+          
+
+          
+
+          
+
+          
+          
+
+          
+          
+
+          
+            
+          
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#安装Truffle"><span class="nav-number">1.</span> <span class="nav-text">安装Truffle</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Node-js安装"><span class="nav-number">1.1.</span> <span class="nav-text">Node.js安装</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#命令行安装truffle"><span class="nav-number">1.2.</span> <span class="nav-text">命令行安装truffle</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#创建工程"><span class="nav-number">2.</span> <span class="nav-text">创建工程</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#安装以太坊客户端"><span class="nav-number">3.</span> <span class="nav-text">安装以太坊客户端</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#编译和部署合约"><span class="nav-number">4.</span> <span class="nav-text">编译和部署合约</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#编译合约"><span class="nav-number">4.1.</span> <span class="nav-text">编译合约</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#合约位置"><span class="nav-number">4.1.1.</span> <span class="nav-text">合约位置</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#约定"><span class="nav-number">4.1.2.</span> <span class="nav-text">约定</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#移植"><span class="nav-number">4.2.</span> <span class="nav-text">移植</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#修改配置"><span class="nav-number">4.3.</span> <span class="nav-text">修改配置</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#测试合约"><span class="nav-number">5.</span> <span class="nav-text">测试合约</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2018</span>
+  <span class="with-love" id="animate">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Fleschier</span>
+
+  
+
+  
+</div>
+
+
+  
+
+
+
+  <div class="powered-by">Powered by <a class="theme-link" target="_blank" rel="external nofollow" href="https://hexo.io">Hexo</a> v3.7.1</div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">Theme – <a class="theme-link" target="_blank" rel="external nofollow" href="https://theme-next.org">NexT.Mist</a> v6.4.1</div>
+
+
+
+
+        
+
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+	
+    
+
+    
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=6.4.1"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=6.4.1"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=6.4.1"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=6.4.1"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=6.4.1"></script>
+
+
+
+  
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+<script>
+(function(){
+    var bp = document.createElement('script');
+    var curProtocol = window.location.protocol.split(':')[0];
+    if (curProtocol === 'https') {
+        bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';        
+    }
+    else {
+        bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+    }
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(bp, s);
+})();
+</script>
+
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>
