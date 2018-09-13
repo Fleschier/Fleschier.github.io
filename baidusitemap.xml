@@ -4,6 +4,46 @@
 
     
   <url>
+    <loc>https://fleschier.github.io/2018/04/06/2018-04-06-Scala-superior/</loc>
+    <lastmod>2018-09-13T08:44:56.086Z</lastmod>
+    <data>
+        <display>
+        <title>Scala学习笔记——进阶</title>
+        <pubTime>2018-04-06T08:47:00.000Z</pubTime>
+        
+        <tag>๑Scala</tag>
+         
+         
+           
+             
+              <breadCrumb title="Computer Programes" url="https://fleschier.github.io/categories/Computer-Programes/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>https://fleschier.github.io/2018/04/05/hello-2018/</loc>
+    <lastmod>2018-09-13T08:44:56.086Z</lastmod>
+    <data>
+        <display>
+        <title>Welcome to Fleschier Blog</title>
+        <pubTime>2018-04-05T14:47:00.000Z</pubTime>
+        
+        <tag>๑Blog</tag>
+         
+         
+           
+             
+              <breadCrumb title="Personal Blog" url="https://fleschier.github.io/categories/Personal-Blog/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
     <loc>https://fleschier.github.io/2018/07/23/2018-07-23-windows-realated/</loc>
     <lastmod>2018-09-07T08:19:05.824Z</lastmod>
     <data>
@@ -239,26 +279,6 @@
     <data>
         <display>
         <title>Scala学习笔记——基础</title>
-        <pubTime>2018-04-06T08:47:00.000Z</pubTime>
-        
-        <tag>๑Scala</tag>
-         
-         
-           
-             
-              <breadCrumb title="Computer Programes" url="https://fleschier.github.io/categories/Computer-Programes/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>https://fleschier.github.io/2018/04/06/2018-04-06-Scala-superior/</loc>
-    <lastmod>2018-09-03T13:23:32.788Z</lastmod>
-    <data>
-        <display>
-        <title>Scala学习笔记——进阶</title>
         <pubTime>2018-04-06T08:47:00.000Z</pubTime>
         
         <tag>๑Scala</tag>
@@ -769,26 +789,6 @@
     </url>
 
     
-    
-  <url>
-    <loc>https://fleschier.github.io/2018/04/05/2018-04-05-hello-2018/</loc>
-    <lastmod>2018-09-03T08:50:19.774Z</lastmod>
-    <data>
-        <display>
-        <title>Welcome to Fleschier Blog</title>
-        <pubTime>2018-04-05T14:47:00.000Z</pubTime>
-        
-        <tag>๑Blog</tag>
-         
-         
-           
-             
-              <breadCrumb title="Personal Blog" url="https://fleschier.github.io/categories/Personal-Blog/"/>
-          
-        </display>
-    </data>
-    </url>
-
     
   <url>
     <loc>https://fleschier.github.io/2018/07/08/2018-07-08-Jekyll-usage/</loc>

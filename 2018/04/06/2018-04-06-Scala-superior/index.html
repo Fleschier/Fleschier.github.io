@@ -118,7 +118,7 @@
 <meta property="og:site_name" content="Fleschier 渐寒^">
 <meta property="og:description" content="不适合人类阅读的学习笔记    case class与模式匹配  case class一般被翻译为样例类，它是一种特殊的类，能够被优化以用于模式匹配。  - scala性能测试  测试程序的运行时间的函数：System.currentTimeMillis()  用法： 12345[...]  val time = System.currentTimeMillis()  [要测试运行时间的代码段]">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2018-09-03T13:23:32.788Z">
+<meta property="og:updated_time" content="2018-09-13T08:44:56.086Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Scala学习笔记——进阶">
 <meta name="twitter:description" content="不适合人类阅读的学习笔记    case class与模式匹配  case class一般被翻译为样例类，它是一种特殊的类，能够被优化以用于模式匹配。  - scala性能测试  测试程序的运行时间的函数：System.currentTimeMillis()  用法： 12345[...]  val time = System.currentTimeMillis()  [要测试运行时间的代码段]">
@@ -370,7 +370,7 @@
                 
                   <span class="post-meta-item-text">Edited on</span>
                 
-                <time title="Modified: 2018-09-03 21:23:32" itemprop="dateModified" datetime="2018-09-03T21:23:32+08:00">2018-09-03</time>
+                <time title="Modified: 2018-09-13 16:44:56" itemprop="dateModified" datetime="2018-09-13T16:44:56+08:00">2018-09-13</time>
               
             
           </span>
@@ -459,6 +459,31 @@
 <li><p>将ListBuffer转化为List:<br><code>val lst = buf.toList</code></p>
 </li>
 </ul>
+<h2 id="Scala类的实例"><a href="#Scala类的实例" class="headerlink" title="Scala类的实例"></a>Scala类的实例</h2><hr>
+<p>-<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">class Point(xc: Int, yc: Int) &#123;</span><br><span class="line">   var x: Int = xc</span><br><span class="line">   var y: Int = yc</span><br><span class="line">   def move(dx: Int, dy: Int) &#123;</span><br><span class="line">      x = x + dx</span><br><span class="line">      y = y + dy</span><br><span class="line">      println (&quot;x 的坐标点: &quot; + x);</span><br><span class="line">      println (&quot;y 的坐标点: &quot; + y);</span><br><span class="line">   &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<ul>
+<li><p>Scala中的类不声明为public，一个Scala源文件中可以有多个类。以上实例的类定义了两个变量 x 和 y ，一个方法：move，方法没有返回值。Scala 的类定义可以有参数，称为类参数，如上面的 xc, yc，类参数在整个类中都可以访问。</p>
+</li>
+<li><p>类的字段要初始化，不然会报错(错误：类必须申明为抽象类才行)</p>
+</li>
+</ul>
+<h2 id="scala的一些笔记综合"><a href="#scala的一些笔记综合" class="headerlink" title="scala的一些笔记综合"></a>scala的一些笔记综合</h2><hr>
+<h3 id="this关键字与构造函数"><a href="#this关键字与构造函数" class="headerlink" title="this关键字与构造函数"></a>this关键字与构造函数</h3><h4 id="主构造函数"><a href="#主构造函数" class="headerlink" title="主构造函数"></a>主构造函数</h4><ul>
+<li><p>Scala提供了一个类的主构造函数的概念。如果代码只有一个构造函数，则可以不需要定义明确的构造函数。它有助于优化代码，可以创建具有零个或多个参数的主构造函数。</p>
+</li>
+<li><p>scala主构造函数示例：(即在类中以参数的形式体现)</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">class Student(id:Int, name:String)&#123;  </span><br><span class="line">    def showDetails()&#123;  </span><br><span class="line">        println(id+&quot; &quot;+name);  </span><br><span class="line">    &#125;  </span><br><span class="line">&#125;  </span><br><span class="line">object Demo&#123;  </span><br><span class="line">    def main(args:Array[String])&#123;  </span><br><span class="line">        var s = new Student(1010,&quot;Maxsu&quot;);  </span><br><span class="line">        s.showDetails()  </span><br><span class="line">    &#125;  </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<h4 id="次要-辅助-构造器"><a href="#次要-辅助-构造器" class="headerlink" title="次要(辅助)构造器"></a>次要(辅助)构造器</h4><ul>
+<li><p>可以在类中创建任意数量的辅助构造函数，必须要从辅助构造函数内部调用主构造函数。<strong>this关键字用于从其他构造函数调用构造函数</strong>。当调用其他构造函数时，<strong>确保要将其放在构造函数中的第一行</strong>。</p>
+</li>
+<li><p>Scala二次构造函数示例：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">class Student(id:Int, name:String)&#123;  </span><br><span class="line">    var age:Int = 0  </span><br><span class="line">    def showDetails()&#123;  </span><br><span class="line">        println(id+&quot; &quot;+name+&quot; &quot;+age)  </span><br><span class="line">    &#125;  </span><br><span class="line">    def this(id:Int, name:String,age:Int)&#123;  </span><br><span class="line">        this(id,name)       // Calling primary constructor, and it is first line  </span><br><span class="line">        this.age = age  </span><br><span class="line">    &#125;  </span><br><span class="line">&#125;  </span><br><span class="line">object Demo&#123;  </span><br><span class="line">    def main(args:Array[String])&#123;  </span><br><span class="line">        var s = new Student(1010,&quot;Maxsu&quot;, 25);  </span><br><span class="line">        s.showDetails()  </span><br><span class="line">    &#125;  </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>并且在this二次构造函数的第一个语句，调用主构造函数this()的参数与主构造函数一致(如上例中的id和name两个参数)。</p>
+</li>
+</ul>
 <p><br></p>
 <blockquote>
 <p>最后更新于2018.5.27</p>
@@ -496,8 +521,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2018/04/06/2018-04-06-C++learning/" rel="next" title="C++学习笔记——类">
-                <i class="fa fa-chevron-left"></i> C++学习笔记——类
+              <a href="/2018/04/06/2018-04-06-ubuntu-and-windows/" rel="next" title="UEFI双系统的那些坑">
+                <i class="fa fa-chevron-left"></i> UEFI双系统的那些坑
               </a>
             
           </div>
@@ -506,8 +531,8 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2018/04/06/2018-04-06-Scala-learning/" rel="prev" title="Scala学习笔记——基础">
-                Scala学习笔记——基础 <i class="fa fa-chevron-right"></i>
+              <a href="/2018/04/06/2018-04-06-Ubuntu-operation/" rel="prev" title="Ubuntu随笔">
+                Ubuntu随笔 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -710,7 +735,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#case-class与模式匹配"><span class="nav-number">1.</span> <span class="nav-text">case class与模式匹配</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#scala性能测试"><span class="nav-number">2.</span> <span class="nav-text">scala性能测试</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#函数式循环"><span class="nav-number">3.</span> <span class="nav-text">函数式循环</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#一些数据结构的使用"><span class="nav-number">4.</span> <span class="nav-text">一些数据结构的使用</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#ListBuffer"><span class="nav-number">4.1.</span> <span class="nav-text">ListBuffer:</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#case-class与模式匹配"><span class="nav-number">1.</span> <span class="nav-text">case class与模式匹配</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#scala性能测试"><span class="nav-number">2.</span> <span class="nav-text">scala性能测试</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#函数式循环"><span class="nav-number">3.</span> <span class="nav-text">函数式循环</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#一些数据结构的使用"><span class="nav-number">4.</span> <span class="nav-text">一些数据结构的使用</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#ListBuffer"><span class="nav-number">4.1.</span> <span class="nav-text">ListBuffer:</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Scala类的实例"><span class="nav-number">5.</span> <span class="nav-text">Scala类的实例</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#scala的一些笔记综合"><span class="nav-number">6.</span> <span class="nav-text">scala的一些笔记综合</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#this关键字与构造函数"><span class="nav-number">6.1.</span> <span class="nav-text">this关键字与构造函数</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#主构造函数"><span class="nav-number">6.1.1.</span> <span class="nav-text">主构造函数</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#次要-辅助-构造器"><span class="nav-number">6.1.2.</span> <span class="nav-text">次要(辅助)构造器</span></a></li></ol></li></ol></li></ol></div>
             
 
           </div>

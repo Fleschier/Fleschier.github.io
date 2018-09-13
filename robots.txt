@@ -2,9 +2,8 @@
 User-agent: *
 Allow: /
 Allow: /archives/
-Allow: /tags/
 
-Disallow: /vendors/
+
 Disallow: /js/
 Disallow: /css/
 Disallow: /fonts/
