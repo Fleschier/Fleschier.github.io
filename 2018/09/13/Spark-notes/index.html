@@ -110,18 +110,18 @@
 
 
 
-  <meta name="description" content="Spark调优的一些参数设置 SparkConf的一些参数设置 见博客Spark性能优化：资源调优篇  较为全面的一个Spark性能参数讲解 Spark性能相关参数配置">
+  <meta name="description" content="Spark调优的一些参数设置 SparkConf的一些参数设置 见博客Spark性能优化：资源调优篇  较为全面的一个Spark性能参数讲解 Spark性能相关参数配置  spark分区器 主要有HashPartitioner和RangePartitioner两种。  HashPatitioner按照给定key计算出的HashCode通过模运算来分区，缺点是可能造成分区出现数据倾斜。  Range">
 <meta name="keywords" content="๑BigData,๑Spark">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Spark实际操作过程中的一些调优笔记">
 <meta property="og:url" content="https://fleschier.github.io/2018/09/13/Spark-notes/index.html">
 <meta property="og:site_name" content="Fleschier 渐寒^">
-<meta property="og:description" content="Spark调优的一些参数设置 SparkConf的一些参数设置 见博客Spark性能优化：资源调优篇  较为全面的一个Spark性能参数讲解 Spark性能相关参数配置">
+<meta property="og:description" content="Spark调优的一些参数设置 SparkConf的一些参数设置 见博客Spark性能优化：资源调优篇  较为全面的一个Spark性能参数讲解 Spark性能相关参数配置  spark分区器 主要有HashPartitioner和RangePartitioner两种。  HashPatitioner按照给定key计算出的HashCode通过模运算来分区，缺点是可能造成分区出现数据倾斜。  Range">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2018-09-13T13:31:05.721Z">
+<meta property="og:updated_time" content="2018-09-25T07:04:32.910Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Spark实际操作过程中的一些调优笔记">
-<meta name="twitter:description" content="Spark调优的一些参数设置 SparkConf的一些参数设置 见博客Spark性能优化：资源调优篇  较为全面的一个Spark性能参数讲解 Spark性能相关参数配置">
+<meta name="twitter:description" content="Spark调优的一些参数设置 SparkConf的一些参数设置 见博客Spark性能优化：资源调优篇  较为全面的一个Spark性能参数讲解 Spark性能相关参数配置  spark分区器 主要有HashPartitioner和RangePartitioner两种。  HashPatitioner按照给定key计算出的HashCode通过模运算来分区，缺点是可能造成分区出现数据倾斜。  Range">
 
 
 
@@ -353,12 +353,24 @@
                 
               
 
-              <time title="Created: 2018-09-13 21:47:00 / Modified: 21:31:05" itemprop="dateCreated datePublished" datetime="2018-09-13T21:47:00+08:00">2018-09-13</time>
+              <time title="Created: 2018-09-13 21:47:00" itemprop="dateCreated datePublished" datetime="2018-09-13T21:47:00+08:00">2018-09-13</time>
             
 
             
               
 
+              
+                
+                <span class="post-meta-divider">|</span>
+                
+
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">Edited on</span>
+                
+                <time title="Modified: 2018-09-25 15:04:32" itemprop="dateModified" datetime="2018-09-25T15:04:32+08:00">2018-09-25</time>
               
             
           </span>
@@ -415,6 +427,16 @@
 </ul>
 <h3 id="较为全面的一个Spark性能参数讲解"><a href="#较为全面的一个Spark性能参数讲解" class="headerlink" title="较为全面的一个Spark性能参数讲解"></a>较为全面的一个Spark性能参数讲解</h3><ul>
 <li><a href="https://spark-config.readthedocs.io/en/latest/index.html" target="_blank" rel="noopener">Spark性能相关参数配置</a></li>
+</ul>
+<h3 id="spark分区器"><a href="#spark分区器" class="headerlink" title="spark分区器"></a>spark分区器</h3><ul>
+<li><p>主要有HashPartitioner和RangePartitioner两种。</p>
+</li>
+<li><p>HashPatitioner按照给定key计算出的HashCode通过模运算来分区，缺点是可能造成分区出现数据倾斜。</p>
+</li>
+<li><p>RangePartioner尽量保证每个分区中数据量的均匀，而且分区与分区之间是有序的(分区内部无序)。在分区计算时可能需要消耗部分资源，因此选择那种分区方法应看具体情况。</p>
+</li>
+<li><p><a href="https://www.iteblog.com/archives/1522.html" target="_blank" rel="noopener">Spark分区器HashPartitioner和RangePartitioner代码详解</a></p>
+</li>
 </ul>
 
       
@@ -661,7 +683,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Spark调优的一些参数设置"><span class="nav-number">1.</span> <span class="nav-text">Spark调优的一些参数设置</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#SparkConf的一些参数设置"><span class="nav-number">1.1.</span> <span class="nav-text">SparkConf的一些参数设置</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#较为全面的一个Spark性能参数讲解"><span class="nav-number">1.2.</span> <span class="nav-text">较为全面的一个Spark性能参数讲解</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Spark调优的一些参数设置"><span class="nav-number">1.</span> <span class="nav-text">Spark调优的一些参数设置</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#SparkConf的一些参数设置"><span class="nav-number">1.1.</span> <span class="nav-text">SparkConf的一些参数设置</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#较为全面的一个Spark性能参数讲解"><span class="nav-number">1.2.</span> <span class="nav-text">较为全面的一个Spark性能参数讲解</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#spark分区器"><span class="nav-number">1.3.</span> <span class="nav-text">spark分区器</span></a></li></ol></li></ol></div>
             
 
           </div>
