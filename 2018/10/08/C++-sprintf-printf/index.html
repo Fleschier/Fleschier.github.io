@@ -118,7 +118,7 @@
 <meta property="og:site_name" content="Fleschier 渐寒๑">
 <meta property="og:description" content="sprintf()函数与printf()函数  sprintf()函数与printf()函数的用法几乎一样。只是前者是将内容打印到字符串中，后者直接在命令行打印出来。  sprintf()函数原型： int sprintf( char *buffer, const char *format [, argument] ... ); 除了前两个参数固定，后面可以接任意多个参数。  第二个参数为格式化字">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2018-10-08T15:21:43.658Z">
+<meta property="og:updated_time" content="2018-10-08T15:22:46.542Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="C++学习笔记——强大的sprintf">
 <meta name="twitter:description" content="sprintf()函数与printf()函数  sprintf()函数与printf()函数的用法几乎一样。只是前者是将内容打印到字符串中，后者直接在命令行打印出来。  sprintf()函数原型： int sprintf( char *buffer, const char *format [, argument] ... ); 除了前两个参数固定，后面可以接任意多个参数。  第二个参数为格式化字">
@@ -353,7 +353,7 @@
                 
               
 
-              <time title="Created: 2018-10-08 22:43:00 / Modified: 23:21:43" itemprop="dateCreated datePublished" datetime="2018-10-08T22:43:00+08:00">2018-10-08</time>
+              <time title="Created: 2018-10-08 22:43:00 / Modified: 23:22:46" itemprop="dateCreated datePublished" datetime="2018-10-08T22:43:00+08:00">2018-10-08</time>
             
 
             
@@ -498,7 +498,32 @@
 </tr>
 </tbody>
 </table>
-<h3 id="标志"><a href="#标志" class="headerlink" title="标志"></a>标志</h3><p>|标志|例子(说明)|<br>|左对齐：”-“| %-20s|<br>|右对齐：”+”| %+20s|<br>|空格| 若符号为正，则显示空格，负则显示”-“  比如：”% 6.2f”|<br>|#| 对c,s,d,u类无影响；对o类，在输出时加前缀o；对x类，在输出时加前缀0x；对e,g,f 类当结果有小数时才给出小数点。|</p>
+<h3 id="标志"><a href="#标志" class="headerlink" title="标志"></a>标志</h3><table>
+<thead>
+<tr>
+<th>标志</th>
+<th>例子(说明)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>左对齐：”-“</td>
+<td>%-20s</td>
+</tr>
+<tr>
+<td>右对齐：”+”</td>
+<td>%+20s</td>
+</tr>
+<tr>
+<td>空格</td>
+<td>若符号为正，则显示空格，负则显示”-“  比如：”% 6.2f”</td>
+</tr>
+<tr>
+<td>#</td>
+<td>对c,s,d,u类无影响；对o类，在输出时加前缀o；对x类，在输出时加前缀0x；对e,g,f 类当结果有小数时才给出小数点。</td>
+</tr>
+</tbody>
+</table>
 
       
     </div>
