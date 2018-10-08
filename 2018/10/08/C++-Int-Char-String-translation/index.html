@@ -118,7 +118,7 @@
 <meta property="og:site_name" content="Fleschier 渐寒๑">
 <meta property="og:description" content="C++提供了一些功能强大的函数来高效地完成这些转化 string转char 使用c_str()方法   示例： 123string s = &amp;quot;abcd&amp;quot;;char p[10];p = (char*)s.c_str();  上面的强制类型转换在 不修改字符串内容的情况下 是可以省略的。因为c_str()方法的返回值类型为const char*，返回的是一个不可修改的指向该字符串的">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2018-10-08T08:49:00.897Z">
+<meta property="og:updated_time" content="2018-10-08T14:34:01.411Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="C++学习笔记——数值类型,char和string的相互转化问题">
 <meta name="twitter:description" content="C++提供了一些功能强大的函数来高效地完成这些转化 string转char 使用c_str()方法   示例： 123string s = &amp;quot;abcd&amp;quot;;char p[10];p = (char*)s.c_str();  上面的强制类型转换在 不修改字符串内容的情况下 是可以省略的。因为c_str()方法的返回值类型为const char*，返回的是一个不可修改的指向该字符串的">
@@ -353,7 +353,7 @@
                 
               
 
-              <time title="Created: 2018-10-08 16:10:00 / Modified: 16:49:00" itemprop="dateCreated datePublished" datetime="2018-10-08T16:10:00+08:00">2018-10-08</time>
+              <time title="Created: 2018-10-08 16:10:00 / Modified: 22:34:01" itemprop="dateCreated datePublished" datetime="2018-10-08T16:10:00+08:00">2018-10-08</time>
             
 
             
@@ -439,8 +439,10 @@
 <h3 id="char转string"><a href="#char转string" class="headerlink" title="char转string"></a>char转string</h3><ul>
 <li>对于已经存在的<code>char*</code>，可以直接赋值给string类型的数据</li>
 </ul>
-<h3 id="int转string"><a href="#int转string" class="headerlink" title="int转string"></a>int转string</h3><ul>
-<li><p>C++库有直接的转换函数<code>to_string(int)</code></p>
+<h3 id="数值类型转string"><a href="#数值类型转string" class="headerlink" title="数值类型转string"></a>数值类型转string</h3><ul>
+<li><p>C++库有直接的转换函数<code>to_string()</code></p>
+</li>
+<li><p><code>to_string()</code>函数有多个重载函数，支持目前所有的数据类型转换为string类型。</p>
 </li>
 <li><p>需要引入头文件<code>#include&lt;string&gt;</code></p>
 </li>
@@ -510,6 +512,10 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2018/10/08/C++-sprintf-printf/" rel="prev" title="C++学习笔记——数值类型,char和string的相互转化问题">
+                C++学习笔记——数值类型,char和string的相互转化问题 <i class="fa fa-chevron-right"></i>
+              </a>
             
           </div>
         </div>
@@ -583,7 +589,7 @@
                 
                   <a href="/archives/">
                 
-                    <span class="site-state-item-count">43</span>
+                    <span class="site-state-item-count">44</span>
                     <span class="site-state-item-name">posts</span>
                   </a>
                 </div>
@@ -711,7 +717,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#C-提供了一些功能强大的函数来高效地完成这些转化"><span class="nav-number">1.</span> <span class="nav-text">C++提供了一些功能强大的函数来高效地完成这些转化</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#string转char"><span class="nav-number">1.1.</span> <span class="nav-text">string转char</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#char转string"><span class="nav-number">1.2.</span> <span class="nav-text">char转string</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#int转string"><span class="nav-number">1.3.</span> <span class="nav-text">int转string</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#数值类型转char"><span class="nav-number">1.4.</span> <span class="nav-text">数值类型转char</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#字符串转数值类型"><span class="nav-number">1.5.</span> <span class="nav-text">字符串转数值类型</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#C-提供了一些功能强大的函数来高效地完成这些转化"><span class="nav-number">1.</span> <span class="nav-text">C++提供了一些功能强大的函数来高效地完成这些转化</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#string转char"><span class="nav-number">1.1.</span> <span class="nav-text">string转char</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#char转string"><span class="nav-number">1.2.</span> <span class="nav-text">char转string</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#数值类型转string"><span class="nav-number">1.3.</span> <span class="nav-text">数值类型转string</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#数值类型转char"><span class="nav-number">1.4.</span> <span class="nav-text">数值类型转char</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#字符串转数值类型"><span class="nav-number">1.5.</span> <span class="nav-text">字符串转数值类型</span></a></li></ol></li></ol></div>
             
 
           </div>

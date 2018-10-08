@@ -2,9 +2,16 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://fleschier.github.io/2018/10/08/C++-sprintf-printf/</loc>
+    
+    <lastmod>2018-10-08T15:17:36.553Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>https://fleschier.github.io/2018/10/08/C++-Int-Char-String-translation/</loc>
     
-    <lastmod>2018-10-08T08:49:00.897Z</lastmod>
+    <lastmod>2018-10-08T14:34:01.411Z</lastmod>
     
   </url>
   
