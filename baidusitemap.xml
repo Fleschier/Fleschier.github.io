@@ -4,6 +4,26 @@
 
     
   <url>
+    <loc>https://fleschier.github.io/2018/10/08/C++-Int-Char-String-translation/</loc>
+    <lastmod>2018-10-08T08:49:00.897Z</lastmod>
+    <data>
+        <display>
+        <title>C++学习笔记——数值类型,char和string的相互转化问题</title>
+        <pubTime>2018-10-08T08:10:00.000Z</pubTime>
+        
+        <tag>๑C++</tag>
+         
+         
+           
+             
+              <breadCrumb title="Computer Programes" url="https://fleschier.github.io/categories/Computer-Programes/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
     <loc>https://fleschier.github.io/2018/09/13/Spark-notes/</loc>
     <lastmod>2018-09-25T07:04:32.910Z</lastmod>
     <data>
@@ -499,11 +519,11 @@
         <title>Shadowsocks</title>
         <pubTime>2018-05-28T07:34:00.000Z</pubTime>
         
-        <tag>๑ScientificSurfing</tag>
-         
         <tag>๑Ubuntu</tag>
          
         <tag>๑Linux</tag>
+         
+        <tag>๑ScientificSurfing</tag>
          
          
            
