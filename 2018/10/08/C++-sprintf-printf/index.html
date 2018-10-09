@@ -118,7 +118,7 @@
 <meta property="og:site_name" content="Fleschier 渐寒๑">
 <meta property="og:description" content="sprintf()函数与printf()函数  sprintf()函数与printf()函数的用法几乎一样。只是前者是将内容打印到字符串中，后者直接在命令行打印出来。  sprintf()函数原型： int sprintf( char *buffer, const char *format [, argument] ... ); 除了前两个参数固定，后面可以接任意多个参数。  第二个参数为格式化字">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2018-10-08T15:22:46.542Z">
+<meta property="og:updated_time" content="2018-10-09T10:22:02.931Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="C++学习笔记——强大的sprintf">
 <meta name="twitter:description" content="sprintf()函数与printf()函数  sprintf()函数与printf()函数的用法几乎一样。只是前者是将内容打印到字符串中，后者直接在命令行打印出来。  sprintf()函数原型： int sprintf( char *buffer, const char *format [, argument] ... ); 除了前两个参数固定，后面可以接任意多个参数。  第二个参数为格式化字">
@@ -353,12 +353,24 @@
                 
               
 
-              <time title="Created: 2018-10-08 22:43:00 / Modified: 23:22:46" itemprop="dateCreated datePublished" datetime="2018-10-08T22:43:00+08:00">2018-10-08</time>
+              <time title="Created: 2018-10-08 22:43:00" itemprop="dateCreated datePublished" datetime="2018-10-08T22:43:00+08:00">2018-10-08</time>
             
 
             
               
 
+              
+                
+                <span class="post-meta-divider">|</span>
+                
+
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">Edited on</span>
+                
+                <time title="Modified: 2018-10-09 18:22:02" itemprop="dateModified" datetime="2018-10-09T18:22:02+08:00">2018-10-09</time>
               
             
           </span>
@@ -524,6 +536,14 @@
 </tr>
 </tbody>
 </table>
+<h2 id="sprintf使用过程中遇到的一些问题记录"><a href="#sprintf使用过程中遇到的一些问题记录" class="headerlink" title="sprintf使用过程中遇到的一些问题记录"></a>sprintf使用过程中遇到的一些问题记录</h2><hr>
+<h3 id="编译器报错：Buffer-is-too-small"><a href="#编译器报错：Buffer-is-too-small" class="headerlink" title="编译器报错：Buffer is too small"></a>编译器报错：<code>Buffer is too small</code></h3><ul>
+<li><p>出现这个情况是因为被赋值的字符数组太小了。</p>
+</li>
+<li><p>实例：(矩阵乘积)</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line">//计算矩阵的乘积</span><br><span class="line">...</span><br><span class="line">...</span><br><span class="line">	char tmpc[24];		//存储转换的值,因为存储的是双精度浮点数，这里数据的整数部分为10位，小数部分要显示11位则至少开10+1+11=22位的数组才够</span><br><span class="line">	for (int i = 0; i &lt; M; i++) &#123;</span><br><span class="line">		for (int j = 0; j &lt; N; j++) &#123;</span><br><span class="line">			C[i][j] = 0;			//initialize the result martrix element</span><br><span class="line">			for (int k = 0; k &lt; K; k++) &#123;</span><br><span class="line">				C[i][j] += A[i][k] * B[k][j];</span><br><span class="line">			&#125;</span><br><span class="line">			//---------------------------------------------------------------------------------------------</span><br><span class="line">			//itoa不如sprintf灵活，这里采用sprintf来完成double到char的转换</span><br><span class="line">			////将数字转化为char数组写入, 采用itoa函数。函数原型：char *itoa(int value, char* string, int radix);</span><br><span class="line">			//_itoa(C[i][j], tmpc, 10);</span><br><span class="line">			//fputs(tmpc, fout);		//fputs的第一个参数为char*</span><br><span class="line">			//fputc(32, fout);			//写入空格，fputc的第一个参数为int*(ASCII码)</span><br><span class="line">			//---------------------------------------------------------------------------------------------</span><br><span class="line">			//使用强大的sprintf来完成转换，打印11位小数</span><br><span class="line">			sprintf_s(tmpc, &quot;%.11f &quot;, C[i][j]);				//这里的数值是整数部分10位，小数点一位，小数部分11位，末尾空格1位，结束符&apos;\0&apos;一位所以一共要开24位的数组才够</span><br><span class="line">			fputs(tmpc, fout);		//fputs的第一个参数为char*</span><br><span class="line">		&#125;</span><br><span class="line">		fputc(10, fout);		//写入换行符</span><br><span class="line">	&#125;</span><br><span class="line">  ...</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
 
       
     </div>
@@ -557,8 +577,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2018/10/08/C++-Int-Char-String-translation/" rel="next" title="C++学习笔记——数值类型,char和string的相互转化问题">
-                <i class="fa fa-chevron-left"></i> C++学习笔记——数值类型,char和string的相互转化问题
+              <a href="/2018/10/08/C++-learning-error-collection/" rel="next" title="C++学习笔记——一些报错信息归因">
+                <i class="fa fa-chevron-left"></i> C++学习笔记——一些报错信息归因
               </a>
             
           </div>
@@ -639,7 +659,7 @@
                 
                   <a href="/archives/">
                 
-                    <span class="site-state-item-count">44</span>
+                    <span class="site-state-item-count">45</span>
                     <span class="site-state-item-name">posts</span>
                   </a>
                 </div>
@@ -767,7 +787,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#sprintf-函数与printf-函数"><span class="nav-number">1.</span> <span class="nav-text">sprintf()函数与printf()函数</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#转换说明符"><span class="nav-number">2.</span> <span class="nav-text">转换说明符</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#格式符"><span class="nav-number">2.1.</span> <span class="nav-text">格式符</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#标志"><span class="nav-number">2.2.</span> <span class="nav-text">标志</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#sprintf-函数与printf-函数"><span class="nav-number">1.</span> <span class="nav-text">sprintf()函数与printf()函数</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#转换说明符"><span class="nav-number">2.</span> <span class="nav-text">转换说明符</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#格式符"><span class="nav-number">2.1.</span> <span class="nav-text">格式符</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#标志"><span class="nav-number">2.2.</span> <span class="nav-text">标志</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#sprintf使用过程中遇到的一些问题记录"><span class="nav-number">3.</span> <span class="nav-text">sprintf使用过程中遇到的一些问题记录</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#编译器报错：Buffer-is-too-small"><span class="nav-number">3.1.</span> <span class="nav-text">编译器报错：Buffer is too small</span></a></li></ol></li></ol></div>
             
 
           </div>

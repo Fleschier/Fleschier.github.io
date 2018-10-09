@@ -110,25 +110,25 @@
 
 
 
-  <meta name="description" content="不适合人类阅读的学习笔记    case class与模式匹配  case class一般被翻译为样例类，它是一种特殊的类，能够被优化以用于模式匹配。  - scala性能测试  测试程序的运行时间的函数：System.currentTimeMillis()  用法： 12345[...]  val time = System.currentTimeMillis()  [要测试运行时间的代码段]">
-<meta name="keywords" content="๑Scala">
+  <meta name="description" content="Expression: public_stream != nullptr  出现这个原因的问题很简单，就是用fopen打开文件失败了，创建的文件指针为空引起的。  解决方法就是查看文件路径是否正确。  在最后fclose的时候，先判断一下文件指针是否为空。">
+<meta name="keywords" content="๑C++">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Scala学习笔记——进阶">
-<meta property="og:url" content="https://fleschier.github.io/2018/04/06/Scala-superior/index.html">
+<meta property="og:title" content="C++学习笔记——一些报错信息归因">
+<meta property="og:url" content="https://fleschier.github.io/2018/10/08/C++-learning-error-collection/index.html">
 <meta property="og:site_name" content="Fleschier 渐寒๑">
-<meta property="og:description" content="不适合人类阅读的学习笔记    case class与模式匹配  case class一般被翻译为样例类，它是一种特殊的类，能够被优化以用于模式匹配。  - scala性能测试  测试程序的运行时间的函数：System.currentTimeMillis()  用法： 12345[...]  val time = System.currentTimeMillis()  [要测试运行时间的代码段]">
+<meta property="og:description" content="Expression: public_stream != nullptr  出现这个原因的问题很简单，就是用fopen打开文件失败了，创建的文件指针为空引起的。  解决方法就是查看文件路径是否正确。  在最后fclose的时候，先判断一下文件指针是否为空。">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2018-09-13T08:44:56.086Z">
+<meta property="og:updated_time" content="2018-10-09T10:22:02.931Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Scala学习笔记——进阶">
-<meta name="twitter:description" content="不适合人类阅读的学习笔记    case class与模式匹配  case class一般被翻译为样例类，它是一种特殊的类，能够被优化以用于模式匹配。  - scala性能测试  测试程序的运行时间的函数：System.currentTimeMillis()  用法： 12345[...]  val time = System.currentTimeMillis()  [要测试运行时间的代码段]">
+<meta name="twitter:title" content="C++学习笔记——一些报错信息归因">
+<meta name="twitter:description" content="Expression: public_stream != nullptr  出现这个原因的问题很简单，就是用fopen打开文件失败了，创建的文件指针为空引起的。  解决方法就是查看文件路径是否正确。  在最后fclose的时候，先判断一下文件指针是否为空。">
 
 
 
 
 
 
-  <link rel="canonical" href="https://fleschier.github.io/2018/04/06/Scala-superior/"/>
+  <link rel="canonical" href="https://fleschier.github.io/2018/10/08/C++-learning-error-collection/"/>
 
 
 
@@ -138,7 +138,7 @@
   };
 </script>
 
-  <title>Scala学习笔记——进阶 | Fleschier 渐寒๑</title>
+  <title>C++学习笔记——一些报错信息归因 | Fleschier 渐寒๑</title>
   
 
 
@@ -311,7 +311,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://fleschier.github.io/2018/04/06/Scala-superior/">
+    <link itemprop="mainEntityOfPage" href="https://fleschier.github.io/2018/10/08/C++-learning-error-collection/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Fleschier">
@@ -328,7 +328,7 @@
 
         
         
-          <h2 class="post-title" itemprop="name headline">Scala学习笔记——进阶
+          <h2 class="post-title" itemprop="name headline">C++学习笔记——一些报错信息归因
               
             
           </h2>
@@ -353,7 +353,7 @@
                 
               
 
-              <time title="Created: 2018-04-06 16:47:00" itemprop="dateCreated datePublished" datetime="2018-04-06T16:47:00+08:00">2018-04-06</time>
+              <time title="Created: 2018-10-08 22:43:00" itemprop="dateCreated datePublished" datetime="2018-10-08T22:43:00+08:00">2018-10-08</time>
             
 
             
@@ -370,7 +370,7 @@
                 
                   <span class="post-meta-item-text">Edited on</span>
                 
-                <time title="Modified: 2018-09-13 16:44:56" itemprop="dateModified" datetime="2018-09-13T16:44:56+08:00">2018-09-13</time>
+                <time title="Modified: 2018-10-09 18:22:02" itemprop="dateModified" datetime="2018-10-09T18:22:02+08:00">2018-10-09</time>
               
             
           </span>
@@ -421,73 +421,15 @@
       
 
       
-        <blockquote>
-<p>不适合人类阅读的学习笔记  </p>
-</blockquote>
-<h2 id="case-class与模式匹配"><a href="#case-class与模式匹配" class="headerlink" title="case class与模式匹配"></a>case class与模式匹配</h2><hr>
+        <h2 id="Expression-public-stream-nullptr"><a href="#Expression-public-stream-nullptr" class="headerlink" title="Expression: public_stream != nullptr"></a>Expression: public_stream != nullptr</h2><hr>
 <ul>
-<li>case class一般被翻译为样例类，它是一种特殊的类，能够被优化以用于模式匹配。</li>
-</ul>
-<p>-</p>
-<h2 id="scala性能测试"><a href="#scala性能测试" class="headerlink" title="scala性能测试"></a>scala性能测试</h2><hr>
-<ul>
-<li><p>测试程序的运行时间的函数：<code>System.currentTimeMillis()</code></p>
+<li><p>出现这个原因的问题很简单，就是用fopen打开文件失败了，创建的文件指针为空引起的。</p>
 </li>
-<li><p>用法：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">[...]</span><br><span class="line">  val time = System.currentTimeMillis()</span><br><span class="line">  [要测试运行时间的代码段]</span><br><span class="line">  println(&quot; 耗时: &quot; + (System.currentTimeMillis() - time))  //以时间差来看运行时间</span><br><span class="line">[...]</span><br></pre></td></tr></table></figure>
+<li><p>解决方法就是查看文件路径是否正确。</p>
+</li>
+<li><p>在最后<code>fclose</code>的时候，先判断一下文件指针是否为空。</p>
 </li>
 </ul>
-<h2 id="函数式循环"><a href="#函数式循环" class="headerlink" title="函数式循环"></a>函数式循环</h2><hr>
-<ul>
-<li><p>函数式编程的循环都是用迭代来实现的</p>
-</li>
-<li><p>例1：对于一个Int数组a,对里面每个元素执行 +1的操作</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">a.map&#123;x =&gt;</span><br><span class="line">  val y = x + 1  //因为Int是不可变类型，所以必须要新建一个值来存储改变后的值</span><br><span class="line">  y  //返回值是y</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>例2：对于一个Int数组，每找出一个大于5的数count就加1</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">var count:Int = 0</span><br><span class="line">a.foreach&#123;x =&gt;      //与map遍历方式不同，foreach不会对里面的内容修改，所以匿名函数也不需要返回值</span><br><span class="line">  if(x &gt;  5)</span><br><span class="line">    count += 1</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-</li>
-</ul>
-<h2 id="一些数据结构的使用"><a href="#一些数据结构的使用" class="headerlink" title="一些数据结构的使用"></a>一些数据结构的使用</h2><hr>
-<h3 id="ListBuffer"><a href="#ListBuffer" class="headerlink" title="ListBuffer:"></a>ListBuffer:</h3><ul>
-<li><p>首先需要引入包 <code>import scala.collection.mutable.ListBuffer</code></p>
-</li>
-<li><p>在使用之前，先声明一个ListBuffer变量，通过以下代码：<br><code>val buf = new ListBuffer[Int]()    //类型自定义，这里采用的是Int</code></p>
-</li>
-<li><p>在末尾进行追加，使用append()方法：<br><code>buf.append(x)</code></p>
-</li>
-<li><p>将ListBuffer转化为List:<br><code>val lst = buf.toList</code></p>
-</li>
-</ul>
-<h2 id="Scala类的实例"><a href="#Scala类的实例" class="headerlink" title="Scala类的实例"></a>Scala类的实例</h2><hr>
-<p>-<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">class Point(xc: Int, yc: Int) &#123;</span><br><span class="line">   var x: Int = xc</span><br><span class="line">   var y: Int = yc</span><br><span class="line">   def move(dx: Int, dy: Int) &#123;</span><br><span class="line">      x = x + dx</span><br><span class="line">      y = y + dy</span><br><span class="line">      println (&quot;x 的坐标点: &quot; + x);</span><br><span class="line">      println (&quot;y 的坐标点: &quot; + y);</span><br><span class="line">   &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
-<ul>
-<li><p>Scala中的类不声明为public，一个Scala源文件中可以有多个类。以上实例的类定义了两个变量 x 和 y ，一个方法：move，方法没有返回值。Scala 的类定义可以有参数，称为类参数，如上面的 xc, yc，类参数在整个类中都可以访问。</p>
-</li>
-<li><p>类的字段要初始化，不然会报错(错误：类必须申明为抽象类才行)</p>
-</li>
-</ul>
-<h2 id="scala的一些笔记综合"><a href="#scala的一些笔记综合" class="headerlink" title="scala的一些笔记综合"></a>scala的一些笔记综合</h2><hr>
-<h3 id="this关键字与构造函数"><a href="#this关键字与构造函数" class="headerlink" title="this关键字与构造函数"></a>this关键字与构造函数</h3><h4 id="主构造函数"><a href="#主构造函数" class="headerlink" title="主构造函数"></a>主构造函数</h4><ul>
-<li><p>Scala提供了一个类的主构造函数的概念。如果代码只有一个构造函数，则可以不需要定义明确的构造函数。它有助于优化代码，可以创建具有零个或多个参数的主构造函数。</p>
-</li>
-<li><p>scala主构造函数示例：(即在类中以参数的形式体现)</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">class Student(id:Int, name:String)&#123;  </span><br><span class="line">    def showDetails()&#123;  </span><br><span class="line">        println(id+&quot; &quot;+name);  </span><br><span class="line">    &#125;  </span><br><span class="line">&#125;  </span><br><span class="line">object Demo&#123;  </span><br><span class="line">    def main(args:Array[String])&#123;  </span><br><span class="line">        var s = new Student(1010,&quot;Maxsu&quot;);  </span><br><span class="line">        s.showDetails()  </span><br><span class="line">    &#125;  </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-</li>
-</ul>
-<h4 id="次要-辅助-构造器"><a href="#次要-辅助-构造器" class="headerlink" title="次要(辅助)构造器"></a>次要(辅助)构造器</h4><ul>
-<li><p>可以在类中创建任意数量的辅助构造函数，必须要从辅助构造函数内部调用主构造函数。<strong>this关键字用于从其他构造函数调用构造函数</strong>。当调用其他构造函数时，<strong>确保要将其放在构造函数中的第一行</strong>。</p>
-</li>
-<li><p>Scala二次构造函数示例：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">class Student(id:Int, name:String)&#123;  </span><br><span class="line">    var age:Int = 0  </span><br><span class="line">    def showDetails()&#123;  </span><br><span class="line">        println(id+&quot; &quot;+name+&quot; &quot;+age)  </span><br><span class="line">    &#125;  </span><br><span class="line">    def this(id:Int, name:String,age:Int)&#123;  </span><br><span class="line">        this(id,name)       // Calling primary constructor, and it is first line  </span><br><span class="line">        this.age = age  </span><br><span class="line">    &#125;  </span><br><span class="line">&#125;  </span><br><span class="line">object Demo&#123;  </span><br><span class="line">    def main(args:Array[String])&#123;  </span><br><span class="line">        var s = new Student(1010,&quot;Maxsu&quot;, 25);  </span><br><span class="line">        s.showDetails()  </span><br><span class="line">    &#125;  </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>并且在this二次构造函数的第一个语句，调用主构造函数this()的参数与主构造函数一致(如上例中的id和name两个参数)。</p>
-</li>
-</ul>
-<p><br></p>
-<blockquote>
-<p>最后更新于2018.5.27</p>
-</blockquote>
 
       
     </div>
@@ -508,7 +450,7 @@
       
         <div class="post-tags">
           
-            <a href="/tags/๑Scala/" rel="tag"># ๑Scala</a>
+            <a href="/tags/๑C/" rel="tag"># ๑C++</a>
           
         </div>
       
@@ -521,8 +463,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2018/04/06/Ubuntu-operation/" rel="next" title="Ubuntu随笔">
-                <i class="fa fa-chevron-left"></i> Ubuntu随笔
+              <a href="/2018/10/08/C++-Int-Char-String-translation/" rel="next" title="C++学习笔记——数值类型,char和string的相互转化问题">
+                <i class="fa fa-chevron-left"></i> C++学习笔记——数值类型,char和string的相互转化问题
               </a>
             
           </div>
@@ -531,8 +473,8 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2018/04/06/Ubuntu-order/" rel="prev" title="Ubuntu终端常用命令">
-                Ubuntu终端常用命令 <i class="fa fa-chevron-right"></i>
+              <a href="/2018/10/08/C++-sprintf-printf/" rel="prev" title="C++学习笔记——强大的sprintf">
+                C++学习笔记——强大的sprintf <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -735,7 +677,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#case-class与模式匹配"><span class="nav-number">1.</span> <span class="nav-text">case class与模式匹配</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#scala性能测试"><span class="nav-number">2.</span> <span class="nav-text">scala性能测试</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#函数式循环"><span class="nav-number">3.</span> <span class="nav-text">函数式循环</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#一些数据结构的使用"><span class="nav-number">4.</span> <span class="nav-text">一些数据结构的使用</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#ListBuffer"><span class="nav-number">4.1.</span> <span class="nav-text">ListBuffer:</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Scala类的实例"><span class="nav-number">5.</span> <span class="nav-text">Scala类的实例</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#scala的一些笔记综合"><span class="nav-number">6.</span> <span class="nav-text">scala的一些笔记综合</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#this关键字与构造函数"><span class="nav-number">6.1.</span> <span class="nav-text">this关键字与构造函数</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#主构造函数"><span class="nav-number">6.1.1.</span> <span class="nav-text">主构造函数</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#次要-辅助-构造器"><span class="nav-number">6.1.2.</span> <span class="nav-text">次要(辅助)构造器</span></a></li></ol></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Expression-public-stream-nullptr"><span class="nav-number">1.</span> <span class="nav-text">Expression: public_stream != nullptr</span></a></li></ol></div>
             
 
           </div>

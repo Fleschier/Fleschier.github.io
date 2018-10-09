@@ -4,11 +4,51 @@
 
     
   <url>
+    <loc>https://fleschier.github.io/2018/04/06/C++learning-class/</loc>
+    <lastmod>2018-10-09T10:22:02.947Z</lastmod>
+    <data>
+        <display>
+        <title>C++学习笔记——类</title>
+        <pubTime>2018-04-06T08:47:00.000Z</pubTime>
+        
+        <tag>๑C++</tag>
+         
+         
+           
+             
+              <breadCrumb title="Computer Programes" url="https://fleschier.github.io/categories/Computer-Programes/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
     <loc>https://fleschier.github.io/2018/10/08/C++-sprintf-printf/</loc>
-    <lastmod>2018-10-08T15:22:46.542Z</lastmod>
+    <lastmod>2018-10-09T10:22:02.931Z</lastmod>
     <data>
         <display>
         <title>C++学习笔记——强大的sprintf</title>
+        <pubTime>2018-10-08T14:43:00.000Z</pubTime>
+        
+        <tag>๑C++</tag>
+         
+         
+           
+             
+              <breadCrumb title="Computer Programes" url="https://fleschier.github.io/categories/Computer-Programes/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>https://fleschier.github.io/2018/10/08/C++-learning-error-collection/</loc>
+    <lastmod>2018-10-09T10:22:02.931Z</lastmod>
+    <data>
+        <display>
+        <title>C++学习笔记——一些报错信息归因</title>
         <pubTime>2018-10-08T14:43:00.000Z</pubTime>
         
         <tag>๑C++</tag>
@@ -244,26 +284,6 @@
         <pubTime>2018-07-23T09:40:00.000Z</pubTime>
         
         <tag>๑Scala</tag>
-         
-         
-           
-             
-              <breadCrumb title="Computer Programes" url="https://fleschier.github.io/categories/Computer-Programes/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>https://fleschier.github.io/2018/04/06/C++learning/</loc>
-    <lastmod>2018-09-03T13:26:39.126Z</lastmod>
-    <data>
-        <display>
-        <title>C++学习笔记——类</title>
-        <pubTime>2018-04-06T08:47:00.000Z</pubTime>
-        
-        <tag>๑C++</tag>
          
          
            
