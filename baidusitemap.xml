@@ -4,6 +4,28 @@
 
     
   <url>
+    <loc>https://fleschier.github.io/2018/05/10/Ubuntu-18/</loc>
+    <lastmod>2018-10-15T15:13:20.516Z</lastmod>
+    <data>
+        <display>
+        <title>Ubuntu进阶记录 & Ubuntu-18</title>
+        <pubTime>2018-05-10T01:47:00.000Z</pubTime>
+        
+        <tag>๑Ubuntu</tag>
+         
+        <tag>๑Linux</tag>
+         
+         
+           
+             
+              <breadCrumb title="Computer System" url="https://fleschier.github.io/categories/Computer-System/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
     <loc>https://fleschier.github.io/2018/04/06/ubuntu-and-windows/</loc>
     <lastmod>2018-10-15T14:30:49.463Z</lastmod>
     <data>
@@ -41,28 +63,6 @@
            
              
               <breadCrumb title="Computer" url="https://fleschier.github.io/categories/Computer/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>https://fleschier.github.io/2018/05/10/Ubuntu-18/</loc>
-    <lastmod>2018-10-15T14:19:05.025Z</lastmod>
-    <data>
-        <display>
-        <title>Ubuntu进阶记录 & Ubuntu-18</title>
-        <pubTime>2018-05-10T01:47:00.000Z</pubTime>
-        
-        <tag>๑Ubuntu</tag>
-         
-        <tag>๑Linux</tag>
-         
-         
-           
-             
-              <breadCrumb title="Computer System" url="https://fleschier.github.io/categories/Computer-System/"/>
           
         </display>
     </data>
@@ -282,9 +282,9 @@
         <title>hadoop集群使用中的一些问题记录</title>
         <pubTime>2018-07-20T02:40:00.000Z</pubTime>
         
-        <tag>๑Linux</tag>
-         
         <tag>๑Hadoop</tag>
+         
+        <tag>๑Linux</tag>
          
         <tag>๑CLuster</tag>
          
@@ -581,11 +581,11 @@
         <title>Shadowsocks</title>
         <pubTime>2018-05-28T07:34:00.000Z</pubTime>
         
+        <tag>๑ScientificSurfing</tag>
+         
         <tag>๑Ubuntu</tag>
          
         <tag>๑Linux</tag>
-         
-        <tag>๑ScientificSurfing</tag>
          
          
            
