@@ -123,7 +123,7 @@
 <meta property="og:image" content="https://fleschier.github.io/img/linux-and-windows/refind-info.jpg">
 <meta property="og:image" content="https://fleschier.github.io/img/linux-and-windows/bootice01.jpg">
 <meta property="og:image" content="https://fleschier.github.io/img/linux-and-windows/bootice02.jpg">
-<meta property="og:updated_time" content="2018-09-03T13:23:23.907Z">
+<meta property="og:updated_time" content="2018-10-15T14:30:49.463Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="UEFI双系统的那些坑">
 <meta name="twitter:description" content="不适合人类阅读的自我备忘笔记    关于ubuntu 和 windows 双系统  在长时间使用Windows时候，难免会想要尝试新系统，而专业又是如此，于是我选择了linux中图形界面最为友好的ubuntu系统作为自己双系统的入门系统。  虽然网上的双系统教程多说的很是简单，但是大多数已经是几年前的文章了，其中所讲的一些计算机的硬件系统已经落伍了，就比如说，网上绝大多数的双系统引导模式是建立在">
@@ -376,7 +376,7 @@
                 
                   <span class="post-meta-item-text">Edited on</span>
                 
-                <time title="Modified: 2018-09-03 21:23:23" itemprop="dateModified" datetime="2018-09-03T21:23:23+08:00">2018-09-03</time>
+                <time title="Modified: 2018-10-15 22:30:49" itemprop="dateModified" datetime="2018-10-15T22:30:49+08:00">2018-10-15</time>
               
             
           </span>
@@ -467,9 +467,31 @@
 <li><p>最后希望各位都能成功在UEFI模式下完成双系统的安装和引导。</p>
 </li>
 </ul>
+<h2 id="双系统时间差的问题解决"><a href="#双系统时间差的问题解决" class="headerlink" title="双系统时间差的问题解决"></a>双系统时间差的问题解决</h2><hr>
+<ul>
+<li><p>这个问题出现在切换系统时，每次时间都会错误到0时区。</p>
+</li>
+<li><p>解决方法：Ubuntu下关闭UTC(世界协调时间):</p>
+</li>
+</ul>
+<ol>
+<li><p><code>sudo vim /etc/default/rcS</code></p>
+</li>
+<li><p>找到<code>UTC=yes</code>，改为<code>UTC=no</code>即可</p>
+</li>
+</ol>
+<ul>
+<li><p><a href="https://blog.csdn.net/gatieme/article/details/51883981" target="_blank" rel="noopener">详细原因</a></p>
+</li>
+<li><p><strong>但是注意</strong>：在 Ubuntu <strong>16.04</strong> 版本以前，关闭UTC的方法是编辑<code>/etc/default/rcS</code>，将<code>UTC=yes</code>改成<code>UTC=no</code>， 但在Ubuntu 16.04使用systemd启动之后，时间改成了由timedatectl来管理，所以更改方法是:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">timedatectl set-local-rtc 1 --adjust-system-clock</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>之后重启应该就不会出现问题了。</p>
+</li>
+</ul>
 <p><br></p>
 <blockquote>
-<p>最后更新于2018.4.7</p>
+<p>最后更新于2018.10.15</p>
 </blockquote>
 
       
@@ -518,8 +540,8 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2018/04/06/Python-learning/" rel="prev" title="Python学习笔记——基础">
-                Python学习笔记——基础 <i class="fa fa-chevron-right"></i>
+              <a href="/2018/04/06/Scala-learning/" rel="prev" title="Scala学习笔记——基础">
+                Scala学习笔记——基础 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -722,7 +744,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#关于ubuntu-和-windows-双系统"><span class="nav-number">1.</span> <span class="nav-text">关于ubuntu 和 windows 双系统</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#第三方启动引导程序——refind"><span class="nav-number">2.</span> <span class="nav-text">第三方启动引导程序——refind</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Ubuntu下安装"><span class="nav-number">2.1.</span> <span class="nav-text">Ubuntu下安装</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Windows下安装"><span class="nav-number">2.2.</span> <span class="nav-text">Windows下安装</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#关于ubuntu-和-windows-双系统"><span class="nav-number">1.</span> <span class="nav-text">关于ubuntu 和 windows 双系统</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#第三方启动引导程序——refind"><span class="nav-number">2.</span> <span class="nav-text">第三方启动引导程序——refind</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Ubuntu下安装"><span class="nav-number">2.1.</span> <span class="nav-text">Ubuntu下安装</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Windows下安装"><span class="nav-number">2.2.</span> <span class="nav-text">Windows下安装</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#双系统时间差的问题解决"><span class="nav-number">3.</span> <span class="nav-text">双系统时间差的问题解决</span></a></li></ol></div>
             
 
           </div>

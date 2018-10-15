@@ -4,6 +4,72 @@
 
     
   <url>
+    <loc>https://fleschier.github.io/2018/04/06/ubuntu-and-windows/</loc>
+    <lastmod>2018-10-15T14:30:49.463Z</lastmod>
+    <data>
+        <display>
+        <title>UEFI双系统的那些坑</title>
+        <pubTime>2018-04-06T01:40:00.000Z</pubTime>
+        
+        <tag>๑Ubuntu</tag>
+         
+        <tag>๑Linux</tag>
+         
+        <tag>๑DualSystem</tag>
+         
+         
+           
+             
+              <breadCrumb title="Computer System" url="https://fleschier.github.io/categories/Computer-System/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>https://fleschier.github.io/2018/04/15/File-types/</loc>
+    <lastmod>2018-10-15T14:19:05.025Z</lastmod>
+    <data>
+        <display>
+        <title>一些文件类型记录</title>
+        <pubTime>2018-04-15T08:47:00.000Z</pubTime>
+        
+        <tag>๑FileTypes</tag>
+         
+         
+           
+             
+              <breadCrumb title="Computer" url="https://fleschier.github.io/categories/Computer/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>https://fleschier.github.io/2018/05/10/Ubuntu-18/</loc>
+    <lastmod>2018-10-15T14:19:05.025Z</lastmod>
+    <data>
+        <display>
+        <title>Ubuntu进阶记录 & Ubuntu-18</title>
+        <pubTime>2018-05-10T01:47:00.000Z</pubTime>
+        
+        <tag>๑Ubuntu</tag>
+         
+        <tag>๑Linux</tag>
+         
+         
+           
+             
+              <breadCrumb title="Computer System" url="https://fleschier.github.io/categories/Computer-System/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
     <loc>https://fleschier.github.io/2018/04/06/C++learning-class/</loc>
     <lastmod>2018-10-09T10:22:02.947Z</lastmod>
     <data>
@@ -376,30 +442,6 @@
 
     
   <url>
-    <loc>https://fleschier.github.io/2018/04/06/ubuntu-and-windows/</loc>
-    <lastmod>2018-09-03T13:23:23.907Z</lastmod>
-    <data>
-        <display>
-        <title>UEFI双系统的那些坑</title>
-        <pubTime>2018-04-06T01:40:00.000Z</pubTime>
-        
-        <tag>๑Ubuntu</tag>
-         
-        <tag>๑Linux</tag>
-         
-        <tag>๑DualSystem</tag>
-         
-         
-           
-             
-              <breadCrumb title="Computer System" url="https://fleschier.github.io/categories/Computer-System/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
     <loc>https://fleschier.github.io/2018/04/06/Ubuntu-operation/</loc>
     <lastmod>2018-09-03T13:23:13.035Z</lastmod>
     <data>
@@ -532,26 +574,6 @@
 
     
   <url>
-    <loc>https://fleschier.github.io/2018/04/15/File-types/</loc>
-    <lastmod>2018-09-03T13:17:45.430Z</lastmod>
-    <data>
-        <display>
-        <title>一些文件类型记录</title>
-        <pubTime>2018-04-15T08:47:00.000Z</pubTime>
-        
-        <tag>๑FileTypes</tag>
-         
-         
-           
-             
-              <breadCrumb title="Computer" url="https://fleschier.github.io/categories/Computer/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
     <loc>https://fleschier.github.io/2018/05/28/Shaow-socks/</loc>
     <lastmod>2018-09-03T13:17:33.983Z</lastmod>
     <data>
@@ -589,28 +611,6 @@
            
              
               <breadCrumb title="Computer Programes" url="https://fleschier.github.io/categories/Computer-Programes/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>https://fleschier.github.io/2018/05/10/Ubuntu-18/</loc>
-    <lastmod>2018-09-03T13:17:09.062Z</lastmod>
-    <data>
-        <display>
-        <title>Ubuntu进阶记录 & Ubuntu-18</title>
-        <pubTime>2018-05-10T01:47:00.000Z</pubTime>
-        
-        <tag>๑Ubuntu</tag>
-         
-        <tag>๑Linux</tag>
-         
-         
-           
-             
-              <breadCrumb title="Computer System" url="https://fleschier.github.io/categories/Computer-System/"/>
           
         </display>
     </data>
