@@ -2,6 +2,13 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://fleschier.github.io/2018/10/16/pycharm-problem-solving/</loc>
+    
+    <lastmod>2018-10-15T16:51:08.350Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>https://fleschier.github.io/2018/05/10/Ubuntu-18/</loc>
     
     <lastmod>2018-10-15T15:13:20.516Z</lastmod>
@@ -30,14 +37,14 @@
   </url>
   
   <url>
-    <loc>https://fleschier.github.io/2018/10/08/C++-sprintf-printf/</loc>
+    <loc>https://fleschier.github.io/2018/10/08/C++-learning-error-collection/</loc>
     
     <lastmod>2018-10-09T10:22:02.931Z</lastmod>
     
   </url>
   
   <url>
-    <loc>https://fleschier.github.io/2018/10/08/C++-learning-error-collection/</loc>
+    <loc>https://fleschier.github.io/2018/10/08/C++-sprintf-printf/</loc>
     
     <lastmod>2018-10-09T10:22:02.931Z</lastmod>
     
