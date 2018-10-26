@@ -5,13 +5,33 @@
     
   <url>
     <loc>https://fleschier.github.io/2018/10/16/pycharm-problem-solving/</loc>
-    <lastmod>2018-10-15T16:51:08.350Z</lastmod>
+    <lastmod>2018-10-26T06:46:45.605Z</lastmod>
     <data>
         <display>
         <title>Ubuntu18 Pycharm无法识别安装的Python库的解决方案</title>
         <pubTime>2018-10-15T16:47:00.000Z</pubTime>
         
         <tag>๑Python</tag>
+         
+         
+           
+             
+              <breadCrumb title="Computer Programes" url="https://fleschier.github.io/categories/Computer-Programes/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>https://fleschier.github.io/2018/10/08/C++-learning-error-collection/</loc>
+    <lastmod>2018-10-26T06:46:10.171Z</lastmod>
+    <data>
+        <display>
+        <title>C++学习笔记——一些报错信息归因</title>
+        <pubTime>2018-10-08T14:43:00.000Z</pubTime>
+        
+        <tag>๑C++</tag>
          
          
            
@@ -96,26 +116,6 @@
         <display>
         <title>C++学习笔记——类</title>
         <pubTime>2018-04-06T08:47:00.000Z</pubTime>
-        
-        <tag>๑C++</tag>
-         
-         
-           
-             
-              <breadCrumb title="Computer Programes" url="https://fleschier.github.io/categories/Computer-Programes/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>https://fleschier.github.io/2018/10/08/C++-learning-error-collection/</loc>
-    <lastmod>2018-10-09T10:22:02.931Z</lastmod>
-    <data>
-        <display>
-        <title>C++学习笔记——一些报错信息归因</title>
-        <pubTime>2018-10-08T14:43:00.000Z</pubTime>
         
         <tag>๑C++</tag>
          
