@@ -4,6 +4,30 @@
 
     
   <url>
+    <loc>https://fleschier.github.io/2018/10/27/gitignore-learning/</loc>
+    <lastmod>2018-10-30T15:39:43.294Z</lastmod>
+    <data>
+        <display>
+        <title>gitignore的使用及写法</title>
+        <pubTime>2018-10-27T10:32:00.000Z</pubTime>
+        
+        <tag>๑Git</tag>
+         
+        <tag>๑Ubuntu</tag>
+         
+        <tag>๑Linux</tag>
+         
+         
+           
+             
+              <breadCrumb title="Computer" url="https://fleschier.github.io/categories/Computer/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
     <loc>https://fleschier.github.io/2018/10/16/pycharm-problem-solving/</loc>
     <lastmod>2018-10-26T06:46:45.605Z</lastmod>
     <data>
@@ -302,9 +326,9 @@
         <title>hadoop集群使用中的一些问题记录</title>
         <pubTime>2018-07-20T02:40:00.000Z</pubTime>
         
-        <tag>๑Linux</tag>
-         
         <tag>๑Hadoop</tag>
+         
+        <tag>๑Linux</tag>
          
         <tag>๑CLuster</tag>
          
@@ -601,11 +625,11 @@
         <title>Shadowsocks</title>
         <pubTime>2018-05-28T07:34:00.000Z</pubTime>
         
+        <tag>๑ScientificSurfing</tag>
+         
         <tag>๑Ubuntu</tag>
          
         <tag>๑Linux</tag>
-         
-        <tag>๑ScientificSurfing</tag>
          
          
            

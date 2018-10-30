@@ -110,25 +110,25 @@
 
 
 
-  <meta name="description" content="不适合人类阅读的学习笔记    一些特殊的符号收集  符号收集  符号大全   CSV文件（逗号分隔值文件格式）(XX.csv)  .csv文件实际上就是一种文本文件，其以纯文本形式存储表格数据，一般以逗号或者制表符作为分隔符  规则 开头是不留空，以行为单位。（每行末尾只有换行符，没有别的分隔符）  可含或不含列名，含列名则居文件第一行。  一行数据不跨行，无空行。  以半角逗号（即,）作分隔">
-<meta name="keywords" content="๑FileTypes">
+  <meta name="description" content="gitignore的作用  对于git同步到github来说，估计没有人会 git add 文件名这样的方式来添加到工作区的，都是git add .这样一次添加吧  但是，有时候我们直接add所有的文件会将一些我们不需要的生成的临时文件也加入进去，导致文件冗余。同时，更有可能的是我们在push的时候失败，由于一些不支持的文件类型或者文件大小过大。  这时候我们就需要gitignore脚本来过滤我们">
+<meta name="keywords" content="๑Git,๑Ubuntu,๑Linux">
 <meta property="og:type" content="article">
-<meta property="og:title" content="一些文件类型记录">
-<meta property="og:url" content="https://fleschier.github.io/2018/04/15/File-types/index.html">
+<meta property="og:title" content="gitignore的使用及写法">
+<meta property="og:url" content="https://fleschier.github.io/2018/10/27/gitignore-learning/index.html">
 <meta property="og:site_name" content="Fleschier 渐寒๑">
-<meta property="og:description" content="不适合人类阅读的学习笔记    一些特殊的符号收集  符号收集  符号大全   CSV文件（逗号分隔值文件格式）(XX.csv)  .csv文件实际上就是一种文本文件，其以纯文本形式存储表格数据，一般以逗号或者制表符作为分隔符  规则 开头是不留空，以行为单位。（每行末尾只有换行符，没有别的分隔符）  可含或不含列名，含列名则居文件第一行。  一行数据不跨行，无空行。  以半角逗号（即,）作分隔">
+<meta property="og:description" content="gitignore的作用  对于git同步到github来说，估计没有人会 git add 文件名这样的方式来添加到工作区的，都是git add .这样一次添加吧  但是，有时候我们直接add所有的文件会将一些我们不需要的生成的临时文件也加入进去，导致文件冗余。同时，更有可能的是我们在push的时候失败，由于一些不支持的文件类型或者文件大小过大。  这时候我们就需要gitignore脚本来过滤我们">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2018-10-15T14:19:05.025Z">
+<meta property="og:updated_time" content="2018-10-30T15:39:43.294Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="一些文件类型记录">
-<meta name="twitter:description" content="不适合人类阅读的学习笔记    一些特殊的符号收集  符号收集  符号大全   CSV文件（逗号分隔值文件格式）(XX.csv)  .csv文件实际上就是一种文本文件，其以纯文本形式存储表格数据，一般以逗号或者制表符作为分隔符  规则 开头是不留空，以行为单位。（每行末尾只有换行符，没有别的分隔符）  可含或不含列名，含列名则居文件第一行。  一行数据不跨行，无空行。  以半角逗号（即,）作分隔">
+<meta name="twitter:title" content="gitignore的使用及写法">
+<meta name="twitter:description" content="gitignore的作用  对于git同步到github来说，估计没有人会 git add 文件名这样的方式来添加到工作区的，都是git add .这样一次添加吧  但是，有时候我们直接add所有的文件会将一些我们不需要的生成的临时文件也加入进去，导致文件冗余。同时，更有可能的是我们在push的时候失败，由于一些不支持的文件类型或者文件大小过大。  这时候我们就需要gitignore脚本来过滤我们">
 
 
 
 
 
 
-  <link rel="canonical" href="https://fleschier.github.io/2018/04/15/File-types/"/>
+  <link rel="canonical" href="https://fleschier.github.io/2018/10/27/gitignore-learning/"/>
 
 
 
@@ -138,7 +138,7 @@
   };
 </script>
 
-  <title>一些文件类型记录 | Fleschier 渐寒๑</title>
+  <title>gitignore的使用及写法 | Fleschier 渐寒๑</title>
   
 
 
@@ -311,7 +311,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://fleschier.github.io/2018/04/15/File-types/">
+    <link itemprop="mainEntityOfPage" href="https://fleschier.github.io/2018/10/27/gitignore-learning/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Fleschier">
@@ -328,7 +328,7 @@
 
         
         
-          <h2 class="post-title" itemprop="name headline">一些文件类型记录
+          <h2 class="post-title" itemprop="name headline">gitignore的使用及写法
               
             
           </h2>
@@ -353,7 +353,7 @@
                 
               
 
-              <time title="Created: 2018-04-15 16:47:00" itemprop="dateCreated datePublished" datetime="2018-04-15T16:47:00+08:00">2018-04-15</time>
+              <time title="Created: 2018-10-27 18:32:00" itemprop="dateCreated datePublished" datetime="2018-10-27T18:32:00+08:00">2018-10-27</time>
             
 
             
@@ -370,7 +370,7 @@
                 
                   <span class="post-meta-item-text">Edited on</span>
                 
-                <time title="Modified: 2018-10-15 22:19:05" itemprop="dateModified" datetime="2018-10-15T22:19:05+08:00">2018-10-15</time>
+                <time title="Modified: 2018-10-30 23:39:43" itemprop="dateModified" datetime="2018-10-30T23:39:43+08:00">2018-10-30</time>
               
             
           </span>
@@ -421,85 +421,53 @@
       
 
       
-        <blockquote>
-<p>不适合人类阅读的学习笔记  </p>
-</blockquote>
-<h2 id="一些特殊的符号收集"><a href="#一些特殊的符号收集" class="headerlink" title="一些特殊的符号收集"></a>一些特殊的符号收集</h2><hr>
+        <h2 id="gitignore的作用"><a href="#gitignore的作用" class="headerlink" title="gitignore的作用"></a>gitignore的作用</h2><hr>
 <ul>
-<li><p><a href="https://blog.csdn.net/rhinemetal/article/details/6887172" target="_blank" rel="noopener">符号收集</a></p>
+<li><p>对于git同步到github来说，估计没有人会 <code>git add 文件名</code>这样的方式来添加到工作区的，都是<code>git add .</code>这样一次添加吧</p>
 </li>
-<li><p><a href="http://www.fuhao123.com/fuhao/1.shtml" target="_blank" rel="noopener">符号大全</a></p>
+<li><p>但是，有时候我们直接add所有的文件会将一些我们不需要的生成的临时文件也加入进去，导致文件冗余。同时，更有可能的是我们在push的时候失败，由于一些不支持的文件类型或者文件大小过大。</p>
+</li>
+<li><p>这时候我们就需要gitignore脚本来过滤我们需要上传的文件。</p>
 </li>
 </ul>
-<h2 id="CSV文件（逗号分隔值文件格式）-XX-csv"><a href="#CSV文件（逗号分隔值文件格式）-XX-csv" class="headerlink" title="CSV文件（逗号分隔值文件格式）(XX.csv)"></a>CSV文件（逗号分隔值文件格式）(XX.csv)</h2><hr>
+<h2 id="命名格式以及位置"><a href="#命名格式以及位置" class="headerlink" title="命名格式以及位置"></a>命名格式以及位置</h2><hr>
 <ul>
-<li>.csv文件实际上就是一种文本文件，其<strong>以纯文本形式存储表格数据</strong>，一般以逗号或者制表符作为分隔符</li>
+<li><p>命名统一为<code>.gitignore</code></p>
+</li>
+<li><p>windows下由于不能文件名为空，则可以先命名为<code>.gitignore.</code>，回车确定之后windows会自动将最后一个点去掉。</p>
+</li>
+<li><p><code>.gitignore</code>文件放在根目录下即可。</p>
+</li>
 </ul>
-<h3 id="规则"><a href="#规则" class="headerlink" title="规则"></a>规则</h3><ul>
-<li><p>开头是不留空，以行为单位。（每行末尾只有换行符，没有别的分隔符）</p>
+<h2 id="内容写法"><a href="#内容写法" class="headerlink" title="内容写法"></a>内容写法</h2><hr>
+<ul>
+<li>gitignore本质上是一个按正则表达式匹配文件名/文件夹名的文件。</li>
+</ul>
+<h3 id="语法：-与正则表达式几乎一致"><a href="#语法：-与正则表达式几乎一致" class="headerlink" title="语法：(与正则表达式几乎一致)"></a>语法：(与正则表达式几乎一致)</h3><ul>
+<li><p>空行或是以<code>#</code>开头的行即注释行将被忽略</p>
 </li>
-<li><p>可含或不含列名，含列名则居文件第一行。</p>
+<li><p>以斜杠 <code>/</code>结尾表示目录</p>
 </li>
-<li><p>一行数据不跨行，无空行。</p>
+<li><p>以星号<code>*</code>通配多个字符</p>
 </li>
-<li><p>以半角逗号（即,）作分隔符，列为空也要表达其存在。</p>
+<li><p>以问号 <code>?</code> 通配单个字符</p>
 </li>
-<li><p><strong>不支持数字，不支持特殊字符</strong></p>
+<li><p>以方括号 <code>[]</code> 包含单个字符的匹配列表</p>
 </li>
+<li><p>以叹号 <code>!</code> 表示不忽略(跟踪)匹配到的文件或目录</p>
+</li>
+<li><p><a href="https://www.cnblogs.com/jingtyu/p/6831772.html" target="_blank" rel="noopener">参考</a></p>
+</li>
+</ul>
+<h2 id="添加github仓库"><a href="#添加github仓库" class="headerlink" title="添加github仓库"></a>添加github仓库</h2><hr>
+<ul>
+<li>github上有一个为各种环境和编程语言提供gitignore模板的项目——<a href="https://github.com/github/gitignore" target="_blank" rel="noopener">https://github.com/github/gitignore</a></li>
 </ul>
 <blockquote>
-<p>实际上csv文件就类似于一个没有线的表格</p>
-</blockquote>
-<h2 id="Markdown文件-XX-markdown-XX-md"><a href="#Markdown文件-XX-markdown-XX-md" class="headerlink" title="Markdown文件(XX.markdown / XX.md)"></a>Markdown文件(XX.markdown / XX.md)</h2><hr>
-<ul>
-<li><p>Markdown 的目标是实现「易读易写」。可读性，无论如何，都是最重要的。一份使用 Markdown 格式撰写的文件应该可以直接以纯文本发布，并且看起来不会像是由许多标签或是格式指令所构成。Markdown 语法的目标是：成为一种适用于网络的书写语言。Markdown 不是想要取代 HTML，甚至也没有要和它相近，它的语法种类很少，只对应 HTML 标记的一小部分。Markdown 的构想不是要使得 HTML 文档更容易书写。在我看来， HTML 已经很容易写了。Markdown 的理念是，能让文档更容易读、写和随意改。HTML 是一种发布的格式，Markdown 是一种书写的格式。就这样，Markdown 的格式语法只涵盖纯文本可以涵盖的范围</p>
-</li>
-<li><p>markdown可以直接在Atom中编辑和预览(ctrl + shift + m)</p>
-</li>
-<li><p>markdown可以转换为pdf文件。你可以选择下载一些markdown编辑器来完成这个转化，但是，我在这里要推荐一个大佬的web应用(完美支持UTF-8中文编码，不会像其他的一些外国的网站转化时中文全部变成乱码的问题)，知乎上看到的。<a href="http://www.mdtr2pdf.com/index_en.html" target="_blank" rel="noopener">在线markdown转化为PDF</a></p>
-</li>
-</ul>
-<h2 id="Appimage文件-XX-AppImage"><a href="#Appimage文件-XX-AppImage" class="headerlink" title="Appimage文件(XX.AppImage)"></a>Appimage文件(XX.AppImage)</h2><hr>
-<ul>
-<li>AppImage是一种在Linux系统中用于分发便携式软件而不需要超级用户权限来安装它们的格式。[1] 它还试图让允许Linux的上游开发者来分发他们的程序而不用考虑不同Linux发行版间的区别。</li>
-</ul>
-<h3 id="特性"><a href="#特性" class="headerlink" title="特性"></a>特性</h3><ul>
-<li><p>AppImage不把Linux应用程序安装在文件系统相应的目录中。相反,它没有进行实际的安装。AppImage文件只是个压缩文件，在它运行时候挂载。</p>
-</li>
-<li><p>用AppImage打包的程序，一个程序就是一个文件。每一个文件都包含了该程序在其所要运行的目标平台上所需的运行库。AppImage文件是基于ISO 9660并经过zisofs压缩的包含有一个最小化的AppDir目录和一个极小的运行环境的文件。只要把这个文件添加到live CD中，这个程序便可被轻而易举地添加进live CD中。</p>
-</li>
-<li><p>用AppImage文件比安装一个应用程序更加简单。它不需要解压也不需要为系统环境做调整。使用主流Linux发行版的用户可以下载它，使其可执行，并且运行即可。</p>
-</li>
-</ul>
-<h3 id="运行方法"><a href="#运行方法" class="headerlink" title="运行方法"></a>运行方法</h3><ul>
-<li><p>添加可执行权限 <code>chmod a+x *.AppImage</code></p>
-</li>
-<li><p>执行 <code>./*.AppImage</code></p>
-</li>
-<li><p>或者 <code>右键 &gt; 属性(properties) &gt; 权限(Permissions) &gt; 勾选Allow executing file as program</code></p>
-</li>
-<li><p>之后直接运行即可</p>
-</li>
-</ul>
-<h2 id="DLL文件"><a href="#DLL文件" class="headerlink" title="DLL文件"></a>DLL文件</h2><hr>
-<ul>
-<li>DLL是<code>Dynamic Link Library</code>的缩写，意为动态链接库。</li>
-</ul>
-<blockquote>
-<p>A DLL file, short for Dynamic Link Library, is a type of file that contains instructions that other programs can call upon to do certain things. This way, multiple programs can share the abilities programmed into a single file, and even do so simultaneously.</p>
-</blockquote>
-<blockquote>
-<p>Unlike executable programs, like those with the EXE file extension, DLL files can’t be run directly but instead must be called upon by other code that is already running. However, DLLs are in the same format as EXEs and some may even use the .EXE file extension. While most Dynamic Link Libraries end in the file extension .DLL, others may use .OCX, .CPL, or .DRV.</p>
+<p>他的项目介绍是：This is GitHub’s collection of .gitignore file templates. We use this list to populate the .gitignore template choosers available in the GitHub.com interface when creating new repositories and files.(意思大概就是可以用它来实现在创建repository的时候可以选择初始化一个.gitignore文件，并且可以选择一个模板)</p>
 </blockquote>
 <ul>
-<li><p>DLL文件存储了别的应用程序可以调用的做某项特定的事情的一系列操作，这样，多个程序就可以并发地执行一些操作，仅仅通过将这些操作写入一个文件。</p>
-</li>
-<li><p>操作系统有时候会因为中了流氓软件或者病毒而导致杀毒软件删除被感染的捆绑时清除dll文件，但是不到万不得已不要去第三方网页上下载缺失的dll文件——<a href="https://www.lifewire.com/important-reasons-not-to-download-dll-files-2624455" target="_blank" rel="noopener">Important Reasons NOT to Download DLL Files</a>。这篇文章详细地描述了直接下载缺失的DLL文件的可能的潜在危害。</p>
-</li>
-<li><p>如果电脑的DLL文件缺失导致某个软件不能运行之类的错误，尽量尝试重新安装这个软件而不是直接下载DLL文件来解决问题。</p>
-</li>
-<li><p>参考文档——<a href="https://www.lifewire.com/what-is-a-dll-file-2625852" target="_blank" rel="noopener">What Is a DLL File</a></p>
-</li>
+<li>我们在创建github仓库的时候尽量先预先创建好.gitignore文件，因为一旦push之后，添加了新的.gitignore貌似也是不起作用的，非常麻烦，所以要养成写.gitignore的好习惯。</li>
 </ul>
 
       
@@ -521,7 +489,11 @@
       
         <div class="post-tags">
           
-            <a href="/tags/๑FileTypes/" rel="tag"># ๑FileTypes</a>
+            <a href="/tags/๑Git/" rel="tag"># ๑Git</a>
+          
+            <a href="/tags/๑Ubuntu/" rel="tag"># ๑Ubuntu</a>
+          
+            <a href="/tags/๑Linux/" rel="tag"># ๑Linux</a>
           
         </div>
       
@@ -534,8 +506,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2018/04/11/Git-and-Github/" rel="next" title="git 与 github 随笔">
-                <i class="fa fa-chevron-left"></i> git 与 github 随笔
+              <a href="/2018/10/16/pycharm-problem-solving/" rel="next" title="Ubuntu18 Pycharm无法识别安装的Python库的解决方案">
+                <i class="fa fa-chevron-left"></i> Ubuntu18 Pycharm无法识别安装的Python库的解决方案
               </a>
             
           </div>
@@ -543,10 +515,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2018/04/15/Block-Chain/" rel="prev" title="区块链初涉">
-                区块链初涉 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -748,7 +716,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#一些特殊的符号收集"><span class="nav-number">1.</span> <span class="nav-text">一些特殊的符号收集</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#CSV文件（逗号分隔值文件格式）-XX-csv"><span class="nav-number">2.</span> <span class="nav-text">CSV文件（逗号分隔值文件格式）(XX.csv)</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#规则"><span class="nav-number">2.1.</span> <span class="nav-text">规则</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Markdown文件-XX-markdown-XX-md"><span class="nav-number">3.</span> <span class="nav-text">Markdown文件(XX.markdown / XX.md)</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Appimage文件-XX-AppImage"><span class="nav-number">4.</span> <span class="nav-text">Appimage文件(XX.AppImage)</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#特性"><span class="nav-number">4.1.</span> <span class="nav-text">特性</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#运行方法"><span class="nav-number">4.2.</span> <span class="nav-text">运行方法</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#DLL文件"><span class="nav-number">5.</span> <span class="nav-text">DLL文件</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#gitignore的作用"><span class="nav-number">1.</span> <span class="nav-text">gitignore的作用</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#命名格式以及位置"><span class="nav-number">2.</span> <span class="nav-text">命名格式以及位置</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#内容写法"><span class="nav-number">3.</span> <span class="nav-text">内容写法</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#语法：-与正则表达式几乎一致"><span class="nav-number">3.1.</span> <span class="nav-text">语法：(与正则表达式几乎一致)</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#添加github仓库"><span class="nav-number">4.</span> <span class="nav-text">添加github仓库</span></a></li></ol></div>
             
 
           </div>
