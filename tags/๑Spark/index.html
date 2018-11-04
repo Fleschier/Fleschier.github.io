@@ -388,9 +388,9 @@
 
       <h3 class="post-title">
         
-            <a class="post-title-link" href="/2018/04/11/Spark-superior/" itemprop="url">
+            <a class="post-title-link" href="/2018/04/11/Spark-learning/" itemprop="url">
               
-                <span itemprop="name">Spark学习笔记——进阶</span>
+                <span itemprop="name">Spark学习笔记——基础</span>
               
             </a>
         
@@ -416,9 +416,9 @@
 
       <h3 class="post-title">
         
-            <a class="post-title-link" href="/2018/04/11/Spark-learning/" itemprop="url">
+            <a class="post-title-link" href="/2018/04/11/Spark-superior/" itemprop="url">
               
-                <span itemprop="name">Spark学习笔记——基础</span>
+                <span itemprop="name">Spark学习笔记——进阶</span>
               
             </a>
         
@@ -656,7 +656,7 @@
 
 
 
-  <div class="powered-by">Powered by <a class="theme-link" target="_blank" rel="external nofollow" href="https://hexo.io">Hexo</a> v3.7.1</div>
+  <div class="powered-by">Powered by <a class="theme-link" target="_blank" rel="external nofollow" href="https://hexo.io">Hexo</a></div>
 
 
 
@@ -664,30 +664,12 @@
 
 
 
-  <div class="theme-info">Theme – <a class="theme-link" target="_blank" rel="external nofollow" href="https://theme-next.org">NexT.Mist</a> v6.4.1</div>
+  <div class="theme-info">Theme – <a class="theme-link" target="_blank" rel="external nofollow" href="https://theme-next.org">NexT.Mist</a></div>
 
 
 
 
         
-<div class="busuanzi-count">
-  <script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
-
-  
-    <span class="site-uv" title="Total Visitors">
-      <i class="fa fa-user"></i>
-      <span class="busuanzi-value" id="busuanzi_value_site_uv"></span>
-    </span>
-  
-
-  
-    <span class="site-pv" title="Total Views">
-      <i class="fa fa-eye"></i>
-      <span class="busuanzi-value" id="busuanzi_value_site_pv"></span>
-    </span>
-  
-</div>
-
 
 
 
@@ -808,6 +790,75 @@
   
 
   
+  <script>
+    
+    function showTime(Counter) {
+      var entries = [];
+      var $visitors = $(".leancloud_visitors");
+
+      $visitors.each(function () {
+        entries.push( $(this).attr("id").trim() );
+      });
+
+      Counter('get', '/classes/Counter', { where: JSON.stringify({ url: { "$in": entries } }) })
+        .done(function ({ results }) {
+          var COUNT_CONTAINER_REF = '.leancloud-visitors-count';
+
+          if (results.length === 0) {
+            $visitors.find(COUNT_CONTAINER_REF).text(0);
+            return;
+          }
+
+          for (var i = 0; i < results.length; i++) {
+            var item = results[i];
+            var url = item.url;
+            var time = item.time;
+            var element = document.getElementById(url);
+
+            $(element).find(COUNT_CONTAINER_REF).text(time);
+          }
+          for(var i = 0; i < entries.length; i++) {
+            var url = entries[i];
+            var element = document.getElementById(url);
+            var countSpan = $(element).find(COUNT_CONTAINER_REF);
+            if( countSpan.text() == '') {
+              countSpan.text(0);
+            }
+          }
+        })
+        .fail(function ({ responseJSON }) {
+          console.log("LeanCloud Counter Error: " + responseJSON.code + " " + responseJSON.error);
+        });
+    }
+    
+
+    $(function() {
+      $.get('https://app-router.leancloud.cn/2/route?appId=' + "FLdvdj7m3QeLled70QDUw983-gzGzoHsz")
+        .done(function ({ api_server }) {
+          var Counter = function (method, url, data) {
+            return $.ajax({
+              method: method,
+              url: `https://${api_server}/1.1${url}`,
+              headers: {
+                'X-LC-Id': "FLdvdj7m3QeLled70QDUw983-gzGzoHsz",
+                'X-LC-Key': "n50SuQjhlvn3zseLkBWf10q6",
+                'Content-Type': 'application/json',
+              },
+              data: data,
+            });
+          };
+          
+          if ($('.post-title-link').length >= 1) {
+            showTime(Counter);
+          }
+          
+        })
+    });
+  </script>
+
+
+
+  
 
   
 <script>
@@ -834,9 +885,6 @@
   
 
   
-  <script type="text/javascript" src="/js/src/js.cookie.js?v=6.4.1"></script>
-  <script type="text/javascript" src="/js/src/scroll-cookie.js?v=6.4.1"></script>
-
 
   
 
