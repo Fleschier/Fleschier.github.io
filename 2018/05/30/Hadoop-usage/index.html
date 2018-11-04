@@ -622,8 +622,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2018/05/28/Shaow-socks/" rel="next" title="Shadowsocks">
-                <i class="fa fa-chevron-left"></i> Shadowsocks
+              <a href="/2018/05/30/HDFS/" rel="next" title="HDFS相关笔记">
+                <i class="fa fa-chevron-left"></i> HDFS相关笔记
               </a>
             
           </div>
@@ -632,8 +632,8 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2018/05/30/HDFS/" rel="prev" title="HDFS相关笔记">
-                HDFS相关笔记 <i class="fa fa-chevron-right"></i>
+              <a href="/2018/06/17/FrontEnd-HTML/" rel="prev" title="前端学习——HTML">
+                前端学习——HTML <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -1041,12 +1041,10 @@
           if (results.length > 0) {
             var counter = results[0];
             
-            Counter('put', `/classes/Counter/${counter.objectId}`, JSON.stringify({ time: { "__op":"Increment", "amount":1 } }))
+              var $element = $(document.getElementById(url));
+              $element.find('.leancloud-visitors-count').text(counter.time + 1);
             
-            .done(function () {
-                  var $element = $(document.getElementById(url));
-                  $element.find('.leancloud-visitors-count').text(counter.time + 1);
-            })
+            Counter('put', `/classes/Counter/${counter.objectId}`, JSON.stringify({ time: { "__op":"Increment", "amount":1 } }))
             
             .fail(function ({ responseJSON }) {
                 console.log('Failed to save Visitor num, with error message: ' + responseJSON.error);
@@ -1137,6 +1135,15 @@
   
 
   
+  
+  
+  <script src="/lib/bookmark/bookmark.min.js?v=1.0"></script>
+  <script type="text/javascript">
+  
+    bookmark.scrollToMark('manual', "#more");
+  
+  </script>
+
 
   
 
