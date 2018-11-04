@@ -118,7 +118,7 @@
 <meta property="og:site_name" content="Fleschier 渐寒๑">
 <meta property="og:description" content="环境搭建  在使用hexo搭建博客之前，需要搭建好环境。需要git、node.js和hexo  详细搭建见——链接   hexo  hexo有大量的主题可供选择，而且支持一键部署  但是hexo每次预览要重新生成页面，而jekyll是即时体现更改   安装 npm install -g hexo-cli  常用命令 初始化： hexo init  //在一个空文件夹下初始化  hexo一些命令：">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2018-11-04T03:21:23.902Z">
+<meta property="og:updated_time" content="2018-11-04T03:42:25.526Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="hexo重新构建博客">
 <meta name="twitter:description" content="环境搭建  在使用hexo搭建博客之前，需要搭建好环境。需要git、node.js和hexo  详细搭建见——链接   hexo  hexo有大量的主题可供选择，而且支持一键部署  但是hexo每次预览要重新生成页面，而jekyll是即时体现更改   安装 npm install -g hexo-cli  常用命令 初始化： hexo init  //在一个空文件夹下初始化  hexo一些命令：">
@@ -368,7 +368,7 @@
                 
                   <span class="post-meta-item-text">Edited on</span>
                 
-                <time title="Modified: 2018-11-04 11:21:23" itemprop="dateModified" datetime="2018-11-04T11:21:23+08:00">2018-11-04</time>
+                <time title="Modified: 2018-11-04 11:42:25" itemprop="dateModified" datetime="2018-11-04T11:42:25+08:00">2018-11-04</time>
               
             
           </span>
@@ -540,11 +540,20 @@
 <ul>
 <li>hexo文章的命名不需要日期。日期在文章的开头的date属性里写。</li>
 </ul>
+<blockquote>
+<p>11.4日更</p>
+</blockquote>
 <h2 id="hexo文章统计阅读量"><a href="#hexo文章统计阅读量" class="headerlink" title="hexo文章统计阅读量"></a>hexo文章统计阅读量</h2><hr>
 <ul>
 <li><p>使用leanCloud来完成访问统计</p>
 </li>
 <li><p>需要设置安全链接,参考<a href="https://leaferx.online/2018/02/11/lc-security/" target="_blank" rel="noopener">博客</a></p>
+</li>
+</ul>
+<h3 id="问题错误码429"><a href="#问题错误码429" class="headerlink" title="问题错误码429"></a>问题错误码429</h3><ul>
+<li><p>出现这个问题的报错信息是<code>too many requests</code>,原因是我们使用leanCloud的免费版本线程数是十分受限的,在我们deploy的时候发送了太多的同步请求导致线程栈溢出而报错.</p>
+</li>
+<li><p>解决方案 —<a href="https://blog.csdn.net/weixin_42591190/article/details/80958675" target="_blank" rel="noopener">hexo-leancloud-counter-security 插件 Too many requests 错误</a></p>
 </li>
 </ul>
 
@@ -839,7 +848,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#环境搭建"><span class="nav-number">1.</span> <span class="nav-text">环境搭建</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#hexo"><span class="nav-number">2.</span> <span class="nav-text">hexo</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#安装"><span class="nav-number">2.1.</span> <span class="nav-text">安装</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#常用命令"><span class="nav-number">2.2.</span> <span class="nav-text">常用命令</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#一些问题记录"><span class="nav-number">3.</span> <span class="nav-text">一些问题记录</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#无法’hexo-d’-缺少插件"><span class="nav-number">3.1.</span> <span class="nav-text">无法’hexo d’:缺少插件</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#侧边栏文章索引错乱"><span class="nav-number">3.2.</span> <span class="nav-text">侧边栏文章索引错乱</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#部署到git"><span class="nav-number">3.2.1.</span> <span class="nav-text">部署到git</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#三部曲"><span class="nav-number">4.</span> <span class="nav-text">三部曲</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#添加页面"><span class="nav-number">5.</span> <span class="nav-text">添加页面</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#添加搜索引擎支持"><span class="nav-number">6.</span> <span class="nav-text">添加搜索引擎支持</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#安装插件"><span class="nav-number">6.1.</span> <span class="nav-text">安装插件</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#重新建站"><span class="nav-number">6.2.</span> <span class="nav-text">重新建站</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#添加robots文件"><span class="nav-number">6.3.</span> <span class="nav-text">添加robots文件</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#md文章命名"><span class="nav-number">7.</span> <span class="nav-text">md文章命名</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#hexo文章统计阅读量"><span class="nav-number">8.</span> <span class="nav-text">hexo文章统计阅读量</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#环境搭建"><span class="nav-number">1.</span> <span class="nav-text">环境搭建</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#hexo"><span class="nav-number">2.</span> <span class="nav-text">hexo</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#安装"><span class="nav-number">2.1.</span> <span class="nav-text">安装</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#常用命令"><span class="nav-number">2.2.</span> <span class="nav-text">常用命令</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#一些问题记录"><span class="nav-number">3.</span> <span class="nav-text">一些问题记录</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#无法’hexo-d’-缺少插件"><span class="nav-number">3.1.</span> <span class="nav-text">无法’hexo d’:缺少插件</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#侧边栏文章索引错乱"><span class="nav-number">3.2.</span> <span class="nav-text">侧边栏文章索引错乱</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#部署到git"><span class="nav-number">3.2.1.</span> <span class="nav-text">部署到git</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#三部曲"><span class="nav-number">4.</span> <span class="nav-text">三部曲</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#添加页面"><span class="nav-number">5.</span> <span class="nav-text">添加页面</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#添加搜索引擎支持"><span class="nav-number">6.</span> <span class="nav-text">添加搜索引擎支持</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#安装插件"><span class="nav-number">6.1.</span> <span class="nav-text">安装插件</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#重新建站"><span class="nav-number">6.2.</span> <span class="nav-text">重新建站</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#添加robots文件"><span class="nav-number">6.3.</span> <span class="nav-text">添加robots文件</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#md文章命名"><span class="nav-number">7.</span> <span class="nav-text">md文章命名</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#hexo文章统计阅读量"><span class="nav-number">8.</span> <span class="nav-text">hexo文章统计阅读量</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#问题错误码429"><span class="nav-number">8.1.</span> <span class="nav-text">问题错误码429</span></a></li></ol></li></ol></div>
             
 
           </div>
