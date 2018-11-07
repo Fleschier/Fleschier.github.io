@@ -2,9 +2,16 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://fleschier.github.io/2018/04/06/Ubuntu-order/</loc>
+    
+    <lastmod>2018-11-07T08:16:30.492Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>https://fleschier.github.io/2018/09/03/Hexo-rebuild/</loc>
     
-    <lastmod>2018-11-04T13:45:50.180Z</lastmod>
+    <lastmod>2018-11-07T07:41:24.149Z</lastmod>
     
   </url>
   
@@ -194,13 +201,6 @@
     <loc>https://fleschier.github.io/2018/04/06/Ubuntu-operation/</loc>
     
     <lastmod>2018-09-03T13:23:13.035Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://fleschier.github.io/2018/04/06/Ubuntu-order/</loc>
-    
-    <lastmod>2018-09-03T13:22:38.768Z</lastmod>
     
   </url>
   

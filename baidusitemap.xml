@@ -4,8 +4,30 @@
 
     
   <url>
+    <loc>https://fleschier.github.io/2018/04/06/Ubuntu-order/</loc>
+    <lastmod>2018-11-07T08:16:30.492Z</lastmod>
+    <data>
+        <display>
+        <title>Ubuntu终端常用命令</title>
+        <pubTime>2018-04-06T08:47:00.000Z</pubTime>
+        
+        <tag>๑Ubuntu</tag>
+         
+        <tag>๑Linux</tag>
+         
+         
+           
+             
+              <breadCrumb title="Computer System" url="https://fleschier.github.io/categories/Computer-System/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
     <loc>https://fleschier.github.io/2018/09/03/Hexo-rebuild/</loc>
-    <lastmod>2018-11-04T13:45:50.180Z</lastmod>
+    <lastmod>2018-11-07T07:41:24.149Z</lastmod>
     <data>
         <display>
         <title>hexo重新构建博客</title>
@@ -326,9 +348,9 @@
         <title>hadoop集群使用中的一些问题记录</title>
         <pubTime>2018-07-20T02:40:00.000Z</pubTime>
         
-        <tag>๑Linux</tag>
-         
         <tag>๑Hadoop</tag>
+         
+        <tag>๑Linux</tag>
          
         <tag>๑CLuster</tag>
          
@@ -508,28 +530,6 @@
 
     
   <url>
-    <loc>https://fleschier.github.io/2018/04/06/Ubuntu-order/</loc>
-    <lastmod>2018-09-03T13:22:38.768Z</lastmod>
-    <data>
-        <display>
-        <title>Ubuntu终端常用命令</title>
-        <pubTime>2018-04-06T08:47:00.000Z</pubTime>
-        
-        <tag>๑Ubuntu</tag>
-         
-        <tag>๑Linux</tag>
-         
-         
-           
-             
-              <breadCrumb title="Computer System" url="https://fleschier.github.io/categories/Computer-System/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
     <loc>https://fleschier.github.io/2018/04/07/SQL-quary/</loc>
     <lastmod>2018-09-03T13:19:13.490Z</lastmod>
     <data>
@@ -625,11 +625,11 @@
         <title>Shadowsocks</title>
         <pubTime>2018-05-28T07:34:00.000Z</pubTime>
         
+        <tag>๑ScientificSurfing</tag>
+         
         <tag>๑Ubuntu</tag>
          
         <tag>๑Linux</tag>
-         
-        <tag>๑ScientificSurfing</tag>
          
          
            
