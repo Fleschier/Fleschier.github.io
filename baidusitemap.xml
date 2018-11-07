@@ -4,21 +4,21 @@
 
     
   <url>
-    <loc>https://fleschier.github.io/2018/11/07/Maven-learning-02/</loc>
-    <lastmod>2018-11-07T13:39:56.438Z</lastmod>
+    <loc>https://fleschier.github.io/2018/11/07/web-learning-01/</loc>
+    <lastmod>2018-11-07T14:29:00.302Z</lastmod>
     <data>
         <display>
-        <title>Maven构建项目的pom.xml文件详解</title>
-        <pubTime>2018-11-07T12:50:00.000Z</pubTime>
+        <title>网页状态码记录</title>
+        <pubTime>2018-11-07T14:30:00.000Z</pubTime>
         
-        <tag>๑Maven</tag>
+        <tag>๑Web</tag>
          
-        <tag>๑Apache</tag>
+        <tag>๑Security</tag>
          
          
            
              
-              <breadCrumb title="Computer Programming" url="https://fleschier.github.io/categories/Computer-Programming/"/>
+              <breadCrumb title="Web Security" url="https://fleschier.github.io/categories/Web-Security/"/>
           
         </display>
     </data>
@@ -27,7 +27,7 @@
     
   <url>
     <loc>https://fleschier.github.io/2018/11/07/Maven-learning/</loc>
-    <lastmod>2018-11-07T12:43:19.960Z</lastmod>
+    <lastmod>2018-11-07T14:04:26.258Z</lastmod>
     <data>
         <display>
         <title>Maven构建项目的pom.xml文件详解</title>
@@ -40,7 +40,29 @@
          
            
              
-              <breadCrumb title="Computer Programming" url="https://fleschier.github.io/categories/Computer-Programming/"/>
+              <breadCrumb title="Computer Programes" url="https://fleschier.github.io/categories/Computer-Programes/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>https://fleschier.github.io/2018/11/07/Maven-learning-02/</loc>
+    <lastmod>2018-11-07T14:04:22.522Z</lastmod>
+    <data>
+        <display>
+        <title>Maven构建项目的pom.xml文件详解</title>
+        <pubTime>2018-11-07T12:50:00.000Z</pubTime>
+        
+        <tag>๑Maven</tag>
+         
+        <tag>๑Apache</tag>
+         
+         
+           
+             
+              <breadCrumb title="Computer Programes" url="https://fleschier.github.io/categories/Computer-Programes/"/>
           
         </display>
     </data>
@@ -669,11 +691,11 @@
         <title>Shadowsocks</title>
         <pubTime>2018-05-28T07:34:00.000Z</pubTime>
         
-        <tag>๑ScientificSurfing</tag>
-         
         <tag>๑Ubuntu</tag>
          
         <tag>๑Linux</tag>
+         
+        <tag>๑ScientificSurfing</tag>
          
          
            

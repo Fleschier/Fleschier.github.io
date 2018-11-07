@@ -110,20 +110,18 @@
 
 
 
-  <meta name="description" content="不适合人类阅读的学习笔记  第十六章 使用列表  列表的使用方法表格见另一篇博客  列表跟数组非常像，但是有两个重要的区别：    列表是不可变的，也就是说列表的元素不能通过赋值改变 列表是递归的(即链表)，而数组是平的   init和last要消耗的时间与列表的长度成正比，而head和tail消耗常量级别的时间  indices方法返回包含了指定列表所有有效的下标，所以一般用在for表达式遍历">
-<meta name="keywords" content="๑Scala">
+  <meta name="description" content="HTTP状态码  五个不同的类别:　　1. 1XX临时/信息响应　　2. 2XX成功　　3. 3XX重定向　　4. 4XX客户端/请求错误　　5. 5XX服务器错误 五个类别的响应状态代码的第一个数字是唯一代表。    4XX 服务器外部错误400 400 无法解析此请求。说明正在搜索的网页可能已经删除、更名或暂时不可用。  401.X 401.1 未经授权：访问由于凭据无效被拒绝。说明没有权限查">
+<meta name="keywords" content="๑Web,๑Security">
 <meta property="og:type" content="article">
-<meta property="og:title" content="《Scala编程》阅读记录——列表进阶">
-<meta property="og:url" content="https://fleschier.github.io/2018/07/24/scala-learning-04/index.html">
+<meta property="og:title" content="网页状态码记录">
+<meta property="og:url" content="https://fleschier.github.io/2018/11/07/web-learning-01/index.html">
 <meta property="og:site_name" content="Fleschier 渐寒๑">
-<meta property="og:description" content="不适合人类阅读的学习笔记  第十六章 使用列表  列表的使用方法表格见另一篇博客  列表跟数组非常像，但是有两个重要的区别：    列表是不可变的，也就是说列表的元素不能通过赋值改变 列表是递归的(即链表)，而数组是平的   init和last要消耗的时间与列表的长度成正比，而head和tail消耗常量级别的时间  indices方法返回包含了指定列表所有有效的下标，所以一般用在for表达式遍历">
+<meta property="og:description" content="HTTP状态码  五个不同的类别:　　1. 1XX临时/信息响应　　2. 2XX成功　　3. 3XX重定向　　4. 4XX客户端/请求错误　　5. 5XX服务器错误 五个类别的响应状态代码的第一个数字是唯一代表。    4XX 服务器外部错误400 400 无法解析此请求。说明正在搜索的网页可能已经删除、更名或暂时不可用。  401.X 401.1 未经授权：访问由于凭据无效被拒绝。说明没有权限查">
 <meta property="og:locale" content="default">
-<meta property="og:image" content="https://fleschier.github.io/images/Scala/flatten_test.jpg">
-<meta property="og:updated_time" content="2018-09-03T13:09:04.291Z">
+<meta property="og:updated_time" content="2018-11-07T14:29:00.302Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="《Scala编程》阅读记录——列表进阶">
-<meta name="twitter:description" content="不适合人类阅读的学习笔记  第十六章 使用列表  列表的使用方法表格见另一篇博客  列表跟数组非常像，但是有两个重要的区别：    列表是不可变的，也就是说列表的元素不能通过赋值改变 列表是递归的(即链表)，而数组是平的   init和last要消耗的时间与列表的长度成正比，而head和tail消耗常量级别的时间  indices方法返回包含了指定列表所有有效的下标，所以一般用在for表达式遍历">
-<meta name="twitter:image" content="https://fleschier.github.io/images/Scala/flatten_test.jpg">
+<meta name="twitter:title" content="网页状态码记录">
+<meta name="twitter:description" content="HTTP状态码  五个不同的类别:　　1. 1XX临时/信息响应　　2. 2XX成功　　3. 3XX重定向　　4. 4XX客户端/请求错误　　5. 5XX服务器错误 五个类别的响应状态代码的第一个数字是唯一代表。    4XX 服务器外部错误400 400 无法解析此请求。说明正在搜索的网页可能已经删除、更名或暂时不可用。  401.X 401.1 未经授权：访问由于凭据无效被拒绝。说明没有权限查">
 
 
 
@@ -138,7 +136,7 @@
   };
 </script>
 
-  <title>《Scala编程》阅读记录——列表进阶 | Fleschier 渐寒๑</title>
+  <title>网页状态码记录 | Fleschier 渐寒๑</title>
   
 
 
@@ -311,7 +309,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://fleschier.github.io/2018/07/24/scala-learning-04/">
+    <link itemprop="mainEntityOfPage" href="https://fleschier.github.io/2018/11/07/web-learning-01/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Fleschier">
@@ -328,7 +326,7 @@
 
         
         
-          <h2 class="post-title" itemprop="name headline">《Scala编程》阅读记录——列表进阶
+          <h2 class="post-title" itemprop="name headline">网页状态码记录
               
             
           </h2>
@@ -353,24 +351,12 @@
                 
               
 
-              <time title="Created: 2018-07-24 11:25:00" itemprop="dateCreated datePublished" datetime="2018-07-24T11:25:00+08:00">2018-07-24</time>
+              <time title="Created: 2018-11-07 22:30:00 / Modified: 22:29:00" itemprop="dateCreated datePublished" datetime="2018-11-07T22:30:00+08:00">2018-11-07</time>
             
 
             
               
 
-              
-                
-                <span class="post-meta-divider">|</span>
-                
-
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-calendar-check-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">Edited on</span>
-                
-                <time title="Modified: 2018-09-03 21:09:04" itemprop="dateModified" datetime="2018-09-03T21:09:04+08:00">2018-09-03</time>
               
             
           </span>
@@ -387,7 +373,7 @@
                 <span class="post-meta-item-text">In</span>
               
               
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/Computer-Programes/" itemprop="url" rel="index"><span itemprop="name">Computer Programes</span></a></span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/Web-Security/" itemprop="url" rel="index"><span itemprop="name">Web Security</span></a></span>
 
                 
                 
@@ -401,7 +387,7 @@
 
           
           
-             <span id="/2018/07/24/scala-learning-04/" class="leancloud_visitors" data-flag-title="《Scala编程》阅读记录——列表进阶">
+             <span id="/2018/11/07/web-learning-01/" class="leancloud_visitors" data-flag-title="网页状态码记录">
                <span class="post-meta-divider">|</span>
                <span class="post-meta-item-icon">
                  <i class="fa fa-eye"></i>
@@ -432,73 +418,110 @@
       
 
       
-        <blockquote>
-<p>不适合人类阅读的学习笔记</p>
-</blockquote>
-<h2 id="第十六章-使用列表"><a href="#第十六章-使用列表" class="headerlink" title="第十六章 使用列表"></a>第十六章 使用列表</h2><hr>
+        <h2 id="HTTP状态码"><a href="#HTTP状态码" class="headerlink" title="HTTP状态码"></a>HTTP状态码</h2><hr>
 <ul>
-<li><p><a href="https://fleschier.github.io/2018/07/Scala-infos/">列表的使用方法表格见另一篇博客</a></p>
-</li>
-<li><p>列表跟数组非常像，但是有两个重要的区别：</p>
-</li>
-</ul>
-<ol>
-<li>列表是不可变的，也就是说列表的元素不能通过赋值改变</li>
-<li>列表是递归的(即链表)，而数组是平的</li>
-</ol>
-<ul>
-<li><p><code>init</code>和<code>last</code>要消耗的时间与列表的长度成正比，而<code>head</code>和<code>tail</code>消耗常量级别的时间</p>
-</li>
-<li><p><code>indices</code>方法返回包含了指定列表所有有效的下标，所以一般用在for表达式遍历列表时：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">val lst = new List(&quot;af&quot;,&quot;g3g&quot;,&quot;g53v&quot;)</span><br><span class="line">for( i &lt;- lst.indices)&#123; //这里i即是从lst的第一个有效下标开始直到最后一个下标</span><br><span class="line">  ...</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-</li>
-</ul>
-<h3 id="flatten方法：接受一个列表的列表并返回单个列表"><a href="#flatten方法：接受一个列表的列表并返回单个列表" class="headerlink" title="flatten方法：接受一个列表的列表并返回单个列表"></a><code>flatten</code>方法：接受一个列表的列表并返回单个列表</h3><ul>
-<li><p>例子：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">scala&gt; List(List(1,2),List(3),List(),List(4,5)).flatten</span><br><span class="line">res0: List[Int] = List(1,2,3,4,5)</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>例子：<br><img src="/images/Scala/flatten_test.jpg" alt=""></p>
-</li>
-</ul>
-<h3 id="zip和unzip"><a href="#zip和unzip" class="headerlink" title="zip和unzip"></a><code>zip</code>和<code>unzip</code></h3><ul>
-<li><p>zip操作接受两个列表，返回一个有对偶组成的列表</p>
-</li>
-<li><p>如果两个列表的元素个数不同，那么任何没有配对上的元素将被丢弃</p>
-</li>
-</ul>
-<h4 id="zipWithIndex方法"><a href="#zipWithIndex方法" class="headerlink" title="zipWithIndex方法"></a><code>zipWithIndex</code>方法</h4><ul>
-<li><p>例子：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">scala&gt; val abcde = List(&apos;a&apos;,&apos;b&apos;,&apos;c&apos;,&apos;d&apos;,&apos;e&apos;)</span><br><span class="line">abcde: List[Char] = List(a,b,c,d,e)</span><br><span class="line">scala&gt; abcde.zipWithIndex</span><br><span class="line">res0: List[(Char,Int)] = List((a,0),(b,1),(c,2),(d,3),(e,4))</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>任何元组的列表都可以通过unzip方法转换回由列表组成的元组</p>
-</li>
-</ul>
-<h3 id="显示列表"><a href="#显示列表" class="headerlink" title="显示列表"></a>显示列表</h3><ul>
-<li>下面一些例子：<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">scala&gt; abcde mkString(&quot;[&quot;, &quot;,&quot;, &quot;]&quot;)</span><br><span class="line">res0: String = [a,b,c,d,e]</span><br><span class="line">scala&gt; abcde mkString &quot;&quot;</span><br><span class="line">res1: String = abcde</span><br><span class="line">scala&gt; abcde.mkString</span><br><span class="line">res2: String = abcde</span><br><span class="line">scala&gt; abcde mkString (&quot;List(&quot;, &quot;, &quot;, &quot;)&quot;)</span><br><span class="line">res3: String = List(a,b,c,d,e)</span><br></pre></td></tr></table></figure>
-</li>
-</ul>
-<h3 id="过滤列表"><a href="#过滤列表" class="headerlink" title="过滤列表"></a>过滤列表</h3><ul>
-<li><p><code>filter</code>，<code>partition</code>，<code>find</code>，<code>takeWhile</code>，<code>dropWhile</code>和<code>span</code></p>
-</li>
-<li><p>这些过滤函数的参数都是<code>T =&gt; Boolean</code>类型的</p>
-</li>
-<li><p><code>x.takeWhile(p)</code>返回x列表中连续满足p的最长前缀，例：<code>nums.takeWhile(_ &gt; 0)</code></p>
-</li>
-<li><p><code>x.dropWhile</code>将去除列表x中连续满足p的最长前缀，例：<code>words.dropWhile(_.startsWith(&quot;t&quot;))</code></p>
-</li>
-</ul>
-<h3 id="对列表前提条件的检查"><a href="#对列表前提条件的检查" class="headerlink" title="对列表前提条件的检查"></a>对列表前提条件的检查</h3><ul>
-<li><p><code>forall</code>和<code>exists</code></p>
-</li>
-<li><p><code>xs.forall(p)</code>，如果列表中所有元素都满足p则返回true</p>
-</li>
-<li><p><code>xs.exists(p)</code>，如果列表中有至少一个元素满足p则返回true</p>
-</li>
-</ul>
-<p><br></p>
-<blockquote>
-<p>最后更新于2018.7.24</p>
+<li>五个不同的类别:<br>　　1. <code>1XX</code>临时/信息响应<br>　　2. <code>2XX</code>成功<br>　　3. <code>3XX</code>重定向<br>　　4. <code>4XX</code>客户端/请求错误<br>　　5. <code>5XX</code>服务器错误<blockquote>
+<p>五个类别的响应状态代码的第一个数字是唯一代表。</p>
 </blockquote>
+</li>
+</ul>
+<h3 id="4XX-服务器外部错误"><a href="#4XX-服务器外部错误" class="headerlink" title="4XX 服务器外部错误"></a>4XX 服务器外部错误</h3><h4 id="400"><a href="#400" class="headerlink" title="400"></a>400</h4><ul>
+<li>400 无法解析此请求。说明正在搜索的网页可能已经删除、更名或暂时不可用。</li>
+</ul>
+<h4 id="401-X"><a href="#401-X" class="headerlink" title="401.X"></a>401.X</h4><ul>
+<li>401.1 未经授权：访问由于凭据无效被拒绝。说明没有权限查看该目录或网页。</li>
+<li><p>401.2 未经授权: 访问由于服务器配置倾向使用替代身份验证方法而被拒绝。<br><code>由于服务器配置问题而导致登陆失败，由于服务器端脚本未能正确发送 WWW 身份验证头文件字段。如果要通过 Active Server Pages 脚本完成此项任务，可以使用&quot;Response&quot;对象的&quot;AddHeader&quot;方法来要求客户端用特定身份验证方法访问资源。</code></p>
+</li>
+<li><p>401.3 未经授权：访问由于 ACL 对所请求资源的设置被拒绝。</p>
+</li>
+<li><p>401.4 未经授权：Web 服务器上安装的筛选器授权失败。<br><code>如果Web 服务器安装了筛选器程序以检查连接到服务器的用户。该筛选器程序能够禁止通过连接到服务器的身份验证来访问资源。</code></p>
+</li>
+<li><p>401.5 未经授权：ISAPI/CGI 应用程序授权失败。<br><code>由于 ISAPI/CGI 应用程序导致授权失败。如果所要访问的 Web 服务器地址上安装了 ISAPI 或 CGI 程序用于在继续执行之前检验用户证书。该程序能够禁止通过连接到服务器的身份验证证书来访问资源。</code></p>
+</li>
+<li><p>401.7 未经授权：由于 Web 服务器上的 URL 授权策略而拒绝访问。</p>
+</li>
+</ul>
+<h4 id="403-X"><a href="#403-X" class="headerlink" title="403.X"></a>403.X</h4><ul>
+<li>403 禁止访问：访问被拒绝。</li>
+<li><p>403.1 禁止访问：执行访问被拒绝。<br><code>由于&quot;执行&quot;访问被禁止而造成的，若试图从目录中执行 CGI、ISAPI 或其他可执行程序，但该目录不允许执行程序时便会出现此种错误。</code></p>
+</li>
+<li><p>403.2 禁止访问：读取访问被拒绝。<br><code>导致此错误是由于没有可用的默认网页并且没有对目录启用目录浏览，或者要显示的 HTML 网页所驻留的目录仅标记为&quot;可执行&quot;或&quot;脚本&quot;权限。</code></p>
+</li>
+<li><p>403.3 禁止访问：写入访问被拒绝。<br><code>当试图将文件上载到目录或在目录中修改文件，但该目录不允许&quot;写&quot;访问时就会出现此种错误。</code></p>
+</li>
+<li><p>403.4 禁止访问：需要使用 SSL 查看该资源。<br><code>由于要求SSL而造成的，您必须在要查看的网页的地址中使用&quot;https&quot;。</code></p>
+</li>
+<li><p>403.5 禁止访问：需要使用 SSL 128 查看该资源。<br><code>由于要求使用 128 位加密算法的 Web 浏览器而造成的，如果您的浏览器不支持128位加密算法就会出现这个错误，您可以连接微软网站进行浏览器升级。</code></p>
+</li>
+<li><p>403.6 禁止访问：客户端的 IP 地址被拒绝。<br><code>如果服务器中有不能访问该站点的 IP 地址列表，并且您使用的 IP 地址在该列表中时您就会返回这条错误信息。</code></p>
+</li>
+<li><p>403.7 禁止访问：需要 SSL 客户端证书。</p>
+</li>
+<li><p>403.8 禁止访问：客户端的 DNS 名称被拒绝。<br><code>由于禁止站点访问而造成的，若服务器中有不能访问该站点的 DNS 名称列表，而您使用的 DNS 名称在列表中时就会返回此种信息。请注意区别403.6与403.8错误。</code></p>
+</li>
+<li><p>403.9 禁止访问：太多客户端试图连接到 Web 服务器。<br><code>由于连接的用户过多而造成的，由于Web 服务器很忙，因通讯量过多而无法处理请求时便会返回这条错误。</code></p>
+</li>
+<li><p>403.10 禁止访问：Web 服务器配置为拒绝执行访问。<br><code>由于无效配置而导致的错误，当您试图从目录中执行 CGI、ISAPI 或其他可执行程序，但该目录不允许执行程序时便会返回这条错误。</code></p>
+</li>
+<li><p>403.11 禁止访问：密码已更改。</p>
+</li>
+<li><p>403.12 禁止访问：服务器证书映射器拒绝了客户端证书访问。<br><code>由于映射器拒绝访问而造成的。若要查看的网页要求使用有效的客户证书，而您的客户证书映射没有权限访问该 Web 站点时就会返回映射器拒绝访问的错误。</code></p>
+</li>
+<li><p>403.13 禁止访问：客户端证书已在 Web 服务器上吊销。<br><code>由于需要查看的网页要求使用有效的客户证书而使用的客户证书已经被吊销，或者无法确定证书是否已吊销造成的。</code></p>
+</li>
+<li><p>403.14 禁止访问：在 Web 服务器上已拒绝目录列表。</p>
+</li>
+<li>403.15 禁止访问：Web 服务器已超过客户端访问许可证限制。</li>
+<li>403.16 禁止访问：客户端证书格式错误或未被 Web 服务器信任。</li>
+<li>403.17 禁止访问：客户端证书已经到期或者尚未生效。</li>
+<li>403.18 禁止访问：无法在当前应用程序池中执行请求的 URL。</li>
+<li>403.19 禁止访问：无法在该应用程序池中为客户端执行 CGI。</li>
+<li>403.20 禁止访问：Passport 登录失败。</li>
+</ul>
+<h4 id="404-X"><a href="#404-X" class="headerlink" title="404.X"></a>404.X</h4><ul>
+<li><p>404 找不到文件或目录。<br><code>由于无法找到文件而造成的，通常是由于正在搜索的网页可能已经删除、更名或暂时不可用。</code></p>
+</li>
+<li><p>404.1 文件或目录未找到：网站无法在所请求的端口访问。<br><code>表明所访问 Web 站点的 IP 地址不接受对端口（请求的来源端口）的请求。404.1 错误只会出现在具有多个 IP 地址的计算机上。如果在特定 IP 地址/端口组合上收到客户端请求，而且没有将 IP 地址配置为在该特定的端口上侦听，则 IIS 返回 404.1 HTTP 错误。例如，如果一台计算机有两个 IP 地址，而只将其中一个 IP 地址配置为在端口 80 上侦听，则另一个 IP 地址从端口 80 收到的任何请求都将导致 IIS 返回 404.1 错误。只应在此服务级别设置该错误，因为只有当服务器上使用多个 IP 地址时才会将它返回给客户端。</code></p>
+</li>
+<li><p>404.2 文件或目录无法找到：锁定策略禁止该请求。</p>
+</li>
+<li>404.3 文件或目录无法找到：MIME 映射策略禁止该请求。</li>
+</ul>
+<h4 id="else"><a href="#else" class="headerlink" title="else"></a>else</h4><ul>
+<li><p>405 用于访问该页的 HTTP 动作未被许可。<br><code>由于资源被禁止而导致的网页地址不正确，因此要寻找的网页无法显示。</code></p>
+</li>
+<li><p>406 客户端浏览器不接受所请求页面的 MIME 类型。<code>由于浏览器无法打开正在寻找的资源而导致的错误。</code></p>
+</li>
+<li><p>407 Web 服务器需要初始的代理验证。</p>
+</li>
+<li>410 要寻找的网页已被永久删除而导致的，这意味着资源永远无法使用。</li>
+<li><p>412 客户端设置的前提条件在 Web 服务器上评估时失败。<br><code>412错误是由于要查看的网页设置有先决条件，因此该请求无法完成。一般是网页中有一个或多个请求标题字段中具有先决条件，这些字段经服务器测试后被认为是&quot;FALSE&quot;。客户端为当前资源的 meta 信息（头文件字段数据）设置了先决条件，以便防止请求的方法被用于指定资源外的其他资源。</code></p>
+</li>
+<li><p>414 请求 URL 太大，因此在 Web 服务器上不接受该 URL。<br><code>一般的可能性有： 1）客户端错误地将 POST 请求转换为带有长查询信息的 GET 请求。 2）或者是客户端遇到重定向问题（例如，重定向 URL 的前缀指向自身的后缀）。 3）服务器遭到客户端的攻击，该客户端试图利用那些使用定长缓冲来读取或控制请求 URI 的服务器上的安全漏洞。</code></p>
+</li>
+</ul>
+<h3 id="5XX-服务器内部错误"><a href="#5XX-服务器内部错误" class="headerlink" title="5XX 服务器内部错误"></a>5XX 服务器内部错误</h3><ul>
+<li>500 服务器内部错误。</li>
+<li>500.11 服务器错误：Web 服务器上的应用程序正在关闭。</li>
+<li>500.12 服务器错误：Web 服务器上的应用程序正在重新启动。</li>
+<li>500.13 服务器错误：Web 服务器太忙。</li>
+<li>500.14 服务器错误：服务器上的无效应用程序配置。</li>
+<li>500.15 服务器错误：不允许直接请求 GLOBAL.ASA。</li>
+<li>500.16 服务器错误：UNC 授权凭据不正确。</li>
+<li>500.17 服务器错误：URL 授权存储无法找到。</li>
+<li>500.18 服务器错误：URL 授权存储无法打开。</li>
+<li>500.19 服务器错误：该文件的数据在配置数据库中配置不正确。</li>
+<li>500.20 服务器错误：URL 授权域无法找到。</li>
+<li>500-100.asp 内部服务器错误：ASP 错误。</li>
+<li><p>501 标题值指定的配置没有执行。</p>
+</li>
+<li><p>502 Web 服务器作为网关或代理服务器时收到无效的响应。<br><code>由于网关错误而造成的，当作为网关或代理的服务器与上层内容服务器联络时，收到无效的响应时就会出现502错误。</code></p>
+</li>
+<li><p>参考 <a href="https://blog.csdn.net/aaa_aa000/article/details/46997991" target="_blank" rel="noopener">https://blog.csdn.net/aaa_aa000/article/details/46997991</a></p>
+</li>
+<li><p>参考<a href="https://www.jianshu.com/p/d50bcc605a13" target="_blank" rel="noopener">https://www.jianshu.com/p/d50bcc605a13</a></p>
+</li>
+</ul>
 
       
     </div>
@@ -520,7 +543,7 @@
     <strong>Post author:  </strong>Fleschier</li>
   <li class="post-copyright-link">
     <strong>Post link: </strong>
-    <a href="https://fleschier.github.io/2018/07/24/scala-learning-04/" title="《Scala编程》阅读记录——列表进阶">https://fleschier.github.io/2018/07/24/scala-learning-04/</a>
+    <a href="https://fleschier.github.io/2018/11/07/web-learning-01/" title="网页状态码记录">https://fleschier.github.io/2018/11/07/web-learning-01/</a>
   </li>
   <li class="post-copyright-license">
     <strong>Copyright Notice:  </strong>All articles in this blog are licensed under <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" rel="external nofollow" target="_blank">CC BY-NC-SA 4.0</a> unless stating additionally.</li>
@@ -533,7 +556,9 @@
       
         <div class="post-tags">
           
-            <a href="/tags/๑Scala/" rel="tag"># ๑Scala</a>
+            <a href="/tags/๑Web/" rel="tag"># ๑Web</a>
+          
+            <a href="/tags/๑Security/" rel="tag"># ๑Security</a>
           
         </div>
       
@@ -558,8 +583,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2018/07/24/scala-learning-05/" rel="next" title="《Scala编程》阅读记录——集合类进阶">
-                <i class="fa fa-chevron-left"></i> 《Scala编程》阅读记录——集合类进阶
+              <a href="/2018/11/07/Maven-learning-02/" rel="next" title="Maven构建项目的pom.xml文件详解">
+                <i class="fa fa-chevron-left"></i> Maven构建项目的pom.xml文件详解
               </a>
             
           </div>
@@ -567,10 +592,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2018/09/03/Hexo-rebuild/" rel="prev" title="hexo重新构建博客">
-                hexo重新构建博客 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -801,7 +822,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#第十六章-使用列表"><span class="nav-number">1.</span> <span class="nav-text">第十六章 使用列表</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#flatten方法：接受一个列表的列表并返回单个列表"><span class="nav-number">1.1.</span> <span class="nav-text">flatten方法：接受一个列表的列表并返回单个列表</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#zip和unzip"><span class="nav-number">1.2.</span> <span class="nav-text">zip和unzip</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#zipWithIndex方法"><span class="nav-number">1.2.1.</span> <span class="nav-text">zipWithIndex方法</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#显示列表"><span class="nav-number">1.3.</span> <span class="nav-text">显示列表</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#过滤列表"><span class="nav-number">1.4.</span> <span class="nav-text">过滤列表</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#对列表前提条件的检查"><span class="nav-number">1.5.</span> <span class="nav-text">对列表前提条件的检查</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#HTTP状态码"><span class="nav-number">1.</span> <span class="nav-text">HTTP状态码</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#4XX-服务器外部错误"><span class="nav-number">1.1.</span> <span class="nav-text">4XX 服务器外部错误</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#400"><span class="nav-number">1.1.1.</span> <span class="nav-text">400</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#401-X"><span class="nav-number">1.1.2.</span> <span class="nav-text">401.X</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#403-X"><span class="nav-number">1.1.3.</span> <span class="nav-text">403.X</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#404-X"><span class="nav-number">1.1.4.</span> <span class="nav-text">404.X</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#else"><span class="nav-number">1.1.5.</span> <span class="nav-text">else</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#5XX-服务器内部错误"><span class="nav-number">1.2.</span> <span class="nav-text">5XX 服务器内部错误</span></a></li></ol></li></ol></div>
             
 
           </div>
