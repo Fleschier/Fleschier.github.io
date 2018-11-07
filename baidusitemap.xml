@@ -5,7 +5,7 @@
     
   <url>
     <loc>https://fleschier.github.io/2018/04/06/Ubuntu-order/</loc>
-    <lastmod>2018-11-07T08:16:30.492Z</lastmod>
+    <lastmod>2018-11-07T08:32:52.122Z</lastmod>
     <data>
         <display>
         <title>Ubuntu终端常用命令</title>
@@ -348,9 +348,9 @@
         <title>hadoop集群使用中的一些问题记录</title>
         <pubTime>2018-07-20T02:40:00.000Z</pubTime>
         
-        <tag>๑Hadoop</tag>
-         
         <tag>๑Linux</tag>
+         
+        <tag>๑Hadoop</tag>
          
         <tag>๑CLuster</tag>
          
@@ -625,11 +625,11 @@
         <title>Shadowsocks</title>
         <pubTime>2018-05-28T07:34:00.000Z</pubTime>
         
-        <tag>๑ScientificSurfing</tag>
-         
         <tag>๑Ubuntu</tag>
          
         <tag>๑Linux</tag>
+         
+        <tag>๑ScientificSurfing</tag>
          
          
            
