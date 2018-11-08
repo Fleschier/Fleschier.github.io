@@ -110,18 +110,18 @@
 
 
 
-  <meta name="description" content="Spark调优的一些参数设置 SparkConf的一些参数设置 见博客Spark性能优化：资源调优篇  较为全面的一个Spark性能参数讲解 Spark性能相关参数配置  spark分区器 主要有HashPartitioner和RangePartitioner两种。  HashPatitioner按照给定key计算出的HashCode通过模运算来分区，缺点是可能造成分区出现数据倾斜。  Range">
-<meta name="keywords" content="๑BigData,๑Spark">
+  <meta name="description" content="需要的docker image可以从Docker Hub获取  Docker images  Docker images文件: Docker 把应用程序及其依赖，打包在 image 文件里面。只有通过这个文件，才能生成 Docker 容器。image 文件可以看作是容器的模板。Docker 根据 image 文件生成容器的实例。同一个 image 文件，可以生成多个同时运行的容器实例。  查看本">
+<meta name="keywords" content="๑Ubuntu,๑Docker">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Spark实际操作过程中的一些调优笔记">
-<meta property="og:url" content="https://fleschier.github.io/2018/09/13/Spark-notes/index.html">
+<meta property="og:title" content="Docker使用">
+<meta property="og:url" content="https://fleschier.github.io/2018/11/08/docker-learning-02/index.html">
 <meta property="og:site_name" content="Fleschier 渐寒๑">
-<meta property="og:description" content="Spark调优的一些参数设置 SparkConf的一些参数设置 见博客Spark性能优化：资源调优篇  较为全面的一个Spark性能参数讲解 Spark性能相关参数配置  spark分区器 主要有HashPartitioner和RangePartitioner两种。  HashPatitioner按照给定key计算出的HashCode通过模运算来分区，缺点是可能造成分区出现数据倾斜。  Range">
+<meta property="og:description" content="需要的docker image可以从Docker Hub获取  Docker images  Docker images文件: Docker 把应用程序及其依赖，打包在 image 文件里面。只有通过这个文件，才能生成 Docker 容器。image 文件可以看作是容器的模板。Docker 根据 image 文件生成容器的实例。同一个 image 文件，可以生成多个同时运行的容器实例。  查看本">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2018-09-25T07:04:32.910Z">
+<meta property="og:updated_time" content="2018-11-08T13:22:34.488Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Spark实际操作过程中的一些调优笔记">
-<meta name="twitter:description" content="Spark调优的一些参数设置 SparkConf的一些参数设置 见博客Spark性能优化：资源调优篇  较为全面的一个Spark性能参数讲解 Spark性能相关参数配置  spark分区器 主要有HashPartitioner和RangePartitioner两种。  HashPatitioner按照给定key计算出的HashCode通过模运算来分区，缺点是可能造成分区出现数据倾斜。  Range">
+<meta name="twitter:title" content="Docker使用">
+<meta name="twitter:description" content="需要的docker image可以从Docker Hub获取  Docker images  Docker images文件: Docker 把应用程序及其依赖，打包在 image 文件里面。只有通过这个文件，才能生成 Docker 容器。image 文件可以看作是容器的模板。Docker 根据 image 文件生成容器的实例。同一个 image 文件，可以生成多个同时运行的容器实例。  查看本">
 
 
 
@@ -136,7 +136,7 @@
   };
 </script>
 
-  <title>Spark实际操作过程中的一些调优笔记 | Fleschier 渐寒๑</title>
+  <title>Docker使用 | Fleschier 渐寒๑</title>
   
 
 
@@ -309,7 +309,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://fleschier.github.io/2018/09/13/Spark-notes/">
+    <link itemprop="mainEntityOfPage" href="https://fleschier.github.io/2018/11/08/docker-learning-02/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Fleschier">
@@ -326,7 +326,7 @@
 
         
         
-          <h2 class="post-title" itemprop="name headline">Spark实际操作过程中的一些调优笔记
+          <h2 class="post-title" itemprop="name headline">Docker使用
               
             
           </h2>
@@ -351,24 +351,12 @@
                 
               
 
-              <time title="Created: 2018-09-13 21:47:00" itemprop="dateCreated datePublished" datetime="2018-09-13T21:47:00+08:00">2018-09-13</time>
+              <time title="Created: 2018-11-08 20:40:00 / Modified: 21:22:34" itemprop="dateCreated datePublished" datetime="2018-11-08T20:40:00+08:00">2018-11-08</time>
             
 
             
               
 
-              
-                
-                <span class="post-meta-divider">|</span>
-                
-
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-calendar-check-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">Edited on</span>
-                
-                <time title="Modified: 2018-09-25 15:04:32" itemprop="dateModified" datetime="2018-09-25T15:04:32+08:00">2018-09-25</time>
               
             
           </span>
@@ -385,7 +373,7 @@
                 <span class="post-meta-item-text">In</span>
               
               
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/Computer-Programes/" itemprop="url" rel="index"><span itemprop="name">Computer Programes</span></a></span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/Docker/" itemprop="url" rel="index"><span itemprop="name">Docker</span></a></span>
 
                 
                 
@@ -399,7 +387,7 @@
 
           
           
-             <span id="/2018/09/13/Spark-notes/" class="leancloud_visitors" data-flag-title="Spark实际操作过程中的一些调优笔记">
+             <span id="/2018/11/08/docker-learning-02/" class="leancloud_visitors" data-flag-title="Docker使用">
                <span class="post-meta-divider">|</span>
                <span class="post-meta-item-icon">
                  <i class="fa fa-eye"></i>
@@ -430,21 +418,58 @@
       
 
       
-        <h2 id="Spark调优的一些参数设置"><a href="#Spark调优的一些参数设置" class="headerlink" title="Spark调优的一些参数设置"></a>Spark调优的一些参数设置</h2><hr>
-<h3 id="SparkConf的一些参数设置"><a href="#SparkConf的一些参数设置" class="headerlink" title="SparkConf的一些参数设置"></a>SparkConf的一些参数设置</h3><ul>
-<li>见博客<a href="https://www.iteblog.com/archives/1659.html" target="_blank" rel="noopener">Spark性能优化：资源调优篇</a></li>
+        <blockquote>
+<p>需要的docker image可以从Docker Hub获取</p>
+</blockquote>
+<h2 id="Docker-images"><a href="#Docker-images" class="headerlink" title="Docker images"></a>Docker images</h2><hr>
+<ul>
+<li><p>Docker images文件: Docker 把应用程序及其依赖，打包在 image 文件里面。只有通过这个文件，才能生成 Docker 容器。image 文件可以看作是容器的模板。Docker 根据 image 文件生成容器的实例。同一个 image 文件，可以生成多个同时运行的容器实例。</p>
+</li>
+<li><p>查看本机的image文件:<code>docker image ls</code></p>
+</li>
+<li><p>删除某个image:<code>docker image rm [imageName]</code></p>
+</li>
 </ul>
-<h3 id="较为全面的一个Spark性能参数讲解"><a href="#较为全面的一个Spark性能参数讲解" class="headerlink" title="较为全面的一个Spark性能参数讲解"></a>较为全面的一个Spark性能参数讲解</h3><ul>
-<li><a href="https://spark-config.readthedocs.io/en/latest/index.html" target="_blank" rel="noopener">Spark性能相关参数配置</a></li>
+<h3 id="获取image"><a href="#获取image" class="headerlink" title="获取image"></a>获取image</h3><ul>
+<li><code>docker image pull 仓库路径/文件名</code></li>
 </ul>
-<h3 id="spark分区器"><a href="#spark分区器" class="headerlink" title="spark分区器"></a>spark分区器</h3><ul>
-<li><p>主要有HashPartitioner和RangePartitioner两种。</p>
+<h3 id="运行"><a href="#运行" class="headerlink" title="运行"></a>运行</h3><ul>
+<li><p><code>docker container run containID</code></p>
 </li>
-<li><p>HashPatitioner按照给定key计算出的HashCode通过模运算来分区，缺点是可能造成分区出现数据倾斜。</p>
+<li><p>可以先用<code>docker image ls</code>查看所有的镜像文件. 同时<code>docker container run</code>当本地仓库不存在相对应的image时,会自动从远程仓库获取,所以上面pull的一步不是必须的.</p>
 </li>
-<li><p>RangePartioner尽量保证每个分区中数据量的均匀，而且分区与分区之间是有序的(分区内部无序)。在分区计算时可能需要消耗部分资源，因此选择那种分区方法应看具体情况。</p>
+</ul>
+<h3 id="终止"><a href="#终止" class="headerlink" title="终止"></a>终止</h3><ul>
+<li>有些容器需要手动终止,使用命令:<code>docker container kill containID</code></li>
+</ul>
+<h2 id="Docker-container"><a href="#Docker-container" class="headerlink" title="Docker container"></a>Docker container</h2><hr>
+<ul>
+<li><p>image 文件生成的容器实例，本身也是一个文件，称为容器文件。也就是说，一旦容器生成，就会同时存在两个文件： image 文件和容器文件。而且关闭容器并不会删除容器文件，只是容器停止运行。</p>
 </li>
-<li><p><a href="https://www.iteblog.com/archives/1522.html" target="_blank" rel="noopener">Spark分区器HashPartitioner和RangePartitioner代码详解</a></p>
+<li><p>列出正在运行的容器:<code>docker container ls</code></p>
+</li>
+<li><p>列出所有的容器: <code>docker container ls --all</code></p>
+</li>
+</ul>
+<h3 id="删除容器"><a href="#删除容器" class="headerlink" title="删除容器"></a>删除容器</h3><ul>
+<li><p><code>docker container rm containerID</code></p>
+</li>
+<li><p>删除之后的容器不会再出现在容器列表里</p>
+</li>
+</ul>
+<h2 id="创建自己的docker容器"><a href="#创建自己的docker容器" class="headerlink" title="创建自己的docker容器"></a>创建自己的docker容器</h2><hr>
+<ul>
+<li>待更新</li>
+</ul>
+<h2 id="补充"><a href="#补充" class="headerlink" title="补充"></a>补充</h2><hr>
+<ul>
+<li><p><strong>注意</strong>,<code>docker container run</code>命令是创建一个container,每运行一次就会多一个容器,如果要重复使用一个容器需要用:<code>docker container start</code></p>
+</li>
+<li><p>查看容器的输出,即容器里面shell的标准输出:<code>docker container logs containerID</code>. 如果<code>docker run</code>命令运行容器的时候，没有使用<code>-it</code>参数，就要用这个命令查看输出。</p>
+</li>
+<li><p>进入一个正在运行的容器:<code>docker container exec -it containerID /bin/bash</code>.如果<code>docker run</code>命令运行容器的时候，没有使用<code>-it</code>参数，就要用这个命令进入容器。一旦进入了容器，就可以在容器的Shell执行命令了。</p>
+</li>
+<li><p>从容器中拷贝文件到本地:<code>$ docker container cp containID:[/path/to/file] [/dest/path/]</code>. 如果要拷贝到当前目录,则可以写为:<code>$ docker container cp [containID]:[/path/to/file] .</code></p>
 </li>
 </ul>
 
@@ -468,7 +493,7 @@
     <strong>Post author:  </strong>Fleschier</li>
   <li class="post-copyright-link">
     <strong>Post link: </strong>
-    <a href="https://fleschier.github.io/2018/09/13/Spark-notes/" title="Spark实际操作过程中的一些调优笔记">https://fleschier.github.io/2018/09/13/Spark-notes/</a>
+    <a href="https://fleschier.github.io/2018/11/08/docker-learning-02/" title="Docker使用">https://fleschier.github.io/2018/11/08/docker-learning-02/</a>
   </li>
   <li class="post-copyright-license">
     <strong>Copyright Notice:  </strong>All articles in this blog are licensed under <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" rel="external nofollow" target="_blank">CC BY-NC-SA 4.0</a> unless stating additionally.</li>
@@ -481,9 +506,9 @@
       
         <div class="post-tags">
           
-            <a href="/tags/๑BigData/" rel="tag"># ๑BigData</a>
+            <a href="/tags/๑Ubuntu/" rel="tag"># ๑Ubuntu</a>
           
-            <a href="/tags/๑Spark/" rel="tag"># ๑Spark</a>
+            <a href="/tags/๑Docker/" rel="tag"># ๑Docker</a>
           
         </div>
       
@@ -508,8 +533,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2018/09/06/scala-io/" rel="next" title="Scala IO 记录">
-                <i class="fa fa-chevron-left"></i> Scala IO 记录
+              <a href="/2018/11/08/docker-learning-01/" rel="next" title="Ubuntu18 安装Docker">
+                <i class="fa fa-chevron-left"></i> Ubuntu18 安装Docker
               </a>
             
           </div>
@@ -517,10 +542,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2018/10/08/C++-Int-Char-String-translation/" rel="prev" title="C++学习笔记——数值类型,char和string的相互转化问题">
-                C++学习笔记——数值类型,char和string的相互转化问题 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -755,7 +776,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Spark调优的一些参数设置"><span class="nav-number">1.</span> <span class="nav-text">Spark调优的一些参数设置</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#SparkConf的一些参数设置"><span class="nav-number">1.1.</span> <span class="nav-text">SparkConf的一些参数设置</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#较为全面的一个Spark性能参数讲解"><span class="nav-number">1.2.</span> <span class="nav-text">较为全面的一个Spark性能参数讲解</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#spark分区器"><span class="nav-number">1.3.</span> <span class="nav-text">spark分区器</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Docker-images"><span class="nav-number">1.</span> <span class="nav-text">Docker images</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#获取image"><span class="nav-number">1.1.</span> <span class="nav-text">获取image</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#运行"><span class="nav-number">1.2.</span> <span class="nav-text">运行</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#终止"><span class="nav-number">1.3.</span> <span class="nav-text">终止</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Docker-container"><span class="nav-number">2.</span> <span class="nav-text">Docker container</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#删除容器"><span class="nav-number">2.1.</span> <span class="nav-text">删除容器</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#创建自己的docker容器"><span class="nav-number">3.</span> <span class="nav-text">创建自己的docker容器</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#补充"><span class="nav-number">4.</span> <span class="nav-text">补充</span></a></li></ol></div>
             
 
           </div>

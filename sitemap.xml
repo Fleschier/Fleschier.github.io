@@ -2,9 +2,16 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://fleschier.github.io/2018/11/08/docker-learning-02/</loc>
+    
+    <lastmod>2018-11-08T13:22:34.488Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>https://fleschier.github.io/2018/11/08/docker-learning-01/</loc>
     
-    <lastmod>2018-11-08T10:13:22.405Z</lastmod>
+    <lastmod>2018-11-08T12:59:37.220Z</lastmod>
     
   </url>
   
