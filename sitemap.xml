@@ -2,6 +2,20 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://fleschier.github.io/2018/07/20/docker-learning-01/</loc>
+    
+    <lastmod>2018-11-08T10:10:06.184Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://fleschier.github.io/2018/05/10/Ubuntu-18/</loc>
+    
+    <lastmod>2018-11-08T08:28:14.656Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>https://fleschier.github.io/2018/11/07/web-learning-01/</loc>
     
     <lastmod>2018-11-07T14:29:00.302Z</lastmod>
@@ -54,13 +68,6 @@
     <loc>https://fleschier.github.io/2018/10/08/C++-learning-error-collection/</loc>
     
     <lastmod>2018-10-26T06:46:10.171Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://fleschier.github.io/2018/05/10/Ubuntu-18/</loc>
-    
-    <lastmod>2018-10-15T15:13:20.516Z</lastmod>
     
   </url>
   

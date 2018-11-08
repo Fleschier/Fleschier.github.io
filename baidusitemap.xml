@@ -4,6 +4,50 @@
 
     
   <url>
+    <loc>https://fleschier.github.io/2018/07/20/docker-learning-01/</loc>
+    <lastmod>2018-11-08T10:10:06.184Z</lastmod>
+    <data>
+        <display>
+        <title>Ubuntu18 安装Docker</title>
+        <pubTime>2018-07-20T02:40:00.000Z</pubTime>
+        
+        <tag>๑Ubuntu</tag>
+         
+        <tag>๑Docker</tag>
+         
+         
+           
+             
+              <breadCrumb title="Docker" url="https://fleschier.github.io/categories/Docker/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>https://fleschier.github.io/2018/05/10/Ubuntu-18/</loc>
+    <lastmod>2018-11-08T08:28:14.656Z</lastmod>
+    <data>
+        <display>
+        <title>Ubuntu进阶记录 & Ubuntu-18</title>
+        <pubTime>2018-05-10T01:47:00.000Z</pubTime>
+        
+        <tag>๑Ubuntu</tag>
+         
+        <tag>๑Linux</tag>
+         
+         
+           
+             
+              <breadCrumb title="Computer System" url="https://fleschier.github.io/categories/Computer-System/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
     <loc>https://fleschier.github.io/2018/11/07/web-learning-01/</loc>
     <lastmod>2018-11-07T14:29:00.302Z</lastmod>
     <data>
@@ -169,28 +213,6 @@
            
              
               <breadCrumb title="Computer Programes" url="https://fleschier.github.io/categories/Computer-Programes/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>https://fleschier.github.io/2018/05/10/Ubuntu-18/</loc>
-    <lastmod>2018-10-15T15:13:20.516Z</lastmod>
-    <data>
-        <display>
-        <title>Ubuntu进阶记录 & Ubuntu-18</title>
-        <pubTime>2018-05-10T01:47:00.000Z</pubTime>
-        
-        <tag>๑Ubuntu</tag>
-         
-        <tag>๑Linux</tag>
-         
-         
-           
-             
-              <breadCrumb title="Computer System" url="https://fleschier.github.io/categories/Computer-System/"/>
           
         </display>
     </data>
