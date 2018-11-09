@@ -2,6 +2,13 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://fleschier.github.io/2018/11/07/Maven-learning/</loc>
+    
+    <lastmod>2018-11-09T02:34:45.372Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>https://fleschier.github.io/2018/11/09/mySQL-download-windows/</loc>
     
     <lastmod>2018-11-09T01:56:01.420Z</lastmod>
@@ -33,13 +40,6 @@
     <loc>https://fleschier.github.io/2018/11/07/web-learning-01/</loc>
     
     <lastmod>2018-11-07T14:29:00.302Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://fleschier.github.io/2018/11/07/Maven-learning/</loc>
-    
-    <lastmod>2018-11-07T14:04:26.258Z</lastmod>
     
   </url>
   

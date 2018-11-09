@@ -4,6 +4,28 @@
 
     
   <url>
+    <loc>https://fleschier.github.io/2018/11/07/Maven-learning/</loc>
+    <lastmod>2018-11-09T02:34:45.372Z</lastmod>
+    <data>
+        <display>
+        <title>Maven构建项目的pom.xml主要标签解释</title>
+        <pubTime>2018-11-07T12:46:00.000Z</pubTime>
+        
+        <tag>๑Maven</tag>
+         
+        <tag>๑Apache</tag>
+         
+         
+           
+             
+              <breadCrumb title="Computer Programes" url="https://fleschier.github.io/categories/Computer-Programes/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
     <loc>https://fleschier.github.io/2018/11/09/mySQL-download-windows/</loc>
     <lastmod>2018-11-09T01:56:01.420Z</lastmod>
     <data>
@@ -107,28 +129,6 @@
            
              
               <breadCrumb title="Web Security" url="https://fleschier.github.io/categories/Web-Security/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>https://fleschier.github.io/2018/11/07/Maven-learning/</loc>
-    <lastmod>2018-11-07T14:04:26.258Z</lastmod>
-    <data>
-        <display>
-        <title>Maven构建项目的pom.xml文件详解</title>
-        <pubTime>2018-11-07T12:46:00.000Z</pubTime>
-        
-        <tag>๑Maven</tag>
-         
-        <tag>๑Apache</tag>
-         
-         
-           
-             
-              <breadCrumb title="Computer Programes" url="https://fleschier.github.io/categories/Computer-Programes/"/>
           
         </display>
     </data>
