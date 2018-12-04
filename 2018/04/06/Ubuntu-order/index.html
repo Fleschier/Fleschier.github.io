@@ -118,7 +118,7 @@
 <meta property="og:site_name" content="Fleschier 渐寒๑">
 <meta property="og:description" content="不适合人类阅读的备忘笔记    命令 常用基本命令 ls -l 的简略写法就是 ll，但是这个与ls -a又不同，后者用来显示隐藏文件和文件夹。  使用 vim修改文件时，如果想要不保存退出，使用:q!命令。  ubuntu改文件名用 mv name1 name2即可  cp filename filepath //拷贝文件  cp -r 源目录  指定目录 //拷贝一个文件夹到另一个目录  从">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2018-11-07T08:32:52.122Z">
+<meta property="og:updated_time" content="2018-12-04T13:15:02.729Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Ubuntu终端常用命令">
 <meta name="twitter:description" content="不适合人类阅读的备忘笔记    命令 常用基本命令 ls -l 的简略写法就是 ll，但是这个与ls -a又不同，后者用来显示隐藏文件和文件夹。  使用 vim修改文件时，如果想要不保存退出，使用:q!命令。  ubuntu改文件名用 mv name1 name2即可  cp filename filepath //拷贝文件  cp -r 源目录  指定目录 //拷贝一个文件夹到另一个目录  从">
@@ -368,7 +368,7 @@
                 
                   <span class="post-meta-item-text">Edited on</span>
                 
-                <time title="Modified: 2018-11-07 16:32:52" itemprop="dateModified" datetime="2018-11-07T16:32:52+08:00">2018-11-07</time>
+                <time title="Modified: 2018-12-04 21:15:02" itemprop="dateModified" datetime="2018-12-04T21:15:02+08:00">2018-12-04</time>
               
             
           </span>
@@ -593,7 +593,21 @@
 </li>
 <li><p><code>tar –ztvf directory.tar.gz</code><br>//查看 tar 里面的档案信息</p>
 </li>
-<li><p><code>tar -zcvPf home.tar.gz /home</code><br>//则建立起来的压缩档内档案为绝对路径<br>//请注意，使用这个 P 的参数时，不要将 P 加在 f 后面，因为 f 之后要立即接档名才行喔！</p>
+<li><p><code>tar -zcvPf home.tar.gz /home</code><br>//则建立起来的压缩档内档案为绝对路径<br>//请注意，使用这个 P 的参数时，不要将 P 加在 f 后面，因为 f 之后要立即接档名才行！</p>
+</li>
+</ul>
+<h3 id="HDFS相关命令"><a href="#HDFS相关命令" class="headerlink" title="HDFS相关命令"></a>HDFS相关命令</h3><ul>
+<li><p>基本所有与HDFS相关的命令都以<code>hdfs dfs</code>开头</p>
+</li>
+<li><p><code>-mkdir /dirname</code> 创建hdfs目录</p>
+</li>
+<li><p><code>-ls /dirname[/...]</code> 列出某个目录下的所有文件</p>
+</li>
+<li><p><code>-rm -r /dirname</code> 删除某个目录及其所有子文件</p>
+</li>
+<li><p><code>-get /hdfs路径  /本地路径</code> 从hdfs拿文件到本地(例如<code>hdfs dfs -get /data/test.txt /home/xxx/</code>)</p>
+</li>
+<li><p><code>-put /本地文件路径 /hdfs路径</code>与拿文件相反,将本地一个文件传到hdfs上</p>
 </li>
 </ul>
 
@@ -657,8 +671,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2018/04/06/Ubuntu-operation/" rel="next" title="Ubuntu随笔">
-                <i class="fa fa-chevron-left"></i> Ubuntu随笔
+              <a href="/2018/04/06/Java-learning/" rel="next" title="Java学习笔记——基础">
+                <i class="fa fa-chevron-left"></i> Java学习笔记——基础
               </a>
             
           </div>
@@ -667,8 +681,8 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2018/04/06/Python-learning/" rel="prev" title="Python学习笔记——基础">
-                Python学习笔记——基础 <i class="fa fa-chevron-right"></i>
+              <a href="/2018/04/06/Scala-learning/" rel="prev" title="Scala学习笔记——基础">
+                Scala学习笔记——基础 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -914,7 +928,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#命令"><span class="nav-number">1.</span> <span class="nav-text">命令</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#常用基本命令"><span class="nav-number">1.1.</span> <span class="nav-text">常用基本命令</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#grep语句"><span class="nav-number">1.2.</span> <span class="nav-text">grep语句</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#apt常用命令"><span class="nav-number">1.3.</span> <span class="nav-text">apt常用命令</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#scp语句"><span class="nav-number">1.4.</span> <span class="nav-text">scp语句</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#curl命令"><span class="nav-number">1.5.</span> <span class="nav-text">curl命令</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#gem命令"><span class="nav-number">1.6.</span> <span class="nav-text">gem命令</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#df命令"><span class="nav-number">1.7.</span> <span class="nav-text">df命令</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#find命令"><span class="nav-number">1.8.</span> <span class="nav-text">find命令</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#du命令"><span class="nav-number">1.9.</span> <span class="nav-text">du命令</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#压缩命令"><span class="nav-number">1.10.</span> <span class="nav-text">压缩命令</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#使用tar指令"><span class="nav-number">1.10.1.</span> <span class="nav-text">使用tar指令</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#例子"><span class="nav-number">1.10.1.1.</span> <span class="nav-text">例子</span></a></li></ol></li></ol></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#命令"><span class="nav-number">1.</span> <span class="nav-text">命令</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#常用基本命令"><span class="nav-number">1.1.</span> <span class="nav-text">常用基本命令</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#grep语句"><span class="nav-number">1.2.</span> <span class="nav-text">grep语句</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#apt常用命令"><span class="nav-number">1.3.</span> <span class="nav-text">apt常用命令</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#scp语句"><span class="nav-number">1.4.</span> <span class="nav-text">scp语句</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#curl命令"><span class="nav-number">1.5.</span> <span class="nav-text">curl命令</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#gem命令"><span class="nav-number">1.6.</span> <span class="nav-text">gem命令</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#df命令"><span class="nav-number">1.7.</span> <span class="nav-text">df命令</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#find命令"><span class="nav-number">1.8.</span> <span class="nav-text">find命令</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#du命令"><span class="nav-number">1.9.</span> <span class="nav-text">du命令</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#压缩命令"><span class="nav-number">1.10.</span> <span class="nav-text">压缩命令</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#使用tar指令"><span class="nav-number">1.10.1.</span> <span class="nav-text">使用tar指令</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#例子"><span class="nav-number">1.10.1.1.</span> <span class="nav-text">例子</span></a></li></ol></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#HDFS相关命令"><span class="nav-number">1.11.</span> <span class="nav-text">HDFS相关命令</span></a></li></ol></li></ol></div>
             
 
           </div>
