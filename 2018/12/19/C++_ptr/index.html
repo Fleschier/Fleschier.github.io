@@ -110,21 +110,18 @@
 
 
 
-  <meta name="description" content="为什么用Docker  环境搭建一直是运维一件非常头疼的事情, 如果系统崩溃而重新安装系统,则所有的环境都需要重新搭建一遍,非常耗时而且恼人.  我使用的Ubuntu18下配置好了大量的环境,如果这时候要我重新安装一遍的话,就算我做了详细的记录,也至少是一下午的工作量.  而Docker相当于一个容器,与虚拟机不同,虚拟机模拟了一个完整的操作系统,非常消耗系统资源,而且就算不做任何操作,内存也必须">
-<meta name="keywords" content="๑Ubuntu,๑Docker">
+  <meta name="description" content="典型错误  12long * fellow;*fellow = 23333;  fellow的确是一个指针,但是它指向的地址还没确定,那么23333会被存放到哪里呢?我们也不知道,这就会引发一个编译错误.  指针使用的金科玉律: 一定要在对指针解除引用运算符(*)之前,将指针初始化为一个确定的,适当的地址.    ——–from C++ Primer Plus  指针和数字  例子:12int *">
+<meta name="keywords" content="๑C++">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Ubuntu18 安装Docker">
-<meta property="og:url" content="https://fleschier.github.io/2018/11/08/docker-learning-01/index.html">
+<meta property="og:title" content="C++学习笔记——指针">
+<meta property="og:url" content="https://fleschier.github.io/2018/12/19/C++_ptr/index.html">
 <meta property="og:site_name" content="Fleschier 渐寒๑">
-<meta property="og:description" content="为什么用Docker  环境搭建一直是运维一件非常头疼的事情, 如果系统崩溃而重新安装系统,则所有的环境都需要重新搭建一遍,非常耗时而且恼人.  我使用的Ubuntu18下配置好了大量的环境,如果这时候要我重新安装一遍的话,就算我做了详细的记录,也至少是一下午的工作量.  而Docker相当于一个容器,与虚拟机不同,虚拟机模拟了一个完整的操作系统,非常消耗系统资源,而且就算不做任何操作,内存也必须">
+<meta property="og:description" content="典型错误  12long * fellow;*fellow = 23333;  fellow的确是一个指针,但是它指向的地址还没确定,那么23333会被存放到哪里呢?我们也不知道,这就会引发一个编译错误.  指针使用的金科玉律: 一定要在对指针解除引用运算符(*)之前,将指针初始化为一个确定的,适当的地址.    ——–from C++ Primer Plus  指针和数字  例子:12int *">
 <meta property="og:locale" content="default">
-<meta property="og:image" content="https://fleschier.github.io/images/Docker/docker-01.png">
-<meta property="og:image" content="https://fleschier.github.io/images/Docker/docker-02.png">
-<meta property="og:updated_time" content="2018-11-08T12:59:37.220Z">
+<meta property="og:updated_time" content="2018-12-19T14:32:04.006Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Ubuntu18 安装Docker">
-<meta name="twitter:description" content="为什么用Docker  环境搭建一直是运维一件非常头疼的事情, 如果系统崩溃而重新安装系统,则所有的环境都需要重新搭建一遍,非常耗时而且恼人.  我使用的Ubuntu18下配置好了大量的环境,如果这时候要我重新安装一遍的话,就算我做了详细的记录,也至少是一下午的工作量.  而Docker相当于一个容器,与虚拟机不同,虚拟机模拟了一个完整的操作系统,非常消耗系统资源,而且就算不做任何操作,内存也必须">
-<meta name="twitter:image" content="https://fleschier.github.io/images/Docker/docker-01.png">
+<meta name="twitter:title" content="C++学习笔记——指针">
+<meta name="twitter:description" content="典型错误  12long * fellow;*fellow = 23333;  fellow的确是一个指针,但是它指向的地址还没确定,那么23333会被存放到哪里呢?我们也不知道,这就会引发一个编译错误.  指针使用的金科玉律: 一定要在对指针解除引用运算符(*)之前,将指针初始化为一个确定的,适当的地址.    ——–from C++ Primer Plus  指针和数字  例子:12int *">
 
 
 
@@ -139,7 +136,7 @@
   };
 </script>
 
-  <title>Ubuntu18 安装Docker | Fleschier 渐寒๑</title>
+  <title>C++学习笔记——指针 | Fleschier 渐寒๑</title>
   
 
 
@@ -312,7 +309,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://fleschier.github.io/2018/11/08/docker-learning-01/">
+    <link itemprop="mainEntityOfPage" href="https://fleschier.github.io/2018/12/19/C++_ptr/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Fleschier">
@@ -329,7 +326,7 @@
 
         
         
-          <h2 class="post-title" itemprop="name headline">Ubuntu18 安装Docker
+          <h2 class="post-title" itemprop="name headline">C++学习笔记——指针
               
             
           </h2>
@@ -354,7 +351,7 @@
                 
               
 
-              <time title="Created: 2018-11-08 18:40:00 / Modified: 20:59:37" itemprop="dateCreated datePublished" datetime="2018-11-08T18:40:00+08:00">2018-11-08</time>
+              <time title="Created: 2018-12-19 14:10:00 / Modified: 22:32:04" itemprop="dateCreated datePublished" datetime="2018-12-19T14:10:00+08:00">2018-12-19</time>
             
 
             
@@ -376,7 +373,7 @@
                 <span class="post-meta-item-text">In</span>
               
               
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/Docker/" itemprop="url" rel="index"><span itemprop="name">Docker</span></a></span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/Computer-Programs/" itemprop="url" rel="index"><span itemprop="name">Computer Programs</span></a></span>
 
                 
                 
@@ -390,7 +387,7 @@
 
           
           
-             <span id="/2018/11/08/docker-learning-01/" class="leancloud_visitors" data-flag-title="Ubuntu18 安装Docker">
+             <span id="/2018/12/19/C++_ptr/" class="leancloud_visitors" data-flag-title="C++学习笔记——指针">
                <span class="post-meta-divider">|</span>
                <span class="post-meta-item-icon">
                  <i class="fa fa-eye"></i>
@@ -421,66 +418,70 @@
       
 
       
-        <h2 id="为什么用Docker"><a href="#为什么用Docker" class="headerlink" title="为什么用Docker"></a>为什么用Docker</h2><hr>
+        <h2 id="典型错误"><a href="#典型错误" class="headerlink" title="典型错误"></a>典型错误</h2><hr>
 <ul>
-<li><p>环境搭建一直是运维一件非常头疼的事情, 如果系统崩溃而重新安装系统,则所有的环境都需要重新搭建一遍,非常耗时而且恼人.</p>
+<li><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">long * fellow;</span><br><span class="line">*fellow = 23333;</span><br></pre></td></tr></table></figure>
 </li>
-<li><p>我使用的Ubuntu18下配置好了大量的环境,如果这时候要我重新安装一遍的话,就算我做了详细的记录,也至少是一下午的工作量.</p>
+<li><p>fellow的确是一个指针,但是它指向的地址还没确定,那么23333会被存放到哪里呢?我们也不知道,这就会引发一个编译错误.</p>
 </li>
-<li><p>而Docker相当于一个容器,与虚拟机不同,虚拟机模拟了一个完整的操作系统,非常消耗系统资源,而且就算不做任何操作,内存也必须被占用.而Docker是容器,基于Linux容器的概念,封装而成.</p>
-</li>
-<li><p>Docker将运行在其中的软件隔离开来, 不占用额外的系统资源.</p>
-</li>
-<li><p>Docker 将应用程序与该程序的依赖，打包在一个文件里面。运行这个文件，就会生成一个虚拟容器。程序在这个虚拟容器里运行，就好像在真实的物理机上运行一样。有了 Docker，就不用担心环境问题。</p>
+<li><p><strong>指针使用的金科玉律: 一定要在对指针解除引用运算符(*)之前,将指针初始化为一个确定的,适当的地址.</strong></p>
 </li>
 </ul>
-<h2 id="Docker-Hub"><a href="#Docker-Hub" class="headerlink" title="Docker Hub"></a>Docker Hub</h2><hr>
-<ul>
-<li>Docker Hub是一个平台,注册之后我们可以下载使用别人搭建好的image,非常方便.</li>
-</ul>
-<h2 id="Ubuntu18安装Docker"><a href="#Ubuntu18安装Docker" class="headerlink" title="Ubuntu18安装Docker"></a>Ubuntu18安装Docker</h2><hr>
-<ul>
-<li><p>由于Docker被墙得厉害,导致经常性地连官网也进不去.</p>
-</li>
-<li><p>我们为了安装过程的顺利,首先切换到中国科技大的源:</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">sudo cp /etc/apt/sources.list /etc/apt/sources.list.bak</span><br><span class="line">sudo sed -i &apos;s/archive.ubuntu.com/mirrors.ustc.edu.cn/g&apos; /etc/apt/sources.list</span><br><span class="line">sudo apt update</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>安装需要的包:<code>sudo apt install apt-transport-https ca-certificates software-properties-common curl</code></p>
-</li>
-<li><p>添加 GPG 密钥，并添加 Docker-ce 软件源:</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">curl -fsSL https://mirrors.ustc.edu.cn/docker-ce/linux/ubuntu/gpg | sudo apt-key add -</span><br><span class="line">sudo add-apt-repository &quot;deb [arch=amd64] https://mirrors.ustc.edu.cn/docker-ce/linux/ubuntu \</span><br><span class="line">$(lsb_release -cs) stable&quot;</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>更新缓存:<code>sudo apt update</code></p>
-</li>
-<li><p>安装Docker-ce:<code>sudo apt install docker-ce</code></p>
-</li>
-<li><p>测试Helloworld:<code>sudo docker run hello-world</code></p>
-</li>
-<li><p>结果:<br><img src="/images/Docker/docker-01.png" alt=""></p>
-</li>
-<li><p>添加当前用户到 docker 用户组，可以不用 sudo 运行 docker:</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">sudo groupadd docker</span><br><span class="line">sudo usermod -aG docker $USER</span><br></pre></td></tr></table></figure>
-</li>
-</ul>
-<h2 id="docker-pull之后文件的存放目录"><a href="#docker-pull之后文件的存放目录" class="headerlink" title="docker pull之后文件的存放目录"></a>docker pull之后文件的存放目录</h2><hr>
-<ul>
-<li><p>使用<code>docker pull XXX</code>下载的文件存放在<code>/var/lib/docker/</code>中</p>
-</li>
-<li><p>其中目录结构如下:<br><img src="/images/Docker/docker-02.png" alt=""></p>
-</li>
-<li><p><code>containers</code>中每个序列号都是一个镜像</p>
-</li>
-<li><p>Docker是使用repositories JSON文件来记述镜像信息的，此JSON文件包含了仓库名、标签、以及标签对应的镜像ID。</p>
-</li>
-</ul>
-<h2 id="Uninstall-Docker-ce"><a href="#Uninstall-Docker-ce" class="headerlink" title="Uninstall Docker-ce"></a>Uninstall Docker-ce</h2><hr>
 <blockquote>
-<p>摘自官方文档</p>
+<p>——–from C++ Primer Plus</p>
 </blockquote>
+<h2 id="指针和数字"><a href="#指针和数字" class="headerlink" title="指针和数字"></a>指针和数字</h2><hr>
 <ul>
-<li><p>Uninstall the Docker CE package:<code>sudo apt-get purge docker-ce</code></p>
+<li>例子:<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">int * pt;</span><br><span class="line">pt = 0xB8000000;</span><br></pre></td></tr></table></figure>
 </li>
-<li><p>Images, containers, volumes, or customized configuration files on your host are not automatically removed. To delete all images, containers, and volumes:<code>sudo rm -rf /var/lib/docker</code></p>
+</ul>
+<p>在这里左边是一个int类型的指针,而右边是一个 <strong>整数</strong>, 0xB8000000是老式计算机系统中组合段的偏移地址,但是在这条语句中编译器并不知道这是个地址,因此C++编译器会报错.</p>
+<ul>
+<li>正确的写法应该是:<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">int * pt;</span><br><span class="line">pt = (int *) 0xB8000000;</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<h2 id="使用new来分配内存"><a href="#使用new来分配内存" class="headerlink" title="使用new来分配内存"></a>使用new来分配内存</h2><hr>
+<ul>
+<li><p>在C语言中,只能用库函数malloc()来分配内存,C++也支持这样做,但是有更好的选择—new运算符.</p>
+</li>
+<li><p>new运算符同时要配合delete来使用</p>
+</li>
+<li><p>例子:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">int * pt = new int;</span><br><span class="line">...</span><br><span class="line">delete pt;</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<p>这将释放pt指向的内存块,但不会删除指针pt本身,它的值也没有改变.</p>
+<ul>
+<li><p>一点要配对地使用new 和 delete,否则会发生内存泄漏(memory leak).</p>
+</li>
+<li><p>不要尝试释放已经释放的内存块,这会导致很严重的不确定性.</p>
+</li>
+<li><p>不能使用delete来释放声明变量所获得的内存:(<strong>也就是delete只能用来删除new分配的内存</strong>)</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">int * ps = new int;   //ok</span><br><span class="line">delete ps;      //ok</span><br><span class="line">delte ps;     //not ok now</span><br><span class="line">int jugs = 5;       //ok</span><br><span class="line">int * pi = &amp;jugs;   //ok</span><br><span class="line">delete pi;      //not allowed now, memory not allocated by &apos;new&apos;</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<h2 id="使用new创建动态数组"><a href="#使用new创建动态数组" class="headerlink" title="使用new创建动态数组"></a>使用new创建动态数组</h2><hr>
+<ul>
+<li><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">int num = 100;</span><br><span class="line">int * psome = new int[num];</span><br><span class="line">//可以使用psome[0]这样的形式来访问数组元素,与普通的数组无异</span><br><span class="line">...</span><br><span class="line">delete []psome;</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<p><strong>delete的方括号告诉程序,应该释放整个数组,而不是仅仅是指针指向的元素</strong></p>
+<ul>
+<li><p>C++将数组名解释为地址(一般情况)</p>
+</li>
+<li><p>数组名被解释为其第一个元素的地址,而对数组名应用取地址符时,得到的是整个数组的地址.</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">short tell[10];</span><br><span class="line">cout &lt;&lt; tell &lt;&lt; endl;   //display &amp;tell[0]</span><br><span class="line">cout &lt;&lt; &amp;tell &lt;&lt; endl;  //display address of whole array</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<p>上面这个例子中,从数值上来说,这两个地址相同;但从概念上来说,<code>&amp;tell[0]</code>(即tell)是一个2字节内存块地址,<strong>而&amp;tell是一个20字节内存块的地址</strong>.因此,表达式tell+1将地址的值加2,而表达式&amp;tell+1将地址的值加20.</p>
+<ul>
+<li>换句话说:<strong>tell是一个short指针(<em>short),而&amp;tell是一个这样的指针,即指向包含20个元素的short数组(short(</em>)[20]).</strong> 这种指针可以这样初始化:<code>short (*pas)[20] = &amp;tell</code>.这里pas的类型为<code>short (*)[20]</code></li>
+</ul>
+<h2 id="小结"><a href="#小结" class="headerlink" title="小结"></a>小结</h2><hr>
+<ul>
+<li><p>应将内存地址赋值给指针.</p>
+</li>
+<li><p>可以是对已经赋值的变量名使用<code>&amp;</code>来获得 <em>被命名的内存的地址</em>, 或者使用new运算符返回未命名的内存的地址,只有这两种情况可以赋值给指针.</p>
 </li>
 </ul>
 
@@ -504,7 +505,7 @@
     <strong>Post author:  </strong>Fleschier</li>
   <li class="post-copyright-link">
     <strong>Post link: </strong>
-    <a href="https://fleschier.github.io/2018/11/08/docker-learning-01/" title="Ubuntu18 安装Docker">https://fleschier.github.io/2018/11/08/docker-learning-01/</a>
+    <a href="https://fleschier.github.io/2018/12/19/C++_ptr/" title="C++学习笔记——指针">https://fleschier.github.io/2018/12/19/C++_ptr/</a>
   </li>
   <li class="post-copyright-license">
     <strong>Copyright Notice:  </strong>All articles in this blog are licensed under <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" rel="external nofollow" target="_blank">CC BY-NC-SA 4.0</a> unless stating additionally.</li>
@@ -517,9 +518,7 @@
       
         <div class="post-tags">
           
-            <a href="/tags/๑Ubuntu/" rel="tag"># ๑Ubuntu</a>
-          
-            <a href="/tags/๑Docker/" rel="tag"># ๑Docker</a>
+            <a href="/tags/๑C/" rel="tag"># ๑C++</a>
           
         </div>
       
@@ -544,8 +543,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2018/11/07/web-learning-01/" rel="next" title="网页状态码记录">
-                <i class="fa fa-chevron-left"></i> 网页状态码记录
+              <a href="/2018/12/04/dark-souls/" rel="next" title="DarkSouls 传火之路带来的那些感悟,那些感动">
+                <i class="fa fa-chevron-left"></i> DarkSouls 传火之路带来的那些感悟,那些感动
               </a>
             
           </div>
@@ -553,10 +552,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2018/11/08/docker-learning-02/" rel="prev" title="Docker使用">
-                Docker使用 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -801,7 +796,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#为什么用Docker"><span class="nav-number">1.</span> <span class="nav-text">为什么用Docker</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Docker-Hub"><span class="nav-number">2.</span> <span class="nav-text">Docker Hub</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Ubuntu18安装Docker"><span class="nav-number">3.</span> <span class="nav-text">Ubuntu18安装Docker</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#docker-pull之后文件的存放目录"><span class="nav-number">4.</span> <span class="nav-text">docker pull之后文件的存放目录</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Uninstall-Docker-ce"><span class="nav-number">5.</span> <span class="nav-text">Uninstall Docker-ce</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#典型错误"><span class="nav-number">1.</span> <span class="nav-text">典型错误</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#指针和数字"><span class="nav-number">2.</span> <span class="nav-text">指针和数字</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#使用new来分配内存"><span class="nav-number">3.</span> <span class="nav-text">使用new来分配内存</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#使用new创建动态数组"><span class="nav-number">4.</span> <span class="nav-text">使用new创建动态数组</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#小结"><span class="nav-number">5.</span> <span class="nav-text">小结</span></a></li></ol></div>
             
 
           </div>
