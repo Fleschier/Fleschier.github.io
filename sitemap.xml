@@ -16,13 +16,6 @@
   </url>
   
   <url>
-    <loc>https://fleschier.github.io/2018/12/04/dark-souls/</loc>
-    
-    <lastmod>2018-12-04T12:12:49.093Z</lastmod>
-    
-  </url>
-  
-  <url>
     <loc>https://fleschier.github.io/2018/11/25/python-class/</loc>
     
     <lastmod>2018-11-25T05:23:13.217Z</lastmod>
@@ -37,6 +30,13 @@
   </url>
   
   <url>
+    <loc>https://fleschier.github.io/2018/04/11/Spark-learning/</loc>
+    
+    <lastmod>2018-11-21T06:40:40.695Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>https://fleschier.github.io/2018/04/11/Spark-superior/</loc>
     
     <lastmod>2018-11-21T06:40:40.695Z</lastmod>
@@ -44,21 +44,7 @@
   </url>
   
   <url>
-    <loc>https://fleschier.github.io/2018/07/23/scala-learning-03/</loc>
-    
-    <lastmod>2018-11-21T06:40:40.695Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://fleschier.github.io/2018/10/16/pycharm-problem-solving/</loc>
-    
-    <lastmod>2018-11-21T06:40:40.695Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://fleschier.github.io/2018/09/13/Spark-notes/</loc>
+    <loc>https://fleschier.github.io/2018/04/06/Scala-learning/</loc>
     
     <lastmod>2018-11-21T06:40:40.695Z</lastmod>
     
@@ -72,6 +58,20 @@
   </url>
   
   <url>
+    <loc>https://fleschier.github.io/2018/09/13/Spark-notes/</loc>
+    
+    <lastmod>2018-11-21T06:40:40.695Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://fleschier.github.io/2018/07/23/scala-learning-03/</loc>
+    
+    <lastmod>2018-11-21T06:40:40.695Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>https://fleschier.github.io/2018/09/06/scala-io/</loc>
     
     <lastmod>2018-11-21T06:40:40.695Z</lastmod>
@@ -79,14 +79,21 @@
   </url>
   
   <url>
-    <loc>https://fleschier.github.io/2018/04/11/Spark-learning/</loc>
+    <loc>https://fleschier.github.io/2018/07/24/scala-learning-04/</loc>
     
     <lastmod>2018-11-21T06:40:40.695Z</lastmod>
     
   </url>
   
   <url>
-    <loc>https://fleschier.github.io/2018/04/06/Scala-learning/</loc>
+    <loc>https://fleschier.github.io/2018/07/24/scala-learning-05/</loc>
+    
+    <lastmod>2018-11-21T06:40:40.695Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://fleschier.github.io/2018/07/19/scala-learning-02/</loc>
     
     <lastmod>2018-11-21T06:40:40.695Z</lastmod>
     
@@ -107,21 +114,7 @@
   </url>
   
   <url>
-    <loc>https://fleschier.github.io/2018/07/24/scala-learning-05/</loc>
-    
-    <lastmod>2018-11-21T06:40:40.695Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://fleschier.github.io/2018/07/24/scala-learning-04/</loc>
-    
-    <lastmod>2018-11-21T06:40:40.695Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://fleschier.github.io/2018/07/19/scala-learning-02/</loc>
+    <loc>https://fleschier.github.io/2018/10/16/pycharm-problem-solving/</loc>
     
     <lastmod>2018-11-21T06:40:40.695Z</lastmod>
     
@@ -135,14 +128,14 @@
   </url>
   
   <url>
-    <loc>https://fleschier.github.io/2018/04/29/Python-superior/</loc>
+    <loc>https://fleschier.github.io/2018/04/07/SQL-quary/</loc>
     
     <lastmod>2018-11-21T06:40:40.687Z</lastmod>
     
   </url>
   
   <url>
-    <loc>https://fleschier.github.io/2018/04/07/SQL-quary/</loc>
+    <loc>https://fleschier.github.io/2018/04/29/Python-superior/</loc>
     
     <lastmod>2018-11-21T06:40:40.687Z</lastmod>
     
@@ -163,28 +156,14 @@
   </url>
   
   <url>
-    <loc>https://fleschier.github.io/2018/04/18/Java-function/</loc>
-    
-    <lastmod>2018-11-21T06:40:17.839Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://fleschier.github.io/2018/04/18/Java-class/</loc>
-    
-    <lastmod>2018-11-21T06:40:17.839Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://fleschier.github.io/2018/10/08/C++-Int-Char-String-translation/</loc>
-    
-    <lastmod>2018-11-21T06:40:17.839Z</lastmod>
-    
-  </url>
-  
-  <url>
     <loc>https://fleschier.github.io/2018/10/08/C++-sprintf-printf/</loc>
+    
+    <lastmod>2018-11-21T06:40:17.839Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://fleschier.github.io/2018/04/18/Java-function/</loc>
     
     <lastmod>2018-11-21T06:40:17.839Z</lastmod>
     
@@ -198,7 +177,21 @@
   </url>
   
   <url>
+    <loc>https://fleschier.github.io/2018/04/18/Java-class/</loc>
+    
+    <lastmod>2018-11-21T06:40:17.839Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>https://fleschier.github.io/2018/04/06/C++learning-class/</loc>
+    
+    <lastmod>2018-11-21T06:40:17.839Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://fleschier.github.io/2018/10/08/C++-Int-Char-String-translation/</loc>
     
     <lastmod>2018-11-21T06:40:17.839Z</lastmod>
     
