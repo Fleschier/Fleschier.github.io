@@ -118,7 +118,7 @@
 <meta property="og:site_name" content="Fleschier 渐寒๑">
 <meta property="og:description" content="一些概念性的名词用 斜体 标出了  互联网概述 计算机网络由若干的结点(node)和连接这些结点的链路(link)组成.结点可以是计算机,集线器,交换机或路由器.  网络之间可以通过路由器互连起来,因此互联网是 网络的网络.  网络把许多计算机连接在一起,而互联网把很多网络通过路由器连接在一起.与网络相连的计算机通常称为 主机.  以小写字母i开始的internet(互连网)是一个通用名词,泛指">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2018-12-24T16:31:58.608Z">
+<meta property="og:updated_time" content="2018-12-25T10:36:46.163Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="计算机网络-自底向上">
 <meta name="twitter:description" content="一些概念性的名词用 斜体 标出了  互联网概述 计算机网络由若干的结点(node)和连接这些结点的链路(link)组成.结点可以是计算机,集线器,交换机或路由器.  网络之间可以通过路由器互连起来,因此互联网是 网络的网络.  网络把许多计算机连接在一起,而互联网把很多网络通过路由器连接在一起.与网络相连的计算机通常称为 主机.  以小写字母i开始的internet(互连网)是一个通用名词,泛指">
@@ -368,7 +368,7 @@
                 
                   <span class="post-meta-item-text">Edited on</span>
                 
-                <time title="Modified: 2018-12-25 00:31:58" itemprop="dateModified" datetime="2018-12-25T00:31:58+08:00">2018-12-25</time>
+                <time title="Modified: 2018-12-25 18:36:46" itemprop="dateModified" datetime="2018-12-25T18:36:46+08:00">2018-12-25</time>
               
             
           </span>
@@ -584,6 +584,193 @@
 </li>
 </ul>
 <h2 id="数据链路层"><a href="#数据链路层" class="headerlink" title="数据链路层"></a>数据链路层</h2><hr>
+<ul>
+<li>数据链路层的基本传输单元叫做 <em>帧</em></li>
+</ul>
+<h3 id="帧同步问题"><a href="#帧同步问题" class="headerlink" title="帧同步问题"></a>帧同步问题</h3><blockquote>
+<p>帧的开始和结束的确认</p>
+</blockquote>
+<ul>
+<li>数据链路层的三个功能: 透明传输, 流量控制, 差错检测(只检错不纠错)</li>
+</ul>
+<h4 id="封装成帧"><a href="#封装成帧" class="headerlink" title="封装成帧"></a>封装成帧</h4><ul>
+<li><p>所有在互联网上传送的数据都以分组(IP数据报)为传送单位,网络层的IP数据报送到数据链路层就成为帧的<code>数据部分</code>.对帧的数据部分加上首部和尾部就构成了一个完整的帧.</p>
+</li>
+<li><p>首部和尾部的一个重要作用就是帧定界(确认帧的开始和结束)</p>
+</li>
+<li><p>最大传输单元<code>MTU(Maximum Transfer Unit)</code>: MTU是的是帧的<code>数据部分</code>的最大长度.</p>
+</li>
+</ul>
+<h5 id="帧定界"><a href="#帧定界" class="headerlink" title="帧定界"></a>帧定界</h5><ul>
+<li><p><code>SOH(Start Of Header)</code>:帧开始符(由一串不与数据部分重合的二进制位组成)</p>
+</li>
+<li><p><code>EOT(End Of Transmission)</code>:帧结束符</p>
+</li>
+<li><p>帧定界符可以检测数据是否有差错,例如一个帧是否完整</p>
+</li>
+</ul>
+<h5 id="透明传输"><a href="#透明传输" class="headerlink" title="透明传输"></a>透明传输</h5><ul>
+<li><p>即用作帧定界的控制字符的比特编码不能出现在数据部分中</p>
+</li>
+<li><p>透明: 某一个实际存在的事物看起来却好像不存在一样</p>
+</li>
+<li><p>在数据链路层透明传输数据表示:<strong>无论什么样的比特组合的数据,都能够按照原样没有差错地通过这个数据链路层</strong></p>
+</li>
+<li><p>为了解决透明传输的问题,对于数据中出现的控制字符’EOT’和’SOH’的前面插入一个转义字符’ESC’,接收端的数据链路层会在将数据交付网络层之前删除这个转义字符.这种方法称为<code>字节填充</code>或者<code>字符填充</code>.(如出现转义字符则再加转义字符)</p>
+</li>
+</ul>
+<h3 id="差错检测"><a href="#差错检测" class="headerlink" title="差错检测"></a>差错检测</h3><ul>
+<li>目前在数据链路层广泛地使用了CRC(Cyclic Redundant Check)的检错技术.</li>
+</ul>
+<h3 id="点对点协议ppp"><a href="#点对点协议ppp" class="headerlink" title="点对点协议ppp"></a>点对点协议ppp</h3><blockquote>
+<p>point to point protocol</p>
+</blockquote>
+<ul>
+<li><p>互联网用户必须连接到某个ISP才能接入互联网,ppp协议就是用户计算机和ISP进行通信时使用的 <strong>数据链路层协议</strong></p>
+</li>
+<li><p>ppp协议支持多种网络层协议(如IP和IPX)和多种类型链路(例如串行(一次发送一个比特)和并行(一次并行地发送多个比特))</p>
+</li>
+<li><p>差错检测: ppp协议对接收端收到的帧进行检测,并 <strong>立即丢弃有差错的帧</strong></p>
+</li>
+<li><p>最大传送单元: ppp协议对每一种类型的点对点链路设置最大传送单元MTU的标准默认值,如果高层协议发送的分组过长并超过MTU的数组,则 <strong>丢弃这样的帧</strong></p>
+</li>
+</ul>
+<h4 id="ppp协议的帧格式"><a href="#ppp协议的帧格式" class="headerlink" title="ppp协议的帧格式"></a>ppp协议的帧格式</h4><ul>
+<li><p>首部为四个字段, 尾部为两个字段.</p>
+</li>
+<li><p>首部的第一个字段和尾部的第二个字段(最后一个字段)都是 <strong>标志字段</strong>,规定为<code>0x7E</code>.标志字段表示一个帧的开始或结束.因此标志字段就是ppp帧的定界符. <strong>连续两个帧之间只需要一个标志字段,连续两个标志字段表示这是一个空帧</strong></p>
+</li>
+<li><p>首部中的第二个字段(地址字段A)和第三个字段(控制字段C)没有实际的含义</p>
+</li>
+<li><p>首部的第四个字段是协议字段,占2字节.</p>
+</li>
+<li><p>数据部分(信息字段)长度是可变的,最长不超过1500字节</p>
+</li>
+<li><p>尾部的第一个字段(2字节)是使用CRC的检验序列FCS</p>
+</li>
+<li><p>字节填充: ppp使用异步传输时,转义符定义为<code>0x7D</code>,填充方法:将信息字段中每一个0x7E字符转化为(0x7D, 0x5E),将出现的0x7D转化为(0x7D, 0x5D),如果出现ASCII码的控制符(即数值小于0x20),则在该字符前增加一个0x7D,例如0x03转化为(0x7D, 0x03)</p>
+</li>
+</ul>
+<h3 id="局域网的数据链路层"><a href="#局域网的数据链路层" class="headerlink" title="局域网的数据链路层"></a>局域网的数据链路层</h3><ul>
+<li><p>局域网的主要特点:网络为一个单位所拥有,且地理范围和站点数目均有限.</p>
+</li>
+<li><p>局域网使用的是数据链路层的协议</p>
+</li>
+<li><p>局域网的优点:</p>
+</li>
+</ul>
+<ol>
+<li>具有广播功能,从一个站点可以很方便地访问全网.</li>
+<li>便于系统的扩展和逐渐演变,各设备的位置可以灵活调整和改变.</li>
+<li>提高了系统的可靠性,可用性和生存性.</li>
+</ol>
+<ul>
+<li><p>局域网的拓扑结构: 星型网,环形网和总线网.</p>
+</li>
+<li><p>局域网工作的层次跨越了数据链路层和物理层.</p>
+</li>
+<li><p>数据链路层在局域网中分为两个子层:</p>
+</li>
+</ul>
+<ol>
+<li>逻辑链路控制层(LLC) (现在使用的局域网协议–<em>以太2型</em> 取消了LLC层,只留下MAC层)</li>
+<li>介质访问控制层(MAC) (MAC层与物理层使用的介质密切相关)</li>
+</ol>
+<h4 id="共享信道"><a href="#共享信道" class="headerlink" title="共享信道"></a>共享信道</h4><ul>
+<li>由于局域网的广播信道是一人发送,所有人都可以接收,所以要制定发送规则.</li>
+</ul>
+<h5 id="静态信道划分"><a href="#静态信道划分" class="headerlink" title="静态信道划分"></a>静态信道划分</h5><ul>
+<li>使用诸如频分复用,时分复用等技术,用户只要分配到了信道就不会和其他用户发生冲突,但代价太高,不适合局域网使用.</li>
+</ul>
+<h5 id="动态媒体接入控制"><a href="#动态媒体接入控制" class="headerlink" title="动态媒体接入控制"></a>动态媒体接入控制</h5><ul>
+<li><p>又称为 <em>多点接入(multiple access)</em></p>
+</li>
+<li><p>又分为两类:</p>
+</li>
+</ul>
+<ol>
+<li>随机接入: 所有用户都可以随机地发送信息,但可能发生碰撞,需要解决碰撞的网络协议.</li>
+<li>受控接入: 用户发送信息要服从一定的控制,例如集中控制的多点线路 <em>探寻(polling)</em><blockquote>
+<p>受控接入在目前的局域网中使用的较少</p>
+</blockquote>
+</li>
+</ol>
+<h4 id="适配器"><a href="#适配器" class="headerlink" title="适配器"></a>适配器</h4><ul>
+<li><p>计算机与外界局域网的连接是通过适配器(adapter)进行的.</p>
+</li>
+<li><p>适配器实现的功能包括了数据链路层和物理层.</p>
+</li>
+<li><p>适配器在接收和发送各种帧的时候,不使用计算机的CPU.当适配器收到有差错的帧的时候,就直接丢弃而不通知计算机.<strong>当接收到正确的帧的时候,就使用中断来通知计算机,并交付协议栈中的网络层.当计算机要发送IP数据报时,就由协议栈把IP数据报向下交给适配器,组装成帧后发送到局域网</strong></p>
+</li>
+<li><p><strong>注意: 计算机的硬件地址(MAC地址)就在适配器的ROM中</strong></p>
+</li>
+</ul>
+<h3 id="CSMA"><a href="#CSMA" class="headerlink" title="CSMA"></a>CSMA</h3><ul>
+<li>为了通信简便,以太网使用以下两个措施:</li>
+</ul>
+<ol>
+<li><p>采用 <strong>无连接</strong> 的工作方式,即尽最大努力交付(不可靠的交付).接收站对收到的差错帧直接丢弃(采用CRC检错),至于是否需要重传由高层协议决定(例如TCP协议)</p>
+</li>
+<li><p>以太网发送的数据都是使用曼彻斯特编码的信号</p>
+</li>
+</ol>
+<h4 id="CSMA-CD"><a href="#CSMA-CD" class="headerlink" title="CSMA/CD"></a>CSMA/CD</h4><ul>
+<li><p>CSMA/CD: Carrier Sense Multiple Access Protocl with Collision Detection.意思是载波监听多点接入/碰撞检测</p>
+</li>
+<li><p>要点:</p>
+</li>
+</ul>
+<ol>
+<li>“多点接入”: 许多计算机是以多点接入的方式连接在一根总线上.</li>
+<li>“载波监听”: 就是用电子技术检测总线上有没有其他计算机也在发送.<strong>不管在发送前,发送中,每个站都必须不停地检测信道</strong>.在发送中检测信道,是为了及时发现有没有其它站的发送和本站发送的碰撞,这称为 <em>碰撞检测</em>.</li>
+<li>“碰撞检测”: 也就是边发送边监听,也称为 “冲突检测”.一旦发生冲突,总线上传输的信号产生了严重的失真,无法恢复出有用的信息来,因此任何一个正在发送的站一旦检测到冲突其适配器立即停止发送.</li>
+</ol>
+<ul>
+<li><p>检测时信道空闲不代表没有站在通信,因为存在传播时延.</p>
+</li>
+<li><p><strong>电磁波在1km电缆的传播时延约为5us</strong></p>
+</li>
+<li><p>若总线上单程端到端的传播时延记为<code>t</code>,则最多经过<code>2t</code>就能确定有没有发生冲突.(发送数据后监听<code>2t</code>时间,没有冲突即发送成功)</p>
+</li>
+<li><p>使用CSMA/CD协议时,一个站不能边发送边接收,因此使用CSMA/CD的以太网只能进行 <em>半双工通信</em></p>
+</li>
+<li><p>以太网规定最短帧长度为64字节(512bit).因为 <strong>对于10Mbit/s的以太网,争用期为51.2us,而发送512bit需要恰好51.2us,如果数据短于64字节,则可能无法检测出发生冲突的帧</strong>. 因此规定<code>凡是长度小于64字节的帧都是由于冲突而异常终止的无效帧</code>.</p>
+</li>
+<li><p>名词概念: <code>10BASE-T</code>这里<code>10</code>表示10Mbit/s的数据率, <code>BASE</code>表示连接线上的信号是基带信号, <code>T</code>代表双绞线.</p>
+</li>
+<li><p>星型网使用 <em>集线器(hub)</em> 作为中心.使用集线器的以太网在逻辑上仍然是一个总线网,各站共享逻辑上的总线,使用的还是CSMA/CD协议.</p>
+</li>
+<li><p>集线器工作在物理层,它的每个接口仅仅简单地转发比特,<strong>不进行碰撞检测</strong>(碰撞检测由各站的适配器完成)</p>
+</li>
+</ul>
+<h3 id="以太网的MAC层"><a href="#以太网的MAC层" class="headerlink" title="以太网的MAC层"></a>以太网的MAC层</h3><h4 id="以太网V2的MAC帧"><a href="#以太网V2的MAC帧" class="headerlink" title="以太网V2的MAC帧"></a>以太网V2的MAC帧</h4><ul>
+<li>以太网V2的MAC帧由五个字段组成.</li>
+</ul>
+<ol>
+<li>第一个字段为6个字节的目的地址</li>
+<li>第二个字段为6个字节的源地址</li>
+<li>第三个字段为2个字节的类型字段(用来标志上一层使用了什么协议,以便把收到的MAC帧交给上一层的这个协议)</li>
+<li>第四个字段数据字段,<strong>长度在46-1500字节之间</strong>(由于之前提到帧的最小长度是64字节,所以46字节就是用64减去首部尾部得到的).数据字段就是网络层传下来的IP数据报.</li>
+<li>最后一个字段是4字节的帧检验序列FCS(使用CRC检验)</li>
+</ol>
+<ul>
+<li><p>从MAC子层向下传到物理层还要添加8个字节(包括7字节的前同步码(1和0的交替码)和1字节的帧开始定界符(定义为10101011)),它的作用是使接收端的适配器在接收MAC帧时能够迅速调整其时钟频率,使它和发送端同步.</p>
+</li>
+<li><p><strong>设置MAC帧长度的限制的原因</strong>:最短64字节的原因在之前以太网帧长度处规定了.最长不能超过1518字节是因为如果数据帧太长,则单一站点占用信道的时间太长影响其他站点分享带宽,同时太长的帧在传输时容易出错.</p>
+</li>
+</ul>
+<h3 id="网桥-bridge"><a href="#网桥-bridge" class="headerlink" title="网桥(bridge)"></a>网桥(bridge)</h3><ul>
+<li><p>中继器只能识别出位(bit),网桥能够识别数据帧.</p>
+</li>
+<li><p>网桥的升级版为交换机,两者都是工作在数据链路层.</p>
+</li>
+</ul>
+<h4 id="交换机-switch"><a href="#交换机-switch" class="headerlink" title="交换机(switch)"></a>交换机(switch)</h4><ul>
+<li><p>1990年问世的 <em>交换式集线器(switching hub)</em> 很快就淘汰了网桥.交换式集线器称为 <code>以太网交换机</code>或<code>第二层交换机</code></p>
+</li>
+<li><p>以太网交换机实际上就是一个 <strong>多接口的网桥</strong>, 和工作在物理层的转发器,集线器有很大的区别,以太网交换机的每个接口都直接与一个单台主机或另一个以太网交换机相连,并且一般都工作在 <strong>全双工方式</strong>.其内部的交换表(又称为地址表)是通过 <em>自学习</em> 算法自动建立起来的.</p>
+</li>
+</ul>
 
       
     </div>
@@ -890,7 +1077,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#互联网概述"><span class="nav-number">1.</span> <span class="nav-text">互联网概述</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#互联网的组成"><span class="nav-number">1.1.</span> <span class="nav-text">互联网的组成</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#路由器"><span class="nav-number">1.2.</span> <span class="nav-text">路由器</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#电路交换"><span class="nav-number">1.2.1.</span> <span class="nav-text">电路交换</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#分组交换"><span class="nav-number">1.2.2.</span> <span class="nav-text">分组交换</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#三种交换方式的比较"><span class="nav-number">1.2.3.</span> <span class="nav-text">三种交换方式的比较</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#计算机网络的类别"><span class="nav-number">1.3.</span> <span class="nav-text">计算机网络的类别</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#计算机网络性能"><span class="nav-number">1.4.</span> <span class="nav-text">计算机网络性能</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#带宽"><span class="nav-number">1.4.1.</span> <span class="nav-text">带宽</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#时延"><span class="nav-number">1.4.2.</span> <span class="nav-text">时延</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#利用率"><span class="nav-number">1.4.3.</span> <span class="nav-text">利用率</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#计算机网络体系结构"><span class="nav-number">1.5.</span> <span class="nav-text">计算机网络体系结构</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#OSI的七层协议"><span class="nav-number">1.5.1.</span> <span class="nav-text">OSI的七层协议</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#TCP-IP的四层协议"><span class="nav-number">1.5.2.</span> <span class="nav-text">TCP/IP的四层协议</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#五层协议"><span class="nav-number">1.5.3.</span> <span class="nav-text">五层协议</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#物理层"><span class="nav-number">2.</span> <span class="nav-text">物理层</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#波特率和比特率"><span class="nav-number">2.1.</span> <span class="nav-text">波特率和比特率</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#信道极限容量-amp-香农公式"><span class="nav-number">2.2.</span> <span class="nav-text">信道极限容量&amp;香农公式</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#香农公式"><span class="nav-number">2.2.1.</span> <span class="nav-text">香农公式</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#数据编码"><span class="nav-number">2.3.</span> <span class="nav-text">数据编码</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#常用编码方式"><span class="nav-number">2.3.1.</span> <span class="nav-text">常用编码方式</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#基本的带通调制方法-将数字信号转化为模拟信号"><span class="nav-number">2.3.2.</span> <span class="nav-text">基本的带通调制方法(将数字信号转化为模拟信号)</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#常用的通信介质"><span class="nav-number">2.4.</span> <span class="nav-text">常用的通信介质</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#导引型传输媒体"><span class="nav-number">2.4.1.</span> <span class="nav-text">导引型传输媒体</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#非导引型传输媒体"><span class="nav-number">2.4.2.</span> <span class="nav-text">非导引型传输媒体</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#多路复用技术"><span class="nav-number">2.5.</span> <span class="nav-text">多路复用技术</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#数据链路层"><span class="nav-number">3.</span> <span class="nav-text">数据链路层</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#互联网概述"><span class="nav-number">1.</span> <span class="nav-text">互联网概述</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#互联网的组成"><span class="nav-number">1.1.</span> <span class="nav-text">互联网的组成</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#路由器"><span class="nav-number">1.2.</span> <span class="nav-text">路由器</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#电路交换"><span class="nav-number">1.2.1.</span> <span class="nav-text">电路交换</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#分组交换"><span class="nav-number">1.2.2.</span> <span class="nav-text">分组交换</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#三种交换方式的比较"><span class="nav-number">1.2.3.</span> <span class="nav-text">三种交换方式的比较</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#计算机网络的类别"><span class="nav-number">1.3.</span> <span class="nav-text">计算机网络的类别</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#计算机网络性能"><span class="nav-number">1.4.</span> <span class="nav-text">计算机网络性能</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#带宽"><span class="nav-number">1.4.1.</span> <span class="nav-text">带宽</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#时延"><span class="nav-number">1.4.2.</span> <span class="nav-text">时延</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#利用率"><span class="nav-number">1.4.3.</span> <span class="nav-text">利用率</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#计算机网络体系结构"><span class="nav-number">1.5.</span> <span class="nav-text">计算机网络体系结构</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#OSI的七层协议"><span class="nav-number">1.5.1.</span> <span class="nav-text">OSI的七层协议</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#TCP-IP的四层协议"><span class="nav-number">1.5.2.</span> <span class="nav-text">TCP/IP的四层协议</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#五层协议"><span class="nav-number">1.5.3.</span> <span class="nav-text">五层协议</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#物理层"><span class="nav-number">2.</span> <span class="nav-text">物理层</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#波特率和比特率"><span class="nav-number">2.1.</span> <span class="nav-text">波特率和比特率</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#信道极限容量-amp-香农公式"><span class="nav-number">2.2.</span> <span class="nav-text">信道极限容量&amp;香农公式</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#香农公式"><span class="nav-number">2.2.1.</span> <span class="nav-text">香农公式</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#数据编码"><span class="nav-number">2.3.</span> <span class="nav-text">数据编码</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#常用编码方式"><span class="nav-number">2.3.1.</span> <span class="nav-text">常用编码方式</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#基本的带通调制方法-将数字信号转化为模拟信号"><span class="nav-number">2.3.2.</span> <span class="nav-text">基本的带通调制方法(将数字信号转化为模拟信号)</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#常用的通信介质"><span class="nav-number">2.4.</span> <span class="nav-text">常用的通信介质</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#导引型传输媒体"><span class="nav-number">2.4.1.</span> <span class="nav-text">导引型传输媒体</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#非导引型传输媒体"><span class="nav-number">2.4.2.</span> <span class="nav-text">非导引型传输媒体</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#多路复用技术"><span class="nav-number">2.5.</span> <span class="nav-text">多路复用技术</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#数据链路层"><span class="nav-number">3.</span> <span class="nav-text">数据链路层</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#帧同步问题"><span class="nav-number">3.1.</span> <span class="nav-text">帧同步问题</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#封装成帧"><span class="nav-number">3.1.1.</span> <span class="nav-text">封装成帧</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#帧定界"><span class="nav-number">3.1.1.1.</span> <span class="nav-text">帧定界</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#透明传输"><span class="nav-number">3.1.1.2.</span> <span class="nav-text">透明传输</span></a></li></ol></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#差错检测"><span class="nav-number">3.2.</span> <span class="nav-text">差错检测</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#点对点协议ppp"><span class="nav-number">3.3.</span> <span class="nav-text">点对点协议ppp</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#ppp协议的帧格式"><span class="nav-number">3.3.1.</span> <span class="nav-text">ppp协议的帧格式</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#局域网的数据链路层"><span class="nav-number">3.4.</span> <span class="nav-text">局域网的数据链路层</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#共享信道"><span class="nav-number">3.4.1.</span> <span class="nav-text">共享信道</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#静态信道划分"><span class="nav-number">3.4.1.1.</span> <span class="nav-text">静态信道划分</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#动态媒体接入控制"><span class="nav-number">3.4.1.2.</span> <span class="nav-text">动态媒体接入控制</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#适配器"><span class="nav-number">3.4.2.</span> <span class="nav-text">适配器</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#CSMA"><span class="nav-number">3.5.</span> <span class="nav-text">CSMA</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#CSMA-CD"><span class="nav-number">3.5.1.</span> <span class="nav-text">CSMA/CD</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#以太网的MAC层"><span class="nav-number">3.6.</span> <span class="nav-text">以太网的MAC层</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#以太网V2的MAC帧"><span class="nav-number">3.6.1.</span> <span class="nav-text">以太网V2的MAC帧</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#网桥-bridge"><span class="nav-number">3.7.</span> <span class="nav-text">网桥(bridge)</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#交换机-switch"><span class="nav-number">3.7.1.</span> <span class="nav-text">交换机(switch)</span></a></li></ol></li></ol></li></ol></div>
             
 
           </div>

@@ -4,7 +4,7 @@
   <url>
     <loc>https://fleschier.github.io/2018/12/24/Internet_protocol/</loc>
     
-    <lastmod>2018-12-24T16:31:58.608Z</lastmod>
+    <lastmod>2018-12-25T10:36:46.163Z</lastmod>
     
   </url>
   
@@ -37,42 +37,7 @@
   </url>
   
   <url>
-    <loc>https://fleschier.github.io/2018/07/19/scala-learning-02/</loc>
-    
-    <lastmod>2018-11-21T06:40:40.695Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://fleschier.github.io/2018/04/11/Spark-superior/</loc>
-    
-    <lastmod>2018-11-21T06:40:40.695Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://fleschier.github.io/2018/04/06/Scala-superior/</loc>
-    
-    <lastmod>2018-11-21T06:40:40.695Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://fleschier.github.io/2018/07/23/scala-learning-03/</loc>
-    
-    <lastmod>2018-11-21T06:40:40.695Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://fleschier.github.io/2018/09/06/scala-io/</loc>
-    
-    <lastmod>2018-11-21T06:40:40.695Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://fleschier.github.io/2018/07/24/scala-learning-04/</loc>
+    <loc>https://fleschier.github.io/2018/07/24/scala-learning-05/</loc>
     
     <lastmod>2018-11-21T06:40:40.695Z</lastmod>
     
@@ -86,14 +51,14 @@
   </url>
   
   <url>
-    <loc>https://fleschier.github.io/2018/10/16/pycharm-problem-solving/</loc>
+    <loc>https://fleschier.github.io/2018/07/23/scala-learning-03/</loc>
     
     <lastmod>2018-11-21T06:40:40.695Z</lastmod>
     
   </url>
   
   <url>
-    <loc>https://fleschier.github.io/2018/07/12/Scala-infos/</loc>
+    <loc>https://fleschier.github.io/2018/10/16/pycharm-problem-solving/</loc>
     
     <lastmod>2018-11-21T06:40:40.695Z</lastmod>
     
@@ -107,13 +72,6 @@
   </url>
   
   <url>
-    <loc>https://fleschier.github.io/2018/07/12/Scala-learning-01/</loc>
-    
-    <lastmod>2018-11-21T06:40:40.695Z</lastmod>
-    
-  </url>
-  
-  <url>
     <loc>https://fleschier.github.io/2018/04/06/Scala-learning/</loc>
     
     <lastmod>2018-11-21T06:40:40.695Z</lastmod>
@@ -121,7 +79,49 @@
   </url>
   
   <url>
-    <loc>https://fleschier.github.io/2018/07/24/scala-learning-05/</loc>
+    <loc>https://fleschier.github.io/2018/04/11/Spark-superior/</loc>
+    
+    <lastmod>2018-11-21T06:40:40.695Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://fleschier.github.io/2018/07/19/scala-learning-02/</loc>
+    
+    <lastmod>2018-11-21T06:40:40.695Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://fleschier.github.io/2018/04/06/Scala-superior/</loc>
+    
+    <lastmod>2018-11-21T06:40:40.695Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://fleschier.github.io/2018/07/12/Scala-learning-01/</loc>
+    
+    <lastmod>2018-11-21T06:40:40.695Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://fleschier.github.io/2018/07/12/Scala-infos/</loc>
+    
+    <lastmod>2018-11-21T06:40:40.695Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://fleschier.github.io/2018/07/24/scala-learning-04/</loc>
+    
+    <lastmod>2018-11-21T06:40:40.695Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://fleschier.github.io/2018/09/06/scala-io/</loc>
     
     <lastmod>2018-11-21T06:40:40.695Z</lastmod>
     
@@ -163,6 +163,13 @@
   </url>
   
   <url>
+    <loc>https://fleschier.github.io/2018/10/08/C++-Int-Char-String-translation/</loc>
+    
+    <lastmod>2018-11-21T06:40:17.839Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>https://fleschier.github.io/2018/10/08/C++-sprintf-printf/</loc>
     
     <lastmod>2018-11-21T06:40:17.839Z</lastmod>
@@ -170,7 +177,7 @@
   </url>
   
   <url>
-    <loc>https://fleschier.github.io/2018/04/06/C++learning-class/</loc>
+    <loc>https://fleschier.github.io/2018/04/18/Java-function/</loc>
     
     <lastmod>2018-11-21T06:40:17.839Z</lastmod>
     
@@ -191,14 +198,7 @@
   </url>
   
   <url>
-    <loc>https://fleschier.github.io/2018/04/18/Java-function/</loc>
-    
-    <lastmod>2018-11-21T06:40:17.839Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://fleschier.github.io/2018/10/08/C++-Int-Char-String-translation/</loc>
+    <loc>https://fleschier.github.io/2018/04/06/C++learning-class/</loc>
     
     <lastmod>2018-11-21T06:40:17.839Z</lastmod>
     
