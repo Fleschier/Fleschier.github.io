@@ -2083,7 +2083,7 @@ npm install -g hexo-c
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://fleschier.github.io/2018/07/24/scala-learning-05/">
+    <link itemprop="mainEntityOfPage" href="https://fleschier.github.io/2018/07/24/scala-learning-04/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Fleschier">
@@ -2102,8 +2102,8 @@ npm install -g hexo-c
         
           <h2 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2018/07/24/scala-learning-05/" itemprop="url">
-                  《Scala编程》阅读记录——集合类进阶
+                <a class="post-title-link" href="/2018/07/24/scala-learning-04/" itemprop="url">
+                  《Scala编程》阅读记录——列表进阶
                 </a>
               
             
@@ -2177,7 +2177,7 @@ npm install -g hexo-c
 
           
           
-             <span id="/2018/07/24/scala-learning-05/" class="leancloud_visitors" data-flag-title="《Scala编程》阅读记录——集合类进阶">
+             <span id="/2018/07/24/scala-learning-04/" class="leancloud_visitors" data-flag-title="《Scala编程》阅读记录——列表进阶">
                <span class="post-meta-divider">|</span>
                <span class="post-meta-item-icon">
                  <i class="fa fa-eye"></i>
@@ -2213,16 +2213,23 @@ npm install -g hexo-c
           
 不适合人类阅读的学习笔记
 
-第十七章 使用集合类
-序列列表
-List类是不可变 链表, 因此支持在头部快速添加和移除条目，但是不提供按下标快速访问的功能，因为实现这个功能需要线性地遍历列表。
+第十六章 使用列表
 
-列表缓冲(ListBuffer)
-List类提供对列表头部的快速访问，但是对尾部就不那么高效，因此在尾部
+列表的使用方法表格见另一篇博客
+
+列表跟数组非常像，但是有两个重要的区别：
+
+
+
+列表是不可变的，也就是说列表的元素不能通过赋值改变
+列表是递归的(即链表)，而数组是平的
+
+
+init和last要消耗的时间与列表的长度成正比，而head和tail消
           ...
           <!--noindex-->
           <div class="post-button text-center">
-            <a class="btn" href="/2018/07/24/scala-learning-05/#more" rel="contents">
+            <a class="btn" href="/2018/07/24/scala-learning-04/#more" rel="contents">
               Read more &raquo;
             </a>
           </div>
