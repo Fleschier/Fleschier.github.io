@@ -118,7 +118,7 @@
 <meta property="og:site_name" content="Fleschier 渐寒๑">
 <meta property="og:description" content="一些概念性的名词用 斜体 标出了  互联网概述 计算机网络由若干的结点(node)和连接这些结点的链路(link)组成.结点可以是计算机,集线器,交换机或路由器.  网络之间可以通过路由器互连起来,因此互联网是 网络的网络.  网络把许多计算机连接在一起,而互联网把很多网络通过路由器连接在一起.与网络相连的计算机通常称为 主机.  以小写字母i开始的internet(互连网)是一个通用名词,泛指">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2018-12-25T13:17:23.663Z">
+<meta property="og:updated_time" content="2018-12-25T13:21:13.295Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="计算机网络-自底向上">
 <meta name="twitter:description" content="一些概念性的名词用 斜体 标出了  互联网概述 计算机网络由若干的结点(node)和连接这些结点的链路(link)组成.结点可以是计算机,集线器,交换机或路由器.  网络之间可以通过路由器互连起来,因此互联网是 网络的网络.  网络把许多计算机连接在一起,而互联网把很多网络通过路由器连接在一起.与网络相连的计算机通常称为 主机.  以小写字母i开始的internet(互连网)是一个通用名词,泛指">
@@ -368,7 +368,7 @@
                 
                   <span class="post-meta-item-text">Edited on</span>
                 
-                <time title="Modified: 2018-12-25 21:17:23" itemprop="dateModified" datetime="2018-12-25T21:17:23+08:00">2018-12-25</time>
+                <time title="Modified: 2018-12-25 21:21:13" itemprop="dateModified" datetime="2018-12-25T21:21:13+08:00">2018-12-25</time>
               
             
           </span>
@@ -781,9 +781,52 @@
 <li><p>传输单元为分组(即IP数据报)</p>
 </li>
 </ul>
-<h3 id="虚电路和数据报的比较"><a href="#虚电路和数据报的比较" class="headerlink" title="虚电路和数据报的比较"></a>虚电路和数据报的比较</h3><ul>
-<li>|对比方面|虚电路服务|数据报服务|<br>|—|—|—|<br>|思路|可靠通信应当由网络来保证|可靠通信应当由用户主机来保证|<br>|连接的建立|必须有|不需要|<br>|终点地址|尽在连接建立阶段使用,每个分组使用短的虚电路号|每个分组都有完整地址|<br>|分组的转发|属于同一条虚电路的分组均按照同一路由进行转发|每个分组独立选择路由进行转发|<br>|当结点出现故障时|所有通过出故障结点的虚电路均不能工作|出故障的结点可能会丢失分组,一些路由可能会发生变化|<br>|分组的顺序|总是按发送顺序到达终点|到达终点的时间不一定按发送顺序|<br>|端到端的差错处理和流量控制|可由网络负责,也可以由用户主机负责|由用户主机负责|</li>
-</ul>
+<h3 id="虚电路和数据报的比较"><a href="#虚电路和数据报的比较" class="headerlink" title="虚电路和数据报的比较"></a>虚电路和数据报的比较</h3><table>
+<thead>
+<tr>
+<th style="text-align:center">对比方面</th>
+<th style="text-align:center">虚电路服务</th>
+<th style="text-align:center">数据报服务</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">思路</td>
+<td style="text-align:center">可靠通信应当由网络来保证</td>
+<td style="text-align:center">可靠通信应当由用户主机来保证</td>
+</tr>
+<tr>
+<td style="text-align:center">连接的建立</td>
+<td style="text-align:center">必须有</td>
+<td style="text-align:center">不需要</td>
+</tr>
+<tr>
+<td style="text-align:center">终点地址</td>
+<td style="text-align:center">尽在连接建立阶段使用,每个分组使用短的虚电路号</td>
+<td style="text-align:center">每个分组都有完整地址</td>
+</tr>
+<tr>
+<td style="text-align:center">分组的转发</td>
+<td style="text-align:center">属于同一条虚电路的分组均按照同一路由进行转发</td>
+<td style="text-align:center">每个分组独立选择路由进行转发</td>
+</tr>
+<tr>
+<td style="text-align:center">当结点出现故障时</td>
+<td style="text-align:center">所有通过出故障结点的虚电路均不能工作</td>
+<td style="text-align:center">出故障的结点可能会丢失分组,一些路由可能会发生变化</td>
+</tr>
+<tr>
+<td style="text-align:center">分组的顺序</td>
+<td style="text-align:center">总是按发送顺序到达终点</td>
+<td style="text-align:center">到达终点的时间不一定按发送顺序</td>
+</tr>
+<tr>
+<td style="text-align:center">端到端的差错处理和流量控制</td>
+<td style="text-align:center">可由网络负责,也可以由用户主机负责</td>
+<td style="text-align:center">由用户主机负责</td>
+</tr>
+</tbody>
+</table>
 <h3 id="网际协议IP"><a href="#网际协议IP" class="headerlink" title="网际协议IP"></a>网际协议IP</h3><h4 id="IP地址的分类"><a href="#IP地址的分类" class="headerlink" title="IP地址的分类"></a>IP地址的分类</h4><p>-</p>
 
       
