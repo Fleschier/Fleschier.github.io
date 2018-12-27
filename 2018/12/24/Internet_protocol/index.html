@@ -34,6 +34,7 @@
 
 
 
+
 <meta http-equiv="Cache-Control" content="no-transform" />
 <meta http-equiv="Cache-Control" content="no-siteapp" />
 
@@ -66,10 +67,10 @@
   <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=6.4.1">
 
 
-  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=6.4.1">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32.ico?v=6.4.1">
 
 
-  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=6.4.1">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16.ico?v=6.4.1">
 
 
   <link rel="mask-icon" href="/images/logo.svg?v=6.4.1" color="#222">
@@ -118,12 +119,16 @@
 <meta property="og:site_name" content="Fleschier 渐寒๑">
 <meta property="og:description" content="一些概念性的名词用 斜体 标出了  互联网概述 计算机网络由若干的结点(node)和连接这些结点的链路(link)组成.结点可以是计算机,集线器,交换机或路由器.  网络之间可以通过路由器互连起来,因此互联网是 网络的网络.  网络把许多计算机连接在一起,而互联网把很多网络通过路由器连接在一起.与网络相连的计算机通常称为 主机.  以小写字母i开始的internet(互连网)是一个通用名词,泛指">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2018-12-27T08:27:22.338Z">
+<meta property="og:image" content="https://fleschier.github.io/images/computer_network/connection.png">
+<meta property="og:updated_time" content="2018-12-27T12:45:23.376Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="计算机网络-自底向上">
 <meta name="twitter:description" content="一些概念性的名词用 斜体 标出了  互联网概述 计算机网络由若干的结点(node)和连接这些结点的链路(link)组成.结点可以是计算机,集线器,交换机或路由器.  网络之间可以通过路由器互连起来,因此互联网是 网络的网络.  网络把许多计算机连接在一起,而互联网把很多网络通过路由器连接在一起.与网络相连的计算机通常称为 主机.  以小写字母i开始的internet(互连网)是一个通用名词,泛指">
+<meta name="twitter:image" content="https://fleschier.github.io/images/computer_network/connection.png">
 
 
+
+  <link rel="alternate" href="/atom.xml" title="Fleschier 渐寒๑" type="application/atom+xml" />
 
 
 
@@ -185,10 +190,6 @@
 
   <div class="container sidebar-position-left page-post-detail">
     <div class="headband"></div>
-
-    <!-- Add by Fleschier -->
-    <a href="https://github.com/fleschier"><img style="position: absolute; top: 0; left: 0; border: 0;" src="https://s3.amazonaws.com/github/ribbons/forkme_left_darkblue_121621.png" alt="Fork me on GitHub"></a>
-    <!-- Add end -->
 
     <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
       <div class="header-inner"><div class="site-brand-wrapper">
@@ -372,7 +373,7 @@
                 
                   <span class="post-meta-item-text">Edited on</span>
                 
-                <time title="Modified: 2018-12-27 16:27:22" itemprop="dateModified" datetime="2018-12-27T16:27:22+08:00">2018-12-27</time>
+                <time title="Modified: 2018-12-27 20:45:23" itemprop="dateModified" datetime="2018-12-27T20:45:23+08:00">2018-12-27</time>
               
             
           </span>
@@ -1187,6 +1188,9 @@
 <h3 id="TCP连接的建立和断开-重点"><a href="#TCP连接的建立和断开-重点" class="headerlink" title="TCP连接的建立和断开(重点)"></a>TCP连接的建立和断开(重点)</h3><blockquote>
 <p>三次握手, 四次挥手</p>
 </blockquote>
+<ul>
+<li><img src="/images/computer_network/connection.png" alt=""></li>
+</ul>
 
       
     </div>
@@ -1447,6 +1451,13 @@
           
 
           
+            <div class="feed-link motion-element">
+              <a href="/atom.xml" rel="alternate">
+                <i class="fa fa-rss"></i>
+                RSS
+              </a>
+            </div>
+          
 
           
             <div class="links-of-author motion-element">
@@ -1513,11 +1524,7 @@
 
     <footer id="footer" class="footer">
       <div class="footer-inner">
-        <script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
-
-
-
-<div class="copyright">&copy; <span itemprop="copyrightYear">2018</span>
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2018</span>
   <span class="with-love" id="animate">
     <i class="fa fa-user"></i>
   </span>
@@ -1534,26 +1541,16 @@
 
 
 
-  <div class="powered-by">
-  <i class="fa fa-user-md"></i><span id="busuanzi_container_site_uv">
-  Visitors:<span id="busuanzi_value_site_uv"></span>
-  </span>
-  </div>
 
 
 
-  <div class="powered-by">Powered by <a class="theme-link" target="_blank" rel="external nofollow" href="https://hexo.io">Hexo</a></div>
 
 
 
-  <span class="post-meta-divider">|</span>
-
-
-
-  <div class="theme-info">Theme – <a class="theme-link" target="_blank" rel="external nofollow" href="https://theme-next.org">NexT.Mist</a></div>
-
-
-
+<div class="theme-info">
+  <div class="powered-by"></div>
+  <span class="post-count">Total Words Of All Blogs: 86.8k words</span>
+</div>
 
         
 
@@ -1817,6 +1814,10 @@
 
 
   
+
+
+  <!-- 页面点击小红心 -->
+  <script type="text/javascript" src="/js/src/clicklove.js"></script>
 
 </body>
 </html>
