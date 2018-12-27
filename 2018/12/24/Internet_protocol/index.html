@@ -118,7 +118,7 @@
 <meta property="og:site_name" content="Fleschier 渐寒๑">
 <meta property="og:description" content="一些概念性的名词用 斜体 标出了  互联网概述 计算机网络由若干的结点(node)和连接这些结点的链路(link)组成.结点可以是计算机,集线器,交换机或路由器.  网络之间可以通过路由器互连起来,因此互联网是 网络的网络.  网络把许多计算机连接在一起,而互联网把很多网络通过路由器连接在一起.与网络相连的计算机通常称为 主机.  以小写字母i开始的internet(互连网)是一个通用名词,泛指">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2018-12-25T13:21:13.295Z">
+<meta property="og:updated_time" content="2018-12-27T08:27:22.338Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="计算机网络-自底向上">
 <meta name="twitter:description" content="一些概念性的名词用 斜体 标出了  互联网概述 计算机网络由若干的结点(node)和连接这些结点的链路(link)组成.结点可以是计算机,集线器,交换机或路由器.  网络之间可以通过路由器互连起来,因此互联网是 网络的网络.  网络把许多计算机连接在一起,而互联网把很多网络通过路由器连接在一起.与网络相连的计算机通常称为 主机.  以小写字母i开始的internet(互连网)是一个通用名词,泛指">
@@ -185,6 +185,10 @@
 
   <div class="container sidebar-position-left page-post-detail">
     <div class="headband"></div>
+
+    <!-- Add by Fleschier -->
+    <a href="https://github.com/fleschier"><img style="position: absolute; top: 0; left: 0; border: 0;" src="https://s3.amazonaws.com/github/ribbons/forkme_left_darkblue_121621.png" alt="Fork me on GitHub"></a>
+    <!-- Add end -->
 
     <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
       <div class="header-inner"><div class="site-brand-wrapper">
@@ -368,7 +372,7 @@
                 
                   <span class="post-meta-item-text">Edited on</span>
                 
-                <time title="Modified: 2018-12-25 21:21:13" itemprop="dateModified" datetime="2018-12-25T21:21:13+08:00">2018-12-25</time>
+                <time title="Modified: 2018-12-27 16:27:22" itemprop="dateModified" datetime="2018-12-27T16:27:22+08:00">2018-12-27</time>
               
             
           </span>
@@ -827,7 +831,362 @@
 </tr>
 </tbody>
 </table>
-<h3 id="网际协议IP"><a href="#网际协议IP" class="headerlink" title="网际协议IP"></a>网际协议IP</h3><h4 id="IP地址的分类"><a href="#IP地址的分类" class="headerlink" title="IP地址的分类"></a>IP地址的分类</h4><p>-</p>
+<h3 id="网际协议IP"><a href="#网际协议IP" class="headerlink" title="网际协议IP"></a>网际协议IP</h3><h4 id="网络互联"><a href="#网络互联" class="headerlink" title="网络互联"></a>网络互联</h4><ul>
+<li>将互联网连接起来需要使用一些中间设备,不同的层次使用的中间设备有不同的名称:</li>
+</ul>
+<ol>
+<li>物理层: 转发器(repeater)</li>
+<li>数据链路层: 网桥或者桥接器(bridge)</li>
+<li>网络层: 路由器(router)</li>
+<li>网络层以上各层: 网关(gateway)</li>
+</ol>
+<h4 id="IP地址的分类"><a href="#IP地址的分类" class="headerlink" title="IP地址的分类"></a>IP地址的分类</h4><ul>
+<li><p>A类,B类,C类地址都是由两个固定长度的字段组成: 第一个字段是网络号(net-id), 一个网络号在整个互联网范围内必须是唯一的. 第二个字段是主机号(host-id), 一台主机号在它前面的网络号所指明的网络范围内必须是唯一的.</p>
+</li>
+<li><p>IPV4地址长度是32位,A类,B类和C类的网络号分别是1个字节(8位),2个字节(16位)和3个字节(24位)长,在网络号最前面有1-3位类别位,A,B,C类网络分别为0,10和110.</p>
+</li>
+</ul>
+<h5 id="A类地址"><a href="#A类地址" class="headerlink" title="A类地址"></a>A类地址</h5><ul>
+<li><p>A类地址网络号占一个字节,只有7位可以使用(第一位固定为0),但可指派的网络号是126个(2^7 - 2),<strong>减2的原因是:</strong> (1)网络号全为0的IP地址是个保留地址,意思是”本网络”.(2) 网络号为127的网络地址保留作为本地软件 <em>环回测试(loopback test)</em> 本机的进程之间的通信之用.</p>
+</li>
+<li><p>A类地址主机号占3字节,可以指派的主机数为2^24-2, 这里 <strong>减2的原因是:</strong> (1)全0的主机号字段表示该IP地址是”本主机”所连接到的 <em>单个网络地址</em> (例如: 一台主机的IP地址是<code>5.6.7.8</code>,则<code>5.0.0.0</code>表示这个主机所在的 <em>网络地址</em>) (2)全1的主机号表示 <strong>所有的(all)</strong>, 因此全1的主机号表示该网络上的所有主机.</p>
+</li>
+</ul>
+<blockquote>
+<p>例如: B类地址128.7.255.255表示”在网络128.7.0.0上的所有主机”,A类地址0.0.0.35表示”在这个网络上主机号为35的主机”</p>
+</blockquote>
+<ul>
+<li><strong>A类地址第一个可指派的网络号为1.0.0.0,最后一个可指派的网络号为126.0.0.0</strong></li>
+</ul>
+<h5 id="B类地址"><a href="#B类地址" class="headerlink" title="B类地址"></a>B类地址</h5><ul>
+<li><p>B类地址网络号有2个字节,最前面两位已经固定(为10),值剩下14位.<strong>由于B类地址128.0.0.0是不指派的</strong>,所以可以指派的 <strong>B类最小网络地址是128.1.0.0</strong>.因此B类可指派的网络数为2^14-1.</p>
+</li>
+<li><p>B类地址主机号占2字节, 由于全0和全1的主机号不能指派(理由同A类地址),所以可以指派的主机数为2^16-2</p>
+</li>
+<li><p><strong>B类地址第一个可指派的网络号为128.1.0.0,最后一个可指派的网络号为191.255.0.0</strong></p>
+</li>
+</ul>
+<h5 id="C类地址"><a href="#C类地址" class="headerlink" title="C类地址"></a>C类地址</h5><ul>
+<li><p>C类地址有3个字节的网络号,前3个字节固定(为110),C类地址192.0.0.0也是不指派的,指派的 <strong>最小的C类网络地址是192.0.1.0</strong>,因此C类地址可指派的网络总数是2^21-1.</p>
+</li>
+<li><p>每个C类地址的最大主机数为2^8-2</p>
+</li>
+<li><p><strong>C类地址第一个可指派的网络号为192.0.1.0, 最后一个可指派的网络号为223.255.255.0</strong></p>
+</li>
+<li><p>一般不使用的特殊IP地址<br>|网路号|主机号|源地址使用|目的地址使用|代表意思|<br>|—|—|—|—|—|<br>|0|0|可以|不可以|在本网络上的本主机|<br>|0|host-id|可以|不可以|在本网络上的某台主机(host-id)|<br>|全1|全1|不可以|可以|在本网络上进行广播|<br>|net-id|全1|不可以|可以|对net-id上的所有主机进行广播|<br>|127|非全0或全1的 任何数|可以|可以|用于本地软件环回测试|</p>
+</li>
+</ul>
+<h5 id="IP地址特点"><a href="#IP地址特点" class="headerlink" title="IP地址特点"></a>IP地址特点</h5><ul>
+<li><p>实际上,IP地址标志一台主机(或路由器)和一条链路的 <em>接口</em>.当一台主机同时连接到两个网络上时,该主机就必须同时具有两个相应的IP地址,其网络号必须是不同的.</p>
+</li>
+<li><p>按照互联网的观点, 一个网络就是具有相同网路号net-id的主机的集合.</p>
+</li>
+</ul>
+<h3 id="地址解析协议ARP"><a href="#地址解析协议ARP" class="headerlink" title="地址解析协议ARP"></a>地址解析协议ARP</h3><ul>
+<li><p>ARP协议根据IP地址获取物理地址.</p>
+</li>
+<li><p>由于网络层使用的是IP地址,但是在实际网络的链路上传送数据帧时,最终还是必须使用该网络的硬件地址.但IP地址和下面的网络的硬件地址之间由于格式的不同而不存在简单的映射关系(IP地址32位而局域网的硬件地址是48位).此外,在一个网络上可能经常会有新的主机加进来或者撤走旧的主机.更换网络适配器也会使主机的硬件地址改变.</p>
+</li>
+<li><p>地址解析协议ARP解决这个问题的方法是,在主机ARP高速缓存中存放一个从IP地址到硬件地址的映射表,并且这个映射表还经常动态更新.</p>
+</li>
+</ul>
+<h3 id="即IP数据报"><a href="#即IP数据报" class="headerlink" title="即IP数据报"></a>即IP数据报</h3><h4 id="格式"><a href="#格式" class="headerlink" title="格式"></a>格式</h4><ul>
+<li><p>一个IP数据报由 <em>首部</em> 和 <em>数据</em> 两部分组成.</p>
+</li>
+<li><p>首部的前一部分是固定长度,共20字节,是所有IP数据报必须具有的.在首部固定部分后面是一些可选字段,其长度是可变的.</p>
+</li>
+</ul>
+<h5 id="首部固定部分中的各字段"><a href="#首部固定部分中的各字段" class="headerlink" title="首部固定部分中的各字段"></a>首部固定部分中的各字段</h5><blockquote>
+<p>一共12个字段</p>
+</blockquote>
+<ul>
+<li><p>版本: 占4位,指IP协议的版本,通信双方使用的IP协议的版本必须一致.</p>
+</li>
+<li><p>首部长度: 占4位,可表示的最大十进制数值是15.<strong>注意,这个长度的单位是32位字(1个32位字是4字节),即当值为1111(15)时,表示首部长度为60字节</strong>.当IP分组的首部长度不是4字节的整数倍时,必须利用最后的填充字段加以填充.</p>
+</li>
+<li><p>区分服务: 占8位, 用来获得更好的服务.(一般情况下都不使用这个字段)</p>
+</li>
+<li><p>总长度: 占16为,因此最大值为2^16-1=65535.总长度指首部和数据之和的长度,单位为字节.一般下面的数据链路层都规定了MTU(Maximum Transfer Unit),即最大传送单元.一个IP数据包封装成帧之后长度一定不能超过这个值,否则就要进行分片.</p>
+</li>
+<li><p>标识(identification): 占16位.IP软件在存储器中维持一个计数器,每产生一个数据报,计数器就加1,并将此值赋给标识字段.但这个不是序号,因为数据报不存在顺序接收.</p>
+</li>
+<li><p>标志(flag): 占3位,目前只有前两位有意义.</p>
+</li>
+</ul>
+<ol>
+<li>标志字段中的最低位记为<code>MF(More Fragment)</code>. MF=1表示后面”还有分片”的数据报.MF=0表示这已是若干数据报片的最后一个.</li>
+<li>标志字段中间一位记为<code>DF(Don&#39;t Fragment)</code>,意思是”不能分片”.只有当DF=0时才允许分片.</li>
+</ol>
+<ul>
+<li><p>片偏移: 占13位.片偏移指出:较长的分组在分片后,某片在原分组中的相对位置.也就是说,相对于用户数据字段的起点,该片从何处开始.<strong>片偏移的单位是8字节</strong>,<em>所以说每个分片的长一定是8字节(64位)的整数倍.</em></p>
+</li>
+<li><p>生存时间: 占8位.英文缩写是TTL(Time To Live),表明这是数据包在网络中的寿命.其目的是防止无法交付的数据包无限在网络中兜圈子.路由器每转发一次就将数据报的TTL的值减1,如果某个数据报的TTL=0,则路由器接收之后直接丢弃而不转发.</p>
+</li>
+<li><p>协议: 占8位.协议字段指出此数据包携带的数据使用的是何种协议, 以便使目的主机的IP层知道将数据部分上交给哪个协议进行处理.</p>
+</li>
+<li><p>首部校验和: 占16位.<strong>这个字段只检验数据报的首部,但不包括数据部分</strong>.每经过一个路由器,都要重新计算一遍校验和(因为生存时间,标志,片偏移等可能会变化).</p>
+</li>
+<li><p>源地址:占32位</p>
+</li>
+<li><p>目的地址: 占32位</p>
+</li>
+</ul>
+<h4 id="IP转发分组的流程"><a href="#IP转发分组的流程" class="headerlink" title="IP转发分组的流程"></a>IP转发分组的流程</h4><ul>
+<li><p>在路由表中,对每一条路由最主要的是以下两个信息(还会包括其他的一些信息):(目的网络地址, 下一跳地址)</p>
+</li>
+<li><p>只有到达最后一个路由器时,才试图向目的主机进行交付.</p>
+</li>
+</ul>
+<h3 id="划分子网和构造超网"><a href="#划分子网和构造超网" class="headerlink" title="划分子网和构造超网"></a>划分子网和构造超网</h3><h4 id="子网"><a href="#子网" class="headerlink" title="子网"></a>子网</h4><ul>
+<li><p>在IP地址中增加了一个”子网号字段”,使得两级IP地址变为三级IP地址.这种做法叫做 <em>划分子网(subnetting)</em>.</p>
+</li>
+<li><p><code>IP地址 ::= {&lt;网络号&gt;,&lt;子网号&gt;,&lt;主机号&gt;}</code></p>
+</li>
+<li><p>子网号字段占用了主机号字段的长度,因此划分子网会使主机数目减少,<strong>但是不改变原来的网络号</strong>,因此对外这个网络还是原来的网络.</p>
+</li>
+</ul>
+<h5 id="子网掩码"><a href="#子网掩码" class="headerlink" title="子网掩码"></a>子网掩码</h5><ul>
+<li><p>从IP数据报的首部无法看出源主机或者目的主机所连接的网络是否进行了子网划分,就必须使用 <em>子网掩码</em></p>
+</li>
+<li><p>例如将IP地址145.13.3.10与子网掩码255.255.255.0做与操作,得到的网络地址是145.13.3.0.</p>
+</li>
+<li><p>使用子网划分后,路由表必须包含一下三项内容:目的网络地址,子网掩码和下一跳地址.</p>
+</li>
+</ul>
+<h4 id="超网"><a href="#超网" class="headerlink" title="超网"></a>超网</h4><h5 id="无分类编址CIDR"><a href="#无分类编址CIDR" class="headerlink" title="无分类编址CIDR"></a>无分类编址CIDR</h5><ul>
+<li><p>使用 <em>变长子网掩码VLSM(Variable Length Subnet Mask)</em> 可以进一步提高IP地址资源的利用率.在VLSM的基础上又进一步研究出无分类编址方法,正式名称是 <em>无分类域间路由选择CIDR(Classless Inter-Domain Routing)</em></p>
+</li>
+<li><p>CIDR的主要特点有两个:</p>
+</li>
+</ul>
+<ol>
+<li>CIDR消除了传统的A类, B类和C类的地址以及划分子网的概念.CIDR把32位的IP地址分成前后两个部分,前面部分是<code>网络前缀(network-prefix)</code>,用来指明网络,后面部分用来指明主机.因而CIDR是无分类的两级编址,记法为:<br><code>IP地址:={&lt;网络前缀&gt;,&lt;主机号&gt;}</code>.CIDR还使用”斜线记法”,即在IP地址后面加上斜线<code>/</code>,然后写上网络前缀所占的位数.</li>
+<li>CIDR把网络前缀都相同的连续的IP地址组成一个”CIDR地址块”,我们只要知道CIDR地址块中的任何一个地址,就可以知道这个地址块的起始地址和最大地址,以及地址块中的地址数.例如:<br>128.14.35.78/20 = <strong>10000000 00001110 0010</strong> 0011 00000111 (20位网络前缀已加粗)<br>所以最小地址可以很方便地写出: 128.14.32.0(<strong>10000000 00001110 0010</strong>0000 00000000),最大地址也可以很方便写出:128.14.47.255(<strong>10000000 00001110 0010</strong> 1111 11111111)</li>
+</ol>
+<ul>
+<li><p>为了更方便进行路由选择,CIDR使用32位 <em>地址掩码</em>(address mask), 地址掩码由一串1和一串0组成,1的个数就是网络前缀的长度.(原理与子网掩码一致,都是通过与操作获取网络地址)</p>
+</li>
+<li><p>CIDR仍然可以划分子网,但子网的网络前缀比整个单位的网络前缀长一些.</p>
+</li>
+<li><p>CIDR记法有很多种,例如地址块<code>10.0.0.0/10</code>可以简写为<code>10/10</code>,也就是把点分十进制中低位连续的0省略.</p>
+</li>
+<li><p>另一种简化表示法是在网络前缀后加一个<code>*</code>,如<code>00001010 00*</code>,表示<code>*</code>之前是网络前缀,而<code>*</code>表示IP地址中的主机号,可以是任意值.</p>
+</li>
+<li><p>使用CIDR时, 由于采用了网络前缀这种记法,IP地址由网络前缀和主机号这两个部分组成,因此路由表中的项目也要相应地改变.这时每个项目由”网络前缀”和”下一跳地址”组成.</p>
+</li>
+<li><p>但是查找路由表 <strong>可能会得到不止一个匹配结果</strong>, 因此 <strong>应当从匹配结果中选择具有最长网络前缀的路由</strong>,这叫做 <em>最长前缀匹配(longest-prefix matching)</em>. 这因为网络前缀越长,其地址块就越小,因而路由也就越具体.因此在转发的时候是选择匹配到的地址中更具体的.</p>
+</li>
+<li><p>最长前缀匹配又称为 <em>最长匹配</em> 或 <em>最佳匹配</em></p>
+</li>
+</ul>
+<h3 id="路由选择算法"><a href="#路由选择算法" class="headerlink" title="路由选择算法"></a>路由选择算法</h3><ul>
+<li><p>从路由算法能否随网络的通信量或拓扑自适应地进行调整变化来划分, 则只有两大类: <em>静态路由选择策略</em> 和 <em>动态路由选择策略</em></p>
+</li>
+<li><p>静态路由选择也叫 <em>非自适应路由选择</em>, 适用于简单的小网络.</p>
+</li>
+<li><p>动态路由选择也叫 <em>自适应路由选择</em>, 适用于复杂的大网络.(因为实现较复杂,开销也比较大)</p>
+</li>
+</ul>
+<h4 id="分层次的路由选择协议"><a href="#分层次的路由选择协议" class="headerlink" title="分层次的路由选择协议"></a>分层次的路由选择协议</h4><ul>
+<li><p>内部网关协议IGP(Interior Gateway Protocol): 在一个自治系统内部使用的路由选择协议.(如RIP和OSPF协议)</p>
+</li>
+<li><p>外部网关协议EGP(External Gateway Protocol): 若源主机和目的主机处在不同的自治系统中(这两个自治系统可能使用不同的内部网关协议),当数据包传到自治系统的边界时,就要使用外部网关协议.</p>
+</li>
+</ul>
+<h3 id="IP多播"><a href="#IP多播" class="headerlink" title="IP多播"></a>IP多播</h3><ul>
+<li>多播和单播的区别: 例如要向100台主机发送同一份数据, 单播则要发送90份相同的副本给每个主机,而多播只要发送一个副本就可以了(不需要复制分组).</li>
+</ul>
+<h3 id="虚拟专用网VPN和网络地址转换NAT"><a href="#虚拟专用网VPN和网络地址转换NAT" class="headerlink" title="虚拟专用网VPN和网络地址转换NAT"></a>虚拟专用网VPN和网络地址转换NAT</h3><ul>
+<li><p>RFC1918指明了一些 <em>专用地址</em>(private address),这些地址只能用于一个机构内部通信,即只能用作本地地址不能用作全球地址.</p>
+</li>
+<li><p>例如:</p>
+</li>
+</ul>
+<ol>
+<li><code>10.0.0.0</code>到<code>10.255.255.255</code></li>
+<li><code>172.16.0.0</code>到<code>172.31.255.255</code></li>
+<li><code>192.168.0.0</code>到<code>192.168.255.255</code><br>这三个地址相当于一个A类网络,16个连续的B类网络和256个连续的C类网络.</li>
+</ol>
+<h4 id="VPN-Virtual-Private-Network"><a href="#VPN-Virtual-Private-Network" class="headerlink" title="VPN(Virtual Private Network)"></a>VPN(Virtual Private Network)</h4><ul>
+<li><p>使用IP隧道技术实现虚拟专用网.</p>
+</li>
+<li><p>例子: 某个机构两个场所建立了专用网A和B,其网络地址分别为专用地址10.1.0.0和10.2.0.0.现在这两个场所需要 <strong>通过公用的互联网构成一个VPN</strong>.显然 <strong>每个场所至少有一个路由器具有合法的全球IP地址</strong>,这个具有全球IP地址的路由器在专用网内部的接口地址则是专用网的本地地址.即两个场所内主机的相互通信借由连到公网的路由器来转发和接收实现.</p>
+</li>
+</ul>
+<h4 id="NAT-Network-Address-Translation"><a href="#NAT-Network-Address-Translation" class="headerlink" title="NAT(Network Address Translation)"></a>NAT(Network Address Translation)</h4><ul>
+<li><p>需要在专用网连接到互联网的路由器上安装NAT软件.装有NAT软件的路由器叫做 <em>NAT路由器</em>, 它至少有一个有效的全球IP地址.<strong>所有使用本地地址的主机和外界通信的时候,都要在NAT路由器上将其本地地址转换成全球IP地址</strong></p>
+</li>
+<li><p>当NAT路由器具有N个全球IP地址的时候,专用网内部最多 <strong>同时</strong> 有N台主机可以接入互联网.</p>
+</li>
+<li><p>现在常用的NAT转换表把运输层的 <em>端口号</em> 也用上, 这样就可以使多个拥有本地地址的主机公用一个NAT路由器上的全球IP地址.</p>
+</li>
+</ul>
+<h2 id="运输层"><a href="#运输层" class="headerlink" title="运输层"></a>运输层</h2><hr>
+<ul>
+<li>网络层只是将分组从一台主机传输到另一台主机,而运输层则再将这一通信过程精确到主机中的进程.</li>
+</ul>
+<blockquote>
+<p>IP协议虽然能把分组送到目的主机, 但是这个分组还停留在主机的网络层而没有交付主机在的应用程序.从运输层角度来看,通信真正的端点并不是主机而是主机中的进程.也就是说, 端到端的通信是应用进程之间的通信.</p>
+</blockquote>
+<ul>
+<li><p>TCP/IP运输层的两个主要协议: <strong>用户数据报协议UDP(User Datagram Protocol)</strong> 和 <strong>传输控制协议TCP(Transmission Control Protocol)</strong></p>
+</li>
+<li><p>传送的数据单元根据协议的不同,分别称为 <strong>TCP报文段</strong> 和 <strong>UDP用户数据报</strong></p>
+</li>
+<li><p>使用UDP和TCP协议的各种应用和应用层协议<br>|应用|应用层协议|运输层协议|<br>|—|—|—|<br>|名字转换|DNS(域名系统)|UDP|<br>|文件传送|TFTP(简单文件传送协议)|UDP|<br>|路由选择协议|RIP(路由信息协议)|UDP|<br>|IP地址配置|DHCP(动态主机配置)|UDP|<br>|网络管理|SNMP(简单网络管理协议)|UDP|<br>|远程文件服务器|NFS(简单网络管理协议)|UDP|<br>|IP电话|专用协议|UDP|<br>|流式多媒体通信|专用协议|UDP|<br>|多播|IGMP(网际组管理协议)|UDP|<br>|电子邮件|SMTP(简单邮件传送协议)|TCP|<br>|远程终端接入|TELNET(远程终端协议)|TCP|<br>|万维网|HTTP(超文本传送协议)|TCP|<br>|文件传送|FTP(文件传送协议)|TCP|</p>
+</li>
+</ul>
+<h3 id="运输层的端口"><a href="#运输层的端口" class="headerlink" title="运输层的端口"></a>运输层的端口</h3><ul>
+<li><p>由于进程的创建和撤销是动态的,所以通信的一方几乎无法识别对方机器上的进程.解决这个问题的方法就是在运输层使用 <em>端口协议号(protocol port number)</em>,通常简称为 <em>端口</em>.</p>
+</li>
+<li><p>不同的端口用来标志不同的应用进程.虽然通信的终点是应用进程,但是只要把所传送的报文交到目的主机的某个合适的目的端口,剩下的工作(交付目的进程)就由TCP和UDP来完成.</p>
+</li>
+<li><p>这种在协议栈层间的抽象的协议端口是 <strong>软件端口</strong>,和路由器或交换机的硬件端口是完全不同的概念.硬件端口是不同硬件设备进行交互的接口, 而软件端口是应用层的各种协议进程与运输实体进行层间交互的一种地址.</p>
+</li>
+<li><p>TCP/IP的运输层用一个16位的端口号来标志一个端口. <strong>注意,端口号只有本地意义,只是为了标记本计算机应用层中各个进程在和运输层交互时的层间接口</strong></p>
+</li>
+<li><p>互联网上的计算机通信采用客户-服务器方式(C/S方式).客户在发起通信请求的时候,必须知道对方服务器的IP地址和端口号.</p>
+</li>
+<li><p>运输层端口号分为两大类:</p>
+<h4 id="一-服务器端使用的端口号"><a href="#一-服务器端使用的端口号" class="headerlink" title="一. 服务器端使用的端口号"></a>一. 服务器端使用的端口号</h4></li>
+<li><p>这里又可以分为两类: <strong>熟知端口号</strong> 和 <strong>登记端口号</strong>.</p>
+</li>
+<li><p>熟知端口号是最重要的一类, 又叫做 <em>系统端口号</em> ,数值为0-1023.</p>
+</li>
+<li><p><strong>需要记住的常用端口号</strong>:</p>
+</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>应用程序</th>
+<th>熟知端口号</th>
+<th>协议类型</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>FTP</td>
+<td>21</td>
+<td>TCP</td>
+</tr>
+<tr>
+<td>TELNET</td>
+<td>23</td>
+<td>TCP</td>
+</tr>
+<tr>
+<td>SMTP</td>
+<td>25</td>
+<td>TCP</td>
+</tr>
+<tr>
+<td>DNS</td>
+<td>53</td>
+<td>UDP</td>
+</tr>
+<tr>
+<td>TFTP</td>
+<td>69</td>
+<td>UDP</td>
+</tr>
+<tr>
+<td>HTTP</td>
+<td>80</td>
+<td>TCP</td>
+</tr>
+<tr>
+<td>HTTPS</td>
+<td>443</td>
+<td>TCP</td>
+</tr>
+<tr>
+<td>SNMP</td>
+<td>161</td>
+<td>UDP</td>
+</tr>
+<tr>
+<td>SNMP(trap)</td>
+<td>162</td>
+<td>UDP</td>
+</tr>
+</tbody>
+</table>
+<h4 id="二-客户端使用的端口号"><a href="#二-客户端使用的端口号" class="headerlink" title="二. 客户端使用的端口号"></a>二. 客户端使用的端口号</h4><ul>
+<li><p>数值为49152-65535</p>
+</li>
+<li><p>由于这类端口号仅在客户进程运行时才动态选择,因此又叫做 <em>短暂端口号</em></p>
+</li>
+<li><p>当服务器进程收到客户进程的报文时,就知道了客户进程现在所使用的端口号,因而可以把数据发送给客户进程.当通信结束后,刚才使用的客户端口号就不复存在了,这个端口号就可供其他客户进程使用.</p>
+</li>
+</ul>
+<h3 id="连续ARQ协议"><a href="#连续ARQ协议" class="headerlink" title="连续ARQ协议"></a>连续ARQ协议</h3><ul>
+<li><p>将流量控制和差错控制结合了起来.</p>
+</li>
+<li><p>ARQ协议规定,发送方每收到一个确认,就把发送窗口向前滑动一个分组的位置.于是就可以接着发送下一个分组进入窗口的分组.</p>
+</li>
+<li><p>接收方一般采用累积却认的方式,也就是说接收方不必对收到的分组逐个发送确认,<strong>只要对按序到达的最后一个分组发送确认</strong>,这表示:到这个分组为止的所有分组都已经正确收到了.</p>
+</li>
+<li><p>累积确认的优点是:容易实现,即使确认丢失也不必重传.缺点是:不能向发送方反映出接收方已经正确收到的所有分组的信息.(因为可能存在可能没有按序到达的分组,比如收到了1,2,3,5四个分组,只能对前三个进行确认,而5号分组到达的消息发送方没有办法知道,而且很有可能会重传5号分组)</p>
+</li>
+</ul>
+<h3 id="TCP可靠传输的实现"><a href="#TCP可靠传输的实现" class="headerlink" title="TCP可靠传输的实现"></a>TCP可靠传输的实现</h3><h4 id="以字节为单位的滑动窗口"><a href="#以字节为单位的滑动窗口" class="headerlink" title="以字节为单位的滑动窗口"></a>以字节为单位的滑动窗口</h4><ul>
+<li><p>发送窗口表示: 在没有收到B的确认的情况下,A可以连续地把窗口内的数据都发送出去.<strong>凡是已经发送过的数据,在未收到确认之前都必须暂时保留以便在超时重传时使用.</strong></p>
+</li>
+<li><p>接收方会把自己的接收窗口的数值放在窗口字段中发送给对方,这相当于告诉发送方,自己的剩余缓冲区域的大小.<strong>因此A的发送窗口一定不能超过B的接收窗口的值.</strong></p>
+</li>
+<li><p>发送窗口的位置由窗口的前后沿共同决定.发送窗口的后沿不动有两种可能:<strong>(1)没有收到新的确认. (2)收到了新的确认但是对方通知窗口缩小了,使得前沿刚好不动.</strong></p>
+</li>
+<li><p>发送缓存用来暂时存放:</p>
+</li>
+</ul>
+<ol>
+<li>发送应用程序发送给发送方TCP准备发送的数据</li>
+<li>TCP已发送出但尚未收到确认的数据</li>
+</ol>
+<ul>
+<li>接收缓存用来暂时存放:</li>
+</ul>
+<ol>
+<li>按序到达的,但尚未被接收应用程序读取的数据</li>
+<li>未按序到达的数据</li>
+</ol>
+<h3 id="拥塞控制"><a href="#拥塞控制" class="headerlink" title="拥塞控制"></a>拥塞控制</h3><ul>
+<li><p>拥塞控制与流量控制的区别: 流量控制管理的是两个点,而拥塞控制管理的是整个网络.</p>
+</li>
+<li><p>计算机网络中的链路容量(即带宽),交换结点中的缓存和处理机等,都是网络的资源.在某段时间,对网络中某一资源的需求超过了该资源所能提供的可用部分,网络性能就要变坏,这种情况就叫 <em>拥塞(congestion)</em></p>
+</li>
+<li><p>问题的实质是,整个系统的各个部分不匹配,只有所有部分平衡了,问题才会得到解决.</p>
+</li>
+<li><p><em>拥塞控制</em> : 防止过多的数据注入到网络中,这样可以使网络中的路由器或链路不致过载.拥塞控制是一个全局性的过程,涉及到所有的主机,所有的路由器,以及降低网络传输性能的所有因素.</p>
+</li>
+<li><p>拥塞控制可以分为 <em>开环控制</em> 和 <em>闭环控制</em>.</p>
+</li>
+<li><p>开环控制就是事先考虑所有的因素,一旦开始运作就不再更改.</p>
+</li>
+<li><p>闭环控制是基于反馈回路的概念.</p>
+</li>
+</ul>
+<h4 id="TCP的拥塞控制方法"><a href="#TCP的拥塞控制方法" class="headerlink" title="TCP的拥塞控制方法"></a>TCP的拥塞控制方法</h4><h5 id="慢开始和拥塞避免"><a href="#慢开始和拥塞避免" class="headerlink" title="慢开始和拥塞避免"></a>慢开始和拥塞避免</h5><ul>
+<li><p>发送方维护一个叫做 <em>拥塞窗口cwnd(congestion window)</em> 的状态变量. <strong>发送方让自己的发送窗口等于拥塞窗口</strong>.</p>
+</li>
+<li><p>判断网络拥塞的依据是 <strong>出现了超时</strong>.</p>
+</li>
+<li><p>慢开始: 由小到大逐渐增加拥塞窗口(发送窗口).</p>
+</li>
+<li><p>从慢开始开始指数增长,直到一个阈值(慢开始门限ssthresh),开始加法增长,最后出现超时,再从慢开始从头再来.</p>
+</li>
+<li><p>当cwnd小于ssthresh时,使用慢开始算法(指数增长).当cwnd&gt;ssthresh时,停止使用慢开始算法 <strong>改用拥塞避免算法</strong>.(cwnd = ssthresh时两个算法任意选取)</p>
+</li>
+<li><p><em>拥塞避免算法</em> 的思路是让拥塞窗口cwnd缓慢地增大,即每过一个RTT就把发送方的拥塞窗口加1.注意拥塞避免并不是完全避免了拥塞,而是是吧拥塞窗口控制为按线性增长,使网络比较不容易出现拥塞.</p>
+</li>
+</ul>
+<h4 id="主动队列管理AQM"><a href="#主动队列管理AQM" class="headerlink" title="主动队列管理AQM"></a>主动队列管理AQM</h4><ul>
+<li><em>随机早期检测RED(Random Early Detection)</em></li>
+</ul>
+<h3 id="TCP连接的建立和断开-重点"><a href="#TCP连接的建立和断开-重点" class="headerlink" title="TCP连接的建立和断开(重点)"></a>TCP连接的建立和断开(重点)</h3><blockquote>
+<p>三次握手, 四次挥手</p>
+</blockquote>
 
       
     </div>
@@ -862,7 +1221,7 @@
       
         <div class="post-tags">
           
-            <a href="/tags/๑Blog/" rel="tag"># ๑Blog</a>
+            <a href="/tags/๑Blog/" rel="tag"><i class="fa fa-tag"></i> ๑Blog</a>
           
         </div>
       
@@ -1134,7 +1493,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#互联网概述"><span class="nav-number">1.</span> <span class="nav-text">互联网概述</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#互联网的组成"><span class="nav-number">1.1.</span> <span class="nav-text">互联网的组成</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#路由器"><span class="nav-number">1.2.</span> <span class="nav-text">路由器</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#电路交换"><span class="nav-number">1.2.1.</span> <span class="nav-text">电路交换</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#分组交换"><span class="nav-number">1.2.2.</span> <span class="nav-text">分组交换</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#三种交换方式的比较"><span class="nav-number">1.2.3.</span> <span class="nav-text">三种交换方式的比较</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#计算机网络的类别"><span class="nav-number">1.3.</span> <span class="nav-text">计算机网络的类别</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#计算机网络性能"><span class="nav-number">1.4.</span> <span class="nav-text">计算机网络性能</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#带宽"><span class="nav-number">1.4.1.</span> <span class="nav-text">带宽</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#时延"><span class="nav-number">1.4.2.</span> <span class="nav-text">时延</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#利用率"><span class="nav-number">1.4.3.</span> <span class="nav-text">利用率</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#计算机网络体系结构"><span class="nav-number">1.5.</span> <span class="nav-text">计算机网络体系结构</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#OSI的七层协议"><span class="nav-number">1.5.1.</span> <span class="nav-text">OSI的七层协议</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#TCP-IP的四层协议"><span class="nav-number">1.5.2.</span> <span class="nav-text">TCP/IP的四层协议</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#五层协议"><span class="nav-number">1.5.3.</span> <span class="nav-text">五层协议</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#物理层"><span class="nav-number">2.</span> <span class="nav-text">物理层</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#波特率和比特率"><span class="nav-number">2.1.</span> <span class="nav-text">波特率和比特率</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#信道极限容量-amp-香农公式"><span class="nav-number">2.2.</span> <span class="nav-text">信道极限容量&amp;香农公式</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#香农公式"><span class="nav-number">2.2.1.</span> <span class="nav-text">香农公式</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#数据编码"><span class="nav-number">2.3.</span> <span class="nav-text">数据编码</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#常用编码方式"><span class="nav-number">2.3.1.</span> <span class="nav-text">常用编码方式</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#基本的带通调制方法-将数字信号转化为模拟信号"><span class="nav-number">2.3.2.</span> <span class="nav-text">基本的带通调制方法(将数字信号转化为模拟信号)</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#常用的通信介质"><span class="nav-number">2.4.</span> <span class="nav-text">常用的通信介质</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#导引型传输媒体"><span class="nav-number">2.4.1.</span> <span class="nav-text">导引型传输媒体</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#非导引型传输媒体"><span class="nav-number">2.4.2.</span> <span class="nav-text">非导引型传输媒体</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#多路复用技术"><span class="nav-number">2.5.</span> <span class="nav-text">多路复用技术</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#数据链路层"><span class="nav-number">3.</span> <span class="nav-text">数据链路层</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#帧同步问题"><span class="nav-number">3.1.</span> <span class="nav-text">帧同步问题</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#封装成帧"><span class="nav-number">3.1.1.</span> <span class="nav-text">封装成帧</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#帧定界"><span class="nav-number">3.1.1.1.</span> <span class="nav-text">帧定界</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#透明传输"><span class="nav-number">3.1.1.2.</span> <span class="nav-text">透明传输</span></a></li></ol></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#差错检测"><span class="nav-number">3.2.</span> <span class="nav-text">差错检测</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#点对点协议ppp"><span class="nav-number">3.3.</span> <span class="nav-text">点对点协议ppp</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#ppp协议的帧格式"><span class="nav-number">3.3.1.</span> <span class="nav-text">ppp协议的帧格式</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#局域网的数据链路层"><span class="nav-number">3.4.</span> <span class="nav-text">局域网的数据链路层</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#共享信道"><span class="nav-number">3.4.1.</span> <span class="nav-text">共享信道</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#静态信道划分"><span class="nav-number">3.4.1.1.</span> <span class="nav-text">静态信道划分</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#动态媒体接入控制"><span class="nav-number">3.4.1.2.</span> <span class="nav-text">动态媒体接入控制</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#适配器"><span class="nav-number">3.4.2.</span> <span class="nav-text">适配器</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#CSMA"><span class="nav-number">3.5.</span> <span class="nav-text">CSMA</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#CSMA-CD"><span class="nav-number">3.5.1.</span> <span class="nav-text">CSMA/CD</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#以太网的MAC层"><span class="nav-number">3.6.</span> <span class="nav-text">以太网的MAC层</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#以太网V2的MAC帧"><span class="nav-number">3.6.1.</span> <span class="nav-text">以太网V2的MAC帧</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#网桥-bridge"><span class="nav-number">3.7.</span> <span class="nav-text">网桥(bridge)</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#交换机-switch"><span class="nav-number">3.7.1.</span> <span class="nav-text">交换机(switch)</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#虚拟局域网"><span class="nav-number">3.7.2.</span> <span class="nav-text">虚拟局域网</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#网络层"><span class="nav-number">4.</span> <span class="nav-text">网络层</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#虚电路和数据报的比较"><span class="nav-number">4.1.</span> <span class="nav-text">虚电路和数据报的比较</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#网际协议IP"><span class="nav-number">4.2.</span> <span class="nav-text">网际协议IP</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#IP地址的分类"><span class="nav-number">4.2.1.</span> <span class="nav-text">IP地址的分类</span></a></li></ol></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#互联网概述"><span class="nav-number">1.</span> <span class="nav-text">互联网概述</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#互联网的组成"><span class="nav-number">1.1.</span> <span class="nav-text">互联网的组成</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#路由器"><span class="nav-number">1.2.</span> <span class="nav-text">路由器</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#电路交换"><span class="nav-number">1.2.1.</span> <span class="nav-text">电路交换</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#分组交换"><span class="nav-number">1.2.2.</span> <span class="nav-text">分组交换</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#三种交换方式的比较"><span class="nav-number">1.2.3.</span> <span class="nav-text">三种交换方式的比较</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#计算机网络的类别"><span class="nav-number">1.3.</span> <span class="nav-text">计算机网络的类别</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#计算机网络性能"><span class="nav-number">1.4.</span> <span class="nav-text">计算机网络性能</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#带宽"><span class="nav-number">1.4.1.</span> <span class="nav-text">带宽</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#时延"><span class="nav-number">1.4.2.</span> <span class="nav-text">时延</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#利用率"><span class="nav-number">1.4.3.</span> <span class="nav-text">利用率</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#计算机网络体系结构"><span class="nav-number">1.5.</span> <span class="nav-text">计算机网络体系结构</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#OSI的七层协议"><span class="nav-number">1.5.1.</span> <span class="nav-text">OSI的七层协议</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#TCP-IP的四层协议"><span class="nav-number">1.5.2.</span> <span class="nav-text">TCP/IP的四层协议</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#五层协议"><span class="nav-number">1.5.3.</span> <span class="nav-text">五层协议</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#物理层"><span class="nav-number">2.</span> <span class="nav-text">物理层</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#波特率和比特率"><span class="nav-number">2.1.</span> <span class="nav-text">波特率和比特率</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#信道极限容量-amp-香农公式"><span class="nav-number">2.2.</span> <span class="nav-text">信道极限容量&amp;香农公式</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#香农公式"><span class="nav-number">2.2.1.</span> <span class="nav-text">香农公式</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#数据编码"><span class="nav-number">2.3.</span> <span class="nav-text">数据编码</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#常用编码方式"><span class="nav-number">2.3.1.</span> <span class="nav-text">常用编码方式</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#基本的带通调制方法-将数字信号转化为模拟信号"><span class="nav-number">2.3.2.</span> <span class="nav-text">基本的带通调制方法(将数字信号转化为模拟信号)</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#常用的通信介质"><span class="nav-number">2.4.</span> <span class="nav-text">常用的通信介质</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#导引型传输媒体"><span class="nav-number">2.4.1.</span> <span class="nav-text">导引型传输媒体</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#非导引型传输媒体"><span class="nav-number">2.4.2.</span> <span class="nav-text">非导引型传输媒体</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#多路复用技术"><span class="nav-number">2.5.</span> <span class="nav-text">多路复用技术</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#数据链路层"><span class="nav-number">3.</span> <span class="nav-text">数据链路层</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#帧同步问题"><span class="nav-number">3.1.</span> <span class="nav-text">帧同步问题</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#封装成帧"><span class="nav-number">3.1.1.</span> <span class="nav-text">封装成帧</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#帧定界"><span class="nav-number">3.1.1.1.</span> <span class="nav-text">帧定界</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#透明传输"><span class="nav-number">3.1.1.2.</span> <span class="nav-text">透明传输</span></a></li></ol></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#差错检测"><span class="nav-number">3.2.</span> <span class="nav-text">差错检测</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#点对点协议ppp"><span class="nav-number">3.3.</span> <span class="nav-text">点对点协议ppp</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#ppp协议的帧格式"><span class="nav-number">3.3.1.</span> <span class="nav-text">ppp协议的帧格式</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#局域网的数据链路层"><span class="nav-number">3.4.</span> <span class="nav-text">局域网的数据链路层</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#共享信道"><span class="nav-number">3.4.1.</span> <span class="nav-text">共享信道</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#静态信道划分"><span class="nav-number">3.4.1.1.</span> <span class="nav-text">静态信道划分</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#动态媒体接入控制"><span class="nav-number">3.4.1.2.</span> <span class="nav-text">动态媒体接入控制</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#适配器"><span class="nav-number">3.4.2.</span> <span class="nav-text">适配器</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#CSMA"><span class="nav-number">3.5.</span> <span class="nav-text">CSMA</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#CSMA-CD"><span class="nav-number">3.5.1.</span> <span class="nav-text">CSMA/CD</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#以太网的MAC层"><span class="nav-number">3.6.</span> <span class="nav-text">以太网的MAC层</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#以太网V2的MAC帧"><span class="nav-number">3.6.1.</span> <span class="nav-text">以太网V2的MAC帧</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#网桥-bridge"><span class="nav-number">3.7.</span> <span class="nav-text">网桥(bridge)</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#交换机-switch"><span class="nav-number">3.7.1.</span> <span class="nav-text">交换机(switch)</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#虚拟局域网"><span class="nav-number">3.7.2.</span> <span class="nav-text">虚拟局域网</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#网络层"><span class="nav-number">4.</span> <span class="nav-text">网络层</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#虚电路和数据报的比较"><span class="nav-number">4.1.</span> <span class="nav-text">虚电路和数据报的比较</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#网际协议IP"><span class="nav-number">4.2.</span> <span class="nav-text">网际协议IP</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#网络互联"><span class="nav-number">4.2.1.</span> <span class="nav-text">网络互联</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#IP地址的分类"><span class="nav-number">4.2.2.</span> <span class="nav-text">IP地址的分类</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#A类地址"><span class="nav-number">4.2.2.1.</span> <span class="nav-text">A类地址</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#B类地址"><span class="nav-number">4.2.2.2.</span> <span class="nav-text">B类地址</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#C类地址"><span class="nav-number">4.2.2.3.</span> <span class="nav-text">C类地址</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#IP地址特点"><span class="nav-number">4.2.2.4.</span> <span class="nav-text">IP地址特点</span></a></li></ol></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#地址解析协议ARP"><span class="nav-number">4.3.</span> <span class="nav-text">地址解析协议ARP</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#即IP数据报"><span class="nav-number">4.4.</span> <span class="nav-text">即IP数据报</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#格式"><span class="nav-number">4.4.1.</span> <span class="nav-text">格式</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#首部固定部分中的各字段"><span class="nav-number">4.4.1.1.</span> <span class="nav-text">首部固定部分中的各字段</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#IP转发分组的流程"><span class="nav-number">4.4.2.</span> <span class="nav-text">IP转发分组的流程</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#划分子网和构造超网"><span class="nav-number">4.5.</span> <span class="nav-text">划分子网和构造超网</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#子网"><span class="nav-number">4.5.1.</span> <span class="nav-text">子网</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#子网掩码"><span class="nav-number">4.5.1.1.</span> <span class="nav-text">子网掩码</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#超网"><span class="nav-number">4.5.2.</span> <span class="nav-text">超网</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#无分类编址CIDR"><span class="nav-number">4.5.2.1.</span> <span class="nav-text">无分类编址CIDR</span></a></li></ol></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#路由选择算法"><span class="nav-number">4.6.</span> <span class="nav-text">路由选择算法</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#分层次的路由选择协议"><span class="nav-number">4.6.1.</span> <span class="nav-text">分层次的路由选择协议</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#IP多播"><span class="nav-number">4.7.</span> <span class="nav-text">IP多播</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#虚拟专用网VPN和网络地址转换NAT"><span class="nav-number">4.8.</span> <span class="nav-text">虚拟专用网VPN和网络地址转换NAT</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#VPN-Virtual-Private-Network"><span class="nav-number">4.8.1.</span> <span class="nav-text">VPN(Virtual Private Network)</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#NAT-Network-Address-Translation"><span class="nav-number">4.8.2.</span> <span class="nav-text">NAT(Network Address Translation)</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#运输层"><span class="nav-number">5.</span> <span class="nav-text">运输层</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#运输层的端口"><span class="nav-number">5.1.</span> <span class="nav-text">运输层的端口</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#一-服务器端使用的端口号"><span class="nav-number">5.1.1.</span> <span class="nav-text">一. 服务器端使用的端口号</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#二-客户端使用的端口号"><span class="nav-number">5.1.2.</span> <span class="nav-text">二. 客户端使用的端口号</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#连续ARQ协议"><span class="nav-number">5.2.</span> <span class="nav-text">连续ARQ协议</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#TCP可靠传输的实现"><span class="nav-number">5.3.</span> <span class="nav-text">TCP可靠传输的实现</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#以字节为单位的滑动窗口"><span class="nav-number">5.3.1.</span> <span class="nav-text">以字节为单位的滑动窗口</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#拥塞控制"><span class="nav-number">5.4.</span> <span class="nav-text">拥塞控制</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#TCP的拥塞控制方法"><span class="nav-number">5.4.1.</span> <span class="nav-text">TCP的拥塞控制方法</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#慢开始和拥塞避免"><span class="nav-number">5.4.1.1.</span> <span class="nav-text">慢开始和拥塞避免</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#主动队列管理AQM"><span class="nav-number">5.4.2.</span> <span class="nav-text">主动队列管理AQM</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#TCP连接的建立和断开-重点"><span class="nav-number">5.5.</span> <span class="nav-text">TCP连接的建立和断开(重点)</span></a></li></ol></li></ol></div>
             
 
           </div>
@@ -1154,7 +1513,11 @@
 
     <footer id="footer" class="footer">
       <div class="footer-inner">
-        <div class="copyright">&copy; <span itemprop="copyrightYear">2018</span>
+        <script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+
+<div class="copyright">&copy; <span itemprop="copyrightYear">2018</span>
   <span class="with-love" id="animate">
     <i class="fa fa-user"></i>
   </span>
@@ -1167,6 +1530,15 @@
 
 
   
+
+
+
+
+  <div class="powered-by">
+  <i class="fa fa-user-md"></i><span id="busuanzi_container_site_uv">
+  Visitors:<span id="busuanzi_value_site_uv"></span>
+  </span>
+  </div>
 
 
 
@@ -1204,7 +1576,7 @@
     
 
     
-	
+
     
 
     
@@ -1231,11 +1603,16 @@
 
 
 
+  
 
 
 
 
 
+
+
+  
+  
 
 
 
@@ -1256,6 +1633,21 @@
   
   
     <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/canvas-nest/canvas-nest.min.js"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/three/three.min.js"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/three/canvas_sphere.min.js"></script>
   
 
 
