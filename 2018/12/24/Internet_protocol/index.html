@@ -120,7 +120,7 @@
 <meta property="og:description" content="一些概念性的名词用 斜体 标出了  互联网概述 计算机网络由若干的结点(node)和连接这些结点的链路(link)组成.结点可以是计算机,集线器,交换机或路由器.  网络之间可以通过路由器互连起来,因此互联网是 网络的网络.  网络把许多计算机连接在一起,而互联网把很多网络通过路由器连接在一起.与网络相连的计算机通常称为 主机.  以小写字母i开始的internet(互连网)是一个通用名词,泛指">
 <meta property="og:locale" content="default">
 <meta property="og:image" content="https://fleschier.github.io/images/computer_network/connection.png">
-<meta property="og:updated_time" content="2018-12-27T15:28:12.836Z">
+<meta property="og:updated_time" content="2019-01-12T09:03:47.520Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="计算机网络-自底向上">
 <meta name="twitter:description" content="一些概念性的名词用 斜体 标出了  互联网概述 计算机网络由若干的结点(node)和连接这些结点的链路(link)组成.结点可以是计算机,集线器,交换机或路由器.  网络之间可以通过路由器互连起来,因此互联网是 网络的网络.  网络把许多计算机连接在一起,而互联网把很多网络通过路由器连接在一起.与网络相连的计算机通常称为 主机.  以小写字母i开始的internet(互连网)是一个通用名词,泛指">
@@ -373,7 +373,7 @@
                 
                   <span class="post-meta-item-text">Edited on</span>
                 
-                <time title="Modified: 2018-12-27 23:28:12" itemprop="dateModified" datetime="2018-12-27T23:28:12+08:00">2018-12-27</time>
+                <time title="Modified: 2019-01-12 17:03:47" itemprop="dateModified" datetime="2019-01-12T17:03:47+08:00">2019-01-12</time>
               
             
           </span>
@@ -874,9 +874,57 @@
 </li>
 <li><p><strong>C类地址第一个可指派的网络号为192.0.1.0, 最后一个可指派的网络号为223.255.255.0</strong></p>
 </li>
-<li><p>一般不使用的特殊IP地址<br>|网路号|主机号|源地址使用|目的地址使用|代表意思|<br>|—|—|—|—|—|<br>|0|0|可以|不可以|在本网络上的本主机|<br>|0|host-id|可以|不可以|在本网络上的某台主机(host-id)|<br>|全1|全1|不可以|可以|在本网络上进行广播|<br>|net-id|全1|不可以|可以|对net-id上的所有主机进行广播|<br>|127|非全0或全1的 任何数|可以|可以|用于本地软件环回测试|</p>
+<li><p>一般不使用的特殊IP地址</p>
 </li>
 </ul>
+<table>
+<thead>
+<tr>
+<th>网路号</th>
+<th>主机号</th>
+<th>源地址使用</th>
+<th>目的地址使用</th>
+<th>代表意思</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>0</td>
+<td>0</td>
+<td>可以</td>
+<td>不可以</td>
+<td>在本网络上的本主机</td>
+</tr>
+<tr>
+<td>0</td>
+<td>host-id</td>
+<td>可以</td>
+<td>不可以</td>
+<td>在本网络上的某台主机(host-id)</td>
+</tr>
+<tr>
+<td>全1</td>
+<td>全1</td>
+<td>不可以</td>
+<td>可以</td>
+<td>在本网络上进行广播</td>
+</tr>
+<tr>
+<td>net-id</td>
+<td>全1</td>
+<td>不可以</td>
+<td>可以</td>
+<td>对net-id上的所有主机进行广播</td>
+</tr>
+<tr>
+<td>127</td>
+<td>非全0或全1的 任何数</td>
+<td>可以</td>
+<td>可以</td>
+<td>用于本地软件环回测试</td>
+</tr>
+</tbody>
+</table>
 <h5 id="IP地址特点"><a href="#IP地址特点" class="headerlink" title="IP地址特点"></a>IP地址特点</h5><ul>
 <li><p>实际上,IP地址标志一台主机(或路由器)和一条链路的 <em>接口</em>.当一台主机同时连接到两个网络上时,该主机就必须同时具有两个相应的IP地址,其网络号必须是不同的.</p>
 </li>
@@ -1034,9 +1082,85 @@
 </li>
 <li><p>传送的数据单元根据协议的不同,分别称为 <strong>TCP报文段</strong> 和 <strong>UDP用户数据报</strong></p>
 </li>
-<li><p>使用UDP和TCP协议的各种应用和应用层协议<br>|应用|应用层协议|运输层协议|<br>|—|—|—|<br>|名字转换|DNS(域名系统)|UDP|<br>|文件传送|TFTP(简单文件传送协议)|UDP|<br>|路由选择协议|RIP(路由信息协议)|UDP|<br>|IP地址配置|DHCP(动态主机配置)|UDP|<br>|网络管理|SNMP(简单网络管理协议)|UDP|<br>|远程文件服务器|NFS(简单网络管理协议)|UDP|<br>|IP电话|专用协议|UDP|<br>|流式多媒体通信|专用协议|UDP|<br>|多播|IGMP(网际组管理协议)|UDP|<br>|电子邮件|SMTP(简单邮件传送协议)|TCP|<br>|远程终端接入|TELNET(远程终端协议)|TCP|<br>|万维网|HTTP(超文本传送协议)|TCP|<br>|文件传送|FTP(文件传送协议)|TCP|</p>
+<li><p>使用UDP和TCP协议的各种应用和应用层协议</p>
 </li>
 </ul>
+<table>
+<thead>
+<tr>
+<th>应用</th>
+<th>应用层协议</th>
+<th>运输层协议</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>名字转换</td>
+<td>DNS(域名系统)</td>
+<td>UDP</td>
+</tr>
+<tr>
+<td>文件传送</td>
+<td>TFTP(简单文件传送协议)</td>
+<td>UDP</td>
+</tr>
+<tr>
+<td>路由选择协议</td>
+<td>RIP(路由信息协议)</td>
+<td>UDP</td>
+</tr>
+<tr>
+<td>IP地址配置</td>
+<td>DHCP(动态主机配置)</td>
+<td>UDP</td>
+</tr>
+<tr>
+<td>网络管理</td>
+<td>SNMP(简单网络管理协议)</td>
+<td>UDP</td>
+</tr>
+<tr>
+<td>远程文件服务器</td>
+<td>NFS(简单网络管理协议)</td>
+<td>UDP</td>
+</tr>
+<tr>
+<td>IP电话</td>
+<td>专用协议</td>
+<td>UDP</td>
+</tr>
+<tr>
+<td>流式多媒体通信</td>
+<td>专用协议</td>
+<td>UDP</td>
+</tr>
+<tr>
+<td>多播</td>
+<td>IGMP(网际组管理协议)</td>
+<td>UDP</td>
+</tr>
+<tr>
+<td>电子邮件</td>
+<td>SMTP(简单邮件传送协议)</td>
+<td>TCP</td>
+</tr>
+<tr>
+<td>远程终端接入</td>
+<td>TELNET(远程终端协议)</td>
+<td>TCP</td>
+</tr>
+<tr>
+<td>万维网</td>
+<td>HTTP(超文本传送协议)</td>
+<td>TCP</td>
+</tr>
+<tr>
+<td>文件传送</td>
+<td>FTP(文件传送协议)</td>
+<td>TCP</td>
+</tr>
+</tbody>
+</table>
 <h3 id="运输层的端口"><a href="#运输层的端口" class="headerlink" title="运输层的端口"></a>运输层的端口</h3><ul>
 <li><p>由于进程的创建和撤销是动态的,所以通信的一方几乎无法识别对方机器上的进程.解决这个问题的方法就是在运输层使用 <em>端口协议号(protocol port number)</em>,通常简称为 <em>端口</em>.</p>
 </li>
@@ -1630,7 +1754,7 @@
 
     <footer id="footer" class="footer">
       <div class="footer-inner">
-        <div class="copyright">&copy; <span itemprop="copyrightYear">2018</span>
+        <div class="copyright">&copy; 2018 – <span itemprop="copyrightYear">2019</span>
   <span class="with-love" id="animate">
     <i class="fa fa-user"></i>
   </span>
