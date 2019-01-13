@@ -120,7 +120,10 @@
 <meta property="og:description" content="浏览器窗口中的DOM  所有现代浏览器的基本对象模型:   window对象: 在层次结构顶部的是window对象.这个对象代表显示HTML文档的浏览器窗口的内容区域.在多框架环境下,每个框架也是一个窗口.所有的文档动作都是在窗口内发生的,所以窗口是对象层次结构中最外部的元素,它包含文档.  navigator对象: 脚本从这个对象开始访问浏览器程序,主要是读取浏览器的品牌和版本.此对象为只读,以">
 <meta property="og:locale" content="default">
 <meta property="og:image" content="https://fleschier.github.io/images/JavaScript/model.png">
-<meta property="og:updated_time" content="2019-01-13T12:22:56.616Z">
+<meta property="og:image" content="https://fleschier.github.io/images/JavaScript/document.png">
+<meta property="og:image" content="https://fleschier.github.io/images/JavaScript/document1.png">
+<meta property="og:image" content="https://fleschier.github.io/images/JavaScript/document2.png">
+<meta property="og:updated_time" content="2019-01-13T13:32:59.647Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="JavaScript 学习 ">
 <meta name="twitter:description" content="浏览器窗口中的DOM  所有现代浏览器的基本对象模型:   window对象: 在层次结构顶部的是window对象.这个对象代表显示HTML文档的浏览器窗口的内容区域.在多框架环境下,每个框架也是一个窗口.所有的文档动作都是在窗口内发生的,所以窗口是对象层次结构中最外部的元素,它包含文档.  navigator对象: 脚本从这个对象开始访问浏览器程序,主要是读取浏览器的品牌和版本.此对象为只读,以">
@@ -356,7 +359,7 @@
                 
               
 
-              <time title="Created: 2019-01-13 16:46:00 / Modified: 20:22:56" itemprop="dateCreated datePublished" datetime="2019-01-13T16:46:00+08:00">2019-01-13</time>
+              <time title="Created: 2019-01-13 16:46:00 / Modified: 21:32:59" itemprop="dateCreated datePublished" datetime="2019-01-13T16:46:00+08:00">2019-01-13</time>
             
 
             
@@ -441,8 +444,19 @@
 </ol>
 <h2 id="文档的载入"><a href="#文档的载入" class="headerlink" title="文档的载入"></a>文档的载入</h2><hr>
 <h3 id="简单文档"><a href="#简单文档" class="headerlink" title="简单文档"></a>简单文档</h3><ul>
-<li></li>
+<li>空文档的对象映射:<br><img src="/images/JavaScript/document.png" alt=""><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">&lt;!DOCTYPE html&gt;</span><br><span class="line">&lt;html&gt;</span><br><span class="line"> &lt;head&gt;</span><br><span class="line">  &lt;meta ...&gt;</span><br><span class="line">  &lt;title&gt;&lt;/title&gt;</span><br><span class="line"> &lt;/head&gt;</span><br><span class="line"> &lt;body&gt;</span><br><span class="line">  ...</span><br><span class="line"> &lt;/body&gt;</span><br><span class="line">&lt;/html&gt;</span><br></pre></td></tr></table></figure>
+</li>
 </ul>
+<h3 id="添加段落"><a href="#添加段落" class="headerlink" title="添加段落"></a>添加段落</h3><ul>
+<li>添加段落标签, 在段落元素的开始和结束标记之间插入段落文本.在标记间插入的连续文本是DOM中的一种特殊的对象,称为文本结点.文本节点总是有一个容器元素,也就是说,文本结点是其父元素p的子元素.</li>
+</ul>
+<p><img src="/images/JavaScript/document1.png" alt=""></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">&lt;!DOCTYPE html&gt;</span><br><span class="line">&lt;html&gt;</span><br><span class="line"> &lt;head&gt;</span><br><span class="line">  &lt;meta ...&gt;</span><br><span class="line">  &lt;title&gt;&lt;/title&gt;</span><br><span class="line"> &lt;/head&gt;</span><br><span class="line"> &lt;body&gt;</span><br><span class="line">  &lt;p&gt;This is the one and only Paragraph&lt;/p&gt;         //添加了段落标签和段落内容</span><br><span class="line"> &lt;/body&gt;</span><br><span class="line">&lt;/html&gt;</span><br></pre></td></tr></table></figure>
+<h3 id="生成新元素"><a href="#生成新元素" class="headerlink" title="生成新元素"></a>生成新元素</h3><ul>
+<li>将部分段落文本包含在一个<em>标签中,表示要强调这些文本.这个插入操作对p元素对象的层次结构有很大的影响.<em>p元素从只有一个(文本结点)子元素变成有三个子元素:两个文本节点,和一个它们之间的元素</em>.在W3C DOM中, <strong>文本结点不能有任何子元素</strong>,因此不能包含元素对象.em元素中的文本结点不再是p元素的子元素,而是em元素的子元素.</em></li>
+</ul>
+<p><img src="/images/JavaScript/document2.png" alt=""></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">&lt;!DOCTYPE html&gt;</span><br><span class="line">&lt;html&gt;</span><br><span class="line"> &lt;head&gt;</span><br><span class="line">  &lt;meta ...&gt;</span><br><span class="line">  &lt;title&gt;&lt;/title&gt;</span><br><span class="line"> &lt;/head&gt;</span><br><span class="line"> &lt;body&gt;</span><br><span class="line">  &lt;p&gt;This is the one and only Paragraph&lt;/p&gt;         //添加了段落标签和段落内容</span><br><span class="line"> &lt;/body&gt;</span><br><span class="line">&lt;/html&gt;</span><br></pre></td></tr></table></figure>
 
       
     </div>
@@ -758,7 +772,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#浏览器窗口中的DOM"><span class="nav-number">1.</span> <span class="nav-text">浏览器窗口中的DOM</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#文档的载入"><span class="nav-number">2.</span> <span class="nav-text">文档的载入</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#简单文档"><span class="nav-number">2.1.</span> <span class="nav-text">简单文档</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#浏览器窗口中的DOM"><span class="nav-number">1.</span> <span class="nav-text">浏览器窗口中的DOM</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#文档的载入"><span class="nav-number">2.</span> <span class="nav-text">文档的载入</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#简单文档"><span class="nav-number">2.1.</span> <span class="nav-text">简单文档</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#添加段落"><span class="nav-number">2.2.</span> <span class="nav-text">添加段落</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#生成新元素"><span class="nav-number">2.3.</span> <span class="nav-text">生成新元素</span></a></li></ol></li></ol></div>
             
 
           </div>
@@ -803,7 +817,7 @@
 
 <div class="theme-info">
   <div class="powered-by"></div>
-  <span class="post-count">Total Words Of All Blogs: 91k words</span>
+  <span class="post-count">Total Words Of All Blogs: 91.4k words</span>
 </div>
 
         
