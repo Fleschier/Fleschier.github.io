@@ -4,6 +4,50 @@
 
     
   <url>
+    <loc>https://fleschier.github.io/2019/01/13/JS-learning-02/</loc>
+    <lastmod>2019-01-13T12:22:56.616Z</lastmod>
+    <data>
+        <display>
+        <title>JavaScript 学习 </title>
+        <pubTime>2019-01-13T08:46:00.000Z</pubTime>
+        
+        <tag>๑FrontEnd</tag>
+         
+        <tag>๑JS</tag>
+         
+         
+           
+             
+              <breadCrumb title="Computer Software" url="https://fleschier.github.io/categories/Computer-Software/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>https://fleschier.github.io/2019/01/12/JS-learning-01/</loc>
+    <lastmod>2019-01-13T08:00:34.883Z</lastmod>
+    <data>
+        <display>
+        <title>JavaScript 学习 Pre</title>
+        <pubTime>2019-01-12T09:46:00.000Z</pubTime>
+        
+        <tag>๑FrontEnd</tag>
+         
+        <tag>๑JS</tag>
+         
+         
+           
+             
+              <breadCrumb title="Computer Software" url="https://fleschier.github.io/categories/Computer-Software/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
     <loc>https://fleschier.github.io/2018/12/24/Internet_protocol/</loc>
     <lastmod>2019-01-12T09:03:47.520Z</lastmod>
     <data>
@@ -110,116 +154,12 @@
 
     
   <url>
-    <loc>https://fleschier.github.io/2018/09/13/Spark-notes/</loc>
+    <loc>https://fleschier.github.io/2018/07/23/scala-learning-03/</loc>
     <lastmod>2018-11-21T06:40:40.695Z</lastmod>
     <data>
         <display>
-        <title>Spark实际操作过程中的一些调优笔记</title>
-        <pubTime>2018-09-13T13:47:00.000Z</pubTime>
-        
-        <tag>๑BigData</tag>
-         
-        <tag>๑Spark</tag>
-         
-         
-           
-             
-              <breadCrumb title="Computer Programs" url="https://fleschier.github.io/categories/Computer-Programs/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>https://fleschier.github.io/2018/10/16/pycharm-problem-solving/</loc>
-    <lastmod>2018-11-21T06:40:40.695Z</lastmod>
-    <data>
-        <display>
-        <title>Ubuntu18 Pycharm无法识别安装的Python库的解决方案</title>
-        <pubTime>2018-10-15T16:47:00.000Z</pubTime>
-        
-        <tag>๑Python</tag>
-         
-         
-           
-             
-              <breadCrumb title="Computer Programs" url="https://fleschier.github.io/categories/Computer-Programs/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>https://fleschier.github.io/2018/04/06/Scala-superior/</loc>
-    <lastmod>2018-11-21T06:40:40.695Z</lastmod>
-    <data>
-        <display>
-        <title>Scala学习笔记——进阶</title>
-        <pubTime>2018-04-06T08:47:00.000Z</pubTime>
-        
-        <tag>๑Scala</tag>
-         
-         
-           
-             
-              <breadCrumb title="Computer Programs" url="https://fleschier.github.io/categories/Computer-Programs/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>https://fleschier.github.io/2018/04/11/Spark-superior/</loc>
-    <lastmod>2018-11-21T06:40:40.695Z</lastmod>
-    <data>
-        <display>
-        <title>Spark学习笔记——进阶</title>
-        <pubTime>2018-04-11T08:47:00.000Z</pubTime>
-        
-        <tag>๑BigData</tag>
-         
-        <tag>๑Spark</tag>
-         
-         
-           
-             
-              <breadCrumb title="Computer Programs" url="https://fleschier.github.io/categories/Computer-Programs/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>https://fleschier.github.io/2018/07/19/scala-learning-02/</loc>
-    <lastmod>2018-11-21T06:40:40.695Z</lastmod>
-    <data>
-        <display>
-        <title>《Scala编程》阅读记录——进阶部分</title>
-        <pubTime>2018-07-19T02:40:00.000Z</pubTime>
-        
-        <tag>๑Scala</tag>
-         
-         
-           
-             
-              <breadCrumb title="Computer Programs" url="https://fleschier.github.io/categories/Computer-Programs/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>https://fleschier.github.io/2018/04/06/Scala-learning/</loc>
-    <lastmod>2018-11-21T06:40:40.695Z</lastmod>
-    <data>
-        <display>
-        <title>Scala学习笔记——基础</title>
-        <pubTime>2018-04-06T08:47:00.000Z</pubTime>
+        <title>《Scala编程》阅读记录——类进阶</title>
+        <pubTime>2018-07-23T09:40:00.000Z</pubTime>
         
         <tag>๑Scala</tag>
          
@@ -254,12 +194,32 @@
 
     
   <url>
-    <loc>https://fleschier.github.io/2018/07/23/scala-learning-03/</loc>
+    <loc>https://fleschier.github.io/2018/10/16/pycharm-problem-solving/</loc>
     <lastmod>2018-11-21T06:40:40.695Z</lastmod>
     <data>
         <display>
-        <title>《Scala编程》阅读记录——类进阶</title>
-        <pubTime>2018-07-23T09:40:00.000Z</pubTime>
+        <title>Ubuntu18 Pycharm无法识别安装的Python库的解决方案</title>
+        <pubTime>2018-10-15T16:47:00.000Z</pubTime>
+        
+        <tag>๑Python</tag>
+         
+         
+           
+             
+              <breadCrumb title="Computer Programs" url="https://fleschier.github.io/categories/Computer-Programs/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>https://fleschier.github.io/2018/04/06/Scala-learning/</loc>
+    <lastmod>2018-11-21T06:40:40.695Z</lastmod>
+    <data>
+        <display>
+        <title>Scala学习笔记——基础</title>
+        <pubTime>2018-04-06T08:47:00.000Z</pubTime>
         
         <tag>๑Scala</tag>
          
@@ -274,12 +234,12 @@
 
     
   <url>
-    <loc>https://fleschier.github.io/2018/04/11/Spark-learning/</loc>
+    <loc>https://fleschier.github.io/2018/09/13/Spark-notes/</loc>
     <lastmod>2018-11-21T06:40:40.695Z</lastmod>
     <data>
         <display>
-        <title>Spark学习笔记——基础</title>
-        <pubTime>2018-04-11T08:47:00.000Z</pubTime>
+        <title>Spark实际操作过程中的一些调优笔记</title>
+        <pubTime>2018-09-13T13:47:00.000Z</pubTime>
         
         <tag>๑BigData</tag>
          
@@ -336,12 +296,12 @@
 
     
   <url>
-    <loc>https://fleschier.github.io/2018/07/24/scala-learning-04/</loc>
+    <loc>https://fleschier.github.io/2018/07/12/Scala-infos/</loc>
     <lastmod>2018-11-21T06:40:40.695Z</lastmod>
     <data>
         <display>
-        <title>《Scala编程》阅读记录——列表进阶</title>
-        <pubTime>2018-07-24T03:25:00.000Z</pubTime>
+        <title>Scala方法查询记录</title>
+        <pubTime>2018-07-12T08:40:00.000Z</pubTime>
         
         <tag>๑Scala</tag>
          
@@ -356,12 +316,96 @@
 
     
   <url>
-    <loc>https://fleschier.github.io/2018/07/12/Scala-infos/</loc>
+    <loc>https://fleschier.github.io/2018/04/06/Scala-superior/</loc>
     <lastmod>2018-11-21T06:40:40.695Z</lastmod>
     <data>
         <display>
-        <title>Scala方法查询记录</title>
-        <pubTime>2018-07-12T08:40:00.000Z</pubTime>
+        <title>Scala学习笔记——进阶</title>
+        <pubTime>2018-04-06T08:47:00.000Z</pubTime>
+        
+        <tag>๑Scala</tag>
+         
+         
+           
+             
+              <breadCrumb title="Computer Programs" url="https://fleschier.github.io/categories/Computer-Programs/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>https://fleschier.github.io/2018/04/11/Spark-superior/</loc>
+    <lastmod>2018-11-21T06:40:40.695Z</lastmod>
+    <data>
+        <display>
+        <title>Spark学习笔记——进阶</title>
+        <pubTime>2018-04-11T08:47:00.000Z</pubTime>
+        
+        <tag>๑BigData</tag>
+         
+        <tag>๑Spark</tag>
+         
+         
+           
+             
+              <breadCrumb title="Computer Programs" url="https://fleschier.github.io/categories/Computer-Programs/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>https://fleschier.github.io/2018/04/11/Spark-learning/</loc>
+    <lastmod>2018-11-21T06:40:40.695Z</lastmod>
+    <data>
+        <display>
+        <title>Spark学习笔记——基础</title>
+        <pubTime>2018-04-11T08:47:00.000Z</pubTime>
+        
+        <tag>๑BigData</tag>
+         
+        <tag>๑Spark</tag>
+         
+         
+           
+             
+              <breadCrumb title="Computer Programs" url="https://fleschier.github.io/categories/Computer-Programs/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>https://fleschier.github.io/2018/07/19/scala-learning-02/</loc>
+    <lastmod>2018-11-21T06:40:40.695Z</lastmod>
+    <data>
+        <display>
+        <title>《Scala编程》阅读记录——进阶部分</title>
+        <pubTime>2018-07-19T02:40:00.000Z</pubTime>
+        
+        <tag>๑Scala</tag>
+         
+         
+           
+             
+              <breadCrumb title="Computer Programs" url="https://fleschier.github.io/categories/Computer-Programs/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>https://fleschier.github.io/2018/07/24/scala-learning-04/</loc>
+    <lastmod>2018-11-21T06:40:40.695Z</lastmod>
+    <data>
+        <display>
+        <title>《Scala编程》阅读记录——列表进阶</title>
+        <pubTime>2018-07-24T03:25:00.000Z</pubTime>
         
         <tag>๑Scala</tag>
          
@@ -396,14 +440,14 @@
 
     
   <url>
-    <loc>https://fleschier.github.io/2018/04/07/SQL-quary/</loc>
+    <loc>https://fleschier.github.io/2018/04/29/Python-superior/</loc>
     <lastmod>2018-11-21T06:40:40.687Z</lastmod>
     <data>
         <display>
-        <title>数据库SQL语句</title>
-        <pubTime>2018-04-07T12:55:00.000Z</pubTime>
+        <title>Python学习笔记——进阶</title>
+        <pubTime>2018-04-29T08:47:00.000Z</pubTime>
         
-        <tag>๑SQL</tag>
+        <tag>๑Python</tag>
          
          
            
@@ -416,14 +460,14 @@
 
     
   <url>
-    <loc>https://fleschier.github.io/2018/04/29/Python-superior/</loc>
+    <loc>https://fleschier.github.io/2018/04/07/SQL-quary/</loc>
     <lastmod>2018-11-21T06:40:40.687Z</lastmod>
     <data>
         <display>
-        <title>Python学习笔记——进阶</title>
-        <pubTime>2018-04-29T08:47:00.000Z</pubTime>
+        <title>数据库SQL语句</title>
+        <pubTime>2018-04-07T12:55:00.000Z</pubTime>
         
-        <tag>๑Python</tag>
+        <tag>๑SQL</tag>
          
          
            
@@ -480,14 +524,54 @@
 
     
   <url>
-    <loc>https://fleschier.github.io/2018/10/08/C++-sprintf-printf/</loc>
+    <loc>https://fleschier.github.io/2018/10/08/C++-Int-Char-String-translation/</loc>
     <lastmod>2018-11-21T06:40:17.839Z</lastmod>
     <data>
         <display>
-        <title>C++学习笔记——强大的sprintf</title>
-        <pubTime>2018-10-08T14:43:00.000Z</pubTime>
+        <title>C++学习笔记——数值类型,char和string的相互转化问题</title>
+        <pubTime>2018-10-08T08:10:00.000Z</pubTime>
         
         <tag>๑C++</tag>
+         
+         
+           
+             
+              <breadCrumb title="Computer Programs" url="https://fleschier.github.io/categories/Computer-Programs/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>https://fleschier.github.io/2018/04/18/Java-function/</loc>
+    <lastmod>2018-11-21T06:40:17.839Z</lastmod>
+    <data>
+        <display>
+        <title>Java学习笔记——方法</title>
+        <pubTime>2018-04-18T08:47:00.000Z</pubTime>
+        
+        <tag>๑Java</tag>
+         
+         
+           
+             
+              <breadCrumb title="Computer Programs" url="https://fleschier.github.io/categories/Computer-Programs/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>https://fleschier.github.io/2018/04/18/Java-class/</loc>
+    <lastmod>2018-11-21T06:40:17.839Z</lastmod>
+    <data>
+        <display>
+        <title>Java学习笔记——类与继承</title>
+        <pubTime>2018-04-18T08:47:00.000Z</pubTime>
+        
+        <tag>๑Java</tag>
          
          
            
@@ -505,6 +589,26 @@
     <data>
         <display>
         <title>C++学习笔记——一些报错信息归因</title>
+        <pubTime>2018-10-08T14:43:00.000Z</pubTime>
+        
+        <tag>๑C++</tag>
+         
+         
+           
+             
+              <breadCrumb title="Computer Programs" url="https://fleschier.github.io/categories/Computer-Programs/"/>
+          
+        </display>
+    </data>
+    </url>
+
+    
+  <url>
+    <loc>https://fleschier.github.io/2018/10/08/C++-sprintf-printf/</loc>
+    <lastmod>2018-11-21T06:40:17.839Z</lastmod>
+    <data>
+        <display>
+        <title>C++学习笔记——强大的sprintf</title>
         <pubTime>2018-10-08T14:43:00.000Z</pubTime>
         
         <tag>๑C++</tag>
@@ -548,66 +652,6 @@
         <pubTime>2018-04-06T08:47:00.000Z</pubTime>
         
         <tag>๑Java</tag>
-         
-         
-           
-             
-              <breadCrumb title="Computer Programs" url="https://fleschier.github.io/categories/Computer-Programs/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>https://fleschier.github.io/2018/04/18/Java-class/</loc>
-    <lastmod>2018-11-21T06:40:17.839Z</lastmod>
-    <data>
-        <display>
-        <title>Java学习笔记——类与继承</title>
-        <pubTime>2018-04-18T08:47:00.000Z</pubTime>
-        
-        <tag>๑Java</tag>
-         
-         
-           
-             
-              <breadCrumb title="Computer Programs" url="https://fleschier.github.io/categories/Computer-Programs/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>https://fleschier.github.io/2018/04/18/Java-function/</loc>
-    <lastmod>2018-11-21T06:40:17.839Z</lastmod>
-    <data>
-        <display>
-        <title>Java学习笔记——方法</title>
-        <pubTime>2018-04-18T08:47:00.000Z</pubTime>
-        
-        <tag>๑Java</tag>
-         
-         
-           
-             
-              <breadCrumb title="Computer Programs" url="https://fleschier.github.io/categories/Computer-Programs/"/>
-          
-        </display>
-    </data>
-    </url>
-
-    
-  <url>
-    <loc>https://fleschier.github.io/2018/10/08/C++-Int-Char-String-translation/</loc>
-    <lastmod>2018-11-21T06:40:17.839Z</lastmod>
-    <data>
-        <display>
-        <title>C++学习笔记——数值类型,char和string的相互转化问题</title>
-        <pubTime>2018-10-08T08:10:00.000Z</pubTime>
-        
-        <tag>๑C++</tag>
          
          
            
@@ -981,11 +1025,11 @@
         <title>Shadowsocks</title>
         <pubTime>2018-05-28T07:34:00.000Z</pubTime>
         
+        <tag>๑ScientificSurfing</tag>
+         
         <tag>๑Ubuntu</tag>
          
         <tag>๑Linux</tag>
-         
-        <tag>๑ScientificSurfing</tag>
          
          
            
