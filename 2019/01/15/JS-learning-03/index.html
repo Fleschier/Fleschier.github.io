@@ -1,0 +1,1220 @@
+<!DOCTYPE html>
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+<html class="theme-next mist use-motion" lang="">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2"/>
+<meta name="theme-color" content="#222">
+
+<meta name="google-site-verification" content="RI_5ZmhALpyfpS6aXve0MY8gzrCYCj1_kQTQ4eX00eM" />
+<meta name="baidu-site-verification" content="V62ScxFPRH" />
+
+
+
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=6.4.1" rel="stylesheet" type="text/css" />
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=6.4.1">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32.ico?v=6.4.1">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16.ico?v=6.4.1">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=6.4.1" color="#222">
+
+
+
+
+
+
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Mist',
+    version: '6.4.1',
+    sidebar: {"position":"left","width":300,"display":"always","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: false,
+    fastclick: false,
+    lazyload: false,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+  
+
+
+
+
+  <meta name="description" content="window对象    window对象处于对象链的顶端,因为它是Web浏览器中查看所有内容的主要容器. 只要打开浏览器,即使窗口没有加载文档,window对象也在内存的当前模型中定义好了  除了文档所在的窗口内容外,窗口的影响范围还包括窗口的尺寸和包围内容区域的所有”元素”.滚动条,工具栏和菜单栏所在的区域叫做窗口的窗框.不是每个浏览器都可以完全控制浏览器主窗口的窗框,但可以便捷地创建其他窗口,">
+<meta name="keywords" content="๑FrontEnd,๑JS">
+<meta property="og:type" content="article">
+<meta property="og:title" content="JavaScript 对象部分 ">
+<meta property="og:url" content="https://fleschier.github.io/2019/01/15/JS-learning-03/index.html">
+<meta property="og:site_name" content="Fleschier 渐寒๑">
+<meta property="og:description" content="window对象    window对象处于对象链的顶端,因为它是Web浏览器中查看所有内容的主要容器. 只要打开浏览器,即使窗口没有加载文档,window对象也在内存的当前模型中定义好了  除了文档所在的窗口内容外,窗口的影响范围还包括窗口的尺寸和包围内容区域的所有”元素”.滚动条,工具栏和菜单栏所在的区域叫做窗口的窗框.不是每个浏览器都可以完全控制浏览器主窗口的窗框,但可以便捷地创建其他窗口,">
+<meta property="og:locale" content="default">
+<meta property="og:image" content="https://fleschier.github.io/images/JavaScript/model.png">
+<meta property="og:updated_time" content="2019-01-16T03:24:32.027Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="JavaScript 对象部分 ">
+<meta name="twitter:description" content="window对象    window对象处于对象链的顶端,因为它是Web浏览器中查看所有内容的主要容器. 只要打开浏览器,即使窗口没有加载文档,window对象也在内存的当前模型中定义好了  除了文档所在的窗口内容外,窗口的影响范围还包括窗口的尺寸和包围内容区域的所有”元素”.滚动条,工具栏和菜单栏所在的区域叫做窗口的窗框.不是每个浏览器都可以完全控制浏览器主窗口的窗框,但可以便捷地创建其他窗口,">
+<meta name="twitter:image" content="https://fleschier.github.io/images/JavaScript/model.png">
+
+
+
+  <link rel="alternate" href="/atom.xml" title="Fleschier 渐寒๑" type="application/atom+xml" />
+
+
+
+
+
+
+<script type="text/javascript" id="page.configurations">
+  CONFIG.page = {
+    sidebar: "",
+  };
+</script>
+
+  <title>JavaScript 对象部分  | Fleschier 渐寒๑</title>
+  
+
+
+
+
+
+
+
+
+
+  <noscript>
+  <style type="text/css">
+    .use-motion .motion-element,
+    .use-motion .brand,
+    .use-motion .menu-item,
+    .sidebar-inner,
+    .use-motion .post-block,
+    .use-motion .pagination,
+    .use-motion .comments,
+    .use-motion .post-header,
+    .use-motion .post-body,
+    .use-motion .collection-title { opacity: initial; }
+
+    .use-motion .logo,
+    .use-motion .site-title,
+    .use-motion .site-subtitle {
+      opacity: initial;
+      top: initial;
+    }
+
+    .use-motion {
+      .logo-line-before i { left: initial; }
+      .logo-line-after i { right: initial; }
+    }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="default">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">Fleschier 渐寒๑</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+    
+      
+        <h1 class="site-subtitle" itemprop="description">Welcome~</h1>
+      
+    
+  </div>
+
+  <div class="site-nav-toggle">
+    <button aria-label="Toggle navigation bar">
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+  
+    <ul id="menu" class="menu">
+      
+        
+        
+        
+          
+          <li class="menu-item menu-item-home">
+    <a href="/" rel="section">
+      <i class="menu-item-icon fa fa-fw fa-home"></i> <br />Home</a>
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-about">
+    <a href="/about/" rel="section">
+      <i class="menu-item-icon fa fa-fw fa-user"></i> <br />About</a>
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-tags">
+    <a href="/tags/" rel="section">
+      <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />Tags</a>
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-categories">
+    <a href="/categories/" rel="section">
+      <i class="menu-item-icon fa fa-fw fa-th"></i> <br />Categories</a>
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-archives">
+    <a href="/archives/" rel="section">
+      <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />Archives</a>
+  </li>
+
+      
+      
+    </ul>
+  
+
+  
+    
+
+  
+
+  
+</nav>
+
+
+
+  
+
+
+
+</div>
+    </header>
+
+    
+
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://fleschier.github.io/2019/01/15/JS-learning-03/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Fleschier">
+      <meta itemprop="description" content="每天早上醒来，你和阳光都在，就是我想要的未来。">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Fleschier 渐寒๑">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h2 class="post-title" itemprop="name headline">JavaScript 对象部分 
+              
+            
+          </h2>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+
+            
+            
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+
+              
+                
+              
+
+              <time title="Created: 2019-01-15 11:46:00" itemprop="dateCreated datePublished" datetime="2019-01-15T11:46:00+08:00">2019-01-15</time>
+            
+
+            
+              
+
+              
+                
+                <span class="post-meta-divider">|</span>
+                
+
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">Edited on</span>
+                
+                <time title="Modified: 2019-01-16 11:24:32" itemprop="dateModified" datetime="2019-01-16T11:24:32+08:00">2019-01-16</time>
+              
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">In</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/Computer-Software/" itemprop="url" rel="index"><span itemprop="name">Computer Software</span></a></span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+             <span id="/2019/01/15/JS-learning-03/" class="leancloud_visitors" data-flag-title="JavaScript 对象部分 ">
+               <span class="post-meta-divider">|</span>
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               
+                 <span class="post-meta-item-text">Views: </span>
+               
+                 <span class="leancloud-visitors-count"></span>
+             </span>
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h2 id="window对象"><a href="#window对象" class="headerlink" title="window对象"></a>window对象</h2><hr>
+<ul>
+<li><p><img src="/images/JavaScript/model.png" alt=""></p>
+</li>
+<li><p>window对象处于对象链的顶端,因为它是Web浏览器中查看所有内容的主要容器. <strong>只要打开浏览器,即使窗口没有加载文档,window对象也在内存的当前模型中定义好了</strong></p>
+</li>
+<li><p>除了文档所在的窗口内容外,窗口的影响范围还包括窗口的尺寸和包围内容区域的所有”元素”.滚动条,工具栏和菜单栏所在的区域叫做窗口的窗框.不是每个浏览器都可以完全控制浏览器主窗口的窗框,但可以便捷地创建其他窗口,随意地设置其大小,指定要显示的窗框元素.</p>
+</li>
+<li><p>每个框架都可以看做一个window对象,因为每个框架都可以存放不同的文档.脚本在其中一个文档上运行时,它把拥有这个文档的框架作为对象层次结构图中的window对象.</p>
+</li>
+</ul>
+<h3 id="访问窗口的属性和方法"><a href="#访问窗口的属性和方法" class="headerlink" title="访问窗口的属性和方法"></a>访问窗口的属性和方法</h3><ul>
+<li><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">window.propertyName</span><br><span class="line">window.methodName([Parameters])</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<p>在脚本引用指向包含文档的窗口时,window对象有一个同义词self,以上的引用也等价于:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">self.propertyName</span><br><span class="line">self.methodName([Parameters])</span><br></pre></td></tr></table></figure></p>
+<h3 id="创建窗口"><a href="#创建窗口" class="headerlink" title="创建窗口"></a>创建窗口</h3><ul>
+<li><p>脚本并不创建主浏览器窗口,用户在创建主窗口的时候需要启动浏览器.但是在主窗口打开后,脚本就可以生成大量子窗口.</p>
+</li>
+<li><p>生成新窗口的方法是:<code>window.open()</code>.这个方法最多包含三个参数,来定义窗口属性.</p>
+</li>
+<li><p>例子:<code>var subWindow = window.open(&quot;define.html&quot;,&quot;def&quot;,&quot;height=200,width=300&quot;);</code><br>这个语句将新建的窗口赋值给了变量subWindow.(<strong>这个语句打开了一个具有指定大小的新窗口,这个窗口包含的html文档为define.html,并且与当前页面处于同一个服务器目录下</strong>)</p>
+</li>
+<li><p>如果要关闭此子窗口,则调用<code>subWindow.close()</code>即可.而调用<code>window.close()/self.close()或者close()</code>就会关闭主窗口.</p>
+</li>
+</ul>
+<h3 id="window对象的属性和方法"><a href="#window对象的属性和方法" class="headerlink" title="window对象的属性和方法"></a>window对象的属性和方法</h3><h4 id="window-alert-方法"><a href="#window-alert-方法" class="headerlink" title="window.alert()方法"></a>window.alert()方法</h4><ul>
+<li>可以直接使用<code>alert()</code>来调用这个方法(省略前面的window).这个window方法会生产一个对话框,显示作为参数传送的文本.OK按钮允许用户关闭这个对话框.</li>
+</ul>
+<h4 id="window-confirm-方法"><a href="#window-confirm-方法" class="headerlink" title="window.confirm()方法"></a>window.confirm()方法</h4><ul>
+<li><p>这个方法也是弹出一个对话框,但是有两个按钮(大多数平台上为Ok和Cancel),称为确认对话框.<strong>更重要的是,这个方法有返回值:单击OK返回值为true,单击Cancel返回值为false</strong>. 可以将这个方法的计算值作为if或if..else结构中的条件语句.</p>
+</li>
+<li><p>例子:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">if (confirm(&quot;Are you sure to start over?&quot;))&#123;</span><br><span class="line">  location.href = &quot;index.html&quot;;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<h4 id="window-prompt-方法"><a href="#window-prompt-方法" class="headerlink" title="window.prompt()方法"></a>window.prompt()方法</h4><ul>
+<li><p>window对象的最后一种对话框是提示对话框,它显示了预置的信息,并提供一个文本域供用户输入响应.这个对话框有两个按钮:OK和Cancel.</p>
+</li>
+<li><p>window.prompt()方法有两个参数,第一个参数是呈现给用户的提示信息;第二个参数是一个字符串,它在文本域中显示为默认的答案.如果不希望显示默认答案就传入一个空字符串(空双引号).</p>
+</li>
+<li><p>用户单击按钮时,这个方法就会返回一个值.不管用户在文本域中输入什么,单击Cancel按钮都会返回null值,单击OK则返回输入的字符串值.这个信息也可以用在判断中,<code>null值等同于false,空字符串也看做false</code>.</p>
+</li>
+</ul>
+<h4 id="load事件"><a href="#load事件" class="headerlink" title="load事件"></a>load事件</h4><ul>
+<li><p>window对象会响应几个系统和用户事件,最常见的是页面加载完毕时触发的事件.<strong>这个事件等待图像, Java applet和插件程序的数据文件完全下载到浏览器中</strong>.使用load事件调用函数的优点在于,它确保所有document对象都存在于浏览器的DOM中.</p>
+</li>
+<li><p>可以通过如下方式调用onload方法:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">window.addEventListener(&apos;load&apos;, functionName, false);</span><br><span class="line">window.attachEvent(&apos;onload&apos;, functionName);</span><br><span class="line">//其中functionName是页面下载完成后要运行的函数的名称.可以多次调用addEventListener和attachEvent,把多个函数添加到页面加载完毕要执行的列表中.</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>还可以把该事件直接应用于元素:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">window[&apos;onload&apos;] = functionName;</span><br><span class="line">window.onload = functionName;</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<p>但是这种用法表示,页面加载完毕后,只执行一个函数,并替代已赋予window对象的其他事件处理程序.</p>
+<h2 id="location对象"><a href="#location对象" class="headerlink" title="location对象"></a>location对象</h2><hr>
+<ul>
+<li><p>这个对象表示载入窗口的URL.它和document对象不同:文档是页面的内容,而位置是页面的URL.</p>
+</li>
+<li><p>脚本大多数只使用该对象的一个属性:<code>href</code>,它定义了完整的URL.</p>
+</li>
+<li><p>如果要加载的页面在另一个窗口或框架中,就必须在语句中包含窗口的引用.例如:用脚本打开一个新窗口,并将它的引用赋值给变量newWindow,将页面载入子窗口,如下:<br><code>newWindow.loaction.href = &quot;http://www.example.com&quot;</code></p>
+</li>
+</ul>
+<h2 id="navigator对象"><a href="#navigator对象" class="headerlink" title="navigator对象"></a>navigator对象</h2><hr>
+<ul>
+<li>navigator.userAgent属性返回一个包含浏览器和操作系统的诸多细节的字符串.</li>
+</ul>
+<h2 id="document对象"><a href="#document对象" class="headerlink" title="document对象"></a>document对象</h2><hr>
+<h3 id="document-getElementById-方法"><a href="#document-getElementById-方法" class="headerlink" title="document.getElementById()方法"></a>document.getElementById()方法</h3><ul>
+<li><p>此方法的唯一参数是带引号的字符串,该字符串包含要引用的元素的ID.</p>
+</li>
+<li><p>例子:<code>var oneTable = document.getElementById(&#39;salesResults&#39;);</code>.在赋值语句后,变量就表示对象,可用于获取和设置该对象的属性,或者调用此类对象的方法.</p>
+</li>
+</ul>
+<h3 id="document-getElementByTagName-方法"><a href="#document-getElementByTagName-方法" class="headerlink" title="document.getElementByTagName()方法"></a>document.getElementByTagName()方法</h3><ul>
+<li><p>可以使用getElementByTagName()方法方便地收集一组共享同一个标记名称的页面元素.例如,要获得页面上所有的图像:<code>var aImages = document.getElementByTagName(&#39;img&#39;);</code></p>
+</li>
+<li><p>然后可以通过数组的方法来获取数组的长度:<code>aImages.length</code>,然后每个对象就可以使用数组的偏移量来访问.</p>
+</li>
+</ul>
+<h3 id="document-forms-属性"><a href="#document-forms-属性" class="headerlink" title="document.forms[]属性"></a>document.forms[]属性</h3><ul>
+<li>比较下面两个表达式:<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">var aForms = document.forms;</span><br><span class="line">var aForms = document.getElementByTagName(&apos;form&apos;);</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<p><strong>一个重要的区别是,document.forms集合允许按名称直接引用某个表单,而不仅仅是按照数组的偏移量来访问.</strong></p>
+<ul>
+<li><p>因为有些时候按照下标号引用表单未必可行.动态网页可能根据上下文包含数量可变的表单,所以表单在页面上的位置可能随上下文而变化.</p>
+</li>
+<li><p>支持脚本编程的浏览器允许通过表单名或ID(即分配给<code>&lt;form&gt;标记的name或者id属性</code>)更直接地引用表单:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">&lt;form id=&apos;formId&apos; name=&apos;fromName&apos; ...&gt;</span><br><span class="line"></span><br><span class="line">//第一种方法是使用getElementById方法:</span><br><span class="line">document.getElementById(&quot;formId&quot;)</span><br><span class="line"></span><br><span class="line">//第二种方法是使用数组语法,将表单名称或者ID作为数组的字符串下标:</span><br><span class="line">document.forms[&quot;formId&quot;]</span><br><span class="line">document.forms[&quot;formName&quot;]</span><br><span class="line"></span><br><span class="line">//第三种按名称引用form对象的简短方式是把表单的名称附加为document对象的属性:</span><br><span class="line">document.fornName</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<h3 id="document-images-属性"><a href="#document-images-属性" class="headerlink" title="document.images[]属性"></a>document.images[]属性</h3><ul>
+<li>文档利用特殊的数组属性来跟踪表单,同样,document对象也通过<code>&lt;img&gt;</code>标记保存插入文档的图像集合(数组).通过document.images数组引用的图像可以用img元素名称中的数字或字符串下标来得到.</li>
+</ul>
+<h3 id="document-createElement-和document-createTextNode-方法"><a href="#document-createElement-和document-createTextNode-方法" class="headerlink" title="document.createElement()和document.createTextNode()方法"></a>document.createElement()和document.createTextNode()方法</h3><ul>
+<li>在HTML文档中添加新元素至少需要两个步骤:</li>
+</ul>
+<ol>
+<li>为文档创建新元素.</li>
+<li>在页面的树形结构中,将其插入到需要的位置.</li>
+</ol>
+<ul>
+<li><p>document.createElement()方法可以在浏览器的内存中创建一个全新的元素对象.指定要创建的元素时,应将元素的标记名作为该方法的字符串参数:<br><code>var newEle, = document.createElement(&quot;p&quot;);</code></p>
+</li>
+<li><p>还可以给元素添加一些属性值,为此应在元素成为文档的一部分之前,向新建对象赋值:<code>newElem.setAttribute(&quot;class&quot;,&quot;intro&quot;);</code></p>
+</li>
+<li><p>可将这个元素插入文档中的任何位置,例如末尾:<br><code>document.body.appendChild(newElem);</code></p>
+</li>
+</ul>
+<h3 id="document-write-方法"><a href="#document-write-方法" class="headerlink" title="document.write()方法"></a>document.write()方法</h3><ul>
+<li>document.write()方法是给文档写入内容的另一种方式.他的优点是可以临时应急,缺点如下:</li>
+</ul>
+<ol>
+<li>只有页面第一次加载到浏览器中时,document.write()才能给一个网页添加内容.以后调用该方法都会替代整个页面.</li>
+<li>document.write()会将旧文本块插入文档,编写出草率的程序和错误的标记,将标记与脚本内容混合在一起,不利于开发的分层.</li>
+<li>document.write()不能用于XHTML,XHTML这种文档类型不允许第一次解析期间修改其内容.</li>
+</ol>
+<blockquote>
+<p>注:XHTML—可扩展超文本标记语言（英语：eXtensible HyperText Markup Language，XHTML），是一种标记语言，表现方式与超文本标记语言（HTML）类似，不过语法上更加严格。从继承关系上讲，HTML是一种基于标准通用标记语言（SGML）的应用，是一种非常灵活的置标语言，而XHTML则基于可扩展标记语言（XML），XML是SGML的一个子集。XHTML 1.0在2000年1月26日成为W3C的推荐标准。</p>
+</blockquote>
+<h2 id="表单和表单元素"><a href="#表单和表单元素" class="headerlink" title="表单和表单元素"></a>表单和表单元素</h2><hr>
+<h3 id="form对象"><a href="#form对象" class="headerlink" title="form对象"></a>form对象</h3><ul>
+<li>表单以及其中的输入控件是DOM对象,其独特的属性是文档中其他对象所没有的.例如,表单对象的action属性告诉浏览器,在提价表单时,将输入的值发送到什么地方.select控件(下拉列表)的selectedIndex属性指出用户选择了哪个选项.</li>
+</ul>
+<h4 id="访问表单属性"><a href="#访问表单属性" class="headerlink" title="访问表单属性"></a>访问表单属性</h4><ul>
+<li><p>在创建表单时,可以使用HTML页面中的标准标记,也可以使用JavaScript中的DOM方法.无论采用哪种方法,都可以设置name,target,action,method和enctype特性.这些都是form对象的属性.</p>
+</li>
+<li><p>用法的例子:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">var sURL = document.getElementById(&apos;formName&apos;).action;</span><br><span class="line">document.forms[0].action = &quot;http://www.example.com/cgi/login.pl&quot;;</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<h4 id="from-elements-属性"><a href="#from-elements-属性" class="headerlink" title="from.elements[]属性"></a>from.elements[]属性</h4><ul>
+<li><p>elements[]属性是表单中所有输入控件的集合.这个数组中各项的顺序根据HTML标记在源代码中的顺序而定.使用ID直接引用单个元素通常更有效,但有时候需要遍历所有元素时会需要这样访问.</p>
+</li>
+<li><p>下面的代码段查看表单中所有的控件元素,并将文本域的内容设置为空字符串.</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">var oForm = document.getElementById(&apos;registration-form&apos;);</span><br><span class="line">  if(!oForm) return false;</span><br><span class="line">for(var i = 0; i &lt; oForm.elements.length; i++)&#123;</span><br><span class="line">  if(oForm.elements[i].type == &quot;text&quot;)&#123;</span><br><span class="line">    oForm.elements[i].values = &quot;&quot;;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<h3 id="将表单控件作为对象"><a href="#将表单控件作为对象" class="headerlink" title="将表单控件作为对象"></a>将表单控件作为对象</h3><ul>
+<li><p>在所有浏览器的DOM中,嵌套在<code>&lt;form&gt;</code>标记中的HTML元素有三种是脚本对象.多数对象都在页面源代码的<code>&lt;input&gt;</code>标记中,只有赋给<code>&lt;input&gt;</code>标记的type特性的值能确定元素是文本框,密码输入域,隐藏域,按钮,复选框还是单选框.其他两种表单控件textarea和select有各自的标记.</p>
+</li>
+<li><p>要将某个表单控件作为对象进行引用,可以使用其id或tagName直接引用,或者使用DOM level 0语法,将引用构造为一个以document开头,后跟form和控件的层次结构.</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">document.getElementById(controlName)</span><br><span class="line">或者</span><br><span class="line">document.formName.controlName</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>例如有个简单的表单:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">&lt;form id=&quot;searchForm&quot; action=&quot;cgi-bin/search.pl&quot;&gt;</span><br><span class="line">  &lt;p&gt;</span><br><span class="line">    &lt;input type=&quot;text&quot; id=&quot;entry&quot; name=&quot;entry&quot;&gt;</span><br><span class="line">    &lt;input type=&quot;submit&quot; id=&quot;sender&quot; name=&quot;sender&quot; value=&quot;Search&quot;&gt;</span><br><span class="line">  &lt;/p&gt;</span><br><span class="line">&lt;/form&gt;</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<p>对于文本输入控件,以下引用实例都是有效的:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">document.getElementById(&quot;entry&quot;)</span><br><span class="line">document.searchForm.entry</span><br><span class="line">document.searchForm.elements[0]</span><br><span class="line">document.forms[&quot;searchForm&quot;].elements[&quot;entry&quot;]</span><br><span class="line">document.forms[&quot;searchForm&quot;].entry</span><br></pre></td></tr></table></figure></p>
+
+      
+    </div>
+
+    
+
+    
+    
+    
+
+    
+
+    
+
+    
+      <div>
+        <ul class="post-copyright">
+  <li class="post-copyright-author">
+    <strong>Post author:  </strong>Fleschier</li>
+  <li class="post-copyright-link">
+    <strong>Post link: </strong>
+    <a href="https://fleschier.github.io/2019/01/15/JS-learning-03/" title="JavaScript 对象部分 ">https://fleschier.github.io/2019/01/15/JS-learning-03/</a>
+  </li>
+  <li class="post-copyright-license">
+    <strong>Copyright Notice:  </strong>All articles in this blog are licensed under <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" rel="external nofollow" target="_blank">CC BY-NC-SA 4.0</a> unless stating additionally.</li>
+</ul>
+
+      </div>
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/๑FrontEnd/" rel="tag"><i class="fa fa-tag"></i> ๑FrontEnd</a>
+          
+            <a href="/tags/๑JS/" rel="tag"><i class="fa fa-tag"></i> ๑JS</a>
+          
+        </div>
+      
+
+      
+      
+        <div class="post-widgets">
+        
+          <div class="wp_rating">
+            <div id="wpac-rating"></div>
+          </div>
+        
+
+        
+
+        
+        </div>
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2019/01/13/JS-learning-02/" rel="next" title="JavaScript 基础 ">
+                <i class="fa fa-chevron-left"></i> JavaScript 基础 
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+  </div>
+
+
+          </div>
+          
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            Table of Contents
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            Overview
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image"
+                src="/images/avatar.gif"
+                alt="Fleschier" />
+            
+              <p class="site-author-name" itemprop="name">Fleschier</p>
+              <p class="site-description motion-element" itemprop="description">每天早上醒来，你和阳光都在，就是我想要的未来。</p>
+          </div>
+
+          
+            <nav class="site-state motion-element">
+              
+                <div class="site-state-item site-state-posts">
+                
+                  <a href="/archives/">
+                
+                    <span class="site-state-item-count">61</span>
+                    <span class="site-state-item-name">posts</span>
+                  </a>
+                </div>
+              
+
+              
+                
+                
+                <div class="site-state-item site-state-categories">
+                  <a href="/categories/index.html">
+                    
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">10</span>
+                    <span class="site-state-item-name">categories</span>
+                  </a>
+                </div>
+              
+
+              
+                
+                
+                <div class="site-state-item site-state-tags">
+                  <a href="/tags/index.html">
+                    
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">32</span>
+                    <span class="site-state-item-name">tags</span>
+                  </a>
+                </div>
+              
+            </nav>
+          
+
+          
+            <div class="feed-link motion-element">
+              <a href="/atom.xml" rel="alternate">
+                <i class="fa fa-rss"></i>
+                RSS
+              </a>
+            </div>
+          
+
+          
+            <div class="links-of-author motion-element">
+              
+                <span class="links-of-author-item">
+                  <a href="https://github.com/fleschier" target="_blank" title="GitHub" rel="external nofollow"><i class="fa fa-fw fa-github"></i>GitHub</a>
+                  
+                </span>
+              
+                <span class="links-of-author-item">
+                  <a href="mailto:fleschierchan@gmail.com" target="_blank" title="E-Mail" rel="external nofollow"><i class="fa fa-fw fa-envelope"></i>E-Mail</a>
+                  
+                </span>
+              
+                <span class="links-of-author-item">
+                  <a href="https://plus.google.com/fleschier" target="_blank" title="Google" rel="external nofollow"><i class="fa fa-fw fa-google"></i>Google</a>
+                  
+                </span>
+              
+            </div>
+          
+
+          
+          
+
+          
+          
+
+          
+            
+          
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#window对象"><span class="nav-number">1.</span> <span class="nav-text">window对象</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#访问窗口的属性和方法"><span class="nav-number">1.1.</span> <span class="nav-text">访问窗口的属性和方法</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#创建窗口"><span class="nav-number">1.2.</span> <span class="nav-text">创建窗口</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#window对象的属性和方法"><span class="nav-number">1.3.</span> <span class="nav-text">window对象的属性和方法</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#window-alert-方法"><span class="nav-number">1.3.1.</span> <span class="nav-text">window.alert()方法</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#window-confirm-方法"><span class="nav-number">1.3.2.</span> <span class="nav-text">window.confirm()方法</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#window-prompt-方法"><span class="nav-number">1.3.3.</span> <span class="nav-text">window.prompt()方法</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#load事件"><span class="nav-number">1.3.4.</span> <span class="nav-text">load事件</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#location对象"><span class="nav-number">2.</span> <span class="nav-text">location对象</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#navigator对象"><span class="nav-number">3.</span> <span class="nav-text">navigator对象</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#document对象"><span class="nav-number">4.</span> <span class="nav-text">document对象</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#document-getElementById-方法"><span class="nav-number">4.1.</span> <span class="nav-text">document.getElementById()方法</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#document-getElementByTagName-方法"><span class="nav-number">4.2.</span> <span class="nav-text">document.getElementByTagName()方法</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#document-forms-属性"><span class="nav-number">4.3.</span> <span class="nav-text">document.forms[]属性</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#document-images-属性"><span class="nav-number">4.4.</span> <span class="nav-text">document.images[]属性</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#document-createElement-和document-createTextNode-方法"><span class="nav-number">4.5.</span> <span class="nav-text">document.createElement()和document.createTextNode()方法</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#document-write-方法"><span class="nav-number">4.6.</span> <span class="nav-text">document.write()方法</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#表单和表单元素"><span class="nav-number">5.</span> <span class="nav-text">表单和表单元素</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#form对象"><span class="nav-number">5.1.</span> <span class="nav-text">form对象</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#访问表单属性"><span class="nav-number">5.1.1.</span> <span class="nav-text">访问表单属性</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#from-elements-属性"><span class="nav-number">5.1.2.</span> <span class="nav-text">from.elements[]属性</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#将表单控件作为对象"><span class="nav-number">5.2.</span> <span class="nav-text">将表单控件作为对象</span></a></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; 2018 – <span itemprop="copyrightYear">2019</span>
+  <span class="with-love" id="animate">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Fleschier</span>
+
+  
+
+  
+</div>
+
+
+  
+
+
+
+
+
+
+
+
+
+
+<div class="theme-info">
+  <div class="powered-by"></div>
+  <span class="post-count">Total Words Of All Blogs: 96.2k words</span>
+</div>
+
+        
+
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+    
+
+    
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+  
+  
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/canvas-nest/canvas-nest.min.js"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/three/three.min.js"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/three/canvas_sphere.min.js"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=6.4.1"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=6.4.1"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=6.4.1"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=6.4.1"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=6.4.1"></script>
+
+
+
+  
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+  <script>
+    
+    function addCount(Counter) {
+      var $visitors = $(".leancloud_visitors");
+      var url = $visitors.attr('id').trim();
+      var title = $visitors.attr('data-flag-title').trim();
+
+      Counter('get', '/classes/Counter', { where: JSON.stringify({ url }) })
+        .done(function ({ results }) {
+          if (results.length > 0) {
+            var counter = results[0];
+            
+              var $element = $(document.getElementById(url));
+              $element.find('.leancloud-visitors-count').text(counter.time + 1);
+            
+            Counter('put', `/classes/Counter/${counter.objectId}`, JSON.stringify({ time: { "__op":"Increment", "amount":1 } }))
+            
+            .fail(function ({ responseJSON }) {
+                console.log('Failed to save Visitor num, with error message: ' + responseJSON.error);
+            })
+          } else {
+            
+              var $element = $(document.getElementById(url));
+              $element.find('.leancloud-visitors-count').text('Counter not initialized! See more at console err msg.');
+              console.error('ATTENTION! LeanCloud counter has security bug, see here how to solve it: https://github.com/theme-next/hexo-leancloud-counter-security. \n But you also can use LeanCloud without security, by set \'security\' option to \'false\'.');
+            
+          }
+        })
+      .fail(function ({ responseJSON }) {
+        console.log('LeanCloud Counter Error:' + responseJSON.code + " " + responseJSON.error);
+      });
+    }
+    
+
+    $(function() {
+      $.get('https://app-router.leancloud.cn/2/route?appId=' + "FLdvdj7m3QeLled70QDUw983-gzGzoHsz")
+        .done(function ({ api_server }) {
+          var Counter = function (method, url, data) {
+            return $.ajax({
+              method: method,
+              url: `https://${api_server}/1.1${url}`,
+              headers: {
+                'X-LC-Id': "FLdvdj7m3QeLled70QDUw983-gzGzoHsz",
+                'X-LC-Key': "n50SuQJhlvn3zseLkBWf1Oq6",
+                'Content-Type': 'application/json',
+              },
+              data: data,
+            });
+          };
+          
+          addCount(Counter);
+          
+        })
+    });
+  </script>
+
+
+
+  
+
+  
+<script>
+(function(){
+    var bp = document.createElement('script');
+    var curProtocol = window.location.protocol.split(':')[0];
+    if (curProtocol === 'https') {
+        bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';        
+    }
+    else {
+        bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+    }
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(bp, s);
+})();
+</script>
+
+
+  
+
+  
+  
+  <script type="text/javascript">
+  wpac_init = window.wpac_init || [];
+  wpac_init.push({widget: 'Rating', id: fleschier,
+    el: 'wpac-rating',
+    color: 'fc6423'
+  });
+  (function() {
+    if ('WIDGETPACK_LOADED' in window) return;
+    WIDGETPACK_LOADED = true;
+    var mc = document.createElement('script');
+    mc.type = 'text/javascript';
+    mc.async = true;
+    mc.src = '//embed.widgetpack.com/widget.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(mc, s.nextSibling);
+  })();
+  </script>
+
+
+  
+
+  
+
+  
+
+  
+  
+  
+  <script src="/lib/bookmark/bookmark.min.js?v=1.0"></script>
+  <script type="text/javascript">
+  
+    bookmark.scrollToMark('manual', "#more");
+  
+  </script>
+
+
+  
+
+
+  <!-- 页面点击小红心 -->
+  <script type="text/javascript" src="/js/src/clicklove.js"></script>
+
+</body>
+</html>
