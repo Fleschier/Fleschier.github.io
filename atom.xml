@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://fleschier.github.io/"/>
-  <updated>2019-02-17T11:12:08.242Z</updated>
+  <updated>2019-03-05T14:30:18.898Z</updated>
   <id>https://fleschier.github.io/</id>
   
   <author>
@@ -15,6 +15,36 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>VScode python编译错误问题记录</title>
+    <link href="https://fleschier.github.io/2019/03/05/vscode-python/"/>
+    <id>https://fleschier.github.io/2019/03/05/vscode-python/</id>
+    <published>2019-03-05T13:43:00.000Z</published>
+    <updated>2019-03-05T14:30:18.898Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="问题"><a href="#问题" class="headerlink" title="问题"></a>问题</h2><hr><ul><li><p>在Vscode上装完python环境后,在按F5运行后却报错了:</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">...</span><br><span class="line">ImportError: No module named &apos;_tkinter&apos;</span><br><span class="line">...</span><br></pre></td></tr></table></figure></li><li><p>python版本为3.6, pip版本为18</p></li><li><p>查阅了网上相关资料后发现是缺少包的原因,在终端中手动下载一下即可:</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo apt-get install python3-tk</span><br></pre></td></tr></table></figure></li><li><p>然后再运行python程序即可.</p></li></ul>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h2 id=&quot;问题&quot;&gt;&lt;a href=&quot;#问题&quot; class=&quot;headerlink&quot; title=&quot;问题&quot;&gt;&lt;/a&gt;问题&lt;/h2&gt;&lt;hr&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;在Vscode上装完python环境后,在按F5运行后却报错了:&lt;/p&gt;
+&lt;figure class=&quot;high
+      
+    
+    </summary>
+    
+      <category term="Computer Programs" scheme="https://fleschier.github.io/categories/Computer-Programs/"/>
+    
+    
+      <category term="๑Python" scheme="https://fleschier.github.io/tags/%E0%B9%91Python/"/>
+    
+      <category term="๑VsCode" scheme="https://fleschier.github.io/tags/%E0%B9%91VsCode/"/>
+    
+  </entry>
   
   <entry>
     <title>Hexo插件live2d删除以及遇到的一些问题</title>
@@ -508,31 +538,6 @@
   </entry>
   
   <entry>
-    <title>C++学习笔记——一些报错信息归因</title>
-    <link href="https://fleschier.github.io/2018/10/08/C++-learning-error-collection/"/>
-    <id>https://fleschier.github.io/2018/10/08/C++-learning-error-collection/</id>
-    <published>2018-10-08T14:43:00.000Z</published>
-    <updated>2018-11-21T06:40:17.839Z</updated>
-    
-    <content type="html"><![CDATA[<h2 id="Expression-public-stream-nullptr"><a href="#Expression-public-stream-nullptr" class="headerlink" title="Expression: public_stream != nullptr"></a>Expression: public_stream != nullptr</h2><hr><ul><li><p>出现这个原因的问题很简单，就是用fopen打开文件失败了，创建的文件指针为空引起的。</p></li><li><p>解决方法就是查看文件路径是否正确。</p></li><li><p>在最后<code>fclose</code>的时候，先判断一下文件指针是否为空。</p></li></ul><h2 id="abort-has-been-called"><a href="#abort-has-been-called" class="headerlink" title="abort() has been called"></a>abort() has been called</h2><hr><ul><li><p>出现这个错误的原因基本上是越界或者内存泄漏。</p></li><li><p>这里的越界包括指针越界和数组越界</p></li></ul>]]></content>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;h2 id=&quot;Expression-public-stream-nullptr&quot;&gt;&lt;a href=&quot;#Expression-public-stream-nullptr&quot; class=&quot;headerlink&quot; title=&quot;Expression: public_stream !=
-      
-    
-    </summary>
-    
-      <category term="Computer Programs" scheme="https://fleschier.github.io/categories/Computer-Programs/"/>
-    
-    
-      <category term="๑C++" scheme="https://fleschier.github.io/tags/%E0%B9%91C/"/>
-    
-  </entry>
-  
-  <entry>
     <title>C++学习笔记——强大的sprintf</title>
     <link href="https://fleschier.github.io/2018/10/08/C++-sprintf-printf/"/>
     <id>https://fleschier.github.io/2018/10/08/C++-sprintf-printf/</id>
@@ -558,19 +563,19 @@
   </entry>
   
   <entry>
-    <title>C++学习笔记——数值类型,char和string的相互转化问题</title>
-    <link href="https://fleschier.github.io/2018/10/08/C++-Int-Char-String-translation/"/>
-    <id>https://fleschier.github.io/2018/10/08/C++-Int-Char-String-translation/</id>
-    <published>2018-10-08T08:10:00.000Z</published>
+    <title>C++学习笔记——一些报错信息归因</title>
+    <link href="https://fleschier.github.io/2018/10/08/C++-learning-error-collection/"/>
+    <id>https://fleschier.github.io/2018/10/08/C++-learning-error-collection/</id>
+    <published>2018-10-08T14:43:00.000Z</published>
     <updated>2018-11-21T06:40:17.839Z</updated>
     
-    <content type="html"><![CDATA[<h2 id="C-提供了一些功能强大的函数来高效地完成这些转化"><a href="#C-提供了一些功能强大的函数来高效地完成这些转化" class="headerlink" title="C++提供了一些功能强大的函数来高效地完成这些转化"></a>C++提供了一些功能强大的函数来高效地完成这些转化</h2><hr><h3 id="string转char"><a href="#string转char" class="headerlink" title="string转char"></a>string转char</h3><ol><li>使用<code>c_str()</code>方法</li></ol><ul><li><p>示例：</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">string s = &quot;abcd&quot;;</span><br><span class="line">char p[10];</span><br><span class="line">p = (char*)s.c_str();</span><br></pre></td></tr></table></figure></li><li><p>上面的强制类型转换在 <strong>不修改字符串内容的情况下</strong> 是可以省略的。因为<code>c_str()</code>方法的返回值类型为<code>const char*</code>，返回的是一个不可修改的指向该字符串的指针。</p></li></ul><ol start="2"><li>使用<code>data()</code>方法</li></ol><ul><li><code>data()</code>方法与<code>c_str()</code>方法用法几乎一致，这里不再赀述。</li></ul><ol start="3"><li>使用<code>copy()</code>方法</li></ol><ul><li><p><code>copy()</code>方法与上面两种有所不同，它是拷贝函数，这只是他的一种用法。</p></li><li><p>实例:</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">string s = &quot;abcd&quot;;</span><br><span class="line">char p[5];</span><br><span class="line">s.copy(p, 4, 0);  //4代表拷贝四个字符，0代表写入的位置</span><br><span class="line">*(p + 4) = &apos;\0&apos;;  //拷贝的字符串需要手动加上结束标记</span><br></pre></td></tr></table></figure></li></ul><h3 id="char转string"><a href="#char转string" class="headerlink" title="char转string"></a>char转string</h3><ul><li>对于已经存在的<code>char*</code>，可以直接赋值给string类型的数据</li></ul><h3 id="数值类型转string"><a href="#数值类型转string" class="headerlink" title="数值类型转string"></a>数值类型转string</h3><ul><li><p>C++库有直接的转换函数<code>to_string()</code></p></li><li><p><code>to_string()</code>函数有多个重载函数，支持目前所有的数据类型转换为string类型。</p></li><li><p>需要引入头文件<code>#include&lt;string&gt;</code></p></li></ul><p>-<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">#include&lt;string&gt;</span><br><span class="line">...</span><br><span class="line">int a = 10;</span><br><span class="line">string s = to_string(a);</span><br><span class="line">...</span><br></pre></td></tr></table></figure></p><h3 id="数值类型转char"><a href="#数值类型转char" class="headerlink" title="数值类型转char"></a>数值类型转char</h3><ul><li><p>这里就需要用到强大的转换函数<code>itoa()</code>。</p></li><li><p>还有<code>ltoa</code>,<code>ultoa</code>等函数可以将 <strong>任意类型(整型、长整型、浮点型等)的数字</strong> 转换为字符串。</p></li><li><p>需要引入头文件<code>stdlib.h</code></p></li><li><p>示例：</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">#include&lt;iostream&gt;</span><br><span class="line">#include&lt;stdlib.h&gt;</span><br><span class="line">using namespace std;</span><br><span class="line">int main()&#123;</span><br><span class="line">  int i = 100;</span><br><span class="line">  char p[10];</span><br><span class="line">  itoa(i, p, 10);   //说明：第一个参数为待转换的数字，第二个参数为待存储数值的char数组指针，第三个参数为待转换数字的进制，这里为十进制。</span><br><span class="line">  cout &lt;&lt; p &lt;&lt; endl;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></li></ul><blockquote><p>itoa并不是一个标准的C函数，它是Windows特有的，如果要写跨平台的程序，请用sprintf。</p></blockquote><h3 id="字符串转数值类型"><a href="#字符串转数值类型" class="headerlink" title="字符串转数值类型"></a>字符串转数值类型</h3><ul><li><p>函数原型为 <code>int atoi (const char * str);</code>    //参数为指针类型，如果为string需要在变量名前加取址符。</p></li><li><p><code>atoi()</code> 函数会扫描参数<code>str</code>字符串，跳过前面的空白字符（例如空格，tab缩进等，可以通过<code>isspace()</code>函数来检测），直到遇上数字或正负符号才开始做转换，而再遇到非数字或字符串结束时(<code>\0</code>)才结束转换，并将结果返回。</p></li><li><p>ANSI C 规范定义了 <code>stof()、atoi()、atol()、strtod()、strtol()、strtoul()</code>共6个可以将字符串转换为数字的函数。另外在 C99 / C++11 规范中又新增了5个函数，分别是 <code>atoll()、strtof()、strtold()、strtoll()、strtoull()</code>。这里根据名称就可以对应看出各个函数的转换目标。</p></li></ul>]]></content>
+    <content type="html"><![CDATA[<h2 id="Expression-public-stream-nullptr"><a href="#Expression-public-stream-nullptr" class="headerlink" title="Expression: public_stream != nullptr"></a>Expression: public_stream != nullptr</h2><hr><ul><li><p>出现这个原因的问题很简单，就是用fopen打开文件失败了，创建的文件指针为空引起的。</p></li><li><p>解决方法就是查看文件路径是否正确。</p></li><li><p>在最后<code>fclose</code>的时候，先判断一下文件指针是否为空。</p></li></ul><h2 id="abort-has-been-called"><a href="#abort-has-been-called" class="headerlink" title="abort() has been called"></a>abort() has been called</h2><hr><ul><li><p>出现这个错误的原因基本上是越界或者内存泄漏。</p></li><li><p>这里的越界包括指针越界和数组越界</p></li></ul>]]></content>
     
     <summary type="html">
     
       
       
-        &lt;h2 id=&quot;C-提供了一些功能强大的函数来高效地完成这些转化&quot;&gt;&lt;a href=&quot;#C-提供了一些功能强大的函数来高效地完成这些转化&quot; class=&quot;headerlink&quot; title=&quot;C++提供了一些功能强大的函数来高效地完成这些转化&quot;&gt;&lt;/a&gt;C++提供了一些功能强大的
+        &lt;h2 id=&quot;Expression-public-stream-nullptr&quot;&gt;&lt;a href=&quot;#Expression-public-stream-nullptr&quot; class=&quot;headerlink&quot; title=&quot;Expression: public_stream !=
       
     
     </summary>
