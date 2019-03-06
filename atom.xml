@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://fleschier.github.io/"/>
-  <updated>2019-03-06T06:36:01.329Z</updated>
+  <updated>2019-03-06T12:39:22.555Z</updated>
   <id>https://fleschier.github.io/</id>
   
   <author>
@@ -17,16 +17,32 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
-    <title></title>
+    <title>C++ auto关键字使用</title>
     <link href="https://fleschier.github.io/2019/03/06/C++_auto_usage/"/>
     <id>https://fleschier.github.io/2019/03/06/C++_auto_usage/</id>
-    <published>2019-03-06T06:36:01.329Z</published>
-    <updated>2019-03-06T06:36:01.329Z</updated>
+    <published>2019-03-06T06:40:00.000Z</published>
+    <updated>2019-03-06T12:39:22.555Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="简述"><a href="#简述" class="headerlink" title="简述"></a>简述</h2><hr><blockquote><p>auto的使用在C++11之后得以推广和支持</p></blockquote><ul><li><p>对于C++这门静态编程语言而言,所有的变量数据类型是需要明确声明的,在编译时即需要检查和确定.而诸如python这样的语言是动态判断变量类型的,在运行时才会确定数据类型.</p></li><li><p><code>auto</code>关键字赋予了C++强大的类型自动判断的能力,并且会在很长的类型声明的地方极大地简化我们的代码.</p></li></ul><h2 id="例子"><a href="#例子" class="headerlink" title="例子"></a>例子</h2><hr><ul><li>例如:<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">//遍历vector,使用迭代器(原始版本)</span><br><span class="line"></span><br><span class="line">for(std::vector&lt;int&gt;::iterator it = vec.begin(); it != it.end(); it++)&#123;</span><br><span class="line">  ...</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></li></ul><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">//简化版</span><br><span class="line">for(auto it = vec.begin(); it != it.end(); it++)&#123;</span><br><span class="line">  ...</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><ul><li>还有一种遍历vector的简化写法(适合需要访问每个元素一遍的情况):<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">int main()&#123;</span><br><span class="line">  vector&lt;int&gt; vec;</span><br><span class="line">  ....</span><br><span class="line">  for(auto n: vec)&#123;   //这里n即为vec中的每个元素</span><br><span class="line">    ...</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></li></ul><h2 id="优点"><a href="#优点" class="headerlink" title="优点"></a>优点</h2><hr><ul><li><p>简洁</p></li><li><p>在代码维护方面有一些”泛型”的好处,比如某个函数的返回值类型改变了,但是赋值的语句使用了<code>auto</code>关键字,那么便不再需要修改除函数以外的地方,减轻了代码的维护量.非常契合模板类等编程.</p></li><li><p>可以保存lambda表达式的类型的变量声明:<br><code>auto ptr = [](double x){return 2*x;}; //类型为std::function&lt;double(double))&gt;函数对象</code></p></li></ul><h2 id="注意点"><a href="#注意点" class="headerlink" title="注意点"></a>注意点</h2><hr><ul><li><p><strong>使用<code>auto</code>声明的变量必须初始化</strong></p></li><li><p><code>auto</code>不能与其他类型组合使用,例如<code>auto int a;</code>是错误的.</p></li><li><p>函数和模板参数不能被声明为<code>auto</code>:</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">template&lt;auto T&gt;    //错误</span><br></pre></td></tr></table></figure></li></ul><blockquote><p>因为auto本质上只是一个占位符,并不是一个数据类型,因此也不能用于类型转换和sizeof以及typeid等操作.</p></blockquote><ul><li><code>auto</code>会自动退化为指向数组的指针,除非被声明为引用<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">int arr[5];</span><br><span class="line">auto x = a;</span><br><span class="line">cout &lt;&lt; typeid(x).name() &lt;&lt; endl;   // result: int*</span><br><span class="line">auto &amp;y = a;</span><br><span class="line">cout &lt;&lt; typeid(y).name() &lt;&lt; endl;   // result: int[5]</span><br></pre></td></tr></table></figure></li></ul>]]></content>
     
     <summary type="html">
     
+      
+      
+        &lt;h2 id=&quot;简述&quot;&gt;&lt;a href=&quot;#简述&quot; class=&quot;headerlink&quot; title=&quot;简述&quot;&gt;&lt;/a&gt;简述&lt;/h2&gt;&lt;hr&gt;
+&lt;blockquote&gt;
+&lt;p&gt;auto的使用在C++11之后得以推广和支持&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;p
+      
+    
     </summary>
     
+      <category term="Computer Programs" scheme="https://fleschier.github.io/categories/Computer-Programs/"/>
+    
+    
+      <category term="๑C++" scheme="https://fleschier.github.io/tags/%E0%B9%91C/"/>
     
   </entry>
   
@@ -552,19 +568,19 @@
   </entry>
   
   <entry>
-    <title>C++学习笔记——强大的sprintf</title>
-    <link href="https://fleschier.github.io/2018/10/08/C++-sprintf-printf/"/>
-    <id>https://fleschier.github.io/2018/10/08/C++-sprintf-printf/</id>
+    <title>C++学习笔记——一些报错信息归因</title>
+    <link href="https://fleschier.github.io/2018/10/08/C++-learning-error-collection/"/>
+    <id>https://fleschier.github.io/2018/10/08/C++-learning-error-collection/</id>
     <published>2018-10-08T14:43:00.000Z</published>
     <updated>2018-11-21T06:40:17.839Z</updated>
     
-    <content type="html"><![CDATA[<h2 id="sprintf-函数与printf-函数"><a href="#sprintf-函数与printf-函数" class="headerlink" title="sprintf()函数与printf()函数"></a>sprintf()函数与printf()函数</h2><hr><ul><li><p><code>sprintf()</code>函数与<code>printf()</code>函数的用法几乎一样。只是前者是将内容打印到字符串中，后者直接在命令行打印出来。</p></li><li><p><code>sprintf()</code>函数原型： <code>int sprintf( char *buffer, const char *format [, argument] ... );</code> 除了前两个参数固定，后面可以接任意多个参数。</p></li><li><p>第二个参数为格式化字符串，<code>printf</code> 和<code>sprintf</code> 都使用格式化字符串来指定串的格式，以<code>%</code>开头，然后在后边的变参列表中提供相应的变量，最终相应的位置的变量就会被替换进来。</p></li></ul><ul><li><p><code>sprintf</code>最常见的应用之一莫过于把整数打印到字符串中，所以，<code>spritnf</code> 在大多数场合可以替代<code>itoa</code>。</p></li><li><p>例子：</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">sprintf(s, &quot;%d&quot;, 123);</span><br><span class="line">sprintf(s, &quot;%8d%8d&quot;, 123, 5678);  //指定宽度，不足的左边补空格，结果为&quot; 123 5678&quot;</span><br></pre></td></tr></table></figure></li><li><p>浮点数用<code>%f</code>控制，默认打印6位小数。</p></li><li><p>使用<code>%d</code>或者<code>%x</code>打印一个字符，便能得出它的10进制或16进制的ASCII码；反过来，使用<code>%c</code>打印一个整数，便可以看到它所对应的ASCII字符。<strong>因为char类型本质上也是存储数值类型，只是习惯上用char来表示字符，实际上char就是byte，一个字节的数值类型。</strong></p></li><li><p><a href="http://lib.csdn.net/article/cplusplus/29221" target="_blank" rel="noopener">实现各种各样格式化字符串</a></p></li><li><p><code>sprinf</code>就是将格式化字符串里的所有内容打印到第一个参数(字符数组)中，因此也可以用来连接字符串，非常灵活。</p></li><li><p><code>spritnf</code>和<code>printf</code>都最终返回本次函数调用最终打印到字符缓冲区中的字符数目。</p></li></ul><h2 id="转换说明符"><a href="#转换说明符" class="headerlink" title="转换说明符"></a>转换说明符</h2><hr><h3 id="格式符"><a href="#格式符" class="headerlink" title="格式符"></a>格式符</h3><table><thead><tr><th>格式符</th><th>说明</th></tr></thead><tbody><tr><td>%a(%A)</td><td>浮点数、十六进制数字和p-(P-)记数法(C99)</td></tr><tr><td>%c</td><td>字符</td></tr><tr><td>%d</td><td>有符号十进制整数</td></tr><tr><td>%f</td><td>浮点数(包括float和doulbe)</td></tr><tr><td>%e(%E)</td><td>浮点数指数输出[e-(E-)记数法]</td></tr><tr><td>%g(%G)</td><td>浮点数不显无意义的零”0”</td></tr><tr><td>%i</td><td>有符号十进制整数(与%d相同)</td></tr><tr><td>%u</td><td>无符号十进制整数</td></tr><tr><td>%o</td><td>八进制整数</td></tr><tr><td>%x(%X)</td><td>十六进制整数0f(0F)</td></tr><tr><td>%p</td><td>指针</td></tr><tr><td>%s</td><td>字符串</td></tr><tr><td>%%</td><td>输出字符%</td></tr></tbody></table><h3 id="标志"><a href="#标志" class="headerlink" title="标志"></a>标志</h3><table><thead><tr><th>标志</th><th>例子(说明)</th></tr></thead><tbody><tr><td>左对齐：”-“</td><td>%-20s</td></tr><tr><td>右对齐：”+”</td><td>%+20s</td></tr><tr><td>空格</td><td>若符号为正，则显示空格，负则显示”-“  比如：”% 6.2f”</td></tr><tr><td>#</td><td>对c,s,d,u类无影响；对o类，在输出时加前缀o；对x类，在输出时加前缀0x；对e,g,f 类当结果有小数时才给出小数点。</td></tr></tbody></table><h2 id="sprintf使用过程中遇到的一些问题记录"><a href="#sprintf使用过程中遇到的一些问题记录" class="headerlink" title="sprintf使用过程中遇到的一些问题记录"></a>sprintf使用过程中遇到的一些问题记录</h2><hr><h3 id="编译器报错：Buffer-is-too-small"><a href="#编译器报错：Buffer-is-too-small" class="headerlink" title="编译器报错：Buffer is too small"></a>编译器报错：<code>Buffer is too small</code></h3><ul><li><p>出现这个情况是因为被赋值的字符数组太小了。</p></li><li><p>实例：(矩阵乘积)</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line">//计算矩阵的乘积</span><br><span class="line">...</span><br><span class="line">...</span><br><span class="line">char tmpc[24];//存储转换的值,因为存储的是双精度浮点数，这里数据的整数部分为10位，小数部分要显示11位则至少开10+1+11=22位的数组才够</span><br><span class="line">for (int i = 0; i &lt; M; i++) &#123;</span><br><span class="line">for (int j = 0; j &lt; N; j++) &#123;</span><br><span class="line">C[i][j] = 0;//initialize the result martrix element</span><br><span class="line">for (int k = 0; k &lt; K; k++) &#123;</span><br><span class="line">C[i][j] += A[i][k] * B[k][j];</span><br><span class="line">&#125;</span><br><span class="line">//---------------------------------------------------------------------------------------------</span><br><span class="line">//itoa不如sprintf灵活，这里采用sprintf来完成double到char的转换</span><br><span class="line">////将数字转化为char数组写入, 采用itoa函数。函数原型：char *itoa(int value, char* string, int radix);</span><br><span class="line">//_itoa(C[i][j], tmpc, 10);</span><br><span class="line">//fputs(tmpc, fout);//fputs的第一个参数为char*</span><br><span class="line">//fputc(32, fout);//写入空格，fputc的第一个参数为int*(ASCII码)</span><br><span class="line">//---------------------------------------------------------------------------------------------</span><br><span class="line">//使用强大的sprintf来完成转换，打印11位小数</span><br><span class="line">sprintf_s(tmpc, &quot;%.11f &quot;, C[i][j]);//这里的数值是整数部分10位，小数点一位，小数部分11位，末尾空格1位，结束符&apos;\0&apos;一位所以一共要开24位的数组才够</span><br><span class="line">fputs(tmpc, fout);//fputs的第一个参数为char*</span><br><span class="line">&#125;</span><br><span class="line">fputc(10, fout);//写入换行符</span><br><span class="line">&#125;</span><br><span class="line">  ...</span><br></pre></td></tr></table></figure></li></ul>]]></content>
+    <content type="html"><![CDATA[<h2 id="Expression-public-stream-nullptr"><a href="#Expression-public-stream-nullptr" class="headerlink" title="Expression: public_stream != nullptr"></a>Expression: public_stream != nullptr</h2><hr><ul><li><p>出现这个原因的问题很简单，就是用fopen打开文件失败了，创建的文件指针为空引起的。</p></li><li><p>解决方法就是查看文件路径是否正确。</p></li><li><p>在最后<code>fclose</code>的时候，先判断一下文件指针是否为空。</p></li></ul><h2 id="abort-has-been-called"><a href="#abort-has-been-called" class="headerlink" title="abort() has been called"></a>abort() has been called</h2><hr><ul><li><p>出现这个错误的原因基本上是越界或者内存泄漏。</p></li><li><p>这里的越界包括指针越界和数组越界</p></li></ul>]]></content>
     
     <summary type="html">
     
       
       
-        &lt;h2 id=&quot;sprintf-函数与printf-函数&quot;&gt;&lt;a href=&quot;#sprintf-函数与printf-函数&quot; class=&quot;headerlink&quot; title=&quot;sprintf()函数与printf()函数&quot;&gt;&lt;/a&gt;sprintf()函数与printf()函数&lt;/
+        &lt;h2 id=&quot;Expression-public-stream-nullptr&quot;&gt;&lt;a href=&quot;#Expression-public-stream-nullptr&quot; class=&quot;headerlink&quot; title=&quot;Expression: public_stream !=
       
     
     </summary>
