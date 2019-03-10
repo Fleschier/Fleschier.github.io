@@ -4,7 +4,7 @@
   <url>
     <loc>https://fleschier.github.io/2019/03/10/tornado-bug/</loc>
     
-    <lastmod>2019-03-10T08:18:14.167Z</lastmod>
+    <lastmod>2019-03-10T08:20:36.341Z</lastmod>
     
   </url>
   
@@ -86,14 +86,14 @@
   </url>
   
   <url>
-    <loc>https://fleschier.github.io/2018/07/19/scala-learning-02/</loc>
+    <loc>https://fleschier.github.io/2018/07/23/scala-learning-03/</loc>
     
     <lastmod>2018-11-21T06:40:40.695Z</lastmod>
     
   </url>
   
   <url>
-    <loc>https://fleschier.github.io/2018/04/11/Spark-superior/</loc>
+    <loc>https://fleschier.github.io/2018/07/19/scala-learning-02/</loc>
     
     <lastmod>2018-11-21T06:40:40.695Z</lastmod>
     
@@ -107,6 +107,13 @@
   </url>
   
   <url>
+    <loc>https://fleschier.github.io/2018/04/11/Spark-superior/</loc>
+    
+    <lastmod>2018-11-21T06:40:40.695Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>https://fleschier.github.io/2018/09/13/Spark-notes/</loc>
     
     <lastmod>2018-11-21T06:40:40.695Z</lastmod>
@@ -114,21 +121,14 @@
   </url>
   
   <url>
-    <loc>https://fleschier.github.io/2018/04/06/Scala-superior/</loc>
-    
-    <lastmod>2018-11-21T06:40:40.695Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://fleschier.github.io/2018/09/06/scala-io/</loc>
-    
-    <lastmod>2018-11-21T06:40:40.695Z</lastmod>
-    
-  </url>
-  
-  <url>
     <loc>https://fleschier.github.io/2018/04/11/Spark-learning/</loc>
+    
+    <lastmod>2018-11-21T06:40:40.695Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://fleschier.github.io/2018/04/06/Scala-superior/</loc>
     
     <lastmod>2018-11-21T06:40:40.695Z</lastmod>
     
@@ -156,6 +156,13 @@
   </url>
   
   <url>
+    <loc>https://fleschier.github.io/2018/09/06/scala-io/</loc>
+    
+    <lastmod>2018-11-21T06:40:40.695Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>https://fleschier.github.io/2018/07/24/scala-learning-05/</loc>
     
     <lastmod>2018-11-21T06:40:40.695Z</lastmod>
@@ -164,13 +171,6 @@
   
   <url>
     <loc>https://fleschier.github.io/2018/07/24/scala-learning-04/</loc>
-    
-    <lastmod>2018-11-21T06:40:40.695Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://fleschier.github.io/2018/07/23/scala-learning-03/</loc>
     
     <lastmod>2018-11-21T06:40:40.695Z</lastmod>
     
@@ -212,7 +212,7 @@
   </url>
   
   <url>
-    <loc>https://fleschier.github.io/2018/10/08/C++-learning-error-collection/</loc>
+    <loc>https://fleschier.github.io/2018/10/08/C++-Int-Char-String-translation/</loc>
     
     <lastmod>2018-11-21T06:40:17.839Z</lastmod>
     
@@ -233,7 +233,7 @@
   </url>
   
   <url>
-    <loc>https://fleschier.github.io/2018/10/08/C++-Int-Char-String-translation/</loc>
+    <loc>https://fleschier.github.io/2018/10/08/C++-learning-error-collection/</loc>
     
     <lastmod>2018-11-21T06:40:17.839Z</lastmod>
     
