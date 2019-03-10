@@ -66,4 +66,6 @@
 {"title":"Hexo插件live2d删除以及遇到的一些问题","url":"/2019/02/17/hexo-live2d-delete/"},
 {"title":"VScode python编译错误问题记录","url":"/2019/03/05/vscode-python/"},
 {"title":"","url":"/2019/03/06/C++_auto_usage/"},
+{"title":"C++ auto关键字使用","url":"/2019/03/06/C++_auto_usage/"},
+{"title":"Tornado建站踩坑记录","url":"/2019/03/10/tornado-bug/"},
 ]
