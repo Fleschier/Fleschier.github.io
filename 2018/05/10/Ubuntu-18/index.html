@@ -123,7 +123,7 @@
 <meta property="og:site_name" content="Fleschier 渐寒๑">
 <meta property="og:description" content="Ubuntu18 使用体验 一些装机软件的安装  由于Ubuntu 18 自带了 gnome3.0桌面,所以我们只需要下载一个tweak-tool据可以自定义桌面了： 12sudo apt-get updatesudo apt-get install gnome-tweak-tool  这次Ubuntu把标题栏改到了窗口的右侧，如果要改到左侧的话，打开tweak-tool转到窗口里面更改即可。">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2018-11-08T08:28:14.656Z">
+<meta property="og:updated_time" content="2019-03-21T14:52:56.721Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Ubuntu进阶记录 &amp; Ubuntu-18">
 <meta name="twitter:description" content="Ubuntu18 使用体验 一些装机软件的安装  由于Ubuntu 18 自带了 gnome3.0桌面,所以我们只需要下载一个tweak-tool据可以自定义桌面了： 12sudo apt-get updatesudo apt-get install gnome-tweak-tool  这次Ubuntu把标题栏改到了窗口的右侧，如果要改到左侧的话，打开tweak-tool转到窗口里面更改即可。">
@@ -404,7 +404,7 @@
                 
                   <span class="post-meta-item-text">Edited on</span>
                 
-                <time title="Modified: 2018-11-08 16:28:14" itemprop="dateModified" datetime="2018-11-08T16:28:14+08:00">2018-11-08</time>
+                <time title="Modified: 2019-03-21 22:52:56" itemprop="dateModified" datetime="2019-03-21T22:52:56+08:00">2019-03-21</time>
               
             
           </span>
@@ -569,7 +569,7 @@
 <li><p>配置方法与windows几乎一致</p>
 </li>
 </ul>
-<h2 id="关于网易云音乐安装之后必须要终端sudo才能打开的问题（巨坑已填！！）"><a href="#关于网易云音乐安装之后必须要终端sudo才能打开的问题（巨坑已填！！）" class="headerlink" title="关于网易云音乐安装之后必须要终端sudo才能打开的问题（巨坑已填！！）"></a>关于网易云音乐安装之后必须要终端sudo才能打开的问题（巨坑已填！！）</h2><hr>
+<h2 id="关于网易云音乐安装之后必须要终端sudo才能打开的问题"><a href="#关于网易云音乐安装之后必须要终端sudo才能打开的问题" class="headerlink" title="关于网易云音乐安装之后必须要终端sudo才能打开的问题"></a>关于网易云音乐安装之后必须要终端sudo才能打开的问题</h2><hr>
 <ul>
 <li><p>首先sudo打开会有报错,但是会自动启动默认设置</p>
 </li>
@@ -578,6 +578,21 @@
 <li><p>然后修改网易云音乐的desktop文件，在exec那一行 <code>%U</code> 之前 加上 <code>--no-sandbox</code>然后保存退出，重启电脑即可愉快的使用了～～(注意修改文件之前先要切换到root用户)</p>
 </li>
 <li><p>另一种神奇的打开方式(不需要上面的操作):启动之后，点关机按钮，弹出来确认框，随后网易乐音乐页面也弹出来了，这时取消关机，可以正常使用云音乐<del>~</del>~~</p>
+</li>
+</ul>
+<hr>
+<h3 id="2019-3-21更新"><a href="#2019-3-21更新" class="headerlink" title="2019.3.21更新"></a>2019.3.21更新</h3><ul>
+<li><p>最近又发现了一个 <strong>完全解决问题</strong> 的方法:</p>
+</li>
+<li><p>把<code>%U</code>那一行改为:<code>Exec=sh -c &quot;unset SESSION_MANAGER &amp;&amp; netease-cloud-music %U&quot;</code></p>
+</li>
+</ul>
+<h4 id="然后关于每次正常启动要重新登录的问题"><a href="#然后关于每次正常启动要重新登录的问题" class="headerlink" title="然后关于每次正常启动要重新登录的问题"></a>然后关于每次正常启动要重新登录的问题</h4><ul>
+<li><p>把<code>.cache</code>文件夹下的<code>netease-cloud-music</code>全部删掉(这是缓存文件夹).然后查看<code>.config</code>文件夹下的<code>netease-cloud-music</code>的所有权是否是自己的当前用户.如果是root的话要改.</p>
+</li>
+<li><p>参考 – <a href="https://www.zhihu.com/question/277330447/answer/478510195" target="_blank" rel="noopener">https://www.zhihu.com/question/277330447/answer/478510195</a></p>
+</li>
+<li><p>然后终于可以美滋滋地使用了~</p>
 </li>
 </ul>
 <h2 id="关于ibus输入法的问题"><a href="#关于ibus输入法的问题" class="headerlink" title="关于ibus输入法的问题"></a>关于ibus输入法的问题</h2><hr>
@@ -960,7 +975,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Ubuntu18-使用体验"><span class="nav-number">1.</span> <span class="nav-text">Ubuntu18 使用体验</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#一些装机软件的安装"><span class="nav-number">2.</span> <span class="nav-text">一些装机软件的安装</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Albert"><span class="nav-number">2.1.</span> <span class="nav-text">Albert</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#主题修改"><span class="nav-number">3.</span> <span class="nav-text">主题修改</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#gnome-extensions-recommend"><span class="nav-number">4.</span> <span class="nav-text">gnome extensions recommend</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Ubuntu强大就强大在其可自定义的系统插件-这里罗列一下我自己使用的插件"><span class="nav-number">4.1.</span> <span class="nav-text">Ubuntu强大就强大在其可自定义的系统插件,这里罗列一下我自己使用的插件.</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#使用ppa源时可能遇到的问题以及解决方案"><span class="nav-number">5.</span> <span class="nav-text">使用ppa源时可能遇到的问题以及解决方案</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Ubuntu18装机的坑"><span class="nav-number">6.</span> <span class="nav-text">Ubuntu18装机的坑</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#终端的字体"><span class="nav-number">6.1.</span> <span class="nav-text">终端的字体</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#相比较-Ubuntu-16-04LTS"><span class="nav-number">7.</span> <span class="nav-text">相比较 Ubuntu 16.04LTS</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Ubuntu的问题查询"><span class="nav-number">8.</span> <span class="nav-text">Ubuntu的问题查询</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Ubuntu-18-下可以使用的-ssr"><span class="nav-number">9.</span> <span class="nav-text">Ubuntu 18 下可以使用的 ssr</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#关于网易云音乐安装之后必须要终端sudo才能打开的问题（巨坑已填！！）"><span class="nav-number">10.</span> <span class="nav-text">关于网易云音乐安装之后必须要终端sudo才能打开的问题（巨坑已填！！）</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#关于ibus输入法的问题"><span class="nav-number">11.</span> <span class="nav-text">关于ibus输入法的问题</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Ubuntu18-的搜狗输入法的安装"><span class="nav-number">11.1.</span> <span class="nav-text">Ubuntu18 的搜狗输入法的安装</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#搜狗輸入法的新坑"><span class="nav-number">11.2.</span> <span class="nav-text">搜狗輸入法的新坑</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#10-15更新"><span class="nav-number">12.</span> <span class="nav-text">10.15更新</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Ubuntu18-使用体验"><span class="nav-number">1.</span> <span class="nav-text">Ubuntu18 使用体验</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#一些装机软件的安装"><span class="nav-number">2.</span> <span class="nav-text">一些装机软件的安装</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Albert"><span class="nav-number">2.1.</span> <span class="nav-text">Albert</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#主题修改"><span class="nav-number">3.</span> <span class="nav-text">主题修改</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#gnome-extensions-recommend"><span class="nav-number">4.</span> <span class="nav-text">gnome extensions recommend</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Ubuntu强大就强大在其可自定义的系统插件-这里罗列一下我自己使用的插件"><span class="nav-number">4.1.</span> <span class="nav-text">Ubuntu强大就强大在其可自定义的系统插件,这里罗列一下我自己使用的插件.</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#使用ppa源时可能遇到的问题以及解决方案"><span class="nav-number">5.</span> <span class="nav-text">使用ppa源时可能遇到的问题以及解决方案</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Ubuntu18装机的坑"><span class="nav-number">6.</span> <span class="nav-text">Ubuntu18装机的坑</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#终端的字体"><span class="nav-number">6.1.</span> <span class="nav-text">终端的字体</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#相比较-Ubuntu-16-04LTS"><span class="nav-number">7.</span> <span class="nav-text">相比较 Ubuntu 16.04LTS</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Ubuntu的问题查询"><span class="nav-number">8.</span> <span class="nav-text">Ubuntu的问题查询</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Ubuntu-18-下可以使用的-ssr"><span class="nav-number">9.</span> <span class="nav-text">Ubuntu 18 下可以使用的 ssr</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#关于网易云音乐安装之后必须要终端sudo才能打开的问题"><span class="nav-number">10.</span> <span class="nav-text">关于网易云音乐安装之后必须要终端sudo才能打开的问题</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#2019-3-21更新"><span class="nav-number">10.1.</span> <span class="nav-text">2019.3.21更新</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#然后关于每次正常启动要重新登录的问题"><span class="nav-number">10.1.1.</span> <span class="nav-text">然后关于每次正常启动要重新登录的问题</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#关于ibus输入法的问题"><span class="nav-number">11.</span> <span class="nav-text">关于ibus输入法的问题</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Ubuntu18-的搜狗输入法的安装"><span class="nav-number">11.1.</span> <span class="nav-text">Ubuntu18 的搜狗输入法的安装</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#搜狗輸入法的新坑"><span class="nav-number">11.2.</span> <span class="nav-text">搜狗輸入法的新坑</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#10-15更新"><span class="nav-number">12.</span> <span class="nav-text">10.15更新</span></a></li></ol></div>
             
 
           </div>
@@ -1005,7 +1020,7 @@
 
 <div class="theme-info">
   <div class="powered-by"></div>
-  <span class="post-count">Total Words Of All Blogs: 97.6k words</span>
+  <span class="post-count">Total Words Of All Blogs: 97.7k words</span>
 </div>
 
         
