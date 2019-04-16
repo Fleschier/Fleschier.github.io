@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://fleschier.github.io/"/>
-  <updated>2019-03-10T08:21:19.666Z</updated>
+  <updated>2019-04-16T03:18:35.408Z</updated>
   <id>https://fleschier.github.io/</id>
   
   <author>
@@ -15,6 +15,68 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>在VScode使用Anacoda自带的tensorflow插件问题记录</title>
+    <link href="https://fleschier.github.io/2019/04/16/anacoda-tensorflow-pep8/"/>
+    <id>https://fleschier.github.io/2019/04/16/anacoda-tensorflow-pep8/</id>
+    <published>2019-04-16T03:05:00.000Z</published>
+    <updated>2019-04-16T03:18:35.408Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="问题记录"><a href="#问题记录" class="headerlink" title="问题记录"></a>问题记录</h2><hr><ul><li><p>最近在写项目使用tensorflow做深度学习,使用了Anacoda并结合VScode来进行开发.</p></li><li><p>但是遇到一个问题,就是VScode python默认使用pylint,而pylint识别不了tensorflow框架,在import的时候一直报错.</p></li></ul><h2 id="StackOverflow的解释"><a href="#StackOverflow的解释" class="headerlink" title="StackOverflow的解释"></a>StackOverflow的解释</h2><hr><ul><li><p><a href="https://stackoverflow.com/questions/49601292/python-not-finding-tensorflow-module-under-anaconda" target="_blank" rel="noopener">原问题及回答</a></p></li><li><p>有用的一个回答:</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">are you using Visual Studio Code (VSC) or just pylint in general? I found out the reason why this is happening.</span><br><span class="line">For VSC, the python extension, use pylint for intellisense of python. Pylint seems to have a bug with the sub-module. For me, the error only shows in VSC and not in prompt.</span><br><span class="line">I solved this problem by doing the following steps:</span><br><span class="line">Click &quot;Code&quot; -&gt; Click &quot;Preferences&quot; -&gt; Click &quot;Settings&quot;</span><br><span class="line">Now in the settings, you have a search bar on top, search:</span><br><span class="line">python.linting.pylintEnable and set it to false</span><br><span class="line">Now there is alternative for linting, I am using the pep8 as a example here since it come with the anaconda, search this</span><br><span class="line">python.linting.pep8Enabled and set it to true</span><br><span class="line">Now pylint is not the default linter anymore, we are now using the pep8. Just to make sure, quit VSC and reopen it. there should not be any error anymore.</span><br><span class="line">I am fairly sure this is a problem with pylint, instead of the TF you installed. By default, the Microsoft python extension in the VSC is using pylint as the linting tool. By changing it to pep8 or other we can avoid the error.</span><br></pre></td></tr></table></figure></li></ul><p>大致意思就是,pylint在解析库的时候不会遍历深层的子目录导致找不到tensorflow.<strong>解决办法是不使用pylint,改为pep8</strong></p><ul><li>方法: 在VScode的设置中搜索<code>python.linting</code>,将<code>pylint.Enabling</code>勾掉,将<code>pep8.Enabling</code>勾上即可.同时我们还会发现还有许多其他的选项可以采用,这里不一一尝试了.</li></ul><h2 id="后续问题"><a href="#后续问题" class="headerlink" title="后续问题"></a>后续问题</h2><hr><ul><li><p>采用pep8之后,果然问题解决了,但是又多了一个新的毛病: 很多报错.</p></li><li><p>仔细一看,诸如什么”一行过长”,”逗号之后空格没加”等等小问题,到了这里都变成了Error,就让人看起来很难受.</p></li><li><p>搜索了半天,也没找到合适的解决方法(国内论坛真是垃圾,还得自己想办法).</p></li><li><p>最终找到了一篇日本的,虽然看不懂日语,但是代码命令还是一目了然的,试了一下既简单又好用(这™就是差距啊~)</p></li><li><p><a href="https://qiita.com/zaki-yama/items/d05adce9d23d67144fbf" target="_blank" rel="noopener">原文链接(需要翻墙)</a></p></li><li><p>解决方法如下:</p></li></ul><ol><li><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">vim ~ .config/pep8        //在家目录的.config文件夹下新建一个叫pep8的文件</span><br></pre></td></tr></table></figure></li><li><p>在其中写入:</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">[pep8]</span><br><span class="line">ignore = E226,E302,E41,E265,E231,E303</span><br><span class="line">max-line-length = 200</span><br></pre></td></tr></table></figure></li></ol><p>其中,<code>ignore</code>后面的是需要忽略的编号,你可以查阅官方文档或者直接看终端的报错信息,在报错的最后会有编号,把想要忽略的加进来即可.</p><ol start="3"><li>保存文件,重启VScode即可.</li></ol>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h2 id=&quot;问题记录&quot;&gt;&lt;a href=&quot;#问题记录&quot; class=&quot;headerlink&quot; title=&quot;问题记录&quot;&gt;&lt;/a&gt;问题记录&lt;/h2&gt;&lt;hr&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;最近在写项目使用tensorflow做深度学习,使用了Anacoda并结合VScode来进行开发
+      
+    
+    </summary>
+    
+      <category term="Python" scheme="https://fleschier.github.io/categories/Python/"/>
+    
+      <category term="Tensorflow" scheme="https://fleschier.github.io/categories/Python/Tensorflow/"/>
+    
+    
+      <category term="๑Tensorflow" scheme="https://fleschier.github.io/tags/%E0%B9%91Tensorflow/"/>
+    
+      <category term="๑VScode" scheme="https://fleschier.github.io/tags/%E0%B9%91VScode/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>BootStrap4-响应式建站</title>
+    <link href="https://fleschier.github.io/2019/04/09/BootStrap4/"/>
+    <id>https://fleschier.github.io/2019/04/09/BootStrap4/</id>
+    <published>2019-04-09T03:46:00.000Z</published>
+    <updated>2019-04-16T02:58:33.026Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><hr><ul><li><p>最近学习需要,为了搭建网站方便,决定学习一下使用BootStrap.</p></li><li><p>目前最新的即为BootStrap4</p></li><li><p>参考教程-<a href="http://www.runoob.com/bootstrap4/bootstrap4-tutorial.html" target="_blank" rel="noopener">菜鸟教程BootStrap4</a></p></li></ul><blockquote><p>本文仅为跟着教程自学梳理一遍,无他用.</p></blockquote><h2 id="BootStrap4"><a href="#BootStrap4" class="headerlink" title="BootStrap4"></a>BootStrap4</h2><hr><ul><li><p>使用CDN的库,也可以去官网下载文件到本地然后引入</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">&lt;!-- 新 Bootstrap4 核心 CSS 文件 --&gt;</span><br><span class="line">&lt;link rel=&quot;stylesheet&quot; href=&quot;https://cdn.staticfile.org/twitter-bootstrap/4.1.0/css/bootstrap.min.css&quot;&gt;</span><br><span class="line"></span><br><span class="line">&lt;!-- jQuery文件。务必在bootstrap.min.js 之前引入 --&gt;</span><br><span class="line">&lt;script src=&quot;https://cdn.staticfile.org/jquery/3.2.1/jquery.min.js&quot;&gt;&lt;/script&gt;</span><br><span class="line"></span><br><span class="line">&lt;!-- popper.min.js 用于弹窗、提示、下拉菜单 --&gt;</span><br><span class="line">&lt;script src=&quot;https://cdn.staticfile.org/popper.js/1.12.5/umd/popper.min.js&quot;&gt;&lt;/script&gt;</span><br><span class="line"></span><br><span class="line">&lt;!-- 最新的 Bootstrap4 核心 JavaScript 文件 --&gt;</span><br><span class="line">&lt;script src=&quot;https://cdn.staticfile.org/twitter-bootstrap/4.1.0/js/bootstrap.min.js&quot;&gt;&lt;/script&gt;</span><br></pre></td></tr></table></figure></li><li><p>一个简单的模板,注释在代码中:</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line">&lt;!DOCTYPE html&gt;</span><br><span class="line">&lt;html&gt;</span><br><span class="line">    &lt;head&gt;</span><br><span class="line">        &lt;meta charset=&quot;utf-8&quot;&gt;</span><br><span class="line">        &lt;!-- 适配移动设备 --&gt;</span><br><span class="line">        &lt;!-- width=device-width 表示宽度是设备屏幕的宽度。 --&gt;</span><br><span class="line">        &lt;!-- initial-scale=1 表示初始的缩放比例。 --&gt;</span><br><span class="line">        &lt;!-- shrink-to-fit=no 自动适应手机屏幕的宽度。 --&gt;</span><br><span class="line">        &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1, shrink-to-fit=no&quot;&gt;</span><br><span class="line">        &lt;!-- Bootstrap4 核心 CSS 文件 --&gt;</span><br><span class="line">        &lt;link rel=&quot;stylesheet&quot; href=&quot;https://cdn.staticfile.org/twitter-bootstrap/4.1.0/css/bootstrap.min.css&quot;&gt;      </span><br><span class="line">        &lt;!-- jQuery文件。务必在bootstrap.min.js 之前引入 --&gt;</span><br><span class="line">        &lt;script src=&quot;https://cdn.staticfile.org/jquery/3.2.1/jquery.min.js&quot;&gt;&lt;/script&gt;  </span><br><span class="line">        &lt;!-- popper.min.js 用于弹窗、提示、下拉菜单 --&gt;</span><br><span class="line">        &lt;script src=&quot;https://cdn.staticfile.org/popper.js/1.12.5/umd/popper.min.js&quot;&gt;&lt;/script&gt;</span><br><span class="line">        &lt;!-- 最新的 Bootstrap4 核心 JavaScript 文件 --&gt;</span><br><span class="line">        &lt;script src=&quot;https://cdn.staticfile.org/twitter-bootstrap/4.1.0/js/bootstrap.min.js&quot;&gt;&lt;/script&gt;</span><br><span class="line">    &lt;/head&gt;</span><br><span class="line"></span><br><span class="line">    &lt;body&gt;</span><br><span class="line"></span><br><span class="line">    &lt;/body&gt;</span><br><span class="line">&lt;/html&gt;</span><br></pre></td></tr></table></figure></li></ul><h3 id="两个容器类"><a href="#两个容器类" class="headerlink" title="两个容器类"></a>两个容器类</h3><ol><li><code>.container</code>,使得被修饰的容器为固定宽度</li><li><code>.container-fluid</code>,使得显示为100%宽度,占据全部视口(viewport)<blockquote><p><em>例如可用在<code>&lt;div&gt;</code>标签</em></p></blockquote></li></ol><h3 id="网格系统"><a href="#网格系统" class="headerlink" title="网格系统"></a>网格系统</h3><ul><li>BootStrap提供的网格系统,会随着屏幕或视口(viewport)尺寸的增加,系统会自动分为最多十二列.也可以根据自己的需要重新定义列数.</li></ul><h4 id="网格类"><a href="#网格类" class="headerlink" title="网格类"></a>网格类</h4><ul><li><p><code>.col-</code>: 针对所有设备</p></li><li><p><code>.col-sm-</code>: 平板-屏幕宽度大于等于576px</p></li><li><p><code>.col-md-</code>: 桌面-屏幕宽大于等于768px</p></li><li><p><code>col-lg-</code>: &gt;=992px</p></li><li><p><code>col-xl-</code>: &gt;=1200px</p></li><li><p>以上的宽度要求均为最小宽度,最大宽度没有限制</p></li></ul><h5 id="规则"><a href="#规则" class="headerlink" title="规则"></a>规则</h5><ul><li><p>网格的每一行需要放在<code>.container</code>或<code>.container-fluid</code>容器中,这样就可以自动设置一些外边距与内边距。</p></li><li><p>使用行来创建水平的列组。内容需要放置在列中，并且只有列可以是行的直接子节点。</p></li><li><p>预定义的类如 <code>.row</code> 和 <code>.col-sm-4</code> 可用于快速制作网格布局。</p></li><li><p><strong>网格列是通过跨越指定的 12 个列来创建。</strong> 例如，设置三个相等的列，需要使用用三个<code>.col-sm-4</code> 来设置。而设置4个相等的列,则使用四个<code>.col-sm-3</code>来创建.</p></li><li><p>Bootstrap 3 和 Bootstrap 4 最大的区别在于 Bootstrap 4 现在使用 flexbox（弹性盒子） 而不是浮动。 Flexbox 的一大优势是，<strong>没有指定宽度的网格列将自动设置为等宽与等高列.</strong></p></li></ul><h5 id="例子"><a href="#例子" class="headerlink" title="例子"></a>例子</h5><ul><li><p>指定列的显示形式</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">&lt;div class=&quot;row&quot;&gt;</span><br><span class="line">  &lt;div class=&quot;col-*-*&quot;&gt;&lt;/div&gt;</span><br><span class="line">&lt;/div&gt;</span><br><span class="line">&lt;div class=&quot;row&quot;&gt;</span><br><span class="line">  &lt;div class=&quot;col-*-*&quot;&gt;&lt;/div&gt;</span><br><span class="line">  &lt;div class=&quot;col-*-*&quot;&gt;&lt;/div&gt;</span><br><span class="line">  &lt;div class=&quot;col-*-*&quot;&gt;&lt;/div&gt;</span><br><span class="line">&lt;/div&gt;</span><br></pre></td></tr></table></figure></li><li><p>其中第一个<code>*</code>表示需要响应的设备(见上文的5种设备),第二个<code>*</code>表示一个数字,显示在同一行的列数字之和需要为12.</p></li><li><p>让BootStrap自动处理</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">&lt;div class=&quot;row&quot;&gt;</span><br><span class="line">  &lt;div class=&quot;col&quot;&gt;&lt;/div&gt;</span><br><span class="line">  &lt;div class=&quot;col&quot;&gt;&lt;/div&gt;</span><br><span class="line">  &lt;div class=&quot;col&quot;&gt;&lt;/div&gt;</span><br><span class="line">&lt;/div&gt;</span><br></pre></td></tr></table></figure></li><li><p>不在每个 col 上添加数字，让 bootstrap 自动处理布局，同一行的每个列宽度相等： 两个 “col” ，每个就为 50% 的宽度。三个 “col”每个就为 33.33% 的宽度，四个 “col”每个就为 25% 的宽度，以此类推。同样，你可以使用 <code>.col-sm|md|lg|xl</code>来设置列的响应规则。</p></li></ul><h5 id="不等宽的例子"><a href="#不等宽的例子" class="headerlink" title="不等宽的例子"></a>不等宽的例子</h5><ul><li><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">&lt;div class=&quot;row&quot;&gt;</span><br><span class="line">  &lt;div class=&quot;col-sm-4&quot;&gt;.col-sm-4&lt;/div&gt;</span><br><span class="line">  &lt;div class=&quot;col-sm-8&quot;&gt;.col-sm-8&lt;/div&gt;</span><br><span class="line">&lt;/div&gt;</span><br></pre></td></tr></table></figure></li></ul><p>并且,由于设置为<code>sm</code>,<strong>则宽度不足576px时,两个列会自动上下堆叠显示</strong>.其他的类推.</p><ul><li><p>并且可以叠加使用:</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">&lt;div class=&quot;container-fluid&quot;&gt;</span><br><span class="line">  &lt;div class=&quot;row&quot;&gt;</span><br><span class="line">    &lt;div class=&quot;col-sm-3 col-md-6 col-lg-4 col-xl-2&quot;&gt;</span><br><span class="line">      &lt;p&gt;RUNOOB&lt;/p&gt;</span><br><span class="line">    &lt;/div&gt;</span><br><span class="line">    &lt;div class=&quot;col-sm-9 col-md-6 col-lg-8 col-xl-10&quot;&gt;</span><br><span class="line">      &lt;p&gt;菜鸟教程&lt;/p&gt;</span><br><span class="line">    &lt;/div&gt;</span><br><span class="line">  &lt;/div&gt;</span><br><span class="line">&lt;/div&gt;</span><br></pre></td></tr></table></figure></li><li><p>实例在平板、桌面、大桌面显示器、超大桌面显示器的宽度比例为分别为：<code>25%/75%、50%/50%、33.33%/66.67%、16.67/83.33%</code>, 在移动手机等小型设备上会堆叠显示。</p></li><li><p>总而言之,很灵活,并且不同的设备之间的类会一一对应,不会相互影响.</p></li></ul><h2 id="结尾"><a href="#结尾" class="headerlink" title="结尾"></a>结尾</h2><hr><ul><li>总之,BootStrap在建立网站的过程中非常好用,一些模板可以直接去网站上拷贝到本地修改即可使用.非常方便.</li></ul>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h2 id=&quot;前言&quot;&gt;&lt;a href=&quot;#前言&quot; class=&quot;headerlink&quot; title=&quot;前言&quot;&gt;&lt;/a&gt;前言&lt;/h2&gt;&lt;hr&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;最近学习需要,为了搭建网站方便,决定学习一下使用BootStrap.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;目前最新
+      
+    
+    </summary>
+    
+      <category term="FrontEnd" scheme="https://fleschier.github.io/categories/FrontEnd/"/>
+    
+    
+      <category term="๑FrontEnd" scheme="https://fleschier.github.io/tags/%E0%B9%91FrontEnd/"/>
+    
+      <category term="๑BootStrap" scheme="https://fleschier.github.io/tags/%E0%B9%91BootStrap/"/>
+    
+  </entry>
   
   <entry>
     <title>Tornado建站踩坑记录</title>
@@ -536,65 +598,6 @@
       <category term="๑Maven" scheme="https://fleschier.github.io/tags/%E0%B9%91Maven/"/>
     
       <category term="๑Apache" scheme="https://fleschier.github.io/tags/%E0%B9%91Apache/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>gitignore的使用及写法</title>
-    <link href="https://fleschier.github.io/2018/10/27/gitignore-learning/"/>
-    <id>https://fleschier.github.io/2018/10/27/gitignore-learning/</id>
-    <published>2018-10-27T10:32:00.000Z</published>
-    <updated>2018-10-30T15:39:43.294Z</updated>
-    
-    <content type="html"><![CDATA[<h2 id="gitignore的作用"><a href="#gitignore的作用" class="headerlink" title="gitignore的作用"></a>gitignore的作用</h2><hr><ul><li><p>对于git同步到github来说，估计没有人会 <code>git add 文件名</code>这样的方式来添加到工作区的，都是<code>git add .</code>这样一次添加吧</p></li><li><p>但是，有时候我们直接add所有的文件会将一些我们不需要的生成的临时文件也加入进去，导致文件冗余。同时，更有可能的是我们在push的时候失败，由于一些不支持的文件类型或者文件大小过大。</p></li><li><p>这时候我们就需要gitignore脚本来过滤我们需要上传的文件。</p></li></ul><h2 id="命名格式以及位置"><a href="#命名格式以及位置" class="headerlink" title="命名格式以及位置"></a>命名格式以及位置</h2><hr><ul><li><p>命名统一为<code>.gitignore</code></p></li><li><p>windows下由于不能文件名为空，则可以先命名为<code>.gitignore.</code>，回车确定之后windows会自动将最后一个点去掉。</p></li><li><p><code>.gitignore</code>文件放在根目录下即可。</p></li></ul><h2 id="内容写法"><a href="#内容写法" class="headerlink" title="内容写法"></a>内容写法</h2><hr><ul><li>gitignore本质上是一个按正则表达式匹配文件名/文件夹名的文件。</li></ul><h3 id="语法：-与正则表达式几乎一致"><a href="#语法：-与正则表达式几乎一致" class="headerlink" title="语法：(与正则表达式几乎一致)"></a>语法：(与正则表达式几乎一致)</h3><ul><li><p>空行或是以<code>#</code>开头的行即注释行将被忽略</p></li><li><p>以斜杠 <code>/</code>结尾表示目录</p></li><li><p>以星号<code>*</code>通配多个字符</p></li><li><p>以问号 <code>?</code> 通配单个字符</p></li><li><p>以方括号 <code>[]</code> 包含单个字符的匹配列表</p></li><li><p>以叹号 <code>!</code> 表示不忽略(跟踪)匹配到的文件或目录</p></li><li><p><a href="https://www.cnblogs.com/jingtyu/p/6831772.html" target="_blank" rel="noopener">参考</a></p></li></ul><h2 id="添加github仓库"><a href="#添加github仓库" class="headerlink" title="添加github仓库"></a>添加github仓库</h2><hr><ul><li>github上有一个为各种环境和编程语言提供gitignore模板的项目——<a href="https://github.com/github/gitignore" target="_blank" rel="noopener">https://github.com/github/gitignore</a></li></ul><blockquote><p>他的项目介绍是：This is GitHub’s collection of .gitignore file templates. We use this list to populate the .gitignore template choosers available in the GitHub.com interface when creating new repositories and files.(意思大概就是可以用它来实现在创建repository的时候可以选择初始化一个.gitignore文件，并且可以选择一个模板)</p></blockquote><ul><li>我们在创建github仓库的时候尽量先预先创建好.gitignore文件，因为一旦push之后，添加了新的.gitignore貌似也是不起作用的，非常麻烦，所以要养成写.gitignore的好习惯。</li></ul>]]></content>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;h2 id=&quot;gitignore的作用&quot;&gt;&lt;a href=&quot;#gitignore的作用&quot; class=&quot;headerlink&quot; title=&quot;gitignore的作用&quot;&gt;&lt;/a&gt;gitignore的作用&lt;/h2&gt;&lt;hr&gt;
-&lt;ul&gt;
-&lt;li&gt;&lt;p&gt;对于git同步到github来说
-      
-    
-    </summary>
-    
-      <category term="Computer" scheme="https://fleschier.github.io/categories/Computer/"/>
-    
-    
-      <category term="๑Git" scheme="https://fleschier.github.io/tags/%E0%B9%91Git/"/>
-    
-      <category term="๑Ubuntu" scheme="https://fleschier.github.io/tags/%E0%B9%91Ubuntu/"/>
-    
-      <category term="๑Linux" scheme="https://fleschier.github.io/tags/%E0%B9%91Linux/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Ubuntu18 Pycharm无法识别安装的Python库的解决方案</title>
-    <link href="https://fleschier.github.io/2018/10/16/pycharm-problem-solving/"/>
-    <id>https://fleschier.github.io/2018/10/16/pycharm-problem-solving/</id>
-    <published>2018-10-15T16:47:00.000Z</published>
-    <updated>2018-11-21T06:40:40.695Z</updated>
-    
-    <content type="html"><![CDATA[<blockquote><p>凌晨更~</p></blockquote><h2 id="pycahrm无法识别"><a href="#pycahrm无法识别" class="headerlink" title="pycahrm无法识别"></a>pycahrm无法识别</h2><hr><ul><li><p>我们有时候在需要使用一些第三方python库的时候，需要<code>pip install XXX</code>，然而愉快地安装完了之后，在pycharm中新建项目<code>import</code>却失败，提示找不到。</p></li><li><p>这个问题坑了好久，在终端里使用完全没有问题然而pycahrm里却不行。今天终于下定决心搞定这个问题。</p></li></ul><h2 id="首先从默认python版本下手"><a href="#首先从默认python版本下手" class="headerlink" title="首先从默认python版本下手"></a>首先从默认python版本下手</h2><hr><ul><li><p>由于我使用的是ubuntu18.04，其默认的python版本是python2.7，而我在IDE里使用的是后来安装的python3.6版本，因此pip install的module不会被识别(<em>因为终端里<code>pip install</code> 命令使用的解释器版本是2.7，安装的module也只能被2.7版本的识别</em>)</p></li><li><p>首先执行<code>python --version</code>查看当前默认版本</p></li><li><p>然后查看当前已安装的所有版本<code>ls /usr/bin/python*</code></p></li><li><p>接着修改系统信息：(<strong>需要管理员权限</strong>)</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">root@fleschier-GE5S:/home/fleschier# update-alternatives --install /usr/bin/python python /usr/bin/python2.7 1</span><br><span class="line">root@fleschier-GE5S:/home/fleschier# update-alternatives --install /usr/bin/python python /usr/bin/python3.6 2</span><br><span class="line">update-alternatives: 使用 /usr/bin/python3.6 来在自动模式中提供 /usr/bin/python (python)</span><br></pre></td></tr></table></figure></li></ul><p><code>--install</code> 选项使用了多个参数用于创建符号链接。最后一个参数指定了此选项的优先级，如果我们没有手动来设置替代选项，那么具有最高优先级的选项就会被选中。这个例子中，我们为 <code>/usr/bin/python3.6</code> 设置的优先级为2，所以<code>update-alternatives</code> 命令会自动将它设置为默认 Python 版本。</p><ul><li>参考<a href="https://blog.csdn.net/fang_chuan/article/details/60958329" target="_blank" rel="noopener">更改Ubuntu默认python版本的两种方法</a></li></ul><h3 id="一个坑接着一个坑"><a href="#一个坑接着一个坑" class="headerlink" title="一个坑接着一个坑"></a>一个坑接着一个坑</h3><ul><li><p>默认python版本改完了，下面就是<code>pip</code>了</p></li><li><p>改完之后会发现，执行<code>pip</code>命令会提示没有这个module。。。好吧又是坑</p></li><li><p>解决方案：<code>sudo apt-get install python3-pip</code></p></li><li><p>安装完成然后就可以使用pip的一系列命令了</p></li></ul><h3 id="更新pip版本"><a href="#更新pip版本" class="headerlink" title="更新pip版本"></a>更新pip版本</h3><ul><li><p><code>python -m pip install --upgrade pip</code></p></li><li><p>参考<a href="https://stackoverflow.com/questions/18363022/importerror-no-module-named-pip" target="_blank" rel="noopener">stackoverflow的一个问题</a></p></li></ul><h2 id="然后就是重新安装我们需要的库了"><a href="#然后就是重新安装我们需要的库了" class="headerlink" title="然后就是重新安装我们需要的库了"></a>然后就是重新安装我们需要的库了</h2><hr><ul><li><p>我这里要搞一个python绘图，需要matplotlib库</p></li><li><p>按照其官方的安装方法(<em>仍然需要管理员权限否则最后一步会失败提示权限不够</em>):<code>python -m pip install -U matplotlib</code></p></li><li><p>或者是一般的安装<code>pip3 install moduleName</code></p></li></ul><h2 id="最后"><a href="#最后" class="headerlink" title="最后"></a>最后</h2><hr><ul><li>最后就是网上烂大街的解决方法，指定pycharm的编译器为python3.x，即可～</li></ul>]]></content>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;blockquote&gt;
-&lt;p&gt;凌晨更~&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;h2 id=&quot;pycahrm无法识别&quot;&gt;&lt;a href=&quot;#pycahrm无法识别&quot; class=&quot;headerlink&quot; title=&quot;pycahrm无法识别&quot;&gt;&lt;/a&gt;pycahrm无法识别&lt;/h
-      
-    
-    </summary>
-    
-      <category term="Computer Programs" scheme="https://fleschier.github.io/categories/Computer-Programs/"/>
-    
-    
-      <category term="๑Python" scheme="https://fleschier.github.io/tags/%E0%B9%91Python/"/>
     
   </entry>
   
