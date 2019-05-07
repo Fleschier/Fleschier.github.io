@@ -115,6 +115,8 @@
 
 
 
+<link href="/js/google-code-prettify/tomorrow.min.css" type="text/css" rel="stylesheet">
+
   <meta name="description" content="不适合人类阅读的学习笔记  第十七章 使用集合类 序列列表 List类是不可变 链表, 因此支持在头部快速添加和移除条目，但是不提供按下标快速访问的功能，因为实现这个功能需要线性地遍历列表。  列表缓冲(ListBuffer) List类提供对列表头部的快速访问，但是对尾部就不那么高效，因此在尾部添加元素时我们经常需要用到reverse方法，在头部添加元素最后再reverse来获得我们想要的顺序">
 <meta name="keywords" content="๑Scala">
 <meta property="og:type" content="article">
@@ -182,6 +184,16 @@
 </noscript>
 
 </head>
+
+<!-- add by Fleshier -->
+<script type="text/javascript" src="/js/google-code-prettify/prettify.js"></script>
+<script type="text/javascript">
+$(window).load(function(){
+   $('pre').addClass('prettyprint linenums').attr('style', 'overflow:auto;');
+   prettyPrint();
+ })
+</script>
+<!-- add end -->
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="default">
 
@@ -487,7 +499,7 @@
 </ul>
 <h4 id="数组缓冲-ArrayBuffer"><a href="#数组缓冲-ArrayBuffer" class="headerlink" title="数组缓冲(ArrayBuffer)"></a>数组缓冲(ArrayBuffer)</h4><ul>
 <li><p>创建数组缓冲的时候不需要指定长度，只要给定类型</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">import scala.collection.mutable.ArrayBuffer</span><br><span class="line">val buf = new ArrayBuffer[Int]()</span><br></pre></td></tr></table></figure>
+<figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">import scala.collection.mutable.ArrayBuffer</span><br><span class="line">val buf = new ArrayBuffer[<span class="string">Int</span>](<span class="link"></span>)</span><br></pre></td></tr></table></figure>
 </li>
 <li><p>使用<code>+=</code>方法来追加元素</p>
 </li>
@@ -498,7 +510,7 @@
 <li><p>StringOps实现了很多序列的方法。由于Predef有一个从String到StringOps的隐式转换，可以将任何字符串当做序列来处理</p>
 </li>
 <li><p>例如:</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">def hasUpperCase(s: String) = s.exists(_.isUpper)</span><br><span class="line">hasUpperCase(&quot;Robert Frost&quot;)</span><br></pre></td></tr></table></figure>
+<figure class="highlight ruby"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">hasUpperCase</span><span class="params">(<span class="symbol">s:</span> String)</span></span> = s.exists(<span class="number">_</span>.isUpper)</span><br><span class="line">hasUpperCase(<span class="string">"Robert Frost"</span>)</span><br></pre></td></tr></table></figure>
 </li>
 </ul>
 <p>这里由于String类本身并没有任何名为<code>exists</code>的方法，但是StringOps有，通过隐式转换将s转换成StringOps来实现</p>
@@ -513,7 +525,7 @@
 <li><p>映射使用键来索引对应的值</p>
 </li>
 <li><p>下面是一个统计每个单词在字符串中出现次数的方法：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">def countWords(text: String) = &#123;</span><br><span class="line">  val counts = mutable.Map.empty[String,Int]</span><br><span class="line">  for (rawWord &lt;- text.split(&quot;[ ,!.]+&quot;))&#123;</span><br><span class="line">    val word = rawWord.toLowerCase // 统一变为小写字母</span><br><span class="line">    val oldCount =</span><br><span class="line">      if(counts.contains(word)) counts(word)</span><br><span class="line">      else 0</span><br><span class="line">    counts += (word -&gt; (oldCount + 1))</span><br><span class="line">  &#125;</span><br><span class="line">  counts</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight arduino"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">def countWords(<span class="built_in">text</span>: <span class="keyword">String</span>) = &#123;</span><br><span class="line">  val counts = <span class="keyword">mutable</span>.Map.empty[<span class="keyword">String</span>,Int]</span><br><span class="line">  <span class="built_in">for</span> (rawWord &lt;- <span class="built_in">text</span>.split(<span class="string">"[ ,!.]+"</span>))&#123;</span><br><span class="line">    val <span class="keyword">word</span> = rawWord.toLowerCase <span class="comment">// 统一变为小写字母</span></span><br><span class="line">    val oldCount =</span><br><span class="line">      <span class="built_in">if</span>(counts.contains(<span class="keyword">word</span>)) counts(<span class="keyword">word</span>)</span><br><span class="line">      <span class="built_in">else</span> <span class="number">0</span></span><br><span class="line">    counts += (<span class="keyword">word</span> -&gt; (oldCount + <span class="number">1</span>))</span><br><span class="line">  &#125;</span><br><span class="line">  counts</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 </li>
 <li><p>映射的方法见博客<a href="https://fleschier.github.io/2018/07/Scala-infos/">方法查询</a></p>
 </li>
@@ -900,7 +912,7 @@
 
 <div class="theme-info">
   <div class="powered-by"></div>
-  <span class="post-count">Total Words Of All Blogs: 99.7k words</span>
+  <span class="post-count">Total Words Of All Blogs: 98.9k words</span>
 </div>
 
         

@@ -115,6 +115,8 @@
 
 
 
+<link href="/js/google-code-prettify/tomorrow.min.css" type="text/css" rel="stylesheet">
+
   <meta name="description" content="为什么用Docker  环境搭建一直是运维一件非常头疼的事情, 如果系统崩溃而重新安装系统,则所有的环境都需要重新搭建一遍,非常耗时而且恼人.  我使用的Ubuntu18下配置好了大量的环境,如果这时候要我重新安装一遍的话,就算我做了详细的记录,也至少是一下午的工作量.  而Docker相当于一个容器,与虚拟机不同,虚拟机模拟了一个完整的操作系统,非常消耗系统资源,而且就算不做任何操作,内存也必须">
 <meta name="keywords" content="๑Ubuntu,๑Docker">
 <meta property="og:type" content="article">
@@ -185,6 +187,16 @@
 </noscript>
 
 </head>
+
+<!-- add by Fleshier -->
+<script type="text/javascript" src="/js/google-code-prettify/prettify.js"></script>
+<script type="text/javascript">
+$(window).load(function(){
+   $('pre').addClass('prettyprint linenums').attr('style', 'overflow:auto;');
+   prettyPrint();
+ })
+</script>
+<!-- add end -->
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="default">
 
@@ -479,12 +491,12 @@
 <li><p>由于Docker被墙得厉害,导致经常性地连官网也进不去.</p>
 </li>
 <li><p>我们为了安装过程的顺利,首先切换到中国科技大的源:</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">sudo cp /etc/apt/sources.list /etc/apt/sources.list.bak</span><br><span class="line">sudo sed -i &apos;s/archive.ubuntu.com/mirrors.ustc.edu.cn/g&apos; /etc/apt/sources.list</span><br><span class="line">sudo apt update</span><br></pre></td></tr></table></figure>
+<figure class="highlight stylus"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">sudo cp /etc/apt/sources<span class="selector-class">.list</span> /etc/apt/sources<span class="selector-class">.list</span><span class="selector-class">.bak</span></span><br><span class="line">sudo sed -<span class="selector-tag">i</span> <span class="string">'s/archive.ubuntu.com/mirrors.ustc.edu.cn/g'</span> /etc/apt/sources.list</span><br><span class="line">sudo apt update</span><br></pre></td></tr></table></figure>
 </li>
 <li><p>安装需要的包:<code>sudo apt install apt-transport-https ca-certificates software-properties-common curl</code></p>
 </li>
 <li><p>添加 GPG 密钥，并添加 Docker-ce 软件源:</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">curl -fsSL https://mirrors.ustc.edu.cn/docker-ce/linux/ubuntu/gpg | sudo apt-key add -</span><br><span class="line">sudo add-apt-repository &quot;deb [arch=amd64] https://mirrors.ustc.edu.cn/docker-ce/linux/ubuntu \</span><br><span class="line">$(lsb_release -cs) stable&quot;</span><br></pre></td></tr></table></figure>
+<figure class="highlight smali"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">curl -fsSL https://mirrors.ustc.edu.cn/docker-ce/linux/ubuntu/gpg | sudo apt-key<span class="built_in"> add </span>-</span><br><span class="line">sudo<span class="built_in"> add-apt-repository </span><span class="string">"deb [arch=amd64] https://mirrors.ustc.edu.cn/docker-ce/linux/ubuntu \</span></span><br><span class="line"><span class="string">$(lsb_release -cs) stable"</span></span><br></pre></td></tr></table></figure>
 </li>
 <li><p>更新缓存:<code>sudo apt update</code></p>
 </li>
@@ -495,7 +507,7 @@
 <li><p>结果:<br><img src="/images/Docker/docker-01.png" alt></p>
 </li>
 <li><p>添加当前用户到 docker 用户组，可以不用 sudo 运行 docker:</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">sudo groupadd docker</span><br><span class="line">sudo usermod -aG docker $USER</span><br></pre></td></tr></table></figure>
+<figure class="highlight nginx"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="attribute">sudo</span> groupadd docker</span><br><span class="line">sudo usermod -aG docker <span class="variable">$USER</span></span><br></pre></td></tr></table></figure>
 </li>
 </ul>
 <h2 id="docker-pull之后文件的存放目录"><a href="#docker-pull之后文件的存放目录" class="headerlink" title="docker pull之后文件的存放目录"></a>docker pull之后文件的存放目录</h2><hr>
@@ -893,7 +905,7 @@
 
 <div class="theme-info">
   <div class="powered-by"></div>
-  <span class="post-count">Total Words Of All Blogs: 99.7k words</span>
+  <span class="post-count">Total Words Of All Blogs: 98.9k words</span>
 </div>
 
         

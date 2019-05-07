@@ -115,6 +115,8 @@
 
 
 
+<link href="/js/google-code-prettify/tomorrow.min.css" type="text/css" rel="stylesheet">
+
   <meta name="description" content="凌晨更~  pycahrm无法识别  我们有时候在需要使用一些第三方python库的时候，需要pip install XXX，然而愉快地安装完了之后，在pycharm中新建项目import却失败，提示找不到。  这个问题坑了好久，在终端里使用完全没有问题然而pycahrm里却不行。今天终于下定决心搞定这个问题。   首先从默认python版本下手  由于我使用的是ubuntu18.04，其默认的">
 <meta name="keywords" content="๑Python">
 <meta property="og:type" content="article">
@@ -182,6 +184,16 @@
 </noscript>
 
 </head>
+
+<!-- add by Fleshier -->
+<script type="text/javascript" src="/js/google-code-prettify/prettify.js"></script>
+<script type="text/javascript">
+$(window).load(function(){
+   $('pre').addClass('prettyprint linenums').attr('style', 'overflow:auto;');
+   prettyPrint();
+ })
+</script>
+<!-- add end -->
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="default">
 
@@ -485,7 +497,7 @@
 <li><p>然后查看当前已安装的所有版本<code>ls /usr/bin/python*</code></p>
 </li>
 <li><p>接着修改系统信息：(<strong>需要管理员权限</strong>)</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">root@fleschier-GE5S:/home/fleschier# update-alternatives --install /usr/bin/python python /usr/bin/python2.7 1</span><br><span class="line">root@fleschier-GE5S:/home/fleschier# update-alternatives --install /usr/bin/python python /usr/bin/python3.6 2</span><br><span class="line">update-alternatives: 使用 /usr/bin/python3.6 来在自动模式中提供 /usr/bin/python (python)</span><br></pre></td></tr></table></figure>
+<figure class="highlight vim"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">root@fleschier-GE5S:/home/fleschier# <span class="keyword">update</span>-alternatives --install /usr/bin/<span class="keyword">python</span> <span class="keyword">python</span> /usr/bin/python2.<span class="number">7</span> <span class="number">1</span></span><br><span class="line">root@fleschier-GE5S:/home/fleschier# <span class="keyword">update</span>-alternatives --install /usr/bin/<span class="keyword">python</span> <span class="keyword">python</span> /usr/bin/<span class="keyword">python3</span>.<span class="number">6</span> <span class="number">2</span></span><br><span class="line"><span class="keyword">update</span>-alternative<span class="variable">s:</span> 使用 /usr/bin/<span class="keyword">python3</span>.<span class="number">6</span> 来在自动模式中提供 /usr/bin/<span class="keyword">python</span> (<span class="keyword">python</span>)</span><br></pre></td></tr></table></figure>
 </li>
 </ul>
 <p><code>--install</code> 选项使用了多个参数用于创建符号链接。最后一个参数指定了此选项的优先级，如果我们没有手动来设置替代选项，那么具有最高优先级的选项就会被选中。这个例子中，我们为 <code>/usr/bin/python3.6</code> 设置的优先级为2，所以<code>update-alternatives</code> 命令会自动将它设置为默认 Python 版本。</p>
@@ -580,8 +592,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2018/10/08/C++-learning-error-collection/" rel="next" title="C++学习笔记——一些报错信息归因">
-                <i class="fa fa-chevron-left"></i> C++学习笔记——一些报错信息归因
+              <a href="/2018/10/08/C++-sprintf-printf/" rel="next" title="C++学习笔记——强大的sprintf">
+                <i class="fa fa-chevron-left"></i> C++学习笔记——强大的sprintf
               </a>
             
           </div>
@@ -893,7 +905,7 @@
 
 <div class="theme-info">
   <div class="powered-by"></div>
-  <span class="post-count">Total Words Of All Blogs: 99.7k words</span>
+  <span class="post-count">Total Words Of All Blogs: 98.9k words</span>
 </div>
 
         

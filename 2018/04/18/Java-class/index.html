@@ -115,6 +115,8 @@
 
 
 
+<link href="/js/google-code-prettify/tomorrow.min.css" type="text/css" rel="stylesheet">
+
   <meta name="description" content="不适合人类阅读的学习笔记  Java的类，继承与接口 类的定义 类的修饰符有两种：public 和 缺省。public表示共有的访问级别，即任何类都可以访问它。缺省只允许同一个包中的类来访问它。  类的类型修饰符：缺省、abstract及final三种。abstract表示这是一个抽象类，有些方法 还没有实现。final表示这是一个最终类，不能被其他的类继承。  类是对象的模板，对象是类的实例化">
 <meta name="keywords" content="๑Java">
 <meta property="og:type" content="article">
@@ -182,6 +184,16 @@
 </noscript>
 
 </head>
+
+<!-- add by Fleshier -->
+<script type="text/javascript" src="/js/google-code-prettify/prettify.js"></script>
+<script type="text/javascript">
+$(window).load(function(){
+   $('pre').addClass('prettyprint linenums').attr('style', 'overflow:auto;');
+   prettyPrint();
+ })
+</script>
+<!-- add end -->
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="default">
 
@@ -510,21 +522,21 @@
 <li><p>创建对象后，可以将对象的引用赋值给其他对象变量。</p>
 </li>
 <li><p>例如下面的程序</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">public class test&#123;</span><br><span class="line">	public static void main(String[] args)&#123;</span><br><span class="line">		StringBuffer s;</span><br><span class="line">		s= new StringBuffer(&quot;AAAAA&quot;);</span><br><span class="line">		StringBuffer s1 = s; //此句会使得s1和s指向同一个对象</span><br><span class="line">		s1.append(&quot;BBBB&quot;);</span><br><span class="line">		Syetem.out.println(&quot;s = &quot; + s.toString());</span><br><span class="line">		Syetem.out.println(&quot;s1 = &quot; + s1.toString());</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight cs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title">test</span>&#123;</span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span>(<span class="params">String[] args</span>)</span>&#123;</span><br><span class="line">		StringBuffer s;</span><br><span class="line">		s= <span class="keyword">new</span> StringBuffer(<span class="string">"AAAAA"</span>);</span><br><span class="line">		StringBuffer s1 = s; <span class="comment">//此句会使得s1和s指向同一个对象</span></span><br><span class="line">		s1.append(<span class="string">"BBBB"</span>);</span><br><span class="line">		Syetem.<span class="keyword">out</span>.println(<span class="string">"s = "</span> + s.toString());</span><br><span class="line">		Syetem.<span class="keyword">out</span>.println(<span class="string">"s1 = "</span> + s1.toString());</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 </li>
 <li><p>输出结果为：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">s = AAAAABBBB</span><br><span class="line">s1 = AAAAABBBB</span><br></pre></td></tr></table></figure>
+<figure class="highlight ini"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">s</span> = AAAAABBBB</span><br><span class="line"><span class="attr">s1</span> = AAAAABBBB</span><br></pre></td></tr></table></figure>
 </li>
 </ul>
 <h3 id="方法参数传递"><a href="#方法参数传递" class="headerlink" title="方法参数传递"></a>方法参数传递</h3><h4 id="按值传递-一般的函数参数"><a href="#按值传递-一般的函数参数" class="headerlink" title="按值传递(一般的函数参数)"></a>按值传递(一般的函数参数)</h4><ul>
-<li>传入方法中的参数是一份拷贝，对其的修改不会影响其本身<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">class Printer&#123;</span><br><span class="line">	public void printinfo(String name, int age)&#123;</span><br><span class="line">		age ++;</span><br><span class="line">		System.out.println(&quot;Hello! My name is&quot; + name + &quot;and I&apos;m &quot; + age);</span><br><span class="line">	&#125;</span><br><span class="line">	public static void main(String args[])&#123;</span><br><span class="line">		Printer p = new Printer();</span><br><span class="line">		int age = 20;</span><br><span class="line">		p.printinfo(&quot;Mike&quot;,age);</span><br><span class="line">		System.out.println(&quot;Now the initial age = &quot; + age);</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<li>传入方法中的参数是一份拷贝，对其的修改不会影响其本身<figure class="highlight cs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title">Printer</span>&#123;</span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">printinfo</span>(<span class="params">String name, <span class="keyword">int</span> age</span>)</span>&#123;</span><br><span class="line">		age ++;</span><br><span class="line">		System.<span class="keyword">out</span>.println(<span class="string">"Hello! My name is"</span> + name + <span class="string">"and I'm "</span> + age);</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span>(<span class="params">String args[]</span>)</span>&#123;</span><br><span class="line">		Printer p = <span class="keyword">new</span> Printer();</span><br><span class="line">		<span class="keyword">int</span> age = <span class="number">20</span>;</span><br><span class="line">		p.printinfo(<span class="string">"Mike"</span>,age);</span><br><span class="line">		System.<span class="keyword">out</span>.println(<span class="string">"Now the initial age = "</span> + age);</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 </li>
 </ul>
 <h4 id="按引用传递"><a href="#按引用传递" class="headerlink" title="按引用传递"></a>按引用传递</h4><ul>
 <li>调用方法时，<strong>如果传递的是一个对象、接口或数组时</strong>，实际上传递的是对象的、接口或者数组的引用。因此如果方法中对参数进行了修改，那么原来的数据也会受到影响。</li>
 </ul>
 <h2 id="继承"><a href="#继承" class="headerlink" title="继承"></a>继承</h2><ul>
-<li>类的继承格式：<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">class 父类&#123;</span><br><span class="line">	...</span><br><span class="line">&#125;</span><br><span class="line">class 子类 extends 父类&#123;</span><br><span class="line">	...</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<li>类的继承格式：<figure class="highlight scala"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">父类</span></span>&#123;</span><br><span class="line">	...</span><br><span class="line">&#125;</span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">子类</span> <span class="keyword">extends</span> <span class="title">父类</span></span>&#123;</span><br><span class="line">	...</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 </li>
 </ul>
 <h3 id="继承的特性"><a href="#继承的特性" class="headerlink" title="继承的特性"></a>继承的特性</h3><ul>
@@ -542,10 +554,10 @@
 <h2 id="多继承的实现"><a href="#多继承的实现" class="headerlink" title="多继承的实现"></a>多继承的实现</h2><hr>
 <h3 id="抽象类"><a href="#抽象类" class="headerlink" title="抽象类"></a>抽象类</h3><ul>
 <li><p>抽象类的定义：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">[访问修饰符] &lt;abstract&gt; class &lt;类名&gt;&#123;</span><br><span class="line">	[成员变量声明]</span><br><span class="line">	[方法定义]</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight crystal"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">[访问修饰符] &lt;<span class="keyword">abstract</span>&gt; <span class="class"><span class="keyword">class</span> &lt;类名&gt;&#123;</span></span><br><span class="line">	[成员变量声明]</span><br><span class="line">	[方法定义]</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 </li>
 <li><p>抽象方法的定义：抽象方法是指只有声明而没有实现方法，用abstract修饰，一般格式如下：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">[访问修饰符] &lt;abstract&gt; 返回类型 方法名(参数列表);</span><br></pre></td></tr></table></figure>
+<figure class="highlight cs"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">[<span class="meta">访问修饰符</span>] &lt;<span class="keyword">abstract</span>&gt; 返回类型 方法名(参数列表);</span><br></pre></td></tr></table></figure>
 </li>
 </ul>
 <blockquote>
@@ -590,7 +602,7 @@
 </blockquote>
 </li>
 <li><p>接口使用示例：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">interface Computable&#123;</span><br><span class="line">	final int x = 10;</span><br><span class="line">	int add();</span><br><span class="line">	void point();</span><br><span class="line">&#125;</span><br><span class="line">class TESt implements Computable&#123;</span><br><span class="line">	private int y;</span><br><span class="line">	public TEST(int y)&#123;</span><br><span class="line">		this.y = y;</span><br><span class="line">	&#125;</span><br><span class="line">	public int add()&#123; //实现抽象方法时添加public 和 return 语句</span><br><span class="line">		return x + y;</span><br><span class="line">	&#125;</span><br><span class="line">	public void print()&#123;&#125; //返回类型为void方法体可以留空</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">interface</span> <span class="title">Computable</span></span>&#123;</span><br><span class="line">	<span class="keyword">final</span> <span class="keyword">int</span> x = <span class="number">10</span>;</span><br><span class="line">	<span class="function"><span class="keyword">int</span> <span class="title">add</span><span class="params">()</span></span>;</span><br><span class="line">	<span class="function"><span class="keyword">void</span> <span class="title">point</span><span class="params">()</span></span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">TESt</span> <span class="keyword">implements</span> <span class="title">Computable</span></span>&#123;</span><br><span class="line">	<span class="keyword">private</span> <span class="keyword">int</span> y;</span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="title">TEST</span><span class="params">(<span class="keyword">int</span> y)</span></span>&#123;</span><br><span class="line">		<span class="keyword">this</span>.y = y;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">add</span><span class="params">()</span></span>&#123; <span class="comment">//实现抽象方法时添加public 和 return 语句</span></span><br><span class="line">		<span class="keyword">return</span> x + y;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">print</span><span class="params">()</span></span>&#123;&#125; <span class="comment">//返回类型为void方法体可以留空</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 </li>
 <li><p>接口之间也可以继承，用关键字extends，但是一个接口可以同时extends多个接口，之间以逗号间隔。</p>
 <blockquote>
@@ -706,8 +718,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2018/04/15/Block-Chain/" rel="next" title="区块链初涉">
-                <i class="fa fa-chevron-left"></i> 区块链初涉
+              <a href="/2018/04/18/Java-function/" rel="next" title="Java学习笔记——方法">
+                <i class="fa fa-chevron-left"></i> Java学习笔记——方法
               </a>
             
           </div>
@@ -716,8 +728,8 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2018/04/18/Java-function/" rel="prev" title="Java学习笔记——方法">
-                Java学习笔记——方法 <i class="fa fa-chevron-right"></i>
+              <a href="/2018/04/29/Python-superior/" rel="prev" title="Python学习笔记——进阶">
+                Python学习笔记——进阶 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -1019,7 +1031,7 @@
 
 <div class="theme-info">
   <div class="powered-by"></div>
-  <span class="post-count">Total Words Of All Blogs: 99.7k words</span>
+  <span class="post-count">Total Words Of All Blogs: 98.9k words</span>
 </div>
 
         

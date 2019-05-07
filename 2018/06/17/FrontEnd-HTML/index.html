@@ -115,6 +115,8 @@
 
 
 
+<link href="/js/google-code-prettify/tomorrow.min.css" type="text/css" rel="stylesheet">
+
   <meta name="description" content="不适合人类阅读的学习笔记  HTML基础  学习web前端开发基础技术需要掌握：HTML、CSS、JavaScript语言。(网页三件套大礼包～)  概念解析 HTML是网页内容的载体。内容就是网页制作者放在页面上想要让用户浏览的信息，可以包含文字、图片、视频等。  CSS样式是表现。就像网页的外衣。比如，标题字体、颜色变化，或为标题加入背景图片、边框等。所有这些用来改变内容外观的东西称之为表现">
 <meta name="keywords" content="๑FrontEnd,๑Html">
 <meta property="og:type" content="article">
@@ -184,6 +186,16 @@
 </noscript>
 
 </head>
+
+<!-- add by Fleshier -->
+<script type="text/javascript" src="/js/google-code-prettify/prettify.js"></script>
+<script type="text/javascript">
+$(window).load(function(){
+   $('pre').addClass('prettyprint linenums').attr('style', 'overflow:auto;');
+   prettyPrint();
+ })
+</script>
+<!-- add end -->
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="default">
 
@@ -483,7 +495,7 @@
 <li><p>JavaScript是用来实现网页上的特效效果。如：鼠标滑过弹出下拉菜单。或鼠标滑过表格的背景颜色改变。还有焦点新闻（新闻图片）的轮换。可以这么理解，有动画的，有交互的一般都是用JavaScript来实现的。</p>
 </li>
 </ul>
-<h3 id="一个html网页的基本结构"><a href="#一个html网页的基本结构" class="headerlink" title="一个html网页的基本结构"></a>一个html网页的基本结构</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">&lt;html&gt;</span><br><span class="line">&lt;head&gt;</span><br><span class="line">...</span><br><span class="line">&lt;/head&gt;</span><br><span class="line">&lt;body&gt;</span><br><span class="line">&lt;h1&gt;</span><br><span class="line">...</span><br><span class="line">&lt;/h1&gt;</span><br><span class="line">&lt;p&gt;</span><br><span class="line">...</span><br><span class="line">&lt;/p&gt;</span><br><span class="line">&lt;img src=&quot;...&quot;&gt;</span><br><span class="line">...</span><br><span class="line">&lt;/body&gt;</span><br><span class="line">&lt;/html&gt;</span><br></pre></td></tr></table></figure>
+<h3 id="一个html网页的基本结构"><a href="#一个html网页的基本结构" class="headerlink" title="一个html网页的基本结构"></a>一个html网页的基本结构</h3><figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">html</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">head</span>&gt;</span></span><br><span class="line">...</span><br><span class="line"><span class="tag">&lt;/<span class="name">head</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">h1</span>&gt;</span></span><br><span class="line">...</span><br><span class="line"><span class="tag">&lt;/<span class="name">h1</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">p</span>&gt;</span></span><br><span class="line">...</span><br><span class="line"><span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">img</span> <span class="attr">src</span>=<span class="string">"..."</span>&gt;</span></span><br><span class="line">...</span><br><span class="line"><span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></span><br></pre></td></tr></table></figure>
 <h4 id="标签语法"><a href="#标签语法" class="headerlink" title="标签语法"></a>标签语法</h4><ul>
 <li><p>标签由英文尖括号<code>&lt;</code>和<code>&gt;</code>括起来，如<code>&lt;html&gt;</code>就是一个标签。</p>
 </li>
@@ -517,7 +529,7 @@
 <li><p>下面这些标签可以用在<code>&lt;head&gt;部分</code>：</p>
 </li>
 </ul>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">&lt;head&gt;</span><br><span class="line">    &lt;title&gt;...&lt;/title&gt;</span><br><span class="line">    &lt;meta&gt;</span><br><span class="line">    &lt;link&gt;</span><br><span class="line">    &lt;style&gt;...&lt;/style&gt;</span><br><span class="line">    &lt;script&gt;...&lt;/script&gt;</span><br><span class="line">&lt;/head&gt;</span><br></pre></td></tr></table></figure>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">head</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">title</span>&gt;</span>...<span class="tag">&lt;/<span class="name">title</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">meta</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">link</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">style</span>&gt;</span><span class="undefined">...</span><span class="tag">&lt;/<span class="name">style</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">script</span>&gt;</span><span class="undefined">...</span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">head</span>&gt;</span></span><br></pre></td></tr></table></figure>
 <ul>
 <li><code>&lt;title&gt;</code>标签：在<code>&lt;title&gt;</code>和<code>&lt;/title&gt;</code>标签之间的文字内容是网页的标题信息，<strong>它会出现在浏览器的标题栏中</strong>。网页的title标签用于告诉用户和搜索引擎这个网页的主要内容是什么，搜索引擎可以通过网页标题，迅速的判断出网页的主题。每个网页的内容都是不同的，每个网页都应该有一个独一无二的title。</li>
 </ul>
@@ -535,7 +547,7 @@
 <li><p>例子：</p>
 </li>
 </ul>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line">&lt;!DOCTYPE HTML&gt;</span><br><span class="line">&lt;html&gt;</span><br><span class="line">&lt;head&gt;</span><br><span class="line">&lt;meta http-equiv=&quot;Content-Type&quot; content=&quot;text/html; charset=utf-8&quot;&gt;</span><br><span class="line">&lt;title&gt;了不起的盖茨比&lt;/title&gt;</span><br><span class="line">&lt;style&gt;</span><br><span class="line">span&#123;</span><br><span class="line">    color:blue;</span><br><span class="line">&#125;</span><br><span class="line">&lt;/style&gt;</span><br><span class="line">&lt;/head&gt;</span><br><span class="line">&lt;body&gt;</span><br><span class="line">    &lt;p&gt;</span><br><span class="line">    1922年的春天，一个想要成名名叫尼克•卡拉威（托比•马奎尔Tobey Maguire 饰）的作家，离开了美国中西部，来到了纽约。那是一个道德感渐失，爵士乐流行，走私为王，股票飞涨的时代。为了追寻他的&lt;span&gt;美国梦&lt;/span&gt;，他搬入纽约附近一海湾居住。</span><br><span class="line">    &lt;/p&gt;</span><br><span class="line">    &lt;p&gt;</span><br><span class="line">    菲茨杰拉德，二十世纪美国文学巨擘之一，兼具作家和编剧双重身份。他以诗人的敏感和戏剧家的想象为&quot;爵士乐时代&quot;吟唱华丽挽歌，其诗人和梦想家的气质亦为那个奢靡年代的不二注解。</span><br><span class="line">    &lt;/p&gt;</span><br><span class="line">&lt;/body&gt;</span><br><span class="line">&lt;/html&gt;</span><br></pre></td></tr></table></figure>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;!DOCTYPE HTML&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">html</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">head</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">meta</span> <span class="attr">http-equiv</span>=<span class="string">"Content-Type"</span> <span class="attr">content</span>=<span class="string">"text/html; charset=utf-8"</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">title</span>&gt;</span>了不起的盖茨比<span class="tag">&lt;/<span class="name">title</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">style</span>&gt;</span><span class="undefined"></span></span><br><span class="line"><span class="undefined">span&#123;</span></span><br><span class="line"><span class="css">    <span class="selector-tag">color</span><span class="selector-pseudo">:blue</span>;</span></span><br><span class="line"><span class="undefined">&#125;</span></span><br><span class="line"><span class="undefined"></span><span class="tag">&lt;/<span class="name">style</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">head</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">p</span>&gt;</span></span><br><span class="line">    1922年的春天，一个想要成名名叫尼克•卡拉威（托比•马奎尔Tobey Maguire 饰）的作家，离开了美国中西部，来到了纽约。那是一个道德感渐失，爵士乐流行，走私为王，股票飞涨的时代。为了追寻他的<span class="tag">&lt;<span class="name">span</span>&gt;</span>美国梦<span class="tag">&lt;/<span class="name">span</span>&gt;</span>，他搬入纽约附近一海湾居住。</span><br><span class="line">    <span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">p</span>&gt;</span></span><br><span class="line">    菲茨杰拉德，二十世纪美国文学巨擘之一，兼具作家和编剧双重身份。他以诗人的敏感和戏剧家的想象为"爵士乐时代"吟唱华丽挽歌，其诗人和梦想家的气质亦为那个奢靡年代的不二注解。</span><br><span class="line">    <span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></span><br></pre></td></tr></table></figure>
 <p>其中第一段中的“美国梦”被<code>&lt;span&gt;</code>标签标记，在<code>&lt;style&gt;</code>标签中，我们定义了<code>&lt;span&gt;</code>标签修饰的文本的格式为蓝色。</p>
 <h3 id="lt-q-gt-标签"><a href="#lt-q-gt-标签" class="headerlink" title="&lt;q&gt;标签"></a><code>&lt;q&gt;标签</code></h3><ul>
 <li><p><code>&lt;q&gt;&lt;/q&gt;</code>标签表示引用，注意要引用的文本不用加双引号，浏览器会对q标签自动添加双引号。</p>
@@ -552,7 +564,7 @@
 <li><p>换行标签语法：</p>
 </li>
 </ul>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">xhtml1.0写法： &lt;br /&gt;</span><br><span class="line">html4.01写法： &lt;br&gt;</span><br></pre></td></tr></table></figure>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">xhtml1.0写法： <span class="tag">&lt;<span class="name">br</span> /&gt;</span></span><br><span class="line">html4.01写法： <span class="tag">&lt;<span class="name">br</span>&gt;</span></span><br></pre></td></tr></table></figure>
 <p>现在一般用html4的写法</p>
 <ul>
 <li><p>与以前我们学过的标签不一样，<code>&lt;br /&gt;</code>标签是一个 <strong>空标签</strong> 。没有HTML内容的标签就是空标签，<strong>空标签只需要写一个开始标签</strong>，这样的标签有<code>&lt;br /&gt;</code>、<code>&lt;hr /&gt;</code>和<code>&lt;img /&gt;</code>。</p>
@@ -567,7 +579,7 @@
 <li><p>语法：</p>
 </li>
 </ul>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">html4.01版本 &lt;hr&gt;</span><br><span class="line">xhtml1.0版本 &lt;hr /&gt;</span><br></pre></td></tr></table></figure>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">html4.01版本 <span class="tag">&lt;<span class="name">hr</span>&gt;</span></span><br><span class="line">xhtml1.0版本 <span class="tag">&lt;<span class="name">hr</span> /&gt;</span></span><br></pre></td></tr></table></figure>
 <p>现在一般用html4的写法</p>
 <ul>
 <li><p><code>&lt;hr /&gt;</code>标签和<code>&lt;br /&gt;</code>标签一样也是一个空标签，所以只有一个开始标签，没有结束标签。</p>
@@ -591,7 +603,7 @@
 <h3 id="ul-li标签"><a href="#ul-li标签" class="headerlink" title="ul-li标签"></a><code>ul-li</code>标签</h3><ul>
 <li>实例：</li>
 </ul>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">&lt;ul&gt;</span><br><span class="line">  &lt;li&gt;精彩少年&lt;/li&gt;</span><br><span class="line">  &lt;li&gt;美丽突然出现&lt;/li&gt;</span><br><span class="line">  &lt;li&gt;触动心灵的旋律&lt;/li&gt;</span><br><span class="line">&lt;/ul&gt;</span><br></pre></td></tr></table></figure>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">ul</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">li</span>&gt;</span>精彩少年<span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">li</span>&gt;</span>美丽突然出现<span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">li</span>&gt;</span>触动心灵的旋律<span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">ul</span>&gt;</span></span><br></pre></td></tr></table></figure>
 <ul>
 <li><code>ul-li</code>在网页中显示的默认样式一般为：每项<code>li</code>前都自带一个圆点：<br><img src="/images/HTML/ul-li.png" alt></li>
 </ul>
@@ -662,7 +674,7 @@
 <li><p>例：</p>
 </li>
 </ul>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">&lt;form    method=&quot;post&quot;   action=&quot;save.php&quot;&gt;</span><br><span class="line">        &lt;label for=&quot;username&quot;&gt;用户名:&lt;/label&gt;</span><br><span class="line">        &lt;input type=&quot;text&quot; name=&quot;username&quot; /&gt;</span><br><span class="line">        &lt;label for=&quot;pass&quot;&gt;密码:&lt;/label&gt;</span><br><span class="line">        &lt;input type=&quot;password&quot; name=&quot;pass&quot; /&gt;</span><br><span class="line">&lt;/form&gt;</span><br></pre></td></tr></table></figure>
+<figure class="highlight stata"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">&lt;<span class="keyword">form</span>    method=<span class="string">"post"</span>   action=<span class="string">"save.php"</span>&gt;</span><br><span class="line">        &lt;<span class="keyword">label</span> <span class="keyword">for</span>=<span class="string">"username"</span>&gt;用户名:&lt;/<span class="keyword">label</span>&gt;</span><br><span class="line">        &lt;<span class="keyword">input</span> <span class="keyword">type</span>=<span class="string">"text"</span> name=<span class="string">"username"</span> /&gt;</span><br><span class="line">        &lt;<span class="keyword">label</span> <span class="keyword">for</span>=<span class="string">"pass"</span>&gt;密码:&lt;/<span class="keyword">label</span>&gt;</span><br><span class="line">        &lt;<span class="keyword">input</span> <span class="keyword">type</span>=<span class="string">"password"</span> name=<span class="string">"pass"</span> /&gt;</span><br><span class="line">&lt;/<span class="keyword">form</span>&gt;</span><br></pre></td></tr></table></figure>
 <ul>
 <li><p>所有表单控件（文本框、文本域、按钮、单选框、复选框等）都必须放在 <form></form> 标签之间，否则用户的数据可能提交不上。</p>
 </li>
@@ -675,7 +687,7 @@
 <li><p>语法：</p>
 </li>
 </ul>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&lt;form&gt;</span><br><span class="line">   &lt;input type=&quot;text/password&quot; name=&quot;名称&quot; value=&quot;文本&quot; /&gt;</span><br><span class="line">&lt;/form&gt;</span><br></pre></td></tr></table></figure>
+<figure class="highlight stata"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&lt;<span class="keyword">form</span>&gt;</span><br><span class="line">   &lt;<span class="keyword">input</span> <span class="keyword">type</span>=<span class="string">"text/password"</span> name=<span class="string">"名称"</span> value=<span class="string">"文本"</span> /&gt;</span><br><span class="line">&lt;/<span class="keyword">form</span>&gt;</span><br></pre></td></tr></table></figure>
 <ul>
 <li><p>type：当type=”text”时，输入框为文本输入框; 当type=”password”时, 输入框为密码输入框。</p>
 </li>
@@ -1078,7 +1090,7 @@
 
 <div class="theme-info">
   <div class="powered-by"></div>
-  <span class="post-count">Total Words Of All Blogs: 99.7k words</span>
+  <span class="post-count">Total Words Of All Blogs: 98.9k words</span>
 </div>
 
         

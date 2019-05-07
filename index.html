@@ -115,6 +115,8 @@
 
 
 
+<link href="/js/google-code-prettify/tomorrow.min.css" type="text/css" rel="stylesheet">
+
   <meta name="description" content="每天早上醒来，你和阳光都在，就是我想要的未来。">
 <meta property="og:type" content="website">
 <meta property="og:title" content="Fleschier 渐寒๑">
@@ -180,6 +182,16 @@
 </noscript>
 
 </head>
+
+<!-- add by Fleshier -->
+<script type="text/javascript" src="/js/google-code-prettify/prettify.js"></script>
+<script type="text/javascript">
+$(window).load(function(){
+   $('pre').addClass('prettyprint linenums').attr('style', 'overflow:auto;');
+   prettyPrint();
+ })
+</script>
+<!-- add end -->
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="default">
 
@@ -390,12 +402,24 @@
                 
               
 
-              <time title="Created: 2019-04-16 11:05:00 / Modified: 11:18:35" itemprop="dateCreated datePublished" datetime="2019-04-16T11:05:00+08:00">2019-04-16</time>
+              <time title="Created: 2019-04-16 11:05:00" itemprop="dateCreated datePublished" datetime="2019-04-16T11:05:00+08:00">2019-04-16</time>
             
 
             
               
 
+              
+                
+                <span class="post-meta-divider">|</span>
+                
+
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">Edited on</span>
+                
+                <time title="Modified: 2019-05-07 21:53:04" itemprop="dateModified" datetime="2019-05-07T21:53:04+08:00">2019-05-07</time>
               
             
           </span>
@@ -466,14 +490,12 @@
       
         
           
-          问题记录
-
-最近在写项目使用tensorflow做深度学习,使用了Anacoda并结合VScode来进行开发.
-
-但是遇到一个问题,就是VScode python默认使用pylint,而pylint识别不了tensorflow框架,在import的时候一直报错.
+          前言
+首先需要明确是否安装了tensorflow.虽然Anacoda说是集成了Tensorflow,但是下载的部分是不包括Tensorflow的,需要自己安装才行.
 
 
-StackOverflow的解释
+
+最新更新:pylint的问题现在已经不存在了,要是检测不到tensorflow,主要原因可能就是tensorflow未安装或安装
           ...
           <!--noindex-->
           <div class="post-button text-center">
@@ -1221,11 +1243,12 @@ auto关键字赋予了C++强大的类型自动判断的能力,并且会在很长
           问题
 
 在Vscode上装完python环境后,在按F5运行后却报错了:
-123...ImportError: No module named &apos;_tkinter&apos;...
+123...ImportError: No module named '_tkinter'...
 
 python版本为3.6, pip版本为18
 
-查阅了网上相关资料后发现是缺少包的原因,在终端中手动下载一
+查阅了网上相关资料后发现是缺少包的原因,在终端中手动下载一下即可:
+1sudo
           ...
           <!--noindex-->
           <div class="post-button text-center">
@@ -1532,7 +1555,7 @@ python版本为3.6, pip版本为18
 
 <div class="theme-info">
   <div class="powered-by"></div>
-  <span class="post-count">Total Words Of All Blogs: 99.7k words</span>
+  <span class="post-count">Total Words Of All Blogs: 98.9k words</span>
 </div>
 
         

@@ -115,6 +115,8 @@
 
 
 
+<link href="/js/google-code-prettify/tomorrow.min.css" type="text/css" rel="stylesheet">
+
   <meta name="description" content="简述  auto的使用在C++11之后得以推广和支持   对于C++这门静态编程语言而言,所有的变量数据类型是需要明确声明的,在编译时即需要检查和确定.而诸如python这样的语言是动态判断变量类型的,在运行时才会确定数据类型.  auto关键字赋予了C++强大的类型自动判断的能力,并且会在很长的类型声明的地方极大地简化我们的代码.   例子  例如:12345//遍历vector,使用迭代器(原">
 <meta name="keywords" content="๑C++">
 <meta property="og:type" content="article">
@@ -182,6 +184,16 @@
 </noscript>
 
 </head>
+
+<!-- add by Fleshier -->
+<script type="text/javascript" src="/js/google-code-prettify/prettify.js"></script>
+<script type="text/javascript">
+$(window).load(function(){
+   $('pre').addClass('prettyprint linenums').attr('style', 'overflow:auto;');
+   prettyPrint();
+ })
+</script>
+<!-- add end -->
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="default">
 
@@ -466,12 +478,12 @@
 </ul>
 <h2 id="例子"><a href="#例子" class="headerlink" title="例子"></a>例子</h2><hr>
 <ul>
-<li>例如:<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">//遍历vector,使用迭代器(原始版本)</span><br><span class="line"></span><br><span class="line">for(std::vector&lt;int&gt;::iterator it = vec.begin(); it != it.end(); it++)&#123;</span><br><span class="line">  ...</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<li>例如:<figure class="highlight armasm"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">//遍历vector,使用迭代器(原始版本)</span><br><span class="line"></span><br><span class="line"><span class="symbol">for</span>(std::vector&lt;int&gt;::<span class="keyword">iterator </span><span class="keyword">it </span>= vec.<span class="keyword">begin(); </span><span class="keyword">it </span>!= <span class="keyword">it.end(); </span><span class="keyword">it++)&#123;</span></span><br><span class="line"><span class="keyword"> </span> ...</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 </li>
 </ul>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">//简化版</span><br><span class="line">for(auto it = vec.begin(); it != it.end(); it++)&#123;</span><br><span class="line">  ...</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight arduino"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//简化版</span></span><br><span class="line"><span class="built_in">for</span>(<span class="keyword">auto</span> it = vec.<span class="built_in">begin</span>(); it != it.<span class="built_in">end</span>(); it++)&#123;</span><br><span class="line">  ...</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <ul>
-<li>还有一种遍历vector的简化写法(适合需要访问每个元素一遍的情况):<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">int main()&#123;</span><br><span class="line">  vector&lt;int&gt; vec;</span><br><span class="line">  ....</span><br><span class="line">  for(auto n: vec)&#123;   //这里n即为vec中的每个元素</span><br><span class="line">    ...</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<li>还有一种遍历vector的简化写法(适合需要访问每个元素一遍的情况):<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line">  <span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt; vec;</span><br><span class="line">  ....</span><br><span class="line">  <span class="keyword">for</span>(<span class="keyword">auto</span> n: vec)&#123;   <span class="comment">//这里n即为vec中的每个元素</span></span><br><span class="line">    ...</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 </li>
 </ul>
 <h2 id="优点"><a href="#优点" class="headerlink" title="优点"></a>优点</h2><hr>
@@ -490,14 +502,14 @@
 <li><p><code>auto</code>不能与其他类型组合使用,例如<code>auto int a;</code>是错误的.</p>
 </li>
 <li><p>函数和模板参数不能被声明为<code>auto</code>:</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">template&lt;auto T&gt;    //错误</span><br></pre></td></tr></table></figure>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">template</span>&lt;<span class="keyword">auto</span> T&gt;    <span class="comment">//错误</span></span><br></pre></td></tr></table></figure>
 </li>
 </ul>
 <blockquote>
 <p>因为auto本质上只是一个占位符,并不是一个数据类型,因此也不能用于类型转换和sizeof以及typeid等操作.</p>
 </blockquote>
 <ul>
-<li><code>auto</code>会自动退化为指向数组的指针,除非被声明为引用<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">int arr[5];</span><br><span class="line">auto x = a;</span><br><span class="line">cout &lt;&lt; typeid(x).name() &lt;&lt; endl;   // result: int*</span><br><span class="line">auto &amp;y = a;</span><br><span class="line">cout &lt;&lt; typeid(y).name() &lt;&lt; endl;   // result: int[5]</span><br></pre></td></tr></table></figure>
+<li><code>auto</code>会自动退化为指向数组的指针,除非被声明为引用<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">int</span> arr[<span class="number">5</span>];</span><br><span class="line"><span class="keyword">auto</span> x = a;</span><br><span class="line"><span class="built_in">cout</span> &lt;&lt; <span class="keyword">typeid</span>(x).name() &lt;&lt; <span class="built_in">endl</span>;   <span class="comment">// result: int*</span></span><br><span class="line"><span class="keyword">auto</span> &amp;y = a;</span><br><span class="line"><span class="built_in">cout</span> &lt;&lt; <span class="keyword">typeid</span>(y).name() &lt;&lt; <span class="built_in">endl</span>;   <span class="comment">// result: int[5]</span></span><br></pre></td></tr></table></figure>
 </li>
 </ul>
 
@@ -872,7 +884,7 @@
 
 <div class="theme-info">
   <div class="powered-by"></div>
-  <span class="post-count">Total Words Of All Blogs: 99.7k words</span>
+  <span class="post-count">Total Words Of All Blogs: 98.9k words</span>
 </div>
 
         

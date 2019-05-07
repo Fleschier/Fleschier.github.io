@@ -115,6 +115,8 @@
 
 
 
+<link href="/js/google-code-prettify/tomorrow.min.css" type="text/css" rel="stylesheet">
+
   <meta name="description" content="不适合人类阅读的学习笔记   CSS全称为“层叠样式表 (Cascading Style Sheets)”，它主要是用于定义HTML内容在浏览器内的显示样式，如文字大小、颜色、字体加粗等。  在CSS代码中不要随便加空格  CSS3动画效果   CSS代码语法 基础 注意各个语句之间以分号间隔   css 样式由选择符和声明组成，而声明又由属性和值组成，例如：p{color:blue}  其中，">
 <meta name="keywords" content="๑FrontEnd,๑CSS">
 <meta property="og:type" content="article">
@@ -185,6 +187,16 @@
 </noscript>
 
 </head>
+
+<!-- add by Fleshier -->
+<script type="text/javascript" src="/js/google-code-prettify/prettify.js"></script>
+<script type="text/javascript">
+$(window).load(function(){
+   $('pre').addClass('prettyprint linenums').attr('style', 'overflow:auto;');
+   prettyPrint();
+ })
+</script>
+<!-- add end -->
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="default">
 
@@ -498,7 +510,7 @@
 <li><p>为了使用样式更加容易阅读，可以将每条代码写在一个新行内，所以上面的应该写为：</p>
 </li>
 </ul>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">p&#123;</span><br><span class="line">  font-size:12px;</span><br><span class="line">  color:red;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">p</span>&#123;</span><br><span class="line">  <span class="attribute">font-size</span>:<span class="number">12px</span>;</span><br><span class="line">  <span class="attribute">color</span>:red;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <h3 id="CSS中的注释"><a href="#CSS中的注释" class="headerlink" title="CSS中的注释"></a>CSS中的注释</h3><ul>
 <li>格式：<code>/*注释语句*/</code></li>
 </ul>
@@ -509,25 +521,25 @@
 <h3 id="内联式css样式，直接写在现有的HTML标签中"><a href="#内联式css样式，直接写在现有的HTML标签中" class="headerlink" title="内联式css样式，直接写在现有的HTML标签中"></a>内联式css样式，直接写在现有的HTML标签中</h3><ul>
 <li>内联式css样式表就是把css代码直接写在现有的HTML标签中，如下面代码：</li>
 </ul>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;p style=&quot;color:red&quot;&gt;这里文字是红色&lt;/p&gt;</span><br></pre></td></tr></table></figure>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">p</span> <span class="attr">style</span>=<span class="string">"color:red"</span>&gt;</span>这里文字是红色<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br></pre></td></tr></table></figure>
 <blockquote>
 <p>注意要写在元素的开始标签里</p>
 </blockquote>
 <ul>
 <li>并且css样式代码要写在<code>style=&quot;&quot;</code>双引号中，如果有多条css样式代码设置可以写在一起，中间用分号隔开。如下代码：</li>
 </ul>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;p style=&quot;color:red;font-size:12px&quot;&gt;这里文字是红色&lt;/p&gt;</span><br></pre></td></tr></table></figure>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">p</span> <span class="attr">style</span>=<span class="string">"color:red;font-size:12px"</span>&gt;</span>这里文字是红色<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br></pre></td></tr></table></figure>
 <h3 id="嵌入式css样式，写在当前的文件中"><a href="#嵌入式css样式，写在当前的文件中" class="headerlink" title="嵌入式css样式，写在当前的文件中"></a>嵌入式css样式，写在当前的文件中</h3><ul>
 <li>嵌入式css样式，就是可以把css样式代码写在<code>&lt;style type=&quot;text/css&quot;&gt; &lt;/style&gt;</code>标签之间。如下面代码实现把三个<code>&lt;span&gt;</code>标签中的文字设置为红色：</li>
 </ul>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">&lt;style type=&quot;text/css&quot;&gt;</span><br><span class="line">span&#123;</span><br><span class="line">color:red;</span><br><span class="line">&#125;</span><br><span class="line">&lt;/style&gt;</span><br></pre></td></tr></table></figure>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">style</span> <span class="attr">type</span>=<span class="string">"text/css"</span>&gt;</span><span class="undefined"></span></span><br><span class="line"><span class="undefined">span&#123;</span></span><br><span class="line"><span class="css"><span class="selector-tag">color</span><span class="selector-pseudo">:red</span>;</span></span><br><span class="line"><span class="undefined">&#125;</span></span><br><span class="line"><span class="undefined"></span><span class="tag">&lt;/<span class="name">style</span>&gt;</span></span><br></pre></td></tr></table></figure>
 <ul>
 <li>嵌入式css样式必须写在<code>&lt;style&gt; &lt;/style&gt;</code>之间，并且一般情况下嵌入式css样式写在<code>&lt;head&gt; &lt;/head&gt;</code>之间</li>
 </ul>
 <h3 id="外部式css样式，写在单独的一个文件中"><a href="#外部式css样式，写在单独的一个文件中" class="headerlink" title="外部式css样式，写在单独的一个文件中"></a>外部式css样式，写在单独的一个文件中</h3><ul>
 <li>外部式css样式(也可称为外联式)就是把css代码写一个单独的外部文件中，这个css样式文件以<code>.css</code>为扩展名，在<code>&lt;head&gt;</code>内（不是在<code>&lt;style&gt;</code>标签内）使用<code>&lt;link&gt;</code>标签将css样式文件链接到HTML文件内，如下面代码：</li>
 </ul>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;link href=&quot;base.css&quot; rel=&quot;stylesheet&quot; type=&quot;text/css&quot; /&gt;</span><br></pre></td></tr></table></figure>
+<figure class="highlight routeros"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;link <span class="attribute">href</span>=<span class="string">"base.css"</span> <span class="attribute">rel</span>=<span class="string">"stylesheet"</span> <span class="attribute">type</span>=<span class="string">"text/css"</span> /&gt;</span><br></pre></td></tr></table></figure>
 <ul>
 <li><p>css样式文件名称以有意义的英文字母命名，如 main.css。</p>
 </li>
@@ -548,12 +560,12 @@
 <ul>
 <li>每一条css样式声明（定义）由两部分组成，形式如下：</li>
 </ul>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">选择器&#123;</span><br><span class="line">    样式;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight abnf"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">选择器&#123;</span><br><span class="line">    样式<span class="comment">;</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <p>在<code>{}</code>之前的部分就是“选择器”，“选择器”指明了<code>{}</code>中的“样式”的作用对象，也就是“样式”作用于网页中的哪些元素。</p>
 <ul>
 <li>例：</li>
 </ul>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">&lt;!DOCTYPE HTML&gt;</span><br><span class="line">&lt;html&gt;</span><br><span class="line">&lt;head&gt;</span><br><span class="line">&lt;meta http-equiv=&quot;Content-Type&quot; content=&quot;text/html; charset=utf-8&quot;&gt;</span><br><span class="line">&lt;title&gt;选择器&lt;/title&gt;</span><br><span class="line">&lt;style type=&quot;text/css&quot;&gt;</span><br><span class="line">body&#123;</span><br><span class="line">    font-size:12px;</span><br><span class="line">    color:red;</span><br><span class="line">&#125;</span><br><span class="line">&lt;/style&gt;</span><br><span class="line">&lt;/head&gt;</span><br><span class="line">&lt;body&gt;</span><br><span class="line">&lt;p&gt;</span><br><span class="line">XXXXXXXX</span><br><span class="line">&lt;/p&gt;</span><br><span class="line">&lt;/body&gt;</span><br><span class="line">&lt;/html&gt;</span><br></pre></td></tr></table></figure>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;!DOCTYPE HTML&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">html</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">head</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">meta</span> <span class="attr">http-equiv</span>=<span class="string">"Content-Type"</span> <span class="attr">content</span>=<span class="string">"text/html; charset=utf-8"</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">title</span>&gt;</span>选择器<span class="tag">&lt;/<span class="name">title</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">style</span> <span class="attr">type</span>=<span class="string">"text/css"</span>&gt;</span><span class="undefined"></span></span><br><span class="line"><span class="undefined">body&#123;</span></span><br><span class="line"><span class="css">    <span class="selector-tag">font-size</span><span class="selector-pseudo">:12px</span>;</span></span><br><span class="line"><span class="css">    <span class="selector-tag">color</span><span class="selector-pseudo">:red</span>;</span></span><br><span class="line"><span class="undefined">&#125;</span></span><br><span class="line"><span class="undefined"></span><span class="tag">&lt;/<span class="name">style</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">head</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">p</span>&gt;</span></span><br><span class="line">XXXXXXXX</span><br><span class="line"><span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></span><br></pre></td></tr></table></figure>
 <p>其中<code>body{..}</code>就是一个选择器（标签选择器），他作用于<code>&lt;body&gt;</code>部分</p>
 <h3 id="标签选择器"><a href="#标签选择器" class="headerlink" title="标签选择器"></a>标签选择器</h3><ul>
 <li><p>标签选择器其实就是html代码中的标签。</p>
@@ -592,7 +604,7 @@
 <ul>
 <li>例如：</li>
 </ul>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">#test&#123;</span><br><span class="line">  color:blue;</span><br><span class="line">&#125;</span><br><span class="line">...</span><br><span class="line">XXX&lt;span id=&quot;test&quot;&gt;...&lt;/span&gt;</span><br></pre></td></tr></table></figure>
+<figure class="highlight jboss-cli"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#test&#123;</span></span><br><span class="line">  color<span class="function">:blue</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="string">...</span></span><br><span class="line">XXX&lt;span id=<span class="string">"test"</span>&gt;<span class="string">...</span>&lt;<span class="string">/span</span>&gt;</span><br></pre></td></tr></table></figure>
 <h3 id="id选择器和类选择器的区别与联系"><a href="#id选择器和类选择器的区别与联系" class="headerlink" title="id选择器和类选择器的区别与联系"></a>id选择器和类选择器的区别与联系</h3><h4 id="相同点"><a href="#相同点" class="headerlink" title="相同点"></a>相同点</h4><ul>
 <li>可以应用于任何元素</li>
 </ul>
@@ -606,12 +618,12 @@
 <li><p><strong>正确示例</strong>：</p>
 </li>
 </ul>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">.stress&#123;</span><br><span class="line">    color:red;</span><br><span class="line">&#125;</span><br><span class="line">.bigsize&#123;</span><br><span class="line">    font-size:25px;</span><br><span class="line">&#125;</span><br><span class="line">&lt;p&gt;</span><br><span class="line">到了&lt;span class=&quot;stress bigsize&quot;&gt;三年级&lt;/span&gt;下学期时，我们班上了一节公开课...</span><br><span class="line">&lt;/p&gt;</span><br></pre></td></tr></table></figure>
+<figure class="highlight jboss-cli"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">.stress</span>&#123;</span><br><span class="line">    color<span class="function">:red</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="string">.bigsize</span>&#123;</span><br><span class="line">    font-size<span class="function">:25px</span>;</span><br><span class="line">&#125;</span><br><span class="line">&lt;p&gt;</span><br><span class="line">到了&lt;span class=<span class="string">"stress bigsize"</span>&gt;三年级&lt;<span class="string">/span</span>&gt;下学期时，我们班上了一节公开课<span class="string">...</span></span><br><span class="line">&lt;<span class="string">/p</span>&gt;</span><br></pre></td></tr></table></figure>
 <p>以上代码在<code>&lt;span&gt;</code>里定义两个类来修饰，这样的语法是可以的。上面代码的作用是为“三年级”三个文字设置文本颜色为红色并且字号为25px。</p>
 <ul>
 <li>错误的例子：</li>
 </ul>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">#stressid&#123;</span><br><span class="line">    color:red;</span><br><span class="line">&#125;</span><br><span class="line">#bigsizeid&#123;</span><br><span class="line">    font-size:25px;</span><br><span class="line">&#125;</span><br><span class="line">&lt;p&gt;</span><br><span class="line">到了&lt;span id=&quot;stressid bigsizeid&quot;&gt;三年级&lt;/span&gt;下学期时，我们班上了一节公开课...</span><br><span class="line">&lt;/p&gt;</span><br></pre></td></tr></table></figure>
+<figure class="highlight dts"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#stressid&#123;</span></span><br><span class="line"><span class="symbol">    color:</span>red;</span><br><span class="line">&#125;</span><br><span class="line"><span class="meta">#bigsizeid&#123;</span></span><br><span class="line">    font-size:<span class="number">25</span>px;</span><br><span class="line">&#125;</span><br><span class="line"><span class="params">&lt;p&gt;</span></span><br><span class="line">到了<span class="params">&lt;span id="stressid bigsizeid"&gt;</span>三年级<span class="params">&lt;/span&gt;</span>下学期时，我们班上了一节公开课...</span><br><span class="line"><span class="params">&lt;/p&gt;</span></span><br></pre></td></tr></table></figure>
 <p>以上代码是错误的，一个地方只能用一个id选择器来修饰。以上代码不能起到修饰的作用。</p>
 <h3 id="子选择器"><a href="#子选择器" class="headerlink" title="子选择器"></a>子选择器</h3><ul>
 <li><p>还有一个比较有用的选择器子选择器，即大于符号(&gt;),用于选择指定标签元素的<strong>第一代子元素</strong>。</p>
@@ -619,7 +631,7 @@
 <li><p>例如：(以下代码会使class名为food下的子元素 li 加入红色实线边框。)</p>
 </li>
 </ul>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line">...</span><br><span class="line">.food&gt;li&#123;border:1px solid red;&#125;</span><br><span class="line">...</span><br><span class="line">&lt;h1&gt;食物&lt;/h1&gt;</span><br><span class="line">&lt;ul class=&quot;food&quot;&gt;</span><br><span class="line">    &lt;li&gt;水果</span><br><span class="line">        &lt;ul&gt;</span><br><span class="line">        	&lt;li&gt;香蕉&lt;/li&gt;</span><br><span class="line">            &lt;li&gt;苹果&lt;/li&gt;</span><br><span class="line">            &lt;li&gt;梨&lt;/li&gt;</span><br><span class="line">        &lt;/ul&gt;</span><br><span class="line">    &lt;/li&gt;</span><br><span class="line">    &lt;li&gt;蔬菜</span><br><span class="line">    	&lt;ul&gt;</span><br><span class="line">        	&lt;li&gt;白菜&lt;/li&gt;</span><br><span class="line">            &lt;li&gt;油菜&lt;/li&gt;</span><br><span class="line">            &lt;li&gt;卷心菜&lt;/li&gt;</span><br><span class="line">        &lt;/ul&gt;</span><br><span class="line">    &lt;/li&gt;</span><br><span class="line">&lt;/ul&gt;</span><br><span class="line">...</span><br></pre></td></tr></table></figure>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line">...</span><br><span class="line">.food&gt;li&#123;border:1px solid red;&#125;</span><br><span class="line">...</span><br><span class="line"><span class="tag">&lt;<span class="name">h1</span>&gt;</span>食物<span class="tag">&lt;/<span class="name">h1</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">ul</span> <span class="attr">class</span>=<span class="string">"food"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">li</span>&gt;</span>水果</span><br><span class="line">        <span class="tag">&lt;<span class="name">ul</span>&gt;</span></span><br><span class="line">        	<span class="tag">&lt;<span class="name">li</span>&gt;</span>香蕉<span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">li</span>&gt;</span>苹果<span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">li</span>&gt;</span>梨<span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;/<span class="name">ul</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">li</span>&gt;</span>蔬菜</span><br><span class="line">    	<span class="tag">&lt;<span class="name">ul</span>&gt;</span></span><br><span class="line">        	<span class="tag">&lt;<span class="name">li</span>&gt;</span>白菜<span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">li</span>&gt;</span>油菜<span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">li</span>&gt;</span>卷心菜<span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;/<span class="name">ul</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">ul</span>&gt;</span></span><br><span class="line">...</span><br></pre></td></tr></table></figure>
 <h3 id="包含-后代-选择器"><a href="#包含-后代-选择器" class="headerlink" title="包含(后代)选择器"></a>包含(后代)选择器</h3><ul>
 <li><p>包含选择器，即加入空格,用于选择指定标签元素下的后辈元素。如：<code>.first  span{color:red;}</code></p>
 </li>
@@ -645,7 +657,7 @@
 <li><p>以上代码相当于下面两行代码：</p>
 </li>
 </ul>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">h1&#123;color:red;&#125;</span><br><span class="line">span&#123;color:red;&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">h1</span>&#123;<span class="attribute">color</span>:red;&#125;</span><br><span class="line"><span class="selector-tag">span</span>&#123;<span class="attribute">color</span>:red;&#125;</span><br></pre></td></tr></table></figure>
 <h3 id="继承"><a href="#继承" class="headerlink" title="继承"></a>继承</h3><ul>
 <li>CSS的某些样式是具有继承性的，那么什么是继承呢？继承是一种规则，它允许样式不仅应用于某个特定html标签元素，而且应用于其后代。就是对某一些标签的样式的修改会对其子代也产生影响。</li>
 </ul>
@@ -658,7 +670,7 @@
 <li><p>例如：</p>
 </li>
 </ul>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">p&#123;color:red;&#125; /*权值为1*/</span><br><span class="line">p span&#123;color:green;&#125; /*权值为1+1=2*/</span><br><span class="line">.warning&#123;color:white;&#125; /*权值为10*/</span><br><span class="line">p span.warning&#123;color:purple;&#125; /*权值为1+1+10=12*/</span><br><span class="line">#footer .note p&#123;color:yellow;&#125; /*权值为100+10+1=111*/</span><br></pre></td></tr></table></figure>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">p</span>&#123;<span class="attribute">color</span>:red;&#125; <span class="comment">/*权值为1*/</span></span><br><span class="line"><span class="selector-tag">p</span> <span class="selector-tag">span</span>&#123;<span class="attribute">color</span>:green;&#125; <span class="comment">/*权值为1+1=2*/</span></span><br><span class="line"><span class="selector-class">.warning</span>&#123;<span class="attribute">color</span>:white;&#125; <span class="comment">/*权值为10*/</span></span><br><span class="line"><span class="selector-tag">p</span> <span class="selector-tag">span</span><span class="selector-class">.warning</span>&#123;<span class="attribute">color</span>:purple;&#125; <span class="comment">/*权值为1+1+10=12*/</span></span><br><span class="line"><span class="selector-id">#footer</span> <span class="selector-class">.note</span> <span class="selector-tag">p</span>&#123;<span class="attribute">color</span>:yellow;&#125; <span class="comment">/*权值为100+10+1=111*/</span></span><br></pre></td></tr></table></figure>
 <p>注意：还有一个权值比较特殊–继承也有权值但很低，有的文献提出它只有0.1，所以可以理解为继承的权值最低。</p>
 <ul>
 <li>使用<code>!important</code>来使样式获得最高权值：<code>p{color:red!important;}</code><blockquote>
@@ -842,7 +854,7 @@
 <li><p>语法：</p>
 </li>
 </ul>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">@media mediatype and|not|only (media feature) &#123;</span><br><span class="line">    CSS-Code;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight elm"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">@media media<span class="keyword">type</span> and|not|only (media feature) &#123;</span><br><span class="line">    <span class="type">CSS</span>-<span class="type">Code</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <ul>
 <li><p>其中mediatype就是媒体类型，可以包括好多种，最常用的就是screen，其他多数已经作废。</p>
 </li>
@@ -1251,7 +1263,7 @@
 
 <div class="theme-info">
   <div class="powered-by"></div>
-  <span class="post-count">Total Words Of All Blogs: 99.7k words</span>
+  <span class="post-count">Total Words Of All Blogs: 98.9k words</span>
 </div>
 
         

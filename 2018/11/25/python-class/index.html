@@ -115,6 +115,8 @@
 
 
 
+<link href="/js/google-code-prettify/tomorrow.min.css" type="text/css" rel="stylesheet">
+
   <meta name="description" content="模块与包  简单举例就是: 1234mypackage├─ __init__.py├─ abcd.py└─ efgh.py  注意每个包下需要一个__init__.py文件  如果另一个py文件需要引用abcd.py,则写为mypackage.abcd   python类  类不需要显式地申明类成员变量(与C++和Java不同)  类中所有的方法的第一个参数都是self, self代表类的实例而非">
 <meta name="keywords" content="๑Python">
 <meta property="og:type" content="article">
@@ -182,6 +184,16 @@
 </noscript>
 
 </head>
+
+<!-- add by Fleshier -->
+<script type="text/javascript" src="/js/google-code-prettify/prettify.js"></script>
+<script type="text/javascript">
+$(window).load(function(){
+   $('pre').addClass('prettyprint linenums').attr('style', 'overflow:auto;');
+   prettyPrint();
+ })
+</script>
+<!-- add end -->
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="default">
 
@@ -457,7 +469,7 @@
         <h2 id="模块与包"><a href="#模块与包" class="headerlink" title="模块与包"></a>模块与包</h2><hr>
 <ul>
 <li><p>简单举例就是:</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">mypackage</span><br><span class="line">├─ __init__.py</span><br><span class="line">├─ abcd.py</span><br><span class="line">└─ efgh.py</span><br></pre></td></tr></table></figure>
+<figure class="highlight stylus"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">mypackage</span><br><span class="line">├─ __init__.py</span><br><span class="line">├─ abcd.py</span><br><span class="line">└─ efgh.py</span><br></pre></td></tr></table></figure>
 </li>
 <li><p>注意每个包下需要一个<code>__init__.py</code>文件</p>
 </li>
@@ -486,7 +498,7 @@
 </li>
 </ul>
 <h4 id="判断一个对象是否是一个类的实例"><a href="#判断一个对象是否是一个类的实例" class="headerlink" title="判断一个对象是否是一个类的实例"></a>判断一个对象是否是一个类的实例</h4><ul>
-<li>目前我所知的只有两个方法可行(python3):<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">a = myclass()</span><br><span class="line">b = myclass()</span><br><span class="line">type(a) == type(b) #a和b都是类实例</span><br><span class="line">isinstance(a, myclass.__bases__)    #虽然__bases__返回的是父类元组,但是却能成功判断</span><br></pre></td></tr></table></figure>
+<li>目前我所知的只有两个方法可行(python3):<figure class="highlight stylus"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">a</span> = myclass()</span><br><span class="line"><span class="selector-tag">b</span> = myclass()</span><br><span class="line"><span class="function"><span class="title">type</span><span class="params">(a)</span></span> == type(b) #a和b都是类实例</span><br><span class="line"><span class="function"><span class="title">isinstance</span><span class="params">(a, myclass.__bases__)</span></span>    #虽然__bases__返回的是父类元组,但是却能成功判断</span><br></pre></td></tr></table></figure>
 </li>
 </ul>
 
@@ -861,7 +873,7 @@
 
 <div class="theme-info">
   <div class="powered-by"></div>
-  <span class="post-count">Total Words Of All Blogs: 99.7k words</span>
+  <span class="post-count">Total Words Of All Blogs: 98.9k words</span>
 </div>
 
         

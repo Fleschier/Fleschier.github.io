@@ -115,6 +115,8 @@
 
 
 
+<link href="/js/google-code-prettify/tomorrow.min.css" type="text/css" rel="stylesheet">
+
   <meta name="description" content="Ubuntu18 使用体验 一些装机软件的安装  由于Ubuntu 18 自带了 gnome3.0桌面,所以我们只需要下载一个tweak-tool据可以自定义桌面了： 12sudo apt-get updatesudo apt-get install gnome-tweak-tool  这次Ubuntu把标题栏改到了窗口的右侧，如果要改到左侧的话，打开tweak-tool转到窗口里面更改即可。">
 <meta name="keywords" content="๑Ubuntu,๑Linux">
 <meta property="og:type" content="article">
@@ -182,6 +184,16 @@
 </noscript>
 
 </head>
+
+<!-- add by Fleshier -->
+<script type="text/javascript" src="/js/google-code-prettify/prettify.js"></script>
+<script type="text/javascript">
+$(window).load(function(){
+   $('pre').addClass('prettyprint linenums').attr('style', 'overflow:auto;');
+   prettyPrint();
+ })
+</script>
+<!-- add end -->
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="default">
 
@@ -470,12 +482,12 @@
 <h2 id="一些装机软件的安装"><a href="#一些装机软件的安装" class="headerlink" title="一些装机软件的安装"></a>一些装机软件的安装</h2><hr>
 <ul>
 <li><p>由于Ubuntu 18 自带了 gnome3.0桌面,所以我们只需要下载一个tweak-tool据可以自定义桌面了：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">sudo apt-get update</span><br><span class="line">sudo apt-get install gnome-tweak-tool</span><br></pre></td></tr></table></figure>
+<figure class="highlight routeros"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">sudo apt-<span class="builtin-name">get</span> update</span><br><span class="line">sudo apt-<span class="builtin-name">get</span> install gnome-tweak-tool</span><br></pre></td></tr></table></figure>
 </li>
 <li><p>这次Ubuntu把标题栏改到了窗口的右侧，如果要改到左侧的话，打开tweak-tool转到窗口里面更改即可。</p>
 </li>
 <li><p>在更改用户主题之前，我们需要添加一个拓展插件才能使用自定义的主题</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo apt-get install gnome-shell-extensions</span><br></pre></td></tr></table></figure>
+<figure class="highlight dockerfile"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo apt-get install gnome-<span class="keyword">shell</span><span class="bash">-extensions</span></span><br></pre></td></tr></table></figure>
 </li>
 </ul>
 <p>或者在gnome拓展网站上搜索 shell extensions ，找到这个插件并且安装最后重启tweak-tool即可。</p>
@@ -488,9 +500,9 @@
 </li>
 </ul>
 <ol>
-<li><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">wget -nv -O Release.key \</span><br><span class="line">  https://build.opensuse.org/projects/home:manuelschneid3r/public_key</span><br><span class="line">sudo apt-key add - &lt; Release.key</span><br><span class="line">sudo apt-get update</span><br></pre></td></tr></table></figure>
+<li><figure class="highlight processing"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">wget -nv -O Release.<span class="built_in">key</span> \</span><br><span class="line">  https:<span class="comment">//build.opensuse.org/projects/home:manuelschneid3r/public_key</span></span><br><span class="line">sudo apt-<span class="built_in">key</span> <span class="built_in">add</span> - &lt; Release.<span class="built_in">key</span></span><br><span class="line">sudo apt-<span class="built_in">get</span> update</span><br></pre></td></tr></table></figure>
 </li>
-<li><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">sudo sh -c &quot;echo &apos;deb http://download.opensuse.org/repositories/home:/manuelschneid3r/xUbuntu_18.04/ /&apos; &gt; /etc/apt/sources.list.d/home:manuelschneid3r.list&quot;</span><br><span class="line">sudo apt-get update</span><br><span class="line">sudo apt-get install albert</span><br></pre></td></tr></table></figure>
+<li><figure class="highlight routeros"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">sudo sh -c <span class="string">"echo 'deb http://download.opensuse.org/repositories/home:/manuelschneid3r/xUbuntu_18.04/ /' &gt; /etc/apt/sources.list.d/home:manuelschneid3r.list"</span></span><br><span class="line">sudo apt-<span class="builtin-name">get</span> update</span><br><span class="line">sudo apt-<span class="builtin-name">get</span> install albert</span><br></pre></td></tr></table></figure>
 </li>
 </ol>
 <ul>
@@ -610,10 +622,10 @@
 </ul>
 <h3 id="Ubuntu18-的搜狗输入法的安装"><a href="#Ubuntu18-的搜狗输入法的安装" class="headerlink" title="Ubuntu18 的搜狗输入法的安装"></a>Ubuntu18 的搜狗输入法的安装</h3><ul>
 <li><p>首先安装fcitx的相关依赖</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">sudo apt-get install fictx-bin</span><br><span class="line">sudo apt-get install fictx-table</span><br></pre></td></tr></table></figure>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">sudo apt-get <span class="keyword">install</span> fictx-<span class="keyword">bin</span></span><br><span class="line">sudo apt-<span class="keyword">get</span> <span class="keyword">install</span> fictx-<span class="keyword">table</span></span><br></pre></td></tr></table></figure>
 </li>
 <li><p>然后安装下载好的搜狗输入法deb包<br><code>dpkg -i sougou...</code><br>这里应该会提示缺少依赖，这时候可就需要执行修复依赖：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">sudo apt-get update</span><br><span class="line">sudo apt-get upgrade -f</span><br></pre></td></tr></table></figure>
+<figure class="highlight routeros"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">sudo apt-<span class="builtin-name">get</span> update</span><br><span class="line">sudo apt-<span class="builtin-name">get</span><span class="built_in"> upgrade </span>-f</span><br></pre></td></tr></table></figure>
 </li>
 </ul>
 <p>系统会自动修复缺少的依赖包</p>
@@ -639,7 +651,7 @@
 <li><p>所以接下来这个方法貌似有用(亲测)</p>
 </li>
 <li><p>输入如下命令：(就是把你个人用户的一些配置删除掉然后重新创建)</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">cd ~/.config</span><br><span class="line">sudo rm -rf SogouPY* sogou*</span><br></pre></td></tr></table></figure>
+<figure class="highlight jboss-cli"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">cd</span> ~<span class="string">/.config</span></span><br><span class="line">sudo rm -rf SogouPY* sogou*</span><br></pre></td></tr></table></figure>
 </li>
 <li><p>之后注销重新登录即可。</p>
 </li>
@@ -1030,7 +1042,7 @@
 
 <div class="theme-info">
   <div class="powered-by"></div>
-  <span class="post-count">Total Words Of All Blogs: 99.7k words</span>
+  <span class="post-count">Total Words Of All Blogs: 98.9k words</span>
 </div>
 
         

@@ -115,18 +115,20 @@
 
 
 
-  <meta name="description" content="C++提供了一些功能强大的函数来高效地完成这些转化 string转char 使用c_str()方法   示例： 123string s = &amp;quot;abcd&amp;quot;;char p[10];p = (char*)s.c_str();  上面的强制类型转换在 不修改字符串内容的情况下 是可以省略的。因为c_str()方法的返回值类型为const char*，返回的是一个不可修改的指向该字符串的">
+<link href="/js/google-code-prettify/tomorrow.min.css" type="text/css" rel="stylesheet">
+
+  <meta name="description" content="C++提供了一些功能强大的函数来高效地完成这些转化 string转char 使用c_str()方法   示例： 123string s = &quot;abcd&quot;;char p[10];p = (char*)s.c_str();  上面的强制类型转换在 不修改字符串内容的情况下 是可以省略的。因为c_str()方法的返回值类型为const char*，返回的是一个不可修改的指向该字符串的指针。    使用d">
 <meta name="keywords" content="๑C++">
 <meta property="og:type" content="article">
 <meta property="og:title" content="C++学习笔记——数值类型,char和string的相互转化问题">
 <meta property="og:url" content="https://fleschier.github.io/2018/10/08/C++-Int-Char-String-translation/index.html">
 <meta property="og:site_name" content="Fleschier 渐寒๑">
-<meta property="og:description" content="C++提供了一些功能强大的函数来高效地完成这些转化 string转char 使用c_str()方法   示例： 123string s = &amp;quot;abcd&amp;quot;;char p[10];p = (char*)s.c_str();  上面的强制类型转换在 不修改字符串内容的情况下 是可以省略的。因为c_str()方法的返回值类型为const char*，返回的是一个不可修改的指向该字符串的">
+<meta property="og:description" content="C++提供了一些功能强大的函数来高效地完成这些转化 string转char 使用c_str()方法   示例： 123string s = &quot;abcd&quot;;char p[10];p = (char*)s.c_str();  上面的强制类型转换在 不修改字符串内容的情况下 是可以省略的。因为c_str()方法的返回值类型为const char*，返回的是一个不可修改的指向该字符串的指针。    使用d">
 <meta property="og:locale" content="default">
 <meta property="og:updated_time" content="2018-11-21T06:40:17.839Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="C++学习笔记——数值类型,char和string的相互转化问题">
-<meta name="twitter:description" content="C++提供了一些功能强大的函数来高效地完成这些转化 string转char 使用c_str()方法   示例： 123string s = &amp;quot;abcd&amp;quot;;char p[10];p = (char*)s.c_str();  上面的强制类型转换在 不修改字符串内容的情况下 是可以省略的。因为c_str()方法的返回值类型为const char*，返回的是一个不可修改的指向该字符串的">
+<meta name="twitter:description" content="C++提供了一些功能强大的函数来高效地完成这些转化 string转char 使用c_str()方法   示例： 123string s = &quot;abcd&quot;;char p[10];p = (char*)s.c_str();  上面的强制类型转换在 不修改字符串内容的情况下 是可以省略的。因为c_str()方法的返回值类型为const char*，返回的是一个不可修改的指向该字符串的指针。    使用d">
 
 
 
@@ -182,6 +184,16 @@
 </noscript>
 
 </head>
+
+<!-- add by Fleshier -->
+<script type="text/javascript" src="/js/google-code-prettify/prettify.js"></script>
+<script type="text/javascript">
+$(window).load(function(){
+   $('pre').addClass('prettyprint linenums').attr('style', 'overflow:auto;');
+   prettyPrint();
+ })
+</script>
+<!-- add end -->
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="default">
 
@@ -472,7 +484,7 @@
 </ol>
 <ul>
 <li><p>示例：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">string s = &quot;abcd&quot;;</span><br><span class="line">char p[10];</span><br><span class="line">p = (char*)s.c_str();</span><br></pre></td></tr></table></figure>
+<figure class="highlight abnf"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">string s = <span class="string">"abcd"</span><span class="comment">;</span></span><br><span class="line">char p[<span class="number">10</span>]<span class="comment">;</span></span><br><span class="line"><span class="attribute">p</span> = (char*)s.c_str()<span class="comment">;</span></span><br></pre></td></tr></table></figure>
 </li>
 <li><p>上面的强制类型转换在 <strong>不修改字符串内容的情况下</strong> 是可以省略的。因为<code>c_str()</code>方法的返回值类型为<code>const char*</code>，返回的是一个不可修改的指向该字符串的指针。</p>
 </li>
@@ -490,7 +502,7 @@
 <li><p><code>copy()</code>方法与上面两种有所不同，它是拷贝函数，这只是他的一种用法。</p>
 </li>
 <li><p>实例:</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">string s = &quot;abcd&quot;;</span><br><span class="line">char p[5];</span><br><span class="line">s.copy(p, 4, 0);  //4代表拷贝四个字符，0代表写入的位置</span><br><span class="line">*(p + 4) = &apos;\0&apos;;  //拷贝的字符串需要手动加上结束标记</span><br></pre></td></tr></table></figure>
+<figure class="highlight lsl"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">string</span> s = <span class="string">"abcd"</span>;</span><br><span class="line">char p[<span class="number">5</span>];</span><br><span class="line">s.copy(p, <span class="number">4</span>, <span class="number">0</span>);  <span class="comment">//4代表拷贝四个字符，0代表写入的位置</span></span><br><span class="line">*(p + <span class="number">4</span>) = '\<span class="number">0</span>';  <span class="comment">//拷贝的字符串需要手动加上结束标记</span></span><br></pre></td></tr></table></figure>
 </li>
 </ul>
 <h3 id="char转string"><a href="#char转string" class="headerlink" title="char转string"></a>char转string</h3><ul>
@@ -504,7 +516,7 @@
 <li><p>需要引入头文件<code>#include&lt;string&gt;</code></p>
 </li>
 </ul>
-<p>-<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">#include&lt;string&gt;</span><br><span class="line">...</span><br><span class="line">int a = 10;</span><br><span class="line">string s = to_string(a);</span><br><span class="line">...</span><br></pre></td></tr></table></figure></p>
+<p>-<br><figure class="highlight autoit"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;string&gt;</span></span></span><br><span class="line">...</span><br><span class="line"><span class="built_in">int</span> a = <span class="number">10</span><span class="comment">;</span></span><br><span class="line"><span class="built_in">string</span> s = to_string(a)<span class="comment">;</span></span><br><span class="line">...</span><br></pre></td></tr></table></figure></p>
 <h3 id="数值类型转char"><a href="#数值类型转char" class="headerlink" title="数值类型转char"></a>数值类型转char</h3><ul>
 <li><p>这里就需要用到强大的转换函数<code>itoa()</code>。</p>
 </li>
@@ -513,7 +525,7 @@
 <li><p>需要引入头文件<code>stdlib.h</code></p>
 </li>
 <li><p>示例：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">#include&lt;iostream&gt;</span><br><span class="line">#include&lt;stdlib.h&gt;</span><br><span class="line">using namespace std;</span><br><span class="line">int main()&#123;</span><br><span class="line">  int i = 100;</span><br><span class="line">  char p[10];</span><br><span class="line">  itoa(i, p, 10);   //说明：第一个参数为待转换的数字，第二个参数为待存储数值的char数组指针，第三个参数为待转换数字的进制，这里为十进制。</span><br><span class="line">  cout &lt;&lt; p &lt;&lt; endl;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;stdlib.h&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line">  <span class="keyword">int</span> i = <span class="number">100</span>;</span><br><span class="line">  <span class="keyword">char</span> p[<span class="number">10</span>];</span><br><span class="line">  itoa(i, p, <span class="number">10</span>);   <span class="comment">//说明：第一个参数为待转换的数字，第二个参数为待存储数值的char数组指针，第三个参数为待转换数字的进制，这里为十进制。</span></span><br><span class="line">  <span class="built_in">cout</span> &lt;&lt; p &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 </li>
 </ul>
 <blockquote>
@@ -596,8 +608,8 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2018/10/08/C++-sprintf-printf/" rel="prev" title="C++学习笔记——强大的sprintf">
-                C++学习笔记——强大的sprintf <i class="fa fa-chevron-right"></i>
+              <a href="/2018/10/08/C++-learning-error-collection/" rel="prev" title="C++学习笔记——一些报错信息归因">
+                C++学习笔记——一些报错信息归因 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -899,7 +911,7 @@
 
 <div class="theme-info">
   <div class="powered-by"></div>
-  <span class="post-count">Total Words Of All Blogs: 99.7k words</span>
+  <span class="post-count">Total Words Of All Blogs: 98.9k words</span>
 </div>
 
         

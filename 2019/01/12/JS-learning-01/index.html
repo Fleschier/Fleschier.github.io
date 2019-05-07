@@ -115,6 +115,8 @@
 
 
 
+<link href="/js/google-code-prettify/tomorrow.min.css" type="text/css" rel="stylesheet">
+
   <meta name="description" content="引例 12345678910111213141516171819202122232425262728293031//tell the browser to run this script when the page has finished loadingwindow.onload = insertDateTime;//insert the data &amp;amp; timefunction inse">
 <meta name="keywords" content="๑FrontEnd,๑JS">
 <meta property="og:type" content="article">
@@ -182,6 +184,16 @@
 </noscript>
 
 </head>
+
+<!-- add by Fleshier -->
+<script type="text/javascript" src="/js/google-code-prettify/prettify.js"></script>
+<script type="text/javascript">
+$(window).load(function(){
+   $('pre').addClass('prettyprint linenums').attr('style', 'overflow:auto;');
+   prettyPrint();
+ })
+</script>
+<!-- add end -->
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="default">
 
@@ -467,7 +479,7 @@
 
       
         <h2 id="引例"><a href="#引例" class="headerlink" title="引例"></a>引例</h2><hr>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br></pre></td><td class="code"><pre><span class="line">//tell the browser to run this script when the page has finished loading</span><br><span class="line">window.onload = insertDateTime;</span><br><span class="line"></span><br><span class="line">//insert the data &amp; time</span><br><span class="line">function insertDateTime()&#123;</span><br><span class="line">  //ensure a DOM-aware user agent</span><br><span class="line">  if(!document.getElementById) return;</span><br><span class="line">  if(!document.createTextNode) return;</span><br><span class="line"></span><br><span class="line">  //create a date-time object</span><br><span class="line">  var oNow = new Data();</span><br><span class="line"></span><br><span class="line">  //get the current date &amp; time as a string</span><br><span class="line">  var sDateTime = oNow.toLocaleString();</span><br><span class="line"></span><br><span class="line">  //point to the target element where we want to insert the date &amp; time</span><br><span class="line">  var oTarget = document.getElementById(&apos;output&apos;);</span><br><span class="line">  //make sure the target is found</span><br><span class="line">  if(!oTarget) return;</span><br><span class="line"></span><br><span class="line">  //delete everything inside the target</span><br><span class="line">  while(oTarget.firstChild)&#123;</span><br><span class="line">    oTarget.removeChild(oTarget.firstChild);</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  //use the date-time string to create a new text node for the page</span><br><span class="line">  var oNewText = document.createTextNode(sDateTime);</span><br><span class="line"></span><br><span class="line">  //insert the mew text into the span</span><br><span class="line">  oTarget.appendChild(oNewText);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//tell the browser to run this script when the page has finished loading</span></span><br><span class="line"><span class="built_in">window</span>.onload = insertDateTime;</span><br><span class="line"></span><br><span class="line"><span class="comment">//insert the data &amp; time</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">insertDateTime</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">  <span class="comment">//ensure a DOM-aware user agent</span></span><br><span class="line">  <span class="keyword">if</span>(!<span class="built_in">document</span>.getElementById) <span class="keyword">return</span>;</span><br><span class="line">  <span class="keyword">if</span>(!<span class="built_in">document</span>.createTextNode) <span class="keyword">return</span>;</span><br><span class="line"></span><br><span class="line">  <span class="comment">//create a date-time object</span></span><br><span class="line">  <span class="keyword">var</span> oNow = <span class="keyword">new</span> Data();</span><br><span class="line"></span><br><span class="line">  <span class="comment">//get the current date &amp; time as a string</span></span><br><span class="line">  <span class="keyword">var</span> sDateTime = oNow.toLocaleString();</span><br><span class="line"></span><br><span class="line">  <span class="comment">//point to the target element where we want to insert the date &amp; time</span></span><br><span class="line">  <span class="keyword">var</span> oTarget = <span class="built_in">document</span>.getElementById(<span class="string">'output'</span>);</span><br><span class="line">  <span class="comment">//make sure the target is found</span></span><br><span class="line">  <span class="keyword">if</span>(!oTarget) <span class="keyword">return</span>;</span><br><span class="line"></span><br><span class="line">  <span class="comment">//delete everything inside the target</span></span><br><span class="line">  <span class="keyword">while</span>(oTarget.firstChild)&#123;</span><br><span class="line">    oTarget.removeChild(oTarget.firstChild);</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  <span class="comment">//use the date-time string to create a new text node for the page</span></span><br><span class="line">  <span class="keyword">var</span> oNewText = <span class="built_in">document</span>.createTextNode(sDateTime);</span><br><span class="line"></span><br><span class="line">  <span class="comment">//insert the mew text into the span</span></span><br><span class="line">  oTarget.appendChild(oNewText);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <h3 id="解析"><a href="#解析" class="headerlink" title="解析"></a>解析</h3><h4 id="触发事件"><a href="#触发事件" class="headerlink" title="触发事件"></a>触发事件</h4><ul>
 <li><p>脚本要把日期和事件插入到页面的段落中,但浏览器在读取和运行JavaScript代码之前,并没有读取HTML体.在JavaScript开始运行时,要插入新内容的段落甚至在浏览器的内存中不存在.</p>
 </li>
@@ -477,12 +489,12 @@
 </li>
 </ul>
 <h4 id="确保一个安全的环境"><a href="#确保一个安全的环境" class="headerlink" title="确保一个安全的环境"></a>确保一个安全的环境</h4><ul>
-<li><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">//ensure a DOM-aware user agent</span><br><span class="line">if(!document.getElementById) return;</span><br><span class="line">if(!document.createTextNode) return;</span><br></pre></td></tr></table></figure>
+<li><figure class="highlight dart"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//ensure a DOM-aware user agent</span></span><br><span class="line"><span class="keyword">if</span>(!<span class="built_in">document</span>.getElementById) <span class="keyword">return</span>;</span><br><span class="line"><span class="keyword">if</span>(!<span class="built_in">document</span>.createTextNode) <span class="keyword">return</span>;</span><br></pre></td></tr></table></figure>
 </li>
 </ul>
 <p>这里调用的<code>getElementById()</code>和<code>createTextNode()</code>是两个某些旧的JavaScript解释器不能理解的DOM方法.感叹号<code>!</code>表示”not”,<code>return</code>告诉JavaScript停止运行当前的函数. 如果不包含这些保护措施,某些老式的浏览器或其JavaScript解释器就会在运行其后代码的时候崩溃.</p>
 <h4 id="生成日期和时间"><a href="#生成日期和时间" class="headerlink" title="生成日期和时间"></a>生成日期和时间</h4><ul>
-<li>要插入这个文档中的文本是当前的日期和时间.JavaScript很容易完成这个插入操作:创建一个Date对象,并使用它的一个方法生成字符串:<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">//create a date-time object</span><br><span class="line">var oNow = new Date()</span><br><span class="line">//get the current date &amp; time as a string</span><br><span class="line">var sDateTime = oNow.toLocaleString();</span><br></pre></td></tr></table></figure>
+<li>要插入这个文档中的文本是当前的日期和时间.JavaScript很容易完成这个插入操作:创建一个Date对象,并使用它的一个方法生成字符串:<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">//<span class="keyword">create</span> a <span class="built_in">date</span>-<span class="keyword">time</span> <span class="keyword">object</span></span><br><span class="line"><span class="keyword">var</span> oNow = <span class="keyword">new</span> <span class="built_in">Date</span>()</span><br><span class="line">//<span class="keyword">get</span> the <span class="keyword">current</span> <span class="built_in">date</span> &amp; <span class="keyword">time</span> <span class="keyword">as</span> a <span class="keyword">string</span></span><br><span class="line"><span class="keyword">var</span> sDateTime = oNow.toLocaleString();</span><br></pre></td></tr></table></figure>
 </li>
 </ul>
 <p>这些代码把oNow变量设置为一个新的Date对象.之后使用其toLocaleString()方法输出一个文本字符串,它包含:<code>Thrusday, August 20, 2009 4:16:05 PM</code></p>
@@ -508,12 +520,12 @@
 <li><p>我们要删除span的文本,再插入新内容.在表示页面内容的DOM中,span是其所有子元素的父元素.span现在只有一个子元素:单词”now”.</p>
 </li>
 <li><p>为了删除span的内容,执行一个简单的循环.只要还有要删除的元素,该循环就一次删除一个子元素:</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">//delete everything inside the target</span><br><span class="line">while(oTarget.firstChild)&#123;</span><br><span class="line">  oTarget.removeChild(oTarget.firstChild);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight gcode"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//delete everything inside the target</span></span><br><span class="line"><span class="keyword">while</span><span class="comment">(oTarget.firstChild)</span>&#123;</span><br><span class="line">  oTarget.removeChild<span class="comment">(oTarget.firstChild)</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 </li>
 </ul>
 <p>在本例中这个循环只会执行一次.</p>
 <h4 id="插入日期和时间"><a href="#插入日期和时间" class="headerlink" title="插入日期和时间"></a>插入日期和时间</h4><ul>
-<li>最后在DOM中创建一个包含所有所需文本的新节点,并插入span:<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">//use the date-time string to create a new text node for the page</span><br><span class="line">var oNewText = document.createTextNode(sDateTime);</span><br><span class="line"></span><br><span class="line">//insert the new text into the span</span><br><span class="line">oTarget.appendChild(oNewText);</span><br></pre></td></tr></table></figure>
+<li>最后在DOM中创建一个包含所有所需文本的新节点,并插入span:<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">//<span class="keyword">use</span> the <span class="built_in">date</span>-<span class="keyword">time</span> <span class="keyword">string</span> <span class="keyword">to</span> <span class="keyword">create</span> a <span class="keyword">new</span> <span class="built_in">text</span> node <span class="keyword">for</span> the page</span><br><span class="line"><span class="keyword">var</span> oNewText = document.createTextNode(sDateTime);</span><br><span class="line"></span><br><span class="line">//<span class="keyword">insert</span> the <span class="keyword">new</span> <span class="built_in">text</span> <span class="keyword">into</span> the span</span><br><span class="line">oTarget.appendChild(oNewText);</span><br></pre></td></tr></table></figure>
 </li>
 </ul>
 <p>sDateTime是从Date对象中生成的字符串.</p>
@@ -894,7 +906,7 @@
 
 <div class="theme-info">
   <div class="powered-by"></div>
-  <span class="post-count">Total Words Of All Blogs: 99.7k words</span>
+  <span class="post-count">Total Words Of All Blogs: 98.9k words</span>
 </div>
 
         

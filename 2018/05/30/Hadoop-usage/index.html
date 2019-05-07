@@ -115,6 +115,8 @@
 
 
 
+<link href="/js/google-code-prettify/tomorrow.min.css" type="text/css" rel="stylesheet">
+
   <meta name="description" content="Hadoop 单机伪分布式环境搭建 前言 这是对之前spark环境搭建的一点补充。  首先要了解一下Hadoop的运行模式：  单机模式（standalone）:单机模式是Hadoop的默认模式。当首次解压Hadoop的源码包时，Hadoop无法了解硬件安装环境，便保守地选择了最小配置。在这种默认模式下所有3个XML文件均为空。当配置文件为空时，Hadoop会完全运行在本地。因为不需要与其他节点交">
 <meta name="keywords" content="๑Hadoop,๑BigData">
 <meta property="og:type" content="article">
@@ -189,6 +191,16 @@
 </noscript>
 
 </head>
+
+<!-- add by Fleshier -->
+<script type="text/javascript" src="/js/google-code-prettify/prettify.js"></script>
+<script type="text/javascript">
+$(window).load(function(){
+   $('pre').addClass('prettyprint linenums').attr('style', 'overflow:auto;');
+   prettyPrint();
+ })
+</script>
+<!-- add end -->
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="default">
 
@@ -488,7 +500,7 @@
 </ul>
 <h3 id="新建用户"><a href="#新建用户" class="headerlink" title="新建用户"></a>新建用户</h3><ul>
 <li><p>添加一个名为hadoop到系统用户，专门用来做Hadoop测试:</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">sudo addgroup hadoop</span><br><span class="line">sudo adduser --ingroup hadoop hadoop</span><br></pre></td></tr></table></figure>
+<figure class="highlight armasm"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="symbol">sudo</span> <span class="keyword">addgroup </span>hadoop</span><br><span class="line"><span class="symbol">sudo</span> <span class="keyword">adduser </span>--ingroup hadoop hadoop</span><br></pre></td></tr></table></figure>
 </li>
 <li><p>再赋予hadoop用户 sudo的权限：<code>sudo usermod -aG sudo hadoop</code></p>
 </li>
@@ -536,7 +548,7 @@
 <li><p>然后修改path环境变量，路径对应自己的实际存放路径：<br><img src="/images/Hadoop/path.png" alt></p>
 </li>
 <li><p>修改hadoop-env.sh: <strong>(这个不能用默认的，否则会报错)</strong></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">export JAVA_HOME=$&#123;JAVA_HOME&#125; #将这个改成JDK路径，如下  </span><br><span class="line">export JAVA_HOME=/opt/jdk1.8.0_172</span><br></pre></td></tr></table></figure>
+<figure class="highlight routeros"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="builtin-name">export</span> <span class="attribute">JAVA_HOME</span>=<span class="variable">$&#123;JAVA_HOME&#125;</span> #将这个改成JDK路径，如下  </span><br><span class="line"><span class="builtin-name">export</span> <span class="attribute">JAVA_HOME</span>=/opt/jdk1.8.0_172</span><br></pre></td></tr></table></figure>
 </li>
 <li><p>确保下面的操作在hadoop用户下完成：<code>sudo chown -R  hadoop:hadoop /usr/local/Apache/hadoop-2.7.6 (自己hadoop的安装路径)</code></p>
 </li>
@@ -551,15 +563,15 @@
 <li>hdfs-site.xml:  Hadoop 守护进程的配置项，包括namenode，辅助namenode和datanode等。</li>
 <li>mapred-site.xml： MapReduce 守护进程的配置项，包括jobtracker和tasktracker。</li>
 </ul>
-<h4 id="首先在hadoop根目录下新建几个文件夹："><a href="#首先在hadoop根目录下新建几个文件夹：" class="headerlink" title="首先在hadoop根目录下新建几个文件夹："></a>首先在hadoop根目录下新建几个文件夹：</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">mkdir hdfs</span><br><span class="line">mkdir hdfs/name</span><br><span class="line">mkdir hdfs/data</span><br><span class="line">mkdir tmp</span><br></pre></td></tr></table></figure>
+<h4 id="首先在hadoop根目录下新建几个文件夹："><a href="#首先在hadoop根目录下新建几个文件夹：" class="headerlink" title="首先在hadoop根目录下新建几个文件夹："></a>首先在hadoop根目录下新建几个文件夹：</h4><figure class="highlight arduino"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">mkdir</span> hdfs</span><br><span class="line"><span class="built_in">mkdir</span> hdfs/name</span><br><span class="line"><span class="built_in">mkdir</span> hdfs/data</span><br><span class="line"><span class="built_in">mkdir</span> tmp</span><br></pre></td></tr></table></figure>
 <ul>
 <li>接下来编辑这三个文件：</li>
 </ul>
-<p>core-site.xml:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">&lt;configuration&gt;  </span><br><span class="line">    &lt;property&gt;  </span><br><span class="line">        &lt;name&gt;fs.default.name&lt;/name&gt;  </span><br><span class="line">        &lt;value&gt;hdfs://localhost:9000&lt;/value&gt;  </span><br><span class="line">    &lt;/property&gt;  </span><br><span class="line">    &lt;property&gt;  </span><br><span class="line">        &lt;name&gt;hadoop.tmp.dir&lt;/name&gt;  </span><br><span class="line">        &lt;value&gt;/usr/local/Apache/hadoop-2.7.1/tmp&lt;/value&gt;  </span><br><span class="line">    &lt;/property&gt;  </span><br><span class="line">&lt;/configuration&gt;</span><br></pre></td></tr></table></figure></p>
-<p>hdfs-site.xml:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">&lt;configuration&gt;  </span><br><span class="line">    &lt;property&gt;  &lt;!--设置副本数1，不写默认是3份--&gt;</span><br><span class="line">        &lt;name&gt;dfs.replication&lt;/name&gt;  </span><br><span class="line">        &lt;value&gt;1&lt;/value&gt;  </span><br><span class="line">    &lt;/property&gt;  </span><br><span class="line">    &lt;property&gt;  </span><br><span class="line">        &lt;name&gt;dfs.name.dir&lt;/name&gt;  </span><br><span class="line">        &lt;value&gt;/usr/local/Apache/hadoop-2.7.1/hdfs/name&lt;/value&gt;  </span><br><span class="line">    &lt;/property&gt;  </span><br><span class="line">    &lt;property&gt;  </span><br><span class="line">        &lt;name&gt;dfs.data.dir&lt;/name&gt;  </span><br><span class="line">        &lt;value&gt;/usr/local/Apache/hadoop-2.7.1/hdfs/data&lt;/value&gt;  </span><br><span class="line">    &lt;/property&gt;  </span><br><span class="line">&lt;/configuration&gt;</span><br></pre></td></tr></table></figure></p>
-<p>mapred-site.xml:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">&lt;configuration&gt;  </span><br><span class="line">    &lt;property&gt;  </span><br><span class="line">        &lt;name&gt;mapred.job.tracker&lt;/name&gt;  </span><br><span class="line">        &lt;value&gt;localhost:9001&lt;/value&gt;  </span><br><span class="line">    &lt;/property&gt;  </span><br><span class="line">&lt;/configuration&gt;</span><br></pre></td></tr></table></figure></p>
+<p>core-site.xml:<br><figure class="highlight dts"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="params">&lt;configuration&gt;</span>  </span><br><span class="line">    <span class="params">&lt;property&gt;</span>  </span><br><span class="line">        <span class="params">&lt;name&gt;</span>fs.default.name<span class="params">&lt;/name&gt;</span>  </span><br><span class="line">        <span class="params">&lt;value&gt;</span>hdfs:<span class="comment">//localhost:9000&lt;/value&gt;  </span></span><br><span class="line">    <span class="params">&lt;/property&gt;</span>  </span><br><span class="line">    <span class="params">&lt;property&gt;</span>  </span><br><span class="line">        <span class="params">&lt;name&gt;</span>hadoop.tmp.dir<span class="params">&lt;/name&gt;</span>  </span><br><span class="line">        <span class="params">&lt;value&gt;</span><span class="meta-keyword">/usr/</span>local/Apache/hadoop<span class="number">-2.7</span><span class="number">.1</span>/tmp<span class="params">&lt;/value&gt;</span>  </span><br><span class="line">    <span class="params">&lt;/property&gt;</span>  </span><br><span class="line"><span class="params">&lt;/configuration&gt;</span></span><br></pre></td></tr></table></figure></p>
+<p>hdfs-site.xml:<br><figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">configuration</span>&gt;</span>  </span><br><span class="line">    <span class="tag">&lt;<span class="name">property</span>&gt;</span>  <span class="comment">&lt;!--设置副本数1，不写默认是3份--&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">name</span>&gt;</span>dfs.replication<span class="tag">&lt;/<span class="name">name</span>&gt;</span>  </span><br><span class="line">        <span class="tag">&lt;<span class="name">value</span>&gt;</span>1<span class="tag">&lt;/<span class="name">value</span>&gt;</span>  </span><br><span class="line">    <span class="tag">&lt;/<span class="name">property</span>&gt;</span>  </span><br><span class="line">    <span class="tag">&lt;<span class="name">property</span>&gt;</span>  </span><br><span class="line">        <span class="tag">&lt;<span class="name">name</span>&gt;</span>dfs.name.dir<span class="tag">&lt;/<span class="name">name</span>&gt;</span>  </span><br><span class="line">        <span class="tag">&lt;<span class="name">value</span>&gt;</span>/usr/local/Apache/hadoop-2.7.1/hdfs/name<span class="tag">&lt;/<span class="name">value</span>&gt;</span>  </span><br><span class="line">    <span class="tag">&lt;/<span class="name">property</span>&gt;</span>  </span><br><span class="line">    <span class="tag">&lt;<span class="name">property</span>&gt;</span>  </span><br><span class="line">        <span class="tag">&lt;<span class="name">name</span>&gt;</span>dfs.data.dir<span class="tag">&lt;/<span class="name">name</span>&gt;</span>  </span><br><span class="line">        <span class="tag">&lt;<span class="name">value</span>&gt;</span>/usr/local/Apache/hadoop-2.7.1/hdfs/data<span class="tag">&lt;/<span class="name">value</span>&gt;</span>  </span><br><span class="line">    <span class="tag">&lt;/<span class="name">property</span>&gt;</span>  </span><br><span class="line"><span class="tag">&lt;/<span class="name">configuration</span>&gt;</span></span><br></pre></td></tr></table></figure></p>
+<p>mapred-site.xml:<br><figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">configuration</span>&gt;</span>  </span><br><span class="line">    <span class="tag">&lt;<span class="name">property</span>&gt;</span>  </span><br><span class="line">        <span class="tag">&lt;<span class="name">name</span>&gt;</span>mapred.job.tracker<span class="tag">&lt;/<span class="name">name</span>&gt;</span>  </span><br><span class="line">        <span class="tag">&lt;<span class="name">value</span>&gt;</span>localhost:9001<span class="tag">&lt;/<span class="name">value</span>&gt;</span>  </span><br><span class="line">    <span class="tag">&lt;/<span class="name">property</span>&gt;</span>  </span><br><span class="line"><span class="tag">&lt;/<span class="name">configuration</span>&gt;</span></span><br></pre></td></tr></table></figure></p>
 <h4 id="格式化hdfs"><a href="#格式化hdfs" class="headerlink" title="格式化hdfs"></a>格式化hdfs</h4><ul>
-<li>启动Hadoop到相关服务，格式化namenode,secondarynamenode,tasktracker的文件系统目录:<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">source /usr/local/Apache/hadoop-2.7.1/etc/hadoop/hadoop-env.sh</span><br><span class="line">hadoop namenode -format</span><br></pre></td></tr></table></figure>
+<li>启动Hadoop到相关服务，格式化namenode,secondarynamenode,tasktracker的文件系统目录:<figure class="highlight groovy"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">source <span class="regexp">/usr/</span>local<span class="regexp">/Apache/</span>hadoop<span class="number">-2.7</span><span class="number">.1</span><span class="regexp">/etc/</span>hadoop/hadoop-env.sh</span><br><span class="line">hadoop namenode -format</span><br></pre></td></tr></table></figure>
 </li>
 </ul>
 <h4 id="启动hadoop"><a href="#启动hadoop" class="headerlink" title="启动hadoop"></a>启动hadoop</h4><ul>
@@ -568,7 +580,7 @@
 <li><p>我的<code>start-all.sh</code>脚本在sbin目录下，各个版本可能不太一样，如果这个文件夹没有就去别的文件夹找找。</p>
 </li>
 <li><p>执行start-all.sh来启动所有服务:</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">cd sbin</span><br><span class="line">./start-all.sh</span><br></pre></td></tr></table></figure>
+<figure class="highlight vim"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">cd</span> sbin</span><br><span class="line">./start-<span class="keyword">all</span>.<span class="keyword">sh</span></span><br></pre></td></tr></table></figure>
 </li>
 <li><p>使用命令<code>jps</code>查看是否启动成功：<br><img src="/images/Hadoop/launch_info.png" alt><br>如果出现NodeManager DataNode Jps SecondaryNameNode ResourceManager NameNode则表示启动成功(缺一不可)</p>
 </li>
@@ -586,7 +598,7 @@
 <p><img src="/images/Hadoop/stop_all.png" alt></p>
 </li>
 <li><p>由于之前已经将hadoop的<code>bin</code>和<code>sbin</code>两个目录添加到系统环境路径里去了，这样下次启动直接就可以是</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">ssh localhost</span><br><span class="line">start-all.sh</span><br><span class="line">...</span><br><span class="line">stop-all.sh</span><br></pre></td></tr></table></figure>
+<figure class="highlight vim"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">ssh localhost</span><br><span class="line">start-<span class="keyword">all</span>.<span class="keyword">sh</span></span><br><span class="line">...</span><br><span class="line"><span class="keyword">stop</span>-<span class="keyword">all</span>.<span class="keyword">sh</span></span><br></pre></td></tr></table></figure>
 </li>
 </ul>
 <p>这样就方便很多了。</p>
@@ -971,7 +983,7 @@
 
 <div class="theme-info">
   <div class="powered-by"></div>
-  <span class="post-count">Total Words Of All Blogs: 99.7k words</span>
+  <span class="post-count">Total Words Of All Blogs: 98.9k words</span>
 </div>
 
         

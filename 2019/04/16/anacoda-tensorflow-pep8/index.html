@@ -115,18 +115,20 @@
 
 
 
-  <meta name="description" content="问题记录  最近在写项目使用tensorflow做深度学习,使用了Anacoda并结合VScode来进行开发.  但是遇到一个问题,就是VScode python默认使用pylint,而pylint识别不了tensorflow框架,在import的时候一直报错.   StackOverflow的解释  原问题及回答  有用的一个回答: 12345678910are you using Visual">
+<link href="/js/google-code-prettify/tomorrow.min.css" type="text/css" rel="stylesheet">
+
+  <meta name="description" content="前言 首先需要明确是否安装了tensorflow.虽然Anacoda说是集成了Tensorflow,但是下载的部分是不包括Tensorflow的,需要自己安装才行.    最新更新:pylint的问题现在已经不存在了,要是检测不到tensorflow,主要原因可能就是tensorflow未安装或安装不正确.  问题记录  最近在写项目使用tensorflow做深度学习,使用了Anacoda并结合V">
 <meta name="keywords" content="๑Tensorflow,๑VScode">
 <meta property="og:type" content="article">
 <meta property="og:title" content="在VScode使用Anacoda自带的tensorflow插件问题记录">
 <meta property="og:url" content="https://fleschier.github.io/2019/04/16/anacoda-tensorflow-pep8/index.html">
 <meta property="og:site_name" content="Fleschier 渐寒๑">
-<meta property="og:description" content="问题记录  最近在写项目使用tensorflow做深度学习,使用了Anacoda并结合VScode来进行开发.  但是遇到一个问题,就是VScode python默认使用pylint,而pylint识别不了tensorflow框架,在import的时候一直报错.   StackOverflow的解释  原问题及回答  有用的一个回答: 12345678910are you using Visual">
+<meta property="og:description" content="前言 首先需要明确是否安装了tensorflow.虽然Anacoda说是集成了Tensorflow,但是下载的部分是不包括Tensorflow的,需要自己安装才行.    最新更新:pylint的问题现在已经不存在了,要是检测不到tensorflow,主要原因可能就是tensorflow未安装或安装不正确.  问题记录  最近在写项目使用tensorflow做深度学习,使用了Anacoda并结合V">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2019-04-16T03:18:35.408Z">
+<meta property="og:updated_time" content="2019-05-07T13:53:04.223Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="在VScode使用Anacoda自带的tensorflow插件问题记录">
-<meta name="twitter:description" content="问题记录  最近在写项目使用tensorflow做深度学习,使用了Anacoda并结合VScode来进行开发.  但是遇到一个问题,就是VScode python默认使用pylint,而pylint识别不了tensorflow框架,在import的时候一直报错.   StackOverflow的解释  原问题及回答  有用的一个回答: 12345678910are you using Visual">
+<meta name="twitter:description" content="前言 首先需要明确是否安装了tensorflow.虽然Anacoda说是集成了Tensorflow,但是下载的部分是不包括Tensorflow的,需要自己安装才行.    最新更新:pylint的问题现在已经不存在了,要是检测不到tensorflow,主要原因可能就是tensorflow未安装或安装不正确.  问题记录  最近在写项目使用tensorflow做深度学习,使用了Anacoda并结合V">
 
 
 
@@ -182,6 +184,16 @@
 </noscript>
 
 </head>
+
+<!-- add by Fleshier -->
+<script type="text/javascript" src="/js/google-code-prettify/prettify.js"></script>
+<script type="text/javascript">
+$(window).load(function(){
+   $('pre').addClass('prettyprint linenums').attr('style', 'overflow:auto;');
+   prettyPrint();
+ })
+</script>
+<!-- add end -->
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="default">
 
@@ -387,12 +399,24 @@
                 
               
 
-              <time title="Created: 2019-04-16 11:05:00 / Modified: 11:18:35" itemprop="dateCreated datePublished" datetime="2019-04-16T11:05:00+08:00">2019-04-16</time>
+              <time title="Created: 2019-04-16 11:05:00" itemprop="dateCreated datePublished" datetime="2019-04-16T11:05:00+08:00">2019-04-16</time>
             
 
             
               
 
+              
+                
+                <span class="post-meta-divider">|</span>
+                
+
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">Edited on</span>
+                
+                <time title="Modified: 2019-05-07 21:53:04" itemprop="dateModified" datetime="2019-05-07T21:53:04+08:00">2019-05-07</time>
               
             
           </span>
@@ -461,7 +485,14 @@
       
 
       
-        <h2 id="问题记录"><a href="#问题记录" class="headerlink" title="问题记录"></a>问题记录</h2><hr>
+        <h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><ul>
+<li>首先需要明确是否安装了tensorflow.<strong>虽然Anacoda说是集成了Tensorflow,但是下载的部分是不包括Tensorflow的,需要自己安装才行.</strong></li>
+</ul>
+<hr>
+<ul>
+<li><strong>最新更新:pylint的问题现在已经不存在了,要是检测不到tensorflow,主要原因可能就是tensorflow未安装或安装不正确.</strong></li>
+</ul>
+<h2 id="问题记录"><a href="#问题记录" class="headerlink" title="问题记录"></a>问题记录</h2><hr>
 <ul>
 <li><p>最近在写项目使用tensorflow做深度学习,使用了Anacoda并结合VScode来进行开发.</p>
 </li>
@@ -473,10 +504,11 @@
 <li><p><a href="https://stackoverflow.com/questions/49601292/python-not-finding-tensorflow-module-under-anaconda" target="_blank" rel="noopener">原问题及回答</a></p>
 </li>
 <li><p>有用的一个回答:</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">are you using Visual Studio Code (VSC) or just pylint in general? I found out the reason why this is happening.</span><br><span class="line">For VSC, the python extension, use pylint for intellisense of python. Pylint seems to have a bug with the sub-module. For me, the error only shows in VSC and not in prompt.</span><br><span class="line">I solved this problem by doing the following steps:</span><br><span class="line">Click &quot;Code&quot; -&gt; Click &quot;Preferences&quot; -&gt; Click &quot;Settings&quot;</span><br><span class="line">Now in the settings, you have a search bar on top, search:</span><br><span class="line">python.linting.pylintEnable and set it to false</span><br><span class="line">Now there is alternative for linting, I am using the pep8 as a example here since it come with the anaconda, search this</span><br><span class="line">python.linting.pep8Enabled and set it to true</span><br><span class="line">Now pylint is not the default linter anymore, we are now using the pep8. Just to make sure, quit VSC and reopen it. there should not be any error anymore.</span><br><span class="line">I am fairly sure this is a problem with pylint, instead of the TF you installed. By default, the Microsoft python extension in the VSC is using pylint as the linting tool. By changing it to pep8 or other we can avoid the error.</span><br></pre></td></tr></table></figure>
 </li>
 </ul>
-<p>大致意思就是,pylint在解析库的时候不会遍历深层的子目录导致找不到tensorflow.<strong>解决办法是不使用pylint,改为pep8</strong></p>
+<blockquote>
+<p>are you using Visual Studio Code (VSC) or just pylint in general? I found out the reason why this is happening.<br>For VSC, the python extension, use pylint for intellisense of python. Pylint seems to have a bug with the sub-module. For me, the error only shows in VSC and not in prompt.<br>I solved this problem by doing the following steps:<br>Click “Code” -&gt; Click “Preferences” -&gt; Click “Settings”<br>Now in the settings, you have a search bar on top, search:<br>python.linting.pylintEnable and set it to false<br>Now there is alternative for linting, I am using the pep8 as a example here since it come with the anaconda, search this<br>python.linting.pep8Enabled and set it to true<br>Now pylint is not the default linter anymore, we are now using the pep8. Just to make sure, quit VSC and reopen it. there should not be any error anymore.<br>I am fairly sure this is a problem with pylint, instead of the TF you installed. By default, the Microsoft python extension in the VSC is using pylint as the linting tool. By changing it to pep8 or other we can avoid the error.<br>大致意思就是,pylint在解析库的时候不会遍历深层的子目录导致找不到tensorflow.<strong>解决办法是不使用pylint,改为pep8</strong></p>
+</blockquote>
 <ul>
 <li>方法: 在VScode的设置中搜索<code>python.linting</code>,将<code>pylint.Enabling</code>勾掉,将<code>pep8.Enabling</code>勾上即可.同时我们还会发现还有许多其他的选项可以采用,这里不一一尝试了.</li>
 </ul>
@@ -496,15 +528,17 @@
 </li>
 </ul>
 <ol>
-<li><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">vim ~ .config/pep8        //在家目录的.config文件夹下新建一个叫pep8的文件</span><br></pre></td></tr></table></figure>
-</li>
+<li><p>在家目录的.config文件夹下新建一个叫pep8的文件:</p>
+<pre><code>vim ~ .config/pep8
+</code></pre></li>
 <li><p>在其中写入:</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">[pep8]</span><br><span class="line">ignore = E226,E302,E41,E265,E231,E303</span><br><span class="line">max-line-length = 200</span><br></pre></td></tr></table></figure>
+<pre><code>[pep8]
+ignore = E226,E302,E41,E265,E231,E303
+max-line-length = 200
+</code></pre><p>其中,<code>ignore</code>后面的是需要忽略的编号,你可以查阅官方文档或者直接看终端的报错信息,在报错的最后会有编号,把想要忽略的加进来即可.</p>
 </li>
-</ol>
-<p>其中,<code>ignore</code>后面的是需要忽略的编号,你可以查阅官方文档或者直接看终端的报错信息,在报错的最后会有编号,把想要忽略的加进来即可.</p>
-<ol start="3">
-<li>保存文件,重启VScode即可.</li>
+<li><p>保存文件,重启VScode即可.</p>
+</li>
 </ol>
 
       
@@ -831,7 +865,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#问题记录"><span class="nav-number">1.</span> <span class="nav-text">问题记录</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#StackOverflow的解释"><span class="nav-number">2.</span> <span class="nav-text">StackOverflow的解释</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#后续问题"><span class="nav-number">3.</span> <span class="nav-text">后续问题</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#前言"><span class="nav-number">1.</span> <span class="nav-text">前言</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#问题记录"><span class="nav-number">2.</span> <span class="nav-text">问题记录</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#StackOverflow的解释"><span class="nav-number">3.</span> <span class="nav-text">StackOverflow的解释</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#后续问题"><span class="nav-number">4.</span> <span class="nav-text">后续问题</span></a></li></ol></div>
             
 
           </div>
@@ -876,7 +910,7 @@
 
 <div class="theme-info">
   <div class="powered-by"></div>
-  <span class="post-count">Total Words Of All Blogs: 99.7k words</span>
+  <span class="post-count">Total Words Of All Blogs: 98.9k words</span>
 </div>
 
         

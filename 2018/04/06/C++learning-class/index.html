@@ -115,6 +115,8 @@
 
 
 
+<link href="/js/google-code-prettify/tomorrow.min.css" type="text/css" rel="stylesheet">
+
   <meta name="description" content="不适合人类阅读的学习笔记    类 模板类 示例： 12345678910111213141516template &amp;lt;class T&amp;gt; //声明一个模板，虚拟类型名为T。注意：这里没有分号。  class T_Class //类模板名为Compare  &amp;#123;  public :     Compare(T a,T b)&amp;#123;        x=a;y=b;     &amp;#">
 <meta name="keywords" content="๑C++">
 <meta property="og:type" content="article">
@@ -182,6 +184,16 @@
 </noscript>
 
 </head>
+
+<!-- add by Fleshier -->
+<script type="text/javascript" src="/js/google-code-prettify/prettify.js"></script>
+<script type="text/javascript">
+$(window).load(function(){
+   $('pre').addClass('prettyprint linenums').attr('style', 'overflow:auto;');
+   prettyPrint();
+ })
+</script>
+<!-- add end -->
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="default">
 
@@ -472,10 +484,10 @@
 <h2 id="类"><a href="#类" class="headerlink" title="类"></a>类</h2><hr>
 <h3 id="模板类"><a href="#模板类" class="headerlink" title="模板类"></a>模板类</h3><ul>
 <li><p>示例：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">template &lt;class T&gt; //声明一个模板，虚拟类型名为T。注意：这里没有分号。  </span><br><span class="line">class T_Class //类模板名为Compare  </span><br><span class="line">&#123;  </span><br><span class="line">public :  </span><br><span class="line">   Compare(T a,T b)&#123;  </span><br><span class="line">      x=a;y=b;  </span><br><span class="line">   &#125;  </span><br><span class="line">   T max( )&#123;  </span><br><span class="line">      return (x&gt;y)?x:y;  </span><br><span class="line">   &#125;  </span><br><span class="line">   T min( )&#123;  </span><br><span class="line">      return (x&lt;y)?x:y;  </span><br><span class="line">   &#125;  </span><br><span class="line">private :  </span><br><span class="line">   T x,y;  </span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+<figure class="highlight ruby"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">template &lt;<span class="class"><span class="keyword">class</span> <span class="title">T</span>&gt; //声明一个模板，虚拟类型名为<span class="title">T</span>。注意：这里没有分号。  </span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">T_Class</span> //类模板名为<span class="title">Compare</span>  </span></span><br><span class="line">&#123;  </span><br><span class="line">public :  </span><br><span class="line">   Compare(T a,T b)&#123;  </span><br><span class="line">      x=a;y=b;  </span><br><span class="line">   &#125;  </span><br><span class="line">   T max( )&#123;  </span><br><span class="line">      <span class="keyword">return</span> (x&gt;y)<span class="string">?x</span><span class="symbol">:y</span>;  </span><br><span class="line">   &#125;  </span><br><span class="line">   T min( )&#123;  </span><br><span class="line">      <span class="keyword">return</span> (x&lt;y)<span class="string">?x</span><span class="symbol">:y</span>;  </span><br><span class="line">   &#125;  </span><br><span class="line">private :  </span><br><span class="line">   T x,y;  </span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
 </li>
 <li><p>模板类所有的函数，如果在类外面实现的话，需要写成如下形式：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">template &lt;class T&gt;</span><br><span class="line">T_Class&lt;T&gt;::max( )&#123;  </span><br><span class="line">     return (x &gt; y)? x : y;  </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">template</span> &lt;<span class="class"><span class="keyword">class</span> <span class="title">T</span>&gt;</span></span><br><span class="line"><span class="class"><span class="title">T_Class</span>&lt;T&gt;:</span>:max( )&#123;  </span><br><span class="line">     <span class="keyword">return</span> (x &gt; y)? x : y;  </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 </li>
 <li><p><strong>模板类不能将类的声明写在头文件而定义写在源文件中</strong>，这样会出现无法辨析的编译错误。</p>
 </li>
@@ -543,8 +555,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2018/04/06/Scala-learning/" rel="next" title="Scala学习笔记——基础">
-                <i class="fa fa-chevron-left"></i> Scala学习笔记——基础
+              <a href="/2018/04/06/Ubuntu-order/" rel="next" title="Ubuntu终端常用命令">
+                <i class="fa fa-chevron-left"></i> Ubuntu终端常用命令
               </a>
             
           </div>
@@ -553,8 +565,8 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2018/04/06/Ubuntu-order/" rel="prev" title="Ubuntu终端常用命令">
-                Ubuntu终端常用命令 <i class="fa fa-chevron-right"></i>
+              <a href="/2018/04/06/Java-learning/" rel="prev" title="Java学习笔记——基础">
+                Java学习笔记——基础 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -856,7 +868,7 @@
 
 <div class="theme-info">
   <div class="powered-by"></div>
-  <span class="post-count">Total Words Of All Blogs: 99.7k words</span>
+  <span class="post-count">Total Words Of All Blogs: 98.9k words</span>
 </div>
 
         

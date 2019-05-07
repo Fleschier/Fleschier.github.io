@@ -115,6 +115,8 @@
 
 
 
+<link href="/js/google-code-prettify/tomorrow.min.css" type="text/css" rel="stylesheet">
+
   <meta name="description" content="删除live2d插件  之前由于兴趣以及探索欲安装了live2d插件,但是在使用过程中不知道如何替换模型,也不是很懂怎么自己DIY模型,于是便放弃了这一插件.  首先删除\themes\next\layout下_layout.swig文件内的与live2d有关的代码  然后使用npm uninstall hexo-helper-live2d来删除这一momdule.   然而事情并没有结束  本以">
 <meta name="keywords" content="๑Blog">
 <meta property="og:type" content="article">
@@ -182,6 +184,16 @@
 </noscript>
 
 </head>
+
+<!-- add by Fleshier -->
+<script type="text/javascript" src="/js/google-code-prettify/prettify.js"></script>
+<script type="text/javascript">
+$(window).load(function(){
+   $('pre').addClass('prettyprint linenums').attr('style', 'overflow:auto;');
+   prettyPrint();
+ })
+</script>
+<!-- add end -->
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="default">
 
@@ -475,12 +487,12 @@
 </blockquote>
 </li>
 <li><p>官方还提供了其他的一些命令,比如:</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">(1)运行audit fix，但是只更新pkglock， 不更新node_modules：</span><br><span class="line">$ npm audit fix --package-lock-only</span><br></pre></td></tr></table></figure>
+<figure class="highlight vim"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">(<span class="number">1</span>)运行audit <span class="keyword">fix</span>，但是只更新pkglock， 不更新node_modules：</span><br><span class="line">$ npm audit <span class="keyword">fix</span> --package-lock-<span class="keyword">only</span></span><br></pre></td></tr></table></figure>
 </li>
 </ul>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">(2)只更新dependencies中安装的包，跳过devDependencies中的包：</span><br><span class="line">$ npm audit fix --only=prod</span><br></pre></td></tr></table></figure>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">运行命令，得到audit fix将会更新的内容，并且输出json格式的安装信息，但是并不真的安装更新：</span><br><span class="line">$ npm audit fix --dry-run --json</span><br></pre></td></tr></table></figure>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">得到json格式的详细检测报告</span><br><span class="line">$ npm audit --json</span><br></pre></td></tr></table></figure>
+<figure class="highlight gams"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">(<span class="number">2</span>)只更新dependencies中安装的包，跳过devDependencies中的包：</span><br><span class="line"><span class="symbol">$</span> npm audit fix --only=<span class="keyword">prod</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight brainfuck"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">运行命令，得到audit</span> <span class="comment">fix将会更新的内容，并且输出json格式的安装信息，但是并不真的安装更新：</span></span><br><span class="line"><span class="comment">$</span> <span class="comment">npm</span> <span class="comment">audit</span> <span class="comment">fix</span> <span class="literal">-</span><span class="literal">-</span><span class="comment">dry</span><span class="literal">-</span><span class="comment">run</span> <span class="literal">-</span><span class="literal">-</span><span class="comment">json</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">得到json格式的详细检测报告</span><br><span class="line"><span class="meta">$</span><span class="bash"> npm audit --json</span></span><br></pre></td></tr></table></figure>
 <ul>
 <li>特此记录.</li>
 </ul>
@@ -856,7 +868,7 @@
 
 <div class="theme-info">
   <div class="powered-by"></div>
-  <span class="post-count">Total Words Of All Blogs: 99.7k words</span>
+  <span class="post-count">Total Words Of All Blogs: 98.9k words</span>
 </div>
 
         

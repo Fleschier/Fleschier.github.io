@@ -115,6 +115,8 @@
 
 
 
+<link href="/js/google-code-prettify/tomorrow.min.css" type="text/css" rel="stylesheet">
+
   <meta name="description" content="不适合人类阅读的备忘笔记    命令 常用基本命令 ls -l 的简略写法就是 ll，但是这个与ls -a又不同，后者用来显示隐藏文件和文件夹。  使用 vim修改文件时，如果想要不保存退出，使用:q!命令。  ubuntu改文件名用 mv name1 name2即可  cp filename filepath //拷贝文件  cp -r 源目录  指定目录 //拷贝一个文件夹到另一个目录  从">
 <meta name="keywords" content="๑Ubuntu,๑Linux">
 <meta property="og:type" content="article">
@@ -182,6 +184,16 @@
 </noscript>
 
 </head>
+
+<!-- add by Fleshier -->
+<script type="text/javascript" src="/js/google-code-prettify/prettify.js"></script>
+<script type="text/javascript">
+$(window).load(function(){
+   $('pre').addClass('prettyprint linenums').attr('style', 'overflow:auto;');
+   prettyPrint();
+ })
+</script>
+<!-- add end -->
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="default">
 
@@ -510,7 +522,7 @@
 <li><p><strong>例（最常用）</strong>：<code>cat AR_log | grep &quot;====&quot;</code>此句就是打印日志AR_log当中所有包含了”====”的行</p>
 </li>
 <li><p>在当前目录中，查找后缀有 file 字样的文件中包含 test 字符串的文件，并打印出该字符串的行。此时，可以使用如下命令：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">grep test *file</span><br></pre></td></tr></table></figure>
+<figure class="highlight gradle"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">grep</span> test *<span class="keyword">file</span></span><br></pre></td></tr></table></figure>
 </li>
 </ul>
 <h3 id="apt常用命令"><a href="#apt常用命令" class="headerlink" title="apt常用命令"></a>apt常用命令</h3><ul>
@@ -556,7 +568,7 @@
 <li><p>远程服务器的格式为 <code>用户名@IP地址:文件路径</code></p>
 </li>
 <li><p>额外说明：如果远程服务器防火墙有为scp命令设置了指定的端口，我们需要使用 -P 参数来设置命令的端口号，命令格式如下：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">#scp 命令使用端口号 4588</span><br><span class="line">scp -P 4588 remote@www.runoob.com:/usr/local/sin.sh /home/administrator</span><br></pre></td></tr></table></figure>
+<figure class="highlight stylus"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-id">#scp</span> 命令使用端口号 <span class="number">4588</span></span><br><span class="line">scp -P <span class="number">4588</span> remote@www<span class="selector-class">.runoob</span><span class="selector-class">.com</span>:/usr/local/sin<span class="selector-class">.sh</span> /home/administrator</span><br></pre></td></tr></table></figure>
 </li>
 </ul>
 <h3 id="curl命令"><a href="#curl命令" class="headerlink" title="curl命令"></a>curl命令</h3><ul>
@@ -611,7 +623,7 @@
 <li><p><code>tar -N &#39;yyyy/mm/dd&#39; /path -zcvf target.tar.gz source</code></p>
 </li>
 <li><p>参数说明：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">-z  ：是否同时具有 gzip 的属性？ </span><br><span class="line">-x  ：解开一个压缩档案的参数指令！ </span><br><span class="line">-t  ：查看 tarfile 里面的档案！</span><br><span class="line">-c  ：建立一个压缩档案的参数指令 </span><br><span class="line">-v  ：压缩的过程中显示档案！ </span><br><span class="line">-f  ：使用档名，请留意，在 f 之后要立即接档名,不要再加参数</span><br><span class="line">-p  ：使用原档案的原来属性（属性不会依据使用者而变） </span><br><span class="line">-P  ：可以使用绝对路径 </span><br><span class="line">-N  ：比后面接的日期(yyyy/mm/dd)还要新的才会被打包进新建的档案中！</span><br><span class="line">--exclude FILE：在压缩的过程中，不要将 FILE 打包！</span><br></pre></td></tr></table></figure>
+<figure class="highlight haml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">-<span class="ruby">z  ：是否同时具有 gzip 的属性？ </span></span><br><span class="line"><span class="ruby">-x  ：解开一个压缩档案的参数指令！ </span></span><br><span class="line"><span class="ruby">-t  ：查看 tarfile 里面的档案！</span></span><br><span class="line"><span class="ruby">-c  ：建立一个压缩档案的参数指令 </span></span><br><span class="line"><span class="ruby">-v  ：压缩的过程中显示档案！ </span></span><br><span class="line"><span class="ruby">-f  ：使用档名，请留意，在 f 之后要立即接档名,不要再加参数</span></span><br><span class="line"><span class="ruby">-p  ：使用原档案的原来属性（属性不会依据使用者而变） </span></span><br><span class="line"><span class="ruby">-P  ：可以使用绝对路径 </span></span><br><span class="line"><span class="ruby">-N  ：比后面接的日期(yyyy/mm/dd)还要新的才会被打包进新建的档案中！</span></span><br><span class="line"><span class="ruby">--exclude FILE：在压缩的过程中，不要将 FILE 打包！</span></span><br></pre></td></tr></table></figure>
 </li>
 </ul>
 <h5 id="例子"><a href="#例子" class="headerlink" title="例子"></a>例子</h5><ul>
@@ -707,8 +719,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2018/04/06/C++learning-class/" rel="next" title="C++学习笔记——类">
-                <i class="fa fa-chevron-left"></i> C++学习笔记——类
+              <a href="/2018/04/06/Python-learning/" rel="next" title="Python学习笔记——基础">
+                <i class="fa fa-chevron-left"></i> Python学习笔记——基础
               </a>
             
           </div>
@@ -717,8 +729,8 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2018/04/06/Ubuntu-operation/" rel="prev" title="Ubuntu随笔">
-                Ubuntu随笔 <i class="fa fa-chevron-right"></i>
+              <a href="/2018/04/06/C++learning-class/" rel="prev" title="C++学习笔记——类">
+                C++学习笔记——类 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -1020,7 +1032,7 @@
 
 <div class="theme-info">
   <div class="powered-by"></div>
-  <span class="post-count">Total Words Of All Blogs: 99.7k words</span>
+  <span class="post-count">Total Words Of All Blogs: 98.9k words</span>
 </div>
 
         

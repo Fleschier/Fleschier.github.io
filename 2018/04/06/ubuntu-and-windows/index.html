@@ -115,6 +115,8 @@
 
 
 
+<link href="/js/google-code-prettify/tomorrow.min.css" type="text/css" rel="stylesheet">
+
   <meta name="description" content="不适合人类阅读的自我备忘笔记    关于ubuntu 和 windows 双系统  在长时间使用Windows时候，难免会想要尝试新系统，而专业又是如此，于是我选择了linux中图形界面最为友好的ubuntu系统作为自己双系统的入门系统。  虽然网上的双系统教程多说的很是简单，但是大多数已经是几年前的文章了，其中所讲的一些计算机的硬件系统已经落伍了，就比如说，网上绝大多数的双系统引导模式是建立在">
 <meta name="keywords" content="๑Ubuntu,๑Linux,๑DualSystem">
 <meta property="og:type" content="article">
@@ -188,6 +190,16 @@
 </noscript>
 
 </head>
+
+<!-- add by Fleshier -->
+<script type="text/javascript" src="/js/google-code-prettify/prettify.js"></script>
+<script type="text/javascript">
+$(window).load(function(){
+   $('pre').addClass('prettyprint linenums').attr('style', 'overflow:auto;');
+   prettyPrint();
+ })
+</script>
+<!-- add end -->
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="default">
 
@@ -529,7 +541,7 @@
 <li><p><a href="https://blog.csdn.net/gatieme/article/details/51883981" target="_blank" rel="noopener">详细原因</a></p>
 </li>
 <li><p><strong>但是注意</strong>：在 Ubuntu <strong>16.04</strong> 版本以前，关闭UTC的方法是编辑<code>/etc/default/rcS</code>，将<code>UTC=yes</code>改成<code>UTC=no</code>， 但在Ubuntu 16.04使用systemd启动之后，时间改成了由timedatectl来管理，所以更改方法是:</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">timedatectl set-local-rtc 1 --adjust-system-clock</span><br></pre></td></tr></table></figure>
+<figure class="highlight dsconfig"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">timedatectl </span><span class="built_in">set-local-rtc</span> 1 <span class="built_in">--adjust-system-clock</span></span><br></pre></td></tr></table></figure>
 </li>
 <li><p>之后重启应该就不会出现问题了。</p>
 </li>
@@ -914,7 +926,7 @@
 
 <div class="theme-info">
   <div class="powered-by"></div>
-  <span class="post-count">Total Words Of All Blogs: 99.7k words</span>
+  <span class="post-count">Total Words Of All Blogs: 98.9k words</span>
 </div>
 
         

@@ -115,6 +115,8 @@
 
 
 
+<link href="/js/google-code-prettify/tomorrow.min.css" type="text/css" rel="stylesheet">
+
   <meta name="description" content="环境搭建  在使用hexo搭建博客之前，需要搭建好环境。需要git、node.js和hexo  详细搭建见——链接   hexo  hexo有大量的主题可供选择，而且支持一键部署  但是hexo每次预览要重新生成页面，而jekyll是即时体现更改   安装 npm install -g hexo-cli  常用命令 初始化： hexo init  //在一个空文件夹下初始化  hexo一些命令：">
 <meta name="keywords" content="๑Blog">
 <meta property="og:type" content="article">
@@ -186,6 +188,16 @@
 </noscript>
 
 </head>
+
+<!-- add by Fleshier -->
+<script type="text/javascript" src="/js/google-code-prettify/prettify.js"></script>
+<script type="text/javascript">
+$(window).load(function(){
+   $('pre').addClass('prettyprint linenums').attr('style', 'overflow:auto;');
+   prettyPrint();
+ })
+</script>
+<!-- add end -->
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="default">
 
@@ -491,7 +503,7 @@
 <li><p>初始化： <code>hexo init  //在一个空文件夹下初始化</code></p>
 </li>
 <li><p>hexo一些命令：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new &quot;postName&quot;  #新建文章</span><br><span class="line">$ hexo new page &quot;pageName&quot; # 新建页面</span><br><span class="line">$ hexo generate # 生成静态页面至public目录 =hexo g</span><br><span class="line">$ hexo server # 开启预览访问端口(默认端口4000，&apos;ctrl+c&apos;关闭server) = hexo s</span><br><span class="line">$ hexo deploy # 项目部署 = hexo d</span><br><span class="line">$ hexo help # 查看帮助</span><br><span class="line">$ hexo version # 查看Hexo的版本</span><br></pre></td></tr></table></figure>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">$</span><span class="bash"> hexo new <span class="string">"postName"</span>  <span class="comment">#新建文章</span></span></span><br><span class="line"><span class="meta">$</span><span class="bash"> hexo new page <span class="string">"pageName"</span> <span class="comment"># 新建页面</span></span></span><br><span class="line"><span class="meta">$</span><span class="bash"> hexo generate <span class="comment"># 生成静态页面至public目录 =hexo g</span></span></span><br><span class="line"><span class="meta">$</span><span class="bash"> hexo server <span class="comment"># 开启预览访问端口(默认端口4000，'ctrl+c'关闭server) = hexo s</span></span></span><br><span class="line"><span class="meta">$</span><span class="bash"> hexo deploy <span class="comment"># 项目部署 = hexo d</span></span></span><br><span class="line"><span class="meta">$</span><span class="bash"> hexo <span class="built_in">help</span> <span class="comment"># 查看帮助</span></span></span><br><span class="line"><span class="meta">$</span><span class="bash"> hexo version <span class="comment"># 查看Hexo的版本</span></span></span><br></pre></td></tr></table></figure>
 </li>
 </ul>
 <h2 id="一些问题记录"><a href="#一些问题记录" class="headerlink" title="一些问题记录"></a>一些问题记录</h2><hr>
@@ -506,7 +518,7 @@
 </ul>
 <h4 id="部署到git"><a href="#部署到git" class="headerlink" title="部署到git"></a>部署到git</h4><ul>
 <li><p>部署到Github前需要配置<code>_config.yml</code>文件:</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">deploy:</span><br><span class="line">	type: git</span><br><span class="line">	repository: git@github.com:Fleschier/Fleschier.github.io.git</span><br><span class="line">	branch: master</span><br></pre></td></tr></table></figure>
+<figure class="highlight less"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="attribute">deploy</span>:</span><br><span class="line">	<span class="attribute">type</span>: git</span><br><span class="line">	<span class="attribute">repository</span>: git<span class="variable">@github</span>.<span class="attribute">com</span>:Fleschier/Fleschier.github.io.git</span><br><span class="line">	<span class="attribute">branch</span>: master</span><br></pre></td></tr></table></figure>
 </li>
 <li><p>然后输入:<code>hexo d</code></p>
 </li>
@@ -514,10 +526,10 @@
 <h2 id="三部曲"><a href="#三部曲" class="headerlink" title="三部曲"></a>三部曲</h2><hr>
 <ul>
 <li><p>修改然后预览</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">hexo clean</span><br><span class="line">hexo g</span><br><span class="line">hexo s --debug //运行预览同时实时生成错误报告</span><br></pre></td></tr></table></figure>
+<figure class="highlight d"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">hexo clean</span><br><span class="line">hexo g</span><br><span class="line">hexo s --<span class="keyword">debug</span> <span class="comment">//运行预览同时实时生成错误报告</span></span><br></pre></td></tr></table></figure>
 </li>
 <li><p>修改然后部署</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">hexo clean</span><br><span class="line">hexo g</span><br><span class="line">hexo d</span><br></pre></td></tr></table></figure>
+<figure class="highlight ebnf"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="attribute">hexo clean</span></span><br><span class="line"><span class="attribute">hexo g</span></span><br><span class="line"><span class="attribute">hexo d</span></span><br></pre></td></tr></table></figure>
 </li>
 </ul>
 <h2 id="添加页面"><a href="#添加页面" class="headerlink" title="添加页面"></a>添加页面</h2><hr>
@@ -530,7 +542,7 @@
 <ol>
 <li>新建tags文件夹，并创建index.md</li>
 <li><p>在index.md中写入如下内容：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">---</span><br><span class="line">title: tags</span><br><span class="line">date: 2016-09-05 23:41:32</span><br><span class="line">type: &quot;tags&quot;</span><br><span class="line">comments: false</span><br><span class="line">---</span><br></pre></td></tr></table></figure>
+<figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">---</span></span><br><span class="line"><span class="attr">title:</span> <span class="string">tags</span></span><br><span class="line"><span class="attr">date:</span> <span class="number">2016</span><span class="bullet">-09</span><span class="bullet">-05</span> <span class="number">23</span><span class="string">:41:32</span></span><br><span class="line"><span class="attr">type:</span> <span class="string">"tags"</span></span><br><span class="line"><span class="attr">comments:</span> <span class="literal">false</span></span><br><span class="line"><span class="meta">---</span></span><br></pre></td></tr></table></figure>
 </li>
 <li><p>到_config.yml文件中将对应的路径添加进去(next主题默认是将这几个页面注释掉的，取消注释即可)</p>
 </li>
@@ -552,17 +564,17 @@
 </li>
 </ul>
 <h3 id="安装插件"><a href="#安装插件" class="headerlink" title="安装插件"></a>安装插件</h3><ul>
-<li>为Hexo安装<code>hexo-generator-sitemap</code>和<code>hexo-generator-baidu-sitemap</code>插件，在Hexo博客目录下运行：<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">npm install hexo-generator-sitemap --save</span><br><span class="line">npm install hexo-generator-baidu-sitemap --save</span><br></pre></td></tr></table></figure>
+<li>为Hexo安装<code>hexo-generator-sitemap</code>和<code>hexo-generator-baidu-sitemap</code>插件，在Hexo博客目录下运行：<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">npm <span class="keyword">install</span> hexo-generator-sitemap <span class="comment">--save</span></span><br><span class="line">npm <span class="keyword">install</span> hexo-generator-baidu-sitemap <span class="comment">--save</span></span><br></pre></td></tr></table></figure>
 </li>
 </ul>
 <h3 id="重新建站"><a href="#重新建站" class="headerlink" title="重新建站"></a>重新建站</h3><ul>
 <li><p>配置Hexo的<code>_config.yml</code>文件，添加如下字段:</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">sitemap:</span><br><span class="line">		path: sitemap.xml</span><br><span class="line">baidusitemap:</span><br><span class="line">		path: baidusitemap.xml</span><br></pre></td></tr></table></figure>
+<figure class="highlight dts"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="symbol">sitemap:</span></span><br><span class="line"><span class="symbol">		path:</span> sitemap.xml</span><br><span class="line"><span class="symbol">baidusitemap:</span></span><br><span class="line"><span class="symbol">		path:</span> baidusitemap.xml</span><br></pre></td></tr></table></figure>
 </li>
 <li><p>在博客的<code>_config.yml</code>文件中添加博客的url,<strong>否则生成的站点地图在提交的时候会报错</strong>。</p>
 </li>
 <li><p>例如我的：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"># URL</span><br><span class="line">## If your site is put in a subdirectory, set url as &apos;http://yoursite.com/child&apos; and root as &apos;/child/&apos;</span><br><span class="line">url: https://fleschier.github.io/</span><br><span class="line">root: /</span><br><span class="line">permalink: :year/:month/:day/:title/</span><br><span class="line">permalink_defaults:</span><br></pre></td></tr></table></figure>
+<figure class="highlight elixir"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># URL</span></span><br><span class="line"><span class="comment">## If your site is put in a subdirectory, set url as 'http://yoursite.com/child' and root as '/child/'</span></span><br><span class="line"><span class="symbol">url:</span> <span class="symbol">https:</span>/<span class="regexp">/fleschier.github.io/</span></span><br><span class="line"><span class="symbol">root:</span> /</span><br><span class="line"><span class="symbol">permalink:</span> <span class="symbol">:year/</span><span class="symbol">:month/</span><span class="symbol">:day/</span><span class="symbol">:title/</span></span><br><span class="line"><span class="symbol">permalink_defaults:</span></span><br></pre></td></tr></table></figure>
 </li>
 <li><p>重新生成博客页面即可看到sitemap.xml文件和baidusitemap.xml文件</p>
 </li>
@@ -573,7 +585,7 @@
 <li><p>可以在source文件夹下添加<code>robots.txt</code>文件来限制爬虫抓取网页的内容范围</p>
 </li>
 <li><p>robots例子：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"># hexo robots.txt</span><br><span class="line">User-agent: *</span><br><span class="line">Allow: /</span><br><span class="line">Allow: /archives/</span><br><span class="line">Allow: /tags/</span><br><span class="line"></span><br><span class="line">Disallow: /vendors/</span><br><span class="line">Disallow: /js/</span><br><span class="line">Disallow: /css/</span><br><span class="line">Disallow: /fonts/</span><br><span class="line">Disallow: /vendors/</span><br><span class="line">Disallow: /fancybox/</span><br><span class="line"></span><br><span class="line">Sitemap: https://Fleschier.github.io/sitemap.xml</span><br><span class="line">Sitemap: https://Fleschier.github.io/baidusitemap.xml</span><br></pre></td></tr></table></figure>
+<figure class="highlight dts"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta"># hexo robots.txt</span></span><br><span class="line">User-agent: *</span><br><span class="line"><span class="symbol">Allow:</span> /</span><br><span class="line"><span class="symbol">Allow:</span> <span class="meta-keyword">/archives/</span></span><br><span class="line"><span class="symbol">Allow:</span> <span class="meta-keyword">/tags/</span></span><br><span class="line"></span><br><span class="line"><span class="symbol">Disallow:</span> <span class="meta-keyword">/vendors/</span></span><br><span class="line"><span class="symbol">Disallow:</span> <span class="meta-keyword">/js/</span></span><br><span class="line"><span class="symbol">Disallow:</span> <span class="meta-keyword">/css/</span></span><br><span class="line"><span class="symbol">Disallow:</span> <span class="meta-keyword">/fonts/</span></span><br><span class="line"><span class="symbol">Disallow:</span> <span class="meta-keyword">/vendors/</span></span><br><span class="line"><span class="symbol">Disallow:</span> <span class="meta-keyword">/fancybox/</span></span><br><span class="line"></span><br><span class="line"><span class="symbol">Sitemap:</span> https:<span class="comment">//Fleschier.github.io/sitemap.xml</span></span><br><span class="line"><span class="symbol">Sitemap:</span> https:<span class="comment">//Fleschier.github.io/baidusitemap.xml</span></span><br></pre></td></tr></table></figure>
 </li>
 </ul>
 <h2 id="文章中的图片"><a href="#文章中的图片" class="headerlink" title="文章中的图片"></a>文章中的图片</h2><hr>
@@ -990,7 +1002,7 @@
 
 <div class="theme-info">
   <div class="powered-by"></div>
-  <span class="post-count">Total Words Of All Blogs: 99.7k words</span>
+  <span class="post-count">Total Words Of All Blogs: 98.9k words</span>
 </div>
 
         

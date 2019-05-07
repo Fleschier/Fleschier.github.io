@@ -115,6 +115,8 @@
 
 
 
+<link href="/js/google-code-prettify/tomorrow.min.css" type="text/css" rel="stylesheet">
+
   <meta name="description" content="Maven仓库  Maven仓库分为本地仓库,中央仓库和远程仓库.  中央仓库可以查询和获取大量常用的库—-地址  远程仓库是当我们在中央仓库也获取不到需要的库时,才会用到的. 一般也不会用到远程仓库.   仓库搜索顺序 首先,maven会在本地仓库中搜索依赖的库,如果没有就去中央仓库,如果中央仓库也找不到,但是pom文件里设置了远程仓库,则去远程仓库中获取,否则就会报错,找不到依赖的文件.  M">
 <meta name="keywords" content="๑Maven,๑Apache">
 <meta property="og:type" content="article">
@@ -182,6 +184,16 @@
 </noscript>
 
 </head>
+
+<!-- add by Fleshier -->
+<script type="text/javascript" src="/js/google-code-prettify/prettify.js"></script>
+<script type="text/javascript">
+$(window).load(function(){
+   $('pre').addClass('prettyprint linenums').attr('style', 'overflow:auto;');
+   prettyPrint();
+ })
+</script>
+<!-- add end -->
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="default">
 
@@ -875,7 +887,7 @@
 
 <div class="theme-info">
   <div class="powered-by"></div>
-  <span class="post-count">Total Words Of All Blogs: 99.7k words</span>
+  <span class="post-count">Total Words Of All Blogs: 98.9k words</span>
 </div>
 
         

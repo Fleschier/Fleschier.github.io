@@ -115,6 +115,8 @@
 
 
 
+<link href="/js/google-code-prettify/tomorrow.min.css" type="text/css" rel="stylesheet">
+
   <meta name="description" content="不适合人类阅读的学习笔记  第十六章 使用列表  列表的使用方法表格见另一篇博客  列表跟数组非常像，但是有两个重要的区别：    列表是不可变的，也就是说列表的元素不能通过赋值改变 列表是递归的(即链表)，而数组是平的   init和last要消耗的时间与列表的长度成正比，而head和tail消耗常量级别的时间  indices方法返回包含了指定列表所有有效的下标，所以一般用在for表达式遍历">
 <meta name="keywords" content="๑Scala">
 <meta property="og:type" content="article">
@@ -184,6 +186,16 @@
 </noscript>
 
 </head>
+
+<!-- add by Fleshier -->
+<script type="text/javascript" src="/js/google-code-prettify/prettify.js"></script>
+<script type="text/javascript">
+$(window).load(function(){
+   $('pre').addClass('prettyprint linenums').attr('style', 'overflow:auto;');
+   prettyPrint();
+ })
+</script>
+<!-- add end -->
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="default">
 
@@ -486,12 +498,12 @@
 <li><p><code>init</code>和<code>last</code>要消耗的时间与列表的长度成正比，而<code>head</code>和<code>tail</code>消耗常量级别的时间</p>
 </li>
 <li><p><code>indices</code>方法返回包含了指定列表所有有效的下标，所以一般用在for表达式遍历列表时：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">val lst = new List(&quot;af&quot;,&quot;g3g&quot;,&quot;g53v&quot;)</span><br><span class="line">for( i &lt;- lst.indices)&#123; //这里i即是从lst的第一个有效下标开始直到最后一个下标</span><br><span class="line">  ...</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight dart"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">val lst = <span class="keyword">new</span> <span class="built_in">List</span>(<span class="string">"af"</span>,<span class="string">"g3g"</span>,<span class="string">"g53v"</span>)</span><br><span class="line"><span class="keyword">for</span>( i &lt;- lst.indices)&#123; <span class="comment">//这里i即是从lst的第一个有效下标开始直到最后一个下标</span></span><br><span class="line">  ...</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 </li>
 </ul>
 <h3 id="flatten方法：接受一个列表的列表并返回单个列表"><a href="#flatten方法：接受一个列表的列表并返回单个列表" class="headerlink" title="flatten方法：接受一个列表的列表并返回单个列表"></a><code>flatten</code>方法：接受一个列表的列表并返回单个列表</h3><ul>
 <li><p>例子：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">scala&gt; List(List(1,2),List(3),List(),List(4,5)).flatten</span><br><span class="line">res0: List[Int] = List(1,2,3,4,5)</span><br></pre></td></tr></table></figure>
+<figure class="highlight stata"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">scala</span>&gt; <span class="keyword">List</span>(<span class="keyword">List</span>(1,2),<span class="keyword">List</span>(3),<span class="keyword">List</span>(),<span class="keyword">List</span>(4,5)).flatten</span><br><span class="line">res0: <span class="keyword">List</span>[Int] = <span class="keyword">List</span>(1,2,3,4,5)</span><br></pre></td></tr></table></figure>
 </li>
 <li><p>例子：<br><img src="/images/Scala/flatten_test.jpg" alt></p>
 </li>
@@ -504,13 +516,13 @@
 </ul>
 <h4 id="zipWithIndex方法"><a href="#zipWithIndex方法" class="headerlink" title="zipWithIndex方法"></a><code>zipWithIndex</code>方法</h4><ul>
 <li><p>例子：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">scala&gt; val abcde = List(&apos;a&apos;,&apos;b&apos;,&apos;c&apos;,&apos;d&apos;,&apos;e&apos;)</span><br><span class="line">abcde: List[Char] = List(a,b,c,d,e)</span><br><span class="line">scala&gt; abcde.zipWithIndex</span><br><span class="line">res0: List[(Char,Int)] = List((a,0),(b,1),(c,2),(d,3),(e,4))</span><br></pre></td></tr></table></figure>
+<figure class="highlight stylus"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">scala&gt; val abcde = List(<span class="string">'a'</span>,<span class="string">'b'</span>,<span class="string">'c'</span>,<span class="string">'d'</span>,<span class="string">'e'</span>)</span><br><span class="line">abcde: List[Char] = List(<span class="selector-tag">a</span>,<span class="selector-tag">b</span>,c,d,e)</span><br><span class="line">scala&gt; abcde.zipWithIndex</span><br><span class="line">res0: List[(Char,Int)] = List((<span class="selector-tag">a</span>,<span class="number">0</span>),(<span class="selector-tag">b</span>,<span class="number">1</span>),(c,<span class="number">2</span>),(d,<span class="number">3</span>),(e,<span class="number">4</span>))</span><br></pre></td></tr></table></figure>
 </li>
 <li><p>任何元组的列表都可以通过unzip方法转换回由列表组成的元组</p>
 </li>
 </ul>
 <h3 id="显示列表"><a href="#显示列表" class="headerlink" title="显示列表"></a>显示列表</h3><ul>
-<li>下面一些例子：<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">scala&gt; abcde mkString(&quot;[&quot;, &quot;,&quot;, &quot;]&quot;)</span><br><span class="line">res0: String = [a,b,c,d,e]</span><br><span class="line">scala&gt; abcde mkString &quot;&quot;</span><br><span class="line">res1: String = abcde</span><br><span class="line">scala&gt; abcde.mkString</span><br><span class="line">res2: String = abcde</span><br><span class="line">scala&gt; abcde mkString (&quot;List(&quot;, &quot;, &quot;, &quot;)&quot;)</span><br><span class="line">res3: String = List(a,b,c,d,e)</span><br></pre></td></tr></table></figure>
+<li>下面一些例子：<figure class="highlight stylus"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">scala&gt; abcde mkString(<span class="string">"["</span>, <span class="string">","</span>, <span class="string">"]"</span>)</span><br><span class="line">res0: String = [<span class="selector-tag">a</span>,<span class="selector-tag">b</span>,c,d,e]</span><br><span class="line">scala&gt; abcde mkString <span class="string">""</span></span><br><span class="line">res1: String = abcde</span><br><span class="line">scala&gt; abcde.mkString</span><br><span class="line">res2: String = abcde</span><br><span class="line">scala&gt; abcde mkString (<span class="string">"List("</span>, <span class="string">", "</span>, <span class="string">")"</span>)</span><br><span class="line">res3: String = List(<span class="selector-tag">a</span>,<span class="selector-tag">b</span>,c,d,e)</span><br></pre></td></tr></table></figure>
 </li>
 </ul>
 <h3 id="过滤列表"><a href="#过滤列表" class="headerlink" title="过滤列表"></a>过滤列表</h3><ul>
@@ -907,7 +919,7 @@
 
 <div class="theme-info">
   <div class="powered-by"></div>
-  <span class="post-count">Total Words Of All Blogs: 99.7k words</span>
+  <span class="post-count">Total Words Of All Blogs: 98.9k words</span>
 </div>
 
         

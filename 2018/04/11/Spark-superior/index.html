@@ -115,6 +115,8 @@
 
 
 
+<link href="/js/google-code-prettify/tomorrow.min.css" type="text/css" rel="stylesheet">
+
   <meta name="description" content="不适合人类阅读的学习笔记   有问题经常去stackoverflow.com上找找或者直接去看官方的API原版或者翻译版:官方文档的中文版  DataSet 与 DataFrame  Dataset是特定域对象中的强类型集合，它可以使用函数或者相关操作并行地进行转换等操作。每个Dataset都有一个称为DataFrame的非类型化的视图，这个视图是行的数据集。  DataSet和RDD主要的区别">
 <meta name="keywords" content="๑BigData,๑Spark">
 <meta property="og:type" content="article">
@@ -182,6 +184,16 @@
 </noscript>
 
 </head>
+
+<!-- add by Fleshier -->
+<script type="text/javascript" src="/js/google-code-prettify/prettify.js"></script>
+<script type="text/javascript">
+$(window).load(function(){
+   $('pre').addClass('prettyprint linenums').attr('style', 'overflow:auto;');
+   prettyPrint();
+ })
+</script>
+<!-- add end -->
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="default">
 
@@ -481,17 +493,17 @@
 <li><p>Dataset的定义中还提到了DataFrame，DataFrame是特殊的Dataset，它在编译时不会对模式进行检测。在未来版本的Spark，Dataset将会替代RDD成为我们开发编程使用的API。</p>
 </li>
 </ul>
-<h3 id="创建DataFrame"><a href="#创建DataFrame" class="headerlink" title="创建DataFrame"></a>创建DataFrame</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">import org.apache.spark.sql.SparkSession</span><br><span class="line">...</span><br><span class="line">val sparkses = SparkSession</span><br><span class="line">				.builder()</span><br><span class="line">                .getOrCreate() //这两个为必须有的</span><br><span class="line">val df = sparkses.read.csv(&quot;...filename.csv&quot;)</span><br><span class="line">//这里read后面的方法名称与具体要读的文件类型有关</span><br><span class="line">df.show()  //打印内容</span><br></pre></td></tr></table></figure>
+<h3 id="创建DataFrame"><a href="#创建DataFrame" class="headerlink" title="创建DataFrame"></a>创建DataFrame</h3><figure class="highlight stylus"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">import org<span class="selector-class">.apache</span><span class="selector-class">.spark</span><span class="selector-class">.sql</span><span class="selector-class">.SparkSession</span></span><br><span class="line">...</span><br><span class="line">val sparkses = SparkSession</span><br><span class="line">				.builder()</span><br><span class="line">                .getOrCreate() <span class="comment">//这两个为必须有的</span></span><br><span class="line">val df = sparkses<span class="selector-class">.read</span><span class="selector-class">.csv</span>(<span class="string">"...filename.csv"</span>)</span><br><span class="line"><span class="comment">//这里read后面的方法名称与具体要读的文件类型有关</span></span><br><span class="line">df.show()  <span class="comment">//打印内容</span></span><br></pre></td></tr></table></figure>
 <h3 id="创建DataSet"><a href="#创建DataSet" class="headerlink" title="创建DataSet"></a>创建DataSet</h3><ul>
 <li>方法一：创建case class （对于复杂的数据没有成功）</li>
 <li><p>例如</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">val sparkses = SparkSession</span><br><span class="line">				.builder()</span><br><span class="line">                .getOrCreate()</span><br><span class="line">case class KeyValue(key: Int, value: String)</span><br><span class="line">import sparkses.implicit._   //引入隐式转换库</span><br><span class="line">val df = Seq((1,&quot;asdf&quot;),(2,&quot;34234&quot;)).toDF(&quot;key&quot;, &quot;value&quot;)</span><br><span class="line">val ds = df.as[KeyValue]</span><br><span class="line">// org.apache.spark.sql.Dataset[KeyValue] = [key: int, value: string]</span><br></pre></td></tr></table></figure>
+<figure class="highlight fortran"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">val sparkses = SparkSession</span><br><span class="line">				.builder()</span><br><span class="line">                .getOrCreate()</span><br><span class="line"><span class="keyword">case</span> <span class="keyword">class</span> KeyValue(key: <span class="built_in">Int</span>, <span class="keyword">value</span>: String)</span><br><span class="line"><span class="keyword">import</span> sparkses.<span class="keyword">implicit</span>._   //引入隐式转换库</span><br><span class="line">val df = Seq((<span class="number">1</span>,<span class="string">"asdf"</span>),(<span class="number">2</span>,<span class="string">"34234"</span>)).toDF(<span class="string">"key"</span>, <span class="string">"value"</span>)</span><br><span class="line">val ds = df.as[KeyValue]</span><br><span class="line">// org.apache.spark.sql.Dataset[KeyValue] = [key: <span class="built_in">int</span>, <span class="keyword">value</span>: string]</span><br></pre></td></tr></table></figure>
 </li>
 <li><p>case class的参数上限为22</p>
 </li>
 <li><p>方法二：以元组隐式转化</p>
 </li>
-<li>例：<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">val tupDs = df.as[(Int,String)]</span><br><span class="line">// org.apache.spark.sql.Dataset[(Int, String)] = [_1: int, _2: string]</span><br></pre></td></tr></table></figure>
+<li>例：<figure class="highlight autoit"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">val tupDs = df.as[(<span class="built_in">Int</span>,<span class="built_in">String</span>)]</span><br><span class="line">// org.apache.spark.sql.Dataset[(<span class="built_in">Int</span>, <span class="built_in">String</span>)] = [_1: <span class="built_in">int</span>, _2: <span class="built_in">string</span>]</span><br></pre></td></tr></table></figure>
 </li>
 </ul>
 <p><br></p>
@@ -872,7 +884,7 @@
 
 <div class="theme-info">
   <div class="powered-by"></div>
-  <span class="post-count">Total Words Of All Blogs: 99.7k words</span>
+  <span class="post-count">Total Words Of All Blogs: 98.9k words</span>
 </div>
 
         

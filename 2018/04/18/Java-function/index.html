@@ -115,6 +115,8 @@
 
 
 
+<link href="/js/google-code-prettify/tomorrow.min.css" type="text/css" rel="stylesheet">
+
   <meta name="description" content="不适合人类阅读的学习笔记    函数  Java中的函数没有默认参数，通过函数重载间接实现这个功能。  java没有在类外面定义的函数，所以一般都是方法。   工具类函数的使用 如果要自己写一些可以复用的工具函数，可以新建一个class： 123class myUtils&amp;#123;  static void func(...)&amp;#123;...&amp;#125;&amp;#125;  在这个类中将要用的工具">
 <meta name="keywords" content="๑Java">
 <meta property="og:type" content="article">
@@ -182,6 +184,16 @@
 </noscript>
 
 </head>
+
+<!-- add by Fleshier -->
+<script type="text/javascript" src="/js/google-code-prettify/prettify.js"></script>
+<script type="text/javascript">
+$(window).load(function(){
+   $('pre').addClass('prettyprint linenums').attr('style', 'overflow:auto;');
+   prettyPrint();
+ })
+</script>
+<!-- add end -->
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="default">
 
@@ -478,7 +490,7 @@
 </ul>
 <h3 id="工具类函数的使用"><a href="#工具类函数的使用" class="headerlink" title="工具类函数的使用"></a>工具类函数的使用</h3><ul>
 <li><p>如果要自己写一些可以复用的工具函数，可以新建一个class：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">class myUtils&#123;</span><br><span class="line">  static void func(...)&#123;...&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight nimrod"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">class myUtils&#123;</span><br><span class="line">  <span class="keyword">static</span> <span class="built_in">void</span> func(...)<span class="meta">&#123;...&#125;</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 </li>
 <li><p>在这个类中将要用的工具函数用static来修饰，然后将函数的参数弄好之后，就可以在不用新建对象的情况下使用这个方法了。</p>
 </li>
@@ -546,8 +558,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2018/04/18/Java-class/" rel="next" title="Java学习笔记——类与继承">
-                <i class="fa fa-chevron-left"></i> Java学习笔记——类与继承
+              <a href="/2018/04/15/Block-Chain/" rel="next" title="区块链初涉">
+                <i class="fa fa-chevron-left"></i> 区块链初涉
               </a>
             
           </div>
@@ -556,8 +568,8 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2018/04/29/Python-superior/" rel="prev" title="Python学习笔记——进阶">
-                Python学习笔记——进阶 <i class="fa fa-chevron-right"></i>
+              <a href="/2018/04/18/Java-class/" rel="prev" title="Java学习笔记——类与继承">
+                Java学习笔记——类与继承 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -859,7 +871,7 @@
 
 <div class="theme-info">
   <div class="powered-by"></div>
-  <span class="post-count">Total Words Of All Blogs: 99.7k words</span>
+  <span class="post-count">Total Words Of All Blogs: 98.9k words</span>
 </div>
 
         
