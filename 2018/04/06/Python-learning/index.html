@@ -361,7 +361,7 @@ $(window).load(function(){
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Fleschier">
-      <meta itemprop="description" content="每天早上醒来，你和阳光都在，就是我想要的未来。">
+      <meta itemprop="description" content="生活是一个过程,可喜的是它不用重来。">
       <meta itemprop="image" content="/images/avatar.gif">
     </span>
 
@@ -520,16 +520,16 @@ $(window).load(function(){
 </ul>
 <h3 id="输入"><a href="#输入" class="headerlink" title="输入"></a>输入</h3><ul>
 <li><p>相比较于java，Python的输入可以说是非常灵活而且简便了</p>
-<figure class="highlight makefile"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">a = input()   <span class="comment">#若调用此函数，就算输入的是数字，a的数据类型仍然为str，Python默认将命令行读入的数据作为str类型，因为str是万能的~</span></span><br></pre></td></tr></table></figure>
-</li>
+<pre><code>a = input()   #若调用此函数，就算输入的是数字，a的数据类型仍然为str，Python默认将命令行读入的数据作为str类型，因为str是万能的~
+</code></pre></li>
 <li><p>但是，对于如下的情况：</p>
-<figure class="highlight tcl"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">a =<span class="keyword">eval</span>(input())    #<span class="keyword">eval</span>() 函数用来执行一个字符串表达式，并返回表达式的值.例如 <span class="keyword">eval</span>(<span class="string">'2 * 3'</span>)返回 <span class="number">6</span></span><br><span class="line"><span class="comment">#此时只能输入数字，且a是整型还是浮点型由输入数据的特征决定</span></span><br></pre></td></tr></table></figure>
-</li>
+<pre><code>a =eval(input())    #eval() 函数用来执行一个字符串表达式，并返回表达式的值.例如 eval(&#39;2 * 3&#39;)返回 6
+#此时只能输入数字，且a是整型还是浮点型由输入数据的特征决定
+</code></pre></li>
 <li><p>如果想要同时为多个变量赋值，则只能使用<code>eval()</code>函数了</p>
-<figure class="highlight autoit"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">x,y = <span class="built_in">eval</span>(input())  <span class="meta">#输入时以逗号间隔</span></span><br></pre></td></tr></table></figure>
-</li>
-<li><p>对于eval()函数的使用，一定要确保参数去掉引号之后的值是有意义的</p>
-</li>
+<pre><code>x,y = eval(input())  #输入时以逗号间隔
+</code></pre></li>
+<li>对于eval()函数的使用，一定要确保参数去掉引号之后的值是有意义的</li>
 </ul>
 <h2 id="一些数据类型"><a href="#一些数据类型" class="headerlink" title="一些数据类型"></a>一些数据类型</h2><h3 id="综述一些注意点"><a href="#综述一些注意点" class="headerlink" title="综述一些注意点"></a>综述一些注意点</h3><ul>
 <li><p>序列的概念：序列是一个排序的项目 <strong>容器</strong>，按 <strong>非负整数索引</strong>。Python提供的内置序列包包括字符串，元组和列表。(序列就是可以通过索引或者切片访问的容器)</p>
@@ -545,19 +545,31 @@ $(window).load(function(){
 <li><p>关键字 <code>in</code> 可以检查某个元素是否在一个容器中。例如<code>k in D</code>(D是一个字典)则检查k是不是D当中的一个关键字。</p>
 </li>
 <li><p><code>reversed(seq)</code>函数： seq代表一个可迭代对象，比如列表</p>
-<figure class="highlight ruby"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;</span>&gt; a = [<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>,<span class="number">5</span>]</span><br><span class="line"><span class="meta">&gt;&gt;</span>&gt; b = reversed(a)  <span class="comment">#此时b为一个迭代器</span></span><br><span class="line"><span class="meta">&gt;&gt;</span>&gt; b1 = list(b)    <span class="comment">#将这个迭代器转化为列表</span></span><br><span class="line"><span class="meta">&gt;&gt;</span>&gt; b1</span><br><span class="line"><span class="meta">&gt;&gt;</span>&gt; [<span class="number">5</span>,<span class="number">4</span>,<span class="number">3</span>,<span class="number">2</span>,<span class="number">1</span>]</span><br></pre></td></tr></table></figure>
-</li>
+<pre><code>&gt;&gt;&gt; a = [1,2,3,4,5]
+&gt;&gt;&gt; b = reversed(a)  #此时b为一个迭代器
+&gt;&gt;&gt; b1 = list(b)    #将这个迭代器转化为列表
+&gt;&gt;&gt; b1
+&gt;&gt;&gt; [5,4,3,2,1]
+</code></pre></li>
 <li><p><code>sum()</code>函数：</p>
-<figure class="highlight leaf"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">sum(seq, start = m)   <span class="function"><span class="keyword">#</span><span class="title">sum</span><span class="params">()</span></span>有两个参数，第二个为可选参数</span><br><span class="line"># 返回可迭代对象中的所有项目的和再加上start的值</span><br></pre></td></tr></table></figure>
-</li>
+<pre><code>sum(seq, start = m)   #sum()有两个参数，第二个为可选参数
+# 返回可迭代对象中的所有项目的和再加上start的值
+</code></pre></li>
 </ul>
 <h3 id="一些基础数据类型的注意点"><a href="#一些基础数据类型的注意点" class="headerlink" title="一些基础数据类型的注意点"></a>一些基础数据类型的注意点</h3><ul>
 <li><p>输入一个数，获取其各个位的数值的方法：<strong>注意Python的整除符号与别的编程语言不同</strong></p>
-<figure class="highlight awk"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">假设 x = <span class="number">123</span></span><br><span class="line">个位  = x % <span class="number">10</span></span><br><span class="line">十位  = x <span class="regexp">//</span> <span class="number">10</span> % <span class="number">10</span>   (注意，Python与其他编程语言的整除符号不同，比如C++就是 <span class="string">'/'</span> 即表示整除，而Python为 <span class="string">'//'</span>)</span><br><span class="line">百位 = x <span class="regexp">//</span><span class="number">100</span> % <span class="number">10</span></span><br></pre></td></tr></table></figure>
-</li>
+<pre><code>假设 x = 123
+个位  = x % 10
+十位  = x // 10 % 10   (注意，Python与其他编程语言的整除符号不同，比如C++就是 &#39;/&#39; 即表示整除，而Python为 &#39;//&#39;)
+百位 = x //100 % 10
+</code></pre></li>
 <li><p>复数：</p>
-<figure class="highlight ini"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">a</span> = complex(<span class="number">2</span>,<span class="number">3</span>)</span><br><span class="line"><span class="attr">b</span> = <span class="number">1</span> + <span class="number">2</span>j</span><br><span class="line"><span class="attr">c</span> = <span class="number">3</span> - <span class="number">5</span>j</span><br><span class="line"><span class="comment">#a,b,c都是复数</span></span><br><span class="line"><span class="comment">#要获取复数的实部和虚部，可使用例如：a.real(a的实部), a.imag(a的虚部)，结果都是浮点型</span></span><br></pre></td></tr></table></figure>
-</li>
+<pre><code>a = complex(2,3)
+b = 1 + 2j
+c = 3 - 5j
+#a,b,c都是复数
+#要获取复数的实部和虚部，可使用例如：a.real(a的实部), a.imag(a的虚部)，结果都是浮点型
+</code></pre></li>
 <li><p><code>45e15</code>表示45*10^15，这是科学计数法的写法</p>
 </li>
 <li><p>要判断两个浮点数是否相等，如果不确定精度的情况下，最好不要使用<code>==</code>来判断。因为可能存在看起来一样的数实际上因为精度不同而被判定为不等。解决的方法是<code>abs(x - y) &lt; 1.0e-15</code>，即是用两数之差的绝对值小于一个很小的数，即可判断两数近似相等。</p>
@@ -598,8 +610,9 @@ $(window).load(function(){
 </blockquote>
 <ul>
 <li><p>将数据添加进dick的方式，除了初始化时设定之外，还可以直接给一个键赋值的方式添加，例如：</p>
-<figure class="highlight 1c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">d = &#123;'A': <span class="number">95</span>, 'B': <span class="number">75</span>, 'C': <span class="number">85</span>&#125; <span class="meta">#初始化添加元素</span></span><br><span class="line">d['E'] = <span class="number">100</span>   <span class="meta">#直接赋值添加元素</span></span><br></pre></td></tr></table></figure>
-</li>
+<pre><code>d = {&#39;A&#39;: 95, &#39;B&#39;: 75, &#39;C&#39;: 85} #初始化添加元素
+d[&#39;E&#39;] = 100   #直接赋值添加元素
+</code></pre></li>
 <li><p>判断一个key是否存在的方法：</p>
 </li>
 </ul>
@@ -619,56 +632,118 @@ $(window).load(function(){
 <li><p>符号 <code>&amp;</code> 和 <code>|</code> 分别表示集合的交和并</p>
 </li>
 <li><p>list的简单的去重：</p>
-<figure class="highlight lsl"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">&gt;&gt;&gt; a = [<span class="number">1</span>,<span class="number">2</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>,<span class="number">5</span>,<span class="number">5</span>,<span class="number">6</span>,<span class="number">1</span>]</span><br><span class="line">&gt;&gt;&gt; b= set(a)</span><br><span class="line">&gt;&gt;&gt; b</span><br><span class="line">&gt;&gt;&gt;&#123;<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>,<span class="number">5</span>,<span class="number">6</span>&#125;</span><br><span class="line">&gt;&gt;&gt;a =<span class="type">list</span>(b)</span><br><span class="line">&gt;&gt;&gt;a</span><br><span class="line">&gt;&gt;&gt;[<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>,<span class="number">5</span>,<span class="number">6</span>]</span><br></pre></td></tr></table></figure>
-</li>
+<pre><code>&gt;&gt;&gt; a = [1,2,2,3,4,5,5,6,1]
+&gt;&gt;&gt; b= set(a)
+&gt;&gt;&gt; b
+&gt;&gt;&gt;{1,2,3,4,5,6}
+&gt;&gt;&gt;a =list(b)
+&gt;&gt;&gt;a
+&gt;&gt;&gt;[1,2,3,4,5,6]
+</code></pre></li>
 </ul>
 <h2 id="条件判断"><a href="#条件判断" class="headerlink" title="条件判断"></a>条件判断</h2><ul>
 <li><p>Python的if判断语句的判断条件部分不需要用括号括起来，这与其他的大多数语言均不同</p>
 </li>
 <li><p>格式：</p>
-<figure class="highlight dts"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">if <span class="params">&lt;条件判断<span class="number">1</span>&gt;</span>:</span><br><span class="line">    <span class="params">&lt;执行<span class="number">1</span>&gt;</span></span><br><span class="line">elif <span class="params">&lt;条件判断<span class="number">2</span>&gt;</span>:</span><br><span class="line">    <span class="params">&lt;执行<span class="number">2</span>&gt;</span></span><br><span class="line">elif <span class="params">&lt;条件判断<span class="number">3</span>&gt;</span>:</span><br><span class="line">    <span class="params">&lt;执行<span class="number">3</span>&gt;</span></span><br><span class="line"><span class="symbol">else:</span></span><br><span class="line">    <span class="params">&lt;执行<span class="number">4</span>&gt;</span></span><br></pre></td></tr></table></figure>
-</li>
+<pre><code>if &lt;条件判断1&gt;:
+  &lt;执行1&gt;
+elif &lt;条件判断2&gt;:
+  &lt;执行2&gt;
+elif &lt;条件判断3&gt;:
+  &lt;执行3&gt;
+else:
+  &lt;执行4&gt;
+</code></pre></li>
 <li><p>例：</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">age = <span class="number">20</span></span><br><span class="line"><span class="keyword">if</span> age &gt;= <span class="number">6</span> <span class="keyword">and</span> age &lt;= <span class="number">30</span>:  <span class="comment">#多条件判断用 and 链接</span></span><br><span class="line">    print(<span class="string">'teenager'</span>)</span><br><span class="line"><span class="keyword">elif</span> <span class="keyword">not</span> (age &gt;= <span class="number">18</span>):     <span class="comment">#not相当于 非，后面的内容用括号括起来</span></span><br><span class="line">    print(<span class="string">'adult'</span>)</span><br><span class="line"><span class="keyword">else</span>:</span><br><span class="line">    print(<span class="string">'kid'</span>)</span><br></pre></td></tr></table></figure>
-</li>
+<pre><code>age = 20
+if age &gt;= 6 and age &lt;= 30:  #多条件判断用 and 链接
+  print(&#39;teenager&#39;)
+elif not (age &gt;= 18):     #not相当于 非，后面的内容用括号括起来
+  print(&#39;adult&#39;)
+else:
+  print(&#39;kid&#39;)
+</code></pre></li>
 <li><p>与input结合（涉及数据类型转换）：</p>
-<figure class="highlight vim"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">s = <span class="built_in">input</span>(<span class="string">'birth: '</span>)</span><br><span class="line">birth = <span class="keyword">int</span>(s) 		#如果没有这句转换会报错，因为<span class="built_in">input</span>进来的是str，不能直接和<span class="keyword">int</span>比较，因此要先转换为<span class="keyword">int</span>再比较。</span><br><span class="line">#但是如果此处的输入不是一个数值类型，<span class="keyword">int</span>函数无法强制转化便会报错。</span><br><span class="line"><span class="keyword">if</span> birth &lt; <span class="number">2000</span>:</span><br><span class="line">    <span class="keyword">print</span>(<span class="string">'00前'</span>)</span><br><span class="line"><span class="keyword">else</span>:</span><br><span class="line">    <span class="keyword">print</span>(<span class="string">'00后'</span>)</span><br></pre></td></tr></table></figure>
-</li>
+<pre><code>s = input(&#39;birth: &#39;)
+birth = int(s)         #如果没有这句转换会报错，因为input进来的是str，不能直接和int比较，因此要先转换为int再比较。
+#但是如果此处的输入不是一个数值类型，int函数无法强制转化便会报错。
+if birth &lt; 2000:
+  print(&#39;00前&#39;)
+else:
+  print(&#39;00后&#39;)
+</code></pre></li>
 <li><p>利用运算符优先级： z = x if x &gt; y else y</p>
 </li>
 </ul>
 <h3 id="循环"><a href="#循环" class="headerlink" title="循环"></a>循环</h3><ul>
-<li><p>例（求和）：</p>
-<figure class="highlight maxima"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span> x <span class="keyword">in</span> [<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>,<span class="number">5</span>,<span class="number">6</span>]:</span><br><span class="line">	<span class="built_in">sum</span> = <span class="built_in">sum</span> + x</span><br><span class="line"><span class="built_in">print</span>(<span class="built_in">sum</span>)</span><br></pre></td></tr></table></figure>
-</li>
-<li><p><code>range()</code>函数： 生成从0 - <strong>输入数值-1</strong> 的一个迭代器，可用作循环条件。例<code>list(range(5))</code>的结果为 <code>[0,1,2,3,4]</code></p>
-</li>
+<li>例（求和）：<pre><code>for x in [1,2,3,4,5,6]:
+  sum = sum + x
+print(sum)
+</code></pre></li>
+<li><code>range()</code>函数： 生成从0 - <strong>输入数值-1</strong> 的一个迭代器，可用作循环条件。例<code>list(range(5))</code>的结果为 <code>[0,1,2,3,4]</code></li>
 </ul>
 <ul>
 <li><p>例求 1- 100 的和：</p>
-<figure class="highlight maxima"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">sum</span> = <span class="number">0</span></span><br><span class="line"><span class="keyword">for</span> x <span class="keyword">in</span> <span class="built_in">range</span>(<span class="number">101</span>):</span><br><span class="line">    <span class="built_in">sum</span> = <span class="built_in">sum</span> + x</span><br><span class="line"><span class="built_in">print</span>(<span class="built_in">sum</span>)</span><br></pre></td></tr></table></figure>
-</li>
+<pre><code>sum = 0
+for x in range(101):
+  sum = sum + x
+print(sum)
+</code></pre></li>
 <li><p>while循环示例：(素数的判断)</p>
-<figure class="highlight hsp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">import math</span><br><span class="line">m = <span class="keyword">int</span>(<span class="keyword">input</span>(<span class="string">"Please enter a num: "</span>))  <span class="meta">#待判断的数 m</span></span><br><span class="line">i,j = <span class="number">2</span>, <span class="keyword">int</span>(math.sqrt(m))       <span class="meta">#只需要计算 <span class="number">2</span> 到 根号m 范围内是否有m的因数即可，后面的计算均为重复计算</span></span><br><span class="line">flag = <span class="number">1</span>                        <span class="meta">#素数标志</span></span><br><span class="line"><span class="keyword">while</span> i &lt; j <span class="keyword">and</span> flag == <span class="number">1</span>:</span><br><span class="line">  <span class="keyword">if</span> m % <span class="number">1</span> == <span class="number">0</span></span><br><span class="line">    flag = <span class="number">0</span>                    <span class="meta">#不是素数的标志</span></span><br><span class="line">  i += <span class="number">1</span></span><br><span class="line"><span class="keyword">if</span> flag <span class="keyword">and</span> m &gt; <span class="number">1</span>:              <span class="meta">#素数必须大于<span class="number">1</span></span></span><br><span class="line">  <span class="keyword">print</span>(m, <span class="string">"是素数"</span>)</span><br><span class="line"><span class="keyword">else</span>:</span><br><span class="line">  <span class="keyword">print</span>(m, <span class="string">"不是素数"</span>)</span><br></pre></td></tr></table></figure>
-</li>
+<pre><code>import math
+m = int(input(&quot;Please enter a num: &quot;))  #待判断的数 m
+i,j = 2, int(math.sqrt(m))       #只需要计算 2 到 根号m 范围内是否有m的因数即可，后面的计算均为重复计算
+flag = 1                        #素数标志
+while i &lt; j and flag == 1:
+if m % 1 == 0
+  flag = 0                    #不是素数的标志
+i += 1
+if flag and m &gt; 1:              #素数必须大于1
+print(m, &quot;是素数&quot;)
+else:
+print(m, &quot;不是素数&quot;)
+</code></pre></li>
 <li><p><strong>while和for语句使用拖尾的else子句</strong>：</p>
-<figure class="highlight routeros"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span> <span class="built_in">..</span>. :</span><br><span class="line">  <span class="built_in">..</span>.</span><br><span class="line">  <span class="built_in">..</span>.</span><br><span class="line"><span class="keyword">else</span> <span class="built_in">..</span>.   #注意这个<span class="keyword">else</span>是与<span class="keyword">for</span>对齐的</span><br></pre></td></tr></table></figure>
+<pre><code>for ... :
+...
+...
+else ...   #注意这个else是与for对齐的
+</code></pre><p>这种写法的else子句块会在循环 <strong>正常终止时执行</strong>。意思就是，如果循环中的break语句生效而导致的循环终止，是不会触发这个else子句的执行的。因此这种写法可以 <strong>优雅地判断一个循环是正常结束还是break掉了</strong>。</p>
 </li>
-</ul>
-<p>这种写法的else子句块会在循环 <strong>正常终止时执行</strong>。意思就是，如果循环中的break语句生效而导致的循环终止，是不会触发这个else子句的执行的。因此这种写法可以 <strong>优雅地判断一个循环是正常结束还是break掉了</strong>。</p>
-<ul>
 <li><p>在循环中使用print()输出时，注意Print之后是否正确地结束循环或者进入下一个输出，否则可能出现重复输出大量重复数据的可能。</p>
 </li>
 <li><p>求两个数的最大公约数(辗转相除法):</p>
-<figure class="highlight livecodeserver"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">a</span>,b = eval(input(<span class="string">"请输入两个整数: "</span>))</span><br><span class="line"><span class="keyword">if</span> <span class="keyword">a</span> &gt; b : <span class="keyword">a</span>,b = b,<span class="keyword">a</span>   <span class="comment">#Python中可以简便地交换两个变量的值</span></span><br><span class="line">r = <span class="keyword">a</span> % b</span><br><span class="line"><span class="keyword">while</span> r != <span class="number">0</span></span><br><span class="line">  <span class="keyword">a</span>,b = b,r</span><br><span class="line">  r = <span class="keyword">a</span> % b</span><br><span class="line">print(<span class="string">"最大公约数是："</span>,b)</span><br><span class="line">print()</span><br></pre></td></tr></table></figure>
-</li>
+<pre><code>a,b = eval(input(&quot;请输入两个整数: &quot;))
+if a &gt; b : a,b = b,a   #Python中可以简便地交换两个变量的值
+r = a % b
+while r != 0
+a,b = b,r
+r = a % b
+print(&quot;最大公约数是：&quot;,b)
+print()
+</code></pre></li>
 <li><p>输出[100,1000]以内的所有素数</p>
-<figure class="highlight gauss"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">import math</span><br><span class="line">n = <span class="number">0</span></span><br><span class="line"><span class="keyword">for</span> m in range(<span class="number">101</span>,<span class="number">1000</span>,<span class="number">2</span>)    <span class="meta">#直接去掉100和1000，这两个肯定不是素数</span></span><br><span class="line">  i,j = <span class="number">2</span>, int(math.<span class="built_in">sqrt</span>(m))</span><br><span class="line">  <span class="keyword">while</span> i &lt;= j:</span><br><span class="line">    <span class="keyword">if</span> <span class="keyword">not</span>(m % j):      <span class="meta">#如果 m % j == 0 就是找到因数了，直接退出这一次循环，进入下一个循环</span></span><br><span class="line">      <span class="keyword">break</span></span><br><span class="line">    <span class="keyword">else</span>:</span><br><span class="line">      i = i + <span class="number">1</span></span><br><span class="line">  <span class="keyword">else</span>:</span><br><span class="line">    <span class="keyword">print</span>(m, <span class="keyword">end</span> = <span class="string">" "</span>)</span><br><span class="line">    n += <span class="number">1</span></span><br><span class="line">    <span class="keyword">if</span> n % <span class="number">10</span> == <span class="number">0</span>: <span class="keyword">print</span>(<span class="string">"\n"</span>)    <span class="meta">#每输出10个数就换行</span></span><br><span class="line"><span class="keyword">print</span>()</span><br></pre></td></tr></table></figure>
-</li>
+<pre><code>import math
+n = 0
+for m in range(101,1000,2)    #直接去掉100和1000，这两个肯定不是素数
+i,j = 2, int(math.sqrt(m))
+while i &lt;= j:
+  if not(m % j):      #如果 m % j == 0 就是找到因数了，直接退出这一次循环，进入下一个循环
+    break
+  else:
+    i = i + 1
+else:
+  print(m, end = &quot; &quot;)
+  n += 1
+  if n % 10 == 0: print(&quot;\n&quot;)    #每输出10个数就换行
+print()
+</code></pre></li>
 </ul>
 <h2 id="函数"><a href="#函数" class="headerlink" title="函数"></a>函数</h2><hr>
-<h3 id="函数定义的格式"><a href="#函数定义的格式" class="headerlink" title="函数定义的格式"></a>函数定义的格式</h3><figure class="highlight ruby"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> 函数名<span class="params">([参数<span class="number">1</span>,参数<span class="number">2</span>,参数<span class="number">3</span>...])</span></span>:   <span class="comment">#参数没有参数类型，如果要设置参数的默认值则要满足从右向左的原则</span></span><br><span class="line">	[函数体]</span><br><span class="line">	[<span class="keyword">return</span> [返回值]] 		<span class="comment">#没有写return或者直接写return都是返回None</span></span><br></pre></td></tr></table></figure>
-<ul>
+<h3 id="函数定义的格式"><a href="#函数定义的格式" class="headerlink" title="函数定义的格式"></a>函数定义的格式</h3><pre><code>def 函数名([参数1,参数2,参数3...]):   #参数没有参数类型，如果要设置参数的默认值则要满足从右向左的原则
+    [函数体]
+    [return [返回值]]         #没有写return或者直接写return都是返回None
+</code></pre><ul>
 <li>Python中可以让函数返回一个有多个元素的tuple来实现返回多个值的要求。</li>
 </ul>
 <h2 id="一些注意点"><a href="#一些注意点" class="headerlink" title="一些注意点"></a>一些注意点</h2><hr>
@@ -741,8 +816,8 @@ $(window).load(function(){
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2018/04/06/Scala-learning/" rel="next" title="Scala学习笔记——基础">
-                <i class="fa fa-chevron-left"></i> Scala学习笔记——基础
+              <a href="/2018/04/06/Scala-superior/" rel="next" title="Scala学习笔记——进阶">
+                <i class="fa fa-chevron-left"></i> Scala学习笔记——进阶
               </a>
             
           </div>
@@ -751,8 +826,8 @@ $(window).load(function(){
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2018/04/06/Ubuntu-order/" rel="prev" title="Ubuntu终端常用命令">
-                Ubuntu终端常用命令 <i class="fa fa-chevron-right"></i>
+              <a href="/2018/04/06/Scala-learning/" rel="prev" title="Scala学习笔记——基础">
+                Scala学习笔记——基础 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -815,7 +890,7 @@ $(window).load(function(){
               <img class="site-author-image" itemprop="image" src="/images/avatar.gif" alt="Fleschier">
             
               <p class="site-author-name" itemprop="name">Fleschier</p>
-              <p class="site-description motion-element" itemprop="description">每天早上醒来，你和阳光都在，就是我想要的未来。</p>
+              <p class="site-description motion-element" itemprop="description">生活是一个过程,可喜的是它不用重来。</p>
           </div>
 
           

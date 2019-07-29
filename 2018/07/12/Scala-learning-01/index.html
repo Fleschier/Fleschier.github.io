@@ -361,7 +361,7 @@ $(window).load(function(){
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Fleschier">
-      <meta itemprop="description" content="每天早上醒来，你和阳光都在，就是我想要的未来。">
+      <meta itemprop="description" content="生活是一个过程,可喜的是它不用重来。">
       <meta itemprop="image" content="/images/avatar.gif">
     </span>
 
@@ -518,8 +518,12 @@ $(window).load(function(){
 <li><p>注意编译器不会推断函数参数的类型，因此函数中参数的数据类型要显式地写出</p>
 </li>
 <li><p>scala函数形式：</p>
-<figure class="highlight nimrod"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">def <span class="type">FuncName</span>(x:<span class="type">Int</span>, y:<span class="type">Int</span>): <span class="type">Int</span> = &#123;</span><br><span class="line">	<span class="keyword">if</span>(...)<span class="meta">&#123;..&#125;</span></span><br><span class="line">	<span class="keyword">else</span><span class="meta">&#123;..&#125;</span></span><br><span class="line">	x</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-</li>
+<pre><code>def FuncName(x:Int, y:Int): Int = {
+  if(...){..}
+  else{..}
+  x
+}
+</code></pre></li>
 <li><p>注意函数结果类型前面的冒号不能省（这里函数的格式实际山是与变量保持一致的，即类型跟在冒号后面）</p>
 </li>
 <li><p>scala的函数会将函数体里的最后一条语句的值作为函数的返回值（例子里的函数将x的值返回）</p>
@@ -554,8 +558,9 @@ $(window).load(function(){
 <ul>
 <li>scala只支持指令式的for语句的函数式亲戚。<em>for表达式</em></li>
 <li><p>for表达式一个简单的例子：</p>
-<figure class="highlight lisp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">for(<span class="name">arg</span> &lt;- args)</span><br><span class="line">    println(<span class="name">arg</span>)</span><br></pre></td></tr></table></figure>
-</li>
+<pre><code>  for(arg &lt;- args)
+      println(arg)
+</code></pre></li>
 <li><p>其中，位于 <code>&lt;-</code> 符号右边的，是args数组，在 <code>&lt;-</code> 左边的是一个 val变量的名字，为arg。<br>注意左边的这个变量一定是 val类型 的(即它不能在for表达式循环体里被重新赋值)，并且只能写为 <code>arg</code> 而不能写成 <code>val arg</code></p>
 </li>
 </ul>
@@ -565,8 +570,11 @@ $(window).load(function(){
 <li><p>参数化的意思是：在创建实例的时候对实例做”配置”，可以用值来参数化一个实例，做法是在构造方法的括号中传入对象参数。</p>
 </li>
 <li><p>参数化创建数组：</p>
-<figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">val myArr = new Array[<span class="string">String</span>](<span class="link">3</span>)</span><br><span class="line">myArr(0) = ...</span><br><span class="line">myArr(1) = ...</span><br><span class="line">myArr(2) = ...</span><br></pre></td></tr></table></figure>
-</li>
+<pre><code>  val myArr = new Array[String](3)
+  myArr(0) = ...
+  myArr(1) = ...
+  myArr(2) = ...
+</code></pre></li>
 <li><p>另一种创建方法： <code>val numArr = Array(&quot;zero&quot;,&quot;one&quot;,&quot;two&quot;)</code></p>
 </li>
 <li><p>这实际上是调用了一个名为apply的工厂方法，这个方法创建并返回了新的数组。这个apply方法接受一个变长的参数列表。</p>
@@ -587,19 +595,22 @@ $(window).load(function(){
 <li><p>不需要写 <code>new List</code>，因为scala.List的伴生对象上定义了一个工厂方法<code>List.apply()</code></p>
 </li>
 <li><p>列表上用的最多的操作是 <code>::</code>，读作”cons”。它是在一个已有的列表最前面添加一个新元素，并返回这个新的列表。<br>例：</p>
-<figure class="highlight stylus"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">val twoThree = List(<span class="number">2</span>,<span class="number">3</span>)</span><br><span class="line">val oneTwoThree = <span class="number">1</span> :: twoThree</span><br><span class="line"><span class="function"><span class="title">println</span><span class="params">(onTwoThree)</span></span></span><br></pre></td></tr></table></figure>
+<pre><code>  val twoThree = List(2,3)
+  val oneTwoThree = 1 :: twoThree
+  println(onTwoThree)
+</code></pre><p>结果： <code>List(1,2,3)</code></p>
 </li>
-</ul>
-<p>结果： <code>List(1,2,3)</code></p>
-<ul>
 <li><p>注意：在表达式<code>1::twoThree</code>中，<code>::</code>是它右操作元的方法。（一般用在操作符表示法的方法都是左结合的，例如 <code>a * b</code>相当于 <code>a.*(b)</code> ) 除非方法名是以 <code>:</code> 结尾的，那么这个方法的调用就会发生在他的右操作元上。 因此上例相当于： <code>twoThree.::(1)</code>，1是作为参数传入的。</p>
 </li>
 <li><p>表示空列表的快捷方式是<code>Nil</code>，初始化一个新的列表的另一种方式是用<code>::</code>将元素串接起来，并将Nil作为最后一个元素。例如：</p>
-<figure class="highlight clean"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">val oneTwoThree = <span class="number">1</span> :: <span class="number">2</span> :: <span class="number">3</span> :: Nil</span><br><span class="line">println(oneTwoThree)</span><br></pre></td></tr></table></figure>
-</li>
+<pre><code>val oneTwoThree = 1 :: 2 :: 3 :: Nil
+println(oneTwoThree)
+</code></pre></li>
 <li><p><code>:::</code>连接两个List：</p>
-<figure class="highlight stylus"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">val <span class="selector-tag">a</span> = List(<span class="number">1</span>)</span><br><span class="line">val <span class="selector-tag">b</span> = List(<span class="number">2</span>,<span class="number">3</span>)</span><br><span class="line">val c = <span class="selector-tag">a</span> ::: <span class="selector-tag">b</span>   <span class="comment">//c: List(1,2,3)</span></span><br></pre></td></tr></table></figure>
-</li>
+<pre><code>val a = List(1)
+val b = List(2,3)
+val c = a ::: b   //c: List(1,2,3)
+</code></pre></li>
 <li><p>列表也有从末尾增加元素的方法，但是应当尽力避免这种写法，因为末尾追加元素的操作所需时间随列表的大小线性增加，而使用<code>::</code>只需要常量级的时间。</p>
 </li>
 <li><p>可以通过在头部添加元素的方法，最后调用reverse方法来实现末尾添加的效果</p>
@@ -617,8 +628,10 @@ $(window).load(function(){
 <li><p>一旦实例化好一个元祖，就可以用英文句点、下划线和 <strong>从1开始</strong> 的序号来访问每一个元素。</p>
 </li>
 <li><p>例如：</p>
-<figure class="highlight stylus"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">val pair = (<span class="number">99</span>,<span class="string">"test"</span>)</span><br><span class="line"><span class="function"><span class="title">pritln</span><span class="params">(pair._1)</span></span>		<span class="comment">//访问第一个元素</span></span><br><span class="line"><span class="function"><span class="title">println</span><span class="params">(pair._2)</span></span>	<span class="comment">//访问第二个元素</span></span><br></pre></td></tr></table></figure>
-</li>
+<pre><code>val pair = (99,&quot;test&quot;)
+pritln(pair._1)        //访问第一个元素
+println(pair._2)    //访问第二个元素
+</code></pre></li>
 <li><p>元祖的实际类型取决于它的元素。例如：<code>(99,&quot;test&quot;)</code>的类型为<code>Tuple2[Int,String]</code>,而元祖<code>(&#39;u&#39;,&#39;r&#39;,&quot;the&quot;,1,4,&quot;me&quot;)</code>的类型是<code>Tuple6[Char,Char,String,Int,Int,String]</code></p>
 </li>
 <li><p>元祖为什么不能像数组一样用圆括号来访问元素(原文)：</p>
@@ -633,8 +646,10 @@ $(window).load(function(){
 <li><p>scala提供了两个子特质：一个表示可变集，一个表示不可变集。(可变集与不可变集位于不同的包)</p>
 </li>
 <li><p>创建一个集合的例子：</p>
-<figure class="highlight stylus"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">var</span> jetSet = Set(<span class="string">"Boeing"</span>,<span class="string">"Airbus"</span>)</span><br><span class="line">jetSet += <span class="string">"Lear"</span></span><br><span class="line"><span class="function"><span class="title">println</span><span class="params">(jetSet.contains(<span class="string">"Cessna"</span>)</span></span>)</span><br></pre></td></tr></table></figure>
-</li>
+<pre><code>var jetSet = Set(&quot;Boeing&quot;,&quot;Airbus&quot;)
+jetSet += &quot;Lear&quot;
+println(jetSet.contains(&quot;Cessna&quot;))
+</code></pre></li>
 <li><p>第一行代码表示，可以像创建列表和数组那样创建集：通过调用Set伴生对象的apply工厂方法。</p>
 </li>
 <li><p>在这个例子中，实际上调用了scala.collection.immutable.Set的伴生对象的apply方法，返回一个默认的、<strong>不可变</strong> 的Set对象，类型为<code>Set[String]</code></p>
@@ -647,9 +662,11 @@ $(window).load(function(){
 </li>
 </ul>
 <h3 id="可变集"><a href="#可变集" class="headerlink" title="可变集"></a>可变集</h3><ul>
-<li><p>使用可变集需要一次引入，例：</p>
-<figure class="highlight stylus"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">import scala<span class="selector-class">.collection</span><span class="selector-class">.mutable</span></span><br><span class="line">val movieSet = mutable.Set(<span class="string">"Hitch"</span>,<span class="string">"Peter"</span>)</span><br><span class="line">movieSet += <span class="string">"Shrek"</span></span><br><span class="line"><span class="function"><span class="title">println</span><span class="params">(movieSet)</span></span></span><br></pre></td></tr></table></figure>
-</li>
+<li>使用可变集需要一次引入，例：<pre><code>import scala.collection.mutable
+val movieSet = mutable.Set(&quot;Hitch&quot;,&quot;Peter&quot;)
+movieSet += &quot;Shrek&quot;
+println(movieSet)
+</code></pre></li>
 <li><p>通过import语句，可以使用简短的<code>mutable.Set()</code>而不是<code>scala.colection.mutable.Set()</code>这样完整的句子</p>
 </li>
 <li><p>这里的<code>+=</code>方法在可变集里是有定义的，因此这个可变集声明时用的是 <code>val</code>而不是 <code>var</code>(上面也提到了不可变集实际上是被重新赋值了，如果使用<code>val</code>会编译报错)</p>
@@ -661,8 +678,13 @@ $(window).load(function(){
 <li><p>与Set类似，Map也有可变与不可变的版本。</p>
 </li>
 <li><p>例子：</p>
-<figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">import scala.collection.mutable</span><br><span class="line">val treasureMap = mutable.Map[<span class="string">Int,String</span>](<span class="link"></span>)</span><br><span class="line">treasureMap += (1 -&gt; "Go to island")</span><br><span class="line">treasureMap += (2 -&gt; "Find big X on ground")</span><br><span class="line">treasureMap += (3 -&gt; "Dig")</span><br><span class="line">println(treasureMap(2))</span><br></pre></td></tr></table></figure>
-</li>
+<pre><code>import scala.collection.mutable
+val treasureMap = mutable.Map[Int,String]()
+treasureMap += (1 -&gt; &quot;Go to island&quot;)
+treasureMap += (2 -&gt; &quot;Find big X on ground&quot;)
+treasureMap += (3 -&gt; &quot;Dig&quot;)
+println(treasureMap(2))
+</code></pre></li>
 <li><p>上面的例子引入了可变Map(默认为不可变映射)，这里与上面可变集一样，定义为val类型。接下来，使用<code>-&gt;</code>来定义键值对。这里scala会将二元操作，比如<code>1 -&gt; &quot;Go to island&quot;</code>转换为标准的方法调用，即<code>(1).-&gt;(&quot;Go to island&quot;)</code>，这里<code>&quot;Go to island&quot;</code>是方法<code>-&gt;</code>的参数。</p>
 </li>
 <li><p>可以对任何对象调用<code>-&gt;</code>方法，它将返回包含键和值两个元素的元组。</p>
@@ -674,18 +696,29 @@ $(window).load(function(){
 <li><p>如果一段代码避免了使用<code>var</code>(也就是全是<code>val</code>类型的变量)，那么它很可能是函数式的。因此，向函数式风格的转化应该尽可能地避免使用<code>var</code>类型的变量。</p>
 </li>
 <li><p>指令式编程的例子：</p>
-<figure class="highlight maxima"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">def printArgs(<span class="built_in">args</span>: Array[String]): Unit = &#123;</span><br><span class="line">	<span class="built_in">var</span> i = <span class="number">0</span></span><br><span class="line">	<span class="keyword">while</span> (i &lt; <span class="built_in">args</span>.<span class="built_in">length</span>)&#123;</span><br><span class="line">		println(<span class="built_in">args</span>(i))</span><br><span class="line">		i += <span class="number">1</span></span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-</li>
+<pre><code>def printArgs(args: Array[String]): Unit = {
+  var i = 0
+  while (i &lt; args.length){
+      println(args(i))
+      i += 1
+  }
+}
+</code></pre></li>
 <li><p>可以将这段代码转化为函数式的：</p>
 </li>
 </ul>
 <ol>
 <li><p>第一种：</p>
-<figure class="highlight processing"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">def printArgs(args: <span class="keyword">Array</span>[<span class="keyword">String</span>]): Unit = &#123;</span><br><span class="line">	<span class="keyword">for</span> (arg &lt;- args)  <span class="comment">//for表达式形式</span></span><br><span class="line">		<span class="built_in">println</span>(arg)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-</li>
+<pre><code>def printArgs(args: Array[String]): Unit = {
+ for (arg &lt;- args)  //for表达式形式
+     println(arg)
+}
+</code></pre></li>
 <li><p>第二种：</p>
-<figure class="highlight delphi"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">def printArgs(args: <span class="keyword">Array</span>[<span class="keyword">String</span>]): <span class="keyword">Unit</span> = <span class="comment">&#123;</span></span><br><span class="line"><span class="comment">	args.foreach(println)</span></span><br><span class="line"><span class="comment">&#125;</span></span><br></pre></td></tr></table></figure>
-</li>
+<pre><code>def printArgs(args: Array[String]): Unit = {
+ args.foreach(println)
+}
+</code></pre></li>
 </ol>
 <ul>
 <li><p>另一方面，尽量避免使用带有副作用的函数。就比如上面修改之后的函数，它依旧不是“纯”的函数式代码，因为他有副作用(<em>本处的副作用是向标准输出流打印</em>)。带有副作用的函数的标志特征就是结果类型为<code>Unit</code>。(因为一个一个结果类型为<code>Unit</code>的函数，存在世上的唯一意义就是产生副作用)</p>
@@ -697,8 +730,14 @@ $(window).load(function(){
 </ul>
 <h3 id="从文件读取文本行"><a href="#从文件读取文本行" class="headerlink" title="从文件读取文本行"></a>从文件读取文本行</h3><ul>
 <li><p>例子：从文本读取文本行，并将它们打印出来，在每一行前面带上当前的字符数。</p>
-<figure class="highlight stylus"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">import scala<span class="selector-class">.io</span><span class="selector-class">.Source</span></span><br><span class="line"><span class="function"><span class="title">if</span><span class="params">(args.length &gt;<span class="number">0</span>)</span></span>&#123;</span><br><span class="line">	<span class="keyword">for</span> (line &lt;- Source.fromFile(args(<span class="number">0</span>)).getLines())</span><br><span class="line">		println(line<span class="selector-class">.length</span> + <span class="string">" "</span> + filename)</span><br><span class="line">	<span class="keyword">else</span></span><br><span class="line">		Console<span class="selector-class">.err</span><span class="selector-class">.println</span>(<span class="string">"Please enter filename"</span>)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-</li>
+<pre><code>import scala.io.Source
+if(args.length &gt;0){
+  for (line &lt;- Source.fromFile(args(0)).getLines())
+      println(line.length + &quot; &quot; + filename)
+  else
+      Console.err.println(&quot;Please enter filename&quot;)
+}
+</code></pre></li>
 <li><p>这段脚本首先引入了scala.io名为Srouce的类，然后检查命令行是不是至少给出了一个参数。表达式<code>Source.fromFile(args(0))</code>尝试打开指定的文件并且返回一个Source对象。在这个对象上，继续调用<code>getLines</code>方法。</p>
 </li>
 <li><p><code>getLines</code>方法返回一个<code>Iterator[String]</code>，每次迭代都给出一行内容，去掉了最后的换行符。for表达式遍历这些文本行。</p>
@@ -708,8 +747,9 @@ $(window).load(function(){
 <li><p>其中，最后的<code>toList</code>是必须的。因为<code>getLines</code>方法返回的是一个迭代器，一旦完成遍历，迭代器就会被消耗掉，通过<code>toList</code>方法将它转化为列表，就可以随便遍历这些文本行，多少次都可以(迭代器只能遍历一次)。但是代价就是要在内存中同时存储所有的行。因此<code>lines</code>指向了一个字符串列表。</p>
 </li>
 <li><p><strong>scala也可以使用<code>*</code>来重复一个字符串</strong>，例：</p>
-<figure class="highlight dart"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">scala&gt; <span class="keyword">var</span> s = <span class="string">"a"</span> * <span class="number">5</span></span><br><span class="line">s: <span class="built_in">String</span> = aaaaa</span><br></pre></td></tr></table></figure>
-</li>
+<pre><code>scala&gt; var s = &quot;a&quot; * 5
+s: String = aaaaa
+</code></pre></li>
 </ul>
 <p><br></p>
 <blockquote>
@@ -848,7 +888,7 @@ $(window).load(function(){
               <img class="site-author-image" itemprop="image" src="/images/avatar.gif" alt="Fleschier">
             
               <p class="site-author-name" itemprop="name">Fleschier</p>
-              <p class="site-description motion-element" itemprop="description">每天早上醒来，你和阳光都在，就是我想要的未来。</p>
+              <p class="site-description motion-element" itemprop="description">生活是一个过程,可喜的是它不用重来。</p>
           </div>
 
           

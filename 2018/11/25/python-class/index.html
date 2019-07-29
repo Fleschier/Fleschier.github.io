@@ -117,18 +117,18 @@
 
 <link href="/js/google-code-prettify/tomorrow.min.css" type="text/css" rel="stylesheet">
 
-  <meta name="description" content="模块与包  简单举例就是: 1234mypackage├─ __init__.py├─ abcd.py└─ efgh.py  注意每个包下需要一个__init__.py文件  如果另一个py文件需要引用abcd.py,则写为mypackage.abcd   python类  类不需要显式地申明类成员变量(与C++和Java不同)  类中所有的方法的第一个参数都是self, self代表类的实例而非">
+  <meta name="description" content="模块与包  简单举例就是: mypackage ├─ __init__.py ├─ abcd.py └─ efgh.py  注意每个包下需要一个__init__.py文件  如果另一个py文件需要引用abcd.py,则写为mypackage.abcd   python类  类不需要显式地申明类成员变量(与C++和Java不同)  类中所有的方法的第一个参数都是self, self代表类的实例而非类">
 <meta name="keywords" content="๑Python">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Python 面向对象编程">
 <meta property="og:url" content="https://fleschier.github.io/2018/11/25/python-class/index.html">
 <meta property="og:site_name" content="Fleschier 渐寒๑">
-<meta property="og:description" content="模块与包  简单举例就是: 1234mypackage├─ __init__.py├─ abcd.py└─ efgh.py  注意每个包下需要一个__init__.py文件  如果另一个py文件需要引用abcd.py,则写为mypackage.abcd   python类  类不需要显式地申明类成员变量(与C++和Java不同)  类中所有的方法的第一个参数都是self, self代表类的实例而非">
+<meta property="og:description" content="模块与包  简单举例就是: mypackage ├─ __init__.py ├─ abcd.py └─ efgh.py  注意每个包下需要一个__init__.py文件  如果另一个py文件需要引用abcd.py,则写为mypackage.abcd   python类  类不需要显式地申明类成员变量(与C++和Java不同)  类中所有的方法的第一个参数都是self, self代表类的实例而非类">
 <meta property="og:locale" content="default">
 <meta property="og:updated_time" content="2018-11-25T05:23:13.217Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Python 面向对象编程">
-<meta name="twitter:description" content="模块与包  简单举例就是: 1234mypackage├─ __init__.py├─ abcd.py└─ efgh.py  注意每个包下需要一个__init__.py文件  如果另一个py文件需要引用abcd.py,则写为mypackage.abcd   python类  类不需要显式地申明类成员变量(与C++和Java不同)  类中所有的方法的第一个参数都是self, self代表类的实例而非">
+<meta name="twitter:description" content="模块与包  简单举例就是: mypackage ├─ __init__.py ├─ abcd.py └─ efgh.py  注意每个包下需要一个__init__.py文件  如果另一个py文件需要引用abcd.py,则写为mypackage.abcd   python类  类不需要显式地申明类成员变量(与C++和Java不同)  类中所有的方法的第一个参数都是self, self代表类的实例而非类">
 
 
 
@@ -361,7 +361,7 @@ $(window).load(function(){
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Fleschier">
-      <meta itemprop="description" content="每天早上醒来，你和阳光都在，就是我想要的未来。">
+      <meta itemprop="description" content="生活是一个过程,可喜的是它不用重来。">
       <meta itemprop="image" content="/images/avatar.gif">
     </span>
 
@@ -469,8 +469,11 @@ $(window).load(function(){
         <h2 id="模块与包"><a href="#模块与包" class="headerlink" title="模块与包"></a>模块与包</h2><hr>
 <ul>
 <li><p>简单举例就是:</p>
-<figure class="highlight stylus"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">mypackage</span><br><span class="line">├─ __init__.py</span><br><span class="line">├─ abcd.py</span><br><span class="line">└─ efgh.py</span><br></pre></td></tr></table></figure>
-</li>
+<pre><code>mypackage
+├─ __init__.py
+├─ abcd.py
+└─ efgh.py
+</code></pre></li>
 <li><p>注意每个包下需要一个<code>__init__.py</code>文件</p>
 </li>
 <li><p>如果另一个py文件需要引用abcd.py,则写为<code>mypackage.abcd</code></p>
@@ -498,8 +501,11 @@ $(window).load(function(){
 </li>
 </ul>
 <h4 id="判断一个对象是否是一个类的实例"><a href="#判断一个对象是否是一个类的实例" class="headerlink" title="判断一个对象是否是一个类的实例"></a>判断一个对象是否是一个类的实例</h4><ul>
-<li>目前我所知的只有两个方法可行(python3):<figure class="highlight stylus"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">a</span> = myclass()</span><br><span class="line"><span class="selector-tag">b</span> = myclass()</span><br><span class="line"><span class="function"><span class="title">type</span><span class="params">(a)</span></span> == type(b) #a和b都是类实例</span><br><span class="line"><span class="function"><span class="title">isinstance</span><span class="params">(a, myclass.__bases__)</span></span>    #虽然__bases__返回的是父类元组,但是却能成功判断</span><br></pre></td></tr></table></figure>
-</li>
+<li>目前我所知的只有两个方法可行(python3):<pre><code>a = myclass()
+b = myclass()
+type(a) == type(b) #a和b都是类实例
+isinstance(a, myclass.__bases__)    #虽然__bases__返回的是父类元组,但是却能成功判断
+</code></pre></li>
 </ul>
 
       
@@ -634,7 +640,7 @@ $(window).load(function(){
               <img class="site-author-image" itemprop="image" src="/images/avatar.gif" alt="Fleschier">
             
               <p class="site-author-name" itemprop="name">Fleschier</p>
-              <p class="site-description motion-element" itemprop="description">每天早上醒来，你和阳光都在，就是我想要的未来。</p>
+              <p class="site-description motion-element" itemprop="description">生活是一个过程,可喜的是它不用重来。</p>
           </div>
 
           

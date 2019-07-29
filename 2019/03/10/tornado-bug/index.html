@@ -117,18 +117,18 @@
 
 <link href="/js/google-code-prettify/tomorrow.min.css" type="text/css" rel="stylesheet">
 
-  <meta name="description" content="直入主题  被一个bug搞了一下午: 服务启动后localhost始终加载不出静态文件(诸如CSS,JS脚本,图片什么的).  仔细校验了文件中的路径,绝对路径和相对路径都试了,都是没用.   问题解决  如果有教程推荐你建的文件目录里有statics,相信我,你如果有机会见到它一定会砍死它  错误的文件结构: 123456789101112/.|handlers      //后端 Python">
+  <meta name="description" content="直入主题  被一个bug搞了一下午: 服务启动后localhost始终加载不出静态文件(诸如CSS,JS脚本,图片什么的).  仔细校验了文件中的路径,绝对路径和相对路径都试了,都是没用.   问题解决  如果有教程推荐你建的文件目录里有statics,相信我,你如果有机会见到它一定会砍死它  错误的文件结构: /. | handlers      //后端 Python 程序，主要处理来自前端的">
 <meta name="keywords" content="๑FrontEnd,๑Python,๑Tornado">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Tornado建站踩坑记录">
 <meta property="og:url" content="https://fleschier.github.io/2019/03/10/tornado-bug/index.html">
 <meta property="og:site_name" content="Fleschier 渐寒๑">
-<meta property="og:description" content="直入主题  被一个bug搞了一下午: 服务启动后localhost始终加载不出静态文件(诸如CSS,JS脚本,图片什么的).  仔细校验了文件中的路径,绝对路径和相对路径都试了,都是没用.   问题解决  如果有教程推荐你建的文件目录里有statics,相信我,你如果有机会见到它一定会砍死它  错误的文件结构: 123456789101112/.|handlers      //后端 Python">
+<meta property="og:description" content="直入主题  被一个bug搞了一下午: 服务启动后localhost始终加载不出静态文件(诸如CSS,JS脚本,图片什么的).  仔细校验了文件中的路径,绝对路径和相对路径都试了,都是没用.   问题解决  如果有教程推荐你建的文件目录里有statics,相信我,你如果有机会见到它一定会砍死它  错误的文件结构: /. | handlers      //后端 Python 程序，主要处理来自前端的">
 <meta property="og:locale" content="default">
 <meta property="og:updated_time" content="2019-03-10T08:21:19.666Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Tornado建站踩坑记录">
-<meta name="twitter:description" content="直入主题  被一个bug搞了一下午: 服务启动后localhost始终加载不出静态文件(诸如CSS,JS脚本,图片什么的).  仔细校验了文件中的路径,绝对路径和相对路径都试了,都是没用.   问题解决  如果有教程推荐你建的文件目录里有statics,相信我,你如果有机会见到它一定会砍死它  错误的文件结构: 123456789101112/.|handlers      //后端 Python">
+<meta name="twitter:description" content="直入主题  被一个bug搞了一下午: 服务启动后localhost始终加载不出静态文件(诸如CSS,JS脚本,图片什么的).  仔细校验了文件中的路径,绝对路径和相对路径都试了,都是没用.   问题解决  如果有教程推荐你建的文件目录里有statics,相信我,你如果有机会见到它一定会砍死它  错误的文件结构: /. | handlers      //后端 Python 程序，主要处理来自前端的">
 
 
 
@@ -361,7 +361,7 @@ $(window).load(function(){
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Fleschier">
-      <meta itemprop="description" content="每天早上醒来，你和阳光都在，就是我想要的未来。">
+      <meta itemprop="description" content="生活是一个过程,可喜的是它不用重来。">
       <meta itemprop="image" content="/images/avatar.gif">
     </span>
 
@@ -478,21 +478,41 @@ $(window).load(function(){
 <li><p><strong>如果有教程推荐你建的文件目录里有<code>statics</code>,相信我,你如果有机会见到它一定会砍死它</strong></p>
 </li>
 <li><p>错误的文件结构:</p>
-<figure class="highlight 1c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">/.</span><br><span class="line"><span class="string">|</span></span><br><span class="line">handlers      <span class="comment">//后端 Python 程序，主要处理来自前端的请求，并且操作数据库</span></span><br><span class="line"><span class="string">|</span></span><br><span class="line">templates   <span class="comment">//存放html文件包括模板html文件</span></span><br><span class="line"><span class="string">|</span></span><br><span class="line">statics   <span class="comment">//存放静态文件的目录</span></span><br><span class="line"><span class="string">|</span></span><br><span class="line">methods   <span class="comment">//存放通用方法的目录,主要是供给handlers里面的程序调用</span></span><br><span class="line"><span class="string">|</span></span><br><span class="line">XXX.py    <span class="comment">//python程序</span></span><br><span class="line">...</span><br></pre></td></tr></table></figure>
-</li>
-</ul>
-<blockquote>
+<pre><code>/.
+|
+handlers      //后端 Python 程序，主要处理来自前端的请求，并且操作数据库
+|
+templates   //存放html文件包括模板html文件
+|
+statics   //存放静态文件的目录
+|
+methods   //存放通用方法的目录,主要是供给handlers里面的程序调用
+|
+XXX.py    //python程序
+...
+</code></pre><blockquote>
 <p>如上的目录文件,你就算写死了,网站也不会加载出你的静态文件的</p>
 </blockquote>
-<ul>
-<li><strong>正确的目录结构</strong>:<figure class="highlight 1c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">/.</span><br><span class="line"><span class="string">|</span></span><br><span class="line">handlers      <span class="comment">//后端 Python 程序，主要处理来自前端的请求，并且操作数据库</span></span><br><span class="line"><span class="string">|</span></span><br><span class="line">templates   <span class="comment">//存放html文件包括模板html文件</span></span><br><span class="line"><span class="string">|</span></span><br><span class="line">static      <span class="comment">//存放静态文件的目录</span></span><br><span class="line"><span class="string">|</span></span><br><span class="line">methods   <span class="comment">//存放通用方法的目录,主要是供给handlers里面的程序调用</span></span><br><span class="line"><span class="string">|</span></span><br><span class="line">XXX.py    <span class="comment">//python程序</span></span><br><span class="line">...</span><br></pre></td></tr></table></figure>
 </li>
-</ul>
-<blockquote>
+<li><p><strong>正确的目录结构</strong>:</p>
+<pre><code>/.
+|
+handlers      //后端 Python 程序，主要处理来自前端的请求，并且操作数据库
+|
+templates   //存放html文件包括模板html文件
+|
+static      //存放静态文件的目录
+|
+methods   //存放通用方法的目录,主要是供给handlers里面的程序调用
+|
+XXX.py    //python程序
+...
+</code></pre><blockquote>
 <p>咋一看是不是一样啊,再仔细看看,static是没有s的.</p>
 </blockquote>
-<ul>
-<li><em>只要你敢加上这个s,你就走远了…</em></li>
+</li>
+<li><p><em>只要你敢加上这个s,你就走远了…</em></p>
+</li>
 </ul>
 <h3 id="后记"><a href="#后记" class="headerlink" title="后记"></a>后记</h3><hr>
 <ul>
@@ -638,7 +658,7 @@ $(window).load(function(){
               <img class="site-author-image" itemprop="image" src="/images/avatar.gif" alt="Fleschier">
             
               <p class="site-author-name" itemprop="name">Fleschier</p>
-              <p class="site-description motion-element" itemprop="description">每天早上醒来，你和阳光都在，就是我想要的未来。</p>
+              <p class="site-description motion-element" itemprop="description">生活是一个过程,可喜的是它不用重来。</p>
           </div>
 
           

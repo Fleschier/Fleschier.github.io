@@ -117,19 +117,19 @@
 
 <link href="/js/google-code-prettify/tomorrow.min.css" type="text/css" rel="stylesheet">
 
-  <meta name="description" content="不适合人类阅读的学习笔记   javascript每个语句结尾不要忘了分号  Ubuntu 下的node.js环境搭建  首先去nodejs的官网下载最新的版本，解压缩。然后移动到 /opt/目录下 (纯粹个人习惯)  然后编辑路径： 12sudo suvim /etc/profile  然后在最后插入:(具体路径以实际为准) 12export NODEJS_HOME=/opt/node-v8.">
+  <meta name="description" content="不适合人类阅读的学习笔记   javascript每个语句结尾不要忘了分号  Ubuntu 下的node.js环境搭建  首先去nodejs的官网下载最新的版本，解压缩。然后移动到 /opt/目录下 (纯粹个人习惯)  然后编辑路径： sudo su vim /etc/profile  然后在最后插入:(具体路径以实际为准) export NODEJS_HOME=/opt/node-v8.11.">
 <meta name="keywords" content="๑FrontEnd,๑JS">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Node.js学习笔记">
 <meta property="og:url" content="https://fleschier.github.io/2018/05/21/NodeJS/index.html">
 <meta property="og:site_name" content="Fleschier 渐寒๑">
-<meta property="og:description" content="不适合人类阅读的学习笔记   javascript每个语句结尾不要忘了分号  Ubuntu 下的node.js环境搭建  首先去nodejs的官网下载最新的版本，解压缩。然后移动到 /opt/目录下 (纯粹个人习惯)  然后编辑路径： 12sudo suvim /etc/profile  然后在最后插入:(具体路径以实际为准) 12export NODEJS_HOME=/opt/node-v8.">
+<meta property="og:description" content="不适合人类阅读的学习笔记   javascript每个语句结尾不要忘了分号  Ubuntu 下的node.js环境搭建  首先去nodejs的官网下载最新的版本，解压缩。然后移动到 /opt/目录下 (纯粹个人习惯)  然后编辑路径： sudo su vim /etc/profile  然后在最后插入:(具体路径以实际为准) export NODEJS_HOME=/opt/node-v8.11.">
 <meta property="og:locale" content="default">
 <meta property="og:image" content="https://fleschier.github.io/images/node.js/info.png">
 <meta property="og:updated_time" content="2018-09-03T13:41:55.721Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Node.js学习笔记">
-<meta name="twitter:description" content="不适合人类阅读的学习笔记   javascript每个语句结尾不要忘了分号  Ubuntu 下的node.js环境搭建  首先去nodejs的官网下载最新的版本，解压缩。然后移动到 /opt/目录下 (纯粹个人习惯)  然后编辑路径： 12sudo suvim /etc/profile  然后在最后插入:(具体路径以实际为准) 12export NODEJS_HOME=/opt/node-v8.">
+<meta name="twitter:description" content="不适合人类阅读的学习笔记   javascript每个语句结尾不要忘了分号  Ubuntu 下的node.js环境搭建  首先去nodejs的官网下载最新的版本，解压缩。然后移动到 /opt/目录下 (纯粹个人习惯)  然后编辑路径： sudo su vim /etc/profile  然后在最后插入:(具体路径以实际为准) export NODEJS_HOME=/opt/node-v8.11.">
 <meta name="twitter:image" content="https://fleschier.github.io/images/node.js/info.png">
 
 
@@ -363,7 +363,7 @@ $(window).load(function(){
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Fleschier">
-      <meta itemprop="description" content="每天早上醒来，你和阳光都在，就是我想要的未来。">
+      <meta itemprop="description" content="生活是一个过程,可喜的是它不用重来。">
       <meta itemprop="image" content="/images/avatar.gif">
     </span>
 
@@ -491,11 +491,13 @@ $(window).load(function(){
 <li><p>首先去nodejs的官网下载最新的版本，解压缩。然后移动到 <code>/opt/</code>目录下 (纯粹个人习惯)</p>
 </li>
 <li><p>然后编辑路径：</p>
-<figure class="highlight vim"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">sudo su</span><br><span class="line"><span class="keyword">vim</span> /etc/<span class="keyword">profile</span></span><br></pre></td></tr></table></figure>
-</li>
+<pre><code>sudo su
+vim /etc/profile
+</code></pre></li>
 <li><p>然后在最后插入:(具体路径以实际为准)</p>
-<figure class="highlight routeros"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="builtin-name">export</span> <span class="attribute">NODEJS_HOME</span>=/opt/node-v8.11.2-linux-x64</span><br><span class="line"><span class="builtin-name">export</span> <span class="attribute">PATH</span>=<span class="variable">$NODEJS_HOME</span>/bin:$PATH</span><br></pre></td></tr></table></figure>
-</li>
+<pre><code>export NODEJS_HOME=/opt/node-v8.11.2-linux-x64
+export PATH=$NODEJS_HOME/bin:$PATH
+</code></pre></li>
 <li><p>最后执行<code>source /etc/profile</code> 或者重启电脑即可使之生效。</p>
 </li>
 <li><p>终端输入：<code>node -v</code>查看，如果能正确现实版本号，则说明配置成功。</p>
@@ -504,8 +506,9 @@ $(window).load(function(){
 <h2 id="Hello-world"><a href="#Hello-world" class="headerlink" title="Hello world"></a>Hello world</h2><hr>
 <ul>
 <li><p>在常用目录下新建一个<code>HelloWorld.js</code>纯文本文件，在其中写入：</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">'use strict'</span>;</span><br><span class="line"><span class="built_in">console</span>.log(<span class="string">'Hello, world.'</span>);</span><br></pre></td></tr></table></figure>
-</li>
+<pre><code>&#39;use strict&#39;;
+console.log(&#39;Hello, world.&#39;);
+</code></pre></li>
 <li><p>第一行总是写上 <code>&#39;use strict&#39;;</code> 是因为我们总是以严格模式运行JavaScript代码，避免各种潜在陷阱。</p>
 </li>
 <li><p>保存退出，执行 <code>node HellowWorld.js</code>即可得到结果。(终端输出“Hello,world.”)</p>
@@ -556,13 +559,22 @@ $(window).load(function(){
 <li><p>分模块的好处是编写代码不必从零开始。当一个模块编写完毕，就可以被其他地方引用。我们在编写程序的时候，也经常引用其他模块，包括Node内置的模块和来自第三方的模块。</p>
 </li>
 <li><p>例如，我们在一个js文件(hello.js)中写一个函数：</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">'use strict'</span>;</span><br><span class="line"><span class="keyword">var</span> s = <span class="string">'Hello'</span>;</span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">greet</span>(<span class="params">name</span>) </span>&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(s + <span class="string">', '</span> + name + <span class="string">'!'</span>);</span><br><span class="line">&#125;</span><br><span class="line"><span class="built_in">module</span>.exports = greet;</span><br></pre></td></tr></table></figure>
-</li>
+<pre><code>&#39;use strict&#39;;
+var s = &#39;Hello&#39;;
+function greet(name) {
+  console.log(s + &#39;, &#39; + name + &#39;!&#39;);
+}
+module.exports = greet;
+</code></pre></li>
 <li><p>函数greet()是我们在hello模块中定义的，你可能注意到最后一行是一个奇怪的赋值语句，它的意思是，把函数greet作为模块的输出暴露出去，这样其他模块就可以使用greet函数了。</p>
 </li>
 <li><p>其他模块对本模块的调用,此处写一个main.js：</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">'use strict'</span>;</span><br><span class="line"><span class="comment">// 引入hello模块:</span></span><br><span class="line"><span class="keyword">var</span> greet = <span class="built_in">require</span>(<span class="string">'./hello'</span>);</span><br><span class="line"><span class="keyword">var</span> s = <span class="string">'Michael'</span>;</span><br><span class="line">greet(s); <span class="comment">// Hello, Michael!</span></span><br></pre></td></tr></table></figure>
-</li>
+<pre><code>&#39;use strict&#39;;
+// 引入hello模块:
+var greet = require(&#39;./hello&#39;);
+var s = &#39;Michael&#39;;
+greet(s); // Hello, Michael!
+</code></pre></li>
 <li><p>引入hello模块用Node提供的require函数,引入的模块作为变量保存在greet变量中。<code>./hello</code>表明hello.js和main.js是在同一个目录下，这里需要写 <strong>相对目录</strong>。</p>
 </li>
 </ul>
@@ -717,7 +729,7 @@ $(window).load(function(){
               <img class="site-author-image" itemprop="image" src="/images/avatar.gif" alt="Fleschier">
             
               <p class="site-author-name" itemprop="name">Fleschier</p>
-              <p class="site-description motion-element" itemprop="description">每天早上醒来，你和阳光都在，就是我想要的未来。</p>
+              <p class="site-description motion-element" itemprop="description">生活是一个过程,可喜的是它不用重来。</p>
           </div>
 
           

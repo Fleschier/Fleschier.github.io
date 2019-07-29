@@ -117,19 +117,19 @@
 
 <link href="/js/google-code-prettify/tomorrow.min.css" type="text/css" rel="stylesheet">
 
-  <meta name="description" content="不适合人类阅读的学习笔记  第十章 组合和继承  面向对象进阶抽象类 例子：123abstract class Element&amp;#123;	def contents: Array[String]&amp;#125;   注意，Element类中content方法没有标上abstract修饰符。一个方法只要是没有实现的(即没有等号或方法体)，那么它就是抽象的。跟Java不同，我们不能对方法加上abstra">
+  <meta name="description" content="不适合人类阅读的学习笔记  第十章 组合和继承  面向对象进阶抽象类 例子：abstract class Element{   def contents: Array[String] } 注意，Element类中content方法没有标上abstract修饰符。一个方法只要是没有实现的(即没有等号或方法体)，那么它就是抽象的。跟Java不同，我们不能对方法加上abstract修饰符  定义无参方">
 <meta name="keywords" content="๑Scala">
 <meta property="og:type" content="article">
 <meta property="og:title" content="《Scala编程》阅读记录——类进阶">
 <meta property="og:url" content="https://fleschier.github.io/2018/07/23/scala-learning-03/index.html">
 <meta property="og:site_name" content="Fleschier 渐寒๑">
-<meta property="og:description" content="不适合人类阅读的学习笔记  第十章 组合和继承  面向对象进阶抽象类 例子：123abstract class Element&amp;#123;	def contents: Array[String]&amp;#125;   注意，Element类中content方法没有标上abstract修饰符。一个方法只要是没有实现的(即没有等号或方法体)，那么它就是抽象的。跟Java不同，我们不能对方法加上abstra">
+<meta property="og:description" content="不适合人类阅读的学习笔记  第十章 组合和继承  面向对象进阶抽象类 例子：abstract class Element{   def contents: Array[String] } 注意，Element类中content方法没有标上abstract修饰符。一个方法只要是没有实现的(即没有等号或方法体)，那么它就是抽象的。跟Java不同，我们不能对方法加上abstract修饰符  定义无参方">
 <meta property="og:locale" content="default">
 <meta property="og:image" content="https://fleschier.github.io/images/Scala/relation.jpg">
 <meta property="og:updated_time" content="2018-11-21T06:40:40.695Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="《Scala编程》阅读记录——类进阶">
-<meta name="twitter:description" content="不适合人类阅读的学习笔记  第十章 组合和继承  面向对象进阶抽象类 例子：123abstract class Element&amp;#123;	def contents: Array[String]&amp;#125;   注意，Element类中content方法没有标上abstract修饰符。一个方法只要是没有实现的(即没有等号或方法体)，那么它就是抽象的。跟Java不同，我们不能对方法加上abstra">
+<meta name="twitter:description" content="不适合人类阅读的学习笔记  第十章 组合和继承  面向对象进阶抽象类 例子：abstract class Element{   def contents: Array[String] } 注意，Element类中content方法没有标上abstract修饰符。一个方法只要是没有实现的(即没有等号或方法体)，那么它就是抽象的。跟Java不同，我们不能对方法加上abstract修饰符  定义无参方">
 <meta name="twitter:image" content="https://fleschier.github.io/images/Scala/relation.jpg">
 
 
@@ -363,7 +363,7 @@ $(window).load(function(){
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Fleschier">
-      <meta itemprop="description" content="每天早上醒来，你和阳光都在，就是我想要的未来。">
+      <meta itemprop="description" content="生活是一个过程,可喜的是它不用重来。">
       <meta itemprop="image" content="/images/avatar.gif">
     </span>
 
@@ -484,21 +484,27 @@ $(window).load(function(){
 <p>不适合人类阅读的学习笔记</p>
 </blockquote>
 <h2 id="第十章-组合和继承-面向对象进阶"><a href="#第十章-组合和继承-面向对象进阶" class="headerlink" title="第十章 组合和继承  面向对象进阶"></a>第十章 组合和继承  面向对象进阶</h2><h3 id="抽象类"><a href="#抽象类" class="headerlink" title="抽象类"></a>抽象类</h3><ul>
-<li>例子：<figure class="highlight crystal"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">abstract</span> <span class="class"><span class="keyword">class</span> <span class="title">Element</span>&#123;</span></span><br><span class="line">	<span class="function"><span class="keyword">def</span> <span class="title">contents</span></span>: Array[String]</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-</li>
+<li>例子：<pre><code>abstract class Element{
+  def contents: Array[String]
+}
+</code></pre>注意，Element类中content方法没有标上abstract修饰符。一个方法只要是没有实现的(即没有等号或方法体)，那么它就是抽象的。跟Java不同，我们不能对方法加上abstract修饰符</li>
 </ul>
-<p>注意，Element类中content方法没有标上abstract修饰符。一个方法只要是没有实现的(即没有等号或方法体)，那么它就是抽象的。跟Java不同，我们不能对方法加上abstract修饰符</p>
 <h3 id="定义无参方法"><a href="#定义无参方法" class="headerlink" title="定义无参方法"></a>定义无参方法</h3><ul>
 <li><p>例子：</p>
-<figure class="highlight flix"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">abstract <span class="keyword">class</span> Element &#123;</span><br><span class="line">	<span class="function"><span class="keyword">def</span> <span class="title">contents</span></span>: Array[String]</span><br><span class="line">	<span class="function"><span class="keyword">def</span> <span class="title">height</span></span>: Int = contents.length</span><br><span class="line">	<span class="function"><span class="keyword">def</span> <span class="title">width</span></span>: Int = <span class="keyword">if</span>(height == <span class="number">0</span>) <span class="number">0</span> <span class="keyword">else</span> contents(<span class="number">0</span>).length</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-</li>
+<pre><code>abstract class Element {
+  def contents: Array[String]
+  def height: Int = contents.length
+  def width: Int = if(height == 0) 0 else contents(0).length
+}
+</code></pre></li>
 <li><p>这个无参方法的特点是，如果将<code>def</code>换成<code>val</code>，那么他就成了一个字段而不会有编译错误</p>
 </li>
 <li><p>在这里无参方法和字段的区别是：字段的调用会更加快，但是每次实例化对象都要分配内存空间。具体取舍要看具体的用法。</p>
 </li>
 <li><p>总结下来就是，scala推荐我们将那些没有参数也没有副作用的方法定义为无参方法，而对于无参数而有副作用的方法不应当省略空括号，例如：</p>
-<figure class="highlight stylus"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">"hello"</span><span class="selector-class">.length</span>  <span class="comment">//没有()，因为没有副作用</span></span><br><span class="line"><span class="function"><span class="title">println</span><span class="params">()</span></span>	<span class="comment">//有()，因为有副作用</span></span><br></pre></td></tr></table></figure>
-</li>
+<pre><code>&quot;hello&quot;.length  //没有()，因为没有副作用
+println()    //有()，因为有副作用
+</code></pre></li>
 </ul>
 <h3 id="扩展类"><a href="#扩展类" class="headerlink" title="扩展类"></a>扩展类</h3><ul>
 <li><p>使用<code>extends</code>关键字，相当于继承</p>
@@ -554,10 +560,13 @@ $(window).load(function(){
 <li><p>scala的引入可以出现在任何地方，不仅仅是某个编译单元的开始</p>
 </li>
 <li><p>例如，假设一个Fruit类，其中有有name和color字段。有如下的一个函数：</p>
-<figure class="highlight flix"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">showFruit</span></span>(fruit: Fruit) = &#123;</span><br><span class="line">	<span class="keyword">import</span> Fruit._</span><br><span class="line">	println(name + <span class="string">"s are"</span> + color)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<pre><code>def showFruit(fruit: Fruit) = {
+  import Fruit._
+  println(name + &quot;s are&quot; + color)
+}
+</code></pre><p>showFruit引入了其参数fruit(Fruit类)的所有成员。下面的name和color就相当于fruit.name和fruit.color</p>
 </li>
 </ul>
-<p>showFruit引入了其参数fruit(Fruit类)的所有成员。下面的name和color就相当于fruit.name和fruit.color</p>
 <h2 id="第十四章-断言和测试"><a href="#第十四章-断言和测试" class="headerlink" title="第十四章 断言和测试"></a>第十四章 断言和测试</h2><hr>
 <ul>
 <li><p>在scala中，断言的写法是对预定义方法assert的调用。</p>
@@ -572,17 +581,25 @@ $(window).load(function(){
 <li><p>样例类使用case关键字修饰，scala编译器会自动创建工厂方法，即可以直接用<code>className(parameter1,parameter2,...)</code>而不用<code>new</code>关键字即可创建对象</p>
 </li>
 <li><p>模式匹配，例子：</p>
-<figure class="highlight coq"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">expr <span class="keyword">match</span>&#123;</span><br><span class="line">	<span class="built_in">case</span> BinOp(...) =&gt; println(...)</span><br><span class="line">	<span class="built_in">case</span> <span class="keyword">_</span> =&gt;  //处理器默认<span class="built_in">case</span>,这一行是必须的，否则所有非满足第一个条件的<span class="built_in">case</span>都会返回MatchError</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<pre><code>expr match{
+  case BinOp(...) =&gt; println(...)
+  case _ =&gt;  //处理器默认case,这一行是必须的，否则所有非满足第一个条件的case都会返回MatchError
+}
+</code></pre><p>通配模式(<code>_</code>)会匹配任何对象</p>
 </li>
 </ul>
-<p>通配模式(<code>_</code>)会匹配任何对象</p>
 <h2 id="第二十章-抽象成员"><a href="#第二十章-抽象成员" class="headerlink" title="第二十章 抽象成员"></a>第二十章 抽象成员</h2><hr>
 <ul>
 <li><p>所有四种抽象成员：<code>val</code>，<code>var</code>，方法和类型</p>
 </li>
 <li><p>例子：下面这个特质声明了四种抽象成员：一个抽象类型(T)，一个抽象方法(transform)，一个val(initial)和一个var(current)</p>
-<figure class="highlight routeros"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">trait Anstract&#123;</span><br><span class="line"><span class="built_in">	type </span>T</span><br><span class="line">	def transform(x: T): T</span><br><span class="line">	val initial: T</span><br><span class="line">	var current: T</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-</li>
+<pre><code>trait Anstract{
+  type T
+  def transform(x: T): T
+  val initial: T
+  var current: T
+}
+</code></pre></li>
 <li><p>scala的抽象类型指的是用type关键字声明为某个类或者特质的成员(但并不给出定义)的类型。类或者特质都不能够叫抽象类型，抽象类型永远是某个类或者特质的成员，比如Abstract特质中的T</p>
 </li>
 <li><p><code>lazy</code>关键字：如果在<code>val</code>关键字前面加上<code>lazy</code>关键字，则该变量会在第一次被使用时被赋值。</p>
@@ -727,7 +744,7 @@ $(window).load(function(){
               <img class="site-author-image" itemprop="image" src="/images/avatar.gif" alt="Fleschier">
             
               <p class="site-author-name" itemprop="name">Fleschier</p>
-              <p class="site-description motion-element" itemprop="description">每天早上醒来，你和阳光都在，就是我想要的未来。</p>
+              <p class="site-description motion-element" itemprop="description">生活是一个过程,可喜的是它不用重来。</p>
           </div>
 
           

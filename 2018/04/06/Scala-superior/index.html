@@ -117,18 +117,18 @@
 
 <link href="/js/google-code-prettify/tomorrow.min.css" type="text/css" rel="stylesheet">
 
-  <meta name="description" content="不适合人类阅读的学习笔记    case class与模式匹配  case class一般被翻译为样例类，它是一种特殊的类，能够被优化以用于模式匹配。  - scala性能测试  测试程序的运行时间的函数：System.currentTimeMillis()  用法： 12345[...]  val time = System.currentTimeMillis()  [要测试运行时间的代码段]">
+  <meta name="description" content="不适合人类阅读的学习笔记    case class与模式匹配  case class一般被翻译为样例类，它是一种特殊的类，能够被优化以用于模式匹配。  - scala性能测试  测试程序的运行时间的函数：System.currentTimeMillis()  用法： [...] val time = System.currentTimeMillis() [要测试运行时间的代码段] printl">
 <meta name="keywords" content="๑Scala">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Scala学习笔记——进阶">
 <meta property="og:url" content="https://fleschier.github.io/2018/04/06/Scala-superior/index.html">
 <meta property="og:site_name" content="Fleschier 渐寒๑">
-<meta property="og:description" content="不适合人类阅读的学习笔记    case class与模式匹配  case class一般被翻译为样例类，它是一种特殊的类，能够被优化以用于模式匹配。  - scala性能测试  测试程序的运行时间的函数：System.currentTimeMillis()  用法： 12345[...]  val time = System.currentTimeMillis()  [要测试运行时间的代码段]">
+<meta property="og:description" content="不适合人类阅读的学习笔记    case class与模式匹配  case class一般被翻译为样例类，它是一种特殊的类，能够被优化以用于模式匹配。  - scala性能测试  测试程序的运行时间的函数：System.currentTimeMillis()  用法： [...] val time = System.currentTimeMillis() [要测试运行时间的代码段] printl">
 <meta property="og:locale" content="default">
 <meta property="og:updated_time" content="2018-11-21T06:40:40.695Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Scala学习笔记——进阶">
-<meta name="twitter:description" content="不适合人类阅读的学习笔记    case class与模式匹配  case class一般被翻译为样例类，它是一种特殊的类，能够被优化以用于模式匹配。  - scala性能测试  测试程序的运行时间的函数：System.currentTimeMillis()  用法： 12345[...]  val time = System.currentTimeMillis()  [要测试运行时间的代码段]">
+<meta name="twitter:description" content="不适合人类阅读的学习笔记    case class与模式匹配  case class一般被翻译为样例类，它是一种特殊的类，能够被优化以用于模式匹配。  - scala性能测试  测试程序的运行时间的函数：System.currentTimeMillis()  用法： [...] val time = System.currentTimeMillis() [要测试运行时间的代码段] printl">
 
 
 
@@ -361,7 +361,7 @@ $(window).load(function(){
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Fleschier">
-      <meta itemprop="description" content="每天早上醒来，你和阳光都在，就是我想要的未来。">
+      <meta itemprop="description" content="生活是一个过程,可喜的是它不用重来。">
       <meta itemprop="image" content="/images/avatar.gif">
     </span>
 
@@ -491,19 +491,30 @@ $(window).load(function(){
 <li><p>测试程序的运行时间的函数：<code>System.currentTimeMillis()</code></p>
 </li>
 <li><p>用法：</p>
-<figure class="highlight gauss"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">[...]</span><br><span class="line">  val <span class="built_in">time</span> = <span class="keyword">System</span>.currentTimeMillis()</span><br><span class="line">  [要测试运行时间的代码段]</span><br><span class="line">  println(<span class="string">" 耗时: "</span> + (<span class="keyword">System</span>.currentTimeMillis() - <span class="built_in">time</span>))  <span class="comment">//以时间差来看运行时间</span></span><br><span class="line">[...]</span><br></pre></td></tr></table></figure>
-</li>
+<pre><code>[...]
+val time = System.currentTimeMillis()
+[要测试运行时间的代码段]
+println(&quot; 耗时: &quot; + (System.currentTimeMillis() - time))  //以时间差来看运行时间
+[...]
+</code></pre></li>
 </ul>
 <h2 id="函数式循环"><a href="#函数式循环" class="headerlink" title="函数式循环"></a>函数式循环</h2><hr>
 <ul>
 <li><p>函数式编程的循环都是用迭代来实现的</p>
 </li>
 <li><p>例1：对于一个Int数组a,对里面每个元素执行 +1的操作</p>
-<figure class="highlight stylus"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">a</span>.map&#123;x =&gt;</span><br><span class="line">  val y = x + <span class="number">1</span>  <span class="comment">//因为Int是不可变类型，所以必须要新建一个值来存储改变后的值</span></span><br><span class="line">  y  <span class="comment">//返回值是y</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-</li>
+<pre><code>a.map{x =&gt;
+val y = x + 1  //因为Int是不可变类型，所以必须要新建一个值来存储改变后的值
+y  //返回值是y
+}
+</code></pre></li>
 <li><p>例2：对于一个Int数组，每找出一个大于5的数count就加1</p>
-<figure class="highlight stata"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> <span class="keyword">count</span>:Int = 0</span><br><span class="line">a.<span class="keyword">foreach</span>&#123;x =&gt;      <span class="comment">//与map遍历方式不同，foreach不会对里面的内容修改，所以匿名函数也不需要返回值</span></span><br><span class="line">  <span class="keyword">if</span>(x &gt;  5)</span><br><span class="line">    <span class="keyword">count</span> += 1</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-</li>
+<pre><code>var count:Int = 0
+a.foreach{x =&gt;      //与map遍历方式不同，foreach不会对里面的内容修改，所以匿名函数也不需要返回值
+if(x &gt;  5)
+  count += 1
+}
+</code></pre></li>
 </ul>
 <h2 id="一些数据结构的使用"><a href="#一些数据结构的使用" class="headerlink" title="一些数据结构的使用"></a>一些数据结构的使用</h2><hr>
 <h3 id="ListBuffer"><a href="#ListBuffer" class="headerlink" title="ListBuffer:"></a>ListBuffer:</h3><ul>
@@ -517,8 +528,18 @@ $(window).load(function(){
 </li>
 </ul>
 <h2 id="Scala类的实例"><a href="#Scala类的实例" class="headerlink" title="Scala类的实例"></a>Scala类的实例</h2><hr>
-<p>-<br><figure class="highlight gradle"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> Point(xc: <span class="keyword">Int</span>, yc: <span class="keyword">Int</span>) &#123;</span><br><span class="line">   var x: <span class="keyword">Int</span> = xc</span><br><span class="line">   var y: <span class="keyword">Int</span> = yc</span><br><span class="line">   <span class="keyword">def</span> move(dx: <span class="keyword">Int</span>, dy: <span class="keyword">Int</span>) &#123;</span><br><span class="line">      x = x + dx</span><br><span class="line">      y = y + dy</span><br><span class="line">      <span class="keyword">println</span> (<span class="string">"x 的坐标点: "</span> + x);</span><br><span class="line">      <span class="keyword">println</span> (<span class="string">"y 的坐标点: "</span> + y);</span><br><span class="line">   &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
-<ul>
+<p>-</p>
+<pre><code>class Point(xc: Int, yc: Int) {
+   var x: Int = xc
+   var y: Int = yc
+   def move(dx: Int, dy: Int) {
+      x = x + dx
+      y = y + dy
+      println (&quot;x 的坐标点: &quot; + x);
+      println (&quot;y 的坐标点: &quot; + y);
+   }
+}
+</code></pre><ul>
 <li><p>Scala中的类不声明为public，一个Scala源文件中可以有多个类。以上实例的类定义了两个变量 x 和 y ，一个方法：move，方法没有返回值。Scala 的类定义可以有参数，称为类参数，如上面的 xc, yc，类参数在整个类中都可以访问。</p>
 </li>
 <li><p>类的字段要初始化，不然会报错(错误：类必须申明为抽象类才行)</p>
@@ -529,15 +550,40 @@ $(window).load(function(){
 <li><p>Scala提供了一个类的主构造函数的概念。如果代码只有一个构造函数，则可以不需要定义明确的构造函数。它有助于优化代码，可以创建具有零个或多个参数的主构造函数。</p>
 </li>
 <li><p>scala主构造函数示例：(即在类中以参数的形式体现)</p>
-<figure class="highlight scala"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Student</span>(<span class="params">id:<span class="type">Int</span>, name:<span class="type">String</span></span>)</span>&#123;  </span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">showDetails</span></span>()&#123;  </span><br><span class="line">        println(id+<span class="string">" "</span>+name);  </span><br><span class="line">    &#125;  </span><br><span class="line">&#125;  </span><br><span class="line"><span class="class"><span class="keyword">object</span> <span class="title">Demo</span></span>&#123;  </span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">main</span></span>(args:<span class="type">Array</span>[<span class="type">String</span>])&#123;  </span><br><span class="line">        <span class="keyword">var</span> s = <span class="keyword">new</span> <span class="type">Student</span>(<span class="number">1010</span>,<span class="string">"Maxsu"</span>);  </span><br><span class="line">        s.showDetails()  </span><br><span class="line">    &#125;  </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-</li>
+<pre><code>class Student(id:Int, name:String){  
+  def showDetails(){  
+      println(id+&quot; &quot;+name);  
+  }  
+}  
+object Demo{  
+  def main(args:Array[String]){  
+      var s = new Student(1010,&quot;Maxsu&quot;);  
+      s.showDetails()  
+  }  
+}
+</code></pre></li>
 </ul>
 <h4 id="次要-辅助-构造器"><a href="#次要-辅助-构造器" class="headerlink" title="次要(辅助)构造器"></a>次要(辅助)构造器</h4><ul>
 <li><p>可以在类中创建任意数量的辅助构造函数，必须要从辅助构造函数内部调用主构造函数。<strong>this关键字用于从其他构造函数调用构造函数</strong>。当调用其他构造函数时，<strong>确保要将其放在构造函数中的第一行</strong>。</p>
 </li>
 <li><p>Scala二次构造函数示例：</p>
-<figure class="highlight kotlin"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Student</span></span>(id:<span class="built_in">Int</span>, name:String)&#123;  </span><br><span class="line">    <span class="keyword">var</span> age:<span class="built_in">Int</span> = <span class="number">0</span>  </span><br><span class="line">    def showDetails()&#123;  </span><br><span class="line">        println(id+<span class="string">" "</span>+name+<span class="string">" "</span>+age)  </span><br><span class="line">    &#125;  </span><br><span class="line">    def <span class="keyword">this</span>(id:<span class="built_in">Int</span>, name:String,age:<span class="built_in">Int</span>)&#123;  </span><br><span class="line">        <span class="keyword">this</span>(id,name)       <span class="comment">// Calling primary constructor, and it is first line  </span></span><br><span class="line">        <span class="keyword">this</span>.age = age  </span><br><span class="line">    &#125;  </span><br><span class="line">&#125;  </span><br><span class="line"><span class="keyword">object</span> Demo&#123;  </span><br><span class="line">    def main(args:Array[String])&#123;  </span><br><span class="line">        <span class="keyword">var</span> s = new Student(<span class="number">1010</span>,<span class="string">"Maxsu"</span>, <span class="number">25</span>);  </span><br><span class="line">        s.showDetails()  </span><br><span class="line">    &#125;  </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-</li>
+<pre><code>class Student(id:Int, name:String){  
+  var age:Int = 0  
+  def showDetails(){  
+      println(id+&quot; &quot;+name+&quot; &quot;+age)  
+  }  
+  def this(id:Int, name:String,age:Int){  
+      this(id,name)       // Calling primary constructor, and it is first line  
+      this.age = age  
+  }  
+}  
+object Demo{  
+  def main(args:Array[String]){  
+      var s = new Student(1010,&quot;Maxsu&quot;, 25);  
+      s.showDetails()  
+  }  
+}
+</code></pre></li>
 <li><p>并且在this二次构造函数的第一个语句，调用主构造函数this()的参数与主构造函数一致(如上例中的id和name两个参数)。</p>
 </li>
 </ul>
@@ -604,8 +650,8 @@ $(window).load(function(){
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2018/04/06/Ubuntu-operation/" rel="next" title="Ubuntu随笔">
-                <i class="fa fa-chevron-left"></i> Ubuntu随笔
+              <a href="/2018/04/06/C++learning-class/" rel="next" title="C++学习笔记——类">
+                <i class="fa fa-chevron-left"></i> C++学习笔记——类
               </a>
             
           </div>
@@ -614,8 +660,8 @@ $(window).load(function(){
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2018/04/07/SQL-quary/" rel="prev" title="数据库SQL语句">
-                数据库SQL语句 <i class="fa fa-chevron-right"></i>
+              <a href="/2018/04/06/Python-learning/" rel="prev" title="Python学习笔记——基础">
+                Python学习笔记——基础 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -678,7 +724,7 @@ $(window).load(function(){
               <img class="site-author-image" itemprop="image" src="/images/avatar.gif" alt="Fleschier">
             
               <p class="site-author-name" itemprop="name">Fleschier</p>
-              <p class="site-description motion-element" itemprop="description">每天早上醒来，你和阳光都在，就是我想要的未来。</p>
+              <p class="site-description motion-element" itemprop="description">生活是一个过程,可喜的是它不用重来。</p>
           </div>
 
           

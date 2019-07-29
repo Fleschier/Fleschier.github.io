@@ -361,7 +361,7 @@ $(window).load(function(){
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Fleschier">
-      <meta itemprop="description" content="每天早上醒来，你和阳光都在，就是我想要的未来。">
+      <meta itemprop="description" content="生活是一个过程,可喜的是它不用重来。">
       <meta itemprop="image" content="/images/avatar.gif">
     </span>
 
@@ -568,8 +568,26 @@ $(window).load(function(){
 <li><p>方法二： 有点蠢但是很简单的一个方法。对于那些没有安装直接可以使用的软件，我们在上个方法中提到的文件夹里是找不到 .desktop文件的。怎么办呢？我们只需要进入我们那个软件的目录，找到启动文件，创建一个它的链接文件（右键还是终端随意），然后将这个链接文件复制到桌面，改下名字即可。虽然和简单，但是缺点是没有图标….身为一个外观党还是有点难以接受的…</p>
 </li>
 <li><p>方法三：就是自己写一个.desktop文件，这里举例我写的Moeditor的桌面文件：</p>
-<figure class="highlight makefile"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">//首先终端切到桌面</span><br><span class="line">vim Moeditor.desktop</span><br><span class="line">//然后输入如下内容</span><br><span class="line">[Desktop Entry]</span><br><span class="line">Version=1.0</span><br><span class="line">Type=Application</span><br><span class="line">Name=Moeditor</span><br><span class="line">GenericName=Moeditor</span><br><span class="line">Comment=editor for markdown</span><br><span class="line">Exec=/home/fleshier/Programe\ Files/Moeditor-linux-x64/Moeditor %F  //文件启动器的路径</span><br><span class="line">Terminal=false</span><br><span class="line">Icon=/home/fleshier/Programe\ Files/Images/icons/g10.png  //图标的路径</span><br><span class="line">StartupNotify=true</span><br><span class="line">Actions=Window;</span><br><span class="line">//空行</span><br><span class="line">[Desktop Action Window]</span><br><span class="line">Name=New Window</span><br><span class="line">Exec=/home/fleshier/Programe\ Files/Moeditor-linux-x64/Moeditor -n</span><br><span class="line">OnlyShowIn=Unity;</span><br></pre></td></tr></table></figure>
-</li>
+<pre><code>//首先终端切到桌面
+vim Moeditor.desktop
+//然后输入如下内容
+[Desktop Entry]
+Version=1.0
+Type=Application
+Name=Moeditor
+GenericName=Moeditor
+Comment=editor for markdown
+Exec=/home/fleshier/Programe\ Files/Moeditor-linux-x64/Moeditor %F  //文件启动器的路径
+Terminal=false
+Icon=/home/fleshier/Programe\ Files/Images/icons/g10.png  //图标的路径
+StartupNotify=true
+Actions=Window;
+//空行
+[Desktop Action Window]
+Name=New Window
+Exec=/home/fleshier/Programe\ Files/Moeditor-linux-x64/Moeditor -n
+OnlyShowIn=Unity;
+</code></pre></li>
 <li><p>保存之后执行 <code>chmod a+x filename</code> 改变执行权限即可运行</p>
 </li>
 <li><p>实际写的时候要把注释删除掉，不然会出错。</p>
@@ -583,17 +601,22 @@ $(window).load(function(){
 <li><p>事实上，这个#!字符序列是一种特殊的结构叫做 shebang。 这个 shebang 被用来告诉操作系统将执行此脚本所用的解释器的名字。每个 shell 脚本都应该把这一文本行作为它的第一行。</p>
 </li>
 <li><p>示例写法：</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#!/bin/bash</span></span><br><span class="line"><span class="comment">#This is a test script!    #本句是一个注释，'#'号之后的字符都会被忽略</span></span><br><span class="line"><span class="built_in">echo</span> <span class="string">'Hello World!'</span>  <span class="comment">#本句会在终端中打印 "Hello World!"</span></span><br></pre></td></tr></table></figure>
-</li>
+<pre><code>#!/bin/bash
+#This is a test script!    #本句是一个注释，&#39;#&#39;号之后的字符都会被忽略
+echo &#39;Hello World!&#39;  #本句会在终端中打印 &quot;Hello World!&quot;
+</code></pre></li>
 <li><p>然后在终端中执行： <code>chmod +x filename.sh</code> 为这个脚本文件添加可执行权限</p>
 </li>
 <li><p>或者使用另外一个更改权限的写法：</p>
-<figure class="highlight vbnet"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">[<span class="keyword">me</span>@linuxbox ~]$ ll hello_world</span><br><span class="line">-rw-r--r-- <span class="number">1</span>  <span class="keyword">me</span>    <span class="keyword">me</span>      <span class="number">63</span>  <span class="number">2009</span><span class="number">-03</span><span class="number">-07</span> <span class="number">10</span>:<span class="number">10</span> hello_world</span><br><span class="line">[<span class="keyword">me</span>@linuxbox ~]$ chmod <span class="number">755</span> hello_world</span><br><span class="line">[<span class="keyword">me</span>@linuxbox ~]$ ll hello_world</span><br><span class="line">-rwxr-xr-x <span class="number">1</span>  <span class="keyword">me</span>    <span class="keyword">me</span>      <span class="number">63</span>  <span class="number">2009</span><span class="number">-03</span><span class="number">-07</span> <span class="number">10</span>:<span class="number">10</span> hello_world</span><br></pre></td></tr></table></figure>
+<pre><code>[me@linuxbox ~]$ ll hello_world
+-rw-r--r-- 1  me    me      63  2009-03-07 10:10 hello_world
+[me@linuxbox ~]$ chmod 755 hello_world
+[me@linuxbox ~]$ ll hello_world
+-rwxr-xr-x 1  me    me      63  2009-03-07 10:10 hello_world
+</code></pre><p>对于脚本文件，有两个常见的权限设置：权限为755的脚本，则每个人都能执行，权限为700的 脚本，只有文件所有者能够执行。注意为了能够执行脚本，脚本必须是可读的。</p>
 </li>
-</ul>
-<p>对于脚本文件，有两个常见的权限设置：权限为755的脚本，则每个人都能执行，权限为700的 脚本，只有文件所有者能够执行。注意为了能够执行脚本，脚本必须是可读的。</p>
-<ul>
-<li>最后是运行脚本，终端进入脚本所在文件夹，输入： <code>./filename.sh</code></li>
+<li><p>最后是运行脚本，终端进入脚本所在文件夹，输入： <code>./filename.sh</code></p>
+</li>
 </ul>
 <h2 id="Linux中添加环境变量的方法"><a href="#Linux中添加环境变量的方法" class="headerlink" title="Linux中添加环境变量的方法"></a>Linux中添加环境变量的方法</h2><blockquote>
 <p>$PATH：决定了shell将到哪些目录中寻找命令或程序，PATH的值是一系列目录，当您运行一个程序时，Linux在这些目录下进行搜寻编译链接。</p>
@@ -602,16 +625,25 @@ $(window).load(function(){
 <li><p>为什么要添加环境变量呢？如果你在Linux下载了一个免安装的软件，你要启动它的话，要么创建一个桌面快捷方式（方法见上文），要么就是每次进入它的目录点开。这时候如果我们把它添加进了PATH环境变量，那么我们只需要在终端中输入这个软件的名字，回车，就可以启动它了。</p>
 </li>
 <li><p>方法一：修改profile文件（<strong>注意：一定要切换到root用户，一定要切换到root用户，一定要切换到root用户(sudo su)! ! ! !</strong> 否则最后保存文件会一直被拒绝又退不出去只能强退终端…可能还会有其他一些麻烦事…总之有的爽呢…） //对所有用户永久生效</p>
-<figure class="highlight routeros"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">(root模式下执行) vim /etc/profile</span><br><span class="line">在文档最后加入一行:</span><br><span class="line"><span class="builtin-name">export</span> <span class="attribute">PATH</span>=<span class="variable">$PATH</span>: 软件的启动脚本文件所在的**绝对路径**<span class="string">"</span></span><br><span class="line"><span class="string">(一般都是 /.../bin目录)</span></span><br><span class="line"><span class="string">退出修改后在root模式下执行： source /etc/profile</span></span><br><span class="line"><span class="string">或者重启</span></span><br></pre></td></tr></table></figure>
-</li>
+<pre><code>(root模式下执行) vim /etc/profile
+在文档最后加入一行:
+export PATH=$PATH: 软件的启动脚本文件所在的**绝对路径**&quot;
+(一般都是 /.../bin目录)
+退出修改后在root模式下执行： source /etc/profile
+或者重启
+</code></pre></li>
 <li><p>spark-shell的路径写法例子：</p>
-<figure class="highlight routeros"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="builtin-name">export</span> <span class="attribute">SPARK_HOME</span>=/usr/lib/spark/spark-2.2.0-bin-hadoop2.7</span><br><span class="line"><span class="builtin-name">export</span> <span class="attribute">PATH</span>=<span class="variable">$&#123;SPARK_HOME&#125;</span>/bin:$PATH</span><br></pre></td></tr></table></figure>
-</li>
+<pre><code>export SPARK_HOME=/usr/lib/spark/spark-2.2.0-bin-hadoop2.7
+export PATH=${SPARK_HOME}/bin:$PATH
+</code></pre></li>
 <li><p><em>使用source命令时要关闭fish，否则会报错</em></p>
 </li>
 <li><p>方法二：修改.bashrc文件（注意点同上）//仅对当前用户永久生效</p>
-<figure class="highlight routeros"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">(root模式下执行)vi /root/.bashrc</span><br><span class="line">在文档最后加入一行：</span><br><span class="line"><span class="builtin-name">export</span> <span class="attribute">PATH</span>=<span class="variable">$PATH</span>: 软件的启动脚本文件所在的**绝对路径**<span class="string">"</span></span><br><span class="line"><span class="string">退出修改后在root模式下执行： source /root/.bashrc</span></span><br></pre></td></tr></table></figure>
-</li>
+<pre><code>(root模式下执行)vi /root/.bashrc
+在文档最后加入一行：
+export PATH=$PATH: 软件的启动脚本文件所在的**绝对路径**&quot;
+退出修改后在root模式下执行： source /root/.bashrc
+</code></pre></li>
 <li><p>这两种方法最后的source语句就是让系统重新读取文件使之生效，没有写最后一句source的话，会在下次启动系统后生效</p>
 </li>
 </ul>
@@ -704,8 +736,8 @@ $(window).load(function(){
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2018/04/06/Scala-superior/" rel="prev" title="Scala学习笔记——进阶">
-                Scala学习笔记——进阶 <i class="fa fa-chevron-right"></i>
+              <a href="/2018/04/07/SQL-quary/" rel="prev" title="数据库SQL语句">
+                数据库SQL语句 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -768,7 +800,7 @@ $(window).load(function(){
               <img class="site-author-image" itemprop="image" src="/images/avatar.gif" alt="Fleschier">
             
               <p class="site-author-name" itemprop="name">Fleschier</p>
-              <p class="site-description motion-element" itemprop="description">每天早上醒来，你和阳光都在，就是我想要的未来。</p>
+              <p class="site-description motion-element" itemprop="description">生活是一个过程,可喜的是它不用重来。</p>
           </div>
 
           

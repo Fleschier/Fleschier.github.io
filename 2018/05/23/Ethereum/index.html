@@ -364,7 +364,7 @@ $(window).load(function(){
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Fleschier">
-      <meta itemprop="description" content="每天早上醒来，你和阳光都在，就是我想要的未来。">
+      <meta itemprop="description" content="生活是一个过程,可喜的是它不用重来。">
       <meta itemprop="image" content="/images/avatar.gif">
     </span>
 
@@ -513,8 +513,27 @@ $(window).load(function(){
 <li><p>官方文档(命令行指令，前面要加truffle)：</p>
 </li>
 </ul>
-<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line">Commands:</span><br><span class="line">  init      //Initialize new and empty Ethereum project</span><br><span class="line">  compile   //Compile contract source files</span><br><span class="line">  migrate   //Run migrations to deploy contracts</span><br><span class="line">  deploy    //(alias for migrate)</span><br><span class="line">  build     //<span class="keyword">Execute</span> <span class="keyword">build</span> pipeline (<span class="keyword">if</span> configuration <span class="keyword">present</span>)</span><br><span class="line">  <span class="keyword">test</span>      //Run JavaScript <span class="keyword">and</span> Solidity tests</span><br><span class="line">  debug     //Interactively debug <span class="keyword">any</span> <span class="keyword">transaction</span> <span class="keyword">on</span> the blockchain (experimental)</span><br><span class="line">  opcode    //Print the <span class="keyword">compiled</span> opcodes <span class="keyword">for</span> a given contract</span><br><span class="line">  console   //Run a console <span class="keyword">with</span> contract abstractions <span class="keyword">and</span> commands available</span><br><span class="line">  develop   //<span class="keyword">Open</span> a console <span class="keyword">with</span> a <span class="keyword">local</span> development blockchain</span><br><span class="line">  <span class="keyword">create</span>    //Helper <span class="keyword">to</span> <span class="keyword">create</span> <span class="keyword">new</span> contracts, migrations <span class="keyword">and</span> tests</span><br><span class="line">  <span class="keyword">install</span>   //<span class="keyword">Install</span> a <span class="keyword">package</span> <span class="keyword">from</span> the Ethereum <span class="keyword">Package</span> Registry</span><br><span class="line">  publish   //Publish a <span class="keyword">package</span> <span class="keyword">to</span> the Ethereum <span class="keyword">Package</span> Registry</span><br><span class="line">  networks  //<span class="keyword">Show</span> addresses <span class="keyword">for</span> deployed contracts <span class="keyword">on</span> <span class="keyword">each</span> network</span><br><span class="line">  watch     //Watch filesystem <span class="keyword">for</span> changes <span class="keyword">and</span> <span class="keyword">rebuild</span> the <span class="keyword">project</span> automatically</span><br><span class="line">  serve     //Serve the <span class="keyword">build</span> <span class="keyword">directory</span> <span class="keyword">on</span> localhost <span class="keyword">and</span> watch <span class="keyword">for</span> changes</span><br><span class="line">  exec      //<span class="keyword">Execute</span> a JS <span class="keyword">module</span> <span class="keyword">within</span> this Truffle environment</span><br><span class="line">  unbox     //Download a Truffle Box, a pre-built Truffle <span class="keyword">project</span></span><br><span class="line">  <span class="keyword">version</span>   //<span class="keyword">Show</span> <span class="keyword">version</span> <span class="built_in">number</span> <span class="keyword">and</span> <span class="keyword">exit</span></span><br></pre></td></tr></table></figure>
-<p>终端输入<code>truffle</code>即可查看上述命令</p>
+<pre><code>Commands:
+  init      //Initialize new and empty Ethereum project
+  compile   //Compile contract source files
+  migrate   //Run migrations to deploy contracts
+  deploy    //(alias for migrate)
+  build     //Execute build pipeline (if configuration present)
+  test      //Run JavaScript and Solidity tests
+  debug     //Interactively debug any transaction on the blockchain (experimental)
+  opcode    //Print the compiled opcodes for a given contract
+  console   //Run a console with contract abstractions and commands available
+  develop   //Open a console with a local development blockchain
+  create    //Helper to create new contracts, migrations and tests
+  install   //Install a package from the Ethereum Package Registry
+  publish   //Publish a package to the Ethereum Package Registry
+  networks  //Show addresses for deployed contracts on each network
+  watch     //Watch filesystem for changes and rebuild the project automatically
+  serve     //Serve the build directory on localhost and watch for changes
+  exec      //Execute a JS module within this Truffle environment
+  unbox     //Download a Truffle Box, a pre-built Truffle project
+  version   //Show version number and exit
+</code></pre><p>终端输入<code>truffle</code>即可查看上述命令</p>
 <h2 id="安装以太坊客户端"><a href="#安装以太坊客户端" class="headerlink" title="安装以太坊客户端"></a>安装以太坊客户端</h2><hr>
 <ul>
 <li><p>这里我们选择了Ganache——<a href="https://github.com/trufflesuite/ganache-cli" target="_blank" rel="noopener">github项目</a></p>
@@ -531,8 +550,16 @@ $(window).load(function(){
 <li><p>Ganache默认运行在7545端口，可以在界面右上方的“设置”里进行更改。运行后默认创建10个账号，每个账号里有100ETH的余额。<br>要部署到链上，需要把IP、端口、网络ID告诉truffle。</p>
 </li>
 <li><p>若要修改，则修改truffle.js：</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">module</span>.<span class="keyword">exports</span> = &#123;  </span><br><span class="line">    networks: &#123;  </span><br><span class="line">        development: &#123;  </span><br><span class="line">            host: <span class="string">'localhost'</span>,  </span><br><span class="line">            port: <span class="string">'7545'</span>,  </span><br><span class="line">            network_id: <span class="string">'*'</span> <span class="comment">// Match any network id  </span></span><br><span class="line">        &#125;  </span><br><span class="line">    &#125;  </span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
-</li>
+<pre><code>module.exports = {  
+  networks: {  
+      development: {  
+          host: &#39;localhost&#39;,  
+          port: &#39;7545&#39;,  
+          network_id: &#39;*&#39; // Match any network id  
+      }  
+  }  
+};  
+</code></pre></li>
 </ul>
 <h3 id="编译合约"><a href="#编译合约" class="headerlink" title="编译合约"></a>编译合约</h3><h4 id="合约位置"><a href="#合约位置" class="headerlink" title="合约位置"></a>合约位置</h4><ul>
 <li><p>所有你的合约应该位于<code>./contracts</code>目录。默认我们提供了一个合约文件，一个库文件，均以.sol结尾作为示例。尽管库文件有一定的特殊性，但为简单起见，当前均称之为合约。</p>
@@ -542,8 +569,14 @@ $(window).load(function(){
 </ul>
 <h4 id="约定"><a href="#约定" class="headerlink" title="约定"></a>约定</h4><ul>
 <li><p>Truffle需要定义的合约名称和文件名准确匹配。例如，如果文件名为 <code>MyContract.sol</code>，那么合约文件须为如下两者之一(并且匹配 <strong>区分大小写</strong>)：</p>
-<figure class="highlight clean"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">contract MyContract &#123;</span><br><span class="line">  ...</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">// or</span></span><br><span class="line">library MyContract &#123;</span><br><span class="line">  ...</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-</li>
+<pre><code>contract MyContract {
+...
+}
+// or
+library MyContract {
+...
+}
+</code></pre></li>
 <li><p>编译目录:编译的输出位于<code>./build/contracts</code> 目录。如果目录不存在会自动创建。这些编译文件对于Truffle框架能否正常工作至关重要。你不应该在正常的编译或发布以外手动修改这些文件。</p>
 </li>
 </ul>
@@ -555,8 +588,16 @@ $(window).load(function(){
 </ul>
 <h3 id="修改配置"><a href="#修改配置" class="headerlink" title="修改配置"></a>修改配置</h3><ul>
 <li><p>Ganache默认运行在7545端口，可以在界面右上方的“设置”里进行更改。运行后默认创建10个账号，每个账号里有100ETH的余额。<br>要部署到链上，需要把IP、端口、网络ID告诉truffle。修改truffle.js：</p>
-<figure class="highlight dts"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">module.exports = &#123;</span><br><span class="line"><span class="symbol">  networks:</span> &#123;</span><br><span class="line"><span class="symbol">    development:</span> &#123;</span><br><span class="line"><span class="symbol">      host:</span> <span class="string">"127.0.0.1"</span>,</span><br><span class="line"><span class="symbol">      port:</span> <span class="number">8545</span>,</span><br><span class="line"><span class="symbol">      network_id:</span> <span class="string">"*"</span> <span class="comment">// Match any network id</span></span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
-</li>
+<pre><code>module.exports = {
+networks: {
+  development: {
+    host: &quot;127.0.0.1&quot;,
+    port: 8545,
+    network_id: &quot;*&quot; // Match any network id
+  }
+}
+};
+</code></pre></li>
 <li><p>详见<a href="http://truffleframework.com/docs/advanced/configuration" target="_blank" rel="noopener">官方文档</a></p>
 </li>
 </ul>
@@ -565,8 +606,10 @@ $(window).load(function(){
 <li><p>直接执行命令：<code>truffle unbox metacoin</code>,创建这个项目。</p>
 </li>
 <li><p>由于metacoin的示例代码里已经把测试代码写好了，按照上面的修改完truffle.js之后，<strong>我们就可以编译部署测试我们的代码了：</strong></p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">truffle compile</span><br><span class="line">truffle migrate</span><br><span class="line">truffle <span class="built_in">test</span></span><br></pre></td></tr></table></figure>
-</li>
+<pre><code>truffle compile
+truffle migrate
+truffle test
+</code></pre></li>
 <li><p>结果如下:<br><img src="/images/block_chain/metacion_test_result.png" alt></p>
 </li>
 <li><p>然后打开 ganache查看区块链的变化。 Accounts标签：第一个账户里ETH略有减少，因为交易消耗了gas；Blocks标签：Ganache是自动挖矿，生成了6个新区块，每个区块里有一个交易；Transactions标签：有6笔新交易，可以点开看交易详情；Logs标签：显示交易和挖矿日志</p>
@@ -709,7 +752,7 @@ $(window).load(function(){
               <img class="site-author-image" itemprop="image" src="/images/avatar.gif" alt="Fleschier">
             
               <p class="site-author-name" itemprop="name">Fleschier</p>
-              <p class="site-description motion-element" itemprop="description">每天早上醒来，你和阳光都在，就是我想要的未来。</p>
+              <p class="site-description motion-element" itemprop="description">生活是一个过程,可喜的是它不用重来。</p>
           </div>
 
           

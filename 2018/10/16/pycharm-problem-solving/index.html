@@ -361,7 +361,7 @@ $(window).load(function(){
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Fleschier">
-      <meta itemprop="description" content="每天早上醒来，你和阳光都在，就是我想要的未来。">
+      <meta itemprop="description" content="生活是一个过程,可喜的是它不用重来。">
       <meta itemprop="image" content="/images/avatar.gif">
     </span>
 
@@ -497,10 +497,12 @@ $(window).load(function(){
 <li><p>然后查看当前已安装的所有版本<code>ls /usr/bin/python*</code></p>
 </li>
 <li><p>接着修改系统信息：(<strong>需要管理员权限</strong>)</p>
-<figure class="highlight vim"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">root@fleschier-GE5S:/home/fleschier# <span class="keyword">update</span>-alternatives --install /usr/bin/<span class="keyword">python</span> <span class="keyword">python</span> /usr/bin/python2.<span class="number">7</span> <span class="number">1</span></span><br><span class="line">root@fleschier-GE5S:/home/fleschier# <span class="keyword">update</span>-alternatives --install /usr/bin/<span class="keyword">python</span> <span class="keyword">python</span> /usr/bin/<span class="keyword">python3</span>.<span class="number">6</span> <span class="number">2</span></span><br><span class="line"><span class="keyword">update</span>-alternative<span class="variable">s:</span> 使用 /usr/bin/<span class="keyword">python3</span>.<span class="number">6</span> 来在自动模式中提供 /usr/bin/<span class="keyword">python</span> (<span class="keyword">python</span>)</span><br></pre></td></tr></table></figure>
+<pre><code>root@fleschier-GE5S:/home/fleschier# update-alternatives --install /usr/bin/python python /usr/bin/python2.7 1
+root@fleschier-GE5S:/home/fleschier# update-alternatives --install /usr/bin/python python /usr/bin/python3.6 2
+update-alternatives: 使用 /usr/bin/python3.6 来在自动模式中提供 /usr/bin/python (python)
+</code></pre><p><code>--install</code> 选项使用了多个参数用于创建符号链接。最后一个参数指定了此选项的优先级，如果我们没有手动来设置替代选项，那么具有最高优先级的选项就会被选中。这个例子中，我们为 <code>/usr/bin/python3.6</code> 设置的优先级为2，所以<code>update-alternatives</code> 命令会自动将它设置为默认 Python 版本。</p>
 </li>
 </ul>
-<p><code>--install</code> 选项使用了多个参数用于创建符号链接。最后一个参数指定了此选项的优先级，如果我们没有手动来设置替代选项，那么具有最高优先级的选项就会被选中。这个例子中，我们为 <code>/usr/bin/python3.6</code> 设置的优先级为2，所以<code>update-alternatives</code> 命令会自动将它设置为默认 Python 版本。</p>
 <ul>
 <li>参考<a href="https://blog.csdn.net/fang_chuan/article/details/60958329" target="_blank" rel="noopener">更改Ubuntu默认python版本的两种方法</a></li>
 </ul>
@@ -666,7 +668,7 @@ $(window).load(function(){
               <img class="site-author-image" itemprop="image" src="/images/avatar.gif" alt="Fleschier">
             
               <p class="site-author-name" itemprop="name">Fleschier</p>
-              <p class="site-description motion-element" itemprop="description">每天早上醒来，你和阳光都在，就是我想要的未来。</p>
+              <p class="site-description motion-element" itemprop="description">生活是一个过程,可喜的是它不用重来。</p>
           </div>
 
           

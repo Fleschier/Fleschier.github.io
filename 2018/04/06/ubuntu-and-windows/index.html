@@ -367,7 +367,7 @@ $(window).load(function(){
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Fleschier">
-      <meta itemprop="description" content="每天早上醒来，你和阳光都在，就是我想要的未来。">
+      <meta itemprop="description" content="生活是一个过程,可喜的是它不用重来。">
       <meta itemprop="image" content="/images/avatar.gif">
     </span>
 
@@ -541,10 +541,9 @@ $(window).load(function(){
 <li><p><a href="https://blog.csdn.net/gatieme/article/details/51883981" target="_blank" rel="noopener">详细原因</a></p>
 </li>
 <li><p><strong>但是注意</strong>：在 Ubuntu <strong>16.04</strong> 版本以前，关闭UTC的方法是编辑<code>/etc/default/rcS</code>，将<code>UTC=yes</code>改成<code>UTC=no</code>， 但在Ubuntu 16.04使用systemd启动之后，时间改成了由timedatectl来管理，所以更改方法是:</p>
-<figure class="highlight dsconfig"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">timedatectl </span><span class="built_in">set-local-rtc</span> 1 <span class="built_in">--adjust-system-clock</span></span><br></pre></td></tr></table></figure>
-</li>
-<li><p>之后重启应该就不会出现问题了。</p>
-</li>
+<pre><code>timedatectl set-local-rtc 1 --adjust-system-clock
+</code></pre></li>
+<li>之后重启应该就不会出现问题了。</li>
 </ul>
 <p><br></p>
 <blockquote>
@@ -623,8 +622,8 @@ $(window).load(function(){
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2018/04/06/Scala-learning/" rel="prev" title="Scala学习笔记——基础">
-                Scala学习笔记——基础 <i class="fa fa-chevron-right"></i>
+              <a href="/2018/04/06/C++learning-class/" rel="prev" title="C++学习笔记——类">
+                C++学习笔记——类 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -687,7 +686,7 @@ $(window).load(function(){
               <img class="site-author-image" itemprop="image" src="/images/avatar.gif" alt="Fleschier">
             
               <p class="site-author-name" itemprop="name">Fleschier</p>
-              <p class="site-description motion-element" itemprop="description">每天早上醒来，你和阳光都在，就是我想要的未来。</p>
+              <p class="site-description motion-element" itemprop="description">生活是一个过程,可喜的是它不用重来。</p>
           </div>
 
           

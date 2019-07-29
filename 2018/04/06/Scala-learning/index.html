@@ -366,7 +366,7 @@ $(window).load(function(){
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Fleschier">
-      <meta itemprop="description" content="每天早上醒来，你和阳光都在，就是我想要的未来。">
+      <meta itemprop="description" content="生活是一个过程,可喜的是它不用重来。">
       <meta itemprop="image" content="/images/avatar.gif">
     </span>
 
@@ -528,8 +528,12 @@ $(window).load(function(){
 <li><p>在已经标记好为源文件根目录的 scala 文件夹 上，右键选择 New，然后选择 Scala Class，随后设置好程序的名称，并且记得将其设置为一个 Object(类似于Java中含有静态成员的静态类)，正常的话，将会打开这个 Object 代码界面，并且可以看到IntelliJ IDEA自动添加了一些最基本的信息；</p>
 </li>
 </ul>
-<h3 id="示例程序"><a href="#示例程序" class="headerlink" title="示例程序"></a>示例程序</h3><figure class="highlight scala"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">object</span> <span class="title">HelloWorld</span> </span>&#123;</span><br><span class="line">   <span class="function"><span class="keyword">def</span> <span class="title">main</span></span>(args: <span class="type">Array</span>[<span class="type">String</span>]) &#123;</span><br><span class="line">      println(<span class="string">"Hello, world!"</span>) <span class="comment">// 输出 Hello World</span></span><br><span class="line">   &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h3 id="执行scala程序"><a href="#执行scala程序" class="headerlink" title="执行scala程序"></a>执行scala程序</h3><ul>
+<h3 id="示例程序"><a href="#示例程序" class="headerlink" title="示例程序"></a>示例程序</h3><pre><code>object HelloWorld {
+   def main(args: Array[String]) {
+      println(&quot;Hello, world!&quot;) // 输出 Hello World
+   }
+}
+</code></pre><h3 id="执行scala程序"><a href="#执行scala程序" class="headerlink" title="执行scala程序"></a>执行scala程序</h3><ul>
 <li><p>脚本执行：我们可以将 Scala 表达式写在一个文件里，比如 Hello.scala。在命令行中直接输入 scala Hello.scala</p>
 </li>
 <li><p>作为应用程序执行：作为应用程序执行时，我们需要在一个单例对象中定义入口函数 main，经过编译后就可以执行该应用程序了。</p>
@@ -566,15 +570,29 @@ $(window).load(function(){
 </blockquote>
 <ul>
 <li><p>控制台输入：</p>
-<figure class="highlight stylus"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">val scan = scala<span class="selector-class">.io</span><span class="selector-class">.StdIn</span>  <span class="comment">//设置scan</span></span><br><span class="line">val n = scan<span class="selector-class">.readLine</span><span class="selector-class">.trim</span><span class="selector-class">.toInt</span>  <span class="comment">//输入一个int</span></span><br><span class="line">val arr = scan<span class="selector-class">.readLine</span><span class="selector-class">.split</span>(<span class="string">" "</span>).map(_<span class="selector-class">.trim</span><span class="selector-class">.toInt</span>)  <span class="comment">//输入一串数字，之间以空格间隔</span></span><br><span class="line"><span class="comment">// .trim方法是去掉输入字符串两旁的空格</span></span><br></pre></td></tr></table></figure>
-</li>
+<pre><code>val scan = scala.io.StdIn  //设置scan
+val n = scan.readLine.trim.toInt  //输入一个int
+val arr = scan.readLine.split(&quot; &quot;).map(_.trim.toInt)  //输入一串数字，之间以空格间隔
+// .trim方法是去掉输入字符串两旁的空格
+</code></pre></li>
 <li><p>scala还有一系列专门的用来读下 <strong>一个</strong> 输入并且可以自动转换的方法，例如：</p>
-<figure class="highlight fsharp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">val</span> scan = scala.io.StdIn</span><br><span class="line"><span class="keyword">val</span> myint = scan.readInt()</span><br><span class="line"><span class="keyword">val</span> myfloat = scan.readFloat()</span><br><span class="line"><span class="keyword">val</span> myboolean = scan.readBoolean()</span><br><span class="line">...</span><br><span class="line"><span class="comment">//这些方法均可以读取下一个输入并且自动转换类型</span></span><br></pre></td></tr></table></figure>
-</li>
+<pre><code>val scan = scala.io.StdIn
+val myint = scan.readInt()
+val myfloat = scan.readFloat()
+val myboolean = scan.readBoolean()
+...
+//这些方法均可以读取下一个输入并且自动转换类型
+</code></pre></li>
 </ul>
 <h3 id="排序"><a href="#排序" class="headerlink" title="排序"></a>排序</h3><ul>
-<li>例如：<figure class="highlight stylus"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">val <span class="selector-tag">a</span> = new Array[Int](<span class="number">3</span>)</span><br><span class="line"><span class="function"><span class="title">a</span><span class="params">(<span class="number">0</span>)</span></span>  =<span class="number">1</span></span><br><span class="line"><span class="function"><span class="title">a</span><span class="params">(<span class="number">1</span>)</span></span> = <span class="number">2</span></span><br><span class="line"><span class="function"><span class="title">a</span><span class="params">(<span class="number">2</span>)</span></span> = <span class="number">0</span></span><br><span class="line"><span class="selector-tag">a</span>.foreach(print)  <span class="comment">//结果: 120</span></span><br><span class="line">val sorted_a = <span class="selector-tag">a</span>.sortWith((x,y) =&gt; x &gt; y)  <span class="comment">//从大到小排序（sortWith的参数为一个lambda函数，返回一个布尔值用于比较）</span></span><br><span class="line"><span class="selector-tag">a</span>.foreach(print) <span class="comment">//结果： 210</span></span><br></pre></td></tr></table></figure>
-</li>
+<li>例如：<pre><code>val a = new Array[Int](3)
+a(0)  =1
+a(1) = 2
+a(2) = 0
+a.foreach(print)  //结果: 120
+val sorted_a = a.sortWith((x,y) =&gt; x &gt; y)  //从大到小排序（sortWith的参数为一个lambda函数，返回一个布尔值用于比较）
+a.foreach(print) //结果： 210
+</code></pre></li>
 </ul>
 <h3 id="一些注意点"><a href="#一些注意点" class="headerlink" title="一些注意点"></a>一些注意点</h3><ul>
 <li><p>scala中没有 <code>++</code> 操作，可以用 <code>+= 1</code> 代替 <code>++</code>（x += y ，y可以是一个数字，也可以是一个数字变量，但不能是数组或是其他一些类似结构的某个元素）</p>
@@ -608,8 +626,8 @@ $(window).load(function(){
 <li><p>通常，toString 方法会返回一个“以文本方式表示”此对象的字符串。结果应是一个简明但易于读懂的信息表达式。建议所有子类都重写此方法。</p>
 </li>
 <li><p>Object 类的 toString 方法返回一个字符串，该字符串由类名（对象是该类的一个实例）、at 标记符“@”和此对象哈希码的无符号十六进制表示组成。换句话说，该方法返回一个字符串，它的值等于：</p>
-<figure class="highlight stylus"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="title">getClass</span><span class="params">()</span></span>.getName() + <span class="string">'@'</span> + Integer.toHexString(hashCode())</span><br></pre></td></tr></table></figure>
-</li>
+<pre><code>getClass().getName() + &#39;@&#39; + Integer.toHexString(hashCode())
+</code></pre></li>
 <li><p>将java.lang.string以可读的形式打印出来的方法：</p>
 </li>
 </ul>
@@ -625,37 +643,48 @@ $(window).load(function(){
 <p>数组的索引是从0开始的</p>
 </blockquote>
 <ul>
-<li><p>声明格式：</p>
-<figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">val a: Array[<span class="string">String</span>] = new Array[<span class="string">String</span>](<span class="link">3</span>)</span><br><span class="line">或者： val a = new Array[<span class="string">String</span>](<span class="link">3</span>)</span><br></pre></td></tr></table></figure>
-</li>
+<li>声明格式：<pre><code>val a: Array[String] = new Array[String](3)
+或者： val a = new Array[String](3)
+</code></pre></li>
 <li><p>赋值： <code>a(0) = &quot;abc&quot;</code>  //注意即使是声明为val变量，数组a的元素的值也是可以改变的。 <strong>同时，使用索引时数组名后面跟的是圆括号而不是方括号，这点与C++不同，切记</strong></p>
 </li>
 <li><p>可以使用foreach()方法实现遍历。<br><img src="/images/Scala/Scala-test.jpg" alt></p>
 </li>
 </ul>
 <h4 id="List"><a href="#List" class="headerlink" title="List"></a>List</h4><ul>
-<li>创建List:<figure class="highlight dart"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">val a = <span class="built_in">List</span>.apply(<span class="string">"1"</span>,<span class="string">"2"</span>,<span class="string">"3"</span>)</span><br><span class="line">val a: <span class="built_in">List</span>[<span class="built_in">String</span>] = <span class="built_in">List</span>(<span class="string">"1"</span>,<span class="string">"2"</span>,<span class="string">"3"</span>)</span><br></pre></td></tr></table></figure>
-</li>
+<li>创建List:<pre><code>val a = List.apply(&quot;1&quot;,&quot;2&quot;,&quot;3&quot;)
+val a: List[String] = List(&quot;1&quot;,&quot;2&quot;,&quot;3&quot;)
+</code></pre></li>
 </ul>
 <h2 id="流程控制结构"><a href="#流程控制结构" class="headerlink" title="流程控制结构"></a>流程控制结构</h2><hr>
 <h3 id="判断语句"><a href="#判断语句" class="headerlink" title="判断语句"></a>判断语句</h3><ul>
 <li><p>if语句格式：</p>
-<figure class="highlight nimrod"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span>(条件判断)&#123;</span><br><span class="line">	[...] //条件判断为真时执行</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">else</span>&#123;</span><br><span class="line">	[...] //条件判断为假时执行</span><br><span class="line">&#125;  //也可以写成 <span class="keyword">if</span>()<span class="meta">&#123;...&#125;</span> <span class="keyword">else</span> <span class="keyword">if</span>()<span class="meta">&#123;...&#125;</span> 同C++</span><br></pre></td></tr></table></figure>
-</li>
+<pre><code>if(条件判断){
+  [...] //条件判断为真时执行
+}
+else{
+  [...] //条件判断为假时执行
+}  //也可以写成 if(){...} else if(){...} 同C++
+</code></pre></li>
 <li><p>与Java，C++不同的是，Scala中if语句可以作为表达式使用。例：</p>
-<figure class="highlight kotlin"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">scala&gt; <span class="keyword">val</span> x = <span class="keyword">if</span>(<span class="string">"hello"</span> == <span class="string">"hell"</span>) <span class="number">1</span> <span class="keyword">else</span> <span class="number">0</span></span><br><span class="line">x: <span class="built_in">Int</span> = <span class="number">0</span></span><br></pre></td></tr></table></figure>
+<pre><code>scala&gt; val x = if(&quot;hello&quot; == &quot;hell&quot;) 1 else 0
+x: Int = 0
+</code></pre><p>从这个例子可以看出，if是个表达式，其返回值可以给变量赋值。<strong>Scala会将if语句的最后一条执行语句作为返回值</strong></p>
 </li>
 </ul>
-<p>从这个例子可以看出，if是个表达式，其返回值可以给变量赋值。<strong>Scala会将if语句的最后一条执行语句作为返回值</strong></p>
 <h3 id="循环语句"><a href="#循环语句" class="headerlink" title="循环语句"></a>循环语句</h3><ul>
 <li><p>while循环,do..while循环同C++</p>
 </li>
 <li><p>for循环格式：</p>
-<figure class="highlight stylus"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="title">for</span><span class="params">(i &lt;- 表达式)</span></span>&#123;</span><br><span class="line">	[...]</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-</li>
+<pre><code>for(i &lt;- 表达式){
+  [...]
+}
+</code></pre></li>
 <li><p>示例：</p>
-<figure class="highlight xquery"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span>(i &lt;- <span class="number">1</span> <span class="keyword">to</span> <span class="number">3</span>)&#123;</span><br><span class="line">	println(<span class="string">"i = "</span> + i);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-</li>
+<pre><code>for(i &lt;- 1 to 3){
+  println(&quot;i = &quot; + i);
+}
+</code></pre></li>
 <li><p>结果： i = 1  i = 2  <strong>i = 3</strong> <strong>(1 to 3 的集合是包含3的)</strong></p>
 </li>
 <li><p>其中 ‘&lt;-‘被称为生成器（generator），for循环实际上是通过集合的遍历来达到循环的目的的。</p>
@@ -663,8 +692,10 @@ $(window).load(function(){
 <li><p>如果希望集合是右开的，可以使用<code>1 until 5</code>来实现，范围是[1,5)</p>
 </li>
 <li><p>还可以设置for 循环的步长。例：</p>
-<figure class="highlight lsl"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">for(i &lt;- <span class="number">1</span> until (<span class="number">10</span>，<span class="number">2</span>))</span><br><span class="line">	println(<span class="string">"i = "</span> + i);</span><br><span class="line">结果： i =<span class="number">1</span> i = <span class="number">3</span> .... i = <span class="number">9</span></span><br></pre></td></tr></table></figure>
-</li>
+<pre><code>for(i &lt;- 1 until (10，2))
+  println(&quot;i = &quot; + i);
+结果： i =1 i = 3 .... i = 9
+</code></pre></li>
 <li><p><strong>不过，由于Scala是函数式编程，应当尽量使用迭代来代替循环</strong></p>
 </li>
 <li><p>例如：使用 <code>标识符.foreach()</code>方法来实现对元素的遍历</p>
@@ -733,8 +764,8 @@ $(window).load(function(){
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2018/04/06/ubuntu-and-windows/" rel="next" title="UEFI双系统的那些坑">
-                <i class="fa fa-chevron-left"></i> UEFI双系统的那些坑
+              <a href="/2018/04/06/Python-learning/" rel="next" title="Python学习笔记——基础">
+                <i class="fa fa-chevron-left"></i> Python学习笔记——基础
               </a>
             
           </div>
@@ -743,8 +774,8 @@ $(window).load(function(){
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2018/04/06/Python-learning/" rel="prev" title="Python学习笔记——基础">
-                Python学习笔记——基础 <i class="fa fa-chevron-right"></i>
+              <a href="/2018/04/06/Ubuntu-order/" rel="prev" title="Ubuntu终端常用命令">
+                Ubuntu终端常用命令 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -807,7 +838,7 @@ $(window).load(function(){
               <img class="site-author-image" itemprop="image" src="/images/avatar.gif" alt="Fleschier">
             
               <p class="site-author-name" itemprop="name">Fleschier</p>
-              <p class="site-description motion-element" itemprop="description">每天早上醒来，你和阳光都在，就是我想要的未来。</p>
+              <p class="site-description motion-element" itemprop="description">生活是一个过程,可喜的是它不用重来。</p>
           </div>
 
           

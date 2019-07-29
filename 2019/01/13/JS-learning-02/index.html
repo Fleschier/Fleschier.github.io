@@ -366,7 +366,7 @@ $(window).load(function(){
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Fleschier">
-      <meta itemprop="description" content="每天早上醒来，你和阳光都在，就是我想要的未来。">
+      <meta itemprop="description" content="生活是一个过程,可喜的是它不用重来。">
       <meta itemprop="image" content="/images/avatar.gif">
     </span>
 
@@ -501,39 +501,67 @@ $(window).load(function(){
 </ol>
 <h2 id="文档的载入"><a href="#文档的载入" class="headerlink" title="文档的载入"></a>文档的载入</h2><hr>
 <h3 id="简单文档"><a href="#简单文档" class="headerlink" title="简单文档"></a>简单文档</h3><ul>
-<li>空文档的对象映射:<br><img src="/images/JavaScript/document.png" alt><figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;!DOCTYPE html&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">html</span>&gt;</span></span><br><span class="line"> <span class="tag">&lt;<span class="name">head</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">meta</span> <span class="attr">...</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">title</span>&gt;</span><span class="tag">&lt;/<span class="name">title</span>&gt;</span></span><br><span class="line"> <span class="tag">&lt;/<span class="name">head</span>&gt;</span></span><br><span class="line"> <span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line">  ...</span><br><span class="line"> <span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></span><br></pre></td></tr></table></figure>
-</li>
+<li>空文档的对象映射:<br><img src="/images/JavaScript/document.png" alt><pre><code>&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;head&gt;
+&lt;meta ...&gt;
+&lt;title&gt;&lt;/title&gt;
+&lt;/head&gt;
+&lt;body&gt;
+...
+&lt;/body&gt;
+&lt;/html&gt;
+</code></pre></li>
 </ul>
 <h3 id="添加段落"><a href="#添加段落" class="headerlink" title="添加段落"></a>添加段落</h3><ul>
 <li>添加段落标签, 在段落元素的开始和结束标记之间插入段落文本.在标记间插入的连续文本是DOM中的一种特殊的对象,称为文本结点.文本节点总是有一个容器元素,也就是说,文本结点是其父元素p的子元素.</li>
 </ul>
 <p><img src="/images/JavaScript/document1.png" alt></p>
-<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;!DOCTYPE html&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">html</span>&gt;</span></span><br><span class="line"> <span class="tag">&lt;<span class="name">head</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">meta</span> <span class="attr">...</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">title</span>&gt;</span><span class="tag">&lt;/<span class="name">title</span>&gt;</span></span><br><span class="line"> <span class="tag">&lt;/<span class="name">head</span>&gt;</span></span><br><span class="line"> <span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">p</span>&gt;</span>This is the one and only Paragraph<span class="tag">&lt;/<span class="name">p</span>&gt;</span>         //添加了段落标签和段落内容</span><br><span class="line"> <span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></span><br></pre></td></tr></table></figure>
-<h3 id="生成新元素"><a href="#生成新元素" class="headerlink" title="生成新元素"></a>生成新元素</h3><ul>
+<pre><code>&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+ &lt;head&gt;
+  &lt;meta ...&gt;
+  &lt;title&gt;&lt;/title&gt;
+ &lt;/head&gt;
+ &lt;body&gt;
+  &lt;p&gt;This is the one and only Paragraph&lt;/p&gt;         //添加了段落标签和段落内容
+ &lt;/body&gt;
+&lt;/html&gt;
+</code></pre><h3 id="生成新元素"><a href="#生成新元素" class="headerlink" title="生成新元素"></a>生成新元素</h3><ul>
 <li>将部分段落文本包含在一个<em>标签中,表示要强调这些文本.这个插入操作对p元素对象的层次结构有很大的影响.<strong>p元素从只有一个(文本结点)子元素变成有三个子元素:两个文本节点,和一个它们之间的元素</strong>. 在W3C DOM中, <strong>文本结点不能有任何子元素</strong>,因此不能包含元素对象.em元素中的文本结点不再是p元素的子元素,而是em元素的子元素.</em></li>
 </ul>
 <p><img src="/images/JavaScript/document2.png" alt></p>
-<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;!DOCTYPE html&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">html</span>&gt;</span></span><br><span class="line"> <span class="tag">&lt;<span class="name">head</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">meta</span> <span class="attr">...</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">title</span>&gt;</span><span class="tag">&lt;/<span class="name">title</span>&gt;</span></span><br><span class="line"> <span class="tag">&lt;/<span class="name">head</span>&gt;</span></span><br><span class="line"> <span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">p</span>&gt;</span>This is the one and only Paragraph<span class="tag">&lt;/<span class="name">p</span>&gt;</span>         //添加了段落标签和段落内容</span><br><span class="line"> <span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></span><br></pre></td></tr></table></figure>
-<h2 id="对象"><a href="#对象" class="headerlink" title="对象"></a>对象</h2><hr>
+<pre><code>&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+ &lt;head&gt;
+  &lt;meta ...&gt;
+  &lt;title&gt;&lt;/title&gt;
+ &lt;/head&gt;
+ &lt;body&gt;
+  &lt;p&gt;This is the one and only Paragraph&lt;/p&gt;         //添加了段落标签和段落内容
+ &lt;/body&gt;
+&lt;/html&gt;
+</code></pre><h2 id="对象"><a href="#对象" class="headerlink" title="对象"></a>对象</h2><hr>
 <h3 id="获取对象的属性"><a href="#获取对象的属性" class="headerlink" title="获取对象的属性"></a>获取对象的属性</h3><ul>
-<li>例如,下面的HTML标记定义了一个input元素对象,它指定了四个属性和属性值:<figure class="highlight routeros"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;input <span class="attribute">type</span>=<span class="string">"button"</span> <span class="attribute">id</span>=<span class="string">"clicker"</span> <span class="attribute">name</span>=<span class="string">"clicker"</span> <span class="attribute">value</span>=<span class="string">"..."</span>&gt;</span><br></pre></td></tr></table></figure>
+<li><p>例如,下面的HTML标记定义了一个input元素对象,它指定了四个属性和属性值:</p>
+<pre><code>&lt;input type=&quot;button&quot; id=&quot;clicker&quot; name=&quot;clicker&quot; value=&quot;...&quot;&gt;
+</code></pre><p>不必为每个对象设置每个属性,多数属性都有默认值.假如HTML或脚本没有特殊要求,他们就自动设置为默认值.</p>
 </li>
-</ul>
-<p>不必为每个对象设置每个属性,多数属性都有默认值.假如HTML或脚本没有特殊要求,他们就自动设置为默认值.</p>
-<ul>
 <li><p>为了访问对象的属性,需要使用和前面对象相同的圆点定位方式.属性是从属于对象的资源,所以属性的引用就是对象引用后加属性名.</p>
 </li>
 <li><p>对于刚才的例子,属性的引用如下:</p>
-<figure class="highlight stylus"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">document.getElementById(<span class="string">"clicker"</span>).name</span><br><span class="line">document.getElementById(<span class="string">"clicker"</span>).value</span><br><span class="line">...</span><br></pre></td></tr></table></figure>
-</li>
-</ul>
-<blockquote>
+<pre><code>document.getElementById(&quot;clicker&quot;).name
+document.getElementById(&quot;clicker&quot;).value
+...
+</code></pre><blockquote>
 <p>如果JavaScript尝试引用不存在的元素的属性,就会失败或终止.因此引用之前最好先测试一下.</p>
 </blockquote>
-<ul>
-<li><p>测试引用是否安全:</p>
-<figure class="highlight kotlin"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">val</span> oClicker = document.getElementById(<span class="string">"clikcker"</span>);</span><br><span class="line">  <span class="keyword">if</span>(!oClicker) <span class="keyword">return</span>;</span><br><span class="line"><span class="keyword">var</span> sName = oClicker.name;</span><br></pre></td></tr></table></figure>
 </li>
+<li><p>测试引用是否安全:</p>
+<pre><code>val oClicker = document.getElementById(&quot;clikcker&quot;);
+if(!oClicker) return;
+var sName = oClicker.name;
+</code></pre></li>
 <li><p>在引用的过程中我们省略<code>window</code>部分(<em>完整为window.document.XXX</em>).因为一个窗口只能包含一个文档,所以文档中对象的引用可以省略window部分,但是不能省略document对象.</p>
 </li>
 </ul>
@@ -551,161 +579,156 @@ $(window).load(function(){
 <li><p>文档中的每个DOM对象几乎都接收某种类型的事件.我们只需要编写代码,告诉元素对象,只要接收到某种事件,就执行一个动作.这个动作就是执行其他的一些JavaScript代码.</p>
 </li>
 <li><p>具有事件处理能力的简单按钮:</p>
-<figure class="highlight django"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="xml">//HTML: 1.html</span></span><br><span class="line"><span class="xml"><span class="meta">&lt;!DOCTYPE html&gt;</span></span></span><br><span class="line"><span class="xml"><span class="tag">&lt;<span class="name">html</span>&gt;</span></span></span><br><span class="line"><span class="xml">  <span class="tag">&lt;<span class="name">head</span>&gt;</span></span></span><br><span class="line"><span class="xml">    <span class="tag">&lt;<span class="name">meta</span> <span class="attr">http-equiv</span>=<span class="string">"content-type"</span> <span class="attr">content</span>=<span class="string">"text/html;charset=utf-8"</span></span></span></span><br><span class="line"><span class="xml">    <span class="tag">&lt;<span class="name">title</span>&gt;</span>A Simple Button with an Event Handler<span class="tag">&lt;/<span class="name">title</span>&gt;</span></span></span><br><span class="line"><span class="xml">    <span class="tag">&lt;<span class="name">script</span> <span class="attr">type</span>=<span class="string">"text/javascript"</span> <span class="attr">src</span>=<span class="string">"jab.js"</span>&gt;</span><span class="undefined"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span></span><br><span class="line"><span class="xml">  <span class="tag">&lt;/<span class="name">head</span>&gt;</span></span></span><br><span class="line"><span class="xml">  <span class="tag">&lt;<span class="name">body</span>&gt;</span></span></span><br><span class="line"><span class="xml">    <span class="tag">&lt;<span class="name">form</span> <span class="attr">action</span>=<span class="string">""</span>&gt;</span></span></span><br><span class="line"><span class="xml">      <span class="tag">&lt;<span class="name">div</span>&gt;</span></span></span><br><span class="line"><span class="xml">        <span class="tag">&lt;<span class="name">button</span> <span class="attr">id</span>=<span class="string">"clicker"</span>&gt;</span>Click here<span class="tag">&lt;/<span class="name">button</span>&gt;</span></span></span><br><span class="line"><span class="xml">      <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span></span><br><span class="line"><span class="xml">    <span class="tag">&lt;/<span class="name">form</span>&gt;</span></span></span><br><span class="line"><span class="xml">  <span class="tag">&lt;/<span class="name">body</span>&gt;</span></span></span><br><span class="line"><span class="xml"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></span></span><br></pre></td></tr></table></figure>
+<pre><code>//HTML: 1.html
+&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;head&gt;
+  &lt;meta http-equiv=&quot;content-type&quot; content=&quot;text/html;charset=utf-8&quot;
+  &lt;title&gt;A Simple Button with an Event Handler&lt;/title&gt;
+  &lt;script type=&quot;text/javascript&quot; src=&quot;jab.js&quot;&gt;&lt;/script&gt;
+&lt;/head&gt;
+&lt;body&gt;
+  &lt;form action=&quot;&quot;&gt;
+    &lt;div&gt;
+      &lt;button id=&quot;clicker&quot;&gt;Click here&lt;/button&gt;
+    &lt;/div&gt;
+  &lt;/form&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+</code></pre><p><code>`</code><br>//JAVASCRIPT:jsb.js<br>//tell the browser to run this script when the page has finished loading<br>window.onload = applyBehavior;</p>
 </li>
 </ul>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//JAVASCRIPT:jsb.js</span></span><br><span class="line"><span class="comment">//tell the browser to run this script when the page has finished loading</span></span><br><span class="line"><span class="built_in">window</span>.onload = applyBehavior;</span><br><span class="line"></span><br><span class="line"><span class="comment">//apply behavior to the button</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">applyBehavior</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">  <span class="comment">//ensure a DOM-aware user agent</span></span><br><span class="line">  <span class="keyword">if</span>(<span class="built_in">document</span>.getElementById)&#123;</span><br><span class="line">    <span class="comment">//point to the button</span></span><br><span class="line">    <span class="keyword">var</span> oButton = <span class="built_in">document</span>.getElementById(<span class="string">'clicker'</span>);</span><br><span class="line"></span><br><span class="line">    <span class="comment">//if it exists, apply behavior</span></span><br><span class="line">    <span class="keyword">if</span>(oButton)&#123;</span><br><span class="line">      oButton.onclick = behave;</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">//what to do when the button is clicked</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">behave</span>(<span class="params">evt</span>)</span>&#123;</span><br><span class="line">  alert(<span class="string">'Ouch! '</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>//apply behavior to the button<br>function applyBehavior(){<br>  //ensure a DOM-aware user agent<br>  if(document.getElementById){<br>    //point to the button<br>    var oButton = document.getElementById(‘clicker’);</p>
+<pre><code>//if it exists, apply behavior
+if(oButton){
+  oButton.onclick = behave;
+}
+</code></pre><p>  }<br>}</p>
+<p>//what to do when the button is clicked<br>function behave(evt){<br>  alert(‘Ouch! ‘);<br>}</p>
+<pre><code>
+- 事件的名称一般为事件的类型(例如click)以及前缀on构成,表示一接收到XXX事件就XXX.
+
+## 把脚本链接到文档上
+---
+
+1. 放在外部文件中:`&lt;script type=&quot;text/javascript&quot; src=&quot;[/..../]example.js&quot;&gt;&lt;/script&gt;`
+
+2. 内嵌在html中:
+</code></pre><p><script type="text/javascript"><br>  JavaScript code here<br></script></p>
+<pre><code>
+### script标记的位置
+
+- 大多数情况下script标记放在`&lt;head&gt;`标签中,有时候会放在`&lt;body&gt;`标签.
+
+- 放在`&lt;head&gt;`中的标记一般会影响页面中的非内容设置---所谓的html指令元素,例如`&lt;meta&gt;`标记和文档题目,这里也适合放置响应页面载入或用户动作的脚本.
+
+- 如果需要在页面载入时运行脚本,以便生成页面内容,则脚本应放在文档的`&lt;body&gt;`部分
+
+### 注释
+
+- 单行注释用`//`,多行注释用`/**/`
+
+## 脚本语句的执行时间
+---
+
+- 根据脚本要完成的功能,脚本运行的时间有四种选择:
+
+1. 文档载入时
+2. 文档载入后
+3. 响应用户动作时
+4. 其他脚本语句调用时
+
+- 决定性因素是脚本语句在文档中的位置.
+
+- 除了第一个,其他三种统称为延时脚本
+
+### 页面载入后执行
+
+- 假设定义了函数`function done(){alert(&quot;....&quot;)}`,则如果想要在页面加载完成是调用它,可以用`window.onload = done;`来实现在页面加载完成时调用`done`函数. **注意此语句右侧只有函数名,没有圆括号.**
+
+## JavaScript值(数据)类型
+---
+
+|类型|示例|说明|
+|---|---|---|
+|String|&quot;Test&quot;|引号内的一系列字符|
+|Number|4.5|不在引号内的数字|
+|Boolean|false|逻辑真或假|
+|Null|null|不包含任何内容,但仍然是一个值|
+|Object||通过属性和方法定义的软件对象(数组也是对象)|
+|Function||函数定义|
+
+- 假如用户在表单的文本的输入域中输入数字,浏览器就把该数字存储为字符串类型.假如脚本要对这个数字执行算数操作,就需要将字符串转化为数字再进行操作.
+
+## 变量
+---
+
+- 创建变量:`var valueName;`  `var`关键字用于声明和初始化变量,文档中任何变量都只需要使用一次var关键字.
+
+- 变量赋值:`valueName = 45;`
+
+- **JavaScript变量可以存储任何类型的值**.在声明变量的时候,不必定义变量包含的值的类型.
+
+### 类型转换
+
+- 两个数值相加:`3 + 3`,结果为6没有问题.
+
+- 但如果其中一个数字是字符串,JavaScript就会将另一个值转换为字符串,**将这个加号操作从算数加变成字符串连接**:`3 + &quot;3&quot;`,结果为`&quot;33&quot;`. `3 + 3 + &quot;3&quot;`,结果为`&quot;63&quot;`.
+
+#### 将字符串转化为数值
+
+- JavaScript提供了两个内置函数:`parseInt()`和`parseFloat()`
+
+-
+</code></pre><p>parseInt(“43”)    //结果为42<br>parseInt(“43.33”) //结果为43,这里做截断处理</p>
+<pre><code>
+-
+</code></pre><p>parseFloat(“43”)  //结果为43<br>parseFloat(“43.33”)  //结果为43.33</p>
+<pre><code>
+#### 将数字转化为字符串
+
+- 利用JavaScript的特性:`&quot;&quot;+2500`,结果即为`&quot;2500&quot;`
+
+## 控制结构
+---
+
+- if else与C++等用法一致
+
+- for循环(i用var声明,其余与C++一致):
+</code></pre><p>for(var i = startValue; i &lt;= MaxValue; i++){<br>  …<br>}</p>
+<pre><code>
+## 函数
+---
+
+- 函数的正式语法结构:
+</code></pre><p>functoin functionName([Parameter1]…[,ParameterN]){<br>  statement[s]<br>}</p>
+<pre><code>
+### 局部变量和全局变量
+
+- 在函数外声明的变量为全局变量,在函数体中定义的变量称为局部变量.
+
+- 局部变量的作用域只局限于函数内部.
+
+- 全局变量的作用域是 **当前载入浏览器窗口或框架的文档**.因此初始全局变量后,页面中所有的脚本语句可通过全局变量名直接访问其值.但是,一旦卸载页面,在页面中定义的所有全局变量都会从内存中清除.假如某个值需要在页面卸载后继续使用,则需要使用其他技术来保存它,比如将它存储为框架集文档中的全局变量,或将它存储在cookie中.
+
+- 如果用`var`关键字在函数体中初始化了一个与全局变量同名的局部变量,则在函数体中该局部变量比全局变量优先级要高.
+
+## 数组
+---
+
+- 创建:`var Arr = new Array(100);`
+
+- 访问:`Array[0];`
+
+### 数组中的document对象
+
+- 例如,如果页面包含两个`&lt;form&gt;`标记对时,在文档中就会出现两组`&lt;form&gt;`标记.浏览器为文档使用一个from对象数组,对这些表单的引用如下:
+</code></pre><p>document.forms[0]<br>document.forms[1]</p>
+<pre><code>
+- 也可以使用DOM方法`getElementByTagName()`访问这个数组:
+</code></pre><p>var aForms = document.getElementByTagName(‘form’);<br>aForms[0]<br>aForms[1]<br><code>`</code></p>
 <ul>
-<li>事件的名称一般为事件的类型(例如click)以及前缀on构成,表示一接收到XXX事件就XXX.</li>
-</ul>
-<h2 id="把脚本链接到文档上"><a href="#把脚本链接到文档上" class="headerlink" title="把脚本链接到文档上"></a>把脚本链接到文档上</h2><hr>
-<ol>
-<li><p>放在外部文件中:<code>&lt;script type=&quot;text/javascript&quot; src=&quot;[/..../]example.js&quot;&gt;&lt;/script&gt;</code></p>
-</li>
-<li><p>内嵌在html中:</p>
-<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">script</span> <span class="attr">type</span>=<span class="string">"text/javascript"</span>&gt;</span><span class="undefined"></span></span><br><span class="line"><span class="undefined">  JavaScript code here</span></span><br><span class="line"><span class="undefined"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br></pre></td></tr></table></figure>
-</li>
-</ol>
-<h3 id="script标记的位置"><a href="#script标记的位置" class="headerlink" title="script标记的位置"></a>script标记的位置</h3><ul>
-<li><p>大多数情况下script标记放在<code>&lt;head&gt;</code>标签中,有时候会放在<code>&lt;body&gt;</code>标签.</p>
-</li>
-<li><p>放在<code>&lt;head&gt;</code>中的标记一般会影响页面中的非内容设置—所谓的html指令元素,例如<code>&lt;meta&gt;</code>标记和文档题目,这里也适合放置响应页面载入或用户动作的脚本.</p>
-</li>
-<li><p>如果需要在页面载入时运行脚本,以便生成页面内容,则脚本应放在文档的<code>&lt;body&gt;</code>部分</p>
-</li>
-</ul>
-<h3 id="注释"><a href="#注释" class="headerlink" title="注释"></a>注释</h3><ul>
-<li>单行注释用<code>//</code>,多行注释用<code>/**/</code></li>
-</ul>
-<h2 id="脚本语句的执行时间"><a href="#脚本语句的执行时间" class="headerlink" title="脚本语句的执行时间"></a>脚本语句的执行时间</h2><hr>
-<ul>
-<li>根据脚本要完成的功能,脚本运行的时间有四种选择:</li>
-</ul>
-<ol>
-<li>文档载入时</li>
-<li>文档载入后</li>
-<li>响应用户动作时</li>
-<li>其他脚本语句调用时</li>
-</ol>
-<ul>
-<li><p>决定性因素是脚本语句在文档中的位置.</p>
-</li>
-<li><p>除了第一个,其他三种统称为延时脚本</p>
-</li>
-</ul>
-<h3 id="页面载入后执行"><a href="#页面载入后执行" class="headerlink" title="页面载入后执行"></a>页面载入后执行</h3><ul>
-<li>假设定义了函数<code>function done(){alert(&quot;....&quot;)}</code>,则如果想要在页面加载完成是调用它,可以用<code>window.onload = done;</code>来实现在页面加载完成时调用<code>done</code>函数. <strong>注意此语句右侧只有函数名,没有圆括号.</strong></li>
-</ul>
-<h2 id="JavaScript值-数据-类型"><a href="#JavaScript值-数据-类型" class="headerlink" title="JavaScript值(数据)类型"></a>JavaScript值(数据)类型</h2><hr>
-<table>
-<thead>
-<tr>
-<th>类型</th>
-<th>示例</th>
-<th>说明</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>String</td>
-<td>“Test”</td>
-<td>引号内的一系列字符</td>
-</tr>
-<tr>
-<td>Number</td>
-<td>4.5</td>
-<td>不在引号内的数字</td>
-</tr>
-<tr>
-<td>Boolean</td>
-<td>false</td>
-<td>逻辑真或假</td>
-</tr>
-<tr>
-<td>Null</td>
-<td>null</td>
-<td>不包含任何内容,但仍然是一个值</td>
-</tr>
-<tr>
-<td>Object</td>
-<td></td>
-<td>通过属性和方法定义的软件对象(数组也是对象)</td>
-</tr>
-<tr>
-<td>Function</td>
-<td></td>
-<td>函数定义</td>
-</tr>
-</tbody>
-</table>
-<ul>
-<li>假如用户在表单的文本的输入域中输入数字,浏览器就把该数字存储为字符串类型.假如脚本要对这个数字执行算数操作,就需要将字符串转化为数字再进行操作.</li>
-</ul>
-<h2 id="变量"><a href="#变量" class="headerlink" title="变量"></a>变量</h2><hr>
-<ul>
-<li><p>创建变量:<code>var valueName;</code>  <code>var</code>关键字用于声明和初始化变量,文档中任何变量都只需要使用一次var关键字.</p>
-</li>
-<li><p>变量赋值:<code>valueName = 45;</code></p>
-</li>
-<li><p><strong>JavaScript变量可以存储任何类型的值</strong>.在声明变量的时候,不必定义变量包含的值的类型.</p>
-</li>
-</ul>
-<h3 id="类型转换"><a href="#类型转换" class="headerlink" title="类型转换"></a>类型转换</h3><ul>
-<li><p>两个数值相加:<code>3 + 3</code>,结果为6没有问题.</p>
-</li>
-<li><p>但如果其中一个数字是字符串,JavaScript就会将另一个值转换为字符串,<strong>将这个加号操作从算数加变成字符串连接</strong>:<code>3 + &quot;3&quot;</code>,结果为<code>&quot;33&quot;</code>. <code>3 + 3 + &quot;3&quot;</code>,结果为<code>&quot;63&quot;</code>.</p>
-</li>
-</ul>
-<h4 id="将字符串转化为数值"><a href="#将字符串转化为数值" class="headerlink" title="将字符串转化为数值"></a>将字符串转化为数值</h4><ul>
-<li><p>JavaScript提供了两个内置函数:<code>parseInt()</code>和<code>parseFloat()</code></p>
-</li>
-<li><figure class="highlight stylus"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="title">parseInt</span><span class="params">(<span class="string">"43"</span>)</span></span>    <span class="comment">//结果为42  </span></span><br><span class="line"><span class="function"><span class="title">parseInt</span><span class="params">(<span class="string">"43.33"</span>)</span></span> <span class="comment">//结果为43,这里做截断处理</span></span><br></pre></td></tr></table></figure>
-</li>
-<li><figure class="highlight stylus"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="title">parseFloat</span><span class="params">(<span class="string">"43"</span>)</span></span>  <span class="comment">//结果为43</span></span><br><span class="line"><span class="function"><span class="title">parseFloat</span><span class="params">(<span class="string">"43.33"</span>)</span></span>  <span class="comment">//结果为43.33</span></span><br></pre></td></tr></table></figure>
-</li>
-</ul>
-<h4 id="将数字转化为字符串"><a href="#将数字转化为字符串" class="headerlink" title="将数字转化为字符串"></a>将数字转化为字符串</h4><ul>
-<li>利用JavaScript的特性:<code>&quot;&quot;+2500</code>,结果即为<code>&quot;2500&quot;</code></li>
-</ul>
-<h2 id="控制结构"><a href="#控制结构" class="headerlink" title="控制结构"></a>控制结构</h2><hr>
-<ul>
-<li><p>if else与C++等用法一致</p>
-</li>
-<li><p>for循环(i用var声明,其余与C++一致):</p>
-<figure class="highlight matlab"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span>(var <span class="built_in">i</span> = startValue; <span class="built_in">i</span> &lt;= MaxValue; <span class="built_in">i</span>++)&#123;</span><br><span class="line">  ...</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-</li>
-</ul>
-<h2 id="函数"><a href="#函数" class="headerlink" title="函数"></a>函数</h2><hr>
-<ul>
-<li>函数的正式语法结构:<figure class="highlight accesslog"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">functoin functionName(<span class="string">[Parameter1]</span>...<span class="string">[,ParameterN]</span>)&#123;</span><br><span class="line">  statement<span class="string">[s]</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-</li>
-</ul>
-<h3 id="局部变量和全局变量"><a href="#局部变量和全局变量" class="headerlink" title="局部变量和全局变量"></a>局部变量和全局变量</h3><ul>
-<li><p>在函数外声明的变量为全局变量,在函数体中定义的变量称为局部变量.</p>
-</li>
-<li><p>局部变量的作用域只局限于函数内部.</p>
-</li>
-<li><p>全局变量的作用域是 <strong>当前载入浏览器窗口或框架的文档</strong>.因此初始全局变量后,页面中所有的脚本语句可通过全局变量名直接访问其值.但是,一旦卸载页面,在页面中定义的所有全局变量都会从内存中清除.假如某个值需要在页面卸载后继续使用,则需要使用其他技术来保存它,比如将它存储为框架集文档中的全局变量,或将它存储在cookie中.</p>
-</li>
-<li><p>如果用<code>var</code>关键字在函数体中初始化了一个与全局变量同名的局部变量,则在函数体中该局部变量比全局变量优先级要高.</p>
-</li>
-</ul>
-<h2 id="数组"><a href="#数组" class="headerlink" title="数组"></a>数组</h2><hr>
-<ul>
-<li><p>创建:<code>var Arr = new Array(100);</code></p>
-</li>
-<li><p>访问:<code>Array[0];</code></p>
-</li>
-</ul>
-<h3 id="数组中的document对象"><a href="#数组中的document对象" class="headerlink" title="数组中的document对象"></a>数组中的document对象</h3><ul>
-<li><p>例如,如果页面包含两个<code>&lt;form&gt;</code>标记对时,在文档中就会出现两组<code>&lt;form&gt;</code>标记.浏览器为文档使用一个from对象数组,对这些表单的引用如下:</p>
-<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">document</span><span class="selector-class">.forms</span><span class="selector-attr">[0]</span></span><br><span class="line"><span class="selector-tag">document</span><span class="selector-class">.forms</span><span class="selector-attr">[1]</span></span><br></pre></td></tr></table></figure>
-</li>
-<li><p>也可以使用DOM方法<code>getElementByTagName()</code>访问这个数组:</p>
-<figure class="highlight dart"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> aForms = <span class="built_in">document</span>.getElementByTagName(<span class="string">'form'</span>);</span><br><span class="line">aForms[<span class="number">0</span>]</span><br><span class="line">aForms[<span class="number">1</span>]</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>document对象的下标是由对象的载入顺序决定的,form对象的顺序由文档中<code>&lt;form&gt;</code>标记出现的顺序确定.</p>
-</li>
+<li>document对象的下标是由对象的载入顺序决定的,form对象的顺序由文档中<code>&lt;form&gt;</code>标记出现的顺序确定.</li>
 </ul>
 
       
@@ -842,7 +865,7 @@ $(window).load(function(){
               <img class="site-author-image" itemprop="image" src="/images/avatar.gif" alt="Fleschier">
             
               <p class="site-author-name" itemprop="name">Fleschier</p>
-              <p class="site-description motion-element" itemprop="description">每天早上醒来，你和阳光都在，就是我想要的未来。</p>
+              <p class="site-description motion-element" itemprop="description">生活是一个过程,可喜的是它不用重来。</p>
           </div>
 
           
@@ -1036,7 +1059,7 @@ $(window).load(function(){
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#浏览器窗口中的DOM"><span class="nav-number">1.</span> <span class="nav-text">浏览器窗口中的DOM</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#文档的载入"><span class="nav-number">2.</span> <span class="nav-text">文档的载入</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#简单文档"><span class="nav-number">2.1.</span> <span class="nav-text">简单文档</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#添加段落"><span class="nav-number">2.2.</span> <span class="nav-text">添加段落</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#生成新元素"><span class="nav-number">2.3.</span> <span class="nav-text">生成新元素</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#对象"><span class="nav-number">3.</span> <span class="nav-text">对象</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#获取对象的属性"><span class="nav-number">3.1.</span> <span class="nav-text">获取对象的属性</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#方法"><span class="nav-number">4.</span> <span class="nav-text">方法</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#事件"><span class="nav-number">5.</span> <span class="nav-text">事件</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#把脚本链接到文档上"><span class="nav-number">6.</span> <span class="nav-text">把脚本链接到文档上</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#script标记的位置"><span class="nav-number">6.1.</span> <span class="nav-text">script标记的位置</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#注释"><span class="nav-number">6.2.</span> <span class="nav-text">注释</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#脚本语句的执行时间"><span class="nav-number">7.</span> <span class="nav-text">脚本语句的执行时间</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#页面载入后执行"><span class="nav-number">7.1.</span> <span class="nav-text">页面载入后执行</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#JavaScript值-数据-类型"><span class="nav-number">8.</span> <span class="nav-text">JavaScript值(数据)类型</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#变量"><span class="nav-number">9.</span> <span class="nav-text">变量</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#类型转换"><span class="nav-number">9.1.</span> <span class="nav-text">类型转换</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#将字符串转化为数值"><span class="nav-number">9.1.1.</span> <span class="nav-text">将字符串转化为数值</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#将数字转化为字符串"><span class="nav-number">9.1.2.</span> <span class="nav-text">将数字转化为字符串</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#控制结构"><span class="nav-number">10.</span> <span class="nav-text">控制结构</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#函数"><span class="nav-number">11.</span> <span class="nav-text">函数</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#局部变量和全局变量"><span class="nav-number">11.1.</span> <span class="nav-text">局部变量和全局变量</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#数组"><span class="nav-number">12.</span> <span class="nav-text">数组</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#数组中的document对象"><span class="nav-number">12.1.</span> <span class="nav-text">数组中的document对象</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#浏览器窗口中的DOM"><span class="nav-number">1.</span> <span class="nav-text">浏览器窗口中的DOM</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#文档的载入"><span class="nav-number">2.</span> <span class="nav-text">文档的载入</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#简单文档"><span class="nav-number">2.1.</span> <span class="nav-text">简单文档</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#添加段落"><span class="nav-number">2.2.</span> <span class="nav-text">添加段落</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#生成新元素"><span class="nav-number">2.3.</span> <span class="nav-text">生成新元素</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#对象"><span class="nav-number">3.</span> <span class="nav-text">对象</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#获取对象的属性"><span class="nav-number">3.1.</span> <span class="nav-text">获取对象的属性</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#方法"><span class="nav-number">4.</span> <span class="nav-text">方法</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#事件"><span class="nav-number">5.</span> <span class="nav-text">事件</span></a></li></ol></div>
             
 
           </div>

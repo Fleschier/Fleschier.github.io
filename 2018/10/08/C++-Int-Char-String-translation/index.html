@@ -117,18 +117,18 @@
 
 <link href="/js/google-code-prettify/tomorrow.min.css" type="text/css" rel="stylesheet">
 
-  <meta name="description" content="C++提供了一些功能强大的函数来高效地完成这些转化 string转char 使用c_str()方法   示例： 123string s = &quot;abcd&quot;;char p[10];p = (char*)s.c_str();  上面的强制类型转换在 不修改字符串内容的情况下 是可以省略的。因为c_str()方法的返回值类型为const char*，返回的是一个不可修改的指向该字符串的指针。    使用d">
+  <meta name="description" content="C++提供了一些功能强大的函数来高效地完成这些转化 string转char 使用c_str()方法   示例： string s = &amp;quot;abcd&amp;quot;; char p[10]; p = (char*)s.c_str();  上面的强制类型转换在 不修改字符串内容的情况下 是可以省略的。因为c_str()方法的返回值类型为const char*，返回的是一个不可修改的指向该字符串的指">
 <meta name="keywords" content="๑C++">
 <meta property="og:type" content="article">
 <meta property="og:title" content="C++学习笔记——数值类型,char和string的相互转化问题">
 <meta property="og:url" content="https://fleschier.github.io/2018/10/08/C++-Int-Char-String-translation/index.html">
 <meta property="og:site_name" content="Fleschier 渐寒๑">
-<meta property="og:description" content="C++提供了一些功能强大的函数来高效地完成这些转化 string转char 使用c_str()方法   示例： 123string s = &quot;abcd&quot;;char p[10];p = (char*)s.c_str();  上面的强制类型转换在 不修改字符串内容的情况下 是可以省略的。因为c_str()方法的返回值类型为const char*，返回的是一个不可修改的指向该字符串的指针。    使用d">
+<meta property="og:description" content="C++提供了一些功能强大的函数来高效地完成这些转化 string转char 使用c_str()方法   示例： string s = &amp;quot;abcd&amp;quot;; char p[10]; p = (char*)s.c_str();  上面的强制类型转换在 不修改字符串内容的情况下 是可以省略的。因为c_str()方法的返回值类型为const char*，返回的是一个不可修改的指向该字符串的指">
 <meta property="og:locale" content="default">
 <meta property="og:updated_time" content="2018-11-21T06:40:17.839Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="C++学习笔记——数值类型,char和string的相互转化问题">
-<meta name="twitter:description" content="C++提供了一些功能强大的函数来高效地完成这些转化 string转char 使用c_str()方法   示例： 123string s = &quot;abcd&quot;;char p[10];p = (char*)s.c_str();  上面的强制类型转换在 不修改字符串内容的情况下 是可以省略的。因为c_str()方法的返回值类型为const char*，返回的是一个不可修改的指向该字符串的指针。    使用d">
+<meta name="twitter:description" content="C++提供了一些功能强大的函数来高效地完成这些转化 string转char 使用c_str()方法   示例： string s = &amp;quot;abcd&amp;quot;; char p[10]; p = (char*)s.c_str();  上面的强制类型转换在 不修改字符串内容的情况下 是可以省略的。因为c_str()方法的返回值类型为const char*，返回的是一个不可修改的指向该字符串的指">
 
 
 
@@ -361,7 +361,7 @@ $(window).load(function(){
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Fleschier">
-      <meta itemprop="description" content="每天早上醒来，你和阳光都在，就是我想要的未来。">
+      <meta itemprop="description" content="生活是一个过程,可喜的是它不用重来。">
       <meta itemprop="image" content="/images/avatar.gif">
     </span>
 
@@ -484,8 +484,10 @@ $(window).load(function(){
 </ol>
 <ul>
 <li><p>示例：</p>
-<figure class="highlight abnf"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">string s = <span class="string">"abcd"</span><span class="comment">;</span></span><br><span class="line">char p[<span class="number">10</span>]<span class="comment">;</span></span><br><span class="line"><span class="attribute">p</span> = (char*)s.c_str()<span class="comment">;</span></span><br></pre></td></tr></table></figure>
-</li>
+<pre><code>string s = &quot;abcd&quot;;
+char p[10];
+p = (char*)s.c_str();
+</code></pre></li>
 <li><p>上面的强制类型转换在 <strong>不修改字符串内容的情况下</strong> 是可以省略的。因为<code>c_str()</code>方法的返回值类型为<code>const char*</code>，返回的是一个不可修改的指向该字符串的指针。</p>
 </li>
 </ul>
@@ -502,8 +504,11 @@ $(window).load(function(){
 <li><p><code>copy()</code>方法与上面两种有所不同，它是拷贝函数，这只是他的一种用法。</p>
 </li>
 <li><p>实例:</p>
-<figure class="highlight lsl"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">string</span> s = <span class="string">"abcd"</span>;</span><br><span class="line">char p[<span class="number">5</span>];</span><br><span class="line">s.copy(p, <span class="number">4</span>, <span class="number">0</span>);  <span class="comment">//4代表拷贝四个字符，0代表写入的位置</span></span><br><span class="line">*(p + <span class="number">4</span>) = '\<span class="number">0</span>';  <span class="comment">//拷贝的字符串需要手动加上结束标记</span></span><br></pre></td></tr></table></figure>
-</li>
+<pre><code>string s = &quot;abcd&quot;;
+char p[5];
+s.copy(p, 4, 0);  //4代表拷贝四个字符，0代表写入的位置
+*(p + 4) = &#39;\0&#39;;  //拷贝的字符串需要手动加上结束标记
+</code></pre></li>
 </ul>
 <h3 id="char转string"><a href="#char转string" class="headerlink" title="char转string"></a>char转string</h3><ul>
 <li>对于已经存在的<code>char*</code>，可以直接赋值给string类型的数据</li>
@@ -516,8 +521,13 @@ $(window).load(function(){
 <li><p>需要引入头文件<code>#include&lt;string&gt;</code></p>
 </li>
 </ul>
-<p>-<br><figure class="highlight autoit"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;string&gt;</span></span></span><br><span class="line">...</span><br><span class="line"><span class="built_in">int</span> a = <span class="number">10</span><span class="comment">;</span></span><br><span class="line"><span class="built_in">string</span> s = to_string(a)<span class="comment">;</span></span><br><span class="line">...</span><br></pre></td></tr></table></figure></p>
-<h3 id="数值类型转char"><a href="#数值类型转char" class="headerlink" title="数值类型转char"></a>数值类型转char</h3><ul>
+<p>-</p>
+<pre><code>#include&lt;string&gt;
+...
+int a = 10;
+string s = to_string(a);
+...
+</code></pre><h3 id="数值类型转char"><a href="#数值类型转char" class="headerlink" title="数值类型转char"></a>数值类型转char</h3><ul>
 <li><p>这里就需要用到强大的转换函数<code>itoa()</code>。</p>
 </li>
 <li><p>还有<code>ltoa</code>,<code>ultoa</code>等函数可以将 <strong>任意类型(整型、长整型、浮点型等)的数字</strong> 转换为字符串。</p>
@@ -525,12 +535,20 @@ $(window).load(function(){
 <li><p>需要引入头文件<code>stdlib.h</code></p>
 </li>
 <li><p>示例：</p>
-<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;stdlib.h&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line">  <span class="keyword">int</span> i = <span class="number">100</span>;</span><br><span class="line">  <span class="keyword">char</span> p[<span class="number">10</span>];</span><br><span class="line">  itoa(i, p, <span class="number">10</span>);   <span class="comment">//说明：第一个参数为待转换的数字，第二个参数为待存储数值的char数组指针，第三个参数为待转换数字的进制，这里为十进制。</span></span><br><span class="line">  <span class="built_in">cout</span> &lt;&lt; p &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-</li>
-</ul>
-<blockquote>
+<pre><code>#include&lt;iostream&gt;
+#include&lt;stdlib.h&gt;
+using namespace std;
+int main(){
+int i = 100;
+char p[10];
+itoa(i, p, 10);   //说明：第一个参数为待转换的数字，第二个参数为待存储数值的char数组指针，第三个参数为待转换数字的进制，这里为十进制。
+cout &lt;&lt; p &lt;&lt; endl;
+}
+</code></pre><blockquote>
 <p>itoa并不是一个标准的C函数，它是Windows特有的，如果要写跨平台的程序，请用sprintf。</p>
 </blockquote>
+</li>
+</ul>
 <h3 id="字符串转数值类型"><a href="#字符串转数值类型" class="headerlink" title="字符串转数值类型"></a>字符串转数值类型</h3><ul>
 <li><p>函数原型为 <code>int atoi (const char * str);</code>    //参数为指针类型，如果为string需要在变量名前加取址符。</p>
 </li>
@@ -672,7 +690,7 @@ $(window).load(function(){
               <img class="site-author-image" itemprop="image" src="/images/avatar.gif" alt="Fleschier">
             
               <p class="site-author-name" itemprop="name">Fleschier</p>
-              <p class="site-description motion-element" itemprop="description">每天早上醒来，你和阳光都在，就是我想要的未来。</p>
+              <p class="site-description motion-element" itemprop="description">生活是一个过程,可喜的是它不用重来。</p>
           </div>
 
           

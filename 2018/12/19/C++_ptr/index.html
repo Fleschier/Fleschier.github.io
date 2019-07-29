@@ -117,18 +117,18 @@
 
 <link href="/js/google-code-prettify/tomorrow.min.css" type="text/css" rel="stylesheet">
 
-  <meta name="description" content="典型错误  12long * fellow;*fellow = 23333;  fellow的确是一个指针,但是它指向的地址还没确定,那么23333会被存放到哪里呢?我们也不知道,这就会引发一个编译错误.  指针使用的金科玉律: 一定要在对指针解除引用运算符(*)之前,将指针初始化为一个确定的,适当的地址.    ——–from C++ Primer Plus  指针和数字  例子:12int *">
+  <meta name="description" content="典型错误  long * fellow; *fellow = 23333;  fellow的确是一个指针,但是它指向的地址还没确定,那么23333会被存放到哪里呢?我们也不知道,这就会引发一个编译错误.  指针使用的金科玉律: 一定要在对指针解除引用运算符(*)之前,将指针初始化为一个确定的,适当的地址.    ——–from C++ Primer Plus  指针和数字  例子: int * p">
 <meta name="keywords" content="๑C++">
 <meta property="og:type" content="article">
 <meta property="og:title" content="C++学习笔记——指针">
 <meta property="og:url" content="https://fleschier.github.io/2018/12/19/C++_ptr/index.html">
 <meta property="og:site_name" content="Fleschier 渐寒๑">
-<meta property="og:description" content="典型错误  12long * fellow;*fellow = 23333;  fellow的确是一个指针,但是它指向的地址还没确定,那么23333会被存放到哪里呢?我们也不知道,这就会引发一个编译错误.  指针使用的金科玉律: 一定要在对指针解除引用运算符(*)之前,将指针初始化为一个确定的,适当的地址.    ——–from C++ Primer Plus  指针和数字  例子:12int *">
+<meta property="og:description" content="典型错误  long * fellow; *fellow = 23333;  fellow的确是一个指针,但是它指向的地址还没确定,那么23333会被存放到哪里呢?我们也不知道,这就会引发一个编译错误.  指针使用的金科玉律: 一定要在对指针解除引用运算符(*)之前,将指针初始化为一个确定的,适当的地址.    ——–from C++ Primer Plus  指针和数字  例子: int * p">
 <meta property="og:locale" content="default">
 <meta property="og:updated_time" content="2018-12-19T14:32:04.006Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="C++学习笔记——指针">
-<meta name="twitter:description" content="典型错误  12long * fellow;*fellow = 23333;  fellow的确是一个指针,但是它指向的地址还没确定,那么23333会被存放到哪里呢?我们也不知道,这就会引发一个编译错误.  指针使用的金科玉律: 一定要在对指针解除引用运算符(*)之前,将指针初始化为一个确定的,适当的地址.    ——–from C++ Primer Plus  指针和数字  例子:12int *">
+<meta name="twitter:description" content="典型错误  long * fellow; *fellow = 23333;  fellow的确是一个指针,但是它指向的地址还没确定,那么23333会被存放到哪里呢?我们也不知道,这就会引发一个编译错误.  指针使用的金科玉律: 一定要在对指针解除引用运算符(*)之前,将指针初始化为一个确定的,适当的地址.    ——–from C++ Primer Plus  指针和数字  例子: int * p">
 
 
 
@@ -361,7 +361,7 @@ $(window).load(function(){
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Fleschier">
-      <meta itemprop="description" content="每天早上醒来，你和阳光都在，就是我想要的未来。">
+      <meta itemprop="description" content="生活是一个过程,可喜的是它不用重来。">
       <meta itemprop="image" content="/images/avatar.gif">
     </span>
 
@@ -468,8 +468,9 @@ $(window).load(function(){
       
         <h2 id="典型错误"><a href="#典型错误" class="headerlink" title="典型错误"></a>典型错误</h2><hr>
 <ul>
-<li><figure class="highlight abnf"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">long * fellow<span class="comment">;</span></span><br><span class="line">*fellow = <span class="number">23333</span><span class="comment">;</span></span><br></pre></td></tr></table></figure>
-</li>
+<li><pre><code>long * fellow;
+*fellow = 23333;
+</code></pre></li>
 <li><p>fellow的确是一个指针,但是它指向的地址还没确定,那么23333会被存放到哪里呢?我们也不知道,这就会引发一个编译错误.</p>
 </li>
 <li><p><strong>指针使用的金科玉律: 一定要在对指针解除引用运算符(*)之前,将指针初始化为一个确定的,适当的地址.</strong></p>
@@ -480,13 +481,15 @@ $(window).load(function(){
 </blockquote>
 <h2 id="指针和数字"><a href="#指针和数字" class="headerlink" title="指针和数字"></a>指针和数字</h2><hr>
 <ul>
-<li>例子:<figure class="highlight abnf"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">int * pt<span class="comment">;</span></span><br><span class="line"><span class="attribute">pt</span> = <span class="number">0</span>xB8000000<span class="comment">;</span></span><br></pre></td></tr></table></figure>
+<li><p>例子:</p>
+<pre><code>int * pt;
+pt = 0xB8000000;
+</code></pre><p>在这里左边是一个int类型的指针,而右边是一个 <strong>整数</strong>, 0xB8000000是老式计算机系统中组合段的偏移地址,但是在这条语句中编译器并不知道这是个地址,因此C++编译器会报错.</p>
 </li>
-</ul>
-<p>在这里左边是一个int类型的指针,而右边是一个 <strong>整数</strong>, 0xB8000000是老式计算机系统中组合段的偏移地址,但是在这条语句中编译器并不知道这是个地址,因此C++编译器会报错.</p>
-<ul>
-<li>正确的写法应该是:<figure class="highlight abnf"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">int * pt<span class="comment">;</span></span><br><span class="line"><span class="attribute">pt</span> = (int *) <span class="number">0</span>xB8000000<span class="comment">;</span></span><br></pre></td></tr></table></figure>
-</li>
+<li><p>正确的写法应该是:</p>
+<pre><code>int * pt;
+pt = (int *) 0xB8000000;    
+</code></pre></li>
 </ul>
 <h2 id="使用new来分配内存"><a href="#使用new来分配内存" class="headerlink" title="使用new来分配内存"></a>使用new来分配内存</h2><hr>
 <ul>
@@ -495,35 +498,43 @@ $(window).load(function(){
 <li><p>new运算符同时要配合delete来使用</p>
 </li>
 <li><p>例子:</p>
-<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">int</span> * pt = <span class="keyword">new</span> <span class="keyword">int</span>;</span><br><span class="line">...</span><br><span class="line"><span class="keyword">delete</span> pt;</span><br></pre></td></tr></table></figure>
+<pre><code>int * pt = new int;
+...
+delete pt;
+</code></pre><p>这将释放pt指向的内存块,但不会删除指针pt本身,它的值也没有改变.</p>
 </li>
-</ul>
-<p>这将释放pt指向的内存块,但不会删除指针pt本身,它的值也没有改变.</p>
-<ul>
 <li><p>一点要配对地使用new 和 delete,否则会发生内存泄漏(memory leak).</p>
 </li>
 <li><p>不要尝试释放已经释放的内存块,这会导致很严重的不确定性.</p>
 </li>
 <li><p>不能使用delete来释放声明变量所获得的内存:(<strong>也就是delete只能用来删除new分配的内存</strong>)</p>
-<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">int</span> * ps = <span class="keyword">new</span> <span class="keyword">int</span>;   <span class="comment">//ok</span></span><br><span class="line"><span class="keyword">delete</span> ps;      <span class="comment">//ok</span></span><br><span class="line">delte ps;     <span class="comment">//not ok now</span></span><br><span class="line"><span class="keyword">int</span> jugs = <span class="number">5</span>;       <span class="comment">//ok</span></span><br><span class="line"><span class="keyword">int</span> * pi = &amp;jugs;   <span class="comment">//ok</span></span><br><span class="line"><span class="keyword">delete</span> pi;      <span class="comment">//not allowed now, memory not allocated by 'new'</span></span><br></pre></td></tr></table></figure>
-</li>
+<pre><code>int * ps = new int;   //ok
+delete ps;      //ok
+delte ps;     //not ok now
+int jugs = 5;       //ok
+int * pi = &amp;jugs;   //ok
+delete pi;      //not allowed now, memory not allocated by &#39;new&#39;
+</code></pre></li>
 </ul>
 <h2 id="使用new创建动态数组"><a href="#使用new创建动态数组" class="headerlink" title="使用new创建动态数组"></a>使用new创建动态数组</h2><hr>
 <ul>
-<li><figure class="highlight dart"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">int</span> <span class="built_in">num</span> = <span class="number">100</span>;</span><br><span class="line"><span class="built_in">int</span> * psome = <span class="keyword">new</span> <span class="built_in">int</span>[<span class="built_in">num</span>];</span><br><span class="line"><span class="comment">//可以使用psome[0]这样的形式来访问数组元素,与普通的数组无异</span></span><br><span class="line">...</span><br><span class="line">delete []psome;</span><br></pre></td></tr></table></figure>
+<li><pre><code>int num = 100;
+int * psome = new int[num];
+//可以使用psome[0]这样的形式来访问数组元素,与普通的数组无异
+...
+delete []psome;
+</code></pre><p><strong>delete的方括号告诉程序,应该释放整个数组,而不是仅仅是指针指向的元素</strong></p>
 </li>
-</ul>
-<p><strong>delete的方括号告诉程序,应该释放整个数组,而不是仅仅是指针指向的元素</strong></p>
-<ul>
 <li><p>C++将数组名解释为地址(一般情况)</p>
 </li>
 <li><p>数组名被解释为其第一个元素的地址,而对数组名应用取地址符时,得到的是整个数组的地址.</p>
-<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">short</span> tell[<span class="number">10</span>];</span><br><span class="line"><span class="built_in">cout</span> &lt;&lt; tell &lt;&lt; <span class="built_in">endl</span>;   <span class="comment">//display &amp;tell[0]</span></span><br><span class="line"><span class="built_in">cout</span> &lt;&lt; &amp;tell &lt;&lt; <span class="built_in">endl</span>;  <span class="comment">//display address of whole array</span></span><br></pre></td></tr></table></figure>
+<pre><code>short tell[10];
+cout &lt;&lt; tell &lt;&lt; endl;   //display &amp;tell[0]
+cout &lt;&lt; &amp;tell &lt;&lt; endl;  //display address of whole array
+</code></pre><p>上面这个例子中,从数值上来说,这两个地址相同;但从概念上来说,<code>&amp;tell[0]</code>(即tell)是一个2字节内存块地址,<strong>而&amp;tell是一个20字节内存块的地址</strong>.因此,表达式tell+1将地址的值加2,而表达式&amp;tell+1将地址的值加20.</p>
 </li>
-</ul>
-<p>上面这个例子中,从数值上来说,这两个地址相同;但从概念上来说,<code>&amp;tell[0]</code>(即tell)是一个2字节内存块地址,<strong>而&amp;tell是一个20字节内存块的地址</strong>.因此,表达式tell+1将地址的值加2,而表达式&amp;tell+1将地址的值加20.</p>
-<ul>
-<li>换句话说:<strong>tell是一个short指针(<em>short),而&amp;tell是一个这样的指针,即指向包含20个元素的short数组(short(</em>)[20]).</strong> 这种指针可以这样初始化:<code>short (*pas)[20] = &amp;tell</code>.这里pas的类型为<code>short (*)[20]</code></li>
+<li><p>换句话说:<strong>tell是一个short指针(<em>short),而&amp;tell是一个这样的指针,即指向包含20个元素的short数组(short(</em>)[20]).</strong> 这种指针可以这样初始化:<code>short (*pas)[20] = &amp;tell</code>.这里pas的类型为<code>short (*)[20]</code></p>
+</li>
 </ul>
 <h2 id="小结"><a href="#小结" class="headerlink" title="小结"></a>小结</h2><hr>
 <ul>
@@ -665,7 +676,7 @@ $(window).load(function(){
               <img class="site-author-image" itemprop="image" src="/images/avatar.gif" alt="Fleschier">
             
               <p class="site-author-name" itemprop="name">Fleschier</p>
-              <p class="site-description motion-element" itemprop="description">每天早上醒来，你和阳光都在，就是我想要的未来。</p>
+              <p class="site-description motion-element" itemprop="description">生活是一个过程,可喜的是它不用重来。</p>
           </div>
 
           

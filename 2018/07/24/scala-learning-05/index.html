@@ -361,7 +361,7 @@ $(window).load(function(){
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Fleschier">
-      <meta itemprop="description" content="每天早上醒来，你和阳光都在，就是我想要的未来。">
+      <meta itemprop="description" content="生活是一个过程,可喜的是它不用重来。">
       <meta itemprop="image" content="/images/avatar.gif">
     </span>
 
@@ -499,8 +499,9 @@ $(window).load(function(){
 </ul>
 <h4 id="数组缓冲-ArrayBuffer"><a href="#数组缓冲-ArrayBuffer" class="headerlink" title="数组缓冲(ArrayBuffer)"></a>数组缓冲(ArrayBuffer)</h4><ul>
 <li><p>创建数组缓冲的时候不需要指定长度，只要给定类型</p>
-<figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">import scala.collection.mutable.ArrayBuffer</span><br><span class="line">val buf = new ArrayBuffer[<span class="string">Int</span>](<span class="link"></span>)</span><br></pre></td></tr></table></figure>
-</li>
+<pre><code>import scala.collection.mutable.ArrayBuffer
+val buf = new ArrayBuffer[Int]()
+</code></pre></li>
 <li><p>使用<code>+=</code>方法来追加元素</p>
 </li>
 <li><p>所有的数组的常规操作都是可以用的</p>
@@ -510,10 +511,11 @@ $(window).load(function(){
 <li><p>StringOps实现了很多序列的方法。由于Predef有一个从String到StringOps的隐式转换，可以将任何字符串当做序列来处理</p>
 </li>
 <li><p>例如:</p>
-<figure class="highlight ruby"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">hasUpperCase</span><span class="params">(<span class="symbol">s:</span> String)</span></span> = s.exists(<span class="number">_</span>.isUpper)</span><br><span class="line">hasUpperCase(<span class="string">"Robert Frost"</span>)</span><br></pre></td></tr></table></figure>
+<pre><code>def hasUpperCase(s: String) = s.exists(_.isUpper)
+hasUpperCase(&quot;Robert Frost&quot;)
+</code></pre><p>这里由于String类本身并没有任何名为<code>exists</code>的方法，但是StringOps有，通过隐式转换将s转换成StringOps来实现</p>
 </li>
 </ul>
-<p>这里由于String类本身并没有任何名为<code>exists</code>的方法，但是StringOps有，通过隐式转换将s转换成StringOps来实现</p>
 <h3 id="集和映射"><a href="#集和映射" class="headerlink" title="集和映射"></a>集和映射</h3><hr>
 <h4 id="使用集"><a href="#使用集" class="headerlink" title="使用集"></a>使用集</h4><ul>
 <li><p>集的关键特征是它们会确保在同一时刻，以<code>==</code>为标准，集里的每个对象都最多出现一次</p>
@@ -525,8 +527,18 @@ $(window).load(function(){
 <li><p>映射使用键来索引对应的值</p>
 </li>
 <li><p>下面是一个统计每个单词在字符串中出现次数的方法：</p>
-<figure class="highlight arduino"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">def countWords(<span class="built_in">text</span>: <span class="keyword">String</span>) = &#123;</span><br><span class="line">  val counts = <span class="keyword">mutable</span>.Map.empty[<span class="keyword">String</span>,Int]</span><br><span class="line">  <span class="built_in">for</span> (rawWord &lt;- <span class="built_in">text</span>.split(<span class="string">"[ ,!.]+"</span>))&#123;</span><br><span class="line">    val <span class="keyword">word</span> = rawWord.toLowerCase <span class="comment">// 统一变为小写字母</span></span><br><span class="line">    val oldCount =</span><br><span class="line">      <span class="built_in">if</span>(counts.contains(<span class="keyword">word</span>)) counts(<span class="keyword">word</span>)</span><br><span class="line">      <span class="built_in">else</span> <span class="number">0</span></span><br><span class="line">    counts += (<span class="keyword">word</span> -&gt; (oldCount + <span class="number">1</span>))</span><br><span class="line">  &#125;</span><br><span class="line">  counts</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-</li>
+<pre><code>def countWords(text: String) = {
+val counts = mutable.Map.empty[String,Int]
+for (rawWord &lt;- text.split(&quot;[ ,!.]+&quot;)){
+  val word = rawWord.toLowerCase // 统一变为小写字母
+  val oldCount =
+    if(counts.contains(word)) counts(word)
+    else 0
+  counts += (word -&gt; (oldCount + 1))
+}
+counts
+}
+</code></pre></li>
 <li><p>映射的方法见博客<a href="https://fleschier.github.io/2018/07/Scala-infos/">方法查询</a></p>
 </li>
 <li><p>可变集合和可变映射的工厂方法都采用了hash的技术。例如<code>scala.collection.mutable.Set()</code>这个工厂方法返回一个<code>scala.collection.mutable.HashSet</code>。同理， <code>scala.collection.mutable.Map()</code>这个工厂方法返回一个<code>scala.collection.mutable.HashMap</code></p>
@@ -599,8 +611,8 @@ $(window).load(function(){
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2018/07/24/scala-learning-04/" rel="next" title="《Scala编程》阅读记录——列表进阶">
-                <i class="fa fa-chevron-left"></i> 《Scala编程》阅读记录——列表进阶
+              <a href="/2018/07/23/windows-realated/" rel="next" title="Windows10使用过程中遇到的一些坑">
+                <i class="fa fa-chevron-left"></i> Windows10使用过程中遇到的一些坑
               </a>
             
           </div>
@@ -609,8 +621,8 @@ $(window).load(function(){
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2018/09/03/Hexo-rebuild/" rel="prev" title="hexo重新构建博客">
-                hexo重新构建博客 <i class="fa fa-chevron-right"></i>
+              <a href="/2018/07/24/scala-learning-04/" rel="prev" title="《Scala编程》阅读记录——列表进阶">
+                《Scala编程》阅读记录——列表进阶 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -673,7 +685,7 @@ $(window).load(function(){
               <img class="site-author-image" itemprop="image" src="/images/avatar.gif" alt="Fleschier">
             
               <p class="site-author-name" itemprop="name">Fleschier</p>
-              <p class="site-description motion-element" itemprop="description">每天早上醒来，你和阳光都在，就是我想要的未来。</p>
+              <p class="site-description motion-element" itemprop="description">生活是一个过程,可喜的是它不用重来。</p>
           </div>
 
           

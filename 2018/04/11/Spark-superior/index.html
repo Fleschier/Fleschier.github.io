@@ -361,7 +361,7 @@ $(window).load(function(){
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Fleschier">
-      <meta itemprop="description" content="每天早上醒来，你和阳光都在，就是我想要的未来。">
+      <meta itemprop="description" content="生活是一个过程,可喜的是它不用重来。">
       <meta itemprop="image" content="/images/avatar.gif">
     </span>
 
@@ -493,18 +493,33 @@ $(window).load(function(){
 <li><p>Dataset的定义中还提到了DataFrame，DataFrame是特殊的Dataset，它在编译时不会对模式进行检测。在未来版本的Spark，Dataset将会替代RDD成为我们开发编程使用的API。</p>
 </li>
 </ul>
-<h3 id="创建DataFrame"><a href="#创建DataFrame" class="headerlink" title="创建DataFrame"></a>创建DataFrame</h3><figure class="highlight stylus"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">import org<span class="selector-class">.apache</span><span class="selector-class">.spark</span><span class="selector-class">.sql</span><span class="selector-class">.SparkSession</span></span><br><span class="line">...</span><br><span class="line">val sparkses = SparkSession</span><br><span class="line">				.builder()</span><br><span class="line">                .getOrCreate() <span class="comment">//这两个为必须有的</span></span><br><span class="line">val df = sparkses<span class="selector-class">.read</span><span class="selector-class">.csv</span>(<span class="string">"...filename.csv"</span>)</span><br><span class="line"><span class="comment">//这里read后面的方法名称与具体要读的文件类型有关</span></span><br><span class="line">df.show()  <span class="comment">//打印内容</span></span><br></pre></td></tr></table></figure>
-<h3 id="创建DataSet"><a href="#创建DataSet" class="headerlink" title="创建DataSet"></a>创建DataSet</h3><ul>
+<h3 id="创建DataFrame"><a href="#创建DataFrame" class="headerlink" title="创建DataFrame"></a>创建DataFrame</h3><pre><code>import org.apache.spark.sql.SparkSession
+...
+val sparkses = SparkSession
+                .builder()
+                .getOrCreate() //这两个为必须有的
+val df = sparkses.read.csv(&quot;...filename.csv&quot;)
+//这里read后面的方法名称与具体要读的文件类型有关
+df.show()  //打印内容
+</code></pre><h3 id="创建DataSet"><a href="#创建DataSet" class="headerlink" title="创建DataSet"></a>创建DataSet</h3><ul>
 <li>方法一：创建case class （对于复杂的数据没有成功）</li>
 <li><p>例如</p>
-<figure class="highlight fortran"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">val sparkses = SparkSession</span><br><span class="line">				.builder()</span><br><span class="line">                .getOrCreate()</span><br><span class="line"><span class="keyword">case</span> <span class="keyword">class</span> KeyValue(key: <span class="built_in">Int</span>, <span class="keyword">value</span>: String)</span><br><span class="line"><span class="keyword">import</span> sparkses.<span class="keyword">implicit</span>._   //引入隐式转换库</span><br><span class="line">val df = Seq((<span class="number">1</span>,<span class="string">"asdf"</span>),(<span class="number">2</span>,<span class="string">"34234"</span>)).toDF(<span class="string">"key"</span>, <span class="string">"value"</span>)</span><br><span class="line">val ds = df.as[KeyValue]</span><br><span class="line">// org.apache.spark.sql.Dataset[KeyValue] = [key: <span class="built_in">int</span>, <span class="keyword">value</span>: string]</span><br></pre></td></tr></table></figure>
-</li>
+<pre><code>val sparkses = SparkSession
+              .builder()
+              .getOrCreate()
+case class KeyValue(key: Int, value: String)
+import sparkses.implicit._   //引入隐式转换库
+val df = Seq((1,&quot;asdf&quot;),(2,&quot;34234&quot;)).toDF(&quot;key&quot;, &quot;value&quot;)
+val ds = df.as[KeyValue]
+// org.apache.spark.sql.Dataset[KeyValue] = [key: int, value: string]
+</code></pre></li>
 <li><p>case class的参数上限为22</p>
 </li>
 <li><p>方法二：以元组隐式转化</p>
 </li>
-<li>例：<figure class="highlight autoit"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">val tupDs = df.as[(<span class="built_in">Int</span>,<span class="built_in">String</span>)]</span><br><span class="line">// org.apache.spark.sql.Dataset[(<span class="built_in">Int</span>, <span class="built_in">String</span>)] = [_1: <span class="built_in">int</span>, _2: <span class="built_in">string</span>]</span><br></pre></td></tr></table></figure>
-</li>
+<li>例：<pre><code>val tupDs = df.as[(Int,String)]
+// org.apache.spark.sql.Dataset[(Int, String)] = [_1: int, _2: string]
+</code></pre></li>
 </ul>
 <p><br></p>
 <blockquote>
@@ -571,8 +586,8 @@ $(window).load(function(){
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2018/04/07/SQL-quary/" rel="next" title="数据库SQL语句">
-                <i class="fa fa-chevron-left"></i> 数据库SQL语句
+              <a href="/2018/04/11/Spark-learning/" rel="next" title="Spark学习笔记——基础">
+                <i class="fa fa-chevron-left"></i> Spark学习笔记——基础
               </a>
             
           </div>
@@ -581,8 +596,8 @@ $(window).load(function(){
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2018/04/11/Spark-learning/" rel="prev" title="Spark学习笔记——基础">
-                Spark学习笔记——基础 <i class="fa fa-chevron-right"></i>
+              <a href="/2018/04/11/Git-and-Github/" rel="prev" title="git 与 github 随笔">
+                git 与 github 随笔 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -645,7 +660,7 @@ $(window).load(function(){
               <img class="site-author-image" itemprop="image" src="/images/avatar.gif" alt="Fleschier">
             
               <p class="site-author-name" itemprop="name">Fleschier</p>
-              <p class="site-description motion-element" itemprop="description">每天早上醒来，你和阳光都在，就是我想要的未来。</p>
+              <p class="site-description motion-element" itemprop="description">生活是一个过程,可喜的是它不用重来。</p>
           </div>
 
           

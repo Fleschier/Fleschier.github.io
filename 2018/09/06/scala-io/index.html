@@ -117,18 +117,18 @@
 
 <link href="/js/google-code-prettify/tomorrow.min.css" type="text/css" rel="stylesheet">
 
-  <meta name="description" content="控制台IO 调用java的IO库 scala使用java的io类来读取  需要引入java的io类：import java.io._  使用Java的BufferedReader和InputStreamReader方法来实现  例： 12val br = new BufferedReader(new InputStreamReader(System.in))val x = br.readLine(">
+  <meta name="description" content="控制台IO 调用java的IO库 scala使用java的io类来读取  需要引入java的io类：import java.io._  使用Java的BufferedReader和InputStreamReader方法来实现  例： val br = new BufferedReader(new InputStreamReader(System.in)) val x = br.readLine()">
 <meta name="keywords" content="๑Scala">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Scala IO 记录">
 <meta property="og:url" content="https://fleschier.github.io/2018/09/06/scala-io/index.html">
 <meta property="og:site_name" content="Fleschier 渐寒๑">
-<meta property="og:description" content="控制台IO 调用java的IO库 scala使用java的io类来读取  需要引入java的io类：import java.io._  使用Java的BufferedReader和InputStreamReader方法来实现  例： 12val br = new BufferedReader(new InputStreamReader(System.in))val x = br.readLine(">
+<meta property="og:description" content="控制台IO 调用java的IO库 scala使用java的io类来读取  需要引入java的io类：import java.io._  使用Java的BufferedReader和InputStreamReader方法来实现  例： val br = new BufferedReader(new InputStreamReader(System.in)) val x = br.readLine()">
 <meta property="og:locale" content="default">
 <meta property="og:updated_time" content="2018-11-21T06:40:40.695Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Scala IO 记录">
-<meta name="twitter:description" content="控制台IO 调用java的IO库 scala使用java的io类来读取  需要引入java的io类：import java.io._  使用Java的BufferedReader和InputStreamReader方法来实现  例： 12val br = new BufferedReader(new InputStreamReader(System.in))val x = br.readLine(">
+<meta name="twitter:description" content="控制台IO 调用java的IO库 scala使用java的io类来读取  需要引入java的io类：import java.io._  使用Java的BufferedReader和InputStreamReader方法来实现  例： val br = new BufferedReader(new InputStreamReader(System.in)) val x = br.readLine()">
 
 
 
@@ -361,7 +361,7 @@ $(window).load(function(){
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Fleschier">
-      <meta itemprop="description" content="每天早上醒来，你和阳光都在，就是我想要的未来。">
+      <meta itemprop="description" content="生活是一个过程,可喜的是它不用重来。">
       <meta itemprop="image" content="/images/avatar.gif">
     </span>
 
@@ -487,15 +487,22 @@ $(window).load(function(){
 <li><p>使用Java的<code>BufferedReader</code>和<code>InputStreamReader</code>方法来实现</p>
 </li>
 <li><p>例：</p>
-<figure class="highlight fsharp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">val</span> br = <span class="keyword">new</span> BufferedReader(<span class="keyword">new</span> InputStreamReader(System.<span class="keyword">in</span>))</span><br><span class="line"><span class="keyword">val</span> x = br.readLine().trim  <span class="comment">//注意readLine的L是大写</span></span><br></pre></td></tr></table></figure>
-</li>
+<pre><code>val br = new BufferedReader(new InputStreamReader(System.in))
+val x = br.readLine().trim  //注意readLine的L是大写
+</code></pre></li>
 <li><p>所有的读入的内容都是String类型，可以使用<code>toInt</code>，<code>toDouble</code>等方法来将输入转化成各种需要的格式</p>
 </li>
 </ul>
 <h3 id="调用scala的IO库"><a href="#调用scala的IO库" class="headerlink" title="调用scala的IO库"></a>调用scala的IO库</h3><ul>
 <li><p>例:</p>
-<figure class="highlight scala"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> scala.io._</span><br><span class="line"><span class="class"><span class="keyword">object</span> <span class="title">Test</span> </span>&#123;</span><br><span class="line">   <span class="function"><span class="keyword">def</span> <span class="title">main</span></span>(args: <span class="type">Array</span>[<span class="type">String</span>]) &#123;</span><br><span class="line">      <span class="keyword">val</span> line = <span class="type">StdIn</span>.readLine()</span><br><span class="line">      ...</span><br><span class="line">   &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-</li>
+<pre><code>import scala.io._
+object Test {
+ def main(args: Array[String]) {
+    val line = StdIn.readLine()
+    ...
+ }
+}
+</code></pre></li>
 <li><p>scala的IO库更为简洁，可以调用<code>readInt()</code>,<code>readBoolean</code>等一系列方法，直接进行转换。</p>
 </li>
 </ul>
@@ -506,10 +513,10 @@ $(window).load(function(){
 <ul>
 <li><p>需要引入<code>scala.io</code>库</p>
 </li>
-<li><p>例子(读取test.txt文件的内容)：</p>
-<figure class="highlight gradle"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> scala.io.<span class="keyword">Source</span></span><br><span class="line"></span><br><span class="line">object Test &#123;</span><br><span class="line">   <span class="keyword">def</span> main(args: Array[String]) &#123;</span><br><span class="line">      <span class="keyword">println</span>(<span class="string">"文件内容为:"</span> )</span><br><span class="line">      <span class="keyword">Source</span>.fromFile(<span class="string">"test.txt"</span> ).foreach&#123;</span><br><span class="line">         <span class="keyword">println</span></span><br><span class="line">      &#125;</span><br><span class="line">   &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<li><p>例子(读取test.txt文件的内容)：<br><code>`</code><br>import scala.io.Source</p>
 </li>
 </ul>
+<p>object Test {<br>   def main(args: Array[String]) {<br>      println(“文件内容为:” )<br>      Source.fromFile(“test.txt” ).foreach{<br>         println<br>      }<br>   }<br>}<br><code>`</code></p>
 
       
     </div>
@@ -643,7 +650,7 @@ $(window).load(function(){
               <img class="site-author-image" itemprop="image" src="/images/avatar.gif" alt="Fleschier">
             
               <p class="site-author-name" itemprop="name">Fleschier</p>
-              <p class="site-description motion-element" itemprop="description">每天早上醒来，你和阳光都在，就是我想要的未来。</p>
+              <p class="site-description motion-element" itemprop="description">生活是一个过程,可喜的是它不用重来。</p>
           </div>
 
           

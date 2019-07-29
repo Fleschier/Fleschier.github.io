@@ -117,18 +117,18 @@
 
 <link href="/js/google-code-prettify/tomorrow.min.css" type="text/css" rel="stylesheet">
 
-  <meta name="description" content="不适合人类阅读的随笔~  本地初始化仓库并添加远程仓库  示例：12345git init //初始化本地仓库git add .  //将本地所有文件加到仓库里git commit -m &quot;...&quot; //设置提交信息git remote add origin git@github.com: ...  //添加远程仓库git push -u origin master   关于 多用fetch，m">
+  <meta name="description" content="不适合人类阅读的随笔~  本地初始化仓库并添加远程仓库  示例：git init //初始化本地仓库 git add .  //将本地所有文件加到仓库里 git commit -m &amp;quot;...&amp;quot; //设置提交信息 git remote add origin git@github.com: ...  //添加远程仓库 git push -u origin master   关于">
 <meta name="keywords" content="๑Git,๑Ubuntu,๑Linux">
 <meta property="og:type" content="article">
 <meta property="og:title" content="git 与 github 随笔">
 <meta property="og:url" content="https://fleschier.github.io/2018/04/11/Git-and-Github/index.html">
 <meta property="og:site_name" content="Fleschier 渐寒๑">
-<meta property="og:description" content="不适合人类阅读的随笔~  本地初始化仓库并添加远程仓库  示例：12345git init //初始化本地仓库git add .  //将本地所有文件加到仓库里git commit -m &quot;...&quot; //设置提交信息git remote add origin git@github.com: ...  //添加远程仓库git push -u origin master   关于 多用fetch，m">
+<meta property="og:description" content="不适合人类阅读的随笔~  本地初始化仓库并添加远程仓库  示例：git init //初始化本地仓库 git add .  //将本地所有文件加到仓库里 git commit -m &amp;quot;...&amp;quot; //设置提交信息 git remote add origin git@github.com: ...  //添加远程仓库 git push -u origin master   关于">
 <meta property="og:locale" content="default">
 <meta property="og:updated_time" content="2018-09-03T13:18:31.941Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="git 与 github 随笔">
-<meta name="twitter:description" content="不适合人类阅读的随笔~  本地初始化仓库并添加远程仓库  示例：12345git init //初始化本地仓库git add .  //将本地所有文件加到仓库里git commit -m &quot;...&quot; //设置提交信息git remote add origin git@github.com: ...  //添加远程仓库git push -u origin master   关于 多用fetch，m">
+<meta name="twitter:description" content="不适合人类阅读的随笔~  本地初始化仓库并添加远程仓库  示例：git init //初始化本地仓库 git add .  //将本地所有文件加到仓库里 git commit -m &amp;quot;...&amp;quot; //设置提交信息 git remote add origin git@github.com: ...  //添加远程仓库 git push -u origin master   关于">
 
 
 
@@ -361,7 +361,7 @@ $(window).load(function(){
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Fleschier">
-      <meta itemprop="description" content="每天早上醒来，你和阳光都在，就是我想要的未来。">
+      <meta itemprop="description" content="生活是一个过程,可喜的是它不用重来。">
       <meta itemprop="image" content="/images/avatar.gif">
     </span>
 
@@ -483,8 +483,12 @@ $(window).load(function(){
 </blockquote>
 <h2 id="本地初始化仓库并添加远程仓库"><a href="#本地初始化仓库并添加远程仓库" class="headerlink" title="本地初始化仓库并添加远程仓库"></a>本地初始化仓库并添加远程仓库</h2><hr>
 <ul>
-<li>示例：<figure class="highlight cs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">git init <span class="comment">//初始化本地仓库</span></span><br><span class="line">git <span class="keyword">add</span> .  <span class="comment">//将本地所有文件加到仓库里</span></span><br><span class="line">git commit -m <span class="string">"..."</span> <span class="comment">//设置提交信息</span></span><br><span class="line">git remote <span class="keyword">add</span> origin git@github.com: ...  <span class="comment">//添加远程仓库</span></span><br><span class="line">git push -u origin master</span><br></pre></td></tr></table></figure>
-</li>
+<li>示例：<pre><code>git init //初始化本地仓库
+git add .  //将本地所有文件加到仓库里
+git commit -m &quot;...&quot; //设置提交信息
+git remote add origin git@github.com: ...  //添加远程仓库
+git push -u origin master
+</code></pre></li>
 </ul>
 <h2 id="关于-多用fetch，merge少用pull"><a href="#关于-多用fetch，merge少用pull" class="headerlink" title="关于 多用fetch，merge少用pull"></a>关于 多用fetch，merge少用pull</h2><hr>
 <ul>
@@ -503,10 +507,12 @@ $(window).load(function(){
 <li><p>推荐使用命令行来实现同步。左上角点开后选择要修改的repo，右键选择 open in command 即可进入命令行。</p>
 </li>
 <li><p>一些简单的命令操作：</p>
-<figure class="highlight cs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">git <span class="keyword">add</span> .  <span class="comment">//把本地的所有修改add</span></span><br><span class="line">git commit -m <span class="string">"..."</span>  <span class="comment">//commit本地的修改，“...”中写本次修改的备注（这个备注必须有）</span></span><br><span class="line">git push   <span class="comment">//将本地的修改同步到github上</span></span><br></pre></td></tr></table></figure>
+<pre><code>git add .  //把本地的所有修改add
+git commit -m &quot;...&quot;  //commit本地的修改，“...”中写本次修改的备注（这个备注必须有）
+git push   //将本地的修改同步到github上
+</code></pre><p>这样修改同步就完成了，一共只需要三步即可。</p>
 </li>
 </ul>
-<p>这样修改同步就完成了，一共只需要三步即可。</p>
 <h3 id="Ubuntu"><a href="#Ubuntu" class="headerlink" title="Ubuntu"></a>Ubuntu</h3><ul>
 <li><p>Ubuntu下找到一个甚至比Windows下的 github desktop更加好用的软件——<a href="https://www.gitkraken.com/" target="_blank" rel="noopener">GitKraken</a></p>
 </li>
@@ -591,8 +597,8 @@ $(window).load(function(){
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2018/04/11/Spark-learning/" rel="next" title="Spark学习笔记——基础">
-                <i class="fa fa-chevron-left"></i> Spark学习笔记——基础
+              <a href="/2018/04/11/Spark-superior/" rel="next" title="Spark学习笔记——进阶">
+                <i class="fa fa-chevron-left"></i> Spark学习笔记——进阶
               </a>
             
           </div>
@@ -665,7 +671,7 @@ $(window).load(function(){
               <img class="site-author-image" itemprop="image" src="/images/avatar.gif" alt="Fleschier">
             
               <p class="site-author-name" itemprop="name">Fleschier</p>
-              <p class="site-description motion-element" itemprop="description">每天早上醒来，你和阳光都在，就是我想要的未来。</p>
+              <p class="site-description motion-element" itemprop="description">生活是一个过程,可喜的是它不用重来。</p>
           </div>
 
           

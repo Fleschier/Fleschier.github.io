@@ -117,18 +117,18 @@
 
 <link href="/js/google-code-prettify/tomorrow.min.css" type="text/css" rel="stylesheet">
 
-  <meta name="description" content="不适合人类阅读的学习笔记    格式化输出方法  格式：格式字符串.format(输出1, 输出2, ...输出n)  格式说明符使用大括号括起来，一般格式如下：{[序号或键]:格式说明符}  其中可选序号对应于后面的输出项，从0开始   例如： 12&amp;gt;&amp;gt;&amp;gt; &quot;&amp;#123;0:.2f&amp;#125;,&amp;#123;1&amp;#125;&quot;.format(3.145,500)  .2f表示输出">
+  <meta name="description" content="不适合人类阅读的学习笔记    格式化输出方法  格式：格式字符串.format(输出1, 输出2, ...输出n)  格式说明符使用大括号括起来，一般格式如下：{[序号或键]:格式说明符}  其中可选序号对应于后面的输出项，从0开始   例如： &amp;gt;&amp;gt;&amp;gt; &amp;quot;{0:.2f},{1}&amp;quot;.format(3.145,500)  .2f表示输出的是浮点数，小数部分占两">
 <meta name="keywords" content="๑Python">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Python学习笔记——进阶">
 <meta property="og:url" content="https://fleschier.github.io/2018/04/29/Python-superior/index.html">
 <meta property="og:site_name" content="Fleschier 渐寒๑">
-<meta property="og:description" content="不适合人类阅读的学习笔记    格式化输出方法  格式：格式字符串.format(输出1, 输出2, ...输出n)  格式说明符使用大括号括起来，一般格式如下：{[序号或键]:格式说明符}  其中可选序号对应于后面的输出项，从0开始   例如： 12&amp;gt;&amp;gt;&amp;gt; &quot;&amp;#123;0:.2f&amp;#125;,&amp;#123;1&amp;#125;&quot;.format(3.145,500)  .2f表示输出">
+<meta property="og:description" content="不适合人类阅读的学习笔记    格式化输出方法  格式：格式字符串.format(输出1, 输出2, ...输出n)  格式说明符使用大括号括起来，一般格式如下：{[序号或键]:格式说明符}  其中可选序号对应于后面的输出项，从0开始   例如： &amp;gt;&amp;gt;&amp;gt; &amp;quot;{0:.2f},{1}&amp;quot;.format(3.145,500)  .2f表示输出的是浮点数，小数部分占两">
 <meta property="og:locale" content="default">
 <meta property="og:updated_time" content="2018-11-21T06:40:40.687Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Python学习笔记——进阶">
-<meta name="twitter:description" content="不适合人类阅读的学习笔记    格式化输出方法  格式：格式字符串.format(输出1, 输出2, ...输出n)  格式说明符使用大括号括起来，一般格式如下：{[序号或键]:格式说明符}  其中可选序号对应于后面的输出项，从0开始   例如： 12&amp;gt;&amp;gt;&amp;gt; &quot;&amp;#123;0:.2f&amp;#125;,&amp;#123;1&amp;#125;&quot;.format(3.145,500)  .2f表示输出">
+<meta name="twitter:description" content="不适合人类阅读的学习笔记    格式化输出方法  格式：格式字符串.format(输出1, 输出2, ...输出n)  格式说明符使用大括号括起来，一般格式如下：{[序号或键]:格式说明符}  其中可选序号对应于后面的输出项，从0开始   例如： &amp;gt;&amp;gt;&amp;gt; &amp;quot;{0:.2f},{1}&amp;quot;.format(3.145,500)  .2f表示输出的是浮点数，小数部分占两">
 
 
 
@@ -361,7 +361,7 @@ $(window).load(function(){
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Fleschier">
-      <meta itemprop="description" content="每天早上醒来，你和阳光都在，就是我想要的未来。">
+      <meta itemprop="description" content="生活是一个过程,可喜的是它不用重来。">
       <meta itemprop="image" content="/images/avatar.gif">
     </span>
 
@@ -491,8 +491,9 @@ $(window).load(function(){
 </blockquote>
 </li>
 <li><p>例如：</p>
-<figure class="highlight lsl"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">&gt;&gt;&gt; <span class="string">"&#123;0:.2f&#125;,&#123;1&#125;"</span>.format(<span class="number">3.145</span>,<span class="number">500</span>)  <span class="number">.2</span>f表示输出的是浮点数，小数部分占两位，整数部分默认(<span class="number">.2</span>f或者<span class="number">0.2</span>f)</span><br><span class="line">&gt;&gt;&gt; <span class="string">"3.15,500"</span></span><br></pre></td></tr></table></figure>
-</li>
+<pre><code>&gt;&gt;&gt; &quot;{0:.2f},{1}&quot;.format(3.145,500)  .2f表示输出的是浮点数，小数部分占两位，整数部分默认(.2f或者0.2f)
+&gt;&gt;&gt; &quot;3.15,500&quot;
+</code></pre></li>
 <li><p>注意前面格式字符串的引号不能少，<strong>如果省略序号，则Python会按顺序匹配后面的输出项</strong>，同时 <strong>格式字符串里除了大括号里面的内容是换成后面的对应的输出项，其余的内容会原样输出</strong>，比如<code>&quot;I\&#39;m {}，and {}&quot;.format(&quot;Jake&quot;,&quot;Hello!&quot;)</code> 会输出 <code>I&#39;m jake, and Hello!</code></p>
 </li>
 </ul>
@@ -513,8 +514,10 @@ $(window).load(function(){
 <h2 id="常用模块"><a href="#常用模块" class="headerlink" title="常用模块"></a>常用模块</h2><hr>
 <ul>
 <li><p>使用方法：</p>
-<figure class="highlight clean"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> 模块名  #引入整个模块</span><br><span class="line"><span class="keyword">from</span> 模块名 <span class="keyword">import</span> 函数名  <span class="comment">//引入某个函数</span></span><br><span class="line"><span class="keyword">from</span> 模块名 <span class="keyword">import</span> *   <span class="comment">//引入所有函数</span></span><br></pre></td></tr></table></figure>
-</li>
+<pre><code>import 模块名  #引入整个模块
+from 模块名 import 函数名  //引入某个函数
+from 模块名 import *   //引入所有函数
+</code></pre></li>
 <li><p>如果引入多个模块，在使用模块的函数时最好使用 <code>模块名.函数</code> 的格式，防止各模块同名函数之间的冲突。</p>
 </li>
 </ul>
@@ -639,8 +642,8 @@ $(window).load(function(){
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2018/04/18/Java-class/" rel="next" title="Java学习笔记——类与继承">
-                <i class="fa fa-chevron-left"></i> Java学习笔记——类与继承
+              <a href="/2018/04/18/Java-function/" rel="next" title="Java学习笔记——方法">
+                <i class="fa fa-chevron-left"></i> Java学习笔记——方法
               </a>
             
           </div>
@@ -713,7 +716,7 @@ $(window).load(function(){
               <img class="site-author-image" itemprop="image" src="/images/avatar.gif" alt="Fleschier">
             
               <p class="site-author-name" itemprop="name">Fleschier</p>
-              <p class="site-description motion-element" itemprop="description">每天早上醒来，你和阳光都在，就是我想要的未来。</p>
+              <p class="site-description motion-element" itemprop="description">生活是一个过程,可喜的是它不用重来。</p>
           </div>
 
           

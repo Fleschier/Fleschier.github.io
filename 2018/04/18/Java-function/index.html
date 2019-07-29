@@ -117,18 +117,18 @@
 
 <link href="/js/google-code-prettify/tomorrow.min.css" type="text/css" rel="stylesheet">
 
-  <meta name="description" content="不适合人类阅读的学习笔记    函数  Java中的函数没有默认参数，通过函数重载间接实现这个功能。  java没有在类外面定义的函数，所以一般都是方法。   工具类函数的使用 如果要自己写一些可以复用的工具函数，可以新建一个class： 123class myUtils&amp;#123;  static void func(...)&amp;#123;...&amp;#125;&amp;#125;  在这个类中将要用的工具">
+  <meta name="description" content="不适合人类阅读的学习笔记    函数  Java中的函数没有默认参数，通过函数重载间接实现这个功能。  java没有在类外面定义的函数，所以一般都是方法。   工具类函数的使用 如果要自己写一些可以复用的工具函数，可以新建一个class：class myUtils{ static void func(...){...} }  在这个类中将要用的工具函数用static来修饰，然后将函数的参数弄好之">
 <meta name="keywords" content="๑Java">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Java学习笔记——方法">
 <meta property="og:url" content="https://fleschier.github.io/2018/04/18/Java-function/index.html">
 <meta property="og:site_name" content="Fleschier 渐寒๑">
-<meta property="og:description" content="不适合人类阅读的学习笔记    函数  Java中的函数没有默认参数，通过函数重载间接实现这个功能。  java没有在类外面定义的函数，所以一般都是方法。   工具类函数的使用 如果要自己写一些可以复用的工具函数，可以新建一个class： 123class myUtils&amp;#123;  static void func(...)&amp;#123;...&amp;#125;&amp;#125;  在这个类中将要用的工具">
+<meta property="og:description" content="不适合人类阅读的学习笔记    函数  Java中的函数没有默认参数，通过函数重载间接实现这个功能。  java没有在类外面定义的函数，所以一般都是方法。   工具类函数的使用 如果要自己写一些可以复用的工具函数，可以新建一个class：class myUtils{ static void func(...){...} }  在这个类中将要用的工具函数用static来修饰，然后将函数的参数弄好之">
 <meta property="og:locale" content="default">
 <meta property="og:updated_time" content="2018-11-21T06:40:17.839Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Java学习笔记——方法">
-<meta name="twitter:description" content="不适合人类阅读的学习笔记    函数  Java中的函数没有默认参数，通过函数重载间接实现这个功能。  java没有在类外面定义的函数，所以一般都是方法。   工具类函数的使用 如果要自己写一些可以复用的工具函数，可以新建一个class： 123class myUtils&amp;#123;  static void func(...)&amp;#123;...&amp;#125;&amp;#125;  在这个类中将要用的工具">
+<meta name="twitter:description" content="不适合人类阅读的学习笔记    函数  Java中的函数没有默认参数，通过函数重载间接实现这个功能。  java没有在类外面定义的函数，所以一般都是方法。   工具类函数的使用 如果要自己写一些可以复用的工具函数，可以新建一个class：class myUtils{ static void func(...){...} }  在这个类中将要用的工具函数用static来修饰，然后将函数的参数弄好之">
 
 
 
@@ -361,7 +361,7 @@ $(window).load(function(){
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Fleschier">
-      <meta itemprop="description" content="每天早上醒来，你和阳光都在，就是我想要的未来。">
+      <meta itemprop="description" content="生活是一个过程,可喜的是它不用重来。">
       <meta itemprop="image" content="/images/avatar.gif">
     </span>
 
@@ -489,11 +489,11 @@ $(window).load(function(){
 </li>
 </ul>
 <h3 id="工具类函数的使用"><a href="#工具类函数的使用" class="headerlink" title="工具类函数的使用"></a>工具类函数的使用</h3><ul>
-<li><p>如果要自己写一些可以复用的工具函数，可以新建一个class：</p>
-<figure class="highlight nimrod"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">class myUtils&#123;</span><br><span class="line">  <span class="keyword">static</span> <span class="built_in">void</span> func(...)<span class="meta">&#123;...&#125;</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>在这个类中将要用的工具函数用static来修饰，然后将函数的参数弄好之后，就可以在不用新建对象的情况下使用这个方法了。</p>
-</li>
+<li>如果要自己写一些可以复用的工具函数，可以新建一个class：<pre><code>class myUtils{
+static void func(...){...}
+}
+</code></pre></li>
+<li>在这个类中将要用的工具函数用static来修饰，然后将函数的参数弄好之后，就可以在不用新建对象的情况下使用这个方法了。</li>
 </ul>
 <p><br></p>
 <blockquote>
@@ -558,8 +558,8 @@ $(window).load(function(){
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2018/04/15/Block-Chain/" rel="next" title="区块链初涉">
-                <i class="fa fa-chevron-left"></i> 区块链初涉
+              <a href="/2018/04/18/Java-class/" rel="next" title="Java学习笔记——类与继承">
+                <i class="fa fa-chevron-left"></i> Java学习笔记——类与继承
               </a>
             
           </div>
@@ -568,8 +568,8 @@ $(window).load(function(){
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2018/04/18/Java-class/" rel="prev" title="Java学习笔记——类与继承">
-                Java学习笔记——类与继承 <i class="fa fa-chevron-right"></i>
+              <a href="/2018/04/29/Python-superior/" rel="prev" title="Python学习笔记——进阶">
+                Python学习笔记——进阶 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -632,7 +632,7 @@ $(window).load(function(){
               <img class="site-author-image" itemprop="image" src="/images/avatar.gif" alt="Fleschier">
             
               <p class="site-author-name" itemprop="name">Fleschier</p>
-              <p class="site-description motion-element" itemprop="description">每天早上醒来，你和阳光都在，就是我想要的未来。</p>
+              <p class="site-description motion-element" itemprop="description">生活是一个过程,可喜的是它不用重来。</p>
           </div>
 
           

@@ -117,18 +117,18 @@
 
 <link href="/js/google-code-prettify/tomorrow.min.css" type="text/css" rel="stylesheet">
 
-  <meta name="description" content="Ubuntu18 使用体验 一些装机软件的安装  由于Ubuntu 18 自带了 gnome3.0桌面,所以我们只需要下载一个tweak-tool据可以自定义桌面了： 12sudo apt-get updatesudo apt-get install gnome-tweak-tool  这次Ubuntu把标题栏改到了窗口的右侧，如果要改到左侧的话，打开tweak-tool转到窗口里面更改即可。">
+  <meta name="description" content="Ubuntu18 使用体验 一些装机软件的安装  由于Ubuntu 18 自带了 gnome3.0桌面,所以我们只需要下载一个tweak-tool据可以自定义桌面了： sudo apt-get update sudo apt-get install gnome-tweak-tool  这次Ubuntu把标题栏改到了窗口的右侧，如果要改到左侧的话，打开tweak-tool转到窗口里面更改即可。  在">
 <meta name="keywords" content="๑Ubuntu,๑Linux">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Ubuntu进阶记录 &amp; Ubuntu-18">
 <meta property="og:url" content="https://fleschier.github.io/2018/05/10/Ubuntu-18/index.html">
 <meta property="og:site_name" content="Fleschier 渐寒๑">
-<meta property="og:description" content="Ubuntu18 使用体验 一些装机软件的安装  由于Ubuntu 18 自带了 gnome3.0桌面,所以我们只需要下载一个tweak-tool据可以自定义桌面了： 12sudo apt-get updatesudo apt-get install gnome-tweak-tool  这次Ubuntu把标题栏改到了窗口的右侧，如果要改到左侧的话，打开tweak-tool转到窗口里面更改即可。">
+<meta property="og:description" content="Ubuntu18 使用体验 一些装机软件的安装  由于Ubuntu 18 自带了 gnome3.0桌面,所以我们只需要下载一个tweak-tool据可以自定义桌面了： sudo apt-get update sudo apt-get install gnome-tweak-tool  这次Ubuntu把标题栏改到了窗口的右侧，如果要改到左侧的话，打开tweak-tool转到窗口里面更改即可。  在">
 <meta property="og:locale" content="default">
 <meta property="og:updated_time" content="2019-03-21T14:52:56.721Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Ubuntu进阶记录 &amp; Ubuntu-18">
-<meta name="twitter:description" content="Ubuntu18 使用体验 一些装机软件的安装  由于Ubuntu 18 自带了 gnome3.0桌面,所以我们只需要下载一个tweak-tool据可以自定义桌面了： 12sudo apt-get updatesudo apt-get install gnome-tweak-tool  这次Ubuntu把标题栏改到了窗口的右侧，如果要改到左侧的话，打开tweak-tool转到窗口里面更改即可。">
+<meta name="twitter:description" content="Ubuntu18 使用体验 一些装机软件的安装  由于Ubuntu 18 自带了 gnome3.0桌面,所以我们只需要下载一个tweak-tool据可以自定义桌面了： sudo apt-get update sudo apt-get install gnome-tweak-tool  这次Ubuntu把标题栏改到了窗口的右侧，如果要改到左侧的话，打开tweak-tool转到窗口里面更改即可。  在">
 
 
 
@@ -361,7 +361,7 @@ $(window).load(function(){
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Fleschier">
-      <meta itemprop="description" content="每天早上醒来，你和阳光都在，就是我想要的未来。">
+      <meta itemprop="description" content="生活是一个过程,可喜的是它不用重来。">
       <meta itemprop="image" content="/images/avatar.gif">
     </span>
 
@@ -482,15 +482,16 @@ $(window).load(function(){
 <h2 id="一些装机软件的安装"><a href="#一些装机软件的安装" class="headerlink" title="一些装机软件的安装"></a>一些装机软件的安装</h2><hr>
 <ul>
 <li><p>由于Ubuntu 18 自带了 gnome3.0桌面,所以我们只需要下载一个tweak-tool据可以自定义桌面了：</p>
-<figure class="highlight routeros"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">sudo apt-<span class="builtin-name">get</span> update</span><br><span class="line">sudo apt-<span class="builtin-name">get</span> install gnome-tweak-tool</span><br></pre></td></tr></table></figure>
-</li>
+<pre><code>sudo apt-get update
+sudo apt-get install gnome-tweak-tool
+</code></pre></li>
 <li><p>这次Ubuntu把标题栏改到了窗口的右侧，如果要改到左侧的话，打开tweak-tool转到窗口里面更改即可。</p>
 </li>
 <li><p>在更改用户主题之前，我们需要添加一个拓展插件才能使用自定义的主题</p>
-<figure class="highlight dockerfile"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo apt-get install gnome-<span class="keyword">shell</span><span class="bash">-extensions</span></span><br></pre></td></tr></table></figure>
+<pre><code>sudo apt-get install gnome-shell-extensions
+</code></pre><p>或者在gnome拓展网站上搜索 shell extensions ，找到这个插件并且安装最后重启tweak-tool即可。</p>
 </li>
 </ul>
-<p>或者在gnome拓展网站上搜索 shell extensions ，找到这个插件并且安装最后重启tweak-tool即可。</p>
 <h3 id="Albert"><a href="#Albert" class="headerlink" title="Albert"></a>Albert</h3><ul>
 <li><p>一款很强大的快捷交互命令行。</p>
 </li>
@@ -500,10 +501,15 @@ $(window).load(function(){
 </li>
 </ul>
 <ol>
-<li><figure class="highlight processing"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">wget -nv -O Release.<span class="built_in">key</span> \</span><br><span class="line">  https:<span class="comment">//build.opensuse.org/projects/home:manuelschneid3r/public_key</span></span><br><span class="line">sudo apt-<span class="built_in">key</span> <span class="built_in">add</span> - &lt; Release.<span class="built_in">key</span></span><br><span class="line">sudo apt-<span class="built_in">get</span> update</span><br></pre></td></tr></table></figure>
-</li>
-<li><figure class="highlight routeros"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">sudo sh -c <span class="string">"echo 'deb http://download.opensuse.org/repositories/home:/manuelschneid3r/xUbuntu_18.04/ /' &gt; /etc/apt/sources.list.d/home:manuelschneid3r.list"</span></span><br><span class="line">sudo apt-<span class="builtin-name">get</span> update</span><br><span class="line">sudo apt-<span class="builtin-name">get</span> install albert</span><br></pre></td></tr></table></figure>
-</li>
+<li><pre><code>wget -nv -O Release.key \
+https://build.opensuse.org/projects/home:manuelschneid3r/public_key
+sudo apt-key add - &lt; Release.key
+sudo apt-get update
+</code></pre></li>
+<li><pre><code>sudo sh -c &quot;echo &#39;deb http://download.opensuse.org/repositories/home:/manuelschneid3r/xUbuntu_18.04/ /&#39; &gt; /etc/apt/sources.list.d/home:manuelschneid3r.list&quot;
+sudo apt-get update
+sudo apt-get install albert
+</code></pre></li>
 </ol>
 <ul>
 <li><a href="https://albertlauncher.github.io/docs/installing/" target="_blank" rel="noopener">官网</a></li>
@@ -622,14 +628,14 @@ $(window).load(function(){
 </ul>
 <h3 id="Ubuntu18-的搜狗输入法的安装"><a href="#Ubuntu18-的搜狗输入法的安装" class="headerlink" title="Ubuntu18 的搜狗输入法的安装"></a>Ubuntu18 的搜狗输入法的安装</h3><ul>
 <li><p>首先安装fcitx的相关依赖</p>
-<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">sudo apt-get <span class="keyword">install</span> fictx-<span class="keyword">bin</span></span><br><span class="line">sudo apt-<span class="keyword">get</span> <span class="keyword">install</span> fictx-<span class="keyword">table</span></span><br></pre></td></tr></table></figure>
-</li>
+<pre><code>sudo apt-get install fictx-bin
+sudo apt-get install fictx-table
+</code></pre></li>
 <li><p>然后安装下载好的搜狗输入法deb包<br><code>dpkg -i sougou...</code><br>这里应该会提示缺少依赖，这时候可就需要执行修复依赖：</p>
-<figure class="highlight routeros"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">sudo apt-<span class="builtin-name">get</span> update</span><br><span class="line">sudo apt-<span class="builtin-name">get</span><span class="built_in"> upgrade </span>-f</span><br></pre></td></tr></table></figure>
+<pre><code>sudo apt-get update
+sudo apt-get upgrade -f
+</code></pre><p>系统会自动修复缺少的依赖包</p>
 </li>
-</ul>
-<p>系统会自动修复缺少的依赖包</p>
-<ul>
 <li><p>然后我们就可以安装完搜狗输入法了。这时候在系统语言设置(右上角)里更改键盘输入法系统为fictx，然后把不用的输入法去掉。</p>
 </li>
 <li><p>最后重启电脑，打开fictx配置下搜狗输入法，把他调到第一个即可。</p>
@@ -651,8 +657,9 @@ $(window).load(function(){
 <li><p>所以接下来这个方法貌似有用(亲测)</p>
 </li>
 <li><p>输入如下命令：(就是把你个人用户的一些配置删除掉然后重新创建)</p>
-<figure class="highlight jboss-cli"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">cd</span> ~<span class="string">/.config</span></span><br><span class="line">sudo rm -rf SogouPY* sogou*</span><br></pre></td></tr></table></figure>
-</li>
+<pre><code>cd ~/.config
+sudo rm -rf SogouPY* sogou*
+</code></pre></li>
 <li><p>之后注销重新登录即可。</p>
 </li>
 <li><p><strong>就目前个人测试的结果看来，登录个人中心是元凶，登录之后必炸…还是老老实实地用最基本的功能吧，期待早日更新吧。</strong></p>
@@ -803,7 +810,7 @@ $(window).load(function(){
               <img class="site-author-image" itemprop="image" src="/images/avatar.gif" alt="Fleschier">
             
               <p class="site-author-name" itemprop="name">Fleschier</p>
-              <p class="site-description motion-element" itemprop="description">每天早上醒来，你和阳光都在，就是我想要的未来。</p>
+              <p class="site-description motion-element" itemprop="description">生活是一个过程,可喜的是它不用重来。</p>
           </div>
 
           

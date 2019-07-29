@@ -117,18 +117,18 @@
 
 <link href="/js/google-code-prettify/tomorrow.min.css" type="text/css" rel="stylesheet">
 
-  <meta name="description" content="坑了一早上,终于摸索出两个编译运行C++的方法,特此记录.  环境  安装VsCode和g++环境这里就不赀述了  安装C++插件  安装一系列C++的插件,我安装的有:12C/C++C/C++ Intellisense   重点 两种方法编译C++文件第一种:安装C/C++ Compile Run插件(简单,推荐) 人生苦短,何必浪费时间在环境搭建上~  虽然只支持单文件(single fil">
+  <meta name="description" content="坑了一早上,终于摸索出两个编译运行C++的方法,特此记录.  环境  安装VsCode和g++环境这里就不赀述了  安装C++插件  安装一系列C++的插件,我安装的有:C/C++ C/C++ Intellisense   重点 两种方法编译C++文件第一种:安装C/C++ Compile Run插件(简单,推荐) 人生苦短,何必浪费时间在环境搭建上~  虽然只支持单文件(single file">
 <meta name="keywords" content="๑C++,๑Ubuntu,๑VsCode">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Ubuntu18 VsCode搭建C++编译环境(已测试)">
 <meta property="og:url" content="https://fleschier.github.io/2018/11/21/vscode-cpp/index.html">
 <meta property="og:site_name" content="Fleschier 渐寒๑">
-<meta property="og:description" content="坑了一早上,终于摸索出两个编译运行C++的方法,特此记录.  环境  安装VsCode和g++环境这里就不赀述了  安装C++插件  安装一系列C++的插件,我安装的有:12C/C++C/C++ Intellisense   重点 两种方法编译C++文件第一种:安装C/C++ Compile Run插件(简单,推荐) 人生苦短,何必浪费时间在环境搭建上~  虽然只支持单文件(single fil">
+<meta property="og:description" content="坑了一早上,终于摸索出两个编译运行C++的方法,特此记录.  环境  安装VsCode和g++环境这里就不赀述了  安装C++插件  安装一系列C++的插件,我安装的有:C/C++ C/C++ Intellisense   重点 两种方法编译C++文件第一种:安装C/C++ Compile Run插件(简单,推荐) 人生苦短,何必浪费时间在环境搭建上~  虽然只支持单文件(single file">
 <meta property="og:locale" content="default">
 <meta property="og:updated_time" content="2018-11-21T06:55:57.114Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Ubuntu18 VsCode搭建C++编译环境(已测试)">
-<meta name="twitter:description" content="坑了一早上,终于摸索出两个编译运行C++的方法,特此记录.  环境  安装VsCode和g++环境这里就不赀述了  安装C++插件  安装一系列C++的插件,我安装的有:12C/C++C/C++ Intellisense   重点 两种方法编译C++文件第一种:安装C/C++ Compile Run插件(简单,推荐) 人生苦短,何必浪费时间在环境搭建上~  虽然只支持单文件(single fil">
+<meta name="twitter:description" content="坑了一早上,终于摸索出两个编译运行C++的方法,特此记录.  环境  安装VsCode和g++环境这里就不赀述了  安装C++插件  安装一系列C++的插件,我安装的有:C/C++ C/C++ Intellisense   重点 两种方法编译C++文件第一种:安装C/C++ Compile Run插件(简单,推荐) 人生苦短,何必浪费时间在环境搭建上~  虽然只支持单文件(single file">
 
 
 
@@ -361,7 +361,7 @@ $(window).load(function(){
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Fleschier">
-      <meta itemprop="description" content="每天早上醒来，你和阳光都在，就是我想要的未来。">
+      <meta itemprop="description" content="生活是一个过程,可喜的是它不用重来。">
       <meta itemprop="image" content="/images/avatar.gif">
     </span>
 
@@ -475,8 +475,9 @@ $(window).load(function(){
 </ul>
 <h2 id="安装C-插件"><a href="#安装C-插件" class="headerlink" title="安装C++插件"></a>安装C++插件</h2><hr>
 <ul>
-<li>安装一系列C++的插件,我安装的有:<figure class="highlight mathematica"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">C</span>/<span class="keyword">C</span>++</span><br><span class="line"><span class="keyword">C</span>/<span class="keyword">C</span>++ Intellisense</span><br></pre></td></tr></table></figure>
-</li>
+<li>安装一系列C++的插件,我安装的有:<pre><code>C/C++
+C/C++ Intellisense
+</code></pre></li>
 </ul>
 <h2 id="重点"><a href="#重点" class="headerlink" title="重点"></a>重点</h2><hr>
 <h3 id="两种方法编译C-文件"><a href="#两种方法编译C-文件" class="headerlink" title="两种方法编译C++文件"></a>两种方法编译C++文件</h3><h4 id="第一种-安装C-C-Compile-Run插件-简单-推荐"><a href="#第一种-安装C-C-Compile-Run插件-简单-推荐" class="headerlink" title="第一种:安装C/C++ Compile Run插件(简单,推荐)"></a>第一种:安装C/C++ Compile Run插件(简单,推荐)</h4><ul>
@@ -494,11 +495,55 @@ $(window).load(function(){
 </ul>
 <h4 id="第二种-手动添加task-json和launch-json"><a href="#第二种-手动添加task-json和launch-json" class="headerlink" title="第二种:手动添加task.json和launch.json"></a>第二种:手动添加task.json和launch.json</h4><ul>
 <li><p>打开C++文件,切换到Debug下,运行一次,他会创建一个默认文件,改成如下即可:</p>
-<figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">    <span class="attr">"version"</span>: <span class="string">"0.2.0"</span>,</span><br><span class="line">    <span class="attr">"configurations"</span>: [</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="attr">"name"</span>: <span class="string">"(gdb) Launch"</span>,</span><br><span class="line">            <span class="attr">"type"</span>: <span class="string">"cppdbg"</span>,</span><br><span class="line">            <span class="attr">"request"</span>: <span class="string">"launch"</span>,</span><br><span class="line">            <span class="attr">"program"</span>: <span class="string">"$&#123;workspaceRoot&#125;/$&#123;fileBasenameNoExtension&#125;.o"</span>,</span><br><span class="line">            <span class="attr">"args"</span>: [],</span><br><span class="line">            <span class="attr">"stopAtEntry"</span>: <span class="literal">false</span>,</span><br><span class="line">            <span class="attr">"cwd"</span>: <span class="string">"$&#123;workspaceRoot&#125;"</span>,</span><br><span class="line">            <span class="attr">"environment"</span>: [],</span><br><span class="line">            <span class="attr">"externalConsole"</span>: <span class="literal">true</span>,</span><br><span class="line">            <span class="attr">"preLaunchTask"</span>: <span class="string">"build"</span>,  </span><br><span class="line">            <span class="attr">"MIMode"</span>: <span class="string">"gdb"</span>,</span><br><span class="line">            <span class="attr">"setupCommands"</span>: [</span><br><span class="line">                &#123;</span><br><span class="line">                    <span class="attr">"description"</span>: <span class="string">"Enable pretty-printing for gdb"</span>,</span><br><span class="line">                    <span class="attr">"text"</span>: <span class="string">"-enable-pretty-printing"</span>,</span><br><span class="line">                    <span class="attr">"ignoreFailures"</span>: <span class="literal">true</span></span><br><span class="line">                &#125;</span><br><span class="line">            ]</span><br><span class="line">        &#125;</span><br><span class="line">    ]</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-</li>
+<pre><code>{
+  &quot;version&quot;: &quot;0.2.0&quot;,
+  &quot;configurations&quot;: [
+      {
+          &quot;name&quot;: &quot;(gdb) Launch&quot;,
+          &quot;type&quot;: &quot;cppdbg&quot;,
+          &quot;request&quot;: &quot;launch&quot;,
+          &quot;program&quot;: &quot;${workspaceRoot}/${fileBasenameNoExtension}.o&quot;,
+          &quot;args&quot;: [],
+          &quot;stopAtEntry&quot;: false,
+          &quot;cwd&quot;: &quot;${workspaceRoot}&quot;,
+          &quot;environment&quot;: [],
+          &quot;externalConsole&quot;: true,
+          &quot;preLaunchTask&quot;: &quot;build&quot;,  
+          &quot;MIMode&quot;: &quot;gdb&quot;,
+          &quot;setupCommands&quot;: [
+              {
+                  &quot;description&quot;: &quot;Enable pretty-printing for gdb&quot;,
+                  &quot;text&quot;: &quot;-enable-pretty-printing&quot;,
+                  &quot;ignoreFailures&quot;: true
+              }
+          ]
+      }
+  ]
+}
+</code></pre></li>
 <li><p>然后切回C++文件,<code>Ctrl + Shift + B</code> build &gt;&gt; 选择other新建一个 &gt;&gt; 修改tasks.json如下:</p>
-<figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line">&#123;  </span><br><span class="line">    <span class="attr">"version"</span>: <span class="string">"0.1.0"</span>,  </span><br><span class="line">    <span class="attr">"showOutput"</span>: <span class="string">"always"</span>,  </span><br><span class="line">    <span class="attr">"tasks"</span>: [</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="attr">"taskName"</span>: <span class="string">"build"</span>,</span><br><span class="line">            <span class="attr">"command"</span>: <span class="string">"g++"</span>,</span><br><span class="line">            <span class="attr">"isShellCommand"</span>: <span class="literal">true</span>,</span><br><span class="line">            <span class="attr">"showOutput"</span>: <span class="string">"always"</span>,</span><br><span class="line">            <span class="attr">"args"</span>: [</span><br><span class="line">                <span class="string">"-g"</span>,</span><br><span class="line">                <span class="string">"$&#123;file&#125;"</span>,</span><br><span class="line">                <span class="string">"-o"</span>,</span><br><span class="line">                <span class="string">"$&#123;workspaceRoot&#125;/$&#123;fileBasenameNoExtension&#125;.o"</span></span><br><span class="line">            ],</span><br><span class="line">            <span class="attr">"problemMatcher"</span>: [</span><br><span class="line">                <span class="string">"$g++"</span></span><br><span class="line">            ]</span><br><span class="line">        &#125;</span><br><span class="line">    ]  </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-</li>
+<pre><code>{  
+  &quot;version&quot;: &quot;0.1.0&quot;,  
+  &quot;showOutput&quot;: &quot;always&quot;,  
+  &quot;tasks&quot;: [
+      {
+          &quot;taskName&quot;: &quot;build&quot;,
+          &quot;command&quot;: &quot;g++&quot;,
+          &quot;isShellCommand&quot;: true,
+          &quot;showOutput&quot;: &quot;always&quot;,
+          &quot;args&quot;: [
+              &quot;-g&quot;,
+              &quot;${file}&quot;,
+              &quot;-o&quot;,
+              &quot;${workspaceRoot}/${fileBasenameNoExtension}.o&quot;
+          ],
+          &quot;problemMatcher&quot;: [
+              &quot;$g++&quot;
+          ]
+      }
+  ]  
+}
+</code></pre></li>
 </ul>
 <h3 id="最后"><a href="#最后" class="headerlink" title="最后"></a>最后</h3><ul>
 <li><p><code>Ctrl + Shift + B</code> build</p>
@@ -646,7 +691,7 @@ $(window).load(function(){
               <img class="site-author-image" itemprop="image" src="/images/avatar.gif" alt="Fleschier">
             
               <p class="site-author-name" itemprop="name">Fleschier</p>
-              <p class="site-description motion-element" itemprop="description">每天早上醒来，你和阳光都在，就是我想要的未来。</p>
+              <p class="site-description motion-element" itemprop="description">生活是一个过程,可喜的是它不用重来。</p>
           </div>
 
           

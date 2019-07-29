@@ -361,7 +361,7 @@ $(window).load(function(){
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Fleschier">
-      <meta itemprop="description" content="每天早上醒来，你和阳光都在，就是我想要的未来。">
+      <meta itemprop="description" content="生活是一个过程,可喜的是它不用重来。">
       <meta itemprop="image" content="/images/avatar.gif">
     </span>
 
@@ -491,8 +491,9 @@ $(window).load(function(){
 <li><p><code>sprintf</code>最常见的应用之一莫过于把整数打印到字符串中，所以，<code>spritnf</code> 在大多数场合可以替代<code>itoa</code>。</p>
 </li>
 <li><p>例子：</p>
-<figure class="highlight perl"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">sprintf</span>(<span class="keyword">s</span>, <span class="string">"%d"</span>, <span class="number">123</span>);</span><br><span class="line"><span class="keyword">sprintf</span>(<span class="keyword">s</span>, <span class="string">"%8d%8d"</span>, <span class="number">123</span>, <span class="number">5678</span>);  <span class="regexp">//</span>指定宽度，不足的左边补空格，结果为<span class="string">" 123 5678"</span></span><br></pre></td></tr></table></figure>
-</li>
+<pre><code>sprintf(s, &quot;%d&quot;, 123);
+sprintf(s, &quot;%8d%8d&quot;, 123, 5678);  //指定宽度，不足的左边补空格，结果为&quot; 123 5678&quot;
+</code></pre></li>
 <li><p>浮点数用<code>%f</code>控制，默认打印6位小数。</p>
 </li>
 <li><p>使用<code>%d</code>或者<code>%x</code>打印一个字符，便能得出它的10进制或16进制的ASCII码；反过来，使用<code>%c</code>打印一个整数，便可以看到它所对应的ASCII字符。<strong>因为char类型本质上也是存储数值类型，只是习惯上用char来表示字符，实际上char就是byte，一个字节的数值类型。</strong></p>
@@ -598,8 +599,31 @@ $(window).load(function(){
 <li><p>出现这个情况是因为被赋值的字符数组太小了。</p>
 </li>
 <li><p>实例：(矩阵乘积)</p>
-<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//计算矩阵的乘积</span></span><br><span class="line">...</span><br><span class="line">...</span><br><span class="line">	<span class="keyword">char</span> tmpc[<span class="number">24</span>];		<span class="comment">//存储转换的值,因为存储的是双精度浮点数，这里数据的整数部分为10位，小数部分要显示11位则至少开10+1+11=22位的数组才够</span></span><br><span class="line">	<span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; M; i++) &#123;</span><br><span class="line">		<span class="keyword">for</span> (<span class="keyword">int</span> j = <span class="number">0</span>; j &lt; N; j++) &#123;</span><br><span class="line">			C[i][j] = <span class="number">0</span>;			<span class="comment">//initialize the result martrix element</span></span><br><span class="line">			<span class="keyword">for</span> (<span class="keyword">int</span> k = <span class="number">0</span>; k &lt; K; k++) &#123;</span><br><span class="line">				C[i][j] += A[i][k] * B[k][j];</span><br><span class="line">			&#125;</span><br><span class="line">			<span class="comment">//---------------------------------------------------------------------------------------------</span></span><br><span class="line">			<span class="comment">//itoa不如sprintf灵活，这里采用sprintf来完成double到char的转换</span></span><br><span class="line">			<span class="comment">////将数字转化为char数组写入, 采用itoa函数。函数原型：char *itoa(int value, char* string, int radix);</span></span><br><span class="line">			<span class="comment">//_itoa(C[i][j], tmpc, 10);</span></span><br><span class="line">			<span class="comment">//fputs(tmpc, fout);		//fputs的第一个参数为char*</span></span><br><span class="line">			<span class="comment">//fputc(32, fout);			//写入空格，fputc的第一个参数为int*(ASCII码)</span></span><br><span class="line">			<span class="comment">//---------------------------------------------------------------------------------------------</span></span><br><span class="line">			<span class="comment">//使用强大的sprintf来完成转换，打印11位小数</span></span><br><span class="line">			sprintf_s(tmpc, <span class="string">"%.11f "</span>, C[i][j]);				<span class="comment">//这里的数值是整数部分10位，小数点一位，小数部分11位，末尾空格1位，结束符'\0'一位所以一共要开24位的数组才够</span></span><br><span class="line">			<span class="built_in">fputs</span>(tmpc, fout);		<span class="comment">//fputs的第一个参数为char*</span></span><br><span class="line">		&#125;</span><br><span class="line">		fputc(<span class="number">10</span>, fout);		<span class="comment">//写入换行符</span></span><br><span class="line">	&#125;</span><br><span class="line">  ...</span><br></pre></td></tr></table></figure>
-</li>
+<pre><code>//计算矩阵的乘积
+...
+...
+  char tmpc[24];        //存储转换的值,因为存储的是双精度浮点数，这里数据的整数部分为10位，小数部分要显示11位则至少开10+1+11=22位的数组才够
+  for (int i = 0; i &lt; M; i++) {
+      for (int j = 0; j &lt; N; j++) {
+          C[i][j] = 0;            //initialize the result martrix element
+          for (int k = 0; k &lt; K; k++) {
+              C[i][j] += A[i][k] * B[k][j];
+          }
+          //---------------------------------------------------------------------------------------------
+          //itoa不如sprintf灵活，这里采用sprintf来完成double到char的转换
+          ////将数字转化为char数组写入, 采用itoa函数。函数原型：char *itoa(int value, char* string, int radix);
+          //_itoa(C[i][j], tmpc, 10);
+          //fputs(tmpc, fout);        //fputs的第一个参数为char*
+          //fputc(32, fout);            //写入空格，fputc的第一个参数为int*(ASCII码)
+          //---------------------------------------------------------------------------------------------
+          //使用强大的sprintf来完成转换，打印11位小数
+          sprintf_s(tmpc, &quot;%.11f &quot;, C[i][j]);                //这里的数值是整数部分10位，小数点一位，小数部分11位，末尾空格1位，结束符&#39;\0&#39;一位所以一共要开24位的数组才够
+          fputs(tmpc, fout);        //fputs的第一个参数为char*
+      }
+      fputc(10, fout);        //写入换行符
+  }
+...
+</code></pre></li>
 </ul>
 
       
@@ -734,7 +758,7 @@ $(window).load(function(){
               <img class="site-author-image" itemprop="image" src="/images/avatar.gif" alt="Fleschier">
             
               <p class="site-author-name" itemprop="name">Fleschier</p>
-              <p class="site-description motion-element" itemprop="description">每天早上醒来，你和阳光都在，就是我想要的未来。</p>
+              <p class="site-description motion-element" itemprop="description">生活是一个过程,可喜的是它不用重来。</p>
           </div>
 
           

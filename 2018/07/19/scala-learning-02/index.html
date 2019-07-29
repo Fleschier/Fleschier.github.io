@@ -361,7 +361,7 @@ $(window).load(function(){
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Fleschier">
-      <meta itemprop="description" content="每天早上醒来，你和阳光都在，就是我想要的未来。">
+      <meta itemprop="description" content="生活是一个过程,可喜的是它不用重来。">
       <meta itemprop="image" content="/images/avatar.gif">
     </span>
 
@@ -500,18 +500,28 @@ $(window).load(function(){
 <li><p>scala方法参数有一个特征，就是 <strong>它们都是<code>val</code>而不是<code>var</code></strong></p>
 </li>
 <li><p>一个类的例子：</p>
-<figure class="highlight ruby"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">test</span>&#123;</span></span><br><span class="line">	private var sum = <span class="number">0</span></span><br><span class="line">	<span class="function"><span class="keyword">def</span> <span class="title">add</span><span class="params">(<span class="symbol">b:</span> Byte)</span></span>: Unit = &#123;</span><br><span class="line">		sum += b</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="function"><span class="keyword">def</span> <span class="title">checksum</span><span class="params">()</span></span>: Int = &#123;</span><br><span class="line">		<span class="keyword">return</span> ~(sum &amp; <span class="number">0xFF</span>) + <span class="number">1</span></span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-</li>
+<pre><code>class test{
+  private var sum = 0
+  def add(b: Byte): Unit = {
+      sum += b
+  }
+  def checksum(): Int = {
+      return ~(sum &amp; 0xFF) + 1
+  }
+}
+</code></pre></li>
 <li><p>在方法中，没有任何显式的return语句时，<strong>scala返回的是该方法计算出的最后一个(表达式的)值</strong> ,因此上面这个例子的return语句可以省略不写</p>
 </li>
 <li><p>同时，另一种方法的简写方式是，当一个方法只会计算一个返回结果的表达式时，可以不写花括号。如果这个表达式很短，他甚至可以被放置在def的同一行。为了极致的精简，还可以省略掉结果类型。</p>
 </li>
 <li><p>更改后的写法：</p>
-<figure class="highlight ruby"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">test</span>&#123;</span></span><br><span class="line">	private var sum = <span class="number">0</span></span><br><span class="line">	<span class="function"><span class="keyword">def</span> <span class="title">add</span><span class="params">(<span class="symbol">b:</span> Byte)</span></span> = sum += b</span><br><span class="line">	<span class="function"><span class="keyword">def</span> <span class="title">checksum</span><span class="params">()</span></span> = ~(sum &amp; <span class="number">0xFF</span>) + <span class="number">1</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<pre><code>class test{
+  private var sum = 0
+  def add(b: Byte) = sum += b
+  def checksum() = ~(sum &amp; 0xFF) + 1
+}
+</code></pre><p>在这段代码中，scala能够正确地推断出add和checksum这两个方法的结果类型。但是最好的写法是显式地给出结果类型，这样便于代码的调试和维护</p>
 </li>
-</ul>
-<p>在这段代码中，scala能够正确地推断出add和checksum这两个方法的结果类型。但是最好的写法是显式地给出结果类型，这样便于代码的调试和维护</p>
-<ul>
 <li><p>本例中的add方法结果类型为Unit，执行它的目的就是产生副作用。对于那些仅仅为了其副作用而被执行的方法被称作<em>过程</em>。</p>
 </li>
 <li><p>一般分号是没有必要加的，但是如果一行写多个语句，则用分号间隔</p>
@@ -538,8 +548,12 @@ $(window).load(function(){
 </li>
 </ul>
 <h3 id="scala应用程序"><a href="#scala应用程序" class="headerlink" title="scala应用程序"></a>scala应用程序</h3><ul>
-<li>要运行一个scala程序，必须提供一个孤立对象，这个孤立对象需要包含一个main方法，该方法接收一个Array[String]作为参数，结果类型为Unit,例如：<figure class="highlight scala"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">object</span> <span class="title">Test</span></span>&#123;</span><br><span class="line">	<span class="function"><span class="keyword">def</span> <span class="title">main</span></span>(args: <span class="type">Array</span>[<span class="type">String</span>]): <span class="type">Unit</span> = &#123;</span><br><span class="line">		...</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-</li>
+<li>要运行一个scala程序，必须提供一个孤立对象，这个孤立对象需要包含一个main方法，该方法接收一个Array[String]作为参数，结果类型为Unit,例如：<pre><code>object Test{
+  def main(args: Array[String]): Unit = {
+      ...
+  }
+}
+</code></pre></li>
 </ul>
 <blockquote>
 <p>注意：scala在每一个源码文件都隐式地引入了java.lang和scala包的成员，以及名为Predef的单例对象的所有成员。例如使用的println和assert都是来自于Predef</p>
@@ -548,10 +562,13 @@ $(window).load(function(){
 <li>注意要运行这个程序，那么文件名需要与这个单例对象的名称相同。</li>
 </ul>
 <h3 id="App特质"><a href="#App特质" class="headerlink" title="App特质"></a>App特质</h3><ul>
-<li>scala提供了一个特质scala.App，我们可以不用编写main方法，而是将打算放在main方法里的代码直接写在单例对象的花括号里。不过首先要在单例对象名后加上<code>extends App</code>。例子：<figure class="highlight scala"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">object</span> <span class="title">AppTest</span> <span class="keyword">extends</span> <span class="title">App</span></span>&#123;</span><br><span class="line">	<span class="keyword">for</span>(i &lt;- <span class="number">0</span> to <span class="number">10</span>)&#123;</span><br><span class="line">		println(<span class="string">"..."</span>)</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-</li>
+<li>scala提供了一个特质scala.App，我们可以不用编写main方法，而是将打算放在main方法里的代码直接写在单例对象的花括号里。不过首先要在单例对象名后加上<code>extends App</code>。例子：<pre><code>object AppTest extends App{
+  for(i &lt;- 0 to 10){
+      println(&quot;...&quot;)
+  }
+}
+</code></pre>它可以像正常的scala程序一样运行</li>
 </ul>
-<p>它可以像正常的scala程序一样运行</p>
 <h2 id="第五章"><a href="#第五章" class="headerlink" title="第五章"></a>第五章</h2><hr>
 <h3 id="基础类型和操作"><a href="#基础类型和操作" class="headerlink" title="基础类型和操作"></a>基础类型和操作</h3><h4 id="一些基础类型"><a href="#一些基础类型" class="headerlink" title="一些基础类型"></a>一些基础类型</h4><ul>
 <li><p>Byte、Short、Int、Long和Char类型统称为 <em>整数类型</em>，整数类型加上Float和Double类型统称为 <em>数值类型</em></p>
@@ -563,8 +580,9 @@ $(window).load(function(){
 <li><p>Long类型以l或者L结尾</p>
 </li>
 <li><p>字符串插值：</p>
-<figure class="highlight stylus"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">val name=<span class="string">"reader"</span></span><br><span class="line"><span class="function"><span class="title">println</span><span class="params">(s<span class="string">"Hello, $name"</span>)</span></span></span><br></pre></td></tr></table></figure>
-</li>
+<pre><code>val name=&quot;reader&quot;
+println(s&quot;Hello, $name&quot;)
+</code></pre></li>
 <li><p>这个的结果与<code>println(&quot;Hello&quot; + name)</code>是一样的</p>
 </li>
 <li><p>scala中raw可以屏蔽转义字符<code>/</code>，例如<code>println(raw&quot;abc\n\n&quot;)</code>其中斜杠和n将被原样输出</p>
@@ -581,19 +599,33 @@ $(window).load(function(){
 <li><p>例如<code>override def toString = {...}</code></p>
 </li>
 <li><p>一个例子：创建一个有理数的类，这是个不可变的类并且要求分母不为零</p>
-<figure class="highlight kotlin"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Rational</span></span>(n: <span class="built_in">Int</span>, d:<span class="built_in">Int</span>)&#123;</span><br><span class="line">	require(d!=<span class="number">0</span>)</span><br><span class="line">	<span class="keyword">override</span> def toString = n + <span class="string">"/"</span> + d</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<pre><code>class Rational(n: Int, d:Int){
+  require(d!=0)
+  override def toString = n + &quot;/&quot; + d
+}
+</code></pre><p>require方法接受一个boolean的参数。如果传入的参数为true，require将会正常返回。否则,require将会抛出IllegalArgumentException来阻止对象的构建。</p>
 </li>
 </ul>
-<p>require方法接受一个boolean的参数。如果传入的参数为true，require将会正常返回。否则,require将会抛出IllegalArgumentException来阻止对象的构建。</p>
 <h3 id="添加字段"><a href="#添加字段" class="headerlink" title="添加字段"></a>添加字段</h3><ul>
-<li>例如添加一个add方法：<figure class="highlight livescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">def add(that: Rational): Rational = <span class="keyword">new</span>(</span><br><span class="line">	<span class="keyword">new</span> Rational(n * <span class="literal">that</span>.d + <span class="literal">that</span>.n * d, d * <span class="literal">that</span>.d)</span><br><span class="line">)</span><br></pre></td></tr></table></figure>
+<li><p>例如添加一个add方法：</p>
+<pre><code>def add(that: Rational): Rational = new(
+  new Rational(n * that.d + that.n * d, d * that.d)
+)
+</code></pre><p>这个方法是会报错的</p>
 </li>
-</ul>
-<p>这个方法是会报错的</p>
-<ul>
 <li><p>上面那个类如果要添加一个add方法，实现两个Rational类型的值的相加，此时add是不能直接调用this.n或者this.d的(虽然类参数n和d在add方法中是在作用域内的，但是编译器并不允许使用<code>that.n</code>和<code>that.d</code>，因为that并非指向调用add的那个对象，要访问that的d和n，需要将它做成字段(相当于成员变量))<br>我们需要添加字段才行：</p>
-<figure class="highlight maxima"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">class Rational(n: Int, d:Int)&#123;</span><br><span class="line">	require(d != <span class="number">0</span>)</span><br><span class="line">	val <span class="built_in">numer</span>: Int = n</span><br><span class="line">	val <span class="built_in">denom</span>: Int = d</span><br><span class="line">	override def toString = <span class="built_in">numer</span> + <span class="string">"/"</span> + <span class="built_in">denom</span></span><br><span class="line">	def add(that: Rational): Rational =</span><br><span class="line">		<span class="built_in">new</span> Rational(</span><br><span class="line">			<span class="built_in">numer</span> * that.<span class="built_in">denom</span> + that.<span class="built_in">numer</span> * <span class="built_in">denom</span>,</span><br><span class="line">			<span class="built_in">denom</span> * that.<span class="built_in">denom</span>		</span><br><span class="line">		)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-</li>
+<pre><code>class Rational(n: Int, d:Int){
+  require(d != 0)
+  val numer: Int = n
+  val denom: Int = d
+  override def toString = numer + &quot;/&quot; + denom
+  def add(that: Rational): Rational =
+      new Rational(
+          numer * that.denom + that.numer * denom,
+          denom * that.denom        
+      )
+}
+</code></pre></li>
 <li><p>scala中 字段 默认的访问权限是public</p>
 </li>
 </ul>
@@ -603,8 +635,8 @@ $(window).load(function(){
 <li><p>辅助构造方法：<br><code>def this(...){...}</code></p>
 </li>
 <li><p>操作符也可以像方法一样定义，例如：</p>
-<figure class="highlight nimrod"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">def + (that: <span class="type">MyClass</span>): <span class="type">MyClass</span> =<span class="meta">&#123;...&#125;</span></span><br></pre></td></tr></table></figure>
-</li>
+<pre><code>def + (that: MyClass): MyClass ={...}
+</code></pre></li>
 <li><p>scala支持方法重载，用法与C++和Java相同，通过定义多个参数不同的同名函数来实现重载</p>
 </li>
 </ul>
@@ -623,24 +655,40 @@ $(window).load(function(){
 <li><code>1 until 4</code> 不包含上界 4</li>
 </ul>
 <h3 id="过滤"><a href="#过滤" class="headerlink" title="过滤"></a>过滤</h3><ul>
-<li><p>有时候遍历集合的时候不想完整地遍历集合，而是先过滤成一个子集。这时可以给for表达式添加过滤器(filter)<br>例：</p>
-<figure class="highlight gradle"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">val filesHere = (<span class="keyword">new</span> java.io.<span class="keyword">File</span>(<span class="string">"."</span>)).listDiles</span><br><span class="line"><span class="keyword">for</span>(<span class="keyword">file</span> &lt;- filesHere <span class="keyword">if</span> <span class="keyword">file</span>.getName.endsWith(<span class="string">".scala"</span>))</span><br><span class="line">	<span class="keyword">println</span>(<span class="keyword">file</span>)</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>过滤器就是for表达式圆括号中的一个if子句，并且可以随意添加更多的过滤器，直接添加if子句即可</p>
-</li>
+<li>有时候遍历集合的时候不想完整地遍历集合，而是先过滤成一个子集。这时可以给for表达式添加过滤器(filter)<br>例：<pre><code>val filesHere = (new java.io.File(&quot;.&quot;)).listDiles
+for(file &lt;- filesHere if file.getName.endsWith(&quot;.scala&quot;))
+  println(file)
+</code></pre></li>
+<li>过滤器就是for表达式圆括号中的一个if子句，并且可以随意添加更多的过滤器，直接添加if子句即可</li>
 </ul>
 <h3 id="嵌套迭代"><a href="#嵌套迭代" class="headerlink" title="嵌套迭代"></a>嵌套迭代</h3><ul>
-<li><p>如果添加多个<code>&lt;-</code>子句，将得到嵌套的循环<br>例：</p>
-<figure class="highlight gradle"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">def</span> fileLines(<span class="keyword">file</span>: java.io.<span class="keyword">File</span>) =</span><br><span class="line">	scala.io.<span class="keyword">Source</span>.fromFile(<span class="keyword">file</span>).getLines().<span class="keyword">toList</span></span><br><span class="line"><span class="keyword">def</span> <span class="keyword">grep</span>(pattern: String) =</span><br><span class="line">	<span class="keyword">for</span>(</span><br><span class="line">		<span class="keyword">file</span> &lt;- filesHere</span><br><span class="line">		<span class="keyword">if</span> <span class="keyword">file</span>.getName.endsWith(<span class="string">".scala"</span>);</span><br><span class="line">		trimed = line.trim</span><br><span class="line">		line &lt;- fileLines(<span class="keyword">file</span>)</span><br><span class="line">		<span class="keyword">if</span> trimed.matches(pattern)</span><br><span class="line">	)</span><br><span class="line">	<span class="keyword">println</span>(<span class="keyword">file</span> + <span class="string">": "</span> + line.trimed)</span><br><span class="line"><span class="keyword">grep</span>(<span class="string">".*gcd.*"</span>)</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>其中，外部循环遍历filesHere，内部循环遍历每个以.scala结尾的file的fileLines(file)</p>
-</li>
+<li>如果添加多个<code>&lt;-</code>子句，将得到嵌套的循环<br>例：<pre><code>def fileLines(file: java.io.File) =
+  scala.io.Source.fromFile(file).getLines().toList
+def grep(pattern: String) =
+  for(
+      file &lt;- filesHere
+      if file.getName.endsWith(&quot;.scala&quot;);
+      trimed = line.trim
+      line &lt;- fileLines(file)
+      if trimed.matches(pattern)
+  )
+  println(file + &quot;: &quot; + line.trimed)
+grep(&quot;.*gcd.*&quot;)
+</code></pre></li>
+<li>其中，外部循环遍历filesHere，内部循环遍历每个以.scala结尾的file的fileLines(file)</li>
 <li>其中trimed作为中途变量绑定，用来保存line.trim的值，避免line.trim被重复计算两次</li>
 </ul>
 <h3 id="match表达式"><a href="#match表达式" class="headerlink" title="match表达式"></a>match表达式</h3><ul>
-<li><p>例子：</p>
-<figure class="highlight arduino"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">val firstArg = <span class="built_in">if</span> (args.length &gt; <span class="number">0</span>) args(<span class="number">0</span>) <span class="built_in">else</span> <span class="string">""</span></span><br><span class="line">val <span class="keyword">friend</span> =</span><br><span class="line">firstArg match &#123;</span><br><span class="line">	<span class="built_in">case</span> <span class="string">"salt"</span> =&gt; <span class="built_in">println</span>(<span class="string">"pepper"</span>)</span><br><span class="line">	<span class="built_in">case</span> <span class="string">"chips"</span> =&gt; <span class="built_in">println</span>(<span class="string">"salsa"</span>)</span><br><span class="line">	<span class="built_in">case</span> <span class="string">"eggs"</span> =&gt; <span class="built_in">println</span>(<span class="string">"bacon"</span>)</span><br><span class="line">	<span class="built_in">case</span> _ =&gt;<span class="built_in">println</span>(<span class="string">"huh?"</span>)</span><br><span class="line">&#125;</span><br><span class="line"><span class="built_in">println</span>(<span class="keyword">friend</span>)</span><br></pre></td></tr></table></figure>
-</li>
+<li>例子：<pre><code>val firstArg = if (args.length &gt; 0) args(0) else &quot;&quot;
+val friend =
+firstArg match {
+  case &quot;salt&quot; =&gt; println(&quot;pepper&quot;)
+  case &quot;chips&quot; =&gt; println(&quot;salsa&quot;)
+  case &quot;eggs&quot; =&gt; println(&quot;bacon&quot;)
+  case _ =&gt;println(&quot;huh?&quot;)
+}
+println(friend)
+</code></pre></li>
 <li><p>这个例子中，match 表达式跟java的switch相比，有一些很重要的区别。其中一个区别是任何常量、字符串等都可以用作样例。另一个区别是，每个可选项后面没有break，因为scala中break是隐含的，不会出现某个可选项执行完又执行下一个的情况</p>
 </li>
 <li><p>match表达式会返回值，上例可以直接将匹配的结果打印出来</p>
@@ -648,21 +696,55 @@ $(window).load(function(){
 <li><p>一般不会用到continue和break</p>
 </li>
 <li><p>例如一段java代码：</p>
-<figure class="highlight maxima"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">int i = <span class="number">0</span>;</span><br><span class="line">boolean foundIt = <span class="literal">false</span>;</span><br><span class="line"><span class="keyword">while</span> (i &lt; <span class="built_in">args</span>.<span class="built_in">length</span>)&#123;</span><br><span class="line">	<span class="keyword">if</span>(<span class="built_in">args</span>[i].startsWith(<span class="string">"-"</span>))&#123;</span><br><span class="line">		i = i + <span class="number">1</span>;</span><br><span class="line">		continue;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">if</span>(<span class="built_in">args</span>[i].endsWith(<span class="string">".scala"</span>))&#123;</span><br><span class="line">		foundIt = <span class="literal">true</span>;</span><br><span class="line">		<span class="built_in">break</span>;</span><br><span class="line">	&#125;</span><br><span class="line">	i = i+ <span class="number">1</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-</li>
+<pre><code>int i = 0;
+boolean foundIt = false;
+while (i &lt; args.length){
+  if(args[i].startsWith(&quot;-&quot;)){
+      i = i + 1;
+      continue;
+  }
+  if(args[i].endsWith(&quot;.scala&quot;)){
+      foundIt = true;
+      break;
+  }
+  i = i+ 1
+}
+</code></pre></li>
 <li><p>scala可以写成：</p>
-<figure class="highlight stylus"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">var</span> <span class="selector-tag">i</span> = <span class="number">0</span></span><br><span class="line"><span class="selector-tag">var</span> foundIt : Boolean = false</span><br><span class="line">while (<span class="selector-tag">i</span> &lt; args<span class="selector-class">.length</span> &amp;&amp; !foundIt)&#123;</span><br><span class="line">	<span class="keyword">if</span>(!args(i).startsWith(<span class="string">"-"</span>))&#123;</span><br><span class="line">		<span class="keyword">if</span>(args(i).endsWith(<span class="string">".scala"</span>)</span><br><span class="line">			foundIt = true</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="selector-tag">i</span> = <span class="selector-tag">i</span> + <span class="number">1</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-</li>
+<pre><code>var i = 0
+var foundIt : Boolean = false
+while (i &lt; args.length &amp;&amp; !foundIt){
+  if(!args(i).startsWith(&quot;-&quot;)){
+      if(args(i).endsWith(&quot;.scala&quot;)
+          foundIt = true
+  }
+  i = i + 1
+}
+</code></pre></li>
 <li><p>或者用递归函数代替循环：</p>
-<figure class="highlight flix"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">searchFrom</span></span>(i: Int): Int = &#123;</span><br><span class="line">	<span class="keyword">if</span>(i &gt;= args.length) <span class="number">-1</span>		<span class="comment">//未找到返回-1</span></span><br><span class="line">	<span class="keyword">else</span> <span class="keyword">if</span>(args(i).startsWith(<span class="string">"-"</span>)) searchFrom(i + <span class="number">1</span>)	<span class="comment">//递归查找下一处</span></span><br><span class="line">	<span class="keyword">else</span> <span class="keyword">if</span>(args(i).endsWith(<span class="string">".scala"</span>)) i	<span class="comment">//找到了就返回</span></span><br><span class="line">	<span class="keyword">else</span> searchFrom(i + <span class="number">1</span>)</span><br><span class="line">&#125;</span><br><span class="line">val i = searchFrom(<span class="number">0</span>)</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>这个递归去掉了循环，每一个continue都换成了一次以i+1为入参的递归调用</p>
-</li>
+<pre><code>def searchFrom(i: Int): Int = {
+  if(i &gt;= args.length) -1        //未找到返回-1
+  else if(args(i).startsWith(&quot;-&quot;)) searchFrom(i + 1)    //递归查找下一处
+  else if(args(i).endsWith(&quot;.scala&quot;)) i    //找到了就返回
+  else searchFrom(i + 1)
+}
+val i = searchFrom(0)
+</code></pre></li>
+<li>这个递归去掉了循环，每一个continue都换成了一次以i+1为入参的递归调用</li>
 </ul>
 <h2 id="第八章-函数和闭包"><a href="#第八章-函数和闭包" class="headerlink" title="第八章 函数和闭包"></a>第八章 函数和闭包</h2><hr>
 <h3 id="局部函数"><a href="#局部函数" class="headerlink" title="局部函数"></a>局部函数</h3><ul>
-<li>我们可以在某个函数内部定义函数，就像局部变量一样，这样局部函数只在包含他的代码块中可见，实现了与类中私有方法相同的效果。<br>例：<figure class="highlight processing"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">def processFile(filename: <span class="keyword">String</span>, <span class="built_in">width</span>: Int) = &#123;</span><br><span class="line">	def processLine(<span class="built_in">line</span>: <span class="keyword">String</span>) = &#123; <span class="comment">//局部函数可以访问包含它们的函数的参数</span></span><br><span class="line">		<span class="keyword">if</span>(<span class="built_in">line</span>.length &gt; <span class="built_in">width</span>)</span><br><span class="line">			<span class="built_in">println</span>(filename + <span class="string">": "</span> + <span class="built_in">line</span>.<span class="built_in">trim</span>)</span><br><span class="line">	&#125;</span><br><span class="line">	val source = Source.fromFile(filename) <span class="comment">//从文件名创建一个名为source的Source对象</span></span><br><span class="line">	<span class="keyword">for</span> (<span class="built_in">line</span> &lt;- source.getLines())&#123; <span class="comment">//getLines()返回一个每次迭代从文件读取一行并去掉换行符的迭代器</span></span><br><span class="line">		processLine(filename, <span class="built_in">width</span>, <span class="built_in">line</span>)</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-</li>
+<li>我们可以在某个函数内部定义函数，就像局部变量一样，这样局部函数只在包含他的代码块中可见，实现了与类中私有方法相同的效果。<br>例：<pre><code>def processFile(filename: String, width: Int) = {
+  def processLine(line: String) = { //局部函数可以访问包含它们的函数的参数
+      if(line.length &gt; width)
+          println(filename + &quot;: &quot; + line.trim)
+  }
+  val source = Source.fromFile(filename) //从文件名创建一个名为source的Source对象
+  for (line &lt;- source.getLines()){ //getLines()返回一个每次迭代从文件读取一行并去掉换行符的迭代器
+      processLine(filename, width, line)
+  }
+}
+</code></pre></li>
 </ul>
 <h3 id="一等函数"><a href="#一等函数" class="headerlink" title="一等函数*"></a>一等函数*</h3><ul>
 <li><p>函数字面量被编译成类，并在运行时实例化为函数值。因此，函数字面量和函数值的区别在于，函数字面量存在于，函数字面量存在于源码，而函数值以对象的形式存在于运行时</p>
@@ -672,8 +754,10 @@ $(window).load(function(){
 <li><p><code>=&gt;</code>表示该函数将左侧的内容转换成右侧的内容，因此这是一个将任何整数x <strong>映射</strong> 成 (x + 1)的函数</p>
 </li>
 <li><p>函数值是对象，所以还可以将他们存放在变量中。同时他们也是函数，也可以用常规的圆括号来调用他们：</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> increase = <span class="function">(<span class="params">x: Int</span>) =&gt;</span> x + <span class="number">1</span> <span class="comment">//可以将函数字面量赋值给变量</span></span><br><span class="line">val n = increase(<span class="number">10</span>)  <span class="comment">//可以像一般的函数一样调用</span></span><br><span class="line">increase = <span class="function">(<span class="params">x: Int</span>) =&gt;</span> x + <span class="number">999</span> <span class="comment">//因为increase是var类型，还可以重新赋值</span></span><br></pre></td></tr></table></figure>
-</li>
+<pre><code>var increase = (x: Int) =&gt; x + 1 //可以将函数字面量赋值给变量
+val n = increase(10)  //可以像一般的函数一样调用
+increase = (x: Int) =&gt; x + 999 //因为increase是var类型，还可以重新赋值
+</code></pre></li>
 <li><p>如果在函数字面量中有多于一条语句，可以将函数体用花括号括起来</p>
 </li>
 <li><p>所有的集合类(List,Set,Array,Map)都提供了foreach方法，<strong>它接受一个函数作为入参，并对它的每个元素调用这个函数</strong></p>
@@ -701,37 +785,56 @@ $(window).load(function(){
 <li><p>有时候当你用下划线作为参数占位时，编译器可能没有足够的信息来推断缺失的参数类型。</p>
 </li>
 <li><p>例如：</p>
-<figure class="highlight routeros"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">scala&gt; val f = _ + _</span><br><span class="line">&lt;console&gt; error: missing parameter<span class="built_in"> type </span><span class="keyword">for</span> expanded</span><br><span class="line">function ((x<span class="variable">$1</span>, x<span class="variable">$2</span>) =&gt; x<span class="variable">$1</span>.<span class="variable">$plus</span>(x<span class="variable">$2</span>))</span><br><span class="line"><span class="built_in">..</span>.</span><br></pre></td></tr></table></figure>
-</li>
+<pre><code>scala&gt; val f = _ + _
+&lt;console&gt; error: missing parameter type for expanded
+function ((x$1, x$2) =&gt; x$1.$plus(x$2))
+...
+</code></pre></li>
 <li><p>这种情况下，可以用冒号来给出类型，就像这样：</p>
-<figure class="highlight kotlin"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">scala&gt; <span class="keyword">val</span> f = (_: <span class="built_in">Int</span>) + (_: <span class="built_in">Int</span>)</span><br><span class="line">f: (<span class="built_in">Int</span>, <span class="built_in">Int</span>) =&gt; <span class="built_in">Int</span> = &lt;function0&gt;</span><br><span class="line">scala&gt; f(<span class="number">5</span>,<span class="number">10</span>)</span><br><span class="line">res0: <span class="built_in">Int</span> = <span class="number">15</span></span><br></pre></td></tr></table></figure>
-</li>
+<pre><code>scala&gt; val f = (_: Int) + (_: Int)
+f: (Int, Int) =&gt; Int = &lt;function0&gt;
+scala&gt; f(5,10)
+res0: Int = 15
+</code></pre></li>
 <li><p>注意，<code>_ + _</code>将会展开成一个接收两个参数的函数字面量。这就是为什么只有当每个参数在函数字面量中出现不多不少正好一次的时候才能使用这样的精简写法。多个下划线意味着多个参数，而不是对单个参数的重复利用。</p>
 </li>
 </ul>
 <h3 id="部分应用的函数"><a href="#部分应用的函数" class="headerlink" title="部分应用的函数"></a>部分应用的函数</h3><ul>
 <li><p>下划线还能替换掉整个参数列表，例如：</p>
-<figure class="highlight fortran"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">scala&gt;def <span class="built_in">sum</span>(a:<span class="built_in">Int</span>, b:<span class="built_in">Int</span>, c:<span class="built_in">Int</span>) = a + b + c</span><br><span class="line"><span class="built_in">sum</span>: (a:<span class="built_in">Int</span>, b:<span class="built_in">Int</span>, c:<span class="built_in">Int</span>)<span class="built_in">Int</span></span><br><span class="line">scala&gt;val a = <span class="built_in">sum</span> _</span><br><span class="line">a:(<span class="built_in">Int</span>, <span class="built_in">Int</span>, <span class="built_in">Int</span>) =&gt; <span class="built_in">Int</span> = &lt;function3&gt;</span><br><span class="line">scala&gt; a(<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>)</span><br><span class="line">res0: <span class="built_in">Int</span> = <span class="number">6</span></span><br></pre></td></tr></table></figure>
-</li>
+<pre><code>scala&gt;def sum(a:Int, b:Int, c:Int) = a + b + c
+sum: (a:Int, b:Int, c:Int)Int
+scala&gt;val a = sum _
+a:(Int, Int, Int) =&gt; Int = &lt;function3&gt;
+scala&gt; a(1,2,3)
+res0: Int = 6
+</code></pre></li>
 <li><p>后面的a 即是基于sum创建的一个部分应用函数</p>
 </li>
 </ul>
 <h3 id="特殊的函数调用形式"><a href="#特殊的函数调用形式" class="headerlink" title="特殊的函数调用形式"></a>特殊的函数调用形式</h3><h4 id="重复参数"><a href="#重复参数" class="headerlink" title="重复参数"></a>重复参数</h4><ul>
-<li>scala允许你标示出的参数的最后一个参数可以被重复，这样我们可以对函数传入一个可变长度的参数列表。这样一个重复参数的表示，需要在参数的类型之后加上一个<code>*</code>号：<figure class="highlight vim"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">scala&gt; def <span class="keyword">echo</span>(arg<span class="variable">s:</span> String) =</span><br><span class="line">	<span class="keyword">for</span> (arg &lt;- <span class="keyword">args</span>) println(arg)</span><br><span class="line"><span class="keyword">echo</span>: (arg<span class="variable">s:</span> String*)Unit</span><br></pre></td></tr></table></figure>
+<li><p>scala允许你标示出的参数的最后一个参数可以被重复，这样我们可以对函数传入一个可变长度的参数列表。这样一个重复参数的表示，需要在参数的类型之后加上一个<code>*</code>号：</p>
+<pre><code>scala&gt; def echo(args: String) =
+  for (arg &lt;- args) println(arg)
+echo: (args: String*)Unit
+</code></pre><p>这样echo就可以接受任意多个String类型的参数(可以是0个)</p>
+</li>
+<li><p>但是如果要将一个适合类型的数组以这种重复参数的形式传入的时候，需要写成如下形式：</p>
+<pre><code>scala&gt; var arr = Array(&quot;a&quot;,&quot;v&quot;,&quot;gf&quot;)
+arr:Array[String] = Array(a,v,gf)
+scala&gt; echo(arr: _*)
+a
+v
+gf
+</code></pre><p>这种表示法告诉编译器将arr的每个元素作为参数传给echo，而不是将所有元素放在一起作为单个实参传入</p>
 </li>
 </ul>
-<p>这样echo就可以接受任意多个String类型的参数(可以是0个)</p>
-<ul>
-<li>但是如果要将一个适合类型的数组以这种重复参数的形式传入的时候，需要写成如下形式：<figure class="highlight stylus"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">scala&gt; <span class="selector-tag">var</span> arr = Array(<span class="string">"a"</span>,<span class="string">"v"</span>,<span class="string">"gf"</span>)</span><br><span class="line">arr:Array[String] = Array(<span class="selector-tag">a</span>,v,gf)</span><br><span class="line">scala&gt; echo(arr: _*)</span><br><span class="line">a</span><br><span class="line">v</span><br><span class="line">gf</span><br></pre></td></tr></table></figure>
-</li>
-</ul>
-<p>这种表示法告诉编译器将arr的每个元素作为参数传给echo，而不是将所有元素放在一起作为单个实参传入</p>
 <h4 id="尾递归"><a href="#尾递归" class="headerlink" title="尾递归"></a>尾递归</h4><ul>
-<li>例子：<figure class="highlight ruby"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">approximate</span><span class="params">(<span class="symbol">guess:</span> Double)</span></span>: Double =</span><br><span class="line">	<span class="keyword">if</span> (isGoodEnough(guess)) guess</span><br><span class="line">	<span class="keyword">else</span> approximate(improve(guess))</span><br></pre></td></tr></table></figure>
+<li><p>例子：</p>
+<pre><code>def approximate(guess: Double): Double =
+  if (isGoodEnough(guess)) guess
+  else approximate(improve(guess))
+</code></pre><p>在合适的isGoodEnough和improve函数的实现下，这个函数就是一个递归函数。而这个递归调用在最后一步的函数称为尾递归(tail recursive)函数</p>
 </li>
-</ul>
-<p>在合适的isGoodEnough和improve函数的实现下，这个函数就是一个递归函数。而这个递归调用在最后一步的函数称为尾递归(tail recursive)函数</p>
-<ul>
 <li><p>scala编译器对尾递归函数有特殊的优化，能够检测到尾递归并将他替换为跳转到函数的最开始，并在跳转之前更新参数的值</p>
 </li>
 <li><p>也就是说，我们完全可以用尾递归的方法来代替循环而不用付出任何额外的开销</p>
@@ -739,27 +842,32 @@ $(window).load(function(){
 <li><p>尾递归不会在每次调用时构建一个新的栈，所有的调用都会在同一个栈中进行</p>
 </li>
 <li><p>如下有个例子：</p>
-<figure class="highlight gradle"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">def</span> boom(x: <span class="keyword">Int</span>): <span class="keyword">Int</span> =</span><br><span class="line">	<span class="keyword">if</span>(x == <span class="number">0</span>) <span class="keyword">throw</span> <span class="keyword">new</span> Exception (<span class="string">"boom!"</span>)</span><br><span class="line">	<span class="keyword">else</span> boom(x - <span class="number">1</span>) + <span class="number">1</span></span><br></pre></td></tr></table></figure>
+<pre><code>def boom(x: Int): Int =
+  if(x == 0) throw new Exception (&quot;boom!&quot;)
+  else boom(x - 1) + 1
+</code></pre><p>这个函数不是一个尾递归的，因为 <strong>它在递归调用之后还执行了一个递增操作</strong></p>
 </li>
-</ul>
-<p>这个函数不是一个尾递归的，因为 <strong>它在递归调用之后还执行了一个递增操作</strong></p>
-<ul>
-<li>但是scala中尾递归是受限的，更高级形式的尾递归实现十分困难。scala只能对那些直接尾递归的函数做优化</li>
+<li><p>但是scala中尾递归是受限的，更高级形式的尾递归实现十分困难。scala只能对那些直接尾递归的函数做优化</p>
+</li>
 </ul>
 <h2 id="第九章-控制抽象"><a href="#第九章-控制抽象" class="headerlink" title="第九章 控制抽象"></a>第九章 控制抽象</h2><hr>
 <h3 id="减少代码重复"><a href="#减少代码重复" class="headerlink" title="减少代码重复"></a>减少代码重复</h3><ul>
-<li><p>例子：</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">def filesMatching(query: <span class="built_in">String</span>,</span><br><span class="line">	matcher: <span class="function">(<span class="params"><span class="built_in">String</span>, <span class="built_in">String</span></span>) =&gt;</span> <span class="built_in">Boolean</span>) = &#123;</span><br><span class="line">	<span class="keyword">for</span> (file &lt;- filesHere; <span class="keyword">if</span> matcher(file.getName, query))</span><br><span class="line">		<span class="keyword">yield</span> file</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-</li>
+<li>例子：<pre><code>def filesMatching(query: String,
+  matcher: (String, String) =&gt; Boolean) = {
+  for (file &lt;- filesHere; if matcher(file.getName, query))
+      yield file
+}
+</code></pre></li>
 <li><p>在这个方法中，if子句用matcher来检查文件名是否满足条件，这个检查具体做什么，取决于具体的matcher。matcher本身是一个函数，因此类型声明中有一个<code>=&gt;</code>符号。这个函数接受两个字符串类型的参数(分别是文件名和查询条件)，返回一个布尔值，因此这个参数的类型为<code>(String, String) =&gt; Boolean</code></p>
 </li>
 <li><p>下面三个方法分别使用三种不同的参数matcher来实现不同的文件查找功能:</p>
-<figure class="highlight lisp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">def filesEnding(<span class="name">query</span>: String) =</span><br><span class="line">	filesMatching(<span class="name">query</span>, _.endsWith(<span class="name">_</span>))</span><br></pre></td></tr></table></figure>
-</li>
-</ul>
-<figure class="highlight lisp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">def filesContaning(<span class="name">query</span>: String) =</span><br><span class="line">	filesMatching(<span class="name">query</span>, _.contains(<span class="name">_</span>))</span><br></pre></td></tr></table></figure>
-<figure class="highlight lisp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">def filesRegex(<span class="name">query</span>: String) =</span><br><span class="line">	filesMatching(<span class="name">query</span>, _.matches(<span class="name">_</span>))</span><br></pre></td></tr></table></figure>
-<ul>
+<pre><code>def filesEnding(query: String) =
+  filesMatching(query, _.endsWith(_))
+</code></pre><pre><code>def filesContaning(query: String) =
+  filesMatching(query, _.contains(_))
+</code></pre><pre><code>def filesRegex(query: String) =
+  filesMatching(query, _.matches(_))
+</code></pre></li>
 <li>其中，<code>_.endsWith(_)</code>的含义与下面的代码是一样的<code>(fileName: String, query: String) =&gt; fileName.endsWith(query)</code> 两个下划线按顺序作为传入的两个参数的占位符</li>
 </ul>
 <p><br></p>
@@ -899,7 +1007,7 @@ $(window).load(function(){
               <img class="site-author-image" itemprop="image" src="/images/avatar.gif" alt="Fleschier">
             
               <p class="site-author-name" itemprop="name">Fleschier</p>
-              <p class="site-description motion-element" itemprop="description">每天早上醒来，你和阳光都在，就是我想要的未来。</p>
+              <p class="site-description motion-element" itemprop="description">生活是一个过程,可喜的是它不用重来。</p>
           </div>
 
           

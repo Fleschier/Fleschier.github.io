@@ -363,7 +363,7 @@ $(window).load(function(){
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Fleschier">
-      <meta itemprop="description" content="每天早上醒来，你和阳光都在，就是我想要的未来。">
+      <meta itemprop="description" content="生活是一个过程,可喜的是它不用重来。">
       <meta itemprop="image" content="/images/avatar.gif">
     </span>
 
@@ -492,10 +492,12 @@ $(window).load(function(){
 </li>
 </ul>
 <h3 id="访问窗口的属性和方法"><a href="#访问窗口的属性和方法" class="headerlink" title="访问窗口的属性和方法"></a>访问窗口的属性和方法</h3><ul>
-<li><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">window</span><span class="selector-class">.propertyName</span></span><br><span class="line"><span class="selector-tag">window</span><span class="selector-class">.methodName</span>(<span class="selector-attr">[Parameters]</span>)</span><br></pre></td></tr></table></figure>
-</li>
+<li><pre><code>window.propertyName
+window.methodName([Parameters])
+</code></pre>在脚本引用指向包含文档的窗口时,window对象有一个同义词self,以上的引用也等价于:<pre><code>self.propertyName
+self.methodName([Parameters])
+</code></pre></li>
 </ul>
-<p>在脚本引用指向包含文档的窗口时,window对象有一个同义词self,以上的引用也等价于:<br><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">self</span><span class="selector-class">.propertyName</span></span><br><span class="line"><span class="selector-tag">self</span><span class="selector-class">.methodName</span>(<span class="selector-attr">[Parameters]</span>)</span><br></pre></td></tr></table></figure></p>
 <h3 id="创建窗口"><a href="#创建窗口" class="headerlink" title="创建窗口"></a>创建窗口</h3><ul>
 <li><p>脚本并不创建主浏览器窗口,用户在创建主窗口的时候需要启动浏览器.但是在主窗口打开后,脚本就可以生成大量子窗口.</p>
 </li>
@@ -513,8 +515,10 @@ $(window).load(function(){
 <li><p>这个方法也是弹出一个对话框,但是有两个按钮(大多数平台上为Ok和Cancel),称为确认对话框.<strong>更重要的是,这个方法有返回值:单击OK返回值为true,单击Cancel返回值为false</strong>. 可以将这个方法的计算值作为if或if..else结构中的条件语句.</p>
 </li>
 <li><p>例子:</p>
-<figure class="highlight nix"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span> (confirm(<span class="string">"Are you sure to start over?"</span>))&#123;</span><br><span class="line">  location.<span class="attr">href</span> = <span class="string">"index.html"</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-</li>
+<pre><code>if (confirm(&quot;Are you sure to start over?&quot;)){
+location.href = &quot;index.html&quot;;
+}
+</code></pre></li>
 </ul>
 <h4 id="window-prompt-方法"><a href="#window-prompt-方法" class="headerlink" title="window.prompt()方法"></a>window.prompt()方法</h4><ul>
 <li><p>window对象的最后一种对话框是提示对话框,它显示了预置的信息,并提供一个文本域供用户输入响应.这个对话框有两个按钮:OK和Cancel.</p>
@@ -528,13 +532,16 @@ $(window).load(function(){
 <li><p>window对象会响应几个系统和用户事件,最常见的是页面加载完毕时触发的事件.<strong>这个事件等待图像, Java applet和插件程序的数据文件完全下载到浏览器中</strong>.使用load事件调用函数的优点在于,它确保所有document对象都存在于浏览器的DOM中.</p>
 </li>
 <li><p>可以通过如下方式调用onload方法:</p>
-<figure class="highlight typescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">window</span>.addEventListener(<span class="string">'load'</span>, <span class="function"><span class="keyword">function</span><span class="title">Name</span>, <span class="title">false</span>)</span>;</span><br><span class="line"><span class="built_in">window</span>.attachEvent(<span class="string">'onload'</span>, <span class="function"><span class="keyword">function</span><span class="title">Name</span>)</span>;</span><br><span class="line"><span class="comment">//其中functionName是页面下载完成后要运行的函数的名称.可以多次调用addEventListener和attachEvent,把多个函数添加到页面加载完毕要执行的列表中.</span></span><br></pre></td></tr></table></figure>
-</li>
+<pre><code>window.addEventListener(&#39;load&#39;, functionName, false);
+window.attachEvent(&#39;onload&#39;, functionName);
+//其中functionName是页面下载完成后要运行的函数的名称.可以多次调用addEventListener和attachEvent,把多个函数添加到页面加载完毕要执行的列表中.
+</code></pre></li>
 <li><p>还可以把该事件直接应用于元素:</p>
-<figure class="highlight typescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">window</span>[<span class="string">'onload'</span>] = <span class="function"><span class="keyword">function</span><span class="title">Name</span></span>;</span><br><span class="line"><span class="built_in">window</span>.onload = <span class="function"><span class="keyword">function</span><span class="title">Name</span></span>;</span><br></pre></td></tr></table></figure>
+<pre><code>window[&#39;onload&#39;] = functionName;
+window.onload = functionName;
+</code></pre><p>但是这种用法表示,页面加载完毕后,只执行一个函数,并替代已赋予window对象的其他事件处理程序.</p>
 </li>
 </ul>
-<p>但是这种用法表示,页面加载完毕后,只执行一个函数,并替代已赋予window对象的其他事件处理程序.</p>
 <h2 id="location对象"><a href="#location对象" class="headerlink" title="location对象"></a>location对象</h2><hr>
 <ul>
 <li><p>这个对象表示载入窗口的URL.它和document对象不同:文档是页面的内容,而位置是页面的URL.</p>
@@ -562,74 +569,81 @@ $(window).load(function(){
 </li>
 </ul>
 <h3 id="document-forms-属性"><a href="#document-forms-属性" class="headerlink" title="document.forms[]属性"></a>document.forms[]属性</h3><ul>
-<li>比较下面两个表达式:<figure class="highlight dart"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> aForms = <span class="built_in">document</span>.forms;</span><br><span class="line"><span class="keyword">var</span> aForms = <span class="built_in">document</span>.getElementByTagName(<span class="string">'form'</span>);</span><br></pre></td></tr></table></figure>
+<li><p>比较下面两个表达式:</p>
+<pre><code>var aForms = document.forms;
+var aForms = document.getElementByTagName(&#39;form&#39;);
+</code></pre><p><strong>一个重要的区别是,document.forms集合允许按名称直接引用某个表单,而不仅仅是按照数组的偏移量来访问.</strong></p>
 </li>
-</ul>
-<p><strong>一个重要的区别是,document.forms集合允许按名称直接引用某个表单,而不仅仅是按照数组的偏移量来访问.</strong></p>
-<ul>
 <li><p>因为有些时候按照下标号引用表单未必可行.动态网页可能根据上下文包含数量可变的表单,所以表单在页面上的位置可能随上下文而变化.</p>
 </li>
-<li><p>支持脚本编程的浏览器允许通过表单名或ID(即分配给<code>&lt;form&gt;标记的name或者id属性</code>)更直接地引用表单:</p>
-<figure class="highlight stylus"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">&lt;<span class="selector-tag">form</span> id=<span class="string">'formId'</span> name=<span class="string">'fromName'</span> ...&gt;</span><br><span class="line"></span><br><span class="line"><span class="comment">//第一种方法是使用getElementById方法:</span></span><br><span class="line">document.getElementById(<span class="string">"formId"</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment">//第二种方法是使用数组语法,将表单名称或者ID作为数组的字符串下标:</span></span><br><span class="line">document<span class="selector-class">.forms</span>[<span class="string">"formId"</span>]</span><br><span class="line">document<span class="selector-class">.forms</span>[<span class="string">"formName"</span>]</span><br><span class="line"></span><br><span class="line"><span class="comment">//第三种按名称引用form对象的简短方式是把表单的名称附加为document对象的属性:</span></span><br><span class="line">document.fornName</span><br></pre></td></tr></table></figure>
-</li>
+<li><p>支持脚本编程的浏览器允许通过表单名或ID(即分配给<code>&lt;form&gt;标记的name或者id属性</code>)更直接地引用表单:<br><code>`</code></p>
+<form id="formId" name="fromName" ...>
+
+</form></li>
 </ul>
-<h3 id="document-images-属性"><a href="#document-images-属性" class="headerlink" title="document.images[]属性"></a>document.images[]属性</h3><ul>
-<li>文档利用特殊的数组属性来跟踪表单,同样,document对象也通过<code>&lt;img&gt;</code>标记保存插入文档的图像集合(数组).通过document.images数组引用的图像可以用img元素名称中的数字或字符串下标来得到.</li>
-</ul>
-<h3 id="document-createElement-和document-createTextNode-方法"><a href="#document-createElement-和document-createTextNode-方法" class="headerlink" title="document.createElement()和document.createTextNode()方法"></a>document.createElement()和document.createTextNode()方法</h3><ul>
-<li>在HTML文档中添加新元素至少需要两个步骤:</li>
-</ul>
-<ol>
-<li>为文档创建新元素.</li>
-<li>在页面的树形结构中,将其插入到需要的位置.</li>
-</ol>
-<ul>
-<li><p>document.createElement()方法可以在浏览器的内存中创建一个全新的元素对象.指定要创建的元素时,应将元素的标记名作为该方法的字符串参数:<br><code>var newEle, = document.createElement(&quot;p&quot;);</code></p>
-</li>
-<li><p>还可以给元素添加一些属性值,为此应在元素成为文档的一部分之前,向新建对象赋值:<code>newElem.setAttribute(&quot;class&quot;,&quot;intro&quot;);</code></p>
-</li>
-<li><p>可将这个元素插入文档中的任何位置,例如末尾:<br><code>document.body.appendChild(newElem);</code></p>
-</li>
-</ul>
-<h3 id="document-write-方法"><a href="#document-write-方法" class="headerlink" title="document.write()方法"></a>document.write()方法</h3><ul>
-<li>document.write()方法是给文档写入内容的另一种方式.他的优点是可以临时应急,缺点如下:</li>
-</ul>
-<ol>
-<li>只有页面第一次加载到浏览器中时,document.write()才能给一个网页添加内容.以后调用该方法都会替代整个页面.</li>
-<li>document.write()会将旧文本块插入文档,编写出草率的程序和错误的标记,将标记与脚本内容混合在一起,不利于开发的分层.</li>
-<li>document.write()不能用于XHTML,XHTML这种文档类型不允许第一次解析期间修改其内容.</li>
-</ol>
-<blockquote>
-<p>注:XHTML—可扩展超文本标记语言（英语：eXtensible HyperText Markup Language，XHTML），是一种标记语言，表现方式与超文本标记语言（HTML）类似，不过语法上更加严格。从继承关系上讲，HTML是一种基于标准通用标记语言（SGML）的应用，是一种非常灵活的置标语言，而XHTML则基于可扩展标记语言（XML），XML是SGML的一个子集。XHTML 1.0在2000年1月26日成为W3C的推荐标准。</p>
-</blockquote>
-<h2 id="表单和表单元素"><a href="#表单和表单元素" class="headerlink" title="表单和表单元素"></a>表单和表单元素</h2><hr>
-<h3 id="form对象"><a href="#form对象" class="headerlink" title="form对象"></a>form对象</h3><ul>
-<li>表单以及其中的输入控件是DOM对象,其独特的属性是文档中其他对象所没有的.例如,表单对象的action属性告诉浏览器,在提价表单时,将输入的值发送到什么地方.select控件(下拉列表)的selectedIndex属性指出用户选择了哪个选项.</li>
-</ul>
-<h4 id="访问表单属性"><a href="#访问表单属性" class="headerlink" title="访问表单属性"></a>访问表单属性</h4><ul>
-<li><p>在创建表单时,可以使用HTML页面中的标准标记,也可以使用JavaScript中的DOM方法.无论采用哪种方法,都可以设置name,target,action,method和enctype特性.这些都是form对象的属性.</p>
-</li>
-<li><p>用法的例子:</p>
-<figure class="highlight dart"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> sURL = <span class="built_in">document</span>.getElementById(<span class="string">'formName'</span>).action;</span><br><span class="line"><span class="built_in">document</span>.forms[<span class="number">0</span>].action = <span class="string">"http://www.example.com/cgi/login.pl"</span>;</span><br></pre></td></tr></table></figure>
-</li>
-</ul>
-<h4 id="from-elements-属性"><a href="#from-elements-属性" class="headerlink" title="from.elements[]属性"></a>from.elements[]属性</h4><ul>
-<li><p>elements[]属性是表单中所有输入控件的集合.这个数组中各项的顺序根据HTML标记在源代码中的顺序而定.使用ID直接引用单个元素通常更有效,但有时候需要遍历所有元素时会需要这样访问.</p>
-</li>
-<li><p>下面的代码段查看表单中所有的控件元素,并将文本域的内容设置为空字符串.</p>
-<figure class="highlight dart"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> oForm = <span class="built_in">document</span>.getElementById(<span class="string">'registration-form'</span>);</span><br><span class="line">  <span class="keyword">if</span>(!oForm) <span class="keyword">return</span> <span class="keyword">false</span>;</span><br><span class="line"><span class="keyword">for</span>(<span class="keyword">var</span> i = <span class="number">0</span>; i &lt; oForm.elements.length; i++)&#123;</span><br><span class="line">  <span class="keyword">if</span>(oForm.elements[i].type == <span class="string">"text"</span>)&#123;</span><br><span class="line">    oForm.elements[i].values = <span class="string">""</span>;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-</li>
-</ul>
-<h3 id="将表单控件作为对象"><a href="#将表单控件作为对象" class="headerlink" title="将表单控件作为对象"></a>将表单控件作为对象</h3><ul>
-<li><p>在所有浏览器的DOM中,嵌套在<code>&lt;form&gt;</code>标记中的HTML元素有三种是脚本对象.多数对象都在页面源代码的<code>&lt;input&gt;</code>标记中,只有赋给<code>&lt;input&gt;</code>标记的type特性的值能确定元素是文本框,密码输入域,隐藏域,按钮,复选框还是单选框.其他两种表单控件textarea和select有各自的标记.</p>
-</li>
-<li><p>要将某个表单控件作为对象进行引用,可以使用其id或tagName直接引用,或者使用DOM level 0语法,将引用构造为一个以document开头,后跟form和控件的层次结构.</p>
-<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">document</span><span class="selector-class">.getElementById</span>(<span class="selector-tag">controlName</span>)</span><br><span class="line">或者</span><br><span class="line"><span class="selector-tag">document</span><span class="selector-class">.formName</span><span class="selector-class">.controlName</span></span><br></pre></td></tr></table></figure>
-</li>
-<li><p>例如有个简单的表单:</p>
-<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">form</span> <span class="attr">id</span>=<span class="string">"searchForm"</span> <span class="attr">action</span>=<span class="string">"cgi-bin/search.pl"</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">p</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"text"</span> <span class="attr">id</span>=<span class="string">"entry"</span> <span class="attr">name</span>=<span class="string">"entry"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"submit"</span> <span class="attr">id</span>=<span class="string">"sender"</span> <span class="attr">name</span>=<span class="string">"sender"</span> <span class="attr">value</span>=<span class="string">"Search"</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">form</span>&gt;</span></span><br><span class="line">```CPU</span><br><span class="line">对于文本输入控件,以下引用实例都是有效的:</span><br></pre></td></tr></table></figure>
-</li>
-</ul>
+<p>//第一种方法是使用getElementById方法:<br>document.getElementById(“formId”)</p>
+<p>//第二种方法是使用数组语法,将表单名称或者ID作为数组的字符串下标:<br>document.forms[“formId”]<br>document.forms[“formName”]</p>
+<p>//第三种按名称引用form对象的简短方式是把表单的名称附加为document对象的属性:<br>document.fornName</p>
+<pre><code>
+### document.images[]属性
+
+- 文档利用特殊的数组属性来跟踪表单,同样,document对象也通过`&lt;img&gt;`标记保存插入文档的图像集合(数组).通过document.images数组引用的图像可以用img元素名称中的数字或字符串下标来得到.
+
+### document.createElement()和document.createTextNode()方法
+
+- 在HTML文档中添加新元素至少需要两个步骤:
+1. 为文档创建新元素.
+2. 在页面的树形结构中,将其插入到需要的位置.
+
+- document.createElement()方法可以在浏览器的内存中创建一个全新的元素对象.指定要创建的元素时,应将元素的标记名作为该方法的字符串参数:
+`var newEle, = document.createElement(&quot;p&quot;);`
+
+- 还可以给元素添加一些属性值,为此应在元素成为文档的一部分之前,向新建对象赋值:`newElem.setAttribute(&quot;class&quot;,&quot;intro&quot;);`
+
+- 可将这个元素插入文档中的任何位置,例如末尾:
+`document.body.appendChild(newElem);`
+
+### document.write()方法
+
+- document.write()方法是给文档写入内容的另一种方式.他的优点是可以临时应急,缺点如下:
+1. 只有页面第一次加载到浏览器中时,document.write()才能给一个网页添加内容.以后调用该方法都会替代整个页面.
+2. document.write()会将旧文本块插入文档,编写出草率的程序和错误的标记,将标记与脚本内容混合在一起,不利于开发的分层.
+3. document.write()不能用于XHTML,XHTML这种文档类型不允许第一次解析期间修改其内容.
+
+&gt; 注:XHTML---可扩展超文本标记语言（英语：eXtensible HyperText Markup Language，XHTML），是一种标记语言，表现方式与超文本标记语言（HTML）类似，不过语法上更加严格。从继承关系上讲，HTML是一种基于标准通用标记语言（SGML）的应用，是一种非常灵活的置标语言，而XHTML则基于可扩展标记语言（XML），XML是SGML的一个子集。XHTML 1.0在2000年1月26日成为W3C的推荐标准。
+
+## 表单和表单元素
+---
+
+### form对象
+
+- 表单以及其中的输入控件是DOM对象,其独特的属性是文档中其他对象所没有的.例如,表单对象的action属性告诉浏览器,在提价表单时,将输入的值发送到什么地方.select控件(下拉列表)的selectedIndex属性指出用户选择了哪个选项.
+
+#### 访问表单属性
+
+-  在创建表单时,可以使用HTML页面中的标准标记,也可以使用JavaScript中的DOM方法.无论采用哪种方法,都可以设置name,target,action,method和enctype特性.这些都是form对象的属性.
+
+- 用法的例子:
+</code></pre><p>var sURL = document.getElementById(‘formName’).action;<br>document.forms[0].action = “<a href="http://www.example.com/cgi/login.pl&quot;" target="_blank" rel="noopener">http://www.example.com/cgi/login.pl&quot;</a>;</p>
+<pre><code>
+#### from.elements[]属性
+
+- elements[]属性是表单中所有输入控件的集合.这个数组中各项的顺序根据HTML标记在源代码中的顺序而定.使用ID直接引用单个元素通常更有效,但有时候需要遍历所有元素时会需要这样访问.
+
+- 下面的代码段查看表单中所有的控件元素,并将文本域的内容设置为空字符串.
+</code></pre><p>var oForm = document.getElementById(‘registration-form’);<br>  if(!oForm) return false;<br>for(var i = 0; i &lt; oForm.elements.length; i++){<br>  if(oForm.elements[i].type == “text”){<br>    oForm.elements[i].values = “”;<br>  }<br>}</p>
+<pre><code>
+### 将表单控件作为对象
+
+- 在所有浏览器的DOM中,嵌套在`&lt;form&gt;`标记中的HTML元素有三种是脚本对象.多数对象都在页面源代码的`&lt;input&gt;`标记中,只有赋给`&lt;input&gt;`标记的type特性的值能确定元素是文本框,密码输入域,隐藏域,按钮,复选框还是单选框.其他两种表单控件textarea和select有各自的标记.
+
+- 要将某个表单控件作为对象进行引用,可以使用其id或tagName直接引用,或者使用DOM level 0语法,将引用构造为一个以document开头,后跟form和控件的层次结构.
+</code></pre><p>document.getElementById(controlName)<br>或者<br>document.formName.controlName</p>
+<pre><code>
+- 例如有个简单的表单:
+</code></pre><p><form id="searchForm" action="cgi-bin/search.pl"><br>  <p><br>    <input type="text" id="entry" name="entry"><br>    <input type="submit" id="sender" name="sender" value="Search"><br>  </p><br></form></p>
+<pre><code class="CPU">对于文本输入控件,以下引用实例都是有效的:
+</code></pre>
 <p>document.getElementById(“entry”)<br>document.searchForm.entry<br>document.searchForm.elements[0]qitak<br>document.forms[“searchForm”].elements[“entry”]<br>document.forms[“searchForm”].entry<br><code>`</code></p>
 
       
@@ -766,7 +780,7 @@ $(window).load(function(){
               <img class="site-author-image" itemprop="image" src="/images/avatar.gif" alt="Fleschier">
             
               <p class="site-author-name" itemprop="name">Fleschier</p>
-              <p class="site-description motion-element" itemprop="description">每天早上醒来，你和阳光都在，就是我想要的未来。</p>
+              <p class="site-description motion-element" itemprop="description">生活是一个过程,可喜的是它不用重来。</p>
           </div>
 
           
@@ -960,7 +974,7 @@ $(window).load(function(){
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#window对象"><span class="nav-number">1.</span> <span class="nav-text">window对象</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#访问窗口的属性和方法"><span class="nav-number">1.1.</span> <span class="nav-text">访问窗口的属性和方法</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#创建窗口"><span class="nav-number">1.2.</span> <span class="nav-text">创建窗口</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#window对象的属性和方法"><span class="nav-number">1.3.</span> <span class="nav-text">window对象的属性和方法</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#window-alert-方法"><span class="nav-number">1.3.1.</span> <span class="nav-text">window.alert()方法</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#window-confirm-方法"><span class="nav-number">1.3.2.</span> <span class="nav-text">window.confirm()方法</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#window-prompt-方法"><span class="nav-number">1.3.3.</span> <span class="nav-text">window.prompt()方法</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#load事件"><span class="nav-number">1.3.4.</span> <span class="nav-text">load事件</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#location对象"><span class="nav-number">2.</span> <span class="nav-text">location对象</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#navigator对象"><span class="nav-number">3.</span> <span class="nav-text">navigator对象</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#document对象"><span class="nav-number">4.</span> <span class="nav-text">document对象</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#document-getElementById-方法"><span class="nav-number">4.1.</span> <span class="nav-text">document.getElementById()方法</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#document-getElementByTagName-方法"><span class="nav-number">4.2.</span> <span class="nav-text">document.getElementByTagName()方法</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#document-forms-属性"><span class="nav-number">4.3.</span> <span class="nav-text">document.forms[]属性</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#document-images-属性"><span class="nav-number">4.4.</span> <span class="nav-text">document.images[]属性</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#document-createElement-和document-createTextNode-方法"><span class="nav-number">4.5.</span> <span class="nav-text">document.createElement()和document.createTextNode()方法</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#document-write-方法"><span class="nav-number">4.6.</span> <span class="nav-text">document.write()方法</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#表单和表单元素"><span class="nav-number">5.</span> <span class="nav-text">表单和表单元素</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#form对象"><span class="nav-number">5.1.</span> <span class="nav-text">form对象</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#访问表单属性"><span class="nav-number">5.1.1.</span> <span class="nav-text">访问表单属性</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#from-elements-属性"><span class="nav-number">5.1.2.</span> <span class="nav-text">from.elements[]属性</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#将表单控件作为对象"><span class="nav-number">5.2.</span> <span class="nav-text">将表单控件作为对象</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#window对象"><span class="nav-number">1.</span> <span class="nav-text">window对象</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#访问窗口的属性和方法"><span class="nav-number">1.1.</span> <span class="nav-text">访问窗口的属性和方法</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#创建窗口"><span class="nav-number">1.2.</span> <span class="nav-text">创建窗口</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#window对象的属性和方法"><span class="nav-number">1.3.</span> <span class="nav-text">window对象的属性和方法</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#window-alert-方法"><span class="nav-number">1.3.1.</span> <span class="nav-text">window.alert()方法</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#window-confirm-方法"><span class="nav-number">1.3.2.</span> <span class="nav-text">window.confirm()方法</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#window-prompt-方法"><span class="nav-number">1.3.3.</span> <span class="nav-text">window.prompt()方法</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#load事件"><span class="nav-number">1.3.4.</span> <span class="nav-text">load事件</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#location对象"><span class="nav-number">2.</span> <span class="nav-text">location对象</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#navigator对象"><span class="nav-number">3.</span> <span class="nav-text">navigator对象</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#document对象"><span class="nav-number">4.</span> <span class="nav-text">document对象</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#document-getElementById-方法"><span class="nav-number">4.1.</span> <span class="nav-text">document.getElementById()方法</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#document-getElementByTagName-方法"><span class="nav-number">4.2.</span> <span class="nav-text">document.getElementByTagName()方法</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#document-forms-属性"><span class="nav-number">4.3.</span> <span class="nav-text">document.forms[]属性</span></a></li></ol></li></ol></div>
             
 
           </div>

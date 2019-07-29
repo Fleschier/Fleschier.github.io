@@ -361,7 +361,7 @@ $(window).load(function(){
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Fleschier">
-      <meta itemprop="description" content="每天早上醒来，你和阳光都在，就是我想要的未来。">
+      <meta itemprop="description" content="生活是一个过程,可喜的是它不用重来。">
       <meta itemprop="image" content="/images/avatar.gif">
     </span>
 
@@ -487,14 +487,17 @@ $(window).load(function(){
 </blockquote>
 </li>
 <li><p>官方还提供了其他的一些命令,比如:</p>
-<figure class="highlight vim"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">(<span class="number">1</span>)运行audit <span class="keyword">fix</span>，但是只更新pkglock， 不更新node_modules：</span><br><span class="line">$ npm audit <span class="keyword">fix</span> --package-lock-<span class="keyword">only</span></span><br></pre></td></tr></table></figure>
+<pre><code>(1)运行audit fix，但是只更新pkglock， 不更新node_modules：
+$ npm audit fix --package-lock-only
+</code></pre><pre><code>(2)只更新dependencies中安装的包，跳过devDependencies中的包：
+$ npm audit fix --only=prod
+</code></pre><pre><code>运行命令，得到audit fix将会更新的内容，并且输出json格式的安装信息，但是并不真的安装更新：
+$ npm audit fix --dry-run --json
+</code></pre><pre><code>得到json格式的详细检测报告
+$ npm audit --json
+</code></pre></li>
+<li><p>特此记录.</p>
 </li>
-</ul>
-<figure class="highlight gams"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">(<span class="number">2</span>)只更新dependencies中安装的包，跳过devDependencies中的包：</span><br><span class="line"><span class="symbol">$</span> npm audit fix --only=<span class="keyword">prod</span></span><br></pre></td></tr></table></figure>
-<figure class="highlight brainfuck"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">运行命令，得到audit</span> <span class="comment">fix将会更新的内容，并且输出json格式的安装信息，但是并不真的安装更新：</span></span><br><span class="line"><span class="comment">$</span> <span class="comment">npm</span> <span class="comment">audit</span> <span class="comment">fix</span> <span class="literal">-</span><span class="literal">-</span><span class="comment">dry</span><span class="literal">-</span><span class="comment">run</span> <span class="literal">-</span><span class="literal">-</span><span class="comment">json</span></span><br></pre></td></tr></table></figure>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">得到json格式的详细检测报告</span><br><span class="line"><span class="meta">$</span><span class="bash"> npm audit --json</span></span><br></pre></td></tr></table></figure>
-<ul>
-<li>特此记录.</li>
 </ul>
 
       
@@ -629,7 +632,7 @@ $(window).load(function(){
               <img class="site-author-image" itemprop="image" src="/images/avatar.gif" alt="Fleschier">
             
               <p class="site-author-name" itemprop="name">Fleschier</p>
-              <p class="site-description motion-element" itemprop="description">每天早上醒来，你和阳光都在，就是我想要的未来。</p>
+              <p class="site-description motion-element" itemprop="description">生活是一个过程,可喜的是它不用重来。</p>
           </div>
 
           

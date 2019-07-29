@@ -117,18 +117,18 @@
 
 <link href="/js/google-code-prettify/tomorrow.min.css" type="text/css" rel="stylesheet">
 
-  <meta name="description" content="不适合人类阅读的学习笔记    类 模板类 示例： 12345678910111213141516template &amp;lt;class T&amp;gt; //声明一个模板，虚拟类型名为T。注意：这里没有分号。  class T_Class //类模板名为Compare  &amp;#123;  public :     Compare(T a,T b)&amp;#123;        x=a;y=b;     &amp;#">
+  <meta name="description" content="不适合人类阅读的学习笔记    类 模板类 示例： template &amp;lt;class T&amp;gt; //声明一个模板，虚拟类型名为T。注意：这里没有分号。   class T_Class //类模板名为Compare   {   public :    Compare(T a,T b){       x=a;y=b;    }    T max( ){       return (x&amp;gt;y">
 <meta name="keywords" content="๑C++">
 <meta property="og:type" content="article">
 <meta property="og:title" content="C++学习笔记——类">
 <meta property="og:url" content="https://fleschier.github.io/2018/04/06/C++learning-class/index.html">
 <meta property="og:site_name" content="Fleschier 渐寒๑">
-<meta property="og:description" content="不适合人类阅读的学习笔记    类 模板类 示例： 12345678910111213141516template &amp;lt;class T&amp;gt; //声明一个模板，虚拟类型名为T。注意：这里没有分号。  class T_Class //类模板名为Compare  &amp;#123;  public :     Compare(T a,T b)&amp;#123;        x=a;y=b;     &amp;#">
+<meta property="og:description" content="不适合人类阅读的学习笔记    类 模板类 示例： template &amp;lt;class T&amp;gt; //声明一个模板，虚拟类型名为T。注意：这里没有分号。   class T_Class //类模板名为Compare   {   public :    Compare(T a,T b){       x=a;y=b;    }    T max( ){       return (x&amp;gt;y">
 <meta property="og:locale" content="default">
 <meta property="og:updated_time" content="2018-11-21T06:40:17.839Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="C++学习笔记——类">
-<meta name="twitter:description" content="不适合人类阅读的学习笔记    类 模板类 示例： 12345678910111213141516template &amp;lt;class T&amp;gt; //声明一个模板，虚拟类型名为T。注意：这里没有分号。  class T_Class //类模板名为Compare  &amp;#123;  public :     Compare(T a,T b)&amp;#123;        x=a;y=b;     &amp;#">
+<meta name="twitter:description" content="不适合人类阅读的学习笔记    类 模板类 示例： template &amp;lt;class T&amp;gt; //声明一个模板，虚拟类型名为T。注意：这里没有分号。   class T_Class //类模板名为Compare   {   public :    Compare(T a,T b){       x=a;y=b;    }    T max( ){       return (x&amp;gt;y">
 
 
 
@@ -361,7 +361,7 @@ $(window).load(function(){
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Fleschier">
-      <meta itemprop="description" content="每天早上醒来，你和阳光都在，就是我想要的未来。">
+      <meta itemprop="description" content="生活是一个过程,可喜的是它不用重来。">
       <meta itemprop="image" content="/images/avatar.gif">
     </span>
 
@@ -484,11 +484,29 @@ $(window).load(function(){
 <h2 id="类"><a href="#类" class="headerlink" title="类"></a>类</h2><hr>
 <h3 id="模板类"><a href="#模板类" class="headerlink" title="模板类"></a>模板类</h3><ul>
 <li><p>示例：</p>
-<figure class="highlight ruby"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">template &lt;<span class="class"><span class="keyword">class</span> <span class="title">T</span>&gt; //声明一个模板，虚拟类型名为<span class="title">T</span>。注意：这里没有分号。  </span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">T_Class</span> //类模板名为<span class="title">Compare</span>  </span></span><br><span class="line">&#123;  </span><br><span class="line">public :  </span><br><span class="line">   Compare(T a,T b)&#123;  </span><br><span class="line">      x=a;y=b;  </span><br><span class="line">   &#125;  </span><br><span class="line">   T max( )&#123;  </span><br><span class="line">      <span class="keyword">return</span> (x&gt;y)<span class="string">?x</span><span class="symbol">:y</span>;  </span><br><span class="line">   &#125;  </span><br><span class="line">   T min( )&#123;  </span><br><span class="line">      <span class="keyword">return</span> (x&lt;y)<span class="string">?x</span><span class="symbol">:y</span>;  </span><br><span class="line">   &#125;  </span><br><span class="line">private :  </span><br><span class="line">   T x,y;  </span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
-</li>
+<pre><code>template &lt;class T&gt; //声明一个模板，虚拟类型名为T。注意：这里没有分号。  
+class T_Class //类模板名为Compare  
+{  
+public :  
+ Compare(T a,T b){  
+    x=a;y=b;  
+ }  
+ T max( ){  
+    return (x&gt;y)?x:y;  
+ }  
+ T min( ){  
+    return (x&lt;y)?x:y;  
+ }  
+private :  
+ T x,y;  
+};  
+</code></pre></li>
 <li><p>模板类所有的函数，如果在类外面实现的话，需要写成如下形式：</p>
-<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">template</span> &lt;<span class="class"><span class="keyword">class</span> <span class="title">T</span>&gt;</span></span><br><span class="line"><span class="class"><span class="title">T_Class</span>&lt;T&gt;:</span>:max( )&#123;  </span><br><span class="line">     <span class="keyword">return</span> (x &gt; y)? x : y;  </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-</li>
+<pre><code>template &lt;class T&gt;
+T_Class&lt;T&gt;::max( ){  
+   return (x &gt; y)? x : y;  
+}  
+</code></pre></li>
 <li><p><strong>模板类不能将类的声明写在头文件而定义写在源文件中</strong>，这样会出现无法辨析的编译错误。</p>
 </li>
 </ul>
@@ -555,8 +573,8 @@ $(window).load(function(){
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2018/04/06/Ubuntu-order/" rel="next" title="Ubuntu终端常用命令">
-                <i class="fa fa-chevron-left"></i> Ubuntu终端常用命令
+              <a href="/2018/04/06/ubuntu-and-windows/" rel="next" title="UEFI双系统的那些坑">
+                <i class="fa fa-chevron-left"></i> UEFI双系统的那些坑
               </a>
             
           </div>
@@ -565,8 +583,8 @@ $(window).load(function(){
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2018/04/06/Java-learning/" rel="prev" title="Java学习笔记——基础">
-                Java学习笔记——基础 <i class="fa fa-chevron-right"></i>
+              <a href="/2018/04/06/Scala-superior/" rel="prev" title="Scala学习笔记——进阶">
+                Scala学习笔记——进阶 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -629,7 +647,7 @@ $(window).load(function(){
               <img class="site-author-image" itemprop="image" src="/images/avatar.gif" alt="Fleschier">
             
               <p class="site-author-name" itemprop="name">Fleschier</p>
-              <p class="site-description motion-element" itemprop="description">每天早上醒来，你和阳光都在，就是我想要的未来。</p>
+              <p class="site-description motion-element" itemprop="description">生活是一个过程,可喜的是它不用重来。</p>
           </div>
 
           

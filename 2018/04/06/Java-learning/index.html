@@ -361,7 +361,7 @@ $(window).load(function(){
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Fleschier">
-      <meta itemprop="description" content="每天早上醒来，你和阳光都在，就是我想要的未来。">
+      <meta itemprop="description" content="生活是一个过程,可喜的是它不用重来。">
       <meta itemprop="image" content="/images/avatar.gif">
     </span>
 
@@ -501,8 +501,12 @@ $(window).load(function(){
 <p>java与C++一样，需要用分号来分割句子</p>
 </blockquote>
 <h3 id="第一个JAVA程序：Helloworld"><a href="#第一个JAVA程序：Helloworld" class="headerlink" title="第一个JAVA程序：Helloworld"></a>第一个JAVA程序：Helloworld</h3><ul>
-<li>示例<figure class="highlight cs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title">HelloWorld</span> &#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span>(<span class="params">String[] args</span>) </span>&#123;</span><br><span class="line">        System.<span class="keyword">out</span>.println(<span class="string">"Hello World"</span>); <span class="comment">// 打印 Hello World</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-</li>
+<li>示例<pre><code>public class HelloWorld {
+  public static void main(String[] args) {
+      System.out.println(&quot;Hello World&quot;); // 打印 Hello World
+  }
+}
+</code></pre></li>
 </ul>
 <h3 id="编写Java程序时注意点："><a href="#编写Java程序时注意点：" class="headerlink" title="编写Java程序时注意点："></a>编写Java程序时注意点：</h3><ul>
 <li><p>大小写敏感：Java是大小写敏感的，这就意味着标识符Hello与hello是不同的。</p>
@@ -572,19 +576,27 @@ $(window).load(function(){
 </li>
 </ul>
 <h3 id="Java枚举"><a href="#Java枚举" class="headerlink" title="Java枚举"></a>Java枚举</h3><ul>
-<li>枚举限制变量只能是预先设定好的值,使用枚举可以减少代码中的bug<figure class="highlight crystal"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">ENUM_class</span>&#123;</span></span><br><span class="line">	<span class="class"><span class="keyword">enum</span> <span class="title">Test</span>&#123;<span class="title">Small</span>, <span class="title">Medium</span>, <span class="title">Large</span>&#125;</span></span><br><span class="line">   Test size;</span><br><span class="line">&#125;</span><br><span class="line">public <span class="class"><span class="keyword">class</span> <span class="title">ENUM_class_Test</span>&#123;</span></span><br><span class="line">	public static void main(String[] args)&#123;</span><br><span class="line">		ENUM_class tst = new ENUM_class();</span><br><span class="line">		tst.size = ENUM_class.Test.Small;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-</li>
-</ul>
-<h3 id="Java的三目运算符"><a href="#Java的三目运算符" class="headerlink" title="Java的三目运算符"></a>Java的三目运算符</h3><ul>
+<li><p>枚举限制变量只能是预先设定好的值,使用枚举可以减少代码中的bug</p>
+<pre><code>class ENUM_class{
+  enum Test{Small, Medium, Large}
+ Test size;
+}
+public class ENUM_class_Test{
+  public static void main(String[] args){
+      ENUM_class tst = new ENUM_class();
+      tst.size = ENUM_class.Test.Small;
+  }
+}
+</code></pre><h3 id="Java的三目运算符"><a href="#Java的三目运算符" class="headerlink" title="Java的三目运算符"></a>Java的三目运算符</h3></li>
 <li><p>格式：逻辑表达式 ? 值1 : 值2</p>
 </li>
 <li><p>执行过程：若逻辑值表达式为true，就取值1，否则取值2</p>
 </li>
 <li><p>例：</p>
-<figure class="highlight arduino"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">int</span> x =<span class="number">1</span>,y =<span class="number">2</span>;</span><br><span class="line">x&lt;y ? System.out.<span class="built_in">println</span>(<span class="string">"x&lt;y"</span>):System.out.<span class="built_in">println</span>(<span class="string">"x&gt;y"</span>);</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>注意，此三目运算符不是一个完整的式子，一般是用作赋值。</p>
-</li>
+<pre><code>int x =1,y =2;
+x&lt;y ? System.out.println(&quot;x&lt;y&quot;):System.out.println(&quot;x&gt;y&quot;);
+</code></pre></li>
+<li>注意，此三目运算符不是一个完整的式子，一般是用作赋值。</li>
 </ul>
 <h3 id="Java注释"><a href="#Java注释" class="headerlink" title="Java注释"></a>Java注释</h3><ul>
 <li>Java注释与C++一致</li>
@@ -593,14 +605,33 @@ $(window).load(function(){
 <p>Java的输入比起C++和Python要麻烦很多</p>
 </blockquote>
 <hr>
-<h3 id="方法一："><a href="#方法一：" class="headerlink" title="方法一："></a>方法一：</h3><figure class="highlight dart"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> java.io.*   <span class="comment">//引入java.io包的类</span></span><br><span class="line">...</span><br><span class="line">...</span><br><span class="line">InputStreamReader <span class="keyword">in</span> = <span class="keyword">new</span> InputStreamReader(System.<span class="keyword">in</span>);</span><br><span class="line">BufferedReader br = <span class="keyword">new</span> BufferedReader(<span class="keyword">in</span>);</span><br><span class="line">System.out.<span class="built_in">print</span>(<span class="string">"Please enter a num:"</span>);</span><br><span class="line"><span class="built_in">String</span> s = br.readLine(); <span class="comment">//从键盘读取一行字符到s中</span></span><br><span class="line">float <span class="built_in">num</span>;</span><br><span class="line"><span class="built_in">num</span> = Float.parseFloat(s); <span class="comment">//将字符型转换成float型</span></span><br><span class="line">System.out.println();</span><br><span class="line">...</span><br></pre></td></tr></table></figure>
-<h3 id="方法二："><a href="#方法二：" class="headerlink" title="方法二："></a>方法二：</h3><h4 id="通过Scannner类"><a href="#通过Scannner类" class="headerlink" title="通过Scannner类"></a>通过Scannner类</h4><ul>
+<h3 id="方法一："><a href="#方法一：" class="headerlink" title="方法一："></a>方法一：</h3><pre><code>import java.io.*   //引入java.io包的类
+...
+...
+InputStreamReader in = new InputStreamReader(System.in);
+BufferedReader br = new BufferedReader(in);
+System.out.print(&quot;Please enter a num:&quot;);
+String s = br.readLine(); //从键盘读取一行字符到s中
+float num;
+num = Float.parseFloat(s); //将字符型转换成float型
+System.out.println();
+...
+</code></pre><h3 id="方法二："><a href="#方法二：" class="headerlink" title="方法二："></a>方法二：</h3><h4 id="通过Scannner类"><a href="#通过Scannner类" class="headerlink" title="通过Scannner类"></a>通过Scannner类</h4><ul>
 <li><p>例子：</p>
-<figure class="highlight mipsasm"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">import <span class="keyword">java.util.*</span></span><br><span class="line"><span class="keyword">...</span></span><br><span class="line"><span class="keyword">float </span><span class="keyword">score;</span></span><br><span class="line"><span class="keyword">Scanner </span>sn = new <span class="keyword">Scanner(System.in);</span></span><br><span class="line"><span class="keyword">System.out.println("Please </span>enter a num:<span class="string">");</span></span><br><span class="line"><span class="string">score = sn.nextFloat();</span></span><br><span class="line"><span class="string">System.out.println();</span></span><br></pre></td></tr></table></figure>
-</li>
+<pre><code>import java.util.*
+...
+float score;
+Scanner sn = new Scanner(System.in);
+System.out.println(&quot;Please enter a num:&quot;);
+score = sn.nextFloat();
+System.out.println();
+</code></pre></li>
 <li><p><em>scan在读取多行数据时会遇到的问题：</em></p>
-<figure class="highlight dart"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">Scanner scan = <span class="keyword">new</span> Scanner(System.<span class="keyword">in</span>)</span><br><span class="line"><span class="built_in">int</span> <span class="built_in">num</span>  = scan.nextInt();  <span class="comment">//这句会正确执行</span></span><br><span class="line">Double d = scan.nextDouble(); <span class="comment">//这句也会正确执行，即使输入在不同的行上</span></span><br><span class="line"><span class="built_in">String</span> s = scan.nextline();  <span class="comment">//这句这样写便会读到一个空串×××××××</span></span><br></pre></td></tr></table></figure>
-</li>
+<pre><code>Scanner scan = new Scanner(System.in)
+int num  = scan.nextInt();  //这句会正确执行
+Double d = scan.nextDouble(); //这句也会正确执行，即使输入在不同的行上
+String s = scan.nextline();  //这句这样写便会读到一个空串×××××××
+</code></pre></li>
 <li><p>原因分析：首先，Scanner是一个扫描器，它扫描数据都是去内存中一块缓冲区中进行扫描并读入数据的，而我们在控制台中输入的数据也都是被先存入缓冲区中等待扫描器的扫描读取。这个扫描器在扫描过程中判断停止的依据就是“空白符”，空格啊，回车啊什么的都算做是空白符。</p>
 </li>
 <li>nextInt()方法在扫描到空白符的时候会将前面的数据读取走，但会丢下空白符“\r”在缓冲区中，但是，nextLine()方法在扫描的时候会将扫描到的空白符一同清理掉。</li>
@@ -613,20 +644,52 @@ $(window).load(function(){
 <h3 id="方法三"><a href="#方法三" class="headerlink" title="方法三"></a>方法三</h3><ul>
 <li>这里需要import java.io.IOException; //否则会报错</li>
 </ul>
-<h4 id="读取下一个字符："><a href="#读取下一个字符：" class="headerlink" title="读取下一个字符："></a>读取下一个字符：</h4><figure class="highlight groovy"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> java.io.IOException</span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">test</span>&#123;</span></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> main(String[] args) <span class="keyword">throws</span> IOException&#123;</span><br><span class="line">      <span class="keyword">char</span> c = (<span class="keyword">char</span>) System.<span class="keyword">in</span>.read();</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p><strong>注意这里需要类型转换，默认为int类型，即读到的是字符的ASCII码。</strong></p>
-<h4 id="将一串字符读入byte数组"><a href="#将一串字符读入byte数组" class="headerlink" title="将一串字符读入byte数组"></a>将一串字符读入byte数组</h4><figure class="highlight cs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">import java.io.IOException;</span><br><span class="line"><span class="keyword">class</span> <span class="title">test</span> &#123;</span><br><span class="line">     <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span>(<span class="params">String[] args</span>) throws IOException</span>&#123;</span><br><span class="line">         <span class="keyword">byte</span>[] input = <span class="keyword">new</span> <span class="keyword">byte</span>[<span class="number">5</span>];  <span class="comment">//创建一个byte数组来读取一串输入</span></span><br><span class="line">         System.<span class="keyword">in</span>.read(input);  <span class="comment">//将输入存入byte数组中</span></span><br><span class="line">         System.<span class="keyword">out</span>.println(input[<span class="number">1</span>]); <span class="comment">//这里输出的仍然是int类型，即ASCII码</span></span><br><span class="line">     &#125;</span><br><span class="line"> &#125;</span><br></pre></td></tr></table></figure>
-<h3 id="图形界面输入方式"><a href="#图形界面输入方式" class="headerlink" title="图形界面输入方式"></a>图形界面输入方式</h3><figure class="highlight processing"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> javax.swing.* <span class="comment">//导入javax,swing包中的类</span></span><br><span class="line">...</span><br><span class="line"><span class="keyword">String</span> <span class="built_in">str</span>;</span><br><span class="line"><span class="built_in">float</span> score;</span><br><span class="line"><span class="built_in">str</span> = JOptionPane.showInputDialog(<span class="string">"please enter a num:"</span>);</span><br><span class="line">score = Float.parseFloat(<span class="built_in">str</span>);</span><br><span class="line">...</span><br></pre></td></tr></table></figure>
-<h2 id="输出"><a href="#输出" class="headerlink" title="输出"></a>输出</h2><hr>
+<h4 id="读取下一个字符："><a href="#读取下一个字符：" class="headerlink" title="读取下一个字符："></a>读取下一个字符：</h4><pre><code>import java.io.IOException
+class test{
+    public static void main(String[] args) throws IOException{
+      char c = (char) System.in.read();
+  }
+}
+</code></pre><p><strong>注意这里需要类型转换，默认为int类型，即读到的是字符的ASCII码。</strong></p>
+<h4 id="将一串字符读入byte数组"><a href="#将一串字符读入byte数组" class="headerlink" title="将一串字符读入byte数组"></a>将一串字符读入byte数组</h4><pre><code>import java.io.IOException;
+class test {
+     public static void main(String[] args) throws IOException{
+         byte[] input = new byte[5];  //创建一个byte数组来读取一串输入
+         System.in.read(input);  //将输入存入byte数组中
+         System.out.println(input[1]); //这里输出的仍然是int类型，即ASCII码
+     }
+ }
+</code></pre><h3 id="图形界面输入方式"><a href="#图形界面输入方式" class="headerlink" title="图形界面输入方式"></a>图形界面输入方式</h3><pre><code>import javax.swing.* //导入javax,swing包中的类
+...
+String str;
+float score;
+str = JOptionPane.showInputDialog(&quot;please enter a num:&quot;);
+score = Float.parseFloat(str);
+...
+</code></pre><h2 id="输出"><a href="#输出" class="headerlink" title="输出"></a>输出</h2><hr>
 <ul>
 <li><p>标准输出：<code>System.out.println();</code></p>
 </li>
 <li><p>格式化输出：<code>System.out.printf();</code> //格式化输出允许对输出进行规改</p>
-<figure class="highlight kotlin"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//"%"表示进行格式化输出，"%"之后的内容为格式的定义。</span></span><br><span class="line">System.<span class="keyword">out</span>.printf(<span class="string">"%f"</span>,d);<span class="comment">//"f"表示格式化输出浮点数。</span></span><br><span class="line">System.<span class="keyword">out</span>.printf(<span class="string">"%9.2f"</span>,d);<span class="comment">//"9.2"中的9表示输出的长度，2表示小数点后的位数。</span></span><br><span class="line">System.<span class="keyword">out</span>.printf(<span class="string">"%+9.2f"</span>,d);<span class="comment">//"+"表示输出的数带正负号。</span></span><br><span class="line">System.<span class="keyword">out</span>.printf(<span class="string">"%-9.4f"</span>,d);<span class="comment">//"-"表示输出的数左对齐（默认为右对齐）。</span></span><br><span class="line">System.<span class="keyword">out</span>.printf(<span class="string">"%+-9.3f"</span>,d);<span class="comment">//"+-"表示输出的数带正负号且左对齐。</span></span><br><span class="line">System.<span class="keyword">out</span>.printf(<span class="string">"%d"</span>,i);<span class="comment">//"d"表示输出十进制整数。</span></span><br><span class="line">System.<span class="keyword">out</span>.printf(<span class="string">"%o"</span>,i);<span class="comment">//"o"表示输出八进制整数。</span></span><br><span class="line">System.<span class="keyword">out</span>.printf(<span class="string">"%x"</span>,i);<span class="comment">//"d"表示输出十六进制整数。</span></span><br><span class="line">System.<span class="keyword">out</span>.printf(<span class="string">"%#x"</span>,i);<span class="comment">//"d"表示输出带有十六进制标志的整数。</span></span><br><span class="line">System.<span class="keyword">out</span>.printf(<span class="string">"%s"</span>,s);<span class="comment">//"d"表示输出字符串。</span></span><br><span class="line">System.<span class="keyword">out</span>.printf(<span class="string">"输出一个浮点数：%f，一个整数：%d，一个字符串：%s"</span>,d,i,s);</span><br><span class="line"><span class="comment">//可以输出多个变量，注意顺序。</span></span><br><span class="line">System.<span class="keyword">out</span>.printf(<span class="string">"字符串：%2<span class="variable">$s</span>，%1<span class="variable">$d</span>的十六进制数：%1$#x"</span>,i,s);</span><br><span class="line"><span class="comment">//"X$"表示第几个变量。</span></span><br></pre></td></tr></table></figure>
-</li>
+<pre><code>//&quot;%&quot;表示进行格式化输出，&quot;%&quot;之后的内容为格式的定义。
+System.out.printf(&quot;%f&quot;,d);//&quot;f&quot;表示格式化输出浮点数。
+System.out.printf(&quot;%9.2f&quot;,d);//&quot;9.2&quot;中的9表示输出的长度，2表示小数点后的位数。
+System.out.printf(&quot;%+9.2f&quot;,d);//&quot;+&quot;表示输出的数带正负号。
+System.out.printf(&quot;%-9.4f&quot;,d);//&quot;-&quot;表示输出的数左对齐（默认为右对齐）。
+System.out.printf(&quot;%+-9.3f&quot;,d);//&quot;+-&quot;表示输出的数带正负号且左对齐。
+System.out.printf(&quot;%d&quot;,i);//&quot;d&quot;表示输出十进制整数。
+System.out.printf(&quot;%o&quot;,i);//&quot;o&quot;表示输出八进制整数。
+System.out.printf(&quot;%x&quot;,i);//&quot;d&quot;表示输出十六进制整数。
+System.out.printf(&quot;%#x&quot;,i);//&quot;d&quot;表示输出带有十六进制标志的整数。
+System.out.printf(&quot;%s&quot;,s);//&quot;d&quot;表示输出字符串。
+System.out.printf(&quot;输出一个浮点数：%f，一个整数：%d，一个字符串：%s&quot;,d,i,s);
+//可以输出多个变量，注意顺序。
+System.out.printf(&quot;字符串：%2$s，%1$d的十六进制数：%1$#x&quot;,i,s);
+//&quot;X$&quot;表示第几个变量。
+</code></pre></li>
 </ul>
-<h3 id="图形界面输出"><a href="#图形界面输出" class="headerlink" title="图形界面输出"></a>图形界面输出</h3><figure class="highlight clean"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">JOptionPane.showMessageDialog(....)  <span class="comment">//具体参数见类库</span></span><br></pre></td></tr></table></figure>
-<h2 id="一些注意点"><a href="#一些注意点" class="headerlink" title="一些注意点"></a>一些注意点</h2><hr>
+<h3 id="图形界面输出"><a href="#图形界面输出" class="headerlink" title="图形界面输出"></a>图形界面输出</h3><pre><code>JOptionPane.showMessageDialog(....)  //具体参数见类库
+</code></pre><h2 id="一些注意点"><a href="#一些注意点" class="headerlink" title="一些注意点"></a>一些注意点</h2><hr>
 <h3 id="数组"><a href="#数组" class="headerlink" title="数组"></a>数组</h3><ul>
 <li><p>数组的声明格式： 数据类型[] 数组名 或者 数据类型 数组名[]</p>
 </li>
@@ -643,13 +706,18 @@ $(window).load(function(){
 <li><code>int num =(int)(Math.random() * 11);</code>  生成一个范围在[0,1)的随机数。</li>
 </ul>
 <h4 id="java-util-Random"><a href="#java-util-Random" class="headerlink" title="java.util.Random"></a>java.util.Random</h4><ul>
-<li>例：<figure class="highlight verilog"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> Java<span class="variable">.util</span><span class="variable">.Random</span>;</span><br><span class="line">Random <span class="keyword">rand</span> = <span class="keyword">new</span> Random([数值]);</span><br><span class="line"><span class="keyword">int</span> randomNum = <span class="keyword">rand</span><span class="variable">.nextInt</span>() <span class="comment">//Random支持的随机值类型包括：boolean, byte, int, long, float, double</span></span><br><span class="line"><span class="keyword">int</span> randomNUM2 = <span class="keyword">rand</span><span class="variable">.nextInt</span>(<span class="number">100</span>); <span class="comment">//表示获取[0,100)范围的随机数</span></span><br><span class="line">...</span><br></pre></td></tr></table></figure>
-</li>
+<li>例：<pre><code>import Java.util.Random;
+Random rand = new Random([数值]);
+int randomNum = rand.nextInt() //Random支持的随机值类型包括：boolean, byte, int, long, float, double
+int randomNUM2 = rand.nextInt(100); //表示获取[0,100)范围的随机数
+...
+</code></pre></li>
 </ul>
 <h3 id="String类"><a href="#String类" class="headerlink" title="String类"></a>String类</h3><ul>
 <li>String是常量，对一个String的任何修改都会使java创建一个新的String，而原来的会被当做垃圾回收掉</li>
-<li>例如：<figure class="highlight abnf"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">String a = <span class="string">"avc"</span><span class="comment">;</span></span><br><span class="line"><span class="attribute">a</span> = <span class="string">"bfd"</span><span class="comment">;    //则会创建一个新的string，然后将a链向这个string，原先的string会被抛弃掉</span></span><br></pre></td></tr></table></figure>
-</li>
+<li>例如：<pre><code>String a = &quot;avc&quot;;
+a = &quot;bfd&quot;;    //则会创建一个新的string，然后将a链向这个string，原先的string会被抛弃掉
+</code></pre></li>
 </ul>
 <p><br></p>
 <blockquote>
@@ -714,8 +782,8 @@ $(window).load(function(){
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2018/04/06/C++learning-class/" rel="next" title="C++学习笔记——类">
-                <i class="fa fa-chevron-left"></i> C++学习笔记——类
+              <a href="/2018/04/06/Ubuntu-order/" rel="next" title="Ubuntu终端常用命令">
+                <i class="fa fa-chevron-left"></i> Ubuntu终端常用命令
               </a>
             
           </div>
@@ -788,7 +856,7 @@ $(window).load(function(){
               <img class="site-author-image" itemprop="image" src="/images/avatar.gif" alt="Fleschier">
             
               <p class="site-author-name" itemprop="name">Fleschier</p>
-              <p class="site-description motion-element" itemprop="description">每天早上醒来，你和阳光都在，就是我想要的未来。</p>
+              <p class="site-description motion-element" itemprop="description">生活是一个过程,可喜的是它不用重来。</p>
           </div>
 
           

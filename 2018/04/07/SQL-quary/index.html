@@ -117,20 +117,20 @@
 
 <link href="/js/google-code-prettify/tomorrow.min.css" type="text/css" rel="stylesheet">
 
-  <meta name="description" content="不适合人类阅读的学习笔记   数据库的命令语句均不区分大小写  创建语句 基本创建 创建数据库 ：create database XXX  带详细参数的数据库创建： 123456create database School on(	name = &apos;School_data&apos;,	filename = &apos;c:\data\School_data.mdf&apos;,	size = 5mb,	filegrowth">
+  <meta name="description" content="不适合人类阅读的学习笔记   数据库的命令语句均不区分大小写  创建语句 基本创建 创建数据库 ：create database XXX  带详细参数的数据库创建： create database School on(   name = &amp;#39;School_data&amp;#39;,   filename = &amp;#39;c:\data\School_data.mdf&amp;#39;,   size =">
 <meta name="keywords" content="๑SQL">
 <meta property="og:type" content="article">
 <meta property="og:title" content="数据库SQL语句">
 <meta property="og:url" content="https://fleschier.github.io/2018/04/07/SQL-quary/index.html">
 <meta property="og:site_name" content="Fleschier 渐寒๑">
-<meta property="og:description" content="不适合人类阅读的学习笔记   数据库的命令语句均不区分大小写  创建语句 基本创建 创建数据库 ：create database XXX  带详细参数的数据库创建： 123456create database School on(	name = &apos;School_data&apos;,	filename = &apos;c:\data\School_data.mdf&apos;,	size = 5mb,	filegrowth">
+<meta property="og:description" content="不适合人类阅读的学习笔记   数据库的命令语句均不区分大小写  创建语句 基本创建 创建数据库 ：create database XXX  带详细参数的数据库创建： create database School on(   name = &amp;#39;School_data&amp;#39;,   filename = &amp;#39;c:\data\School_data.mdf&amp;#39;,   size =">
 <meta property="og:locale" content="default">
 <meta property="og:image" content="https://fleschier.github.io/images/SQL/E-R%20graphe.png">
 <meta property="og:image" content="https://fleschier.github.io/images/SQL/TIM图片20180503210911.jpg">
 <meta property="og:updated_time" content="2018-11-21T06:40:40.687Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="数据库SQL语句">
-<meta name="twitter:description" content="不适合人类阅读的学习笔记   数据库的命令语句均不区分大小写  创建语句 基本创建 创建数据库 ：create database XXX  带详细参数的数据库创建： 123456create database School on(	name = &apos;School_data&apos;,	filename = &apos;c:\data\School_data.mdf&apos;,	size = 5mb,	filegrowth">
+<meta name="twitter:description" content="不适合人类阅读的学习笔记   数据库的命令语句均不区分大小写  创建语句 基本创建 创建数据库 ：create database XXX  带详细参数的数据库创建： create database School on(   name = &amp;#39;School_data&amp;#39;,   filename = &amp;#39;c:\data\School_data.mdf&amp;#39;,   size =">
 <meta name="twitter:image" content="https://fleschier.github.io/images/SQL/E-R%20graphe.png">
 
 
@@ -364,7 +364,7 @@ $(window).load(function(){
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Fleschier">
-      <meta itemprop="description" content="每天早上醒来，你和阳光都在，就是我想要的未来。">
+      <meta itemprop="description" content="生活是一个过程,可喜的是它不用重来。">
       <meta itemprop="image" content="/images/avatar.gif">
     </span>
 
@@ -492,32 +492,90 @@ $(window).load(function(){
 <li><p>创建数据库 ：<code>create database XXX</code></p>
 </li>
 <li><p>带详细参数的数据库创建：</p>
-<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">create</span> <span class="keyword">database</span> School <span class="keyword">on</span>(</span><br><span class="line">	<span class="keyword">name</span> = <span class="string">'School_data'</span>,</span><br><span class="line">	filename = <span class="string">'c:\data\School_data.mdf'</span>,</span><br><span class="line">	<span class="keyword">size</span> = <span class="number">5</span>mb,</span><br><span class="line">	filegrowth = <span class="number">1</span>mb <span class="comment">--每次增长的大小</span></span><br><span class="line">)</span><br></pre></td></tr></table></figure>
-</li>
+<pre><code>create database School on(
+  name = &#39;School_data&#39;,
+  filename = &#39;c:\data\School_data.mdf&#39;,
+  size = 5mb,
+  filegrowth = 1mb --每次增长的大小
+)
+</code></pre></li>
 <li><p>创建表： <code>create table XXX</code></p>
 </li>
 <li><p>带属性的创建：</p>
-<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">create</span> <span class="keyword">table</span> student(</span><br><span class="line">	Sno <span class="built_in">char</span>(<span class="number">6</span>) primary <span class="keyword">key</span>,</span><br><span class="line">	Sname <span class="built_in">varchar</span>(<span class="number">8</span>),</span><br><span class="line">	Ssex <span class="built_in">char</span>(<span class="number">2</span>),</span><br><span class="line">	Sage <span class="built_in">smallint</span>,</span><br><span class="line">	Sdept <span class="built_in">varchar</span>(<span class="number">15</span>)</span><br><span class="line">)</span><br></pre></td></tr></table></figure>
-</li>
+<pre><code>create table student(
+  Sno char(6) primary key,
+  Sname varchar(8),
+  Ssex char(2),
+  Sage smallint,
+  Sdept varchar(15)
+)
+</code></pre></li>
 <li><p>更加复杂的创建：</p>
-<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">create</span> <span class="keyword">table</span> student(</span><br><span class="line">	Sno <span class="built_in">char</span>(<span class="number">6</span>) primary <span class="keyword">key</span>,  <span class="comment">--主键</span></span><br><span class="line">	Sname <span class="built_in">varchar</span>(<span class="number">8</span>) <span class="keyword">not</span> <span class="literal">null</span> <span class="keyword">constraint</span> ck_1 <span class="keyword">unique</span>, <span class="comment">--创建时加入约束条件</span></span><br><span class="line">	Ssex <span class="built_in">char</span>(<span class="number">2</span>) <span class="keyword">not</span> <span class="literal">null</span> <span class="keyword">constraint</span> ck_2 <span class="keyword">check</span>(Ssex <span class="keyword">in</span>(<span class="string">'男'</span>,<span class="string">'女'</span>)),</span><br><span class="line">	Sage <span class="built_in">smallint</span> <span class="keyword">constraint</span> ck_3 <span class="keyword">check</span>(sage&gt;<span class="number">16</span>),</span><br><span class="line">	Sdept <span class="built_in">varchar</span>(<span class="number">15</span>) <span class="keyword">default</span> <span class="string">'JSJ'</span>  <span class="comment">--默认值</span></span><br><span class="line">)</span><br><span class="line"><span class="keyword">create</span> <span class="keyword">table</span> course(</span><br><span class="line">	Cno <span class="built_in">char</span>(<span class="number">6</span>) primary <span class="keyword">key</span>,</span><br><span class="line">	Cname <span class="built_in">varchar</span>(<span class="number">20</span>),</span><br><span class="line">	Cpno <span class="built_in">char</span>(<span class="number">4</span>),</span><br><span class="line">	Ccredit tinyint</span><br><span class="line">)</span><br><span class="line"><span class="keyword">create</span> <span class="keyword">table</span> SC(</span><br><span class="line">	Sno <span class="built_in">char</span>(<span class="number">6</span>) <span class="keyword">not</span> <span class="literal">null</span>, <span class="comment">--要在表外添加主键的约束，则这个属性不能为空</span></span><br><span class="line">	Cno <span class="built_in">char</span>(<span class="number">6</span>) <span class="keyword">not</span> <span class="literal">null</span>,</span><br><span class="line">	Grade <span class="built_in">decimal</span>(<span class="number">12</span>,<span class="number">1</span>) <span class="keyword">constraint</span> ck_6 <span class="keyword">check</span>(Grade &lt;= <span class="number">100</span> <span class="keyword">and</span> Grade &gt;=<span class="number">0</span>)</span><br><span class="line">	<span class="keyword">constraint</span> fk_1 foreign <span class="keyword">key</span> (Sno) <span class="keyword">references</span> student(sno)</span><br><span class="line">)</span><br><span class="line"><span class="keyword">alter</span> <span class="keyword">table</span> SC <span class="keyword">add</span> <span class="keyword">constraint</span> PK_SC primary <span class="keyword">key</span>(Sno,Cno)</span><br></pre></td></tr></table></figure>
+<pre><code>create table student(
+  Sno char(6) primary key,  --主键
+  Sname varchar(8) not null constraint ck_1 unique, --创建时加入约束条件
+  Ssex char(2) not null constraint ck_2 check(Ssex in(&#39;男&#39;,&#39;女&#39;)),
+  Sage smallint constraint ck_3 check(sage&gt;16),
+  Sdept varchar(15) default &#39;JSJ&#39;  --默认值
+)
+create table course(
+  Cno char(6) primary key,
+  Cname varchar(20),
+  Cpno char(4),
+  Ccredit tinyint
+)
+create table SC(
+  Sno char(6) not null, --要在表外添加主键的约束，则这个属性不能为空
+  Cno char(6) not null,
+  Grade decimal(12,1) constraint ck_6 check(Grade &lt;= 100 and Grade &gt;=0)
+  constraint fk_1 foreign key (Sno) references student(sno)
+)
+alter table SC add constraint PK_SC primary key(Sno,Cno)
+</code></pre><p>check语句是一种约束条件写法，与constraint功能类似</p>
 </li>
+<li><p>在创建时设置foreign key：</p>
+<pre><code>create table sc(
+  Sno char(6),
+  Cno char(4),
+  Grade decimal(12,2),
+  primary key(Sno,Cno),
+  foreign key(Sno) references student(Sno),
+  foreign key(Cno) references course(Cno)
+)
+</code></pre></li>
 </ul>
-<p>check语句是一种约束条件写法，与constraint功能类似</p>
-<ul>
-<li>在创建时设置foreign key：<figure class="highlight lisp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">create table sc(</span><br><span class="line">	Sno char(<span class="number">6</span>),</span><br><span class="line">	Cno char(<span class="number">4</span>),</span><br><span class="line">	Grade decimal(<span class="number">12</span>,<span class="number">2</span>),</span><br><span class="line">	primary key(<span class="name">Sno</span>,Cno),</span><br><span class="line">	foreign key(<span class="name">Sno</span>) references student(<span class="name">Sno</span>),</span><br><span class="line">	foreign key(<span class="name">Cno</span>) references course(<span class="name">Cno</span>)</span><br><span class="line">)</span><br></pre></td></tr></table></figure>
-</li>
-</ul>
-<h3 id="创建索引"><a href="#创建索引" class="headerlink" title="创建索引"></a>创建索引</h3><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">create</span> <span class="keyword">index</span> Ix_student_sname <span class="keyword">on</span> student(Sname)</span><br><span class="line"><span class="keyword">create</span> <span class="keyword">index</span> Ix_student_sdept <span class="keyword">on</span> student(Sdept)</span><br><span class="line"><span class="keyword">create</span> <span class="keyword">index</span> Ix_sc_cno <span class="keyword">on</span> SC(Cno)</span><br><span class="line"><span class="keyword">create</span> <span class="keyword">index</span> Ix_course_cname <span class="keyword">on</span> Course(Cname)</span><br><span class="line">sp_help student  <span class="comment">--查看索引等信息</span></span><br><span class="line"><span class="keyword">drop</span> <span class="keyword">index</span> student.ix_student_sname    <span class="comment">--删除索引</span></span><br></pre></td></tr></table></figure>
-<h3 id="插入数据："><a href="#插入数据：" class="headerlink" title="插入数据："></a>插入数据：</h3><blockquote>
+<h3 id="创建索引"><a href="#创建索引" class="headerlink" title="创建索引"></a>创建索引</h3><pre><code>create index Ix_student_sname on student(Sname)
+create index Ix_student_sdept on student(Sdept)
+create index Ix_sc_cno on SC(Cno)
+create index Ix_course_cname on Course(Cname)
+sp_help student  --查看索引等信息
+drop index student.ix_student_sname    --删除索引
+</code></pre><h3 id="插入数据："><a href="#插入数据：" class="headerlink" title="插入数据："></a>插入数据：</h3><blockquote>
 <p>数据顺序和类型要与创建时的定义一致</p>
 </blockquote>
-<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">insert</span> <span class="keyword">into</span> student <span class="keyword">values</span>(<span class="string">'5001'</span>,<span class="string">'赵强'</span>,<span class="string">'男'</span>,<span class="string">'20'</span>,<span class="string">'SX'</span>)</span><br><span class="line"><span class="keyword">insert</span> <span class="keyword">into</span> student <span class="keyword">values</span>(<span class="string">'5002'</span>,<span class="string">'李丽华'</span>,<span class="string">'女'</span>,<span class="string">'21'</span>,<span class="string">'JSJ'</span>)</span><br><span class="line"><span class="keyword">insert</span> <span class="keyword">into</span> student <span class="keyword">values</span>(<span class="string">'5001'</span>,<span class="string">'李静'</span>,<span class="string">'女'</span>,<span class="string">'20'</span>,<span class="string">'SX'</span>)</span><br></pre></td></tr></table></figure>
-<h3 id="将数据从一个表插入另一个表"><a href="#将数据从一个表插入另一个表" class="headerlink" title="将数据从一个表插入另一个表"></a>将数据从一个表插入另一个表</h3><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">--批量插入数据(从student 到 sc_name)</span></span><br><span class="line"><span class="keyword">insert</span> <span class="keyword">into</span> sc_name (Sno,Sname,Ssex)</span><br><span class="line"><span class="keyword">select</span> Sno,Sname,Ssex <span class="keyword">from</span> student <span class="keyword">where</span> Sdept = <span class="string">'SX'</span></span><br></pre></td></tr></table></figure>
-<h2 id="在表外的更改操作"><a href="#在表外的更改操作" class="headerlink" title="在表外的更改操作"></a>在表外的更改操作</h2><hr>
-<h3 id="在表外更改表结构"><a href="#在表外更改表结构" class="headerlink" title="在表外更改表结构"></a>在表外更改表结构</h3><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">create</span> <span class="keyword">table</span> student(</span><br><span class="line">	Sno <span class="built_in">char</span>(<span class="number">6</span>),</span><br><span class="line">	Sname <span class="built_in">varchar</span>(<span class="number">8</span>),</span><br><span class="line">	Ssex <span class="built_in">char</span>(<span class="number">2</span>),</span><br><span class="line">	Sage <span class="built_in">smallint</span>,</span><br><span class="line">	Sdept <span class="built_in">varchar</span>(<span class="number">15</span>)</span><br><span class="line">)</span><br><span class="line"><span class="keyword">alter</span> <span class="keyword">table</span> student <span class="keyword">add</span> address <span class="built_in">varchar</span>(<span class="number">60</span>) <span class="comment">--添加列</span></span><br><span class="line"><span class="keyword">alter</span> <span class="keyword">table</span> student <span class="keyword">add</span> inDate datetime <span class="comment">--添加列，数据类型为datetime</span></span><br><span class="line"><span class="keyword">alter</span> <span class="keyword">table</span> student <span class="keyword">alter</span> <span class="keyword">column</span> adress <span class="built_in">varchar</span>(<span class="number">50</span>)</span><br><span class="line"><span class="keyword">alter</span> <span class="keyword">table</span> student <span class="keyword">drop</span> <span class="keyword">column</span> inDate</span><br></pre></td></tr></table></figure>
-<h3 id="用户自定义完整性约束"><a href="#用户自定义完整性约束" class="headerlink" title="用户自定义完整性约束"></a>用户自定义完整性约束</h3><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">alter</span> <span class="keyword">table</span> student <span class="keyword">add</span> <span class="keyword">constraint</span> cs_1 <span class="keyword">check</span>(Ssex <span class="keyword">in</span> (<span class="string">'男'</span>,<span class="string">'女'</span>))</span><br><span class="line"><span class="keyword">alter</span> <span class="keyword">table</span> student <span class="keyword">add</span> <span class="keyword">constraint</span> cs_2 <span class="keyword">check</span>(Sage &gt;<span class="number">16</span>)</span><br><span class="line"><span class="keyword">alter</span> <span class="keyword">table</span> Course <span class="keyword">add</span> <span class="keyword">constraint</span> cs_3 <span class="keyword">check</span>(Ccredit <span class="keyword">in</span> (<span class="number">0</span>,<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>,<span class="number">4</span>,<span class="number">5</span>))</span><br><span class="line"><span class="keyword">alter</span> <span class="keyword">table</span> Course <span class="keyword">add</span> <span class="keyword">constraint</span> cs_4 <span class="keyword">check</span>(Cno != Cpno)</span><br></pre></td></tr></table></figure>
-<ul>
+<pre><code>insert into student values(&#39;5001&#39;,&#39;赵强&#39;,&#39;男&#39;,&#39;20&#39;,&#39;SX&#39;)
+insert into student values(&#39;5002&#39;,&#39;李丽华&#39;,&#39;女&#39;,&#39;21&#39;,&#39;JSJ&#39;)
+insert into student values(&#39;5001&#39;,&#39;李静&#39;,&#39;女&#39;,&#39;20&#39;,&#39;SX&#39;)
+</code></pre><h3 id="将数据从一个表插入另一个表"><a href="#将数据从一个表插入另一个表" class="headerlink" title="将数据从一个表插入另一个表"></a>将数据从一个表插入另一个表</h3><pre><code>--批量插入数据(从student 到 sc_name)
+insert into sc_name (Sno,Sname,Ssex)
+select Sno,Sname,Ssex from student where Sdept = &#39;SX&#39;
+</code></pre><h2 id="在表外的更改操作"><a href="#在表外的更改操作" class="headerlink" title="在表外的更改操作"></a>在表外的更改操作</h2><hr>
+<h3 id="在表外更改表结构"><a href="#在表外更改表结构" class="headerlink" title="在表外更改表结构"></a>在表外更改表结构</h3><pre><code>create table student(
+    Sno char(6),
+    Sname varchar(8),
+    Ssex char(2),
+    Sage smallint,
+    Sdept varchar(15)
+)
+alter table student add address varchar(60) --添加列
+alter table student add inDate datetime --添加列，数据类型为datetime
+alter table student alter column adress varchar(50)
+alter table student drop column inDate
+</code></pre><h3 id="用户自定义完整性约束"><a href="#用户自定义完整性约束" class="headerlink" title="用户自定义完整性约束"></a>用户自定义完整性约束</h3><pre><code>alter table student add constraint cs_1 check(Ssex in (&#39;男&#39;,&#39;女&#39;))
+alter table student add constraint cs_2 check(Sage &gt;16)
+alter table Course add constraint cs_3 check(Ccredit in (0,1,2,3,4,5))
+alter table Course add constraint cs_4 check(Cno != Cpno)
+</code></pre><ul>
 <li>删除约束： <code>alter table student drop constraint cs_1</code></li>
 </ul>
 <h3 id="更新表数据"><a href="#更新表数据" class="headerlink" title="更新表数据"></a>更新表数据</h3><ul>
@@ -534,22 +592,71 @@ $(window).load(function(){
 <h3 id="基本查询操作"><a href="#基本查询操作" class="headerlink" title="基本查询操作"></a>基本查询操作</h3><ul>
 <li><code>select [列名（逗号间隔）或者*] from 表名</code></li>
 </ul>
-<h3 id="进阶-单表"><a href="#进阶-单表" class="headerlink" title="进阶(单表)"></a>进阶(单表)</h3><figure class="highlight oxygene"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">select</span> Sno,Sname,Sage <span class="keyword">from</span> student</span><br><span class="line"><span class="keyword">where</span> Sage &gt;= <span class="number">19</span> <span class="keyword">and</span> Sage &lt;= <span class="number">21</span> <span class="keyword">and</span> Ssex = <span class="string">'女'</span> <span class="keyword">order</span> <span class="keyword">by</span> Sage <span class="keyword">desc</span></span><br><span class="line">-- <span class="keyword">desc</span>表示降序，<span class="keyword">asc</span>表示升序</span><br></pre></td></tr></table></figure>
-<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">select</span> Sno,Ssex <span class="keyword">from</span> student <span class="keyword">where</span> Sname <span class="keyword">like</span> <span class="string">'_明%'</span>  </span><br><span class="line"><span class="comment">--'_'表示一个字符，%表示任意多个字符,这里筛选出名字第二个字为‘明’的人</span></span><br></pre></td></tr></table></figure>
-<figure class="highlight cs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">select</span> Sno,Cno <span class="keyword">from</span> SC <span class="keyword">where</span> Grade <span class="keyword">is</span> <span class="literal">null</span></span><br><span class="line">-- 如果用<span class="string">'= null'</span>则查询结果为空</span><br></pre></td></tr></table></figure>
-<figure class="highlight nimrod"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">select <span class="type">Sno</span>,<span class="type">Cno</span>,<span class="keyword">cast</span>((<span class="type">Grade</span>/<span class="number">10</span>) <span class="keyword">as</span> <span class="built_in">int</span>)<span class="keyword">from</span> <span class="type">SC</span></span><br><span class="line">-- <span class="keyword">cast</span>(a <span class="keyword">as</span> <span class="built_in">int</span>)转换数据类型</span><br></pre></td></tr></table></figure>
-<figure class="highlight n1ql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">select</span> <span class="keyword">distinct</span> Sdept <span class="keyword">from</span> student</span><br><span class="line">-- <span class="keyword">distinct</span>写在最前面</span><br></pre></td></tr></table></figure>
-<h3 id="进阶（统计）"><a href="#进阶（统计）" class="headerlink" title="进阶（统计）"></a>进阶（统计）</h3><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">select</span> <span class="keyword">count</span>(*) <span class="keyword">as</span> <span class="built_in">number</span> <span class="keyword">from</span> student</span><br><span class="line"><span class="keyword">where</span> Sname <span class="keyword">like</span> <span class="string">'%明%'</span></span><br><span class="line"><span class="comment">-- 统计名字有‘明’的人数</span></span><br></pre></td></tr></table></figure>
-<figure class="highlight n1ql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">select</span> Cno,<span class="built_in">sum</span>(Grade) <span class="keyword">as</span> total_grade,<span class="built_in">avg</span>(Grade) <span class="keyword">as</span> avg_grade,<span class="built_in">max</span>(Grade) <span class="keyword">as</span> max_grade,<span class="built_in">min</span>(Grade) <span class="keyword">as</span> min_grade <span class="keyword">from</span> SC  </span><br><span class="line"><span class="keyword">group</span> <span class="keyword">by</span> Cno</span><br><span class="line"><span class="keyword">order</span> <span class="keyword">by</span> avg_grade <span class="keyword">desc</span></span><br><span class="line">-- <span class="built_in">sum</span>()求和</span><br></pre></td></tr></table></figure>
-<figure class="highlight n1ql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">select</span> Cno <span class="keyword">from</span> SC</span><br><span class="line"><span class="keyword">where</span> Grade &gt;= <span class="number">85</span></span><br><span class="line"><span class="keyword">group</span> <span class="keyword">by</span> Cno</span><br><span class="line"><span class="keyword">having</span> <span class="built_in">count</span>(Sno)&gt;<span class="number">10</span></span><br><span class="line">-- <span class="keyword">where</span> 筛选必须在<span class="keyword">group</span> 之前，<span class="keyword">group</span>之后可以用<span class="keyword">having</span>筛选，两者可以并用</span><br></pre></td></tr></table></figure>
-<figure class="highlight routeros"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">select Sno <span class="keyword">from</span> SC</span><br><span class="line">where Grade &lt;60  </span><br><span class="line">group by Sno</span><br><span class="line">having count(Cno) &gt; 2</span><br></pre></td></tr></table></figure>
-<h3 id="进阶（连接）"><a href="#进阶（连接）" class="headerlink" title="进阶（连接）"></a>进阶（连接）</h3><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">select</span> <span class="keyword">distinct</span> Cno <span class="keyword">from</span> student,SC</span><br><span class="line"><span class="keyword">where</span> student.Sno = SC.Sno <span class="keyword">and</span> Sdept = <span class="string">'JSJ'</span></span><br><span class="line"><span class="comment">-- 连接要写出连接条件</span></span><br></pre></td></tr></table></figure>
-<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">-- 三种写法</span></span><br><span class="line"><span class="keyword">select</span> Sname <span class="keyword">from</span> student,SC</span><br><span class="line"><span class="keyword">where</span> student.Sno = SC.Sno <span class="keyword">and</span> Cno = <span class="number">1002</span></span><br><span class="line">XXXXXX</span><br><span class="line"><span class="keyword">select</span> Sname <span class="keyword">from</span> student</span><br><span class="line"><span class="keyword">join</span> SC <span class="keyword">on</span> student.Sno = Sc.Sno</span><br><span class="line"><span class="keyword">where</span> Cno = <span class="number">1002</span>             <span class="comment">-- JOIN..ON..语句</span></span><br><span class="line">XXXXXX</span><br><span class="line"><span class="keyword">select</span> Sname <span class="keyword">from</span> student</span><br><span class="line"><span class="keyword">where</span> Sno <span class="keyword">in</span>(                <span class="comment">--嵌套执行</span></span><br><span class="line">	<span class="keyword">select</span> Sno <span class="keyword">from</span> SC <span class="keyword">where</span> Cno = <span class="number">1002</span></span><br><span class="line">)</span><br></pre></td></tr></table></figure>
-<figure class="highlight stylus"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">select student<span class="selector-class">.Sno</span>, Grade from student,course,SC</span><br><span class="line">where student<span class="selector-class">.Sno</span> = SC<span class="selector-class">.Sno</span> and course<span class="selector-class">.Cno</span> = SC<span class="selector-class">.Cno</span> and Cname = <span class="string">'数据库原理'</span> and Grade &lt;<span class="number">60</span></span><br><span class="line">--用表名.列名来获取具有相同列名的几个表中某个表的某一列</span><br></pre></td></tr></table></figure>
-<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">-- 两种写法</span></span><br><span class="line"><span class="keyword">select</span> student.Sname <span class="keyword">from</span> student,SC</span><br><span class="line"><span class="keyword">where</span> student.Sno = SC.Sno <span class="keyword">and</span> Grade &gt;= <span class="number">80</span> <span class="keyword">and</span> Cno = <span class="number">1004</span></span><br><span class="line">XXXXXX</span><br><span class="line"><span class="keyword">select</span> Sname <span class="keyword">from</span> student</span><br><span class="line"><span class="keyword">where</span> Sno <span class="keyword">in</span>(                <span class="comment">--嵌套写法</span></span><br><span class="line">	<span class="keyword">select</span> Sno <span class="keyword">from</span> SC <span class="keyword">where</span> Grade &gt; <span class="number">80</span> <span class="keyword">and</span> Cno <span class="keyword">in</span>(</span><br><span class="line">		<span class="keyword">select</span> Cno <span class="keyword">from</span> course <span class="keyword">where</span> Cname = <span class="string">'数据库原理'</span></span><br><span class="line">	)</span><br><span class="line">)</span><br></pre></td></tr></table></figure>
-<p>###</p>
-<h3 id="进阶（嵌套）"><a href="#进阶（嵌套）" class="headerlink" title="进阶（嵌套）"></a>进阶（嵌套）</h3><figure class="highlight routeros"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">-- 找出平均成绩最大的一个（两种写法）</span><br><span class="line">select  top 1 Sno,avg(Grade) as avg_grade <span class="keyword">from</span> SC</span><br><span class="line">group by Sno</span><br><span class="line">order by avg(Grade) desc</span><br><span class="line">XXXXXX</span><br><span class="line">select Sno,avg(Grade) as avg_grade <span class="keyword">from</span> SC</span><br><span class="line">group by Sno</span><br><span class="line">having avg(Grade) &gt;= all(select avg(Grade) <span class="keyword">from</span> SC<span class="built_in"> group </span>by Sno)</span><br></pre></td></tr></table></figure>
-<h2 id="删除"><a href="#删除" class="headerlink" title="删除"></a>删除</h2><hr>
+<h3 id="进阶-单表"><a href="#进阶-单表" class="headerlink" title="进阶(单表)"></a>进阶(单表)</h3><pre><code>select Sno,Sname,Sage from student
+where Sage &gt;= 19 and Sage &lt;= 21 and Ssex = &#39;女&#39; order by Sage desc
+-- desc表示降序，asc表示升序
+</code></pre><pre><code>select Sno,Ssex from student where Sname like &#39;_明%&#39;  
+--&#39;_&#39;表示一个字符，%表示任意多个字符,这里筛选出名字第二个字为‘明’的人
+</code></pre><pre><code>select Sno,Cno from SC where Grade is null
+-- 如果用&#39;= null&#39;则查询结果为空
+</code></pre><pre><code>select Sno,Cno,cast((Grade/10) as int)from SC
+-- cast(a as int)转换数据类型
+</code></pre><pre><code>select distinct Sdept from student
+-- distinct写在最前面
+</code></pre><h3 id="进阶（统计）"><a href="#进阶（统计）" class="headerlink" title="进阶（统计）"></a>进阶（统计）</h3><pre><code>select count(*) as number from student
+where Sname like &#39;%明%&#39;
+-- 统计名字有‘明’的人数
+</code></pre><pre><code>select Cno,sum(Grade) as total_grade,avg(Grade) as avg_grade,max(Grade) as max_grade,min(Grade) as min_grade from SC  
+group by Cno
+order by avg_grade desc
+-- sum()求和
+</code></pre><pre><code>select Cno from SC
+where Grade &gt;= 85
+group by Cno
+having count(Sno)&gt;10
+-- where 筛选必须在group 之前，group之后可以用having筛选，两者可以并用
+</code></pre><pre><code>select Sno from SC
+where Grade &lt;60  
+group by Sno
+having count(Cno) &gt; 2
+</code></pre><h3 id="进阶（连接）"><a href="#进阶（连接）" class="headerlink" title="进阶（连接）"></a>进阶（连接）</h3><pre><code>select distinct Cno from student,SC
+where student.Sno = SC.Sno and Sdept = &#39;JSJ&#39;
+-- 连接要写出连接条件
+</code></pre><pre><code>-- 三种写法
+select Sname from student,SC
+where student.Sno = SC.Sno and Cno = 1002
+XXXXXX
+select Sname from student
+join SC on student.Sno = Sc.Sno
+where Cno = 1002             -- JOIN..ON..语句
+XXXXXX
+select Sname from student
+where Sno in(                --嵌套执行
+    select Sno from SC where Cno = 1002
+)
+</code></pre><pre><code>select student.Sno, Grade from student,course,SC
+where student.Sno = SC.Sno and course.Cno = SC.Cno and Cname = &#39;数据库原理&#39; and Grade &lt;60
+--用表名.列名来获取具有相同列名的几个表中某个表的某一列
+</code></pre><pre><code>-- 两种写法
+select student.Sname from student,SC
+where student.Sno = SC.Sno and Grade &gt;= 80 and Cno = 1004
+XXXXXX
+select Sname from student
+where Sno in(                --嵌套写法
+    select Sno from SC where Grade &gt; 80 and Cno in(
+        select Cno from course where Cname = &#39;数据库原理&#39;
+    )
+)
+</code></pre><p>###</p>
+<h3 id="进阶（嵌套）"><a href="#进阶（嵌套）" class="headerlink" title="进阶（嵌套）"></a>进阶（嵌套）</h3><pre><code>-- 找出平均成绩最大的一个（两种写法）
+select  top 1 Sno,avg(Grade) as avg_grade from SC
+group by Sno
+order by avg(Grade) desc
+XXXXXX
+select Sno,avg(Grade) as avg_grade from SC
+group by Sno
+having avg(Grade) &gt;= all(select avg(Grade) from SC group by Sno)
+</code></pre><h2 id="删除"><a href="#删除" class="headerlink" title="删除"></a>删除</h2><hr>
 <ul>
 <li><p>删除表： <code>drop table XXX</code></p>
 </li>
@@ -561,10 +668,33 @@ $(window).load(function(){
 </li>
 </ul>
 <h2 id="补充"><a href="#补充" class="headerlink" title="补充"></a>补充</h2><hr>
-<h3 id="循环生成数据"><a href="#循环生成数据" class="headerlink" title="循环生成数据"></a>循环生成数据</h3><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">--生成大量数据</span></span><br><span class="line"><span class="keyword">create</span> <span class="keyword">procedure</span> usp_makedata <span class="keyword">as</span></span><br><span class="line"><span class="keyword">declare</span> @nCnt <span class="built_in">int</span>, @sNo <span class="built_in">char</span>(<span class="number">6</span>), @sname <span class="built_in">varchar</span>(<span class="number">8</span>)</span><br><span class="line"><span class="keyword">set</span> @nCnt = <span class="number">12000</span> <span class="comment">--counter</span></span><br><span class="line"><span class="keyword">while</span> @nCnt &lt;<span class="number">999999</span></span><br><span class="line"><span class="keyword">begin</span></span><br><span class="line">	<span class="keyword">set</span> @nCnt = @nCnt +<span class="number">1</span></span><br><span class="line">	<span class="keyword">set</span> @sNo = <span class="keyword">convert</span>(<span class="built_in">varchar</span>(<span class="number">6</span>),@nCnt)</span><br><span class="line">	<span class="keyword">set</span> @sName = <span class="string">'张'</span> +@sno</span><br><span class="line">	<span class="keyword">insert</span> <span class="keyword">into</span> student (sno,sname,ssex,sage) <span class="keyword">values</span> (@sno,@sname,<span class="string">'男'</span>,<span class="number">20</span>)</span><br><span class="line"><span class="keyword">end</span></span><br><span class="line"><span class="keyword">return</span></span><br><span class="line">exec usp_makedata	<span class="comment">--执行生成过程</span></span><br></pre></td></tr></table></figure>
-<h3 id="测试生成的数据"><a href="#测试生成的数据" class="headerlink" title="测试生成的数据"></a>测试生成的数据</h3><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">--生成测试</span></span><br><span class="line"><span class="keyword">create</span> <span class="keyword">procedure</span> usp_test <span class="keyword">as</span></span><br><span class="line"><span class="keyword">declare</span> @nCount <span class="built_in">int</span> ,@<span class="keyword">data</span> <span class="built_in">int</span></span><br><span class="line"><span class="keyword">set</span> @nCount=<span class="number">0</span></span><br><span class="line"><span class="keyword">while</span> @nCount &lt;<span class="number">100</span></span><br><span class="line"><span class="keyword">begin</span></span><br><span class="line">	<span class="keyword">select</span> @<span class="keyword">data</span> = <span class="keyword">count</span>(*) <span class="keyword">from</span> student</span><br><span class="line">	<span class="keyword">where</span> sname &lt;<span class="string">'张3800'</span> <span class="keyword">or</span> sname &gt;<span class="string">'张8800'</span></span><br><span class="line">	<span class="keyword">set</span> @nCount =@nCount + <span class="number">1</span></span><br><span class="line"><span class="keyword">end</span></span><br><span class="line">exec usp_test <span class="comment">--执行测试</span></span><br></pre></td></tr></table></figure>
-<h3 id="善后"><a href="#善后" class="headerlink" title="善后"></a>善后</h3><figure class="highlight cal"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">drop <span class="function"><span class="keyword">procedure</span> <span class="title">usp_makedata</span></span></span><br><span class="line"><span class="function"><span class="title">drop</span> <span class="title">procedure</span> <span class="title">usp_test</span></span></span><br></pre></td></tr></table></figure>
-<h2 id="E-R图的画法"><a href="#E-R图的画法" class="headerlink" title="E-R图的画法"></a>E-R图的画法</h2><hr>
+<h3 id="循环生成数据"><a href="#循环生成数据" class="headerlink" title="循环生成数据"></a>循环生成数据</h3><pre><code>--生成大量数据
+create procedure usp_makedata as
+declare @nCnt int, @sNo char(6), @sname varchar(8)
+set @nCnt = 12000 --counter
+while @nCnt &lt;999999
+begin
+    set @nCnt = @nCnt +1
+    set @sNo = convert(varchar(6),@nCnt)
+    set @sName = &#39;张&#39; +@sno
+    insert into student (sno,sname,ssex,sage) values (@sno,@sname,&#39;男&#39;,20)
+end
+return
+exec usp_makedata    --执行生成过程
+</code></pre><h3 id="测试生成的数据"><a href="#测试生成的数据" class="headerlink" title="测试生成的数据"></a>测试生成的数据</h3><pre><code>--生成测试
+create procedure usp_test as
+declare @nCount int ,@data int
+set @nCount=0
+while @nCount &lt;100
+begin
+    select @data = count(*) from student
+    where sname &lt;&#39;张3800&#39; or sname &gt;&#39;张8800&#39;
+    set @nCount =@nCount + 1
+end
+exec usp_test --执行测试
+</code></pre><h3 id="善后"><a href="#善后" class="headerlink" title="善后"></a>善后</h3><pre><code>drop procedure usp_makedata
+drop procedure usp_test
+</code></pre><h2 id="E-R图的画法"><a href="#E-R图的画法" class="headerlink" title="E-R图的画法"></a>E-R图的画法</h2><hr>
 <ul>
 <li><p>实体型(Entity)：用矩形表示，矩形框内写明实体名</p>
 </li>
@@ -658,8 +788,8 @@ $(window).load(function(){
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2018/04/06/Scala-superior/" rel="next" title="Scala学习笔记——进阶">
-                <i class="fa fa-chevron-left"></i> Scala学习笔记——进阶
+              <a href="/2018/04/06/Ubuntu-operation/" rel="next" title="Ubuntu随笔">
+                <i class="fa fa-chevron-left"></i> Ubuntu随笔
               </a>
             
           </div>
@@ -668,8 +798,8 @@ $(window).load(function(){
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2018/04/11/Spark-superior/" rel="prev" title="Spark学习笔记——进阶">
-                Spark学习笔记——进阶 <i class="fa fa-chevron-right"></i>
+              <a href="/2018/04/11/Spark-learning/" rel="prev" title="Spark学习笔记——基础">
+                Spark学习笔记——基础 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -732,7 +862,7 @@ $(window).load(function(){
               <img class="site-author-image" itemprop="image" src="/images/avatar.gif" alt="Fleschier">
             
               <p class="site-author-name" itemprop="name">Fleschier</p>
-              <p class="site-description motion-element" itemprop="description">每天早上醒来，你和阳光都在，就是我想要的未来。</p>
+              <p class="site-description motion-element" itemprop="description">生活是一个过程,可喜的是它不用重来。</p>
           </div>
 
           

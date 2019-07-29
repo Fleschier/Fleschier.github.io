@@ -117,13 +117,13 @@
 
 <link href="/js/google-code-prettify/tomorrow.min.css" type="text/css" rel="stylesheet">
 
-  <meta name="description" content="科学上网从我做起    重大更新  现在大多数的ssr或者ss图形界面的在ubuntu18上已经歇菜了,但是这里分享一个命令行下的ss和一个图形界面的ssr(推荐)。  命令行方式的ss  12sudo apt-get install python-pipsudo pip install shadowsocks  通过配置文件指定配置信息 12345678910111213mkdir ~/.sh">
+  <meta name="description" content="科学上网从我做起    重大更新  现在大多数的ssr或者ss图形界面的在ubuntu18上已经歇菜了,但是这里分享一个命令行下的ss和一个图形界面的ssr(推荐)。  命令行方式的ss  sudo apt-get install python-pip sudo pip install shadowsocks  通过配置文件指定配置信息 mkdir ~/.shadowsocks cd .shad">
 <meta name="keywords" content="๑Ubuntu,๑Linux,๑ScientificSurfing">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Shadowsocks">
 <meta property="og:url" content="https://fleschier.github.io/2018/05/28/Shaow-socks/index.html">
 <meta property="og:site_name" content="Fleschier 渐寒๑">
-<meta property="og:description" content="科学上网从我做起    重大更新  现在大多数的ssr或者ss图形界面的在ubuntu18上已经歇菜了,但是这里分享一个命令行下的ss和一个图形界面的ssr(推荐)。  命令行方式的ss  12sudo apt-get install python-pipsudo pip install shadowsocks  通过配置文件指定配置信息 12345678910111213mkdir ~/.sh">
+<meta property="og:description" content="科学上网从我做起    重大更新  现在大多数的ssr或者ss图形界面的在ubuntu18上已经歇菜了,但是这里分享一个命令行下的ss和一个图形界面的ssr(推荐)。  命令行方式的ss  sudo apt-get install python-pip sudo pip install shadowsocks  通过配置文件指定配置信息 mkdir ~/.shadowsocks cd .shad">
 <meta property="og:locale" content="default">
 <meta property="og:image" content="https://fleschier.github.io/images/ssr/systemset.png">
 <meta property="og:image" content="https://fleschier.github.io/images/ssr/gfwlist.png">
@@ -133,7 +133,7 @@
 <meta property="og:updated_time" content="2018-09-03T13:17:33.983Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Shadowsocks">
-<meta name="twitter:description" content="科学上网从我做起    重大更新  现在大多数的ssr或者ss图形界面的在ubuntu18上已经歇菜了,但是这里分享一个命令行下的ss和一个图形界面的ssr(推荐)。  命令行方式的ss  12sudo apt-get install python-pipsudo pip install shadowsocks  通过配置文件指定配置信息 12345678910111213mkdir ~/.sh">
+<meta name="twitter:description" content="科学上网从我做起    重大更新  现在大多数的ssr或者ss图形界面的在ubuntu18上已经歇菜了,但是这里分享一个命令行下的ss和一个图形界面的ssr(推荐)。  命令行方式的ss  sudo apt-get install python-pip sudo pip install shadowsocks  通过配置文件指定配置信息 mkdir ~/.shadowsocks cd .shad">
 <meta name="twitter:image" content="https://fleschier.github.io/images/ssr/systemset.png">
 
 
@@ -367,7 +367,7 @@ $(window).load(function(){
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Fleschier">
-      <meta itemprop="description" content="每天早上醒来，你和阳光都在，就是我想要的未来。">
+      <meta itemprop="description" content="生活是一个过程,可喜的是它不用重来。">
       <meta itemprop="image" content="/images/avatar.gif">
     </span>
 
@@ -493,11 +493,24 @@ $(window).load(function(){
 </ul>
 <h3 id="命令行方式的ss"><a href="#命令行方式的ss" class="headerlink" title="命令行方式的ss"></a>命令行方式的ss</h3><hr>
 <ul>
-<li><figure class="highlight cmake"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">sudo apt-get <span class="keyword">install</span> python-pip</span><br><span class="line">sudo pip <span class="keyword">install</span> shadowsocks</span><br></pre></td></tr></table></figure>
-</li>
+<li><pre><code>sudo apt-get install python-pip
+sudo pip install shadowsocks
+</code></pre></li>
 <li><p>通过配置文件指定配置信息</p>
-<figure class="highlight stylus"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">mkdir ~/.shadowsocks</span><br><span class="line">cd .shadowsocks</span><br><span class="line">touch ss.json</span><br><span class="line"><span class="comment">//添加内容如下</span></span><br><span class="line">&#123;</span><br><span class="line">    <span class="string">"server"</span>:<span class="string">"1.1.1.1"</span>,</span><br><span class="line">    <span class="string">"server_port"</span>:<span class="number">8388</span>,</span><br><span class="line">    <span class="string">"local_address"</span>: <span class="string">"127.0.0.1"</span>,</span><br><span class="line">    <span class="string">"local_port"</span>:<span class="number">1080</span>,</span><br><span class="line">    <span class="string">"password"</span>:<span class="string">"your passwd"</span>,</span><br><span class="line">    <span class="string">"timeout"</span>:<span class="number">300</span>,</span><br><span class="line">    <span class="string">"method"</span>:<span class="string">"aes-256-cfb"</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-</li>
+<pre><code>mkdir ~/.shadowsocks
+cd .shadowsocks
+touch ss.json
+//添加内容如下
+{
+  &quot;server&quot;:&quot;1.1.1.1&quot;,
+  &quot;server_port&quot;:8388,
+  &quot;local_address&quot;: &quot;127.0.0.1&quot;,
+  &quot;local_port&quot;:1080,
+  &quot;password&quot;:&quot;your passwd&quot;,
+  &quot;timeout&quot;:300,
+  &quot;method&quot;:&quot;aes-256-cfb&quot;
+}
+</code></pre></li>
 <li><p>server填你的服务器ip，sever_port填远程端口号，local_address本地ip，local_part本地端口，password填密码，timeout是延迟时间，method是加密方式，按照实际情况填写并保存</p>
 </li>
 <li><p>终端运行：<code>sslocal -c ~/.shadowsocks/ss.json</code></p>
@@ -505,8 +518,16 @@ $(window).load(function(){
 <li><p>后台运行(不推荐)：<code>sslocal -c ~/.shadowsocks/ss.json -d start</code></p>
 </li>
 <li><p>现在运行的话会有报错，修改方法：</p>
-<figure class="highlight crystal"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">vim /usr/local/<span class="class"><span class="keyword">lib</span>/<span class="title">python2</span>.7/<span class="title">dist</span>-<span class="title">packages</span>/<span class="title">shadowsocks</span>/<span class="title">crypto</span>/<span class="title">openssl</span>.<span class="title">py</span></span></span><br><span class="line">/<span class="regexp">/跳转到52行（shadowsocks2.8.2版本，其他版本搜索一下cleanup</span></span><br><span class="line"><span class="regexp">/</span><span class="regexp">/</span></span><br><span class="line"><span class="regexp">将第52行libcrypto.EVP_CIPHER_CTX_cleanup.argtypes = (c_void_p,)</span></span><br><span class="line"><span class="regexp">改为libcrypto.EVP_CIPHER_CTX_reset.argtypes = (c_void_p,)</span></span><br><span class="line"><span class="regexp">/</span><span class="regexp">/</span></span><br><span class="line"><span class="regexp">再次搜索cleanup（全文件共2处，此处位于111行），将libcrypto.EVP_CIPHER_CTX_cleanup(self._ctx)</span></span><br><span class="line"><span class="regexp">改为libcrypto.EVP_CIPHER_CTX_reset(self._ctx)</span></span><br><span class="line"><span class="regexp">/</span><span class="regexp">/然后就可以正常运行了</span></span><br></pre></td></tr></table></figure>
-</li>
+<pre><code>vim /usr/local/lib/python2.7/dist-packages/shadowsocks/crypto/openssl.py
+//跳转到52行（shadowsocks2.8.2版本，其他版本搜索一下cleanup
+//
+将第52行libcrypto.EVP_CIPHER_CTX_cleanup.argtypes = (c_void_p,)
+改为libcrypto.EVP_CIPHER_CTX_reset.argtypes = (c_void_p,)
+//
+再次搜索cleanup（全文件共2处，此处位于111行），将libcrypto.EVP_CIPHER_CTX_cleanup(self._ctx)
+改为libcrypto.EVP_CIPHER_CTX_reset(self._ctx)
+//然后就可以正常运行了
+</code></pre></li>
 <li><p>详细见<a href="https://blog.csdn.net/blackfrog_unique/article/details/60320737" target="_blank" rel="noopener">博客</a></p>
 </li>
 </ul>
@@ -537,10 +558,13 @@ $(window).load(function(){
 <li><p>在SwitchyOmega的配置页面<br>先新建一个情景模式，选择代理服务器，名称为gfwlist(这个随意)<br>配置时,代理服务器和代理端口分别是ssr config中的<br>  “local_address”:”127.0.0.1”<br>  “local_port”:1080<br>确认后无误后应用选项<br><img src="/images/ssr/gfwlist.png" alt></p>
 </li>
 <li><p>接下来点击情景模式中的自动切换，输入参数如下：</p>
-<figure class="highlight stylus"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">条件设置：raw<span class="selector-class">.githubusercontent</span><span class="selector-class">.com</span>  </span><br><span class="line">规则列表网址：https:<span class="comment">//raw.githubusercontent.com/gfwlist/gfwlist/master/gfwlist.txt  </span></span><br><span class="line">点击立即更新情景模式  </span><br><span class="line">结束,在SwitchyOmega插件(chorme浏览器右上角处)那换成自动切换,大功告成.</span><br></pre></td></tr></table></figure>
+<pre><code>条件设置：raw.githubusercontent.com  
+规则列表网址：https://raw.githubusercontent.com/gfwlist/gfwlist/master/gfwlist.txt  
+点击立即更新情景模式  
+结束,在SwitchyOmega插件(chorme浏览器右上角处)那换成自动切换,大功告成.
+</code></pre><p><img src="/images/ssr/auto_switch_01.png" alt></p>
 </li>
 </ul>
-<p><img src="/images/ssr/auto_switch_01.png" alt></p>
 <p><img src="/images/ssr/auto_switch_02.png" alt></p>
 <p><img src="/images/ssr/example.png" alt></p>
 <ul>
@@ -628,8 +652,8 @@ $(window).load(function(){
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2018/05/30/Hadoop-usage/" rel="prev" title="Hadoop单机伪分布式环境搭建">
-                Hadoop单机伪分布式环境搭建 <i class="fa fa-chevron-right"></i>
+              <a href="/2018/05/30/HDFS/" rel="prev" title="HDFS相关笔记">
+                HDFS相关笔记 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -692,7 +716,7 @@ $(window).load(function(){
               <img class="site-author-image" itemprop="image" src="/images/avatar.gif" alt="Fleschier">
             
               <p class="site-author-name" itemprop="name">Fleschier</p>
-              <p class="site-description motion-element" itemprop="description">每天早上醒来，你和阳光都在，就是我想要的未来。</p>
+              <p class="site-description motion-element" itemprop="description">生活是一个过程,可喜的是它不用重来。</p>
           </div>
 
           

@@ -361,7 +361,7 @@ $(window).load(function(){
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Fleschier">
-      <meta itemprop="description" content="每天早上醒来，你和阳光都在，就是我想要的未来。">
+      <meta itemprop="description" content="生活是一个过程,可喜的是它不用重来。">
       <meta itemprop="image" content="/images/avatar.gif">
     </span>
 
@@ -522,22 +522,47 @@ $(window).load(function(){
 <li><p>创建对象后，可以将对象的引用赋值给其他对象变量。</p>
 </li>
 <li><p>例如下面的程序</p>
-<figure class="highlight cs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title">test</span>&#123;</span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span>(<span class="params">String[] args</span>)</span>&#123;</span><br><span class="line">		StringBuffer s;</span><br><span class="line">		s= <span class="keyword">new</span> StringBuffer(<span class="string">"AAAAA"</span>);</span><br><span class="line">		StringBuffer s1 = s; <span class="comment">//此句会使得s1和s指向同一个对象</span></span><br><span class="line">		s1.append(<span class="string">"BBBB"</span>);</span><br><span class="line">		Syetem.<span class="keyword">out</span>.println(<span class="string">"s = "</span> + s.toString());</span><br><span class="line">		Syetem.<span class="keyword">out</span>.println(<span class="string">"s1 = "</span> + s1.toString());</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>输出结果为：</p>
-<figure class="highlight ini"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">s</span> = AAAAABBBB</span><br><span class="line"><span class="attr">s1</span> = AAAAABBBB</span><br></pre></td></tr></table></figure>
-</li>
+<pre><code>public class test{
+  public static void main(String[] args){
+      StringBuffer s;
+      s= new StringBuffer(&quot;AAAAA&quot;);
+      StringBuffer s1 = s; //此句会使得s1和s指向同一个对象
+      s1.append(&quot;BBBB&quot;);
+      Syetem.out.println(&quot;s = &quot; + s.toString());
+      Syetem.out.println(&quot;s1 = &quot; + s1.toString());
+  }
+}
+</code></pre></li>
+<li>输出结果为：<pre><code>s = AAAAABBBB
+s1 = AAAAABBBB
+</code></pre></li>
 </ul>
 <h3 id="方法参数传递"><a href="#方法参数传递" class="headerlink" title="方法参数传递"></a>方法参数传递</h3><h4 id="按值传递-一般的函数参数"><a href="#按值传递-一般的函数参数" class="headerlink" title="按值传递(一般的函数参数)"></a>按值传递(一般的函数参数)</h4><ul>
-<li>传入方法中的参数是一份拷贝，对其的修改不会影响其本身<figure class="highlight cs"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title">Printer</span>&#123;</span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">printinfo</span>(<span class="params">String name, <span class="keyword">int</span> age</span>)</span>&#123;</span><br><span class="line">		age ++;</span><br><span class="line">		System.<span class="keyword">out</span>.println(<span class="string">"Hello! My name is"</span> + name + <span class="string">"and I'm "</span> + age);</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span>(<span class="params">String args[]</span>)</span>&#123;</span><br><span class="line">		Printer p = <span class="keyword">new</span> Printer();</span><br><span class="line">		<span class="keyword">int</span> age = <span class="number">20</span>;</span><br><span class="line">		p.printinfo(<span class="string">"Mike"</span>,age);</span><br><span class="line">		System.<span class="keyword">out</span>.println(<span class="string">"Now the initial age = "</span> + age);</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-</li>
+<li>传入方法中的参数是一份拷贝，对其的修改不会影响其本身<pre><code>class Printer{
+  public void printinfo(String name, int age){
+      age ++;
+      System.out.println(&quot;Hello! My name is&quot; + name + &quot;and I&#39;m &quot; + age);
+  }
+  public static void main(String args[]){
+      Printer p = new Printer();
+      int age = 20;
+      p.printinfo(&quot;Mike&quot;,age);
+      System.out.println(&quot;Now the initial age = &quot; + age);
+  }
+}
+</code></pre></li>
 </ul>
 <h4 id="按引用传递"><a href="#按引用传递" class="headerlink" title="按引用传递"></a>按引用传递</h4><ul>
 <li>调用方法时，<strong>如果传递的是一个对象、接口或数组时</strong>，实际上传递的是对象的、接口或者数组的引用。因此如果方法中对参数进行了修改，那么原来的数据也会受到影响。</li>
 </ul>
 <h2 id="继承"><a href="#继承" class="headerlink" title="继承"></a>继承</h2><ul>
-<li>类的继承格式：<figure class="highlight scala"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">父类</span></span>&#123;</span><br><span class="line">	...</span><br><span class="line">&#125;</span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">子类</span> <span class="keyword">extends</span> <span class="title">父类</span></span>&#123;</span><br><span class="line">	...</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-</li>
+<li>类的继承格式：<pre><code>class 父类{
+  ...
+}
+class 子类 extends 父类{
+  ...
+}
+</code></pre></li>
 </ul>
 <h3 id="继承的特性"><a href="#继承的特性" class="headerlink" title="继承的特性"></a>继承的特性</h3><ul>
 <li><p>子类拥有父类非private的属性，方法。</p>
@@ -553,17 +578,17 @@ $(window).load(function(){
 </ul>
 <h2 id="多继承的实现"><a href="#多继承的实现" class="headerlink" title="多继承的实现"></a>多继承的实现</h2><hr>
 <h3 id="抽象类"><a href="#抽象类" class="headerlink" title="抽象类"></a>抽象类</h3><ul>
-<li><p>抽象类的定义：</p>
-<figure class="highlight crystal"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">[访问修饰符] &lt;<span class="keyword">abstract</span>&gt; <span class="class"><span class="keyword">class</span> &lt;类名&gt;&#123;</span></span><br><span class="line">	[成员变量声明]</span><br><span class="line">	[方法定义]</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-</li>
+<li>抽象类的定义：<pre><code>[访问修饰符] &lt;abstract&gt; class &lt;类名&gt;{
+  [成员变量声明]
+  [方法定义]
+}
+</code></pre></li>
 <li><p>抽象方法的定义：抽象方法是指只有声明而没有实现方法，用abstract修饰，一般格式如下：</p>
-<figure class="highlight cs"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">[<span class="meta">访问修饰符</span>] &lt;<span class="keyword">abstract</span>&gt; 返回类型 方法名(参数列表);</span><br></pre></td></tr></table></figure>
-</li>
-</ul>
-<blockquote>
+<pre><code>[访问修饰符] &lt;abstract&gt; 返回类型 方法名(参数列表);
+</code></pre><blockquote>
 <p>注意抽象类不能定义为final类，因为抽象类不能实例化。抽象方法也不能声明为final方法，因为要在子类中实现该抽象方法。</p>
 </blockquote>
-<ul>
+</li>
 <li><p><strong>抽象类不能被实例化，实例化的工作应该交由它的子类来完成</strong>，它只需要有一个引用即可。</p>
 </li>
 <li><p>抽象方法必须由子类来进行重写。</p>
@@ -602,8 +627,22 @@ $(window).load(function(){
 </blockquote>
 </li>
 <li><p>接口使用示例：</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">interface</span> <span class="title">Computable</span></span>&#123;</span><br><span class="line">	<span class="keyword">final</span> <span class="keyword">int</span> x = <span class="number">10</span>;</span><br><span class="line">	<span class="function"><span class="keyword">int</span> <span class="title">add</span><span class="params">()</span></span>;</span><br><span class="line">	<span class="function"><span class="keyword">void</span> <span class="title">point</span><span class="params">()</span></span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">TESt</span> <span class="keyword">implements</span> <span class="title">Computable</span></span>&#123;</span><br><span class="line">	<span class="keyword">private</span> <span class="keyword">int</span> y;</span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="title">TEST</span><span class="params">(<span class="keyword">int</span> y)</span></span>&#123;</span><br><span class="line">		<span class="keyword">this</span>.y = y;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">add</span><span class="params">()</span></span>&#123; <span class="comment">//实现抽象方法时添加public 和 return 语句</span></span><br><span class="line">		<span class="keyword">return</span> x + y;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">print</span><span class="params">()</span></span>&#123;&#125; <span class="comment">//返回类型为void方法体可以留空</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-</li>
+<pre><code>interface Computable{
+  final int x = 10;
+  int add();
+  void point();
+}
+class TESt implements Computable{
+  private int y;
+  public TEST(int y){
+      this.y = y;
+  }
+  public int add(){ //实现抽象方法时添加public 和 return 语句
+      return x + y;
+  }
+  public void print(){} //返回类型为void方法体可以留空
+}
+</code></pre></li>
 <li><p>接口之间也可以继承，用关键字extends，但是一个接口可以同时extends多个接口，之间以逗号间隔。</p>
 <blockquote>
 <p>如果一个接口继承了别的几个接口，那么实现这个接口的类同时也要实现被这个接口继承的几个接口的所有方法。</p>
@@ -718,8 +757,8 @@ $(window).load(function(){
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2018/04/18/Java-function/" rel="next" title="Java学习笔记——方法">
-                <i class="fa fa-chevron-left"></i> Java学习笔记——方法
+              <a href="/2018/04/15/Block-Chain/" rel="next" title="区块链初涉">
+                <i class="fa fa-chevron-left"></i> 区块链初涉
               </a>
             
           </div>
@@ -728,8 +767,8 @@ $(window).load(function(){
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2018/04/29/Python-superior/" rel="prev" title="Python学习笔记——进阶">
-                Python学习笔记——进阶 <i class="fa fa-chevron-right"></i>
+              <a href="/2018/04/18/Java-function/" rel="prev" title="Java学习笔记——方法">
+                Java学习笔记——方法 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -792,7 +831,7 @@ $(window).load(function(){
               <img class="site-author-image" itemprop="image" src="/images/avatar.gif" alt="Fleschier">
             
               <p class="site-author-name" itemprop="name">Fleschier</p>
-              <p class="site-description motion-element" itemprop="description">每天早上醒来，你和阳光都在，就是我想要的未来。</p>
+              <p class="site-description motion-element" itemprop="description">生活是一个过程,可喜的是它不用重来。</p>
           </div>
 
           
