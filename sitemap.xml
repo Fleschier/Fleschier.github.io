@@ -2,6 +2,20 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://fleschier.github.io/2019/04/09/BootStrap4/</loc>
+    
+    <lastmod>2020-01-26T03:07:32.016Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://fleschier.github.io/2018/09/03/Hexo-rebuild/</loc>
+    
+    <lastmod>2020-01-26T03:06:09.459Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>https://fleschier.github.io/2019/03/06/C++_auto_usage/</loc>
     
     <lastmod>2020-01-26T02:57:28.241Z</lastmod>
@@ -12,13 +26,6 @@
     <loc>https://fleschier.github.io/2019/04/16/anacoda-tensorflow-pep8/</loc>
     
     <lastmod>2019-05-07T13:53:04.223Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://fleschier.github.io/2019/04/09/BootStrap4/</loc>
-    
-    <lastmod>2019-04-16T02:58:33.026Z</lastmod>
     
   </url>
   
@@ -107,6 +114,13 @@
   </url>
   
   <url>
+    <loc>https://fleschier.github.io/2018/10/16/pycharm-problem-solving/</loc>
+    
+    <lastmod>2018-11-21T06:40:40.695Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>https://fleschier.github.io/2018/07/19/scala-learning-02/</loc>
     
     <lastmod>2018-11-21T06:40:40.695Z</lastmod>
@@ -121,14 +135,7 @@
   </url>
   
   <url>
-    <loc>https://fleschier.github.io/2018/07/24/scala-learning-04/</loc>
-    
-    <lastmod>2018-11-21T06:40:40.695Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://fleschier.github.io/2018/09/13/Spark-notes/</loc>
+    <loc>https://fleschier.github.io/2018/07/24/scala-learning-05/</loc>
     
     <lastmod>2018-11-21T06:40:40.695Z</lastmod>
     
@@ -142,28 +149,7 @@
   </url>
   
   <url>
-    <loc>https://fleschier.github.io/2018/10/16/pycharm-problem-solving/</loc>
-    
-    <lastmod>2018-11-21T06:40:40.695Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://fleschier.github.io/2018/04/11/Spark-superior/</loc>
-    
-    <lastmod>2018-11-21T06:40:40.695Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://fleschier.github.io/2018/04/06/Scala-learning/</loc>
-    
-    <lastmod>2018-11-21T06:40:40.695Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://fleschier.github.io/2018/07/24/scala-learning-05/</loc>
+    <loc>https://fleschier.github.io/2018/07/12/Scala-learning-01/</loc>
     
     <lastmod>2018-11-21T06:40:40.695Z</lastmod>
     
@@ -177,14 +163,21 @@
   </url>
   
   <url>
-    <loc>https://fleschier.github.io/2018/07/12/Scala-learning-01/</loc>
+    <loc>https://fleschier.github.io/2018/04/11/Spark-superior/</loc>
     
     <lastmod>2018-11-21T06:40:40.695Z</lastmod>
     
   </url>
   
   <url>
-    <loc>https://fleschier.github.io/2018/04/06/Scala-superior/</loc>
+    <loc>https://fleschier.github.io/2018/09/13/Spark-notes/</loc>
+    
+    <lastmod>2018-11-21T06:40:40.695Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://fleschier.github.io/2018/04/06/Scala-learning/</loc>
     
     <lastmod>2018-11-21T06:40:40.695Z</lastmod>
     
@@ -198,16 +191,23 @@
   </url>
   
   <url>
-    <loc>https://fleschier.github.io/2018/04/06/Python-learning/</loc>
+    <loc>https://fleschier.github.io/2018/07/24/scala-learning-04/</loc>
     
-    <lastmod>2018-11-21T06:40:40.691Z</lastmod>
+    <lastmod>2018-11-21T06:40:40.695Z</lastmod>
     
   </url>
   
   <url>
-    <loc>https://fleschier.github.io/2018/04/29/Python-superior/</loc>
+    <loc>https://fleschier.github.io/2018/04/06/Scala-superior/</loc>
     
-    <lastmod>2018-11-21T06:40:40.687Z</lastmod>
+    <lastmod>2018-11-21T06:40:40.695Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://fleschier.github.io/2018/04/06/Python-learning/</loc>
+    
+    <lastmod>2018-11-21T06:40:40.691Z</lastmod>
     
   </url>
   
@@ -219,9 +219,9 @@
   </url>
   
   <url>
-    <loc>https://fleschier.github.io/2018/11/07/Maven-learning/</loc>
+    <loc>https://fleschier.github.io/2018/04/29/Python-superior/</loc>
     
-    <lastmod>2018-11-21T06:40:40.303Z</lastmod>
+    <lastmod>2018-11-21T06:40:40.687Z</lastmod>
     
   </url>
   
@@ -233,7 +233,28 @@
   </url>
   
   <url>
-    <loc>https://fleschier.github.io/2018/04/18/Java-function/</loc>
+    <loc>https://fleschier.github.io/2018/11/07/Maven-learning/</loc>
+    
+    <lastmod>2018-11-21T06:40:40.303Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://fleschier.github.io/2018/04/06/C++learning-class/</loc>
+    
+    <lastmod>2018-11-21T06:40:17.839Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://fleschier.github.io/2018/04/06/Java-learning/</loc>
+    
+    <lastmod>2018-11-21T06:40:17.839Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://fleschier.github.io/2018/04/18/Java-class/</loc>
     
     <lastmod>2018-11-21T06:40:17.839Z</lastmod>
     
@@ -254,28 +275,14 @@
   </url>
   
   <url>
-    <loc>https://fleschier.github.io/2018/04/18/Java-class/</loc>
-    
-    <lastmod>2018-11-21T06:40:17.839Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://fleschier.github.io/2018/04/06/Java-learning/</loc>
-    
-    <lastmod>2018-11-21T06:40:17.839Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://fleschier.github.io/2018/04/06/C++learning-class/</loc>
-    
-    <lastmod>2018-11-21T06:40:17.839Z</lastmod>
-    
-  </url>
-  
-  <url>
     <loc>https://fleschier.github.io/2018/10/08/C++-learning-error-collection/</loc>
+    
+    <lastmod>2018-11-21T06:40:17.839Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://fleschier.github.io/2018/04/18/Java-function/</loc>
     
     <lastmod>2018-11-21T06:40:17.839Z</lastmod>
     
@@ -313,13 +320,6 @@
     <loc>https://fleschier.github.io/2018/11/07/web-learning-01/</loc>
     
     <lastmod>2018-11-07T14:29:00.302Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://fleschier.github.io/2018/09/03/Hexo-rebuild/</loc>
-    
-    <lastmod>2018-11-07T07:41:24.149Z</lastmod>
     
   </url>
   

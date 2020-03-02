@@ -128,7 +128,7 @@
 <meta property="og:image" content="https://fleschier.github.io/images/hexo_blog/blog_deploy.png">
 <meta property="og:image" content="https://fleschier.github.io/images/hexo_blog/res.png">
 <meta property="og:image" content="https://fleschier.github.io/images/hexo_blog/res1.png">
-<meta property="og:updated_time" content="2018-11-07T07:41:24.149Z">
+<meta property="og:updated_time" content="2020-01-26T03:06:09.459Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="hexo重新构建博客">
 <meta name="twitter:description" content="环境搭建  在使用hexo搭建博客之前，需要搭建好环境。需要git、node.js和hexo  详细搭建见——链接   hexo  hexo有大量的主题可供选择，而且支持一键部署  但是hexo每次预览要重新生成页面，而jekyll是即时体现更改   安装 npm install -g hexo-cli  常用命令 初始化： hexo init  //在一个空文件夹下初始化  hexo一些命令：">
@@ -365,7 +365,7 @@ $(window).load(function(){
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Fleschier">
-      <meta itemprop="description" content="生活是一个过程,可喜的是它不用重来。">
+      <meta itemprop="description" content="这世上,最可怕的永远不是鬼神, 而是人心.">
       <meta itemprop="image" content="/images/avatar.gif">
     </span>
 
@@ -420,7 +420,7 @@ $(window).load(function(){
                 
                   <span class="post-meta-item-text">Edited on</span>
                 
-                <time title="Modified: 2018-11-07 15:41:24" itemprop="dateModified" datetime="2018-11-07T15:41:24+08:00">2018-11-07</time>
+                <time title="Modified: 2020-01-26 11:06:09" itemprop="dateModified" datetime="2020-01-26T11:06:09+08:00">2020-01-26</time>
               
             
           </span>
@@ -554,54 +554,65 @@ hexo d
 </ul>
 <ol>
 <li>新建tags文件夹，并创建index.md</li>
-<li>在index.md中写入如下内容：<br><code>`</code></li>
+<li>在index.md中写入如下内容：</li>
 </ol>
+<blockquote>
 <hr>
 <p>title: tags<br>date: 2016-09-05 23:41:32<br>type: “tags”</p>
-<h2 id="comments-false"><a href="#comments-false" class="headerlink" title="comments: false"></a>comments: false</h2><pre><code>3. 到_config.yml文件中将对应的路径添加进去(next主题默认是将这几个页面注释掉的，取消注释即可)
-4. 重新建站即可看到效果
-
-## 添加搜索引擎支持
----
-
-- 首先登录google的[Search Console](https://www.google.com/webmasters/tools/home?hl=zh-CN)
-
-- 因为hexo每次clean都会将验证的html删除，所以我们采用其他的验证方法。将Search Console给的meta标签的信息添加到主题的目录下`head.swig`文件中，这里使用的是Next主题,其他主题也是类似的，在`Hexo/themes/next/layout/_partials/head/head.swig`文件中原有meta标签后面添加刚才复制的meta标签。
-
-- [百度搜索引擎](https://ziyuan.baidu.com/site/siteadd?siteurl=)
-
-- 百度验证与google验证方法一致
-
-- 重新deploy博客之后可以验证通过
-
-- 一些细节补充见[博客](https://jactor-sue.github.io/how-githubio-blog-can-be-searched-by-google/)
-
-
-### 安装插件
-
-- 为Hexo安装`hexo-generator-sitemap`和`hexo-generator-baidu-sitemap`插件，在Hexo博客目录下运行：
-</code></pre><p>npm install hexo-generator-sitemap –save<br>npm install hexo-generator-baidu-sitemap –save</p>
-<pre><code>
-### 重新建站
-
-- 配置Hexo的`_config.yml`文件，添加如下字段:
-</code></pre><p>sitemap:<br>        path: sitemap.xml<br>baidusitemap:<br>        path: baidusitemap.xml</p>
-<pre><code>
-- 在博客的`_config.yml`文件中添加博客的url,**否则生成的站点地图在提交的时候会报错**。
-
-- 例如我的：
-</code></pre><h1 id="URL"><a href="#URL" class="headerlink" title="URL"></a>URL</h1><h2 id="If-your-site-is-put-in-a-subdirectory-set-url-as-‘http-yoursite-com-child-39-and-root-as-‘-child-‘"><a href="#If-your-site-is-put-in-a-subdirectory-set-url-as-‘http-yoursite-com-child-39-and-root-as-‘-child-‘" class="headerlink" title="If your site is put in a subdirectory, set url as ‘http://yoursite.com/child&#39; and root as ‘/child/‘"></a>If your site is put in a subdirectory, set url as ‘<a href="http://yoursite.com/child&#39;" target="_blank" rel="noopener">http://yoursite.com/child&#39;</a> and root as ‘/child/‘</h2><p>url: <a href="https://fleschier.github.io/">https://fleschier.github.io/</a><br>root: /<br>permalink: :year/:month/:day/:title/<br>permalink_defaults:</p>
-<pre><code>
-- 重新生成博客页面即可看到sitemap.xml文件和baidusitemap.xml文件
-
-- 最后分别在google和百度搜索引擎界面提交各自的站点地图即可。
-
-### 添加robots文件
-
-- 可以在source文件夹下添加`robots.txt`文件来限制爬虫抓取网页的内容范围
-
-- robots例子：
-</code></pre><h1 id="hexo-robots-txt"><a href="#hexo-robots-txt" class="headerlink" title="hexo robots.txt"></a>hexo robots.txt</h1><p>User-agent: *<br>Allow: /<br>Allow: /archives/<br>Allow: /tags/</p>
+</blockquote>
+<h2 id="comments-false"><a href="#comments-false" class="headerlink" title="comments: false"></a>comments: false</h2><ol start="3">
+<li>到_config.yml文件中将对应的路径添加进去(next主题默认是将这几个页面注释掉的，取消注释即可)</li>
+<li>重新建站即可看到效果</li>
+</ol>
+<h2 id="添加搜索引擎支持"><a href="#添加搜索引擎支持" class="headerlink" title="添加搜索引擎支持"></a>添加搜索引擎支持</h2><hr>
+<ul>
+<li><p>首先登录google的<a href="https://www.google.com/webmasters/tools/home?hl=zh-CN" target="_blank" rel="noopener">Search Console</a></p>
+</li>
+<li><p>因为hexo每次clean都会将验证的html删除，所以我们采用其他的验证方法。将Search Console给的meta标签的信息添加到主题的目录下<code>head.swig</code>文件中，这里使用的是Next主题,其他主题也是类似的，在<code>Hexo/themes/next/layout/_partials/head/head.swig</code>文件中原有meta标签后面添加刚才复制的meta标签。</p>
+</li>
+<li><p><a href="https://ziyuan.baidu.com/site/siteadd?siteurl=" target="_blank" rel="noopener">百度搜索引擎</a></p>
+</li>
+<li><p>百度验证与google验证方法一致</p>
+</li>
+<li><p>重新deploy博客之后可以验证通过</p>
+</li>
+<li><p>一些细节补充见<a href="https://jactor-sue.github.io/how-githubio-blog-can-be-searched-by-google/" target="_blank" rel="noopener">博客</a></p>
+</li>
+</ul>
+<h3 id="安装插件"><a href="#安装插件" class="headerlink" title="安装插件"></a>安装插件</h3><ul>
+<li>为Hexo安装<code>hexo-generator-sitemap</code>和<code>hexo-generator-baidu-sitemap</code>插件，在Hexo博客目录下运行：<pre><code>npm install hexo-generator-sitemap --save
+npm install hexo-generator-baidu-sitemap --save
+</code></pre></li>
+</ul>
+<h3 id="重新建站"><a href="#重新建站" class="headerlink" title="重新建站"></a>重新建站</h3><ul>
+<li><p>配置Hexo的<code>_config.yml</code>文件，添加如下字段:</p>
+<pre><code>sitemap:
+      path: sitemap.xml
+baidusitemap:
+      path: baidusitemap.xml
+</code></pre></li>
+<li><p>在博客的<code>_config.yml</code>文件中添加博客的url,<strong>否则生成的站点地图在提交的时候会报错</strong>。</p>
+</li>
+<li><p>例如我的：</p>
+<pre><code># URL
+## If your site is put in a subdirectory, set url as &#39;http://yoursite.com/child&#39; and root as &#39;/child/&#39;
+url: https://fleschier.github.io/
+root: /
+permalink: :year/:month/:day/:title/
+permalink_defaults:
+</code></pre></li>
+<li><p>重新生成博客页面即可看到sitemap.xml文件和baidusitemap.xml文件</p>
+</li>
+<li><p>最后分别在google和百度搜索引擎界面提交各自的站点地图即可。</p>
+</li>
+</ul>
+<h3 id="添加robots文件"><a href="#添加robots文件" class="headerlink" title="添加robots文件"></a>添加robots文件</h3><ul>
+<li><p>可以在source文件夹下添加<code>robots.txt</code>文件来限制爬虫抓取网页的内容范围</p>
+</li>
+<li><p>robots例子：<br><code>`</code></p>
+<h1 id="hexo-robots-txt"><a href="#hexo-robots-txt" class="headerlink" title="hexo robots.txt"></a>hexo robots.txt</h1><p>User-agent: *<br>Allow: /<br>Allow: /archives/<br>Allow: /tags/</p>
+</li>
+</ul>
 <p>Disallow: /vendors/<br>Disallow: /js/<br>Disallow: /css/<br>Disallow: /fonts/<br>Disallow: /vendors/<br>Disallow: /fancybox/</p>
 <p>Sitemap: <a href="https://Fleschier.github.io/sitemap.xml">https://Fleschier.github.io/sitemap.xml</a><br>Sitemap: <a href="https://Fleschier.github.io/baidusitemap.xml">https://Fleschier.github.io/baidusitemap.xml</a><br><code>`</code></p>
 <h2 id="文章中的图片"><a href="#文章中的图片" class="headerlink" title="文章中的图片"></a>文章中的图片</h2><hr>
@@ -705,8 +716,8 @@ hexo d
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2018/07/24/scala-learning-04/" rel="next" title="《Scala编程》阅读记录——列表进阶">
-                <i class="fa fa-chevron-left"></i> 《Scala编程》阅读记录——列表进阶
+              <a href="/2018/07/24/scala-learning-05/" rel="next" title="《Scala编程》阅读记录——集合类进阶">
+                <i class="fa fa-chevron-left"></i> 《Scala编程》阅读记录——集合类进阶
               </a>
             
           </div>
@@ -779,7 +790,7 @@ hexo d
               <img class="site-author-image" itemprop="image" src="/images/avatar.gif" alt="Fleschier">
             
               <p class="site-author-name" itemprop="name">Fleschier</p>
-              <p class="site-description motion-element" itemprop="description">生活是一个过程,可喜的是它不用重来。</p>
+              <p class="site-description motion-element" itemprop="description">这世上,最可怕的永远不是鬼神, 而是人心.</p>
           </div>
 
           
@@ -973,7 +984,7 @@ hexo d
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#环境搭建"><span class="nav-number">1.</span> <span class="nav-text">环境搭建</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#hexo"><span class="nav-number">2.</span> <span class="nav-text">hexo</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#安装"><span class="nav-number">2.1.</span> <span class="nav-text">安装</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#常用命令"><span class="nav-number">2.2.</span> <span class="nav-text">常用命令</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#一些问题记录"><span class="nav-number">3.</span> <span class="nav-text">一些问题记录</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#无法’hexo-d’-缺少插件"><span class="nav-number">3.1.</span> <span class="nav-text">无法’hexo d’:缺少插件</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#侧边栏文章索引错乱"><span class="nav-number">3.2.</span> <span class="nav-text">侧边栏文章索引错乱</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#部署到git"><span class="nav-number">3.2.1.</span> <span class="nav-text">部署到git</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#三部曲"><span class="nav-number">4.</span> <span class="nav-text">三部曲</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#添加页面"><span class="nav-number">5.</span> <span class="nav-text">添加页面</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#comments-false"><span class="nav-number">6.</span> <span class="nav-text">comments: false</span></a></li></ol><li class="nav-item nav-level-1"><a class="nav-link" href="#URL"><span class="nav-number"></span> <span class="nav-text">URL</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#If-your-site-is-put-in-a-subdirectory-set-url-as-‘http-yoursite-com-child-39-and-root-as-‘-child-‘"><span class="nav-number">1.</span> <span class="nav-text">If your site is put in a subdirectory, set url as ‘http://yoursite.com/child&#39; and root as ‘/child/‘</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#hexo-robots-txt"><span class="nav-number"></span> <span class="nav-text">hexo robots.txt</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#文章中的图片"><span class="nav-number">1.</span> <span class="nav-text">文章中的图片</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#md文章命名"><span class="nav-number">2.</span> <span class="nav-text">md文章命名</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#hexo文章统计阅读量"><span class="nav-number">3.</span> <span class="nav-text">hexo文章统计阅读量</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#问题错误码429"><span class="nav-number">3.1.</span> <span class="nav-text">问题错误码429</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#问题依旧存在"><span class="nav-number">3.2.</span> <span class="nav-text">问题依旧存在</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#更新"><span class="nav-number">3.3.</span> <span class="nav-text">更新</span></a></li></ol></li></ol></li></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#环境搭建"><span class="nav-number">1.</span> <span class="nav-text">环境搭建</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#hexo"><span class="nav-number">2.</span> <span class="nav-text">hexo</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#安装"><span class="nav-number">2.1.</span> <span class="nav-text">安装</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#常用命令"><span class="nav-number">2.2.</span> <span class="nav-text">常用命令</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#一些问题记录"><span class="nav-number">3.</span> <span class="nav-text">一些问题记录</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#无法’hexo-d’-缺少插件"><span class="nav-number">3.1.</span> <span class="nav-text">无法’hexo d’:缺少插件</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#侧边栏文章索引错乱"><span class="nav-number">3.2.</span> <span class="nav-text">侧边栏文章索引错乱</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#部署到git"><span class="nav-number">3.2.1.</span> <span class="nav-text">部署到git</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#三部曲"><span class="nav-number">4.</span> <span class="nav-text">三部曲</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#添加页面"><span class="nav-number">5.</span> <span class="nav-text">添加页面</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#comments-false"><span class="nav-number">6.</span> <span class="nav-text">comments: false</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#添加搜索引擎支持"><span class="nav-number">7.</span> <span class="nav-text">添加搜索引擎支持</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#安装插件"><span class="nav-number">7.1.</span> <span class="nav-text">安装插件</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#重新建站"><span class="nav-number">7.2.</span> <span class="nav-text">重新建站</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#添加robots文件"><span class="nav-number">7.3.</span> <span class="nav-text">添加robots文件</span></a></li></ol></li></ol><li class="nav-item nav-level-1"><a class="nav-link" href="#hexo-robots-txt"><span class="nav-number"></span> <span class="nav-text">hexo robots.txt</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#文章中的图片"><span class="nav-number">1.</span> <span class="nav-text">文章中的图片</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#md文章命名"><span class="nav-number">2.</span> <span class="nav-text">md文章命名</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#hexo文章统计阅读量"><span class="nav-number">3.</span> <span class="nav-text">hexo文章统计阅读量</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#问题错误码429"><span class="nav-number">3.1.</span> <span class="nav-text">问题错误码429</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#问题依旧存在"><span class="nav-number">3.2.</span> <span class="nav-text">问题依旧存在</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#更新"><span class="nav-number">3.3.</span> <span class="nav-text">更新</span></a></li></ol></li></ol></li></div>
             
 
           </div>
