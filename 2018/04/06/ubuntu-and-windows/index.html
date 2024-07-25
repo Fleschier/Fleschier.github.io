@@ -1,0 +1,507 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 7.3.0">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/all.min.css">
+
+<script id="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"fleschier.github.io","root":"/","scheme":"Mist","version":"7.8.0","exturl":false,"sidebar":{"position":"right","display":"always","padding":18,"offset":12,"onmobile":true},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":true,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
+  </script>
+
+  <meta name="description" content="问题记录">
+<meta property="og:type" content="article">
+<meta property="og:title" content="UEFI双系统的那些坑">
+<meta property="og:url" content="https://fleschier.github.io/2018/04/06/ubuntu-and-windows/index.html">
+<meta property="og:site_name" content="Fleschier๑">
+<meta property="og:description" content="问题记录">
+<meta property="og:locale" content="en_US">
+<meta property="og:image" content="https://fleschier.github.io/images/linux-and-windows/opening-bg.jpg">
+<meta property="og:image" content="https://fleschier.github.io/img/linux-and-windows/ubuntu-boot.jpg">
+<meta property="og:image" content="https://fleschier.github.io/img/linux-and-windows/refind-info.jpg">
+<meta property="og:image" content="https://fleschier.github.io/img/linux-and-windows/bootice01.jpg">
+<meta property="og:image" content="https://fleschier.github.io/img/linux-and-windows/bootice02.jpg">
+<meta property="article:published_time" content="2018-04-06T01:40:00.000Z">
+<meta property="article:modified_time" content="2024-07-25T07:12:31.515Z">
+<meta property="article:author" content="Fleschier">
+<meta property="article:tag" content="๑Ubuntu">
+<meta property="article:tag" content="๑Linux">
+<meta property="article:tag" content="๑DualSystem">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://fleschier.github.io/images/linux-and-windows/opening-bg.jpg">
+
+<link rel="canonical" href="https://fleschier.github.io/2018/04/06/ubuntu-and-windows/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome : false,
+    isPost : true,
+    lang   : 'en'
+  };
+</script>
+
+  <title>UEFI双系统的那些坑 | Fleschier๑</title>
+  
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="Toggle navigation bar">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <h1 class="site-title">Fleschier๑</h1>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+      <p class="site-subtitle" itemprop="description">-</p>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+    </div>
+  </div>
+</div>
+
+
+
+
+<nav class="site-nav">
+  <ul id="menu" class="main-menu menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section"><i class="fa fa-home fa-fw"></i>Home</a>
+
+  </li>
+        <li class="menu-item menu-item-about">
+
+    <a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>About</a>
+
+  </li>
+        <li class="menu-item menu-item-tags">
+
+    <a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>Tags<span class="badge">36</span></a>
+
+  </li>
+        <li class="menu-item menu-item-categories">
+
+    <a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>Categories<span class="badge">12</span></a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>Archives<span class="badge">67</span></a>
+
+  </li>
+  </ul>
+</nav>
+
+
+
+
+</div>
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+  <a role="button" class="book-mark-link book-mark-link-fixed"></a>
+
+  <a href="https://github.com/fleschier" class="github-corner" title="Follow me on GitHub" aria-label="Follow me on GitHub" rel="noopener" target="_blank"><svg width="80" height="80" viewBox="0 0 250 250" aria-hidden="true"><path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path><path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2" fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path><path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z" fill="currentColor" class="octo-body"></path></svg></a>
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content post posts-expand">
+            
+
+    
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
+    <link itemprop="mainEntityOfPage" href="https://fleschier.github.io/2018/04/06/ubuntu-and-windows/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="Fleschier">
+      <meta itemprop="description" content="-">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Fleschier๑">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          UEFI双系统的那些坑
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+
+              <time title="Created: 2018-04-06 09:40:00" itemprop="dateCreated datePublished" datetime="2018-04-06T09:40:00+08:00">2018-04-06</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Modified: 2024-07-25 15:12:31" itemprop="dateModified" datetime="2024-07-25T15:12:31+08:00">2024-07-25</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">In</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Computer-System/" itemprop="url" rel="index"><span itemprop="name">Computer System</span></a>
+                </span>
+            </span>
+
+          
+            <div class="post-description">问题记录</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <blockquote>
+<p>不适合人类阅读的自我备忘笔记  </p>
+</blockquote>
+<h2 id="关于ubuntu-和-windows-双系统"><a href="#关于ubuntu-和-windows-双系统" class="headerlink" title="关于ubuntu 和 windows 双系统"></a>关于ubuntu 和 windows 双系统</h2><hr>
+<ul>
+<li><p>在长时间使用Windows时候，难免会想要尝试新系统，而专业又是如此，于是我选择了linux中图形界面最为友好的ubuntu系统作为自己双系统的入门系统。</p>
+</li>
+<li><p>虽然网上的双系统教程多说的很是简单，但是大多数已经是几年前的文章了，其中所讲的一些计算机的硬件系统已经落伍了，就比如说，网上绝大多数的双系统引导模式是建立在bios支持legacy（传统模式）模式下的，然而我自己的bios只能在UEFI模式下引导系统启动…..作为一名计算机系的学生当然不服气啊，当然各种百度什么的，期间踩过的坑实在难为外人道也。</p>
+</li>
+<li><p>如果你的电脑支持legacy模式的话，自行百度一些教程就行了。装好ubuntu系统之后，进入bios将启动顺序整下，将Ubuntu启动器放在Windows boot manager前面就可以了。因为Ubuntu启动器可以调用Windows boot manager 而Windows不能启动Ubuntu。</p>
+</li>
+<li><p>但是，UEFI作为最新的计算机启动模式，肯定要比原来的更加快速，或者如果你也像我一样，电脑不支持legacy启动，那么下面将要介绍一个非常好用的第三方启动引导程序。</p>
+</li>
+</ul>
+<h2 id="第三方启动引导程序——refind"><a href="#第三方启动引导程序——refind" class="headerlink" title="第三方启动引导程序——refind"></a>第三方启动引导程序——refind</h2><hr>
+<ul>
+<li><p>refind是一款功能非常强大的开机启动引导程序，它能够自定义开机界面。你可以吧系统图标，背景什么的换成你自己喜欢的风格。这里附上一张我采用的主题开机界面<img src="/images/linux-and-windows/opening-bg.jpg">如果你也喜欢这一风格，<a target="_blank" rel="noopener" href="https://github.com/EvanPurkhiser/rEFInd-minimal">这里是链接地址</a>。</p>
+</li>
+<li><p>refind是一款免费的软件(<a target="_blank" rel="noopener" href="http://www.rodsbooks.com/refind/getting.html">官方下载地址</a>)，如果你高兴也可以给作者赞助。</p>
+</li>
+<li><p>如果使用UEFI引导方式启动系统的话，<strong>在安装Ubuntu时要预留一个efi分区用来存放开机引导文件</strong>，预留大概200MB-500MB即可。</p>
+</li>
+</ul>
+<h3 id="Ubuntu下安装"><a href="#Ubuntu下安装" class="headerlink" title="Ubuntu下安装"></a>Ubuntu下安装</h3><ul>
+<li>推荐在ubuntu下安装refind，简单到让人不敢相信。你只需要把软件下载下来，在终端运行里面的.shell文件，就会自动安装，无需任何额外的操作，重启系统，进入bios在启动顺序里将rEFInd调为第一个即可。</li>
+</ul>
+<h3 id="Windows下安装"><a href="#Windows下安装" class="headerlink" title="Windows下安装"></a>Windows下安装</h3><ul>
+<li><p>如果你非要不信邪，在Windows下尝试安装的话，我也不反对。首先你需要一个能够进入系统隐藏分区的软件——<a target="_blank" rel="noopener" href="http://www.diskgenius.cn/">DiskGenius</a>。推荐去官网下载正版而不要用盗版（然后去百度激活码…咳咳），毕竟牵涉到系统文件万一崩了别怪我没提醒。</p>
+</li>
+<li><p>第一步，找到你系统的esp分区<img src="/img/linux-and-windows/ubuntu-boot.jpg"></p>
+</li>
+<li><p>第二步，将下载的refind文件夹及其里面所有的东西全部复制进去。<em>（注意：虽然DiskGenius支持同时复制多个文件，但是文件夹没法复制，只能自己先手动创建）</em> <strong>同时必须要自己创建一个refind.conf文件，可以什么都不写但是不能没有。</strong> 然后原来的refind.conf-sample文件就可以删除了。<img src="/img/linux-and-windows/refind-info.jpg"></p>
+</li>
+<li><p>第三步，将一些不需要的文件删除，如果你在网上下载了一些主题的话，也一并把文件复制进去。</p>
+</li>
+<li><p>第四步，下载<a target="_blank" rel="noopener" href="https://bootice.en.softonic.com/?ex=REG-60.2">bootice</a>，打开DIskGenius给你放refind文件的那个分区取个卷标（随便什么都可以，下面有用）。打开bootice——UEFI——修改启动序列<img src="/img/linux-and-windows/bootice01.jpg"><em>(也可以顺手吧下面那个下次启动直接进入bios勾上，省的下次进bios要手动)<em>。点击添加，找到你之前分配盘符的那个盘（也就是esp分区），找到里面的refind文件夹，选择对应你系统的.efi文件，点击确定。<img src="/img/linux-and-windows/bootice02.jpg">重启系统，进入bios，将rEFInd启动项调整为第一个即可。</em>（没有对比就没有伤害，Windows下简直烦死，还不一定成功…）</em></p>
+</li>
+<li><p>最后希望各位都能成功在UEFI模式下完成双系统的安装和引导。</p>
+</li>
+</ul>
+<h2 id="双系统时间差的问题解决"><a href="#双系统时间差的问题解决" class="headerlink" title="双系统时间差的问题解决"></a>双系统时间差的问题解决</h2><hr>
+<ul>
+<li><p>这个问题出现在切换系统时，每次时间都会错误到0时区。</p>
+</li>
+<li><p>解决方法：Ubuntu下关闭UTC(世界协调时间):</p>
+</li>
+</ul>
+<ol>
+<li><p><code>sudo vim /etc/default/rcS</code></p>
+</li>
+<li><p>找到<code>UTC=yes</code>，改为<code>UTC=no</code>即可</p>
+</li>
+</ol>
+<ul>
+<li><p><a target="_blank" rel="noopener" href="https://blog.csdn.net/gatieme/article/details/51883981">详细原因</a></p>
+</li>
+<li><p><strong>但是注意</strong>：在 Ubuntu <strong>16.04</strong> 版本以前，关闭UTC的方法是编辑<code>/etc/default/rcS</code>，将<code>UTC=yes</code>改成<code>UTC=no</code>， 但在Ubuntu 16.04使用systemd启动之后，时间改成了由timedatectl来管理，所以更改方法是:</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">timedatectl set-local-rtc 1 --adjust-system-clock</span><br></pre></td></tr></table></figure></li>
+<li><p>之后重启应该就不会出现问题了。</p>
+</li>
+</ul>
+<br>
+
+<blockquote>
+<p>最后更新于2018.10.15</p>
+</blockquote>
+
+    </div>
+
+    
+    
+    
+
+      <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/%E0%B9%91Ubuntu/" rel="tag"># ๑Ubuntu</a>
+              <a href="/tags/%E0%B9%91Linux/" rel="tag"># ๑Linux</a>
+              <a href="/tags/%E0%B9%91DualSystem/" rel="tag"># ๑DualSystem</a>
+          </div>
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/2018/04/05/hello-2018/" rel="prev" title="Welcome to Fleschier Blog">
+      <i class="fa fa-chevron-left"></i> Welcome to Fleschier Blog
+    </a></div>
+      <div class="post-nav-item">
+    <a href="/2018/04/06/Ubuntu-order/" rel="next" title="Ubuntu终端常用命令">
+      Ubuntu终端常用命令 <i class="fa fa-chevron-right"></i>
+    </a></div>
+    </div>
+      </footer>
+    
+  </article>
+  
+  
+  
+
+
+
+          </div>
+          
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          Table of Contents
+        </li>
+        <li class="sidebar-nav-overview">
+          Overview
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%85%B3%E4%BA%8Eubuntu-%E5%92%8C-windows-%E5%8F%8C%E7%B3%BB%E7%BB%9F"><span class="nav-number">1.</span> <span class="nav-text">关于ubuntu 和 windows 双系统</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%AC%AC%E4%B8%89%E6%96%B9%E5%90%AF%E5%8A%A8%E5%BC%95%E5%AF%BC%E7%A8%8B%E5%BA%8F%E2%80%94%E2%80%94refind"><span class="nav-number">2.</span> <span class="nav-text">第三方启动引导程序——refind</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Ubuntu%E4%B8%8B%E5%AE%89%E8%A3%85"><span class="nav-number">2.1.</span> <span class="nav-text">Ubuntu下安装</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Windows%E4%B8%8B%E5%AE%89%E8%A3%85"><span class="nav-number">2.2.</span> <span class="nav-text">Windows下安装</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%8F%8C%E7%B3%BB%E7%BB%9F%E6%97%B6%E9%97%B4%E5%B7%AE%E7%9A%84%E9%97%AE%E9%A2%98%E8%A7%A3%E5%86%B3"><span class="nav-number">3.</span> <span class="nav-text">双系统时间差的问题解决</span></a></li></ol></div>
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="Fleschier"
+      src="/images/avatar.gif">
+  <p class="site-author-name" itemprop="name">Fleschier</p>
+  <div class="site-description" itemprop="description">-</div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">67</span>
+          <span class="site-state-item-name">posts</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+            <a href="/categories/">
+          
+        <span class="site-state-item-count">12</span>
+        <span class="site-state-item-name">categories</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+            <a href="/tags/">
+          
+        <span class="site-state-item-count">36</span>
+        <span class="site-state-item-name">tags</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author motion-element">
+      <span class="links-of-author-item">
+        <a href="https://github.com/fleschier" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;fleschier" rel="noopener" target="_blank"><i class="fab fa-github fa-fw"></i>GitHub</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="mailto:fleschierchan@gmail.com" title="E-Mail → mailto:fleschierchan@gmail.com" rel="noopener" target="_blank"><i class="fa fa-envelope fa-fw"></i>E-Mail</a>
+      </span>
+  </div>
+
+
+
+      </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+        
+
+<div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2024</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Fleschier</span>
+</div>
+
+        
+
+
+
+
+
+
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="/lib/anime.min.js"></script>
+  <script src="/lib/velocity/velocity.min.js"></script>
+  <script src="/lib/velocity/velocity.ui.min.js"></script>
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/motion.js"></script>
+
+
+<script src="/js/schemes/muse.js"></script>
+
+
+<script src="/js/next-boot.js"></script>
+
+<script src="/js/bookmark.js"></script>
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+</body>
+</html>

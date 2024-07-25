@@ -1,0 +1,498 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 7.3.0">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/all.min.css">
+
+<script id="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"fleschier.github.io","root":"/","scheme":"Mist","version":"7.8.0","exturl":false,"sidebar":{"position":"right","display":"always","padding":18,"offset":12,"onmobile":true},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":true,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
+  </script>
+
+  <meta name="description" content="学习记录">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Scala学习笔记——进阶">
+<meta property="og:url" content="https://fleschier.github.io/2018/04/06/Scala-superior/index.html">
+<meta property="og:site_name" content="Fleschier๑">
+<meta property="og:description" content="学习记录">
+<meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2018-04-06T08:47:00.000Z">
+<meta property="article:modified_time" content="2024-07-25T07:11:47.458Z">
+<meta property="article:author" content="Fleschier">
+<meta property="article:tag" content="๑Scala">
+<meta name="twitter:card" content="summary">
+
+<link rel="canonical" href="https://fleschier.github.io/2018/04/06/Scala-superior/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome : false,
+    isPost : true,
+    lang   : 'en'
+  };
+</script>
+
+  <title>Scala学习笔记——进阶 | Fleschier๑</title>
+  
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="Toggle navigation bar">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <h1 class="site-title">Fleschier๑</h1>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+      <p class="site-subtitle" itemprop="description">-</p>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+    </div>
+  </div>
+</div>
+
+
+
+
+<nav class="site-nav">
+  <ul id="menu" class="main-menu menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section"><i class="fa fa-home fa-fw"></i>Home</a>
+
+  </li>
+        <li class="menu-item menu-item-about">
+
+    <a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>About</a>
+
+  </li>
+        <li class="menu-item menu-item-tags">
+
+    <a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>Tags<span class="badge">36</span></a>
+
+  </li>
+        <li class="menu-item menu-item-categories">
+
+    <a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>Categories<span class="badge">12</span></a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>Archives<span class="badge">67</span></a>
+
+  </li>
+  </ul>
+</nav>
+
+
+
+
+</div>
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+  <a role="button" class="book-mark-link book-mark-link-fixed"></a>
+
+  <a href="https://github.com/fleschier" class="github-corner" title="Follow me on GitHub" aria-label="Follow me on GitHub" rel="noopener" target="_blank"><svg width="80" height="80" viewBox="0 0 250 250" aria-hidden="true"><path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path><path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2" fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path><path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z" fill="currentColor" class="octo-body"></path></svg></a>
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content post posts-expand">
+            
+
+    
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
+    <link itemprop="mainEntityOfPage" href="https://fleschier.github.io/2018/04/06/Scala-superior/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="Fleschier">
+      <meta itemprop="description" content="-">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Fleschier๑">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          Scala学习笔记——进阶
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+
+              <time title="Created: 2018-04-06 16:47:00" itemprop="dateCreated datePublished" datetime="2018-04-06T16:47:00+08:00">2018-04-06</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Modified: 2024-07-25 15:11:47" itemprop="dateModified" datetime="2024-07-25T15:11:47+08:00">2024-07-25</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">In</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Computer-Programs/" itemprop="url" rel="index"><span itemprop="name">Computer Programs</span></a>
+                </span>
+            </span>
+
+          
+            <div class="post-description">学习记录</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <blockquote>
+<p>不适合人类阅读的学习笔记  </p>
+</blockquote>
+<h2 id="case-class与模式匹配"><a href="#case-class与模式匹配" class="headerlink" title="case class与模式匹配"></a>case class与模式匹配</h2><hr>
+<ul>
+<li><p>case class一般被翻译为样例类，它是一种特殊的类，能够被优化以用于模式匹配。</p>
+</li>
+<li></li>
+</ul>
+<h2 id="scala性能测试"><a href="#scala性能测试" class="headerlink" title="scala性能测试"></a>scala性能测试</h2><hr>
+<ul>
+<li><p>测试程序的运行时间的函数：<code>System.currentTimeMillis()</code></p>
+</li>
+<li><p>用法：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">[...]</span><br><span class="line">  val time = System.currentTimeMillis()</span><br><span class="line">  [要测试运行时间的代码段]</span><br><span class="line">  println(&quot; 耗时: &quot; + (System.currentTimeMillis() - time))  //以时间差来看运行时间</span><br><span class="line">[...]</span><br></pre></td></tr></table></figure></li>
+</ul>
+<h2 id="函数式循环"><a href="#函数式循环" class="headerlink" title="函数式循环"></a>函数式循环</h2><hr>
+<ul>
+<li><p>函数式编程的循环都是用迭代来实现的</p>
+</li>
+<li><p>例1：对于一个Int数组a,对里面每个元素执行 +1的操作</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">a.map&#123;x =&gt;</span><br><span class="line">  val y = x + 1  //因为Int是不可变类型，所以必须要新建一个值来存储改变后的值</span><br><span class="line">  y  //返回值是y</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>例2：对于一个Int数组，每找出一个大于5的数count就加1</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">var count:Int = 0</span><br><span class="line">a.foreach&#123;x =&gt;      //与map遍历方式不同，foreach不会对里面的内容修改，所以匿名函数也不需要返回值</span><br><span class="line">  if(x &gt;  5)</span><br><span class="line">    count += 1</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></li>
+</ul>
+<h2 id="一些数据结构的使用"><a href="#一些数据结构的使用" class="headerlink" title="一些数据结构的使用"></a>一些数据结构的使用</h2><hr>
+<h3 id="ListBuffer"><a href="#ListBuffer" class="headerlink" title="ListBuffer:"></a>ListBuffer:</h3><ul>
+<li><p>首先需要引入包 <code>import scala.collection.mutable.ListBuffer</code></p>
+</li>
+<li><p>在使用之前，先声明一个ListBuffer变量，通过以下代码：<br><code>val buf = new ListBuffer[Int]()    //类型自定义，这里采用的是Int</code></p>
+</li>
+<li><p>在末尾进行追加，使用append()方法：<br><code>buf.append(x)</code></p>
+</li>
+<li><p>将ListBuffer转化为List:<br><code>val lst = buf.toList</code></p>
+</li>
+</ul>
+<h2 id="Scala类的实例"><a href="#Scala类的实例" class="headerlink" title="Scala类的实例"></a>Scala类的实例</h2><hr>
+<ul>
+<li><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">class Point(xc: Int, yc: Int) &#123;</span><br><span class="line">   var x: Int = xc</span><br><span class="line">   var y: Int = yc</span><br><span class="line">   def move(dx: Int, dy: Int) &#123;</span><br><span class="line">      x = x + dx</span><br><span class="line">      y = y + dy</span><br><span class="line">      println (&quot;x 的坐标点: &quot; + x);</span><br><span class="line">      println (&quot;y 的坐标点: &quot; + y);</span><br><span class="line">   &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>Scala中的类不声明为public，一个Scala源文件中可以有多个类。以上实例的类定义了两个变量 x 和 y ，一个方法：move，方法没有返回值。Scala 的类定义可以有参数，称为类参数，如上面的 xc, yc，类参数在整个类中都可以访问。</p>
+</li>
+<li><p>类的字段要初始化，不然会报错(错误：类必须申明为抽象类才行)</p>
+</li>
+</ul>
+<h2 id="scala的一些笔记综合"><a href="#scala的一些笔记综合" class="headerlink" title="scala的一些笔记综合"></a>scala的一些笔记综合</h2><hr>
+<h3 id="this关键字与构造函数"><a href="#this关键字与构造函数" class="headerlink" title="this关键字与构造函数"></a>this关键字与构造函数</h3><h4 id="主构造函数"><a href="#主构造函数" class="headerlink" title="主构造函数"></a>主构造函数</h4><ul>
+<li><p>Scala提供了一个类的主构造函数的概念。如果代码只有一个构造函数，则可以不需要定义明确的构造函数。它有助于优化代码，可以创建具有零个或多个参数的主构造函数。</p>
+</li>
+<li><p>scala主构造函数示例：(即在类中以参数的形式体现)</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">class Student(id:Int, name:String)&#123;  </span><br><span class="line">    def showDetails()&#123;  </span><br><span class="line">        println(id+&quot; &quot;+name);  </span><br><span class="line">    &#125;  </span><br><span class="line">&#125;  </span><br><span class="line">object Demo&#123;  </span><br><span class="line">    def main(args:Array[String])&#123;  </span><br><span class="line">        var s = new Student(1010,&quot;Maxsu&quot;);  </span><br><span class="line">        s.showDetails()  </span><br><span class="line">    &#125;  </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></li>
+</ul>
+<h4 id="次要-辅助-构造器"><a href="#次要-辅助-构造器" class="headerlink" title="次要(辅助)构造器"></a>次要(辅助)构造器</h4><ul>
+<li><p>可以在类中创建任意数量的辅助构造函数，必须要从辅助构造函数内部调用主构造函数。<strong>this关键字用于从其他构造函数调用构造函数</strong>。当调用其他构造函数时，<strong>确保要将其放在构造函数中的第一行</strong>。</p>
+</li>
+<li><p>Scala二次构造函数示例：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">class Student(id:Int, name:String)&#123;  </span><br><span class="line">    var age:Int = 0  </span><br><span class="line">    def showDetails()&#123;  </span><br><span class="line">        println(id+&quot; &quot;+name+&quot; &quot;+age)  </span><br><span class="line">    &#125;  </span><br><span class="line">    def this(id:Int, name:String,age:Int)&#123;  </span><br><span class="line">        this(id,name)       // Calling primary constructor, and it is first line  </span><br><span class="line">        this.age = age  </span><br><span class="line">    &#125;  </span><br><span class="line">&#125;  </span><br><span class="line">object Demo&#123;  </span><br><span class="line">    def main(args:Array[String])&#123;  </span><br><span class="line">        var s = new Student(1010,&quot;Maxsu&quot;, 25);  </span><br><span class="line">        s.showDetails()  </span><br><span class="line">    &#125;  </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>并且在this二次构造函数的第一个语句，调用主构造函数this()的参数与主构造函数一致(如上例中的id和name两个参数)。</p>
+</li>
+</ul>
+<br>
+
+<blockquote>
+<p>最后更新于2018.5.27</p>
+</blockquote>
+
+    </div>
+
+    
+    
+    
+
+      <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/%E0%B9%91Scala/" rel="tag"># ๑Scala</a>
+          </div>
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/2018/04/06/Ubuntu-operation/" rel="prev" title="Ubuntu随笔">
+      <i class="fa fa-chevron-left"></i> Ubuntu随笔
+    </a></div>
+      <div class="post-nav-item">
+    <a href="/2018/04/06/Scala-learning/" rel="next" title="Scala学习笔记——基础">
+      Scala学习笔记——基础 <i class="fa fa-chevron-right"></i>
+    </a></div>
+    </div>
+      </footer>
+    
+  </article>
+  
+  
+  
+
+
+
+          </div>
+          
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          Table of Contents
+        </li>
+        <li class="sidebar-nav-overview">
+          Overview
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#case-class%E4%B8%8E%E6%A8%A1%E5%BC%8F%E5%8C%B9%E9%85%8D"><span class="nav-number">1.</span> <span class="nav-text">case class与模式匹配</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#scala%E6%80%A7%E8%83%BD%E6%B5%8B%E8%AF%95"><span class="nav-number">2.</span> <span class="nav-text">scala性能测试</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%87%BD%E6%95%B0%E5%BC%8F%E5%BE%AA%E7%8E%AF"><span class="nav-number">3.</span> <span class="nav-text">函数式循环</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%B8%80%E4%BA%9B%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E7%9A%84%E4%BD%BF%E7%94%A8"><span class="nav-number">4.</span> <span class="nav-text">一些数据结构的使用</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#ListBuffer"><span class="nav-number">4.1.</span> <span class="nav-text">ListBuffer:</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Scala%E7%B1%BB%E7%9A%84%E5%AE%9E%E4%BE%8B"><span class="nav-number">5.</span> <span class="nav-text">Scala类的实例</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#scala%E7%9A%84%E4%B8%80%E4%BA%9B%E7%AC%94%E8%AE%B0%E7%BB%BC%E5%90%88"><span class="nav-number">6.</span> <span class="nav-text">scala的一些笔记综合</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#this%E5%85%B3%E9%94%AE%E5%AD%97%E4%B8%8E%E6%9E%84%E9%80%A0%E5%87%BD%E6%95%B0"><span class="nav-number">6.1.</span> <span class="nav-text">this关键字与构造函数</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E4%B8%BB%E6%9E%84%E9%80%A0%E5%87%BD%E6%95%B0"><span class="nav-number">6.1.1.</span> <span class="nav-text">主构造函数</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E6%AC%A1%E8%A6%81-%E8%BE%85%E5%8A%A9-%E6%9E%84%E9%80%A0%E5%99%A8"><span class="nav-number">6.1.2.</span> <span class="nav-text">次要(辅助)构造器</span></a></li></ol></li></ol></li></ol></div>
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="Fleschier"
+      src="/images/avatar.gif">
+  <p class="site-author-name" itemprop="name">Fleschier</p>
+  <div class="site-description" itemprop="description">-</div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">67</span>
+          <span class="site-state-item-name">posts</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+            <a href="/categories/">
+          
+        <span class="site-state-item-count">12</span>
+        <span class="site-state-item-name">categories</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+            <a href="/tags/">
+          
+        <span class="site-state-item-count">36</span>
+        <span class="site-state-item-name">tags</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author motion-element">
+      <span class="links-of-author-item">
+        <a href="https://github.com/fleschier" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;fleschier" rel="noopener" target="_blank"><i class="fab fa-github fa-fw"></i>GitHub</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="mailto:fleschierchan@gmail.com" title="E-Mail → mailto:fleschierchan@gmail.com" rel="noopener" target="_blank"><i class="fa fa-envelope fa-fw"></i>E-Mail</a>
+      </span>
+  </div>
+
+
+
+      </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+        
+
+<div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2024</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Fleschier</span>
+</div>
+
+        
+
+
+
+
+
+
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="/lib/anime.min.js"></script>
+  <script src="/lib/velocity/velocity.min.js"></script>
+  <script src="/lib/velocity/velocity.ui.min.js"></script>
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/motion.js"></script>
+
+
+<script src="/js/schemes/muse.js"></script>
+
+
+<script src="/js/next-boot.js"></script>
+
+<script src="/js/bookmark.js"></script>
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+</body>
+</html>

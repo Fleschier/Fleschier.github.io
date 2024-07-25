@@ -1,0 +1,488 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 7.3.0">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/all.min.css">
+
+<script id="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"fleschier.github.io","root":"/","scheme":"Mist","version":"7.8.0","exturl":false,"sidebar":{"position":"right","display":"always","padding":18,"offset":12,"onmobile":true},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":true,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
+  </script>
+
+  <meta name="description" content="学习记录">
+<meta property="og:type" content="article">
+<meta property="og:title" content="JavaScript 对象部分 ">
+<meta property="og:url" content="https://fleschier.github.io/2019/01/15/JS-learning-03/index.html">
+<meta property="og:site_name" content="Fleschier๑">
+<meta property="og:description" content="学习记录">
+<meta property="og:locale" content="en_US">
+<meta property="og:image" content="https://fleschier.github.io/images/JavaScript/model.png">
+<meta property="article:published_time" content="2019-01-15T03:46:00.000Z">
+<meta property="article:modified_time" content="2024-07-25T07:10:29.915Z">
+<meta property="article:author" content="Fleschier">
+<meta property="article:tag" content="๑FrontEnd">
+<meta property="article:tag" content="๑JS">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://fleschier.github.io/images/JavaScript/model.png">
+
+<link rel="canonical" href="https://fleschier.github.io/2019/01/15/JS-learning-03/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome : false,
+    isPost : true,
+    lang   : 'en'
+  };
+</script>
+
+  <title>JavaScript 对象部分  | Fleschier๑</title>
+  
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="Toggle navigation bar">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <h1 class="site-title">Fleschier๑</h1>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+      <p class="site-subtitle" itemprop="description">-</p>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+    </div>
+  </div>
+</div>
+
+
+
+
+<nav class="site-nav">
+  <ul id="menu" class="main-menu menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section"><i class="fa fa-home fa-fw"></i>Home</a>
+
+  </li>
+        <li class="menu-item menu-item-about">
+
+    <a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>About</a>
+
+  </li>
+        <li class="menu-item menu-item-tags">
+
+    <a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>Tags<span class="badge">36</span></a>
+
+  </li>
+        <li class="menu-item menu-item-categories">
+
+    <a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>Categories<span class="badge">12</span></a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>Archives<span class="badge">67</span></a>
+
+  </li>
+  </ul>
+</nav>
+
+
+
+
+</div>
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+  <a role="button" class="book-mark-link book-mark-link-fixed"></a>
+
+  <a href="https://github.com/fleschier" class="github-corner" title="Follow me on GitHub" aria-label="Follow me on GitHub" rel="noopener" target="_blank"><svg width="80" height="80" viewBox="0 0 250 250" aria-hidden="true"><path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path><path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2" fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path><path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z" fill="currentColor" class="octo-body"></path></svg></a>
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content post posts-expand">
+            
+
+    
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
+    <link itemprop="mainEntityOfPage" href="https://fleschier.github.io/2019/01/15/JS-learning-03/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="Fleschier">
+      <meta itemprop="description" content="-">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Fleschier๑">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          JavaScript 对象部分 
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+
+              <time title="Created: 2019-01-15 11:46:00" itemprop="dateCreated datePublished" datetime="2019-01-15T11:46:00+08:00">2019-01-15</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Modified: 2024-07-25 15:10:29" itemprop="dateModified" datetime="2024-07-25T15:10:29+08:00">2024-07-25</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">In</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Computer-Software/" itemprop="url" rel="index"><span itemprop="name">Computer Software</span></a>
+                </span>
+            </span>
+
+          
+            <div class="post-description">学习记录</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <h2 id="window对象"><a href="#window对象" class="headerlink" title="window对象"></a>window对象</h2><hr>
+<ul>
+<li><p><img src="/images/JavaScript/model.png"></p>
+</li>
+<li><p>window对象处于对象链的顶端,因为它是Web浏览器中查看所有内容的主要容器. <strong>只要打开浏览器,即使窗口没有加载文档,window对象也在内存的当前模型中定义好了</strong></p>
+</li>
+<li><p>除了文档所在的窗口内容外,窗口的影响范围还包括窗口的尺寸和包围内容区域的所有”元素”.滚动条,工具栏和菜单栏所在的区域叫做窗口的窗框.不是每个浏览器都可以完全控制浏览器主窗口的窗框,但可以便捷地创建其他窗口,随意地设置其大小,指定要显示的窗框元素.</p>
+</li>
+<li><p>每个框架都可以看做一个window对象,因为每个框架都可以存放不同的文档.脚本在其中一个文档上运行时,它把拥有这个文档的框架作为对象层次结构图中的window对象.</p>
+</li>
+</ul>
+<h3 id="访问窗口的属性和方法"><a href="#访问窗口的属性和方法" class="headerlink" title="访问窗口的属性和方法"></a>访问窗口的属性和方法</h3><ul>
+<li><pre><code>
+</code></pre>
+</li>
+</ul>
+<p>window.propertyName<br>window.methodName([Parameters])</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">在脚本引用指向包含文档的窗口时,window对象有一个同义词self,以上的引用也等价于:</span><br></pre></td></tr></table></figure>
+<p>self.propertyName<br>self.methodName([Parameters])</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">### 创建窗口</span><br><span class="line"></span><br><span class="line">- 脚本并不创建主浏览器窗口,用户在创建主窗口的时候需要启动浏览器.但是在主窗口打开后,脚本就可以生成大量子窗口.</span><br><span class="line"></span><br><span class="line">- 生成新窗口的方法是:`window.open()`.这个方法最多包含三个参数,来定义窗口属性.</span><br><span class="line"></span><br><span class="line">- 例子:`var subWindow = window.open(&quot;define.html&quot;,&quot;def&quot;,&quot;height=200,width=300&quot;);`</span><br><span class="line">这个语句将新建的窗口赋值给了变量subWindow.(**这个语句打开了一个具有指定大小的新窗口,这个窗口包含的html文档为define.html,并且与当前页面处于同一个服务器目录下**)</span><br><span class="line"></span><br><span class="line">- 如果要关闭此子窗口,则调用`subWindow.close()`即可.而调用`window.close()/self.close()或者close()`就会关闭主窗口.</span><br><span class="line"></span><br><span class="line">### window对象的属性和方法</span><br><span class="line"></span><br><span class="line">#### window.alert()方法</span><br><span class="line"></span><br><span class="line">- 可以直接使用`alert()`来调用这个方法(省略前面的window).这个window方法会生产一个对话框,显示作为参数传送的文本.OK按钮允许用户关闭这个对话框.</span><br><span class="line"></span><br><span class="line">#### window.confirm()方法</span><br><span class="line"></span><br><span class="line">- 这个方法也是弹出一个对话框,但是有两个按钮(大多数平台上为Ok和Cancel),称为确认对话框.**更重要的是,这个方法有返回值:单击OK返回值为true,单击Cancel返回值为false**. 可以将这个方法的计算值作为if或if..else结构中的条件语句.</span><br><span class="line"></span><br><span class="line">- 例子:</span><br></pre></td></tr></table></figure>
+<p>if (confirm(“Are you sure to start over?”)){<br>  location.href &#x3D; “index.html”;<br>}</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">#### window.prompt()方法</span><br><span class="line"></span><br><span class="line">- window对象的最后一种对话框是提示对话框,它显示了预置的信息,并提供一个文本域供用户输入响应.这个对话框有两个按钮:OK和Cancel.</span><br><span class="line"></span><br><span class="line">- window.prompt()方法有两个参数,第一个参数是呈现给用户的提示信息;第二个参数是一个字符串,它在文本域中显示为默认的答案.如果不希望显示默认答案就传入一个空字符串(空双引号).</span><br><span class="line"></span><br><span class="line">- 用户单击按钮时,这个方法就会返回一个值.不管用户在文本域中输入什么,单击Cancel按钮都会返回null值,单击OK则返回输入的字符串值.这个信息也可以用在判断中,`null值等同于false,空字符串也看做false`.</span><br><span class="line"></span><br><span class="line">#### load事件</span><br><span class="line"></span><br><span class="line">- window对象会响应几个系统和用户事件,最常见的是页面加载完毕时触发的事件.**这个事件等待图像, Java applet和插件程序的数据文件完全下载到浏览器中**.使用load事件调用函数的优点在于,它确保所有document对象都存在于浏览器的DOM中.</span><br><span class="line"></span><br><span class="line">- 可以通过如下方式调用onload方法:</span><br></pre></td></tr></table></figure>
+<p>window.addEventListener(‘load’, functionName, false);<br>window.attachEvent(‘onload’, functionName);<br>&#x2F;&#x2F;其中functionName是页面下载完成后要运行的函数的名称.可以多次调用addEventListener和attachEvent,把多个函数添加到页面加载完毕要执行的列表中.</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">- 还可以把该事件直接应用于元素:</span><br></pre></td></tr></table></figure>
+<p>window[‘onload’] &#x3D; functionName;<br>window.onload &#x3D; functionName;</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br></pre></td><td class="code"><pre><span class="line">但是这种用法表示,页面加载完毕后,只执行一个函数,并替代已赋予window对象的其他事件处理程序.</span><br><span class="line"></span><br><span class="line">## location对象</span><br><span class="line">---</span><br><span class="line"></span><br><span class="line">- 这个对象表示载入窗口的URL.它和document对象不同:文档是页面的内容,而位置是页面的URL.</span><br><span class="line"></span><br><span class="line">- 脚本大多数只使用该对象的一个属性:`href`,它定义了完整的URL.</span><br><span class="line"></span><br><span class="line">- 如果要加载的页面在另一个窗口或框架中,就必须在语句中包含窗口的引用.例如:用脚本打开一个新窗口,并将它的引用赋值给变量newWindow,将页面载入子窗口,如下:</span><br><span class="line">`newWindow.loaction.href = &quot;http://www.example.com&quot;`</span><br><span class="line"></span><br><span class="line">## navigator对象</span><br><span class="line">---</span><br><span class="line"></span><br><span class="line">- navigator.userAgent属性返回一个包含浏览器和操作系统的诸多细节的字符串.</span><br><span class="line"></span><br><span class="line">## document对象</span><br><span class="line">---</span><br><span class="line"></span><br><span class="line">### document.getElementById()方法</span><br><span class="line"></span><br><span class="line">- 此方法的唯一参数是带引号的字符串,该字符串包含要引用的元素的ID.</span><br><span class="line"></span><br><span class="line">- 例子:`var oneTable = document.getElementById(&#x27;salesResults&#x27;);`.在赋值语句后,变量就表示对象,可用于获取和设置该对象的属性,或者调用此类对象的方法.</span><br><span class="line"></span><br><span class="line">### document.getElementByTagName()方法</span><br><span class="line"></span><br><span class="line">- 可以使用getElementByTagName()方法方便地收集一组共享同一个标记名称的页面元素.例如,要获得页面上所有的图像:`var aImages = document.getElementByTagName(&#x27;img&#x27;);`</span><br><span class="line"></span><br><span class="line">- 然后可以通过数组的方法来获取数组的长度:`aImages.length`,然后每个对象就可以使用数组的偏移量来访问.</span><br><span class="line"></span><br><span class="line">### document.forms[]属性</span><br><span class="line"></span><br><span class="line">- 比较下面两个表达式:</span><br></pre></td></tr></table></figure>
+<p>var aForms &#x3D; document.forms;<br>var aForms &#x3D; document.getElementByTagName(‘form’);</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">**一个重要的区别是,document.forms集合允许按名称直接引用某个表单,而不仅仅是按照数组的偏移量来访问.**</span><br><span class="line"></span><br><span class="line">- 因为有些时候按照下标号引用表单未必可行.动态网页可能根据上下文包含数量可变的表单,所以表单在页面上的位置可能随上下文而变化.</span><br><span class="line"></span><br><span class="line">- 支持脚本编程的浏览器允许通过表单名或ID(即分配给`&lt;form&gt;标记的name或者id属性`)更直接地引用表单:</span><br></pre></td></tr></table></figure>
+<form id='formId' name='fromName' ...>
+
+<p>&#x2F;&#x2F;第一种方法是使用getElementById方法:<br>document.getElementById(“formId”)</p>
+<p>&#x2F;&#x2F;第二种方法是使用数组语法,将表单名称或者ID作为数组的字符串下标:<br>document.forms[“formId”]<br>document.forms[“formName”]</p>
+<p>&#x2F;&#x2F;第三种按名称引用form对象的简短方式是把表单的名称附加为document对象的属性:<br>document.fornName</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">### document.images[]属性</span><br><span class="line"></span><br><span class="line">- 文档利用特殊的数组属性来跟踪表单,同样,document对象也通过`&lt;img&gt;`标记保存插入文档的图像集合(数组).通过document.images数组引用的图像可以用img元素名称中的数字或字符串下标来得到.</span><br><span class="line"></span><br><span class="line">### document.createElement()和document.createTextNode()方法</span><br><span class="line"></span><br><span class="line">- 在HTML文档中添加新元素至少需要两个步骤:</span><br><span class="line">1. 为文档创建新元素.</span><br><span class="line">2. 在页面的树形结构中,将其插入到需要的位置.</span><br><span class="line"></span><br><span class="line">- document.createElement()方法可以在浏览器的内存中创建一个全新的元素对象.指定要创建的元素时,应将元素的标记名作为该方法的字符串参数:</span><br><span class="line">`var newEle, = document.createElement(&quot;p&quot;);`</span><br><span class="line"></span><br><span class="line">- 还可以给元素添加一些属性值,为此应在元素成为文档的一部分之前,向新建对象赋值:`newElem.setAttribute(&quot;class&quot;,&quot;intro&quot;);`</span><br><span class="line"></span><br><span class="line">- 可将这个元素插入文档中的任何位置,例如末尾:</span><br><span class="line">`document.body.appendChild(newElem);`</span><br><span class="line"></span><br><span class="line">### document.write()方法</span><br><span class="line"></span><br><span class="line">- document.write()方法是给文档写入内容的另一种方式.他的优点是可以临时应急,缺点如下:</span><br><span class="line">1. 只有页面第一次加载到浏览器中时,document.write()才能给一个网页添加内容.以后调用该方法都会替代整个页面.</span><br><span class="line">2. document.write()会将旧文本块插入文档,编写出草率的程序和错误的标记,将标记与脚本内容混合在一起,不利于开发的分层.</span><br><span class="line">3. document.write()不能用于XHTML,XHTML这种文档类型不允许第一次解析期间修改其内容.</span><br><span class="line"></span><br><span class="line">&gt; 注:XHTML---可扩展超文本标记语言（英语：eXtensible HyperText Markup Language，XHTML），是一种标记语言，表现方式与超文本标记语言（HTML）类似，不过语法上更加严格。从继承关系上讲，HTML是一种基于标准通用标记语言（SGML）的应用，是一种非常灵活的置标语言，而XHTML则基于可扩展标记语言（XML），XML是SGML的一个子集。XHTML 1.0在2000年1月26日成为W3C的推荐标准。</span><br><span class="line"></span><br><span class="line">## 表单和表单元素</span><br><span class="line">---</span><br><span class="line"></span><br><span class="line">### form对象</span><br><span class="line"></span><br><span class="line">- 表单以及其中的输入控件是DOM对象,其独特的属性是文档中其他对象所没有的.例如,表单对象的action属性告诉浏览器,在提价表单时,将输入的值发送到什么地方.select控件(下拉列表)的selectedIndex属性指出用户选择了哪个选项.</span><br><span class="line"></span><br><span class="line">#### 访问表单属性</span><br><span class="line"></span><br><span class="line">-  在创建表单时,可以使用HTML页面中的标准标记,也可以使用JavaScript中的DOM方法.无论采用哪种方法,都可以设置name,target,action,method和enctype特性.这些都是form对象的属性.</span><br><span class="line"></span><br><span class="line">- 用法的例子:</span><br></pre></td></tr></table></figure>
+<p>var sURL &#x3D; document.getElementById(‘formName’).action;<br>document.forms[0].action &#x3D; “<a target="_blank" rel="noopener" href="http://www.example.com/cgi/login.pl">http://www.example.com/cgi/login.pl</a>“;</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">#### from.elements[]属性</span><br><span class="line"></span><br><span class="line">- elements[]属性是表单中所有输入控件的集合.这个数组中各项的顺序根据HTML标记在源代码中的顺序而定.使用ID直接引用单个元素通常更有效,但有时候需要遍历所有元素时会需要这样访问.</span><br><span class="line"></span><br><span class="line">- 下面的代码段查看表单中所有的控件元素,并将文本域的内容设置为空字符串.</span><br></pre></td></tr></table></figure>
+<p>var oForm &#x3D; document.getElementById(‘registration-form’);<br>  if(!oForm) return false;<br>for(var i &#x3D; 0; i &lt; oForm.elements.length; i++){<br>  if(oForm.elements[i].type &#x3D;&#x3D; “text”){<br>    oForm.elements[i].values &#x3D; “”;<br>  }<br>}</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">### 将表单控件作为对象</span><br><span class="line"></span><br><span class="line">- 在所有浏览器的DOM中,嵌套在`&lt;form&gt;`标记中的HTML元素有三种是脚本对象.多数对象都在页面源代码的`&lt;input&gt;`标记中,只有赋给`&lt;input&gt;`标记的type特性的值能确定元素是文本框,密码输入域,隐藏域,按钮,复选框还是单选框.其他两种表单控件textarea和select有各自的标记.</span><br><span class="line"></span><br><span class="line">- 要将某个表单控件作为对象进行引用,可以使用其id或tagName直接引用,或者使用DOM level 0语法,将引用构造为一个以document开头,后跟form和控件的层次结构.</span><br></pre></td></tr></table></figure>
+<p>document.getElementById(controlName)<br>或者<br>document.formName.controlName</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">- 例如有个简单的表单:</span><br></pre></td></tr></table></figure>
+<form id="searchForm" action="cgi-bin/search.pl">
+  <p>
+    <input type="text" id="entry" name="entry">
+    <input type="submit" id="sender" name="sender" value="Search">
+  </p>
+</form>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">对于文本输入控件,以下引用实例都是有效的:</span><br></pre></td></tr></table></figure>
+document.getElementById("entry")
+document.searchForm.entry
+document.searchForm.elements[0]qitak
+document.forms["searchForm"].elements["entry"]
+document.forms["searchForm"].entry
+```
+
+    </div>
+
+    
+    
+    
+
+      <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/%E0%B9%91FrontEnd/" rel="tag"># ๑FrontEnd</a>
+              <a href="/tags/%E0%B9%91JS/" rel="tag"># ๑JS</a>
+          </div>
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/2019/01/13/JS-learning-02/" rel="prev" title="JavaScript 基础 ">
+      <i class="fa fa-chevron-left"></i> JavaScript 基础 
+    </a></div>
+      <div class="post-nav-item">
+    <a href="/2019/02/17/hexo-live2d-delete/" rel="next" title="Hexo插件live2d删除以及遇到的一些问题">
+      Hexo插件live2d删除以及遇到的一些问题 <i class="fa fa-chevron-right"></i>
+    </a></div>
+    </div>
+      </footer>
+    
+  </article>
+  
+  
+  
+
+
+
+          </div>
+          
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          Table of Contents
+        </li>
+        <li class="sidebar-nav-overview">
+          Overview
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#window%E5%AF%B9%E8%B1%A1"><span class="nav-number">1.</span> <span class="nav-text">window对象</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%AE%BF%E9%97%AE%E7%AA%97%E5%8F%A3%E7%9A%84%E5%B1%9E%E6%80%A7%E5%92%8C%E6%96%B9%E6%B3%95"><span class="nav-number">1.1.</span> <span class="nav-text">访问窗口的属性和方法</span></a></li></ol></li></ol></div>
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="Fleschier"
+      src="/images/avatar.gif">
+  <p class="site-author-name" itemprop="name">Fleschier</p>
+  <div class="site-description" itemprop="description">-</div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">67</span>
+          <span class="site-state-item-name">posts</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+            <a href="/categories/">
+          
+        <span class="site-state-item-count">12</span>
+        <span class="site-state-item-name">categories</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+            <a href="/tags/">
+          
+        <span class="site-state-item-count">36</span>
+        <span class="site-state-item-name">tags</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author motion-element">
+      <span class="links-of-author-item">
+        <a href="https://github.com/fleschier" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;fleschier" rel="noopener" target="_blank"><i class="fab fa-github fa-fw"></i>GitHub</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="mailto:fleschierchan@gmail.com" title="E-Mail → mailto:fleschierchan@gmail.com" rel="noopener" target="_blank"><i class="fa fa-envelope fa-fw"></i>E-Mail</a>
+      </span>
+  </div>
+
+
+
+      </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+        
+
+<div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2024</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Fleschier</span>
+</div>
+
+        
+
+
+
+
+
+
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="/lib/anime.min.js"></script>
+  <script src="/lib/velocity/velocity.min.js"></script>
+  <script src="/lib/velocity/velocity.ui.min.js"></script>
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/motion.js"></script>
+
+
+<script src="/js/schemes/muse.js"></script>
+
+
+<script src="/js/next-boot.js"></script>
+
+<script src="/js/bookmark.js"></script>
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+</body>
+</html>

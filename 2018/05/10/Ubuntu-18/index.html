@@ -1,0 +1,620 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 7.3.0">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/all.min.css">
+
+<script id="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"fleschier.github.io","root":"/","scheme":"Mist","version":"7.8.0","exturl":false,"sidebar":{"position":"right","display":"always","padding":18,"offset":12,"onmobile":true},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":true,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
+  </script>
+
+  <meta name="description" content="学习记录">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Ubuntu进阶记录 &amp; Ubuntu-18">
+<meta property="og:url" content="https://fleschier.github.io/2018/05/10/Ubuntu-18/index.html">
+<meta property="og:site_name" content="Fleschier๑">
+<meta property="og:description" content="学习记录">
+<meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2018-05-10T01:47:00.000Z">
+<meta property="article:modified_time" content="2024-07-25T07:12:25.874Z">
+<meta property="article:author" content="Fleschier">
+<meta property="article:tag" content="๑Ubuntu">
+<meta property="article:tag" content="๑Linux">
+<meta name="twitter:card" content="summary">
+
+<link rel="canonical" href="https://fleschier.github.io/2018/05/10/Ubuntu-18/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome : false,
+    isPost : true,
+    lang   : 'en'
+  };
+</script>
+
+  <title>Ubuntu进阶记录 & Ubuntu-18 | Fleschier๑</title>
+  
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="Toggle navigation bar">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <h1 class="site-title">Fleschier๑</h1>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+      <p class="site-subtitle" itemprop="description">-</p>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+    </div>
+  </div>
+</div>
+
+
+
+
+<nav class="site-nav">
+  <ul id="menu" class="main-menu menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section"><i class="fa fa-home fa-fw"></i>Home</a>
+
+  </li>
+        <li class="menu-item menu-item-about">
+
+    <a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>About</a>
+
+  </li>
+        <li class="menu-item menu-item-tags">
+
+    <a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>Tags<span class="badge">36</span></a>
+
+  </li>
+        <li class="menu-item menu-item-categories">
+
+    <a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>Categories<span class="badge">12</span></a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>Archives<span class="badge">67</span></a>
+
+  </li>
+  </ul>
+</nav>
+
+
+
+
+</div>
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+  <a role="button" class="book-mark-link book-mark-link-fixed"></a>
+
+  <a href="https://github.com/fleschier" class="github-corner" title="Follow me on GitHub" aria-label="Follow me on GitHub" rel="noopener" target="_blank"><svg width="80" height="80" viewBox="0 0 250 250" aria-hidden="true"><path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path><path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2" fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path><path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z" fill="currentColor" class="octo-body"></path></svg></a>
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content post posts-expand">
+            
+
+    
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
+    <link itemprop="mainEntityOfPage" href="https://fleschier.github.io/2018/05/10/Ubuntu-18/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="Fleschier">
+      <meta itemprop="description" content="-">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Fleschier๑">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          Ubuntu进阶记录 & Ubuntu-18
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+
+              <time title="Created: 2018-05-10 09:47:00" itemprop="dateCreated datePublished" datetime="2018-05-10T09:47:00+08:00">2018-05-10</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Modified: 2024-07-25 15:12:25" itemprop="dateModified" datetime="2024-07-25T15:12:25+08:00">2024-07-25</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">In</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Computer-System/" itemprop="url" rel="index"><span itemprop="name">Computer System</span></a>
+                </span>
+            </span>
+
+          
+            <div class="post-description">学习记录</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <h2 id="Ubuntu18-使用体验"><a href="#Ubuntu18-使用体验" class="headerlink" title="Ubuntu18 使用体验"></a>Ubuntu18 使用体验</h2><hr>
+<h2 id="一些装机软件的安装"><a href="#一些装机软件的安装" class="headerlink" title="一些装机软件的安装"></a>一些装机软件的安装</h2><hr>
+<ul>
+<li><p>由于Ubuntu 18 自带了 gnome3.0桌面,所以我们只需要下载一个tweak-tool据可以自定义桌面了：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">sudo apt-get update</span><br><span class="line">sudo apt-get install gnome-tweak-tool</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>这次Ubuntu把标题栏改到了窗口的右侧，如果要改到左侧的话，打开tweak-tool转到窗口里面更改即可。</p>
+</li>
+<li><p>在更改用户主题之前，我们需要添加一个拓展插件才能使用自定义的主题</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo apt-get install gnome-shell-extensions</span><br></pre></td></tr></table></figure>
+<p>或者在gnome拓展网站上搜索 shell extensions ，找到这个插件并且安装最后重启tweak-tool即可。</p>
+</li>
+</ul>
+<h3 id="Albert"><a href="#Albert" class="headerlink" title="Albert"></a>Albert</h3><ul>
+<li><p>一款很强大的快捷交互命令行。</p>
+</li>
+<li><p>勾选extention后可以执行强大的命令包括文件，程序，终端，计算器等等。</p>
+</li>
+<li><p>安装步骤：</p>
+</li>
+</ul>
+<ol>
+<li><pre><code>
+</code></pre>
+</li>
+</ol>
+<p>wget -nv -O Release.key <br>  <a target="_blank" rel="noopener" href="https://build.opensuse.org/projects/home:manuelschneid3r/public_key">https://build.opensuse.org/projects/home:manuelschneid3r/public_key</a><br>sudo apt-key add - &lt; Release.key<br>sudo apt-get update</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">2. ```</span><br><span class="line">sudo sh -c &quot;echo &#x27;deb http://download.opensuse.org/repositories/home:/manuelschneid3r/xUbuntu_18.04/ /&#x27; &gt; /etc/apt/sources.list.d/home:manuelschneid3r.list&quot;</span><br><span class="line">sudo apt-get update</span><br><span class="line">sudo apt-get install albert</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li><a target="_blank" rel="noopener" href="https://albertlauncher.github.io/docs/installing/">官网</a></li>
+</ul>
+<h2 id="主题修改"><a href="#主题修改" class="headerlink" title="主题修改"></a>主题修改</h2><hr>
+<ul>
+<li><p>在网上找好主题以及美化的图标之后，分别下载下来，在home下创建 <code>.themes</code> 和 <code>.icons</code>两个文件夹，把主题和图标分别放到两个文件夹下即可使用。</p>
+</li>
+<li><p><a target="_blank" rel="noopener" href="https://imcn.me/html/y2017/29004.html">一个mac风格的主题</a></p>
+</li>
+</ul>
+<h2 id="gnome-extensions-recommend"><a href="#gnome-extensions-recommend" class="headerlink" title="gnome extensions recommend"></a>gnome extensions recommend</h2><hr>
+<h3 id="Ubuntu强大就强大在其可自定义的系统插件-这里罗列一下我自己使用的插件"><a href="#Ubuntu强大就强大在其可自定义的系统插件-这里罗列一下我自己使用的插件" class="headerlink" title="Ubuntu强大就强大在其可自定义的系统插件,这里罗列一下我自己使用的插件."></a>Ubuntu强大就强大在其可自定义的系统插件,这里罗列一下我自己使用的插件.</h3><ul>
+<li><p>Desktop Scroller: 可以在左右上下(用户自定义)屏幕边滑动鼠标滚轮来实现工作区的切换,十分便捷</p>
+</li>
+<li><p>Drop Down Terminal: 从顶端展开的一个终端,可以跨工作区.</p>
+</li>
+<li><p>Keep awake!: 手动激活按钮使电脑不会进入待机状态</p>
+</li>
+<li><p>NetSpeed: 显示当前网速</p>
+</li>
+<li><p>Place Status Indicator: 可以快速获取当前位置和切换位置</p>
+</li>
+<li><p>Removable Drive Menu: 显示当前是否有挂载的设备,并且可以一键解除挂载</p>
+</li>
+<li><p>Screenshot Tool: 屏幕截图工具</p>
+</li>
+<li><p>User Themes: 可以自定义用户主题的拓展,必备.</p>
+</li>
+<li><p>Blyr：使Overview有模糊背景效果</p>
+</li>
+<li><p>Coverflow(Alt-Tab)：应用程序切换效果，类似Mac OS X</p>
+</li>
+</ul>
+<h2 id="使用ppa源时可能遇到的问题以及解决方案"><a href="#使用ppa源时可能遇到的问题以及解决方案" class="headerlink" title="使用ppa源时可能遇到的问题以及解决方案"></a>使用ppa源时可能遇到的问题以及解决方案</h2><hr>
+<ul>
+<li><p>遇到 <code>sudo apt-get update</code> 时提示 <em>无法安全地用该源进行更新，所以默认禁用该源</em>,使用<code>sudo apt -o Acquire::AllowInsecureRepositories=true update</code>来强制更新不安全的源。</p>
+</li>
+<li><p>遇到没有签名的问题时，使用 <code>sudo apt-get update --allow-unauthenticated</code></p>
+</li>
+</ul>
+<h2 id="Ubuntu18装机的坑"><a href="#Ubuntu18装机的坑" class="headerlink" title="Ubuntu18装机的坑"></a>Ubuntu18装机的坑</h2><hr>
+<ul>
+<li><p>ubuntu对独立显卡的支持很有问题，导致我在安装时一进去就卡死，后来找到了解决方法。</p>
+</li>
+<li><p>在进入安装界面之前(选择体验还是安装的那个界面)时侯按 e 进入启动参数编辑 ，找到 quiet splash 这一句，把它删掉，改为  <code>i915.modest=0  nouveau.modeset=0  nomodeset</code> (参数之间空格间隔) 然后 ctrl+x 就可以进入安装界面了。但是此时的安装界面分辨率是900*400的，贼坑，还好我只是覆盖安装之前的Ubuntu16，所以自动安装也还凑合，如果要手动分区安装的话就悲剧了…</p>
+</li>
+<li><p>同样的，在安装完成之后重启进入ubuntu系统之前(在那个紫色的界面时)还要按 e 进入启动参数编辑界面，更改同上，进入系统之后，找到 系统设置&gt;软件和更新&gt;附加驱动，安装Nvidia的独显驱动然后重启即可。</p>
+</li>
+<li><p>按下 alt + F7 之后就可以不受限制地自由移动窗口了。</p>
+</li>
+<li><p>详见我知乎上的<a target="_blank" rel="noopener" href="https://www.zhihu.com/question/276308597/answer/388030874">文章</a></p>
+</li>
+</ul>
+<h3 id="终端的字体"><a href="#终端的字体" class="headerlink" title="终端的字体"></a>终端的字体</h3><ul>
+<li>如果要自己更改一些字体的话，在tweak-tools 里面其他的字体都可以随便改，但是等宽字体不能随便该，否则终端的字体会出现交叠错乱的情况。终端的字体由等宽字体来控制，一定要选择以 “mono” 开头或者结尾的字体才不会出现问题。</li>
+</ul>
+<h2 id="相比较-Ubuntu-16-04LTS"><a href="#相比较-Ubuntu-16-04LTS" class="headerlink" title="相比较 Ubuntu 16.04LTS"></a>相比较 Ubuntu 16.04LTS</h2><hr>
+<ul>
+<li><p>网易云音乐比Ubuntu16更加坑了～我内心是万马奔腾的…</p>
+</li>
+<li><p>ss-Qt5也用不了，翻墙只能靠命令行ssr了</p>
+</li>
+<li><p>搜狗输入法也是各种安装失败，我也懒得搞了，但是Ubuntu 18 的内置中文输入法手感贼舒服～搜狗装不上也就算了</p>
+</li>
+</ul>
+<h2 id="Ubuntu的问题查询"><a href="#Ubuntu的问题查询" class="headerlink" title="Ubuntu的问题查询"></a>Ubuntu的问题查询</h2><hr>
+<ul>
+<li>很多时候国内的一些论坛无法解决我们在使用Ubuntu时遇到的一些问题，这时候就需要去一些国外的论坛上找我们需要的解答。这里推荐一个网站——<a target="_blank" rel="noopener" href="https://askubuntu.com/">askUbuntu</a></li>
+</ul>
+<h2 id="Ubuntu-18-下可以使用的-ssr"><a href="#Ubuntu-18-下可以使用的-ssr" class="headerlink" title="Ubuntu 18 下可以使用的 ssr"></a>Ubuntu 18 下可以使用的 ssr</h2><hr>
+<ul>
+<li><p><a target="_blank" rel="noopener" href="https://github.com/erguotou520/electron-ssr/releases">链接</a></p>
+</li>
+<li><p>配置方法与windows几乎一致</p>
+</li>
+</ul>
+<h2 id="关于网易云音乐安装之后必须要终端sudo才能打开的问题"><a href="#关于网易云音乐安装之后必须要终端sudo才能打开的问题" class="headerlink" title="关于网易云音乐安装之后必须要终端sudo才能打开的问题"></a>关于网易云音乐安装之后必须要终端sudo才能打开的问题</h2><hr>
+<ul>
+<li><p>首先sudo打开会有报错,但是会自动启动默认设置</p>
+</li>
+<li><p>根据报错我们可以进行对应的安装: <code>sudo apt-get install libcanberra-gtk-module</code></p>
+</li>
+<li><p>然后修改网易云音乐的desktop文件，在exec那一行 <code>%U</code> 之前 加上 <code>--no-sandbox</code>然后保存退出，重启电脑即可愉快的使用了～～(注意修改文件之前先要切换到root用户)</p>
+</li>
+<li><p>另一种神奇的打开方式(不需要上面的操作):启动之后，点关机按钮，弹出来确认框，随后网易乐音乐页面也弹出来了，这时取消关机，可以正常使用云音乐~~~~~~~</p>
+</li>
+</ul>
+<hr>
+<h3 id="2019-3-21更新"><a href="#2019-3-21更新" class="headerlink" title="2019.3.21更新"></a>2019.3.21更新</h3><ul>
+<li><p>最近又发现了一个 <strong>完全解决问题</strong> 的方法:</p>
+</li>
+<li><p>把<code>%U</code>那一行改为:<code>Exec=sh -c &quot;unset SESSION_MANAGER &amp;&amp; netease-cloud-music %U&quot;</code></p>
+</li>
+</ul>
+<h4 id="然后关于每次正常启动要重新登录的问题"><a href="#然后关于每次正常启动要重新登录的问题" class="headerlink" title="然后关于每次正常启动要重新登录的问题"></a>然后关于每次正常启动要重新登录的问题</h4><ul>
+<li><p>把<code>.cache</code>文件夹下的<code>netease-cloud-music</code>全部删掉(这是缓存文件夹).然后查看<code>.config</code>文件夹下的<code>netease-cloud-music</code>的所有权是否是自己的当前用户.如果是root的话要改.</p>
+</li>
+<li><p>参考 – <a target="_blank" rel="noopener" href="https://www.zhihu.com/question/277330447/answer/478510195">https://www.zhihu.com/question/277330447/answer/478510195</a></p>
+</li>
+<li><p>然后终于可以美滋滋地使用了~</p>
+</li>
+</ul>
+<h2 id="关于ibus输入法的问题"><a href="#关于ibus输入法的问题" class="headerlink" title="关于ibus输入法的问题"></a>关于ibus输入法的问题</h2><hr>
+<ul>
+<li><p>最近输入法中文一直有问题，没办法选词。</p>
+</li>
+<li><p><a target="_blank" rel="noopener" href="https://blog.csdn.net/AshinLi/article/details/72773989">博客链接</a></p>
+</li>
+<li><p>终端打开ibus设置命令：<code>ibus-setup</code></p>
+</li>
+<li><p>但是感觉上面这个办法并没有声什么卵用。。。。</p>
+</li>
+<li><p>所以我弃坑了，还是选择了搜狗输入法</p>
+</li>
+</ul>
+<h3 id="Ubuntu18-的搜狗输入法的安装"><a href="#Ubuntu18-的搜狗输入法的安装" class="headerlink" title="Ubuntu18 的搜狗输入法的安装"></a>Ubuntu18 的搜狗输入法的安装</h3><ul>
+<li><p>首先安装fcitx的相关依赖</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">sudo apt-get install fictx-bin</span><br><span class="line">sudo apt-get install fictx-table</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>然后安装下载好的搜狗输入法deb包<br><code>dpkg -i sougou...</code><br>这里应该会提示缺少依赖，这时候可就需要执行修复依赖：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">sudo apt-get update</span><br><span class="line">sudo apt-get upgrade -f</span><br></pre></td></tr></table></figure>
+<p>系统会自动修复缺少的依赖包</p>
+</li>
+<li><p>然后我们就可以安装完搜狗输入法了。这时候在系统语言设置(右上角)里更改键盘输入法系统为fictx，然后把不用的输入法去掉。</p>
+</li>
+<li><p>最后重启电脑，打开fictx配置下搜狗输入法，把他调到第一个即可。</p>
+</li>
+<li><p>搜狗输入法支持登录一键同步，还是很好用的～</p>
+</li>
+</ul>
+<h3 id="搜狗輸入法的新坑"><a href="#搜狗輸入法的新坑" class="headerlink" title="搜狗輸入法的新坑"></a>搜狗輸入法的新坑</h3><ul>
+<li><p>Ubuntu18 自从安装以来一直问题不断。</p>
+</li>
+<li><p>最近启动电脑发现搜狗输入法的候选词栏全变成了乱码。。。坑爹啊</p>
+</li>
+<li><p>后来百度了解决方法：</p>
+</li>
+<li><p>首先遇到高级全都勾上以便显示出所有的可更改项<br>进入fictx设置&gt;&gt;附加组件&gt;&gt;简繁转换&gt;&gt;点击配置&gt;&gt;勾上显示高级选项&gt;&gt;将<code>sogoupinyin:false</code>改为<code>sogoupinyin:true</code></p>
+</li>
+<li><p>但是这个方法只管用一次…下次重启还要手动改~~垃圾</p>
+</li>
+<li><p>所以接下来这个方法貌似有用(亲测)</p>
+</li>
+<li><p>输入如下命令：(就是把你个人用户的一些配置删除掉然后重新创建)</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">cd ~/.config</span><br><span class="line">sudo rm -rf SogouPY* sogou*</span><br></pre></td></tr></table></figure></li>
+<li><p>之后注销重新登录即可。</p>
+</li>
+<li><p><strong>就目前个人测试的结果看来，登录个人中心是元凶，登录之后必炸…还是老老实实地用最基本的功能吧，期待早日更新吧。</strong></p>
+</li>
+</ul>
+<h2 id="10-15更新"><a href="#10-15更新" class="headerlink" title="10.15更新"></a>10.15更新</h2><ul>
+<li><p><a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/41708902#2-%E7%BD%91%E6%98%93%E4%BA%91%E9%9F%B3%E4%B9%90">Ubuntu18.04详细配置、美化</a></p>
+</li>
+<li><p><a target="_blank" rel="noopener" href="https://www.gnome-look.org/">gnome主题网站</a></p>
+</li>
+</ul>
+<br>
+> 最后更新于2018.5.14
+
+    </div>
+
+    
+    
+    
+
+      <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/%E0%B9%91Ubuntu/" rel="tag"># ๑Ubuntu</a>
+              <a href="/tags/%E0%B9%91Linux/" rel="tag"># ๑Linux</a>
+          </div>
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/2018/05/03/Google-play-Android/" rel="prev" title="关于国产安卓机如何安装Google Play相关套件">
+      <i class="fa fa-chevron-left"></i> 关于国产安卓机如何安装Google Play相关套件
+    </a></div>
+      <div class="post-nav-item">
+    <a href="/2018/05/17/BlockChain-concepts/" rel="next" title="区块链一些相关概念的记录">
+      区块链一些相关概念的记录 <i class="fa fa-chevron-right"></i>
+    </a></div>
+    </div>
+      </footer>
+    
+  </article>
+  
+  
+  
+
+
+
+          </div>
+          
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          Table of Contents
+        </li>
+        <li class="sidebar-nav-overview">
+          Overview
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Ubuntu18-%E4%BD%BF%E7%94%A8%E4%BD%93%E9%AA%8C"><span class="nav-number">1.</span> <span class="nav-text">Ubuntu18 使用体验</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%B8%80%E4%BA%9B%E8%A3%85%E6%9C%BA%E8%BD%AF%E4%BB%B6%E7%9A%84%E5%AE%89%E8%A3%85"><span class="nav-number">2.</span> <span class="nav-text">一些装机软件的安装</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Albert"><span class="nav-number">2.1.</span> <span class="nav-text">Albert</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%B8%BB%E9%A2%98%E4%BF%AE%E6%94%B9"><span class="nav-number">3.</span> <span class="nav-text">主题修改</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#gnome-extensions-recommend"><span class="nav-number">4.</span> <span class="nav-text">gnome extensions recommend</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Ubuntu%E5%BC%BA%E5%A4%A7%E5%B0%B1%E5%BC%BA%E5%A4%A7%E5%9C%A8%E5%85%B6%E5%8F%AF%E8%87%AA%E5%AE%9A%E4%B9%89%E7%9A%84%E7%B3%BB%E7%BB%9F%E6%8F%92%E4%BB%B6-%E8%BF%99%E9%87%8C%E7%BD%97%E5%88%97%E4%B8%80%E4%B8%8B%E6%88%91%E8%87%AA%E5%B7%B1%E4%BD%BF%E7%94%A8%E7%9A%84%E6%8F%92%E4%BB%B6"><span class="nav-number">4.1.</span> <span class="nav-text">Ubuntu强大就强大在其可自定义的系统插件,这里罗列一下我自己使用的插件.</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%BD%BF%E7%94%A8ppa%E6%BA%90%E6%97%B6%E5%8F%AF%E8%83%BD%E9%81%87%E5%88%B0%E7%9A%84%E9%97%AE%E9%A2%98%E4%BB%A5%E5%8F%8A%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88"><span class="nav-number">5.</span> <span class="nav-text">使用ppa源时可能遇到的问题以及解决方案</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Ubuntu18%E8%A3%85%E6%9C%BA%E7%9A%84%E5%9D%91"><span class="nav-number">6.</span> <span class="nav-text">Ubuntu18装机的坑</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%BB%88%E7%AB%AF%E7%9A%84%E5%AD%97%E4%BD%93"><span class="nav-number">6.1.</span> <span class="nav-text">终端的字体</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%9B%B8%E6%AF%94%E8%BE%83-Ubuntu-16-04LTS"><span class="nav-number">7.</span> <span class="nav-text">相比较 Ubuntu 16.04LTS</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Ubuntu%E7%9A%84%E9%97%AE%E9%A2%98%E6%9F%A5%E8%AF%A2"><span class="nav-number">8.</span> <span class="nav-text">Ubuntu的问题查询</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Ubuntu-18-%E4%B8%8B%E5%8F%AF%E4%BB%A5%E4%BD%BF%E7%94%A8%E7%9A%84-ssr"><span class="nav-number">9.</span> <span class="nav-text">Ubuntu 18 下可以使用的 ssr</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%85%B3%E4%BA%8E%E7%BD%91%E6%98%93%E4%BA%91%E9%9F%B3%E4%B9%90%E5%AE%89%E8%A3%85%E4%B9%8B%E5%90%8E%E5%BF%85%E9%A1%BB%E8%A6%81%E7%BB%88%E7%AB%AFsudo%E6%89%8D%E8%83%BD%E6%89%93%E5%BC%80%E7%9A%84%E9%97%AE%E9%A2%98"><span class="nav-number">10.</span> <span class="nav-text">关于网易云音乐安装之后必须要终端sudo才能打开的问题</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#2019-3-21%E6%9B%B4%E6%96%B0"><span class="nav-number">10.1.</span> <span class="nav-text">2019.3.21更新</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E7%84%B6%E5%90%8E%E5%85%B3%E4%BA%8E%E6%AF%8F%E6%AC%A1%E6%AD%A3%E5%B8%B8%E5%90%AF%E5%8A%A8%E8%A6%81%E9%87%8D%E6%96%B0%E7%99%BB%E5%BD%95%E7%9A%84%E9%97%AE%E9%A2%98"><span class="nav-number">10.1.1.</span> <span class="nav-text">然后关于每次正常启动要重新登录的问题</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%85%B3%E4%BA%8Eibus%E8%BE%93%E5%85%A5%E6%B3%95%E7%9A%84%E9%97%AE%E9%A2%98"><span class="nav-number">11.</span> <span class="nav-text">关于ibus输入法的问题</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Ubuntu18-%E7%9A%84%E6%90%9C%E7%8B%97%E8%BE%93%E5%85%A5%E6%B3%95%E7%9A%84%E5%AE%89%E8%A3%85"><span class="nav-number">11.1.</span> <span class="nav-text">Ubuntu18 的搜狗输入法的安装</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%90%9C%E7%8B%97%E8%BC%B8%E5%85%A5%E6%B3%95%E7%9A%84%E6%96%B0%E5%9D%91"><span class="nav-number">11.2.</span> <span class="nav-text">搜狗輸入法的新坑</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#10-15%E6%9B%B4%E6%96%B0"><span class="nav-number">12.</span> <span class="nav-text">10.15更新</span></a></li></ol></div>
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="Fleschier"
+      src="/images/avatar.gif">
+  <p class="site-author-name" itemprop="name">Fleschier</p>
+  <div class="site-description" itemprop="description">-</div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">67</span>
+          <span class="site-state-item-name">posts</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+            <a href="/categories/">
+          
+        <span class="site-state-item-count">12</span>
+        <span class="site-state-item-name">categories</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+            <a href="/tags/">
+          
+        <span class="site-state-item-count">36</span>
+        <span class="site-state-item-name">tags</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author motion-element">
+      <span class="links-of-author-item">
+        <a href="https://github.com/fleschier" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;fleschier" rel="noopener" target="_blank"><i class="fab fa-github fa-fw"></i>GitHub</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="mailto:fleschierchan@gmail.com" title="E-Mail → mailto:fleschierchan@gmail.com" rel="noopener" target="_blank"><i class="fa fa-envelope fa-fw"></i>E-Mail</a>
+      </span>
+  </div>
+
+
+
+      </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+        
+
+<div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2024</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Fleschier</span>
+</div>
+
+        
+
+
+
+
+
+
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="/lib/anime.min.js"></script>
+  <script src="/lib/velocity/velocity.min.js"></script>
+  <script src="/lib/velocity/velocity.ui.min.js"></script>
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/motion.js"></script>
+
+
+<script src="/js/schemes/muse.js"></script>
+
+
+<script src="/js/next-boot.js"></script>
+
+<script src="/js/bookmark.js"></script>
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+</body>
+</html>

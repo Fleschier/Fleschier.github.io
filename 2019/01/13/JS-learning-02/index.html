@@ -1,0 +1,656 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 7.3.0">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/all.min.css">
+
+<script id="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"fleschier.github.io","root":"/","scheme":"Mist","version":"7.8.0","exturl":false,"sidebar":{"position":"right","display":"always","padding":18,"offset":12,"onmobile":true},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":true,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
+  </script>
+
+  <meta name="description" content="学习记录">
+<meta property="og:type" content="article">
+<meta property="og:title" content="JavaScript 基础 ">
+<meta property="og:url" content="https://fleschier.github.io/2019/01/13/JS-learning-02/index.html">
+<meta property="og:site_name" content="Fleschier๑">
+<meta property="og:description" content="学习记录">
+<meta property="og:locale" content="en_US">
+<meta property="og:image" content="https://fleschier.github.io/images/JavaScript/model.png">
+<meta property="og:image" content="https://fleschier.github.io/images/JavaScript/document.png">
+<meta property="og:image" content="https://fleschier.github.io/images/JavaScript/document1.png">
+<meta property="og:image" content="https://fleschier.github.io/images/JavaScript/document2.png">
+<meta property="article:published_time" content="2019-01-13T08:46:00.000Z">
+<meta property="article:modified_time" content="2024-07-25T07:10:27.229Z">
+<meta property="article:author" content="Fleschier">
+<meta property="article:tag" content="๑FrontEnd">
+<meta property="article:tag" content="๑JS">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://fleschier.github.io/images/JavaScript/model.png">
+
+<link rel="canonical" href="https://fleschier.github.io/2019/01/13/JS-learning-02/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome : false,
+    isPost : true,
+    lang   : 'en'
+  };
+</script>
+
+  <title>JavaScript 基础  | Fleschier๑</title>
+  
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="Toggle navigation bar">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <h1 class="site-title">Fleschier๑</h1>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+      <p class="site-subtitle" itemprop="description">-</p>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+    </div>
+  </div>
+</div>
+
+
+
+
+<nav class="site-nav">
+  <ul id="menu" class="main-menu menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section"><i class="fa fa-home fa-fw"></i>Home</a>
+
+  </li>
+        <li class="menu-item menu-item-about">
+
+    <a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>About</a>
+
+  </li>
+        <li class="menu-item menu-item-tags">
+
+    <a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>Tags<span class="badge">36</span></a>
+
+  </li>
+        <li class="menu-item menu-item-categories">
+
+    <a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>Categories<span class="badge">12</span></a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>Archives<span class="badge">67</span></a>
+
+  </li>
+  </ul>
+</nav>
+
+
+
+
+</div>
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+  <a role="button" class="book-mark-link book-mark-link-fixed"></a>
+
+  <a href="https://github.com/fleschier" class="github-corner" title="Follow me on GitHub" aria-label="Follow me on GitHub" rel="noopener" target="_blank"><svg width="80" height="80" viewBox="0 0 250 250" aria-hidden="true"><path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path><path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2" fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path><path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z" fill="currentColor" class="octo-body"></path></svg></a>
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content post posts-expand">
+            
+
+    
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
+    <link itemprop="mainEntityOfPage" href="https://fleschier.github.io/2019/01/13/JS-learning-02/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="Fleschier">
+      <meta itemprop="description" content="-">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Fleschier๑">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          JavaScript 基础 
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+
+              <time title="Created: 2019-01-13 16:46:00" itemprop="dateCreated datePublished" datetime="2019-01-13T16:46:00+08:00">2019-01-13</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Modified: 2024-07-25 15:10:27" itemprop="dateModified" datetime="2024-07-25T15:10:27+08:00">2024-07-25</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">In</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Computer-Software/" itemprop="url" rel="index"><span itemprop="name">Computer Software</span></a>
+                </span>
+            </span>
+
+          
+            <div class="post-description">学习记录</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <h2 id="浏览器窗口中的DOM"><a href="#浏览器窗口中的DOM" class="headerlink" title="浏览器窗口中的DOM"></a>浏览器窗口中的DOM</h2><hr>
+<ul>
+<li>所有现代浏览器的基本对象模型:<br><img src="/images/JavaScript/model.png"></li>
+</ul>
+<ol>
+<li><p>window对象: 在层次结构顶部的是window对象.这个对象代表显示HTML文档的浏览器窗口的内容区域.在多框架环境下,每个框架也是一个窗口.所有的文档动作都是在窗口内发生的,所以窗口是对象层次结构中最外部的元素,它包含文档.</p>
+</li>
+<li><p>navigator对象: 脚本从这个对象开始访问浏览器程序,主要是读取浏览器的品牌和版本.此对象为只读,以禁止流氓脚本对浏览器的不当操作.但如后面所述,不能依赖navigator对象获得当前浏览器的实际品牌,型号和版本.</p>
+</li>
+<li><p>screen对象: 这是另一个只读对象,它给脚本提供了运行浏览器的物理环境信息.例如,此对象显示了监视器的高度和宽度(像素值).</p>
+</li>
+<li><p>history对象: 尽管浏览器保留了最近浏览历史的内部细节(如单击后退显示的内容列表),但是脚本却无权访问这些细节.这一对象可以帮助脚本模拟后退或前进按钮的单击.</p>
+</li>
+<li><p>document对象: 每个载入窗口的HTML文档都会变成一个document对象.document对象包含脚本中的内容.除了每个HTML文档中都有的html,head和body元素对象外,文档中元素对象层次的具体标记和结构取决于文档的内容.</p>
+</li>
+</ol>
+<h2 id="文档的载入"><a href="#文档的载入" class="headerlink" title="文档的载入"></a>文档的载入</h2><hr>
+<h3 id="简单文档"><a href="#简单文档" class="headerlink" title="简单文档"></a>简单文档</h3><ul>
+<li>空文档的对象映射:<br><img src="/images/JavaScript/document.png"><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">&lt;!DOCTYPE html&gt;</span><br><span class="line">&lt;html&gt;</span><br><span class="line"> &lt;head&gt;</span><br><span class="line">  &lt;meta ...&gt;</span><br><span class="line">  &lt;title&gt;&lt;/title&gt;</span><br><span class="line"> &lt;/head&gt;</span><br><span class="line"> &lt;body&gt;</span><br><span class="line">  ...</span><br><span class="line"> &lt;/body&gt;</span><br><span class="line">&lt;/html&gt;</span><br></pre></td></tr></table></figure></li>
+</ul>
+<h3 id="添加段落"><a href="#添加段落" class="headerlink" title="添加段落"></a>添加段落</h3><ul>
+<li>添加段落标签, 在段落元素的开始和结束标记之间插入段落文本.在标记间插入的连续文本是DOM中的一种特殊的对象,称为文本结点.文本节点总是有一个容器元素,也就是说,文本结点是其父元素p的子元素.</li>
+</ul>
+<p><img src="/images/JavaScript/document1.png"></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">&lt;!DOCTYPE html&gt;</span><br><span class="line">&lt;html&gt;</span><br><span class="line"> &lt;head&gt;</span><br><span class="line">  &lt;meta ...&gt;</span><br><span class="line">  &lt;title&gt;&lt;/title&gt;</span><br><span class="line"> &lt;/head&gt;</span><br><span class="line"> &lt;body&gt;</span><br><span class="line">  &lt;p&gt;This is the one and only Paragraph&lt;/p&gt;         //添加了段落标签和段落内容</span><br><span class="line"> &lt;/body&gt;</span><br><span class="line">&lt;/html&gt;</span><br></pre></td></tr></table></figure>
+
+<h3 id="生成新元素"><a href="#生成新元素" class="headerlink" title="生成新元素"></a>生成新元素</h3><ul>
+<li>将部分段落文本包含在一个<em>标签中,表示要强调这些文本.这个插入操作对p元素对象的层次结构有很大的影响.<strong>p元素从只有一个(文本结点)子元素变成有三个子元素:两个文本节点,和一个它们之间的元素</strong>. 在W3C DOM中, <strong>文本结点不能有任何子元素</strong>,因此不能包含元素对象.em元素中的文本结点不再是p元素的子元素,而是em元素的子元素.</li>
+</ul>
+<p><img src="/images/JavaScript/document2.png"></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">&lt;!DOCTYPE html&gt;</span><br><span class="line">&lt;html&gt;</span><br><span class="line"> &lt;head&gt;</span><br><span class="line">  &lt;meta ...&gt;</span><br><span class="line">  &lt;title&gt;&lt;/title&gt;</span><br><span class="line"> &lt;/head&gt;</span><br><span class="line"> &lt;body&gt;</span><br><span class="line">  &lt;p&gt;This is the one and only Paragraph&lt;/p&gt;         //添加了段落标签和段落内容</span><br><span class="line"> &lt;/body&gt;</span><br><span class="line">&lt;/html&gt;</span><br></pre></td></tr></table></figure>
+
+<h2 id="对象"><a href="#对象" class="headerlink" title="对象"></a>对象</h2><hr>
+<h3 id="获取对象的属性"><a href="#获取对象的属性" class="headerlink" title="获取对象的属性"></a>获取对象的属性</h3><ul>
+<li><p>例如,下面的HTML标记定义了一个input元素对象,它指定了四个属性和属性值:</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;input type=&quot;button&quot; id=&quot;clicker&quot; name=&quot;clicker&quot; value=&quot;...&quot;&gt;</span><br></pre></td></tr></table></figure>
+<p>不必为每个对象设置每个属性,多数属性都有默认值.假如HTML或脚本没有特殊要求,他们就自动设置为默认值.</p>
+</li>
+<li><p>为了访问对象的属性,需要使用和前面对象相同的圆点定位方式.属性是从属于对象的资源,所以属性的引用就是对象引用后加属性名.</p>
+</li>
+<li><p>对于刚才的例子,属性的引用如下:</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">document.getElementById(&quot;clicker&quot;).name</span><br><span class="line">document.getElementById(&quot;clicker&quot;).value</span><br><span class="line">...</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>如果JavaScript尝试引用不存在的元素的属性,就会失败或终止.因此引用之前最好先测试一下.</p>
+</blockquote>
+</li>
+<li><p>测试引用是否安全:</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">val oClicker = document.getElementById(&quot;clikcker&quot;);</span><br><span class="line">  if(!oClicker) return;</span><br><span class="line">var sName = oClicker.name;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>在引用的过程中我们省略<code>window</code>部分(<em>完整为window.document.XXX</em>).因为一个窗口只能包含一个文档,所以文档中对象的引用可以省略window部分,但是不能省略document对象.</p>
+</li>
+</ul>
+<h2 id="方法"><a href="#方法" class="headerlink" title="方法"></a>方法</h2><hr>
+<ul>
+<li><p>方法的调用与大多数语言一样,需要在方法名后加一对圆括号.</p>
+</li>
+<li><p>参数之间以逗号间隔</p>
+</li>
+</ul>
+<h2 id="事件"><a href="#事件" class="headerlink" title="事件"></a>事件</h2><hr>
+<ul>
+<li><p>事件是文档执行中的动作,通常是用户活动的结果.</p>
+</li>
+<li><p>文档中的每个DOM对象几乎都接收某种类型的事件.我们只需要编写代码,告诉元素对象,只要接收到某种事件,就执行一个动作.这个动作就是执行其他的一些JavaScript代码.</p>
+</li>
+<li><p>具有事件处理能力的简单按钮:</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">//HTML: 1.html</span><br><span class="line">&lt;!DOCTYPE html&gt;</span><br><span class="line">&lt;html&gt;</span><br><span class="line">  &lt;head&gt;</span><br><span class="line">    &lt;meta http-equiv=&quot;content-type&quot; content=&quot;text/html;charset=utf-8&quot;</span><br><span class="line">    &lt;title&gt;A Simple Button with an Event Handler&lt;/title&gt;</span><br><span class="line">    &lt;script type=&quot;text/javascript&quot; src=&quot;jab.js&quot;&gt;&lt;/script&gt;</span><br><span class="line">  &lt;/head&gt;</span><br><span class="line">  &lt;body&gt;</span><br><span class="line">    &lt;form action=&quot;&quot;&gt;</span><br><span class="line">      &lt;div&gt;</span><br><span class="line">        &lt;button id=&quot;clicker&quot;&gt;Click here&lt;/button&gt;</span><br><span class="line">      &lt;/div&gt;</span><br><span class="line">    &lt;/form&gt;</span><br><span class="line">  &lt;/body&gt;</span><br><span class="line">&lt;/html&gt;</span><br></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line">//JAVASCRIPT:jsb.js</span><br><span class="line">//tell the browser to run this script when the page has finished loading</span><br><span class="line">window.onload = applyBehavior;</span><br><span class="line"></span><br><span class="line">//apply behavior to the button</span><br><span class="line">function applyBehavior()&#123;</span><br><span class="line">  //ensure a DOM-aware user agent</span><br><span class="line">  if(document.getElementById)&#123;</span><br><span class="line">    //point to the button</span><br><span class="line">    var oButton = document.getElementById(&#x27;clicker&#x27;);</span><br><span class="line"></span><br><span class="line">    //if it exists, apply behavior</span><br><span class="line">    if(oButton)&#123;</span><br><span class="line">      oButton.onclick = behave;</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">//what to do when the button is clicked</span><br><span class="line">function behave(evt)&#123;</span><br><span class="line">  alert(&#x27;Ouch! &#x27;);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>事件的名称一般为事件的类型(例如click)以及前缀on构成,表示一接收到XXX事件就XXX.</p>
+</li>
+</ul>
+<h2 id="把脚本链接到文档上"><a href="#把脚本链接到文档上" class="headerlink" title="把脚本链接到文档上"></a>把脚本链接到文档上</h2><hr>
+<ol>
+<li><p>放在外部文件中:<code>&lt;script type=&quot;text/javascript&quot; src=&quot;[/..../]example.js&quot;&gt;&lt;/script&gt;</code></p>
+</li>
+<li><p>内嵌在html中:</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&lt;script type=&quot;text/javascript&quot;&gt;</span><br><span class="line">  JavaScript code here</span><br><span class="line">&lt;/script&gt;</span><br></pre></td></tr></table></figure></li>
+</ol>
+<h3 id="script标记的位置"><a href="#script标记的位置" class="headerlink" title="script标记的位置"></a>script标记的位置</h3><ul>
+<li><p>大多数情况下script标记放在<code>&lt;head&gt;</code>标签中,有时候会放在<code>&lt;body&gt;</code>标签.</p>
+</li>
+<li><p>放在<code>&lt;head&gt;</code>中的标记一般会影响页面中的非内容设置—所谓的html指令元素,例如<code>&lt;meta&gt;</code>标记和文档题目,这里也适合放置响应页面载入或用户动作的脚本.</p>
+</li>
+<li><p>如果需要在页面载入时运行脚本,以便生成页面内容,则脚本应放在文档的<code>&lt;body&gt;</code>部分</p>
+</li>
+</ul>
+<h3 id="注释"><a href="#注释" class="headerlink" title="注释"></a>注释</h3><ul>
+<li>单行注释用<code>//</code>,多行注释用<code>/**/</code></li>
+</ul>
+<h2 id="脚本语句的执行时间"><a href="#脚本语句的执行时间" class="headerlink" title="脚本语句的执行时间"></a>脚本语句的执行时间</h2><hr>
+<ul>
+<li>根据脚本要完成的功能,脚本运行的时间有四种选择:</li>
+</ul>
+<ol>
+<li>文档载入时</li>
+<li>文档载入后</li>
+<li>响应用户动作时</li>
+<li>其他脚本语句调用时</li>
+</ol>
+<ul>
+<li><p>决定性因素是脚本语句在文档中的位置.</p>
+</li>
+<li><p>除了第一个,其他三种统称为延时脚本</p>
+</li>
+</ul>
+<h3 id="页面载入后执行"><a href="#页面载入后执行" class="headerlink" title="页面载入后执行"></a>页面载入后执行</h3><ul>
+<li>假设定义了函数<code>function done()&#123;alert(&quot;....&quot;)&#125;</code>,则如果想要在页面加载完成是调用它,可以用<code>window.onload = done;</code>来实现在页面加载完成时调用<code>done</code>函数. <strong>注意此语句右侧只有函数名,没有圆括号.</strong></li>
+</ul>
+<h2 id="JavaScript值-数据-类型"><a href="#JavaScript值-数据-类型" class="headerlink" title="JavaScript值(数据)类型"></a>JavaScript值(数据)类型</h2><hr>
+<table>
+<thead>
+<tr>
+<th>类型</th>
+<th>示例</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>String</td>
+<td>“Test”</td>
+<td>引号内的一系列字符</td>
+</tr>
+<tr>
+<td>Number</td>
+<td>4.5</td>
+<td>不在引号内的数字</td>
+</tr>
+<tr>
+<td>Boolean</td>
+<td>false</td>
+<td>逻辑真或假</td>
+</tr>
+<tr>
+<td>Null</td>
+<td>null</td>
+<td>不包含任何内容,但仍然是一个值</td>
+</tr>
+<tr>
+<td>Object</td>
+<td></td>
+<td>通过属性和方法定义的软件对象(数组也是对象)</td>
+</tr>
+<tr>
+<td>Function</td>
+<td></td>
+<td>函数定义</td>
+</tr>
+</tbody></table>
+<ul>
+<li>假如用户在表单的文本的输入域中输入数字,浏览器就把该数字存储为字符串类型.假如脚本要对这个数字执行算数操作,就需要将字符串转化为数字再进行操作.</li>
+</ul>
+<h2 id="变量"><a href="#变量" class="headerlink" title="变量"></a>变量</h2><hr>
+<ul>
+<li><p>创建变量:<code>var valueName;</code>  <code>var</code>关键字用于声明和初始化变量,文档中任何变量都只需要使用一次var关键字.</p>
+</li>
+<li><p>变量赋值:<code>valueName = 45;</code></p>
+</li>
+<li><p><strong>JavaScript变量可以存储任何类型的值</strong>.在声明变量的时候,不必定义变量包含的值的类型.</p>
+</li>
+</ul>
+<h3 id="类型转换"><a href="#类型转换" class="headerlink" title="类型转换"></a>类型转换</h3><ul>
+<li><p>两个数值相加:<code>3 + 3</code>,结果为6没有问题.</p>
+</li>
+<li><p>但如果其中一个数字是字符串,JavaScript就会将另一个值转换为字符串,<strong>将这个加号操作从算数加变成字符串连接</strong>:<code>3 + &quot;3&quot;</code>,结果为<code>&quot;33&quot;</code>. <code>3 + 3 + &quot;3&quot;</code>,结果为<code>&quot;63&quot;</code>.</p>
+</li>
+</ul>
+<h4 id="将字符串转化为数值"><a href="#将字符串转化为数值" class="headerlink" title="将字符串转化为数值"></a>将字符串转化为数值</h4><ul>
+<li><p>JavaScript提供了两个内置函数:<code>parseInt()</code>和<code>parseFloat()</code></p>
+</li>
+<li><pre><code>
+</code></pre>
+</li>
+</ul>
+<p>parseInt(“43”)    &#x2F;&#x2F;结果为42<br>parseInt(“43.33”) &#x2F;&#x2F;结果为43,这里做截断处理</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">- ```</span><br><span class="line">parseFloat(&quot;43&quot;)  //结果为43</span><br><span class="line">parseFloat(&quot;43.33&quot;)  //结果为43.33</span><br></pre></td></tr></table></figure>
+
+<h4 id="将数字转化为字符串"><a href="#将数字转化为字符串" class="headerlink" title="将数字转化为字符串"></a>将数字转化为字符串</h4><ul>
+<li>利用JavaScript的特性:<code>&quot;&quot;+2500</code>,结果即为<code>&quot;2500&quot;</code></li>
+</ul>
+<h2 id="控制结构"><a href="#控制结构" class="headerlink" title="控制结构"></a>控制结构</h2><hr>
+<ul>
+<li><p>if else与C++等用法一致</p>
+</li>
+<li><p>for循环(i用var声明,其余与C++一致):</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">for(var i = startValue; i &lt;= MaxValue; i++)&#123;</span><br><span class="line">  ...</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></li>
+</ul>
+<h2 id="函数"><a href="#函数" class="headerlink" title="函数"></a>函数</h2><hr>
+<ul>
+<li>函数的正式语法结构:<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">functoin functionName([Parameter1]...[,ParameterN])&#123;</span><br><span class="line">  statement[s]</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></li>
+</ul>
+<h3 id="局部变量和全局变量"><a href="#局部变量和全局变量" class="headerlink" title="局部变量和全局变量"></a>局部变量和全局变量</h3><ul>
+<li><p>在函数外声明的变量为全局变量,在函数体中定义的变量称为局部变量.</p>
+</li>
+<li><p>局部变量的作用域只局限于函数内部.</p>
+</li>
+<li><p>全局变量的作用域是 <strong>当前载入浏览器窗口或框架的文档</strong>.因此初始全局变量后,页面中所有的脚本语句可通过全局变量名直接访问其值.但是,一旦卸载页面,在页面中定义的所有全局变量都会从内存中清除.假如某个值需要在页面卸载后继续使用,则需要使用其他技术来保存它,比如将它存储为框架集文档中的全局变量,或将它存储在cookie中.</p>
+</li>
+<li><p>如果用<code>var</code>关键字在函数体中初始化了一个与全局变量同名的局部变量,则在函数体中该局部变量比全局变量优先级要高.</p>
+</li>
+</ul>
+<h2 id="数组"><a href="#数组" class="headerlink" title="数组"></a>数组</h2><hr>
+<ul>
+<li><p>创建:<code>var Arr = new Array(100);</code></p>
+</li>
+<li><p>访问:<code>Array[0];</code></p>
+</li>
+</ul>
+<h3 id="数组中的document对象"><a href="#数组中的document对象" class="headerlink" title="数组中的document对象"></a>数组中的document对象</h3><ul>
+<li><p>例如,如果页面包含两个<code>&lt;form&gt;</code>标记对时,在文档中就会出现两组<code>&lt;form&gt;</code>标记.浏览器为文档使用一个from对象数组,对这些表单的引用如下:</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">document.forms[0]</span><br><span class="line">document.forms[1]</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>也可以使用DOM方法<code>getElementByTagName()</code>访问这个数组:</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">var aForms = document.getElementByTagName(&#x27;form&#x27;);</span><br><span class="line">aForms[0]</span><br><span class="line">aForms[1]</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>document对象的下标是由对象的载入顺序决定的,form对象的顺序由文档中<code>&lt;form&gt;</code>标记出现的顺序确定.</p>
+</li>
+</ul>
+
+    </div>
+
+    
+    
+    
+
+      <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/%E0%B9%91FrontEnd/" rel="tag"># ๑FrontEnd</a>
+              <a href="/tags/%E0%B9%91JS/" rel="tag"># ๑JS</a>
+          </div>
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/2019/01/12/JS-learning-01/" rel="prev" title="JavaScript 入门">
+      <i class="fa fa-chevron-left"></i> JavaScript 入门
+    </a></div>
+      <div class="post-nav-item">
+    <a href="/2019/01/15/JS-learning-03/" rel="next" title="JavaScript 对象部分 ">
+      JavaScript 对象部分  <i class="fa fa-chevron-right"></i>
+    </a></div>
+    </div>
+      </footer>
+    
+  </article>
+  
+  
+  
+
+
+
+          </div>
+          
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          Table of Contents
+        </li>
+        <li class="sidebar-nav-overview">
+          Overview
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%B5%8F%E8%A7%88%E5%99%A8%E7%AA%97%E5%8F%A3%E4%B8%AD%E7%9A%84DOM"><span class="nav-number">1.</span> <span class="nav-text">浏览器窗口中的DOM</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%96%87%E6%A1%A3%E7%9A%84%E8%BD%BD%E5%85%A5"><span class="nav-number">2.</span> <span class="nav-text">文档的载入</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%AE%80%E5%8D%95%E6%96%87%E6%A1%A3"><span class="nav-number">2.1.</span> <span class="nav-text">简单文档</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%B7%BB%E5%8A%A0%E6%AE%B5%E8%90%BD"><span class="nav-number">2.2.</span> <span class="nav-text">添加段落</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%94%9F%E6%88%90%E6%96%B0%E5%85%83%E7%B4%A0"><span class="nav-number">2.3.</span> <span class="nav-text">生成新元素</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%AF%B9%E8%B1%A1"><span class="nav-number">3.</span> <span class="nav-text">对象</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%8E%B7%E5%8F%96%E5%AF%B9%E8%B1%A1%E7%9A%84%E5%B1%9E%E6%80%A7"><span class="nav-number">3.1.</span> <span class="nav-text">获取对象的属性</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%96%B9%E6%B3%95"><span class="nav-number">4.</span> <span class="nav-text">方法</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%BA%8B%E4%BB%B6"><span class="nav-number">5.</span> <span class="nav-text">事件</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%8A%8A%E8%84%9A%E6%9C%AC%E9%93%BE%E6%8E%A5%E5%88%B0%E6%96%87%E6%A1%A3%E4%B8%8A"><span class="nav-number">6.</span> <span class="nav-text">把脚本链接到文档上</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#script%E6%A0%87%E8%AE%B0%E7%9A%84%E4%BD%8D%E7%BD%AE"><span class="nav-number">6.1.</span> <span class="nav-text">script标记的位置</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%B3%A8%E9%87%8A"><span class="nav-number">6.2.</span> <span class="nav-text">注释</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%84%9A%E6%9C%AC%E8%AF%AD%E5%8F%A5%E7%9A%84%E6%89%A7%E8%A1%8C%E6%97%B6%E9%97%B4"><span class="nav-number">7.</span> <span class="nav-text">脚本语句的执行时间</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E9%A1%B5%E9%9D%A2%E8%BD%BD%E5%85%A5%E5%90%8E%E6%89%A7%E8%A1%8C"><span class="nav-number">7.1.</span> <span class="nav-text">页面载入后执行</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#JavaScript%E5%80%BC-%E6%95%B0%E6%8D%AE-%E7%B1%BB%E5%9E%8B"><span class="nav-number">8.</span> <span class="nav-text">JavaScript值(数据)类型</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%8F%98%E9%87%8F"><span class="nav-number">9.</span> <span class="nav-text">变量</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%B1%BB%E5%9E%8B%E8%BD%AC%E6%8D%A2"><span class="nav-number">9.1.</span> <span class="nav-text">类型转换</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%B0%86%E5%AD%97%E7%AC%A6%E4%B8%B2%E8%BD%AC%E5%8C%96%E4%B8%BA%E6%95%B0%E5%80%BC"><span class="nav-number">9.1.1.</span> <span class="nav-text">将字符串转化为数值</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%B0%86%E6%95%B0%E5%AD%97%E8%BD%AC%E5%8C%96%E4%B8%BA%E5%AD%97%E7%AC%A6%E4%B8%B2"><span class="nav-number">9.1.2.</span> <span class="nav-text">将数字转化为字符串</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%8E%A7%E5%88%B6%E7%BB%93%E6%9E%84"><span class="nav-number">10.</span> <span class="nav-text">控制结构</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%87%BD%E6%95%B0"><span class="nav-number">11.</span> <span class="nav-text">函数</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%B1%80%E9%83%A8%E5%8F%98%E9%87%8F%E5%92%8C%E5%85%A8%E5%B1%80%E5%8F%98%E9%87%8F"><span class="nav-number">11.1.</span> <span class="nav-text">局部变量和全局变量</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%95%B0%E7%BB%84"><span class="nav-number">12.</span> <span class="nav-text">数组</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%95%B0%E7%BB%84%E4%B8%AD%E7%9A%84document%E5%AF%B9%E8%B1%A1"><span class="nav-number">12.1.</span> <span class="nav-text">数组中的document对象</span></a></li></ol></li></ol></div>
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="Fleschier"
+      src="/images/avatar.gif">
+  <p class="site-author-name" itemprop="name">Fleschier</p>
+  <div class="site-description" itemprop="description">-</div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">67</span>
+          <span class="site-state-item-name">posts</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+            <a href="/categories/">
+          
+        <span class="site-state-item-count">12</span>
+        <span class="site-state-item-name">categories</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+            <a href="/tags/">
+          
+        <span class="site-state-item-count">36</span>
+        <span class="site-state-item-name">tags</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author motion-element">
+      <span class="links-of-author-item">
+        <a href="https://github.com/fleschier" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;fleschier" rel="noopener" target="_blank"><i class="fab fa-github fa-fw"></i>GitHub</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="mailto:fleschierchan@gmail.com" title="E-Mail → mailto:fleschierchan@gmail.com" rel="noopener" target="_blank"><i class="fa fa-envelope fa-fw"></i>E-Mail</a>
+      </span>
+  </div>
+
+
+
+      </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+        
+
+<div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2024</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Fleschier</span>
+</div>
+
+        
+
+
+
+
+
+
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="/lib/anime.min.js"></script>
+  <script src="/lib/velocity/velocity.min.js"></script>
+  <script src="/lib/velocity/velocity.ui.min.js"></script>
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/motion.js"></script>
+
+
+<script src="/js/schemes/muse.js"></script>
+
+
+<script src="/js/next-boot.js"></script>
+
+<script src="/js/bookmark.js"></script>
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+</body>
+</html>

@@ -1,0 +1,589 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 7.3.0">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/all.min.css">
+
+<script id="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"fleschier.github.io","root":"/","scheme":"Mist","version":"7.8.0","exturl":false,"sidebar":{"position":"right","display":"always","padding":18,"offset":12,"onmobile":true},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":true,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
+  </script>
+
+  <meta name="description" content="学习记录">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Ubuntu随笔">
+<meta property="og:url" content="https://fleschier.github.io/2018/04/06/Ubuntu-operation/index.html">
+<meta property="og:site_name" content="Fleschier๑">
+<meta property="og:description" content="学习记录">
+<meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2018-04-06T08:47:00.000Z">
+<meta property="article:modified_time" content="2024-07-25T07:12:35.843Z">
+<meta property="article:author" content="Fleschier">
+<meta property="article:tag" content="๑Ubuntu">
+<meta property="article:tag" content="๑Linux">
+<meta name="twitter:card" content="summary">
+
+<link rel="canonical" href="https://fleschier.github.io/2018/04/06/Ubuntu-operation/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome : false,
+    isPost : true,
+    lang   : 'en'
+  };
+</script>
+
+  <title>Ubuntu随笔 | Fleschier๑</title>
+  
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="Toggle navigation bar">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <h1 class="site-title">Fleschier๑</h1>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+      <p class="site-subtitle" itemprop="description">-</p>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+    </div>
+  </div>
+</div>
+
+
+
+
+<nav class="site-nav">
+  <ul id="menu" class="main-menu menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section"><i class="fa fa-home fa-fw"></i>Home</a>
+
+  </li>
+        <li class="menu-item menu-item-about">
+
+    <a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>About</a>
+
+  </li>
+        <li class="menu-item menu-item-tags">
+
+    <a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>Tags<span class="badge">36</span></a>
+
+  </li>
+        <li class="menu-item menu-item-categories">
+
+    <a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>Categories<span class="badge">12</span></a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>Archives<span class="badge">67</span></a>
+
+  </li>
+  </ul>
+</nav>
+
+
+
+
+</div>
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+  <a role="button" class="book-mark-link book-mark-link-fixed"></a>
+
+  <a href="https://github.com/fleschier" class="github-corner" title="Follow me on GitHub" aria-label="Follow me on GitHub" rel="noopener" target="_blank"><svg width="80" height="80" viewBox="0 0 250 250" aria-hidden="true"><path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path><path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2" fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path><path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z" fill="currentColor" class="octo-body"></path></svg></a>
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content post posts-expand">
+            
+
+    
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
+    <link itemprop="mainEntityOfPage" href="https://fleschier.github.io/2018/04/06/Ubuntu-operation/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="Fleschier">
+      <meta itemprop="description" content="-">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Fleschier๑">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          Ubuntu随笔
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+
+              <time title="Created: 2018-04-06 16:47:00" itemprop="dateCreated datePublished" datetime="2018-04-06T16:47:00+08:00">2018-04-06</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Modified: 2024-07-25 15:12:35" itemprop="dateModified" datetime="2024-07-25T15:12:35+08:00">2024-07-25</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">In</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Computer-System/" itemprop="url" rel="index"><span itemprop="name">Computer System</span></a>
+                </span>
+            </span>
+
+          
+            <div class="post-description">学习记录</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <blockquote>
+<p>不适合人类阅读的备忘笔记</p>
+</blockquote>
+<h2 id="Ubuntu目录结构"><a href="#Ubuntu目录结构" class="headerlink" title="Ubuntu目录结构"></a>Ubuntu目录结构</h2><ul>
+<li><p><code>/</code>:这就是根目录，一台电脑有且只有一个根目录，所有的文件都是从这里开始的。举个例子：当你在终端里输入“&#x2F;home”，你其实是在告诉电脑，先从&#x2F;（根目录）开始，再进入到home目录。</p>
+</li>
+<li><p><code>/root</code>:系统管理员（root user）的目录。至于系统管理员的权限有多大我这里就不在废话了。因此，请小心使用root帐号。</p>
+</li>
+<li><p><code>/boot</code>: 系统启动文件，所有与系统启动有关的文件都保存在这里 。</p>
+</li>
+<li><p><code>/bin</code>: 这里是存放系统的程序。</p>
+</li>
+<li><p><code>/etc</code>:主要存放了系统配置方面的文件。</p>
+</li>
+<li><p><code>/dev</code>:这里主要存放与设备（包括外设）有关的文件（unix和linux系统均把设备当成文件）。想连线打印机吗？系统就是从这个目录开始工作的。另外还有一些包括磁盘驱动、USB驱动等都放在这个目录。</p>
+</li>
+<li><p><code>/home</code>:这里主要存放你的个人数据。具体每个用户的设置文件，用户的桌面文件夹，还有用户的数据都放在这里。每个用户都有自己的用户目录，位置为：&#x2F;home&#x2F;用户名。当然，root用户除外。</p>
+</li>
+<li><p><code>/tmp</code>:这是临时目录。对于某些程序来说，有些文件被用了一次两次之后，就不会再被用到，像这样的文件就放在这里。因此，千万不要把重要的数据放在这里哦。</p>
+</li>
+<li><p><code>/usr</code>:在这个目录下，你可以找到那些不适合放在&#x2F;bin或&#x2F;etc目录下的额外的工具。比如像游戏阿，一些打印工具等等。&#x2F;usr目录包含了许多子目录： &#x2F;usr&#x2F;bin目录用于存放程序；&#x2F;usr&#x2F;share用于存放一些共享的数据，比如音乐文件或者图标等等；&#x2F;usr&#x2F;lib目录用于存放那些不能直接 运行的，但却是许多程序运行所必需的一些函数库文件。你的软件包管理器会自动帮你管理好&#x2F;usr目录的。</p>
+</li>
+<li><p><code>/opt</code>:这里主要存放一些可选的程序。如你想尝试最新的firefox测试版吗？那就装到&#x2F;opt目录下吧，这样，当你尝试完，想删掉firefox的时候，你就 可以直接删除它，而不影响系统其他任何设置。安装到&#x2F;opt目录下的程序，它所有的数据、库文件等等都是放在同个目录下面。</p>
+</li>
+<li><p><code>usr/local</code>:这里主要存放那些手动安装的软件，即不是通过“新立得”或apt-get安装的软件。它和&#x2F;usr目录具有相类似的目录结构。让软件包管理器来管理&#x2F;usr目录，而把自定义的脚本（scripts）放到&#x2F;usr&#x2F;local目录下面。</p>
+</li>
+<li><p><code>/media</code>:这个目录是用来挂载那些usb接口的移动硬盘（包括U盘）、CD&#x2F;DVD驱动器等等。</p>
+</li>
+</ul>
+<h2 id="一些推荐的软件"><a href="#一些推荐的软件" class="headerlink" title="一些推荐的软件"></a>一些推荐的软件</h2><hr>
+<blockquote>
+<p> 一旦出现某个软件没有安装，Linux系统大多数情况下都会提示你怎样安装这个软件，最常用的就是 sudo apt-get install XXX 命令</p>
+</blockquote>
+<ul>
+<li><p>fish! fish! fish!： fish大法好啊，功能强大，自动补全，Ubuntu最好用的软件之一。</p>
+</li>
+<li><p>vim和gedit：这个不用我多说大家都知道，Linux非常好用的编辑软件</p>
+</li>
+<li><p><a target="_blank" rel="noopener" href="https://atom.io/">atom</a>  &#x2F;&#x2F;集成许多功能于一体的编辑器</p>
+</li>
+<li><p><a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/24802058">SpaceVim</a>模块化Vim-IDE。<a target="_blank" rel="noopener" href="https://spacevim.org/cn/documentation/">使用手册</a></p>
+</li>
+<li><p>gnome 桌面： 装了gnome桌面和它的一系列插件之后我才真正感受到了Ubuntu的魅力！（教程以及主题百度很多）</p>
+</li>
+<li><p>docky: 一款mac风格的dock,删除图标直接拉出去(sudo apt-get install docky)</p>
+</li>
+<li><p>tweak-tool: 与gnome桌面对应的是tweak-tool(sudo apt install unity-tweak-tool)</p>
+</li>
+<li><p>yakuake : 可以从上方一键滑出和滑入的终端（滑出时强制窗口在最前端）（gnome中也有类似功能的插件，两个选一个即可）</p>
+</li>
+<li><p>Moeditor: Ubuntu下界面简洁美观，功能强大的markdown格式文件编辑器，已经在github上开源</p>
+</li>
+<li><p>processon： 一个网页上的设计工具，可以很简单地完成诸如流程图的设计和生成图片文件。</p>
+</li>
+</ul>
+<h2 id="一些注意点"><a href="#一些注意点" class="headerlink" title="一些注意点"></a>一些注意点</h2><hr>
+<ul>
+<li><p><strong>F11键可以进入全屏模式</strong></p>
+</li>
+<li><p>触摸板双击之后再移动就相当于长按鼠标左键的效果了</p>
+</li>
+<li><p>在Ubuntu终端窗口中，复制粘贴的快捷键需要加上 shift，即粘贴是 ctrl+shift+v。</p>
+</li>
+<li><p>ssh <a href="mailto:&#x63;&#121;&#x78;&#64;&#x31;&#57;&#50;&#46;&#49;&#x36;&#56;&#46;&#x31;&#x2e;&#50;&#48;&#x31;">&#x63;&#121;&#x78;&#64;&#x31;&#57;&#50;&#46;&#49;&#x36;&#56;&#46;&#x31;&#x2e;&#50;&#48;&#x31;</a> cyx  高性能服务器  WIFI:sklcc_slave</p>
+</li>
+<li><p>192.168.1.201:18080</p>
+</li>
+<li><p>192.168.1.201:18088 进程</p>
+</li>
+<li><p>192.168.1.201:50070 hdfs</p>
+</li>
+</ul>
+<h3 id="关于添加Ubuntu的本地ssh-key与github相关联"><a href="#关于添加Ubuntu的本地ssh-key与github相关联" class="headerlink" title="关于添加Ubuntu的本地ssh-key与github相关联"></a>关于添加Ubuntu的本地ssh-key与github相关联</h3><ul>
+<li><p>首先检测本地有没有安装ssh  <code>终端输入ssh</code></p>
+</li>
+<li><p>然后终端执行<code>ssh-kengen -t rsa</code>，连续三次默认回车就行。接着 ~&#x2F;.ssh目录下就会多出来两个文件：<code>id_rsa</code>和<code>id_rsa.pub</code></p>
+</li>
+<li><p>接着只要在github上添加<code>id_rsa.pub</code>这个key就行了。在github的setting中，找到sshkey一栏，选择new key，将<code>id_rsa.pub</code>的文件内容复制到里面，随便起个title即可。</p>
+</li>
+</ul>
+<h3 id="关于挂载本地的卷到Ubuntu"><a href="#关于挂载本地的卷到Ubuntu" class="headerlink" title="关于挂载本地的卷到Ubuntu"></a>关于挂载本地的卷到Ubuntu</h3><ul>
+<li><p>使用<code>mount /dev/卷名  /挂载点</code>   &#x2F;&#x2F;将某个卷挂载到某个文件目录下，该卷就可以在这个文件目录下访问了。</p>
+</li>
+<li><p>Ubuntu中，所有的硬件设备都是作为文件存储的，这一点与Windows不同。</p>
+</li>
+</ul>
+<h3 id="关于桌面快捷方式的创建"><a href="#关于桌面快捷方式的创建" class="headerlink" title="关于桌面快捷方式的创建"></a>关于桌面快捷方式的创建</h3><ul>
+<li><p>方法一：进入 &#x2F;usr&#x2F;share&#x2F;applications&#x2F; 目录，里面会有<strong>绝大多数</strong>你安装的软件的 .desktop文件，只需要把你需要的软件的 .desktop文件复制到home目录下的 桌面文件夹里即可。</p>
+</li>
+<li><p>方法二： 有点蠢但是很简单的一个方法。对于那些没有安装直接可以使用的软件，我们在上个方法中提到的文件夹里是找不到 .desktop文件的。怎么办呢？我们只需要进入我们那个软件的目录，找到启动文件，创建一个它的链接文件（右键还是终端随意），然后将这个链接文件复制到桌面，改下名字即可。虽然和简单，但是缺点是没有图标….身为一个外观党还是有点难以接受的…</p>
+</li>
+<li><p>方法三：就是自己写一个.desktop文件，这里举例我写的Moeditor的桌面文件：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">//首先终端切到桌面</span><br><span class="line">vim Moeditor.desktop</span><br><span class="line">//然后输入如下内容</span><br><span class="line">[Desktop Entry]</span><br><span class="line">Version=1.0</span><br><span class="line">Type=Application</span><br><span class="line">Name=Moeditor</span><br><span class="line">GenericName=Moeditor</span><br><span class="line">Comment=editor for markdown</span><br><span class="line">Exec=/home/fleshier/Programe\ Files/Moeditor-linux-x64/Moeditor %F  //文件启动器的路径</span><br><span class="line">Terminal=false</span><br><span class="line">Icon=/home/fleshier/Programe\ Files/Images/icons/g10.png  //图标的路径</span><br><span class="line">StartupNotify=true</span><br><span class="line">Actions=Window;</span><br><span class="line">//空行</span><br><span class="line">[Desktop Action Window]</span><br><span class="line">Name=New Window</span><br><span class="line">Exec=/home/fleshier/Programe\ Files/Moeditor-linux-x64/Moeditor -n</span><br><span class="line">OnlyShowIn=Unity;</span><br></pre></td></tr></table></figure></li>
+<li><p>保存之后执行 <code>chmod a+x filename</code> 改变执行权限即可运行</p>
+</li>
+<li><p>实际写的时候要把注释删除掉，不然会出错。</p>
+</li>
+</ul>
+<h3 id="关于shell脚本的创建"><a href="#关于shell脚本的创建" class="headerlink" title="关于shell脚本的创建"></a>关于shell脚本的创建</h3><ul>
+<li><p>首先可以touch一个文件再进行内容的修改。或者直接<code>vim filename</code>新建一个文件并进行内容的编辑</p>
+</li>
+<li><p>所有shell脚本本质上都是文本文件，命名格式为<code>filename.sh</code>,内容必须以<code>#!/bin/bash</code>为第一行，当中没有空格。</p>
+</li>
+<li><p>事实上，这个#!字符序列是一种特殊的结构叫做 shebang。 这个 shebang 被用来告诉操作系统将执行此脚本所用的解释器的名字。每个 shell 脚本都应该把这一文本行作为它的第一行。</p>
+</li>
+<li><p>示例写法：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">#!/bin/bash</span><br><span class="line">#This is a test script!    #本句是一个注释，&#x27;#&#x27;号之后的字符都会被忽略</span><br><span class="line">echo &#x27;Hello World!&#x27;  #本句会在终端中打印 &quot;Hello World!&quot;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>然后在终端中执行： <code>chmod +x filename.sh</code> 为这个脚本文件添加可执行权限</p>
+</li>
+<li><p>或者使用另外一个更改权限的写法：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">[me@linuxbox ~]$ ll hello_world</span><br><span class="line">-rw-r--r-- 1  me    me      63  2009-03-07 10:10 hello_world</span><br><span class="line">[me@linuxbox ~]$ chmod 755 hello_world</span><br><span class="line">[me@linuxbox ~]$ ll hello_world</span><br><span class="line">-rwxr-xr-x 1  me    me      63  2009-03-07 10:10 hello_world</span><br></pre></td></tr></table></figure>
+<p>对于脚本文件，有两个常见的权限设置：权限为755的脚本，则每个人都能执行，权限为700的 脚本，只有文件所有者能够执行。注意为了能够执行脚本，脚本必须是可读的。</p>
+</li>
+<li><p>最后是运行脚本，终端进入脚本所在文件夹，输入： <code>./filename.sh</code></p>
+</li>
+</ul>
+<h2 id="Linux中添加环境变量的方法"><a href="#Linux中添加环境变量的方法" class="headerlink" title="Linux中添加环境变量的方法"></a>Linux中添加环境变量的方法</h2><blockquote>
+<p>$PATH：决定了shell将到哪些目录中寻找命令或程序，PATH的值是一系列目录，当您运行一个程序时，Linux在这些目录下进行搜寻编译链接。</p>
+</blockquote>
+<ul>
+<li><p>为什么要添加环境变量呢？如果你在Linux下载了一个免安装的软件，你要启动它的话，要么创建一个桌面快捷方式（方法见上文），要么就是每次进入它的目录点开。这时候如果我们把它添加进了PATH环境变量，那么我们只需要在终端中输入这个软件的名字，回车，就可以启动它了。</p>
+</li>
+<li><p>方法一：修改profile文件（<strong>注意：一定要切换到root用户，一定要切换到root用户，一定要切换到root用户(sudo su)! ! ! !</strong> 否则最后保存文件会一直被拒绝又退不出去只能强退终端…可能还会有其他一些麻烦事…总之有的爽呢…） &#x2F;&#x2F;对所有用户永久生效</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">(root模式下执行) vim /etc/profile</span><br><span class="line">在文档最后加入一行:</span><br><span class="line">export PATH=$PATH: 软件的启动脚本文件所在的**绝对路径**&quot;</span><br><span class="line">(一般都是 /.../bin目录)</span><br><span class="line">退出修改后在root模式下执行： source /etc/profile</span><br><span class="line">或者重启</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>spark-shell的路径写法例子：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">export SPARK_HOME=/usr/lib/spark/spark-2.2.0-bin-hadoop2.7</span><br><span class="line">export PATH=$&#123;SPARK_HOME&#125;/bin:$PATH</span><br></pre></td></tr></table></figure>
+</li>
+<li><p><em>使用source命令时要关闭fish，否则会报错</em></p>
+</li>
+<li><p>方法二：修改.bashrc文件（注意点同上）&#x2F;&#x2F;仅对当前用户永久生效</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">(root模式下执行)vi /root/.bashrc</span><br><span class="line">在文档最后加入一行：</span><br><span class="line">export PATH=$PATH: 软件的启动脚本文件所在的**绝对路径**&quot;</span><br><span class="line">退出修改后在root模式下执行： source /root/.bashrc</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>这两种方法最后的source语句就是让系统重新读取文件使之生效，没有写最后一句source的话，会在下次启动系统后生效</p>
+</li>
+</ul>
+<h2 id="分布式文件系统-HDFS"><a href="#分布式文件系统-HDFS" class="headerlink" title="分布式文件系统(HDFS)"></a>分布式文件系统(HDFS)</h2><ul>
+<li><p><strong>注意，分布式文件系统中没有切换到某个目录下的概念，因为其文件全是分散在各个节点上的</strong></p>
+</li>
+<li><p>分布式文件系统的文件路径完整格式为 <code>hdfs://namenode|master:编号/root/...</code></p>
+</li>
+<li><p>例如：<code>hdfs://master:8020/dataset/evaluation/bots_10m_10.csv</code></p>
+</li>
+<li><p><code>hdfs dfs -ls  /...</code>显示分布式文件系统中某个目录（实际并不存在，只是逻辑上的）下的文件</p>
+</li>
+<li><p><code>hdfs dfs -rm -r file|directory</code> 删除某个文件</p>
+</li>
+<li><p>附<a target="_blank" rel="noopener" href="https://github.com/wsdjeg/vim-galore-zh_cn">vim教程</a></p>
+</li>
+</ul>
+<br>
+
+<blockquote>
+<p>最后更新于2018.4.19</p>
+</blockquote>
+
+    </div>
+
+    
+    
+    
+
+      <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/%E0%B9%91Ubuntu/" rel="tag"># ๑Ubuntu</a>
+              <a href="/tags/%E0%B9%91Linux/" rel="tag"># ๑Linux</a>
+          </div>
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/2018/04/06/Ubuntu-order/" rel="prev" title="Ubuntu终端常用命令">
+      <i class="fa fa-chevron-left"></i> Ubuntu终端常用命令
+    </a></div>
+      <div class="post-nav-item">
+    <a href="/2018/04/06/Scala-superior/" rel="next" title="Scala学习笔记——进阶">
+      Scala学习笔记——进阶 <i class="fa fa-chevron-right"></i>
+    </a></div>
+    </div>
+      </footer>
+    
+  </article>
+  
+  
+  
+
+
+
+          </div>
+          
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          Table of Contents
+        </li>
+        <li class="sidebar-nav-overview">
+          Overview
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Ubuntu%E7%9B%AE%E5%BD%95%E7%BB%93%E6%9E%84"><span class="nav-number">1.</span> <span class="nav-text">Ubuntu目录结构</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%B8%80%E4%BA%9B%E6%8E%A8%E8%8D%90%E7%9A%84%E8%BD%AF%E4%BB%B6"><span class="nav-number">2.</span> <span class="nav-text">一些推荐的软件</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%B8%80%E4%BA%9B%E6%B3%A8%E6%84%8F%E7%82%B9"><span class="nav-number">3.</span> <span class="nav-text">一些注意点</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%85%B3%E4%BA%8E%E6%B7%BB%E5%8A%A0Ubuntu%E7%9A%84%E6%9C%AC%E5%9C%B0ssh-key%E4%B8%8Egithub%E7%9B%B8%E5%85%B3%E8%81%94"><span class="nav-number">3.1.</span> <span class="nav-text">关于添加Ubuntu的本地ssh-key与github相关联</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%85%B3%E4%BA%8E%E6%8C%82%E8%BD%BD%E6%9C%AC%E5%9C%B0%E7%9A%84%E5%8D%B7%E5%88%B0Ubuntu"><span class="nav-number">3.2.</span> <span class="nav-text">关于挂载本地的卷到Ubuntu</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%85%B3%E4%BA%8E%E6%A1%8C%E9%9D%A2%E5%BF%AB%E6%8D%B7%E6%96%B9%E5%BC%8F%E7%9A%84%E5%88%9B%E5%BB%BA"><span class="nav-number">3.3.</span> <span class="nav-text">关于桌面快捷方式的创建</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%85%B3%E4%BA%8Eshell%E8%84%9A%E6%9C%AC%E7%9A%84%E5%88%9B%E5%BB%BA"><span class="nav-number">3.4.</span> <span class="nav-text">关于shell脚本的创建</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Linux%E4%B8%AD%E6%B7%BB%E5%8A%A0%E7%8E%AF%E5%A2%83%E5%8F%98%E9%87%8F%E7%9A%84%E6%96%B9%E6%B3%95"><span class="nav-number">4.</span> <span class="nav-text">Linux中添加环境变量的方法</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%88%86%E5%B8%83%E5%BC%8F%E6%96%87%E4%BB%B6%E7%B3%BB%E7%BB%9F-HDFS"><span class="nav-number">5.</span> <span class="nav-text">分布式文件系统(HDFS)</span></a></li></ol></div>
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="Fleschier"
+      src="/images/avatar.gif">
+  <p class="site-author-name" itemprop="name">Fleschier</p>
+  <div class="site-description" itemprop="description">-</div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">67</span>
+          <span class="site-state-item-name">posts</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+            <a href="/categories/">
+          
+        <span class="site-state-item-count">12</span>
+        <span class="site-state-item-name">categories</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+            <a href="/tags/">
+          
+        <span class="site-state-item-count">36</span>
+        <span class="site-state-item-name">tags</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author motion-element">
+      <span class="links-of-author-item">
+        <a href="https://github.com/fleschier" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;fleschier" rel="noopener" target="_blank"><i class="fab fa-github fa-fw"></i>GitHub</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="mailto:fleschierchan@gmail.com" title="E-Mail → mailto:fleschierchan@gmail.com" rel="noopener" target="_blank"><i class="fa fa-envelope fa-fw"></i>E-Mail</a>
+      </span>
+  </div>
+
+
+
+      </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+        
+
+<div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2024</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Fleschier</span>
+</div>
+
+        
+
+
+
+
+
+
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="/lib/anime.min.js"></script>
+  <script src="/lib/velocity/velocity.min.js"></script>
+  <script src="/lib/velocity/velocity.ui.min.js"></script>
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/motion.js"></script>
+
+
+<script src="/js/schemes/muse.js"></script>
+
+
+<script src="/js/next-boot.js"></script>
+
+<script src="/js/bookmark.js"></script>
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+</body>
+</html>

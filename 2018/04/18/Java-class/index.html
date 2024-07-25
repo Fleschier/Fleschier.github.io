@@ -1,0 +1,603 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 7.3.0">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/all.min.css">
+
+<script id="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"fleschier.github.io","root":"/","scheme":"Mist","version":"7.8.0","exturl":false,"sidebar":{"position":"right","display":"always","padding":18,"offset":12,"onmobile":true},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":true,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
+  </script>
+
+  <meta name="description" content="学习记录">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Java学习笔记——类与继承">
+<meta property="og:url" content="https://fleschier.github.io/2018/04/18/Java-class/index.html">
+<meta property="og:site_name" content="Fleschier๑">
+<meta property="og:description" content="学习记录">
+<meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2018-04-18T08:47:00.000Z">
+<meta property="article:modified_time" content="2024-07-25T07:09:54.355Z">
+<meta property="article:author" content="Fleschier">
+<meta property="article:tag" content="๑Java">
+<meta name="twitter:card" content="summary">
+
+<link rel="canonical" href="https://fleschier.github.io/2018/04/18/Java-class/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome : false,
+    isPost : true,
+    lang   : 'en'
+  };
+</script>
+
+  <title>Java学习笔记——类与继承 | Fleschier๑</title>
+  
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="Toggle navigation bar">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <h1 class="site-title">Fleschier๑</h1>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+      <p class="site-subtitle" itemprop="description">-</p>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+    </div>
+  </div>
+</div>
+
+
+
+
+<nav class="site-nav">
+  <ul id="menu" class="main-menu menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section"><i class="fa fa-home fa-fw"></i>Home</a>
+
+  </li>
+        <li class="menu-item menu-item-about">
+
+    <a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>About</a>
+
+  </li>
+        <li class="menu-item menu-item-tags">
+
+    <a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>Tags<span class="badge">36</span></a>
+
+  </li>
+        <li class="menu-item menu-item-categories">
+
+    <a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>Categories<span class="badge">12</span></a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>Archives<span class="badge">67</span></a>
+
+  </li>
+  </ul>
+</nav>
+
+
+
+
+</div>
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+  <a role="button" class="book-mark-link book-mark-link-fixed"></a>
+
+  <a href="https://github.com/fleschier" class="github-corner" title="Follow me on GitHub" aria-label="Follow me on GitHub" rel="noopener" target="_blank"><svg width="80" height="80" viewBox="0 0 250 250" aria-hidden="true"><path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path><path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2" fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path><path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z" fill="currentColor" class="octo-body"></path></svg></a>
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content post posts-expand">
+            
+
+    
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
+    <link itemprop="mainEntityOfPage" href="https://fleschier.github.io/2018/04/18/Java-class/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="Fleschier">
+      <meta itemprop="description" content="-">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Fleschier๑">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          Java学习笔记——类与继承
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+
+              <time title="Created: 2018-04-18 16:47:00" itemprop="dateCreated datePublished" datetime="2018-04-18T16:47:00+08:00">2018-04-18</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Modified: 2024-07-25 15:09:54" itemprop="dateModified" datetime="2024-07-25T15:09:54+08:00">2024-07-25</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">In</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Computer-Programs/" itemprop="url" rel="index"><span itemprop="name">Computer Programs</span></a>
+                </span>
+            </span>
+
+          
+            <div class="post-description">学习记录</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <blockquote>
+<p>不适合人类阅读的学习笔记</p>
+</blockquote>
+<h2 id="Java的类，继承与接口"><a href="#Java的类，继承与接口" class="headerlink" title="Java的类，继承与接口"></a>Java的类，继承与接口</h2><hr>
+<h3 id="类的定义"><a href="#类的定义" class="headerlink" title="类的定义"></a>类的定义</h3><ul>
+<li><p>类的修饰符有两种：public 和 缺省。public表示共有的访问级别，即任何类都可以访问它。缺省只允许同一个包中的类来访问它。</p>
+</li>
+<li><p>类的类型修饰符：缺省、abstract及final三种。abstract表示这是一个抽象类，<strong>有些方法</strong> 还没有实现。final表示这是一个最终类，不能被其他的类继承。</p>
+</li>
+<li><p><em>类是对象的模板，对象是类的实例化</em></p>
+</li>
+</ul>
+<h4 id="一个类可以包含以下类型变量"><a href="#一个类可以包含以下类型变量" class="headerlink" title="一个类可以包含以下类型变量"></a>一个类可以包含以下类型变量</h4><ul>
+<li><p>局部变量：在方法、构造方法或者语句块中定义的变量被称为局部变量。变量声明和初始化都是在方法中，方法结束后，变量就会自动销毁。</p>
+</li>
+<li><p>成员变量：成员变量是定义在类中，方法体之外的变量。这种变量在创建对象的时候实例化。成员变量可以被类中方法、构造方法和特定类的语句块访问。</p>
+</li>
+<li><p><strong>类变量</strong>：类变量也声明在类中，方法体之外，但必须声明为static类型。（<strong>同C++中的静态变量</strong>）</p>
+</li>
+<li><p>最终变量：即<strong>常量</strong>，用final关键字修饰。一般与static关键字连用，例如定义PI、E等。</p>
+</li>
+<li><p>默认构造函数：java的类与C++一样可以写默认构造参数，格式也与C++一样，没有返回值，函数名与类名相同。有参数的构造函数也一样。</p>
+</li>
+</ul>
+<h3 id="源文件声明规则"><a href="#源文件声明规则" class="headerlink" title="源文件声明规则"></a>源文件声明规则</h3><ul>
+<li><p>一个源文件中只能有一个public类</p>
+</li>
+<li><p>一个源文件可以有多个非public类</p>
+</li>
+<li><p>源文件的名称应该和public类的类名保持一致。例如：源文件中public类的类名是Employee，那么源文件应该命名为Employee.java。</p>
+</li>
+<li><p>如果一个类定义在某个包中，那么package语句应该在源文件的首行。</p>
+</li>
+<li><p>如果源文件包含import语句，那么应该放在package语句和类定义之间。如果没有package语句，那么import语句应该在源文件中最前面。<br>import语句和package语句对源文件中定义的所有类都有效。在同一源文件中，不能给不同的类不同的包声明。</p>
+</li>
+<li><p>类有若干种访问级别，并且类也分不同的类型：抽象类和final类等。这些将在访问控制章节介绍。</p>
+</li>
+<li><p>除了上面提到的几种类型，Java还有一些特殊的类，如：内部类、匿名类。</p>
+</li>
+</ul>
+<h2 id="对象"><a href="#对象" class="headerlink" title="对象"></a>对象</h2><h3 id="对象的引用"><a href="#对象的引用" class="headerlink" title="对象的引用"></a>对象的引用</h3><ul>
+<li><p>创建对象后，可以将对象的引用赋值给其他对象变量。</p>
+</li>
+<li><p>例如下面的程序</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">public class test&#123;</span><br><span class="line">	public static void main(String[] args)&#123;</span><br><span class="line">		StringBuffer s;</span><br><span class="line">		s= new StringBuffer(&quot;AAAAA&quot;);</span><br><span class="line">		StringBuffer s1 = s; //此句会使得s1和s指向同一个对象</span><br><span class="line">		s1.append(&quot;BBBB&quot;);</span><br><span class="line">		Syetem.out.println(&quot;s = &quot; + s.toString());</span><br><span class="line">		Syetem.out.println(&quot;s1 = &quot; + s1.toString());</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></li>
+<li><p>输出结果为：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">s = AAAAABBBB</span><br><span class="line">s1 = AAAAABBBB</span><br></pre></td></tr></table></figure></li>
+</ul>
+<h3 id="方法参数传递"><a href="#方法参数传递" class="headerlink" title="方法参数传递"></a>方法参数传递</h3><h4 id="按值传递-一般的函数参数"><a href="#按值传递-一般的函数参数" class="headerlink" title="按值传递(一般的函数参数)"></a>按值传递(一般的函数参数)</h4><ul>
+<li>传入方法中的参数是一份拷贝，对其的修改不会影响其本身<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">class Printer&#123;</span><br><span class="line">	public void printinfo(String name, int age)&#123;</span><br><span class="line">		age ++;</span><br><span class="line">		System.out.println(&quot;Hello! My name is&quot; + name + &quot;and I&#x27;m &quot; + age);</span><br><span class="line">	&#125;</span><br><span class="line">	public static void main(String args[])&#123;</span><br><span class="line">		Printer p = new Printer();</span><br><span class="line">		int age = 20;</span><br><span class="line">		p.printinfo(&quot;Mike&quot;,age);</span><br><span class="line">		System.out.println(&quot;Now the initial age = &quot; + age);</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></li>
+</ul>
+<h4 id="按引用传递"><a href="#按引用传递" class="headerlink" title="按引用传递"></a>按引用传递</h4><ul>
+<li>调用方法时，<strong>如果传递的是一个对象、接口或数组时</strong>，实际上传递的是对象的、接口或者数组的引用。因此如果方法中对参数进行了修改，那么原来的数据也会受到影响。</li>
+</ul>
+<h2 id="继承"><a href="#继承" class="headerlink" title="继承"></a>继承</h2><ul>
+<li>类的继承格式：<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">class 父类&#123;</span><br><span class="line">	...</span><br><span class="line">&#125;</span><br><span class="line">class 子类 extends 父类&#123;</span><br><span class="line">	...</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></li>
+</ul>
+<h3 id="继承的特性"><a href="#继承的特性" class="headerlink" title="继承的特性"></a>继承的特性</h3><ul>
+<li><p>子类拥有父类非private的属性，方法。</p>
+</li>
+<li><p>子类可以拥有自己的属性和方法，即子类可以对父类进行扩展。</p>
+</li>
+<li><p>子类可以用自己的方式实现父类的方法。</p>
+</li>
+<li><p>Java的继承是单继承，但是可以多重继承，java的多继承通过接口来实现。</p>
+</li>
+<li><p><strong>关键字super和this在java的类中分别可以指代父类和类本身。</strong></p>
+</li>
+</ul>
+<h2 id="多继承的实现"><a href="#多继承的实现" class="headerlink" title="多继承的实现"></a>多继承的实现</h2><hr>
+<h3 id="抽象类"><a href="#抽象类" class="headerlink" title="抽象类"></a>抽象类</h3><ul>
+<li><p>抽象类的定义：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">[访问修饰符] &lt;abstract&gt; class &lt;类名&gt;&#123;</span><br><span class="line">	[成员变量声明]</span><br><span class="line">	[方法定义]</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></li>
+<li><p>抽象方法的定义：抽象方法是指只有声明而没有实现方法，用abstract修饰，一般格式如下：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">[访问修饰符] &lt;abstract&gt; 返回类型 方法名(参数列表);</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>注意抽象类不能定义为final类，因为抽象类不能实例化。抽象方法也不能声明为final方法，因为要在子类中实现该抽象方法。</p>
+</blockquote>
+</li>
+<li><p><strong>抽象类不能被实例化，实例化的工作应该交由它的子类来完成</strong>，它只需要有一个引用即可。</p>
+</li>
+<li><p>抽象方法必须由子类来进行重写。</p>
+</li>
+<li><p><strong>只要包含了抽象方法的类，该类必须要定义成抽象类，不管是否还包含有其他已经实现了的方法</strong>。</p>
+</li>
+<li><p>抽象类中可以包含具体的方法，<strong>当然也可以不包含抽象方法</strong>。</p>
+</li>
+<li><p>子类中的抽象方法不能与父类的抽象方法同名。</p>
+</li>
+<li><p>abstract 不能与private、static、final或native并列修饰同一个方法。</p>
+</li>
+</ul>
+<h3 id="接口"><a href="#接口" class="headerlink" title="接口"></a>接口</h3><ul>
+<li><p>接口用interface来定义</p>
+</li>
+<li><p><strong>抽象类是对类抽象，而接口是对行为的抽象</strong>。</p>
+</li>
+<li><p>接口中可以定义“成员变量”，或者说是不可变的常量，因为接口中的“成员变量”会自动变为为public static final。可以通过类命名直接访问：ImplementClass.name</p>
+</li>
+<li><p>接口实质也是一个抽象类，但与抽象类不同的是<strong>接口中只能包含常量的定义和方法的声明</strong>。接口只关心功能，而不关心功能的具体实现。</p>
+</li>
+<li><p><strong>接口中的常量在声明时必须对它赋初始值</strong>。</p>
+</li>
+<li><p>一般的继承使用extends作为关键字，只能单继承。接口使用implements作为关键字。可以接受多继承。</p>
+</li>
+<li><p>接口是抽象类的延伸，java了保证数据安全是不能多重继承的，也就是说继承只能存在一个父类，但是接口不同，一个类可以同时实现多个接口，不管这些接口之间有没有关系，所以接口弥补了抽象类不能多重继承的缺陷。</p>
+</li>
+<li><p>接口是用来建立类与类之间的协议，它所提供的只是一种形式，而没有具体的实现。同时实现该接口的实现类必须要实现该接口的所有方法，通过使用implements关键字，他表示该类在遵循某个或某组特定的接口。</p>
+</li>
+<li><p>接口的使用格式：<br> <code>[访问修饰符][类型修饰符] class 类名 implements 接口名1,接口名2,......</code></p>
+</li>
+<li><p>一个类如果继承了某个接口，那么它就要实现这个接口的所有方法，否则这个类要定义为抽象类。</p>
+<blockquote>
+<p>需要注意的是，接口中的方法默认是public，所以在类中实现接口时，必须使用public来修饰方法。如果接口中某个方法返回为void，则在类中实现该方法时，方法体可以为空，即只有两个大括号。</p>
+</blockquote>
+</li>
+<li><p>接口使用示例：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">interface Computable&#123;</span><br><span class="line">	final int x = 10;</span><br><span class="line">	int add();</span><br><span class="line">	void point();</span><br><span class="line">&#125;</span><br><span class="line">class TESt implements Computable&#123;</span><br><span class="line">	private int y;</span><br><span class="line">	public TEST(int y)&#123;</span><br><span class="line">		this.y = y;</span><br><span class="line">	&#125;</span><br><span class="line">	public int add()&#123; //实现抽象方法时添加public 和 return 语句</span><br><span class="line">		return x + y;</span><br><span class="line">	&#125;</span><br><span class="line">	public void print()&#123;&#125; //返回类型为void方法体可以留空</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>接口之间也可以继承，用关键字extends，但是一个接口可以同时extends多个接口，之间以逗号间隔。</p>
+<blockquote>
+<p>如果一个接口继承了别的几个接口，那么实现这个接口的类同时也要实现被这个接口继承的几个接口的所有方法。</p>
+</blockquote>
+</li>
+</ul>
+<h2 id="Java中预定义的注释"><a href="#Java中预定义的注释" class="headerlink" title="Java中预定义的注释"></a>Java中预定义的注释</h2><hr>
+<ul>
+<li><p>形如 <code>@Override</code>等等在类方法之前的修饰就是预定义注释</p>
+</li>
+<li><p>预定义注释不仅仅是给人看的，编译器也会读取，会有相应的约束</p>
+</li>
+<li><p>预定义注释一共分为三种：<code>Override、Deprecated和SuppressWarnings </code></p>
+</li>
+<li><p>我们平常一般 <strong>只会用到第一个</strong>，后两个对于我们没有太多的用处。</p>
+</li>
+</ul>
+<h3 id="Override"><a href="#Override" class="headerlink" title="Override"></a>Override</h3><ul>
+<li><p>这个注释的作用是标识某一个方法是否覆盖了它的父类的方法。</p>
+</li>
+<li><p>如果加了这个标识，那么这个类方法则必须要覆盖父类的同名方法，即被Override注释的方法必须在父类中存在同样的方法程序才能编译通过。</p>
+</li>
+<li><p>这样做的目的是，防止在子类中覆写父类的方法时，写错方法名导致最后子类的实例对象调用的还是父类的方法，这样就可能产生bug。</p>
+</li>
+</ul>
+<h3 id="Deprecated"><a href="#Deprecated" class="headerlink" title="Deprecated"></a>Deprecated</h3><ul>
+<li><p>这个对类方法的注释主要是开发者用的。</p>
+</li>
+<li><p>这个注释不会产生什么实际的影响，但是被这个注释过的类方法如果被使用到的话，在编译时就会留下一些warning，警告内容是：这个方法现在还能用，但是下面版本的java可能会将它删除，也就是不推荐继续使用这个方法。</p>
+</li>
+<li><p>出现如下警告：</p>
+</li>
+</ul>
+<blockquote>
+<p>   注意：test.java 使用或覆盖了已过时的 API。</p>
+</blockquote>
+<blockquote>
+<p>   注意：要了解详细信息，请使用 -Xlint:deprecation 重新编译</p>
+</blockquote>
+<blockquote>
+<p>   使用-Xlint:deprecation显示更详细的警告信息： …..</p>
+</blockquote>
+<h3 id="SuppressWarnings"><a href="#SuppressWarnings" class="headerlink" title="SuppressWarnings"></a>SuppressWarnings</h3><ul>
+<li><p>这个世界的事物总是成对出现。即然有使编译器产生警告信息的，那么就有抑制编译器产生警告信息的。 SuppressWarnings注释就是为了这样一个目的而存在的。</p>
+</li>
+<li><p>这个注释可以抑制编译器产生一些警告信息。</p>
+</li>
+</ul>
+<h3 id="用户自定义注释"><a href="#用户自定义注释" class="headerlink" title="用户自定义注释"></a>用户自定义注释</h3><ul>
+<li>详细了解——<a target="_blank" rel="noopener" href="https://blog.csdn.net/softwave/article/details/6991913">博客</a></li>
+</ul>
+<br>
+> 最后更新于2018.6.15
+
+    </div>
+
+    
+    
+    
+
+      <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/%E0%B9%91Java/" rel="tag"># ๑Java</a>
+          </div>
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/2018/04/18/Java-function/" rel="prev" title="Java学习笔记——方法">
+      <i class="fa fa-chevron-left"></i> Java学习笔记——方法
+    </a></div>
+      <div class="post-nav-item">
+    <a href="/2018/04/29/Python-superior/" rel="next" title="Python学习笔记——进阶">
+      Python学习笔记——进阶 <i class="fa fa-chevron-right"></i>
+    </a></div>
+    </div>
+      </footer>
+    
+  </article>
+  
+  
+  
+
+
+
+          </div>
+          
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          Table of Contents
+        </li>
+        <li class="sidebar-nav-overview">
+          Overview
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Java%E7%9A%84%E7%B1%BB%EF%BC%8C%E7%BB%A7%E6%89%BF%E4%B8%8E%E6%8E%A5%E5%8F%A3"><span class="nav-number">1.</span> <span class="nav-text">Java的类，继承与接口</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%B1%BB%E7%9A%84%E5%AE%9A%E4%B9%89"><span class="nav-number">1.1.</span> <span class="nav-text">类的定义</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E4%B8%80%E4%B8%AA%E7%B1%BB%E5%8F%AF%E4%BB%A5%E5%8C%85%E5%90%AB%E4%BB%A5%E4%B8%8B%E7%B1%BB%E5%9E%8B%E5%8F%98%E9%87%8F"><span class="nav-number">1.1.1.</span> <span class="nav-text">一个类可以包含以下类型变量</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%BA%90%E6%96%87%E4%BB%B6%E5%A3%B0%E6%98%8E%E8%A7%84%E5%88%99"><span class="nav-number">1.2.</span> <span class="nav-text">源文件声明规则</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%AF%B9%E8%B1%A1"><span class="nav-number">2.</span> <span class="nav-text">对象</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%AF%B9%E8%B1%A1%E7%9A%84%E5%BC%95%E7%94%A8"><span class="nav-number">2.1.</span> <span class="nav-text">对象的引用</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%96%B9%E6%B3%95%E5%8F%82%E6%95%B0%E4%BC%A0%E9%80%92"><span class="nav-number">2.2.</span> <span class="nav-text">方法参数传递</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E6%8C%89%E5%80%BC%E4%BC%A0%E9%80%92-%E4%B8%80%E8%88%AC%E7%9A%84%E5%87%BD%E6%95%B0%E5%8F%82%E6%95%B0"><span class="nav-number">2.2.1.</span> <span class="nav-text">按值传递(一般的函数参数)</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E6%8C%89%E5%BC%95%E7%94%A8%E4%BC%A0%E9%80%92"><span class="nav-number">2.2.2.</span> <span class="nav-text">按引用传递</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%BB%A7%E6%89%BF"><span class="nav-number">3.</span> <span class="nav-text">继承</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%BB%A7%E6%89%BF%E7%9A%84%E7%89%B9%E6%80%A7"><span class="nav-number">3.1.</span> <span class="nav-text">继承的特性</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%A4%9A%E7%BB%A7%E6%89%BF%E7%9A%84%E5%AE%9E%E7%8E%B0"><span class="nav-number">4.</span> <span class="nav-text">多继承的实现</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%8A%BD%E8%B1%A1%E7%B1%BB"><span class="nav-number">4.1.</span> <span class="nav-text">抽象类</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%8E%A5%E5%8F%A3"><span class="nav-number">4.2.</span> <span class="nav-text">接口</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Java%E4%B8%AD%E9%A2%84%E5%AE%9A%E4%B9%89%E7%9A%84%E6%B3%A8%E9%87%8A"><span class="nav-number">5.</span> <span class="nav-text">Java中预定义的注释</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Override"><span class="nav-number">5.1.</span> <span class="nav-text">Override</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Deprecated"><span class="nav-number">5.2.</span> <span class="nav-text">Deprecated</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#SuppressWarnings"><span class="nav-number">5.3.</span> <span class="nav-text">SuppressWarnings</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%94%A8%E6%88%B7%E8%87%AA%E5%AE%9A%E4%B9%89%E6%B3%A8%E9%87%8A"><span class="nav-number">5.4.</span> <span class="nav-text">用户自定义注释</span></a></li></ol></li></ol></div>
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="Fleschier"
+      src="/images/avatar.gif">
+  <p class="site-author-name" itemprop="name">Fleschier</p>
+  <div class="site-description" itemprop="description">-</div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">67</span>
+          <span class="site-state-item-name">posts</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+            <a href="/categories/">
+          
+        <span class="site-state-item-count">12</span>
+        <span class="site-state-item-name">categories</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+            <a href="/tags/">
+          
+        <span class="site-state-item-count">36</span>
+        <span class="site-state-item-name">tags</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author motion-element">
+      <span class="links-of-author-item">
+        <a href="https://github.com/fleschier" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;fleschier" rel="noopener" target="_blank"><i class="fab fa-github fa-fw"></i>GitHub</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="mailto:fleschierchan@gmail.com" title="E-Mail → mailto:fleschierchan@gmail.com" rel="noopener" target="_blank"><i class="fa fa-envelope fa-fw"></i>E-Mail</a>
+      </span>
+  </div>
+
+
+
+      </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+        
+
+<div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2024</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Fleschier</span>
+</div>
+
+        
+
+
+
+
+
+
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="/lib/anime.min.js"></script>
+  <script src="/lib/velocity/velocity.min.js"></script>
+  <script src="/lib/velocity/velocity.ui.min.js"></script>
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/motion.js"></script>
+
+
+<script src="/js/schemes/muse.js"></script>
+
+
+<script src="/js/next-boot.js"></script>
+
+<script src="/js/bookmark.js"></script>
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+</body>
+</html>

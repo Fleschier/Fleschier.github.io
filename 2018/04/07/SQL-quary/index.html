@@ -1,0 +1,564 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 7.3.0">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/all.min.css">
+
+<script id="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"fleschier.github.io","root":"/","scheme":"Mist","version":"7.8.0","exturl":false,"sidebar":{"position":"right","display":"always","padding":18,"offset":12,"onmobile":true},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":true,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
+  </script>
+
+  <meta name="description" content="学习记录">
+<meta property="og:type" content="article">
+<meta property="og:title" content="数据库SQL语句">
+<meta property="og:url" content="https://fleschier.github.io/2018/04/07/SQL-quary/index.html">
+<meta property="og:site_name" content="Fleschier๑">
+<meta property="og:description" content="学习记录">
+<meta property="og:locale" content="en_US">
+<meta property="og:image" content="https://fleschier.github.io/images/SQL/TIM%E5%9B%BE%E7%89%8720180503210911.jpg">
+<meta property="article:published_time" content="2018-04-07T12:55:00.000Z">
+<meta property="article:modified_time" content="2024-07-25T07:12:14.474Z">
+<meta property="article:author" content="Fleschier">
+<meta property="article:tag" content="๑SQL">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://fleschier.github.io/images/SQL/TIM%E5%9B%BE%E7%89%8720180503210911.jpg">
+
+<link rel="canonical" href="https://fleschier.github.io/2018/04/07/SQL-quary/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome : false,
+    isPost : true,
+    lang   : 'en'
+  };
+</script>
+
+  <title>数据库SQL语句 | Fleschier๑</title>
+  
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="Toggle navigation bar">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <h1 class="site-title">Fleschier๑</h1>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+      <p class="site-subtitle" itemprop="description">-</p>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+    </div>
+  </div>
+</div>
+
+
+
+
+<nav class="site-nav">
+  <ul id="menu" class="main-menu menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section"><i class="fa fa-home fa-fw"></i>Home</a>
+
+  </li>
+        <li class="menu-item menu-item-about">
+
+    <a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>About</a>
+
+  </li>
+        <li class="menu-item menu-item-tags">
+
+    <a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>Tags<span class="badge">36</span></a>
+
+  </li>
+        <li class="menu-item menu-item-categories">
+
+    <a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>Categories<span class="badge">12</span></a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>Archives<span class="badge">67</span></a>
+
+  </li>
+  </ul>
+</nav>
+
+
+
+
+</div>
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+  <a role="button" class="book-mark-link book-mark-link-fixed"></a>
+
+  <a href="https://github.com/fleschier" class="github-corner" title="Follow me on GitHub" aria-label="Follow me on GitHub" rel="noopener" target="_blank"><svg width="80" height="80" viewBox="0 0 250 250" aria-hidden="true"><path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path><path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2" fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path><path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z" fill="currentColor" class="octo-body"></path></svg></a>
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content post posts-expand">
+            
+
+    
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
+    <link itemprop="mainEntityOfPage" href="https://fleschier.github.io/2018/04/07/SQL-quary/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="Fleschier">
+      <meta itemprop="description" content="-">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Fleschier๑">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          数据库SQL语句
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+
+              <time title="Created: 2018-04-07 20:55:00" itemprop="dateCreated datePublished" datetime="2018-04-07T20:55:00+08:00">2018-04-07</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Modified: 2024-07-25 15:12:14" itemprop="dateModified" datetime="2024-07-25T15:12:14+08:00">2024-07-25</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">In</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Computer-Programs/" itemprop="url" rel="index"><span itemprop="name">Computer Programs</span></a>
+                </span>
+            </span>
+
+          
+            <div class="post-description">学习记录</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <blockquote>
+<p>不适合人类阅读的学习笔记</p>
+</blockquote>
+<ul>
+<li><strong>数据库的命令语句均不区分大小写</strong></li>
+</ul>
+<h2 id="创建语句"><a href="#创建语句" class="headerlink" title="创建语句"></a>创建语句</h2><hr>
+<h3 id="基本创建"><a href="#基本创建" class="headerlink" title="基本创建"></a>基本创建</h3><ul>
+<li><p>创建数据库 ：<code>create database XXX</code></p>
+</li>
+<li><p>带详细参数的数据库创建：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">create database School on(</span><br><span class="line">	name = &#x27;School_data&#x27;,</span><br><span class="line">	filename = &#x27;c:\data\School_data.mdf&#x27;,</span><br><span class="line">	size = 5mb,</span><br><span class="line">	filegrowth = 1mb --每次增长的大小</span><br><span class="line">)</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>创建表： <code>create table XXX</code></p>
+</li>
+<li><p>带属性的创建：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">create table student(</span><br><span class="line">	Sno char(6) primary key,</span><br><span class="line">	Sname varchar(8),</span><br><span class="line">	Ssex char(2),</span><br><span class="line">	Sage smallint,</span><br><span class="line">	Sdept varchar(15)</span><br><span class="line">)</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>更加复杂的创建：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line">create table student(</span><br><span class="line">	Sno char(6) primary key,  --主键</span><br><span class="line">	Sname varchar(8) not null constraint ck_1 unique, --创建时加入约束条件</span><br><span class="line">	Ssex char(2) not null constraint ck_2 check(Ssex in(&#x27;男&#x27;,&#x27;女&#x27;)),</span><br><span class="line">	Sage smallint constraint ck_3 check(sage&gt;16),</span><br><span class="line">	Sdept varchar(15) default &#x27;JSJ&#x27;  --默认值</span><br><span class="line">)</span><br><span class="line">create table course(</span><br><span class="line">	Cno char(6) primary key,</span><br><span class="line">	Cname varchar(20),</span><br><span class="line">	Cpno char(4),</span><br><span class="line">	Ccredit tinyint</span><br><span class="line">)</span><br><span class="line">create table SC(</span><br><span class="line">	Sno char(6) not null, --要在表外添加主键的约束，则这个属性不能为空</span><br><span class="line">	Cno char(6) not null,</span><br><span class="line">	Grade decimal(12,1) constraint ck_6 check(Grade &lt;= 100 and Grade &gt;=0)</span><br><span class="line">	constraint fk_1 foreign key (Sno) references student(sno)</span><br><span class="line">)</span><br><span class="line">alter table SC add constraint PK_SC primary key(Sno,Cno)</span><br></pre></td></tr></table></figure>
+<p>check语句是一种约束条件写法，与constraint功能类似</p>
+</li>
+<li><p>在创建时设置foreign key：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">create table sc(</span><br><span class="line">	Sno char(6),</span><br><span class="line">	Cno char(4),</span><br><span class="line">	Grade decimal(12,2),</span><br><span class="line">	primary key(Sno,Cno),</span><br><span class="line">	foreign key(Sno) references student(Sno),</span><br><span class="line">	foreign key(Cno) references course(Cno)</span><br><span class="line">)</span><br></pre></td></tr></table></figure></li>
+</ul>
+<h3 id="创建索引"><a href="#创建索引" class="headerlink" title="创建索引"></a>创建索引</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">create index Ix_student_sname on student(Sname)</span><br><span class="line">create index Ix_student_sdept on student(Sdept)</span><br><span class="line">create index Ix_sc_cno on SC(Cno)</span><br><span class="line">create index Ix_course_cname on Course(Cname)</span><br><span class="line">sp_help student  --查看索引等信息</span><br><span class="line">drop index student.ix_student_sname    --删除索引</span><br></pre></td></tr></table></figure>
+
+<h3 id="插入数据："><a href="#插入数据：" class="headerlink" title="插入数据："></a>插入数据：</h3><blockquote>
+<p>数据顺序和类型要与创建时的定义一致</p>
+</blockquote>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">insert into student values(&#x27;5001&#x27;,&#x27;赵强&#x27;,&#x27;男&#x27;,&#x27;20&#x27;,&#x27;SX&#x27;)</span><br><span class="line">insert into student values(&#x27;5002&#x27;,&#x27;李丽华&#x27;,&#x27;女&#x27;,&#x27;21&#x27;,&#x27;JSJ&#x27;)</span><br><span class="line">insert into student values(&#x27;5001&#x27;,&#x27;李静&#x27;,&#x27;女&#x27;,&#x27;20&#x27;,&#x27;SX&#x27;)</span><br></pre></td></tr></table></figure>
+<h3 id="将数据从一个表插入另一个表"><a href="#将数据从一个表插入另一个表" class="headerlink" title="将数据从一个表插入另一个表"></a>将数据从一个表插入另一个表</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">--批量插入数据(从student 到 sc_name)</span><br><span class="line">insert into sc_name (Sno,Sname,Ssex)</span><br><span class="line">select Sno,Sname,Ssex from student where Sdept = &#x27;SX&#x27;</span><br></pre></td></tr></table></figure>
+
+
+<h2 id="在表外的更改操作"><a href="#在表外的更改操作" class="headerlink" title="在表外的更改操作"></a>在表外的更改操作</h2><hr>
+<h3 id="在表外更改表结构"><a href="#在表外更改表结构" class="headerlink" title="在表外更改表结构"></a>在表外更改表结构</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">create table student(</span><br><span class="line">	Sno char(6),</span><br><span class="line">	Sname varchar(8),</span><br><span class="line">	Ssex char(2),</span><br><span class="line">	Sage smallint,</span><br><span class="line">	Sdept varchar(15)</span><br><span class="line">)</span><br><span class="line">alter table student add address varchar(60) --添加列</span><br><span class="line">alter table student add inDate datetime --添加列，数据类型为datetime</span><br><span class="line">alter table student alter column adress varchar(50)</span><br><span class="line">alter table student drop column inDate</span><br></pre></td></tr></table></figure>
+
+<h3 id="用户自定义完整性约束"><a href="#用户自定义完整性约束" class="headerlink" title="用户自定义完整性约束"></a>用户自定义完整性约束</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">alter table student add constraint cs_1 check(Ssex in (&#x27;男&#x27;,&#x27;女&#x27;))</span><br><span class="line">alter table student add constraint cs_2 check(Sage &gt;16)</span><br><span class="line">alter table Course add constraint cs_3 check(Ccredit in (0,1,2,3,4,5))</span><br><span class="line">alter table Course add constraint cs_4 check(Cno != Cpno)</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>删除约束： <code>alter table student drop constraint cs_1</code></li>
+</ul>
+<h3 id="更新表数据"><a href="#更新表数据" class="headerlink" title="更新表数据"></a>更新表数据</h3><ul>
+<li>使用update和查找条件： <code>update student set Sno = 4018 where Sno = 4003</code></li>
+</ul>
+<h2 id="获取详细信息"><a href="#获取详细信息" class="headerlink" title="获取详细信息"></a>获取详细信息</h2><hr>
+<ul>
+<li><p><code>sp_help 表名</code></p>
+</li>
+<li><p><code>sp_helpdb 数据库名</code></p>
+</li>
+</ul>
+<h2 id="查询语句"><a href="#查询语句" class="headerlink" title="查询语句"></a>查询语句</h2><hr>
+<h3 id="基本查询操作"><a href="#基本查询操作" class="headerlink" title="基本查询操作"></a>基本查询操作</h3><ul>
+<li><code>select [列名（逗号间隔）或者*] from 表名</code></li>
+</ul>
+<h3 id="进阶-单表"><a href="#进阶-单表" class="headerlink" title="进阶(单表)"></a>进阶(单表)</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">select Sno,Sname,Sage from student</span><br><span class="line">where Sage &gt;= 19 and Sage &lt;= 21 and Ssex = &#x27;女&#x27; order by Sage desc</span><br><span class="line">-- desc表示降序，asc表示升序</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">select Sno,Ssex from student where Sname like &#x27;_明%&#x27;  </span><br><span class="line">--&#x27;_&#x27;表示一个字符，%表示任意多个字符,这里筛选出名字第二个字为‘明’的人</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">select Sno,Cno from SC where Grade is null</span><br><span class="line">-- 如果用&#x27;= null&#x27;则查询结果为空</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">select Sno,Cno,cast((Grade/10) as int)from SC</span><br><span class="line">-- cast(a as int)转换数据类型</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">select distinct Sdept from student</span><br><span class="line">-- distinct写在最前面</span><br></pre></td></tr></table></figure>
+
+<h3 id="进阶（统计）"><a href="#进阶（统计）" class="headerlink" title="进阶（统计）"></a>进阶（统计）</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">select count(*) as number from student</span><br><span class="line">where Sname like &#x27;%明%&#x27;</span><br><span class="line">-- 统计名字有‘明’的人数</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">select Cno,sum(Grade) as total_grade,avg(Grade) as avg_grade,max(Grade) as max_grade,min(Grade) as min_grade from SC  </span><br><span class="line">group by Cno</span><br><span class="line">order by avg_grade desc</span><br><span class="line">-- sum()求和</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">select Cno from SC</span><br><span class="line">where Grade &gt;= 85</span><br><span class="line">group by Cno</span><br><span class="line">having count(Sno)&gt;10</span><br><span class="line">-- where 筛选必须在group 之前，group之后可以用having筛选，两者可以并用</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">select Sno from SC</span><br><span class="line">where Grade &lt;60  </span><br><span class="line">group by Sno</span><br><span class="line">having count(Cno) &gt; 2</span><br></pre></td></tr></table></figure>
+<h3 id="进阶（连接）"><a href="#进阶（连接）" class="headerlink" title="进阶（连接）"></a>进阶（连接）</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">select distinct Cno from student,SC</span><br><span class="line">where student.Sno = SC.Sno and Sdept = &#x27;JSJ&#x27;</span><br><span class="line">-- 连接要写出连接条件</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">-- 三种写法</span><br><span class="line">select Sname from student,SC</span><br><span class="line">where student.Sno = SC.Sno and Cno = 1002</span><br><span class="line">XXXXXX</span><br><span class="line">select Sname from student</span><br><span class="line">join SC on student.Sno = Sc.Sno</span><br><span class="line">where Cno = 1002             -- JOIN..ON..语句</span><br><span class="line">XXXXXX</span><br><span class="line">select Sname from student</span><br><span class="line">where Sno in(                --嵌套执行</span><br><span class="line">	select Sno from SC where Cno = 1002</span><br><span class="line">)</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">select student.Sno, Grade from student,course,SC</span><br><span class="line">where student.Sno = SC.Sno and course.Cno = SC.Cno and Cname = &#x27;数据库原理&#x27; and Grade &lt;60</span><br><span class="line">--用表名.列名来获取具有相同列名的几个表中某个表的某一列</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">-- 两种写法</span><br><span class="line">select student.Sname from student,SC</span><br><span class="line">where student.Sno = SC.Sno and Grade &gt;= 80 and Cno = 1004</span><br><span class="line">XXXXXX</span><br><span class="line">select Sname from student</span><br><span class="line">where Sno in(                --嵌套写法</span><br><span class="line">	select Sno from SC where Grade &gt; 80 and Cno in(</span><br><span class="line">		select Cno from course where Cname = &#x27;数据库原理&#x27;</span><br><span class="line">	)</span><br><span class="line">)</span><br></pre></td></tr></table></figure>
+<h3 id=""><a href="#" class="headerlink" title=""></a></h3><h3 id="进阶（嵌套）"><a href="#进阶（嵌套）" class="headerlink" title="进阶（嵌套）"></a>进阶（嵌套）</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">-- 找出平均成绩最大的一个（两种写法）</span><br><span class="line">select  top 1 Sno,avg(Grade) as avg_grade from SC</span><br><span class="line">group by Sno</span><br><span class="line">order by avg(Grade) desc</span><br><span class="line">XXXXXX</span><br><span class="line">select Sno,avg(Grade) as avg_grade from SC</span><br><span class="line">group by Sno</span><br><span class="line">having avg(Grade) &gt;= all(select avg(Grade) from SC group by Sno)</span><br></pre></td></tr></table></figure>
+
+<h2 id="删除"><a href="#删除" class="headerlink" title="删除"></a>删除</h2><hr>
+<ul>
+<li><p>删除表： <code>drop table XXX</code></p>
+</li>
+<li><p>删除表中的内容： <code>delete from XXX</code></p>
+</li>
+<li><p>删除数据库： <code>drop database XXX</code></p>
+</li>
+<li><p>删除依赖： <code>drop constraint XXX</code></p>
+</li>
+</ul>
+<h2 id="补充"><a href="#补充" class="headerlink" title="补充"></a>补充</h2><hr>
+<h3 id="循环生成数据"><a href="#循环生成数据" class="headerlink" title="循环生成数据"></a>循环生成数据</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">--生成大量数据</span><br><span class="line">create procedure usp_makedata as</span><br><span class="line">declare @nCnt int, @sNo char(6), @sname varchar(8)</span><br><span class="line">set @nCnt = 12000 --counter</span><br><span class="line">while @nCnt &lt;999999</span><br><span class="line">begin</span><br><span class="line">	set @nCnt = @nCnt +1</span><br><span class="line">	set @sNo = convert(varchar(6),@nCnt)</span><br><span class="line">	set @sName = &#x27;张&#x27; +@sno</span><br><span class="line">	insert into student (sno,sname,ssex,sage) values (@sno,@sname,&#x27;男&#x27;,20)</span><br><span class="line">end</span><br><span class="line">return</span><br><span class="line">exec usp_makedata	--执行生成过程</span><br></pre></td></tr></table></figure>
+<h3 id="测试生成的数据"><a href="#测试生成的数据" class="headerlink" title="测试生成的数据"></a>测试生成的数据</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">--生成测试</span><br><span class="line">create procedure usp_test as</span><br><span class="line">declare @nCount int ,@data int</span><br><span class="line">set @nCount=0</span><br><span class="line">while @nCount &lt;100</span><br><span class="line">begin</span><br><span class="line">	select @data = count(*) from student</span><br><span class="line">	where sname &lt;&#x27;张3800&#x27; or sname &gt;&#x27;张8800&#x27;</span><br><span class="line">	set @nCount =@nCount + 1</span><br><span class="line">end</span><br><span class="line">exec usp_test --执行测试</span><br></pre></td></tr></table></figure>
+<h3 id="善后"><a href="#善后" class="headerlink" title="善后"></a>善后</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">drop procedure usp_makedata</span><br><span class="line">drop procedure usp_test</span><br></pre></td></tr></table></figure>
+<h2 id="E-R图的画法"><a href="#E-R图的画法" class="headerlink" title="E-R图的画法"></a>E-R图的画法</h2><hr>
+<ul>
+<li><p>实体型(Entity)：用矩形表示，矩形框内写明实体名</p>
+</li>
+<li><p>属性(Attribute)：用椭圆形表示，并用无向边将其与相应的实体连接起来</p>
+</li>
+<li><p>联系(Relationship)：用菱形表示，菱形框内写明联系名，并用无向边分别与有关实体连接起来，同时在无向边旁标上联系的类型(1 : 1，1 : n或m : n)。 (一对一，一对多还是多对多)</p>
+</li>
+<li><p>图例：<br>![](&#x2F;images&#x2F;SQL&#x2F;E-R graphe.png)</p>
+</li>
+<li><p>示例：<br><img src="/images/SQL/TIM%E5%9B%BE%E7%89%8720180503210911.jpg"><br>画图时先画实体型和联系，最后添加属性即可。对于那些有公共属性的两个实体型，属性应当连到联系上(菱形上的属性)</p>
+</li>
+</ul>
+<h3 id="从-E-R图转为关系模式："><a href="#从-E-R图转为关系模式：" class="headerlink" title="从 E-R图转为关系模式："></a>从 E-R图转为关系模式：</h3><ul>
+<li><p>首先是看有几个实体，每个实体单独存放为一个关系，即表。<strong>每个表的字段包含了这个实体所有的属性，即括号内的内容</strong></p>
+</li>
+<li><p>然后分析实体间的联系。实体间联系有的要单独存一个表，有的不要。</p>
+</li>
+<li><p><strong>如果实体和实体间是多对一或者一对一的关系则不需要单独创建一个表，而是通过在参与联系的多方实体中，增加一个参与联系的1方的实体的主键作为一列来表示联系</strong>。例如，车队和车辆是一对多的关系，这里 <strong>多</strong> 是车辆这个实体，1是车队这个实体。车队的实体的主键是车队号，所以，我们在多方(车辆)这个表中，增加1方(车队)的主键(车队号)作为一列来表示联系，即将  车队号  加到 车辆 这个实体的属性列表中。这里的 车队号 显然是 <strong>外键</strong>。</p>
+</li>
+<li><p><strong>如果两个实体之间的联系是多对多的，联系要单独存放为一个表</strong>。这个表的主键，是参与联系的两个实体的主键的组合，而联系的属性作为其他列。例如：车辆和司机之间是多对多的关系，使用 <code>联系名(车牌号，司机编码，使用日期，公里数)</code> 这里的车牌号是 车辆 这一实体的主键，司机编码是 司机 这一实体的主键，而后面两个是联系的属性。外键是： 车牌号，司机编码。</p>
+</li>
+<li><p>每个关系的主键都要标出来，外键写在关系的最后，属性括号的外面。</p>
+</li>
+<li><p><a target="_blank" rel="noopener" href="https://blog.csdn.net/sunzhenhua0608/article/details/8822871">简明教学</a></p>
+</li>
+<li><p><a target="_blank" rel="noopener" href="https://blog.csdn.net/zxq1138634642/article/details/9121363">详细教学</a></p>
+</li>
+</ul>
+<br>
+
+<blockquote>
+<p>最后更新于2018.5.3</p>
+</blockquote>
+
+    </div>
+
+    
+    
+    
+
+      <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/%E0%B9%91SQL/" rel="tag"># ๑SQL</a>
+          </div>
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/2018/04/06/C++learning-class/" rel="prev" title="C++学习笔记——类">
+      <i class="fa fa-chevron-left"></i> C++学习笔记——类
+    </a></div>
+      <div class="post-nav-item">
+    <a href="/2018/04/11/Spark-superior/" rel="next" title="Spark学习笔记——进阶">
+      Spark学习笔记——进阶 <i class="fa fa-chevron-right"></i>
+    </a></div>
+    </div>
+      </footer>
+    
+  </article>
+  
+  
+  
+
+
+
+          </div>
+          
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          Table of Contents
+        </li>
+        <li class="sidebar-nav-overview">
+          Overview
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%88%9B%E5%BB%BA%E8%AF%AD%E5%8F%A5"><span class="nav-number">1.</span> <span class="nav-text">创建语句</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%9F%BA%E6%9C%AC%E5%88%9B%E5%BB%BA"><span class="nav-number">1.1.</span> <span class="nav-text">基本创建</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%88%9B%E5%BB%BA%E7%B4%A2%E5%BC%95"><span class="nav-number">1.2.</span> <span class="nav-text">创建索引</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%8F%92%E5%85%A5%E6%95%B0%E6%8D%AE%EF%BC%9A"><span class="nav-number">1.3.</span> <span class="nav-text">插入数据：</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%B0%86%E6%95%B0%E6%8D%AE%E4%BB%8E%E4%B8%80%E4%B8%AA%E8%A1%A8%E6%8F%92%E5%85%A5%E5%8F%A6%E4%B8%80%E4%B8%AA%E8%A1%A8"><span class="nav-number">1.4.</span> <span class="nav-text">将数据从一个表插入另一个表</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%9C%A8%E8%A1%A8%E5%A4%96%E7%9A%84%E6%9B%B4%E6%94%B9%E6%93%8D%E4%BD%9C"><span class="nav-number">2.</span> <span class="nav-text">在表外的更改操作</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%9C%A8%E8%A1%A8%E5%A4%96%E6%9B%B4%E6%94%B9%E8%A1%A8%E7%BB%93%E6%9E%84"><span class="nav-number">2.1.</span> <span class="nav-text">在表外更改表结构</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%94%A8%E6%88%B7%E8%87%AA%E5%AE%9A%E4%B9%89%E5%AE%8C%E6%95%B4%E6%80%A7%E7%BA%A6%E6%9D%9F"><span class="nav-number">2.2.</span> <span class="nav-text">用户自定义完整性约束</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%9B%B4%E6%96%B0%E8%A1%A8%E6%95%B0%E6%8D%AE"><span class="nav-number">2.3.</span> <span class="nav-text">更新表数据</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%8E%B7%E5%8F%96%E8%AF%A6%E7%BB%86%E4%BF%A1%E6%81%AF"><span class="nav-number">3.</span> <span class="nav-text">获取详细信息</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%9F%A5%E8%AF%A2%E8%AF%AD%E5%8F%A5"><span class="nav-number">4.</span> <span class="nav-text">查询语句</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%9F%BA%E6%9C%AC%E6%9F%A5%E8%AF%A2%E6%93%8D%E4%BD%9C"><span class="nav-number">4.1.</span> <span class="nav-text">基本查询操作</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%BF%9B%E9%98%B6-%E5%8D%95%E8%A1%A8"><span class="nav-number">4.2.</span> <span class="nav-text">进阶(单表)</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%BF%9B%E9%98%B6%EF%BC%88%E7%BB%9F%E8%AE%A1%EF%BC%89"><span class="nav-number">4.3.</span> <span class="nav-text">进阶（统计）</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%BF%9B%E9%98%B6%EF%BC%88%E8%BF%9E%E6%8E%A5%EF%BC%89"><span class="nav-number">4.4.</span> <span class="nav-text">进阶（连接）</span></a></li><li class="nav-item nav-level-3"><a class="nav-link"><span class="nav-number">4.5.</span> <span class="nav-text"></span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%BF%9B%E9%98%B6%EF%BC%88%E5%B5%8C%E5%A5%97%EF%BC%89"><span class="nav-number">4.6.</span> <span class="nav-text">进阶（嵌套）</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%88%A0%E9%99%A4"><span class="nav-number">5.</span> <span class="nav-text">删除</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%A1%A5%E5%85%85"><span class="nav-number">6.</span> <span class="nav-text">补充</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%BE%AA%E7%8E%AF%E7%94%9F%E6%88%90%E6%95%B0%E6%8D%AE"><span class="nav-number">6.1.</span> <span class="nav-text">循环生成数据</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%B5%8B%E8%AF%95%E7%94%9F%E6%88%90%E7%9A%84%E6%95%B0%E6%8D%AE"><span class="nav-number">6.2.</span> <span class="nav-text">测试生成的数据</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%96%84%E5%90%8E"><span class="nav-number">6.3.</span> <span class="nav-text">善后</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#E-R%E5%9B%BE%E7%9A%84%E7%94%BB%E6%B3%95"><span class="nav-number">7.</span> <span class="nav-text">E-R图的画法</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%BB%8E-E-R%E5%9B%BE%E8%BD%AC%E4%B8%BA%E5%85%B3%E7%B3%BB%E6%A8%A1%E5%BC%8F%EF%BC%9A"><span class="nav-number">7.1.</span> <span class="nav-text">从 E-R图转为关系模式：</span></a></li></ol></li></ol></div>
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="Fleschier"
+      src="/images/avatar.gif">
+  <p class="site-author-name" itemprop="name">Fleschier</p>
+  <div class="site-description" itemprop="description">-</div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">67</span>
+          <span class="site-state-item-name">posts</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+            <a href="/categories/">
+          
+        <span class="site-state-item-count">12</span>
+        <span class="site-state-item-name">categories</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+            <a href="/tags/">
+          
+        <span class="site-state-item-count">36</span>
+        <span class="site-state-item-name">tags</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author motion-element">
+      <span class="links-of-author-item">
+        <a href="https://github.com/fleschier" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;fleschier" rel="noopener" target="_blank"><i class="fab fa-github fa-fw"></i>GitHub</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="mailto:fleschierchan@gmail.com" title="E-Mail → mailto:fleschierchan@gmail.com" rel="noopener" target="_blank"><i class="fa fa-envelope fa-fw"></i>E-Mail</a>
+      </span>
+  </div>
+
+
+
+      </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+        
+
+<div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2024</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Fleschier</span>
+</div>
+
+        
+
+
+
+
+
+
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="/lib/anime.min.js"></script>
+  <script src="/lib/velocity/velocity.min.js"></script>
+  <script src="/lib/velocity/velocity.ui.min.js"></script>
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/motion.js"></script>
+
+
+<script src="/js/schemes/muse.js"></script>
+
+
+<script src="/js/next-boot.js"></script>
+
+<script src="/js/bookmark.js"></script>
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+</body>
+</html>
