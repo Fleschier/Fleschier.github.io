@@ -1717,17 +1717,15 @@
 </li>
 </ul>
 <ol>
-<li>新建tags文件夹，并创建index.md</li>
-<li>在index.md中写入如下内容：</li>
-</ol>
-<blockquote>
-<hr>
-<p>title: tags<br>date: 2016-09-05 23:41:32<br>type: “tags”<br>comments: false</p>
-</blockquote>
-<hr>
-<ol start="3">
-<li>到_config.yml文件中将对应的路径添加进去(next主题默认是将这几个页面注释掉的，取消注释即可)</li>
-<li>重新建站即可看到效果</li>
+<li><p>新建tags文件夹，并创建index.md</p>
+</li>
+<li><p>在index.md中写入如下内容：</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">title: tags</span><br><span class="line">date: 2016-09-05 23:41:32</span><br><span class="line">type: &quot;tags&quot;</span><br><span class="line">comments: false</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>到_config.yml文件中将对应的路径添加进去(next主题默认是将这几个页面注释掉的，取消注释即可)</p>
+</li>
+<li><p>重新建站即可看到效果</p>
+</li>
 </ol>
 <h2 id="添加搜索引擎支持"><a href="#添加搜索引擎支持" class="headerlink" title="添加搜索引擎支持"></a>添加搜索引擎支持</h2><hr>
 <ul>
@@ -1798,13 +1796,13 @@
 <h3 id="更新"><a href="#更新" class="headerlink" title="更新"></a>更新</h3><ul>
 <li><p>原来是我还缺少了一个步骤,就是需要在leanCloud的<code>云引擎&gt;设置&gt;deploy</code>中将自己的github仓库地址填入,并且将其deploy key添加到我们github的仓库deploy key 一栏中.如下</p>
 </li>
-<li><p><img src="/images/hexo_blog/blog_deploy.png"></p>
+<li><p><img data-src="/images/hexo_blog/blog_deploy.png"></p>
 </li>
-<li><p><img src="/images/hexo_blog/res.png"></p>
+<li><p><img data-src="/images/hexo_blog/res.png"></p>
 </li>
 <li><p>最后不要忘了在leanCloud上点保存,并且生成生产环境:</p>
 </li>
-<li><p><img src="/images/hexo_blog/res1.png"></p>
+<li><p><img data-src="/images/hexo_blog/res1.png"></p>
 </li>
 <li><p>但是好像还是不能同步到github…待更新</p>
 </li>
@@ -1825,6 +1823,9 @@
 </li>
 <li><p>最后更新生成部署博客即可。</p>
 </li>
+</ul>
+<h3 id="文章tag用图标代替-号"><a href="#文章tag用图标代替-号" class="headerlink" title="文章tag用图标代替#号"></a>文章tag用图标代替#号</h3><ul>
+<li>在主题配置文件搜索<code>tag_icon</code>，改为true即可。</li>
 </ul>
 ]]></content>
       <categories>
