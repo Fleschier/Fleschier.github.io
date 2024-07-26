@@ -257,7 +257,7 @@
       
         <h2 id="浏览器窗口中的DOM"><a href="#浏览器窗口中的DOM" class="headerlink" title="浏览器窗口中的DOM"></a>浏览器窗口中的DOM</h2><hr>
 <ul>
-<li>所有现代浏览器的基本对象模型:<br><img src="/images/JavaScript/model.png"></li>
+<li>所有现代浏览器的基本对象模型:<br><img data-src="/images/JavaScript/model.png"></li>
 </ul>
 <ol>
 <li><p>window对象: 在层次结构顶部的是window对象.这个对象代表显示HTML文档的浏览器窗口的内容区域.在多框架环境下,每个框架也是一个窗口.所有的文档动作都是在窗口内发生的,所以窗口是对象层次结构中最外部的元素,它包含文档.</p>
@@ -273,18 +273,18 @@
 </ol>
 <h2 id="文档的载入"><a href="#文档的载入" class="headerlink" title="文档的载入"></a>文档的载入</h2><hr>
 <h3 id="简单文档"><a href="#简单文档" class="headerlink" title="简单文档"></a>简单文档</h3><ul>
-<li>空文档的对象映射:<br><img src="/images/JavaScript/document.png"><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">&lt;!DOCTYPE html&gt;</span><br><span class="line">&lt;html&gt;</span><br><span class="line"> &lt;head&gt;</span><br><span class="line">  &lt;meta ...&gt;</span><br><span class="line">  &lt;title&gt;&lt;/title&gt;</span><br><span class="line"> &lt;/head&gt;</span><br><span class="line"> &lt;body&gt;</span><br><span class="line">  ...</span><br><span class="line"> &lt;/body&gt;</span><br><span class="line">&lt;/html&gt;</span><br></pre></td></tr></table></figure></li>
+<li>空文档的对象映射:<br><img data-src="/images/JavaScript/document.png"><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">&lt;!DOCTYPE html&gt;</span><br><span class="line">&lt;html&gt;</span><br><span class="line"> &lt;head&gt;</span><br><span class="line">  &lt;meta ...&gt;</span><br><span class="line">  &lt;title&gt;&lt;/title&gt;</span><br><span class="line"> &lt;/head&gt;</span><br><span class="line"> &lt;body&gt;</span><br><span class="line">  ...</span><br><span class="line"> &lt;/body&gt;</span><br><span class="line">&lt;/html&gt;</span><br></pre></td></tr></table></figure></li>
 </ul>
 <h3 id="添加段落"><a href="#添加段落" class="headerlink" title="添加段落"></a>添加段落</h3><ul>
 <li>添加段落标签, 在段落元素的开始和结束标记之间插入段落文本.在标记间插入的连续文本是DOM中的一种特殊的对象,称为文本结点.文本节点总是有一个容器元素,也就是说,文本结点是其父元素p的子元素.</li>
 </ul>
-<p><img src="/images/JavaScript/document1.png"></p>
+<p><img data-src="/images/JavaScript/document1.png"></p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">&lt;!DOCTYPE html&gt;</span><br><span class="line">&lt;html&gt;</span><br><span class="line"> &lt;head&gt;</span><br><span class="line">  &lt;meta ...&gt;</span><br><span class="line">  &lt;title&gt;&lt;/title&gt;</span><br><span class="line"> &lt;/head&gt;</span><br><span class="line"> &lt;body&gt;</span><br><span class="line">  &lt;p&gt;This is the one and only Paragraph&lt;/p&gt;         //添加了段落标签和段落内容</span><br><span class="line"> &lt;/body&gt;</span><br><span class="line">&lt;/html&gt;</span><br></pre></td></tr></table></figure>
 
 <h3 id="生成新元素"><a href="#生成新元素" class="headerlink" title="生成新元素"></a>生成新元素</h3><ul>
 <li>将部分段落文本包含在一个<em>标签中,表示要强调这些文本.这个插入操作对p元素对象的层次结构有很大的影响.<strong>p元素从只有一个(文本结点)子元素变成有三个子元素:两个文本节点,和一个它们之间的元素</strong>. 在W3C DOM中, <strong>文本结点不能有任何子元素</strong>,因此不能包含元素对象.em元素中的文本结点不再是p元素的子元素,而是em元素的子元素.</li>
 </ul>
-<p><img src="/images/JavaScript/document2.png"></p>
+<p><img data-src="/images/JavaScript/document2.png"></p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">&lt;!DOCTYPE html&gt;</span><br><span class="line">&lt;html&gt;</span><br><span class="line"> &lt;head&gt;</span><br><span class="line">  &lt;meta ...&gt;</span><br><span class="line">  &lt;title&gt;&lt;/title&gt;</span><br><span class="line"> &lt;/head&gt;</span><br><span class="line"> &lt;body&gt;</span><br><span class="line">  &lt;p&gt;This is the one and only Paragraph&lt;/p&gt;         //添加了段落标签和段落内容</span><br><span class="line"> &lt;/body&gt;</span><br><span class="line">&lt;/html&gt;</span><br></pre></td></tr></table></figure>
 
 <h2 id="对象"><a href="#对象" class="headerlink" title="对象"></a>对象</h2><hr>

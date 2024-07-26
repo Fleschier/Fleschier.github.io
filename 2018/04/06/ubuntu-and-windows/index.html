@@ -273,7 +273,7 @@
 </ul>
 <h2 id="第三方启动引导程序——refind"><a href="#第三方启动引导程序——refind" class="headerlink" title="第三方启动引导程序——refind"></a>第三方启动引导程序——refind</h2><hr>
 <ul>
-<li><p>refind是一款功能非常强大的开机启动引导程序，它能够自定义开机界面。你可以吧系统图标，背景什么的换成你自己喜欢的风格。这里附上一张我采用的主题开机界面<img src="/images/linux-and-windows/opening-bg.jpg">如果你也喜欢这一风格，<a target="_blank" rel="noopener" href="https://github.com/EvanPurkhiser/rEFInd-minimal">这里是链接地址</a>。</p>
+<li><p>refind是一款功能非常强大的开机启动引导程序，它能够自定义开机界面。你可以吧系统图标，背景什么的换成你自己喜欢的风格。这里附上一张我采用的主题开机界面<img data-src="/images/linux-and-windows/opening-bg.jpg">如果你也喜欢这一风格，<a target="_blank" rel="noopener" href="https://github.com/EvanPurkhiser/rEFInd-minimal">这里是链接地址</a>。</p>
 </li>
 <li><p>refind是一款免费的软件(<a target="_blank" rel="noopener" href="http://www.rodsbooks.com/refind/getting.html">官方下载地址</a>)，如果你高兴也可以给作者赞助。</p>
 </li>
@@ -286,13 +286,13 @@
 <h3 id="Windows下安装"><a href="#Windows下安装" class="headerlink" title="Windows下安装"></a>Windows下安装</h3><ul>
 <li><p>如果你非要不信邪，在Windows下尝试安装的话，我也不反对。首先你需要一个能够进入系统隐藏分区的软件——<a target="_blank" rel="noopener" href="http://www.diskgenius.cn/">DiskGenius</a>。推荐去官网下载正版而不要用盗版（然后去百度激活码…咳咳），毕竟牵涉到系统文件万一崩了别怪我没提醒。</p>
 </li>
-<li><p>第一步，找到你系统的esp分区<img src="/img/linux-and-windows/ubuntu-boot.jpg"></p>
+<li><p>第一步，找到你系统的esp分区<img data-src="/img/linux-and-windows/ubuntu-boot.jpg"></p>
 </li>
-<li><p>第二步，将下载的refind文件夹及其里面所有的东西全部复制进去。<em>（注意：虽然DiskGenius支持同时复制多个文件，但是文件夹没法复制，只能自己先手动创建）</em> <strong>同时必须要自己创建一个refind.conf文件，可以什么都不写但是不能没有。</strong> 然后原来的refind.conf-sample文件就可以删除了。<img src="/img/linux-and-windows/refind-info.jpg"></p>
+<li><p>第二步，将下载的refind文件夹及其里面所有的东西全部复制进去。<em>（注意：虽然DiskGenius支持同时复制多个文件，但是文件夹没法复制，只能自己先手动创建）</em> <strong>同时必须要自己创建一个refind.conf文件，可以什么都不写但是不能没有。</strong> 然后原来的refind.conf-sample文件就可以删除了。<img data-src="/img/linux-and-windows/refind-info.jpg"></p>
 </li>
 <li><p>第三步，将一些不需要的文件删除，如果你在网上下载了一些主题的话，也一并把文件复制进去。</p>
 </li>
-<li><p>第四步，下载<a target="_blank" rel="noopener" href="https://bootice.en.softonic.com/?ex=REG-60.2">bootice</a>，打开DIskGenius给你放refind文件的那个分区取个卷标（随便什么都可以，下面有用）。打开bootice——UEFI——修改启动序列<img src="/img/linux-and-windows/bootice01.jpg"><em>(也可以顺手吧下面那个下次启动直接进入bios勾上，省的下次进bios要手动)<em>。点击添加，找到你之前分配盘符的那个盘（也就是esp分区），找到里面的refind文件夹，选择对应你系统的.efi文件，点击确定。<img src="/img/linux-and-windows/bootice02.jpg">重启系统，进入bios，将rEFInd启动项调整为第一个即可。</em>（没有对比就没有伤害，Windows下简直烦死，还不一定成功…）</em></p>
+<li><p>第四步，下载<a target="_blank" rel="noopener" href="https://bootice.en.softonic.com/?ex=REG-60.2">bootice</a>，打开DIskGenius给你放refind文件的那个分区取个卷标（随便什么都可以，下面有用）。打开bootice——UEFI——修改启动序列<img data-src="/img/linux-and-windows/bootice01.jpg"><em>(也可以顺手吧下面那个下次启动直接进入bios勾上，省的下次进bios要手动)<em>。点击添加，找到你之前分配盘符的那个盘（也就是esp分区），找到里面的refind文件夹，选择对应你系统的.efi文件，点击确定。<img data-src="/img/linux-and-windows/bootice02.jpg">重启系统，进入bios，将rEFInd启动项调整为第一个即可。</em>（没有对比就没有伤害，Windows下简直烦死，还不一定成功…）</em></p>
 </li>
 <li><p>最后希望各位都能成功在UEFI模式下完成双系统的安装和引导。</p>
 </li>
@@ -348,8 +348,8 @@
       <i class="fa fa-chevron-left"></i> Welcome to Fleschier Blog
     </a></div>
       <div class="post-nav-item">
-    <a href="/2018/04/06/Ubuntu-operation/" rel="next" title="Ubuntu随笔">
-      Ubuntu随笔 <i class="fa fa-chevron-right"></i>
+    <a href="/2018/04/06/Ubuntu-order/" rel="next" title="Ubuntu终端常用命令">
+      Ubuntu终端常用命令 <i class="fa fa-chevron-right"></i>
     </a></div>
     </div>
       </footer>

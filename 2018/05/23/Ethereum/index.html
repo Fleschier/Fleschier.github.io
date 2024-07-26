@@ -271,7 +271,7 @@
 </li>
 <li><p>truffle init会默认创建一个构建在以太坊内的代币demo应用。我们可以使用这个工程来进行快速的学习。</p>
 </li>
-<li><p><code>init</code> 之后目录下就会有若干文件和文件夹。结构如下：<br><img src="/images/block_chain/structure.png"></p>
+<li><p><code>init</code> 之后目录下就会有若干文件和文件夹。结构如下：<br><img data-src="/images/block_chain/structure.png"></p>
 </li>
 <li><p>contracts目录中包含Solidity合约代码，其中Migrations.sol是必须有的，其他就是你自己写的合约代码了。</p>
 </li>
@@ -337,7 +337,7 @@
 <li><p>由于metacoin的示例代码里已经把测试代码写好了，按照上面的修改完truffle.js之后，<strong>我们就可以编译部署测试我们的代码了：</strong></p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">truffle compile</span><br><span class="line">truffle migrate</span><br><span class="line">truffle test</span><br></pre></td></tr></table></figure>
 </li>
-<li><p>结果如下:<br><img src="/images/block_chain/metacion_test_result.png"></p>
+<li><p>结果如下:<br><img data-src="/images/block_chain/metacion_test_result.png"></p>
 </li>
 <li><p>然后打开 ganache查看区块链的变化。 Accounts标签：第一个账户里ETH略有减少，因为交易消耗了gas；Blocks标签：Ganache是自动挖矿，生成了6个新区块，每个区块里有一个交易；Transactions标签：有6笔新交易，可以点开看交易详情；Logs标签：显示交易和挖矿日志</p>
 </li>
