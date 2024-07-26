@@ -1660,7 +1660,7 @@
   </entry>
   <entry>
     <title>hexo重新构建博客</title>
-    <url>/2018/09/03/Hexo-rebuild/</url>
+    <url>/2024/07/26/Hexo-rebuild/</url>
     <content><![CDATA[<h2 id="环境搭建"><a href="#环境搭建" class="headerlink" title="环境搭建"></a>环境搭建</h2><hr>
 <ul>
 <li><p>在使用hexo搭建博客之前，需要搭建好环境。需要git、node.js和hexo</p>
@@ -1807,6 +1807,23 @@
 <li><p><img src="/images/hexo_blog/res1.png"></p>
 </li>
 <li><p>但是好像还是不能同步到github…待更新</p>
+</li>
+</ul>
+<hr>
+<h2 id="2024更新"><a href="#2024更新" class="headerlink" title="2024更新"></a>2024更新</h2><blockquote>
+<p>时隔多年又重拾起来了技术博客的更新，就先从建站开始，更新一下流程和问题</p>
+</blockquote>
+<h3 id="网站搜索功能添加"><a href="#网站搜索功能添加" class="headerlink" title="网站搜索功能添加"></a>网站搜索功能添加</h3><ul>
+<li><p>需要安装<code>hexo-generator-searchdb</code>插件。</p>
+</li>
+<li><p>运行<code>npm install hexo-generator-searchdb --save</code>命令。</p>
+</li>
+<li><p>编辑博客根目录下的博客本地目录&#x2F;_config.yml站点配置文件，新增以下内容到任意位置:</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">search:</span><br><span class="line">  path: search.xml</span><br><span class="line">  field: post</span><br><span class="line">  format: html</span><br><span class="line">  limit: 100000	# 注意如果文章字数较多的话这里的值要增加大一些，不然可能出现部署之后搜索样式错误的情况</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>编辑博客本地目录<code>/themes/hexo-theme-next/_config.yml</code>主题配置文件，启用本地搜索功能,将local_search:下面的<code>enable:</code>的值，改成<code>true</code>。</p>
+</li>
+<li><p>最后更新生成部署博客即可。</p>
 </li>
 </ul>
 ]]></content>
